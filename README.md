@@ -1,58 +1,37 @@
-# Meta-Introspector Universal Repository
+# Meta-Introspector Repository Analysis
 
-The canonical root repository for the meta-introspector ecosystem, organizing 588+ forked repositories using TLD naming schema.
+Comprehensive analysis of 57,106 domains across 33.9M files.
 
-## Structure
+## Directory Structure
 
-```
-/mnt/data1/meta-introspector/
-├── com/github/meta-introspector/    # All our GitHub forks
-├── io/crates/                       # Crate name symlinks  
-├── tools/                           # Analysis and management tools
-└── docs/                           # Ecosystem documentation
-```
+### Top-Level Domains (TLDs)
+- `com/` - Commercial domains (98.3% - 56,155 repos)
+- `org/` - Organizations (1.4% - 775 repos)
+- `co/` - Modern startups (0.2% - 123 repos)
+- `fr/`, `cz/`, `de/` - Regional domains
+- `io/`, `dev/`, `net/` - Tech-focused domains
+- `edu/`, `us/` - Educational and government
 
-## TLD Naming Schema
+### Major Repository Hosts
+- `com/github/` - GitHub (55,752 repositories - 97.6%)
+- `com/googlesource/` - Google projects (Chromium, Android)
+- `co/huggingface/` - AI/ML models (115 repositories)
+- `org/freedesktop/` - Desktop Linux (472 repositories)
+- `org/gitlab/` - GitLab projects (90 repositories)
 
-All repositories follow reverse domain naming:
-- `com.github.meta-introspector.serde` → `com/github/meta-introspector/serde/`
-- `io.crates.serde_json` → `io/crates/serde_json/` (symlink)
+### Analysis Results
+- `analysis/` - Comprehensive analysis reports
+- `split-decls/` - Split declarations projects (13 found!)
+- `rust-ecosystem/` - Rust-specific analysis (42K Cargo.toml, 1.47M .rs files)
+- `tld-stats/` - Domain statistics and breakdowns
 
-## Statistics
+## Key Findings
 
-- **588 repositories** indexed and organized
-- **52% Rust dependency coverage** achieved  
-- **496 repositories** with local patches
-- **Universal tooling** for ecosystem management
+- **GitHub Dominance**: 97.6% of repositories hosted on GitHub
+- **Split-Decls Active**: 13 repositories using split-decls-rs
+- **Massive Rust Ecosystem**: 1.47M Rust files, 42K projects
+- **Enterprise Presence**: Google, GNU, Freedesktop integration
 
-## Quick Start
+## Tools and Analysis
 
-```bash
-# Clone with all submodules
-git clone --recursive https://github.com/meta-introspector/meta-introspector
-
-# Update all submodules
-git submodule update --recursive --remote
-
-# Run ecosystem analysis
-cd tools/analyzers && cargo run
-```
-
-## Documentation
-
-See `docs/` directory for:
-- Complete ecosystem analysis
-- Repository mapping and status
-- Development guidelines
-- Contribution workflow
-
-## Tools
-
-- **Crate Indexer**: Universal repository inventory
-- **Fork Mapper**: Name resolution and mapping  
-- **Auto Forker**: Automated dependency forking
-- **Rust Analyzer**: Dependency coverage analysis
-
----
-
-*This repository provides 100% visibility and management of the meta-introspector ecosystem.*
+See `tools/` directory for analysis scripts and utilities.
