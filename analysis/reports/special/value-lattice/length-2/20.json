@@ -1,0 +1,21 @@
+{
+  "value": "20",
+  "length": 2,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "./code_finder.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./code_finder.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    }
+  ]
+}

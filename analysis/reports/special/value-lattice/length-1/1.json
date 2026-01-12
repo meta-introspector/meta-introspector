@@ -1,0 +1,133 @@
+{
+  "value": "1",
+  "length": 1,
+  "total_usages": 18,
+  "usages": [
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./io_matrix_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./io_matrix_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./io_matrix_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./io_matrix_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./io_matrix_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./code_finder.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "integer_literal",
+      "complexity": 1
+    }
+  ]
+}

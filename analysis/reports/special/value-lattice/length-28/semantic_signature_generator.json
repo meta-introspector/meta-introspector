@@ -1,0 +1,21 @@
+{
+  "value": "semantic_signature_generator",
+  "length": 28,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "string_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "string_literal",
+      "complexity": 1
+    }
+  ]
+}

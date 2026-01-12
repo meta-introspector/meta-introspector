@@ -1,0 +1,14 @@
+{
+  "value": "100.0",
+  "length": 5,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "float_literal",
+      "complexity": 1
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "value": "github.com",
+  "length": 10,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "./code_finder.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "string_literal",
+      "complexity": 1
+    }
+  ]
+}

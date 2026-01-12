@@ -1,9 +1,7 @@
 # Ignore large generated files
-data/raw/queue_status.json
-data/raw/git_repos_by_date.txt
-data/raw/recent_repos_3months.txt
-data/raw/focused_queue.json
-data/processed/repo_results/
-worker.log
+data/
+logs/
+*.log
+all_commits.log
 target/
 Cargo.lock

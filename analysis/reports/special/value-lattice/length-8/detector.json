@@ -1,0 +1,14 @@
+{
+  "value": "detector",
+  "length": 8,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "string_literal",
+      "complexity": 1
+    }
+  ]
+}

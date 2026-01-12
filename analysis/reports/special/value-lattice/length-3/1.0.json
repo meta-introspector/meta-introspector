@@ -1,0 +1,28 @@
+{
+  "value": "1.0",
+  "length": 3,
+  "total_usages": 3,
+  "usages": [
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "float_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "float_literal",
+      "complexity": 1
+    },
+    {
+      "file_path": "./basic_block_analyzer.rs",
+      "line_number": null,
+      "context": "literal_usage",
+      "usage_type": "float_literal",
+      "complexity": 1
+    }
+  ]
+}

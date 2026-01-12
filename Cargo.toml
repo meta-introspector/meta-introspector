@@ -20,8 +20,12 @@ name = "focused_queue_builder"
 path = "focused_queue_builder.rs"
 
 [[bin]]
-name = "global_repo_indexer"
-path = "global_repo_indexer.rs"
+name = "commit_collector"
+path = "commit_collector.rs"
+
+[[bin]]
+name = "all_commits_collector"
+path = "all_commits_collector.rs"
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
