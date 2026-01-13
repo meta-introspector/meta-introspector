@@ -1,12 +1,12 @@
 {
   "total_files": 3805,
   "models": {
-    "bool": {
-      "instances": 3716,
-      "patterns": {}
-    },
     "String": {
       "instances": 370277,
+      "patterns": {}
+    },
+    "bool": {
+      "instances": 3716,
       "patterns": {}
     },
     "other": {

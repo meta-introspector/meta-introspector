@@ -147,6 +147,14 @@ path = "save_compressed_data.rs"
 [[bin]]
 name = "size_histogram"
 path = "size_histogram.rs"
+
+[[bin]]
+name = "data_registry"
+path = "data_registry.rs"
+
+[[bin]]
+name = "pipeline_runner"
+path = "pipeline_runner.rs"
 [[bin]]
 name = "crossbeam_repo_compressor"
 path = "crossbeam_repo_compressor.rs"
