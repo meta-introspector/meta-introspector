@@ -4,6 +4,18 @@ version = "0.1.0"
 edition = "2021"
 
 [[bin]]
+name = "personal_sovereignty"
+path = "personal_data_sovereignty.rs"
+
+[[bin]]
+name = "universal_client_node"
+path = "universal_client_node.rs"
+
+[[bin]]
+name = "emoji_registry_demo"
+path = "emoji_universal_registry.rs"
+
+[[bin]]
 name = "rust_as_a_service"
 path = "rust_as_a_service.rs"
 
@@ -69,6 +81,8 @@ axum = "0.7"
 tokio = { version = "1.0", features = ["full"] }
 libloading = "0.8"
 tempfile = "3.0"
+sha2 = "0.10"
+chrono = { version = "0.4", features = ["serde"] }
 [[bin]]
 name = "semantic_rust_compressor"
 path = "semantic_rust_compressor.rs"
