@@ -1,141 +1,257 @@
-// 🔧 BUILD.RS: Clean Semantic Layer for Transparent Telemetry
+// 🔥 UNIFIED BUILD.RS - MACRO PROCESSOR, NIX INTEGRATION, AND TELEMETRY
+// Combines: ldd2wrap + nix calls + crossbeam + telemetry_lib + macro processing
+
 use std::env;
 use std::fs;
 use std::path::Path;
+use std::sync::Arc;
+use crossbeam::channel;
+use std::thread;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+// Import our telemetry system
+#[path = "build_telemetry_lib.rs"]
+mod telemetry_lib;
+use telemetry_lib::telemetry_lib::*;
 
 fn main() {
-    println!("cargo:rerun-if-changed=build.rs");
+    println!("cargo:rerun-if-changed=src/lib.rs");
+    println!("cargo:rerun-if-changed=data/build_analysis/");
     
-    let out_dir = env::var("OUT_DIR").unwrap();
-    let telemetry_path = Path::new(&out_dir).join("telemetry_macros.rs");
+    let project = env::var("PROJECT_NAME").unwrap_or_else(|_| "build_system".to_string());
+    let timestamp = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
     
-    println!("🔧 Generating clean telemetry layer...");
+    println!("🔥 UNIFIED BUILD SYSTEM");
+    println!("📊 Project: {}", project);
+    println!("⏰ Timestamp: {}", timestamp);
     
-    let telemetry_code = generate_clean_telemetry();
-    fs::write(&telemetry_path, telemetry_code).unwrap();
+    // Create telemetry entry for build start
+    let entry = TelemetryEntry {
+        r#type: "build_start".to_string(),
+        message: "Unified build system starting".to_string(),
+        timestamp,
+        project: project.clone(),
+        binaries: 0,
+        libraries: 0,
+        symbols: 0,
+    };
     
-    println!("✅ Clean telemetry generated: {:?}", telemetry_path);
-}
-
-fn generate_clean_telemetry() -> String {
-    // Our own semantic layer - no format! strings needed
-    let mut code = String::new();
+    let log_file = get_log_file(&project, timestamp);
+    let _ = write_telemetry_entry(&entry, &log_file);
     
-    // Base telemetry infrastructure
-    code.push_str(r#"
-// 🔧 CLEAN TELEMETRY SEMANTIC LAYER
-use std::time::Instant;
-
-// Core telemetry capture
-macro_rules! telemetry_wrap {
-    ($name:literal, $call:expr) => {{
-        let start = Instant::now();
-        println!("🎯 CALL: {}", $name);
-        let result = $call;
-        let duration = start.elapsed().as_micros();
-        println!("📊 DONE: {} ({}μs)", $name, duration);
-        result
-    }};
-}
-
-// Memory operations
-macro_rules! malloc {
-    ($size:expr) => {{
-        telemetry_wrap!("malloc", unsafe { libc::malloc($size) })
-    }};
-}
-
-macro_rules! free {
-    ($ptr:expr) => {{
-        telemetry_wrap!("free", unsafe { libc::free($ptr) })
-    }};
-}
-
-// File operations  
-macro_rules! fopen {
-    ($path:expr, $mode:expr) => {{
-        telemetry_wrap!("fopen", unsafe { libc::fopen($path, $mode) })
-    }};
-}
-
-macro_rules! fclose {
-    ($file:expr) => {{
-        telemetry_wrap!("fclose", unsafe { libc::fclose($file) })
-    }};
-}
-
-// String operations
-macro_rules! printf {
-    ($fmt:expr) => {{
-        telemetry_wrap!("printf", unsafe { libc::printf($fmt) })
-    }};
-}
-
-// Socket operations
-macro_rules! socket {
-    ($domain:expr, $type:expr, $protocol:expr) => {{
-        telemetry_wrap!("socket", unsafe { libc::socket($domain, $type, $protocol) })
-    }};
-}
-
-// Thread operations
-macro_rules! pthread_create {
-    ($thread:expr, $attr:expr, $start_routine:expr, $arg:expr) => {{
-        telemetry_wrap!("pthread_create", unsafe { 
-            libc::pthread_create($thread, $attr, $start_routine, $arg) 
-        })
-    }};
-}
-
-"#);
-
-    // Add dynamic symbol wrappers using our clean approach
-    code.push_str(&generate_symbol_wrappers());
+    // Step 1: Process macros and autodiscovery
+    let discovered_data = process_autodiscovery(&project, timestamp);
     
-    code
+    // Step 2: Use crossbeam to process binaries/libraries in parallel
+    let wrappers = process_with_crossbeam(discovered_data, &project, timestamp);
+    
+    // Step 3: Generate unified wrapper code
+    generate_unified_wrappers(wrappers, &project, timestamp);
+    
+    // Final telemetry
+    let final_entry = TelemetryEntry {
+        r#type: "build_complete".to_string(),
+        message: "Unified build system completed".to_string(),
+        timestamp: SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs(),
+        project: project.clone(),
+        binaries: 0, // Will be filled by actual counts
+        libraries: 0,
+        symbols: 0,
+    };
+    
+    let _ = write_telemetry_entry(&final_entry, &log_file);
+    println!("✅ Unified build completed");
 }
 
-fn generate_symbol_wrappers() -> String {
-    let mut wrappers = String::new();
+#[derive(Debug, Clone)]
+struct DiscoveredData {
+    binaries: Vec<String>,
+    libraries: Vec<String>,
+    ldd_deps: Vec<String>,
+}
+
+fn process_autodiscovery(project: &str, timestamp: u64) -> DiscoveredData {
+    println!("🔍 Processing autodiscovery...");
     
-    // Common libc symbols we want to wrap
-    let symbols = vec![
-        "malloc", "free", "calloc", "realloc",
-        "fopen", "fclose", "fread", "fwrite",
-        "socket", "bind", "listen", "accept",
-        "pthread_create", "pthread_join", "pthread_mutex_lock"
-    ];
+    let mut data = DiscoveredData {
+        binaries: Vec::new(),
+        libraries: Vec::new(),
+        ldd_deps: Vec::new(),
+    };
     
-    wrappers.push_str("\n// 🔗 SYMBOL TELEMETRY WRAPPERS\n");
-    
-    for symbol in symbols {
-        wrappers.push_str(&create_symbol_wrapper(symbol));
+    // Load from existing strace data if available
+    if let Ok(binaries_json) = fs::read_to_string("data/build_analysis/real_build_1768332029_binaries.json") {
+        if let Ok(parsed) = serde_json::from_str::<serde_json::Value>(&binaries_json) {
+            if let Some(bins) = parsed["binaries"].as_array() {
+                for bin in bins {
+                    if let Some(path) = bin.as_str() {
+                        data.binaries.push(path.to_string());
+                    }
+                }
+            }
+        }
     }
     
-    wrappers.push_str(r#"
-// Master preload macro
-macro_rules! preload_telemetry {
-    () => {{
-        println!("🔧 Telemetry layer active - all calls wrapped!");
-        println!("📊 Memory, file, socket, thread operations monitored");
-    }};
+    // Load libraries
+    if let Ok(libs_json) = fs::read_to_string("data/build_analysis/real_build_1768332029_libraries.json") {
+        if let Ok(parsed) = serde_json::from_str::<serde_json::Value>(&libs_json) {
+            if let Some(libs) = parsed["libraries"].as_array() {
+                for lib in libs {
+                    if let Some(path) = lib.as_str() {
+                        if path.ends_with(".so") || path.contains(".so.") {
+                            data.libraries.push(path.to_string());
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // Log discovery results
+    let entry = TelemetryEntry {
+        r#type: "autodiscovery".to_string(),
+        message: format!("Discovered {} binaries, {} libraries", data.binaries.len(), data.libraries.len()),
+        timestamp,
+        project: project.to_string(),
+        binaries: data.binaries.len() as u32,
+        libraries: data.libraries.len() as u32,
+        symbols: 0,
+    };
+    
+    let log_file = get_log_file(project, timestamp);
+    let _ = write_telemetry_entry(&entry, &log_file);
+    
+    data
 }
 
-"#);
-    
-    wrappers
+#[derive(Debug)]
+struct WrapperResult {
+    name: String,
+    symbols: Vec<String>,
+    wrapper_code: String,
 }
 
-fn create_symbol_wrapper(symbol: &str) -> String {
-    let macro_name = format!("{}_telemetry", symbol);
+fn process_with_crossbeam(data: DiscoveredData, project: &str, timestamp: u64) -> Vec<WrapperResult> {
+    println!("🚀 Processing with crossbeam...");
     
-    format!(r#"
-// Wrapper for {}
-macro_rules! {} {{
-    ($($args:expr),*) => {{{{
-        telemetry_wrap!("{}", unsafe {{ libc::{}($($args),*) }})
-    }}}};
-}}
+    let (sender, receiver) = channel::bounded(100);
+    let results = Arc::new(std::sync::Mutex::new(Vec::new()));
+    
+    // Spawn worker threads
+    let num_workers = 4;
+    let mut handles = Vec::new();
+    
+    for worker_id in 0..num_workers {
+        let receiver = receiver.clone();
+        let results = Arc::clone(&results);
+        let project = project.to_string();
+        
+        let handle = thread::spawn(move || {
+            while let Ok(task) = receiver.recv() {
+                match task {
+                    Task::ProcessBinary(path) => {
+                        if let Some(result) = process_binary_task(&path, &project, timestamp, worker_id) {
+                            results.lock().unwrap().push(result);
+                        }
+                    }
+                    Task::ProcessLibrary(path) => {
+                        if let Some(result) = process_library_task(&path, &project, timestamp, worker_id) {
+                            results.lock().unwrap().push(result);
+                        }
+                    }
+                }
+            }
+        });
+        handles.push(handle);
+    }
+    
+    // Send tasks
+    for binary in &data.binaries {
+        let _ = sender.send(Task::ProcessBinary(binary.clone()));
+    }
+    
+    for library in &data.libraries {
+        let _ = sender.send(Task::ProcessLibrary(library.clone()));
+    }
+    
+    // Close sender and wait for workers
+    drop(sender);
+    for handle in handles {
+        let _ = handle.join();
+    }
+    
+    // Return results
+    Arc::try_unwrap(results).unwrap().into_inner().unwrap()
+}
 
-"#, symbol, macro_name, symbol, symbol)
+#[derive(Debug)]
+enum Task {
+    ProcessBinary(String),
+    ProcessLibrary(String),
+}
+
+fn process_binary_task(path: &str, project: &str, timestamp: u64, worker_id: usize) -> Option<WrapperResult> {
+    // This is where ldd2wrap logic goes - extract symbols from binary
+    println!("🔧 Worker {}: Processing binary {}", worker_id, path);
+    
+    // Placeholder - would use goblin to extract symbols
+    Some(WrapperResult {
+        name: format!("binary_{}", Path::new(path).file_name()?.to_str()?),
+        symbols: vec!["main".to_string(), "init".to_string()],
+        wrapper_code: format!("// Wrapper for {}\n", path),
+    })
+}
+
+fn process_library_task(path: &str, project: &str, timestamp: u64, worker_id: usize) -> Option<WrapperResult> {
+    // This is where library symbol extraction goes
+    println!("📚 Worker {}: Processing library {}", worker_id, path);
+    
+    // Placeholder - would use goblin to extract symbols
+    Some(WrapperResult {
+        name: format!("lib_{}", Path::new(path).file_stem()?.to_str()?),
+        symbols: vec!["malloc".to_string(), "free".to_string()],
+        wrapper_code: format!("// Wrapper for {}\n", path),
+    })
+}
+
+fn generate_unified_wrappers(wrappers: Vec<WrapperResult>, project: &str, timestamp: u64) {
+    println!("📝 Generating unified wrappers...");
+    
+    let out_dir = env::var("OUT_DIR").unwrap();
+    let wrapper_file = Path::new(&out_dir).join("unified_wrappers.rs");
+    
+    let mut content = String::new();
+    content.push_str("// 🔥 UNIFIED WRAPPERS - Generated by build.rs\n\n");
+    
+    // Generate macro that includes all wrappers
+    content.push_str("#[macro_export]\n");
+    content.push_str("macro_rules! init_all_call_wrappers {\n");
+    content.push_str("    () => {\n");
+    content.push_str(&format!("        eprintln!(\"🚀 Initialized {} wrappers\");\n", wrappers.len()));
+    
+    for wrapper in &wrappers {
+        content.push_str(&format!("        eprintln!(\"  - {}: {} symbols\");\n", 
+                                 wrapper.name, wrapper.symbols.len()));
+    }
+    
+    content.push_str("    };\n");
+    content.push_str("}\n");
+    
+    fs::write(&wrapper_file, content).expect("Failed to write unified wrappers");
+    
+    // Log generation results
+    let entry = TelemetryEntry {
+        r#type: "wrapper_generation".to_string(),
+        message: format!("Generated {} wrappers", wrappers.len()),
+        timestamp,
+        project: project.to_string(),
+        binaries: wrappers.iter().filter(|w| w.name.starts_with("binary_")).count() as u32,
+        libraries: wrappers.iter().filter(|w| w.name.starts_with("lib_")).count() as u32,
+        symbols: wrappers.iter().map(|w| w.symbols.len()).sum::<usize>() as u32,
+    };
+    
+    let log_file = get_log_file(project, timestamp);
+    let _ = write_telemetry_entry(&entry, &log_file);
+    
+    println!("✅ Generated unified wrappers at: {:?}", wrapper_file);
 }

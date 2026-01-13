@@ -1,0 +1,3 @@
+INIT[1]:rust_preload_loaded
+🔥 LD_PRELOAD TELEMETRY ACTIVE -> "/mnt/data1/meta-introspector/data/telemetry/rust_nightly_1768333719.jsonl"
+📊 Real build data: 32 binaries, 71 libraries, 1061 symbols

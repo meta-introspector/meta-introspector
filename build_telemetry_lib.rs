@@ -56,13 +56,6 @@ pub mod telemetry_lib {
         Ok(())
     }
     
-    #[derive(Debug, Clone)]
-    struct CallStat {
-        count: u64,
-        total_duration_us: u64,
-        binary: String,
-    }
-    
     pub fn preconditions() {
         println!("🔧 Checking preconditions...");
         unsafe {

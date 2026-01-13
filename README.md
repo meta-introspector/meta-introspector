@@ -2,9 +2,40 @@
 
 Comprehensive analysis of 57,106 domains across 33.9M files with advanced semantic analysis and parallel processing systems.
 
-## 🔥 Latest: Structured Telemetry with Goblin ELF Parsing
+## 🔥 Latest: Real Build Analysis with Complete Strace Capture
 
-**Breakthrough Achievement**: Complete **structured telemetry logging** with **goblin-based symbol extraction** and **script wrapper following** - capturing real symbols from actual binaries.
+**Breakthrough Achievement**: Complete **real nix build analysis** with **structured data capture** - discovered actual build complexity vs telemetry assumptions.
+
+### 🚀 Real Build Discovery
+
+#### **Actual Build Complexity** 📊
+- **32 binaries executed** (vs 14 in old telemetry - 2.3x more!)
+- **91 .so files opened** during build process
+- **71 ldd dependencies** from executed binaries
+- **92 total unique libraries** (vs 39 in telemetry - 2.4x more!)
+
+#### **Structured Data Capture** 💾
+**Session**: `real_build_1768332029`
+**Location**: `/mnt/data1/meta-introspector/data/build_analysis/`
+
+**Data Files**:
+- `real_build_1768332029_binaries.json` - All 32 executed binaries
+- `real_build_1768332029_libraries.json` - All 91 opened .so files  
+- `real_build_1768332029_ldd_deps.json` - All 71 ldd dependencies
+- `real_build_1768332029_analysis.json` - Combined analysis summary
+- `real_build_1768332029_strace.log` - Raw strace output (5.6MB)
+
+#### **Key Discovery** 🎯
+The telemetry system was **severely underestimating** build complexity:
+- **Old telemetry**: 14 binaries, 39 libraries (from cached frontrun results)
+- **Real build**: 32 binaries, 92 libraries (from live strace capture)
+- **Gap**: 2.3x more binaries, 2.4x more libraries than expected
+
+### 🎯 Next Phase: Telemetry System Update
+
+**Action Required**: Update `ldd2wrap_all_calls.rs` to use real build data
+**Input**: `real_build_1768332029_binaries.json` (32 real binaries)
+**Expected Result**: Accurate telemetry matching strace captures
 
 ### 🚀 Structured Telemetry System
 
