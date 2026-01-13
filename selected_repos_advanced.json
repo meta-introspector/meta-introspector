@@ -1,0 +1,34 @@
+[
+  {
+    "name": "tikv",
+    "url": "https://github.com/tikv/tikv",
+    "stars": 14000,
+    "rust_percentage": 85.0,
+    "last_commit_days": 1,
+    "tier": "Advanced"
+  },
+  {
+    "name": "servo",
+    "url": "https://github.com/servo/servo",
+    "stars": 26000,
+    "rust_percentage": 78.0,
+    "last_commit_days": 3,
+    "tier": "Advanced"
+  },
+  {
+    "name": "swc",
+    "url": "https://github.com/swc-project/swc",
+    "stars": 30000,
+    "rust_percentage": 82.0,
+    "last_commit_days": 1,
+    "tier": "Advanced"
+  },
+  {
+    "name": "polkadot",
+    "url": "https://github.com/paritytech/polkadot",
+    "stars": 7000,
+    "rust_percentage": 88.0,
+    "last_commit_days": 1,
+    "tier": "Advanced"
+  }
+]
