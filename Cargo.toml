@@ -4,6 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [[bin]]
+name = "monolithic_bootstrap"
+path = "monolithic_bootstrap.rs"
+
+[[bin]]
 name = "personal_sovereignty"
 path = "personal_data_sovereignty.rs"
 
