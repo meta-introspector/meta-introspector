@@ -1,0 +1,12 @@
+{
+  "value": " is checked to be within the valid range of a transmuted type.",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " takes up 8 bytes, with less space for the length, parent and context. The",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

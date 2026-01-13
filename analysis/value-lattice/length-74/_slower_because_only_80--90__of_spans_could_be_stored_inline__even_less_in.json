@@ -1,0 +1,12 @@
+{
+  "value": " slower because only 80--90% of spans could be stored inline (even less in",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Not all files can be memory mapped, and memory mapping small files can be slower than",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

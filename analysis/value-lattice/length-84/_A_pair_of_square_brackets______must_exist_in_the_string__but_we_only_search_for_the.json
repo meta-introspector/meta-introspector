@@ -1,0 +1,12 @@
+{
+  "value": " A pair of square brackets `[]` must exist in the string, but we only search for the",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

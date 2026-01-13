@@ -1,0 +1,12 @@
+{
+  "value": " Each expansion should have an associated expansion data, but sometimes there's a delay",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

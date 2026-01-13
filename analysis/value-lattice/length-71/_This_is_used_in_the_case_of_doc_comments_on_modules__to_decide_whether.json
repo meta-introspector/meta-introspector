@@ -1,0 +1,12 @@
+{
+  "value": " This is used in the case of doc comments on modules, to decide whether",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

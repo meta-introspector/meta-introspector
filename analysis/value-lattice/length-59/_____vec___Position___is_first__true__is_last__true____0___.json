@@ -1,0 +1,12 @@
+{
+  "value": "     vec![(Position { is_first: true, is_last: true }, 0)],",
+  "length": 59,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

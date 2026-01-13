@@ -1,0 +1,12 @@
+{
+  "value": " Network byte order is defined by [RFC 1700][1] to be big-endian, and is",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

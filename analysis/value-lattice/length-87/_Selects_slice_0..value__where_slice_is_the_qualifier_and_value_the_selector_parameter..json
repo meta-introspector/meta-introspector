@@ -1,0 +1,12 @@
+{
+  "value": " Selects slice[0..value] where slice is the qualifier and value the selector parameter.",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

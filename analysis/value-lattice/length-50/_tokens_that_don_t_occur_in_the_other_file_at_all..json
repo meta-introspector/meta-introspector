@@ -1,0 +1,12 @@
+{
+  "value": " tokens that don't occur in the other file at all.",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

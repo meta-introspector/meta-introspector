@@ -1,0 +1,12 @@
+{
+  "value": " i.e. the result of `Ord::cmp` is not influenced by encoding",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

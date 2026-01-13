@@ -1,0 +1,12 @@
+{
+  "value": " Values are casts into their respective type, the literal `300_u8` will have a value",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

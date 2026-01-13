@@ -1,0 +1,12 @@
+{
+  "value": " we add to the previous shadow value. To not surprise users, we picked different names.",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

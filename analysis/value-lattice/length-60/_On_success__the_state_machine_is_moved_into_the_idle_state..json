@@ -1,0 +1,12 @@
+{
+  "value": " On success, the state machine is moved into the idle state.",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

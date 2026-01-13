@@ -1,0 +1,12 @@
+{
+  "value": " Helper struct to traverse the AST and collect statistics",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

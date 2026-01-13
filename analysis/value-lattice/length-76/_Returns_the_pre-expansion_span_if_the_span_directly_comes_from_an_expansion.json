@@ -1,0 +1,12 @@
+{
+  "value": " Returns the pre-expansion span if the span directly comes from an expansion",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

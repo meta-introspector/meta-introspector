@@ -1,0 +1,12 @@
+{
+  "value": " in this case including both `ok` *and* `bad`:",
+  "length": 46,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

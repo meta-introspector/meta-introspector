@@ -1,0 +1,12 @@
+{
+  "value": " Denotes ways that two types, t1 and t2, can be related.",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

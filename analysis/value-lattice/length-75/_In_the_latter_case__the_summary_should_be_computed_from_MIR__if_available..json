@@ -1,0 +1,12 @@
+{
+  "value": " In the latter case, the summary should be computed from MIR, if available.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

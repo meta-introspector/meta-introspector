@@ -1,0 +1,12 @@
+{
+  "value": " The item was expanded from a glob delegation item.",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Maps an `Either<&mut L, &mut R>` to an `Either<L, R>` by cloning the contents of",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

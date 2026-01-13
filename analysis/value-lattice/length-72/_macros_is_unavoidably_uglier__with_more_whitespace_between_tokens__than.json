@@ -1,0 +1,12 @@
+{
+  "value": " macros is unavoidably uglier (with more whitespace between tokens) than",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

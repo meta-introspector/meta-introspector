@@ -1,0 +1,12 @@
+{
+  "value": " `2 + 3`. This expansion has three layers, first the root, which contains the",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

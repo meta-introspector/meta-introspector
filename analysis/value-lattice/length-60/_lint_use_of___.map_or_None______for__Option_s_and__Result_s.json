@@ -1,0 +1,12 @@
+{
+  "value": " lint use of `_.map_or(None, _)` for `Option`s and `Result`s",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

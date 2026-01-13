@@ -1,0 +1,12 @@
+{
+  "value": " [IEEE P1363]: https://en.wikipedia.org/wiki/IEEE_P1363",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " \"shrink\", we only perform this subtraction of length difference if one of the words is not",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

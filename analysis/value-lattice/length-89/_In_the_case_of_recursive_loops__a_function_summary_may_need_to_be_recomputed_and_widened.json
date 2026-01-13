@@ -1,0 +1,12 @@
+{
+  "value": " In the case of recursive loops, a function summary may need to be recomputed and widened",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

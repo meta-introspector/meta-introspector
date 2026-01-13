@@ -1,0 +1,12 @@
+{
+  "value": " When invoked on a [`Result`] type, the error of the result will be",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

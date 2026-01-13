@@ -1,0 +1,12 @@
+{
+  "value": " For the most part, comments specific to the implementation are in the",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

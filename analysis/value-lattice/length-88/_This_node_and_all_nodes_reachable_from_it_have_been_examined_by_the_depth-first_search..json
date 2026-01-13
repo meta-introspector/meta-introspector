@@ -1,0 +1,12 @@
+{
+  "value": " This node and all nodes reachable from it have been examined by the depth-first search.",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

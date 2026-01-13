@@ -1,0 +1,12 @@
+{
+  "value": " The raw, un-split format string literal, with no escaping or processing.",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

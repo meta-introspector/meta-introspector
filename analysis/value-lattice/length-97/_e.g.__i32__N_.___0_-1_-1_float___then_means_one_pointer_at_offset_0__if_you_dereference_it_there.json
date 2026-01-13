@@ -1,0 +1,12 @@
+{
+  "value": " e.g. [i32; N]. `{0:-1:-1 float}` then means one pointer at offset 0, if you dereference it there",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

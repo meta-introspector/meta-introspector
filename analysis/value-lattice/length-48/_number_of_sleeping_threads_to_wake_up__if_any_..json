@@ -1,0 +1,12 @@
+{
+  "value": " number of sleeping threads to wake up (if any).",
+  "length": 48,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "24.0",
+  "length": 4,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "float_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Instantiates a new decoder for this encoding with BOM sniffing enabled.",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

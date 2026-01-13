@@ -1,0 +1,12 @@
+{
+  "value": " The concrete semantics for tags of an expression `E` is a set of tags collected from `E`'s",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

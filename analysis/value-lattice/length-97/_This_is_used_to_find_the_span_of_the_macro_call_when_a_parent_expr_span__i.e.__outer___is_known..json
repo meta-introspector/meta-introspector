@@ -1,0 +1,12 @@
+{
+  "value": " This is used to find the span of the macro call when a parent expr span, i.e. `outer`, is known.",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

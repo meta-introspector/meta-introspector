@@ -1,0 +1,12 @@
+{
+  "value": " to get a value from a [`Buf`] with one",
+  "length": 39,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

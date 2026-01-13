@@ -1,0 +1,12 @@
+{
+  "value": " In this case, the closure will be passed a `&mut EventArgRecorder`, to help with recording",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

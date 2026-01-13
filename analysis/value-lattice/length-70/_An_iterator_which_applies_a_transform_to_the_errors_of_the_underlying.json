@@ -1,0 +1,12 @@
+{
+  "value": " An iterator which applies a transform to the errors of the underlying",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

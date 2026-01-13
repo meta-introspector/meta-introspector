@@ -1,0 +1,12 @@
+{
+  "value": " Note: This may call the function multiple times if the value has been changed from other threads in",
+  "length": 100,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " box drawing characters as code page 437, so it can be used for decoding",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

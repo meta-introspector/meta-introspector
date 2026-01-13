@@ -1,0 +1,12 @@
+{
+  "value": " [`from`]: https://doc.rust-lang.org/nightly/std/convert/trait.From.html#tymethod.from",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

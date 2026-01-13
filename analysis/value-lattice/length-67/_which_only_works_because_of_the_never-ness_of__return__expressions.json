@@ -1,0 +1,12 @@
+{
+  "value": " which only works because of the never-ness of `return` expressions",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

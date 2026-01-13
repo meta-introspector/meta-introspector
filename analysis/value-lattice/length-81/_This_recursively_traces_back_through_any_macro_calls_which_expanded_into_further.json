@@ -1,0 +1,12 @@
+{
+  "value": " This recursively traces back through any macro calls which expanded into further",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "this `match` arm has a differing case than its expression",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Specifies location for graph to be output as Datalog input relations.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

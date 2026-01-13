@@ -1,0 +1,12 @@
+{
+  "value": " end up with the same [`StableCrateId`]. The compiler will check for such",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

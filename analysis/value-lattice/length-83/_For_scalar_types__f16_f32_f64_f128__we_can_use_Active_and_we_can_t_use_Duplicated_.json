@@ -1,0 +1,12 @@
+{
+  "value": " For scalar types (f16/f32/f64/f128) we can use Active and we can't use Duplicated,",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

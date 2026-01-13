@@ -1,0 +1,12 @@
+{
+  "value": " The purpose of `Frozen` is to make a value immutable for the sake of defensive programming. For example,",
+  "length": 105,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

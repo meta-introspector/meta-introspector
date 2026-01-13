@@ -1,0 +1,12 @@
+{
+  "value": " Get a reference to the error's typed kind. If this contains an uncategorized",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

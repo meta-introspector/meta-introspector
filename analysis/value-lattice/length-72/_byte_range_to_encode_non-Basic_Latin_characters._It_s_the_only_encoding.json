@@ -1,0 +1,12 @@
+{
+  "value": " byte range to encode non-Basic Latin characters. It's the only encoding",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

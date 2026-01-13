@@ -1,0 +1,12 @@
+{
+  "value": " Form C as noted in [RFC 7617 section",
+  "length": 37,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Moves a list of directories and files to another place recursively, with",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

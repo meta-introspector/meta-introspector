@@ -1,0 +1,12 @@
+{
+  "value": " Returns an expression with (when possible) *one* outer brace removed",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

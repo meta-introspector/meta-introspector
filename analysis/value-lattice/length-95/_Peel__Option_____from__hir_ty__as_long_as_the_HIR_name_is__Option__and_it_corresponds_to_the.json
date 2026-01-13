@@ -1,0 +1,12 @@
+{
+  "value": " Peel `Option<…>` from `hir_ty` as long as the HIR name is `Option` and it corresponds to the",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

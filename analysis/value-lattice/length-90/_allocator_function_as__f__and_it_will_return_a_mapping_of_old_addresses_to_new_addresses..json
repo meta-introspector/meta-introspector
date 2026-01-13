@@ -1,0 +1,12 @@
+{
+  "value": " allocator function as `f` and it will return a mapping of old addresses to new addresses.",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

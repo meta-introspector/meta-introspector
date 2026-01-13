@@ -1,0 +1,12 @@
+{
+  "value": " this for ADTs with more than one variant. The usize value is the ordinal of the variant.",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

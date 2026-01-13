@@ -1,0 +1,12 @@
+{
+  "value": " A semicolon that needs to be removed. Used to create a closure for `insert_with`.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

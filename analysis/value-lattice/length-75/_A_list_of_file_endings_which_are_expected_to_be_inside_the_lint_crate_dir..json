@@ -1,0 +1,12 @@
+{
+  "value": " A list of file endings which are expected to be inside the lint crate dir.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

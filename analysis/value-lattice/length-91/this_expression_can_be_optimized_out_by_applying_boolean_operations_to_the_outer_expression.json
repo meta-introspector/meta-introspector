@@ -1,0 +1,12 @@
+{
+  "value": "this expression can be optimized out by applying boolean operations to the outer expression",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " an error is returned from a function where it shouldn't be returned.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

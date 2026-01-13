@@ -1,0 +1,12 @@
+{
+  "value": " The `gnuplot` command returned invalid utf-8",
+  "length": 45,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

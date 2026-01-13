@@ -1,0 +1,12 @@
+{
+  "value": " Will it be enforced/strengthened? (0.0 = deprecated, 1.0 = core feature)",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " A heuristic to tell whether an expression's type can be determined purely from its",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

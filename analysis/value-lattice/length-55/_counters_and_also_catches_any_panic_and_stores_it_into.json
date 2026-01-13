@@ -1,0 +1,12 @@
+{
+  "value": " counters and also catches any panic and stores it into",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

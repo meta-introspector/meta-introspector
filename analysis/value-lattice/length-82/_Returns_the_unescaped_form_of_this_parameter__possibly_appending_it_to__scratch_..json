@@ -1,0 +1,12 @@
+{
+  "value": " Returns the unescaped form of this parameter, possibly appending it to `scratch`.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

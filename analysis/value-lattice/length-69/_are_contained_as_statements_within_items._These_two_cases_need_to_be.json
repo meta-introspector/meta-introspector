@@ -1,0 +1,12 @@
+{
+  "value": " are contained as statements within items. These two cases need to be",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

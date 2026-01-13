@@ -1,0 +1,12 @@
+{
+  "value": " opens a file with a known index, eg if direct descriptors are used with open or accept,",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " The underlying bytes that stores the path, 2 nibbles per byte. If the number of nibbles is",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

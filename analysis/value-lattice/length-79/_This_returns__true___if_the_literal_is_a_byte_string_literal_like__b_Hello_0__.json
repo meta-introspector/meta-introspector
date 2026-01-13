@@ -1,0 +1,12 @@
+{
+  "value": " This returns `true`, if the literal is a byte string literal like `b\"Hello\\0\"`",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

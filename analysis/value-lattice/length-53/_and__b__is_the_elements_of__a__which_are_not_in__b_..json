@@ -1,0 +1,12 @@
+{
+  "value": " and `b` is the elements of `a` which are not in `b`.",
+  "length": 53,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

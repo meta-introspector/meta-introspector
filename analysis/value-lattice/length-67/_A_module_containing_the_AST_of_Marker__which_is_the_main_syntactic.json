@@ -1,0 +1,12 @@
+{
+  "value": " A module containing the AST of Marker, which is the main syntactic",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

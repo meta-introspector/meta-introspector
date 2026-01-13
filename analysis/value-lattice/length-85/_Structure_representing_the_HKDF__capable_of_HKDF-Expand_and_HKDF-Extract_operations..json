@@ -1,0 +1,12 @@
+{
+  "value": " Structure representing the HKDF, capable of HKDF-Expand and HKDF-Extract operations.",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " See [`PathBuf::push`] for more details on what it means to adjoin a path.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

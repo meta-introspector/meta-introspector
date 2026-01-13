@@ -1,0 +1,12 @@
+{
+  "value": " macro, which inturn expands into the `4 + 4` expression.",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

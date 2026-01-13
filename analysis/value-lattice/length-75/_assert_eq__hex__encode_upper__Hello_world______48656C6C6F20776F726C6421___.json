@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(hex::encode_upper(\"Hello world!\"), \"48656C6C6F20776F726C6421\");",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

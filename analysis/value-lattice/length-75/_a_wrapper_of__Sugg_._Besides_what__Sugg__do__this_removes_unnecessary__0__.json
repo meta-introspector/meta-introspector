@@ -1,0 +1,12 @@
+{
+  "value": " a wrapper of `Sugg`. Besides what `Sugg` do, this removes unnecessary `0`;",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

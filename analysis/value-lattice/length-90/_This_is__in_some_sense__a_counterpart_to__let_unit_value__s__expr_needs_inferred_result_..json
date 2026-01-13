@@ -1,0 +1,12 @@
+{
+  "value": " This is, in some sense, a counterpart to `let_unit_value`'s `expr_needs_inferred_result`.",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

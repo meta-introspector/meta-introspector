@@ -1,0 +1,12 @@
+{
+  "value": " sign behavior and with the changes to two-byte sequences made in GB18030-2022.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

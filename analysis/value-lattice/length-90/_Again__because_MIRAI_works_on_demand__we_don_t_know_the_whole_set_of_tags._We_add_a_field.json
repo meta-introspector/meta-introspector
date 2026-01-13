@@ -1,0 +1,12 @@
+{
+  "value": " Again, because MIRAI works on demand, we don't know the whole set of tags. We add a field",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

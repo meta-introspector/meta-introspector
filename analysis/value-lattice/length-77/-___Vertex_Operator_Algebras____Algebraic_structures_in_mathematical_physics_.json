@@ -1,0 +1,12 @@
+{
+  "value": "- **Vertex Operator Algebras**: Algebraic structures in mathematical physics\n",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

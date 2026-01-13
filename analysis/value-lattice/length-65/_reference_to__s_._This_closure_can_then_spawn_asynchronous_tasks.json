@@ -1,0 +1,17 @@
+{
+  "value": " reference to `s`. This closure can then spawn asynchronous tasks",
+  "length": 65,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

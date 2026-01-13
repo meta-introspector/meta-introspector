@@ -1,0 +1,12 @@
+{
+  "value": " Given a left-hand expression that occurs in a Path that is in a root position, look for an embedded",
+  "length": 100,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

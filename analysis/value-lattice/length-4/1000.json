@@ -1,0 +1,137 @@
+{
+  "value": "1000",
+  "length": 4,
+  "total_usages": 26,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    }
+  ]
+}

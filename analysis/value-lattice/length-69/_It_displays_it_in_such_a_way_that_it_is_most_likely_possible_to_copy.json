@@ -1,0 +1,12 @@
+{
+  "value": " It displays it in such a way that it is most likely possible to copy",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

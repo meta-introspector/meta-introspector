@@ -1,0 +1,12 @@
+{
+  "value": " This method is indeed not very stable and may break on changes to the compilation",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "cache_on_disk_if",
+  "length": 16,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

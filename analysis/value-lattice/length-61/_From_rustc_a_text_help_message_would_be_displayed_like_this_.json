@@ -1,0 +1,12 @@
+{
+  "value": " From rustc a text help message would be displayed like this:",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

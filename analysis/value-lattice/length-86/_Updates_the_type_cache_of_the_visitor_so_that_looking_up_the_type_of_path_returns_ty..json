@@ -1,0 +1,12 @@
+{
+  "value": " Updates the type cache of the visitor so that looking up the type of path returns ty.",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

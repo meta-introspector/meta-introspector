@@ -1,0 +1,12 @@
+{
+  "value": " This struct is the interface used by lint drivers to load lint crates, pass",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

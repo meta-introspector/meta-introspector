@@ -1,0 +1,12 @@
+{
+  "value": " Select the collection element with the index specified by the abstract value.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

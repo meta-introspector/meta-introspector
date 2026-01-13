@@ -1,0 +1,22 @@
+{
+  "value": " assert_eq!(Some((2, 3, 4)), it.next());",
+  "length": 40,
+  "total_usages": 3,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

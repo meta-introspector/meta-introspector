@@ -1,0 +1,12 @@
+{
+  "value": "this may lead to an infinite or to a never running loop",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

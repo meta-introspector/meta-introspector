@@ -1,0 +1,12 @@
+{
+  "value": " If `k` is greater than the length of the input iterator, the resultant",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

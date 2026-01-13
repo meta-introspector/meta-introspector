@@ -1,0 +1,12 @@
+{
+  "value": " The value as a `u128`. Higher int literals are not allowed by rusts syntax.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

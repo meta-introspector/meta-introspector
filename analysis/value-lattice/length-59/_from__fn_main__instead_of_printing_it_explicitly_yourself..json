@@ -1,0 +1,12 @@
+{
+  "value": " from `fn main` instead of printing it explicitly yourself.",
+  "length": 59,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

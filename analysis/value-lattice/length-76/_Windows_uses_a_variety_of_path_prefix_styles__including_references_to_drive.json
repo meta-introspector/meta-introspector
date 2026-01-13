@@ -1,0 +1,12 @@
+{
+  "value": " Windows uses a variety of path prefix styles, including references to drive",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

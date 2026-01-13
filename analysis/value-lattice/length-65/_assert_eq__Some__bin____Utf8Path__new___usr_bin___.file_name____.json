@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(Some(\"bin\"), Utf8Path::new(\"/usr/bin/\").file_name());",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

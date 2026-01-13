@@ -1,0 +1,12 @@
+{
+  "value": " the case for items declared as `pub(crate)`. Items declared in the root",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

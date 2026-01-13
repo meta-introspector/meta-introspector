@@ -1,0 +1,12 @@
+{
+  "value": " if the information is wrong, that can cause UB, but if the information is absent,",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

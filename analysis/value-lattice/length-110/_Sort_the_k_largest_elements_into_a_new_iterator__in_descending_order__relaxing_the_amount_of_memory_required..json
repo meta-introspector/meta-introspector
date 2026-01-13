@@ -1,0 +1,12 @@
+{
+  "value": " Sort the k largest elements into a new iterator, in descending order, relaxing the amount of memory required.",
+  "length": 110,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

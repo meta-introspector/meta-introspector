@@ -1,0 +1,12 @@
+{
+  "value": " * The entire file name if the file name begins with `.` and has no other `.`s within;",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

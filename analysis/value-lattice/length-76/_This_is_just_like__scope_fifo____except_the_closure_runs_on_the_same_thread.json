@@ -1,0 +1,12 @@
+{
+  "value": " This is just like `scope_fifo()` except the closure runs on the same thread",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

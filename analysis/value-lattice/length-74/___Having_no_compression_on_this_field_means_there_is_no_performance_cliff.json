@@ -1,0 +1,12 @@
+{
+  "value": "   Having no compression on this field means there is no performance cliff",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

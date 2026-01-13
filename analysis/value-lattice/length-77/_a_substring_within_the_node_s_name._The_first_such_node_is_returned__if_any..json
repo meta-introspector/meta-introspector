@@ -1,0 +1,12 @@
+{
+  "value": " a substring within the node's name. The first such node is returned, if any.",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " A raw borrow, `&raw const $expr` or `&raw mut $expr`.",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

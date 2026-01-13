@@ -1,0 +1,12 @@
+{
+  "value": " The \"sleep state\" for an individual worker.",
+  "length": 44,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

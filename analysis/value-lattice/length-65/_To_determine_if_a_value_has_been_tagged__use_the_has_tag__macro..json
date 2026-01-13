@@ -1,0 +1,12 @@
+{
+  "value": " To determine if a value has been tagged, use the has_tag! macro.",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

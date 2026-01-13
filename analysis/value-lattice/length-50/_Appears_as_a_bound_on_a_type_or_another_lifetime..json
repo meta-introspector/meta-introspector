@@ -1,0 +1,12 @@
+{
+  "value": " Appears as a bound on a type or another lifetime.",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

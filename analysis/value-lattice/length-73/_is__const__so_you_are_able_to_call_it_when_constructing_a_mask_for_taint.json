@@ -1,0 +1,12 @@
+{
+  "value": " is `const` so you are able to call it when constructing a mask for taint",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

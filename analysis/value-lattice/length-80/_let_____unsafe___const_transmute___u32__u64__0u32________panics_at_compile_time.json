@@ -1,0 +1,12 @@
+{
+  "value": " let _ = unsafe { const_transmute::<u32, u64>(0u32) }; // panics at compile time",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

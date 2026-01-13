@@ -1,0 +1,12 @@
+{
+  "value": " Applies a function over the elements of the iterator in reverse, producing a single final value.",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

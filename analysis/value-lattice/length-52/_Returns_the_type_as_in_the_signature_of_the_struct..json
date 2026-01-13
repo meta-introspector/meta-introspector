@@ -1,0 +1,12 @@
+{
+  "value": " Returns the type as in the signature of the struct.",
+  "length": 52,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

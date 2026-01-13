@@ -1,0 +1,12 @@
+{
+  "value": " E.g., `use foo;`, `use foo::bar;` or `use foo::bar as FooBar;`.",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Constant that can be added to add one to the JEC.",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

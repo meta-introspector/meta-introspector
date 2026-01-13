@@ -1,0 +1,12 @@
+{
+  "value": " Gets the offset of the next token in the source string, or the string's length if",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " recorded in the index so that git_checkout can produce a merge file with",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

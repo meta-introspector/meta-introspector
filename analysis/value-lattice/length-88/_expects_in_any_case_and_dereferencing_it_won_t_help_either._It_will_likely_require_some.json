@@ -1,0 +1,12 @@
+{
+  "value": " expects in any case and dereferencing it won't help either. It will likely require some",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

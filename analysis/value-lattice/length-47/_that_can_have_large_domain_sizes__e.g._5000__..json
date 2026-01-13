@@ -1,0 +1,12 @@
+{
+  "value": " that can have large domain sizes (e.g. 5000+).",
+  "length": 47,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

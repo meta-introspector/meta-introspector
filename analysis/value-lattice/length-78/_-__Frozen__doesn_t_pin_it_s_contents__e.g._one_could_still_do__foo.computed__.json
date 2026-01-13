@@ -1,0 +1,12 @@
+{
+  "value": " - `Frozen` doesn't pin it's contents (e.g. one could still do `foo.computed =",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

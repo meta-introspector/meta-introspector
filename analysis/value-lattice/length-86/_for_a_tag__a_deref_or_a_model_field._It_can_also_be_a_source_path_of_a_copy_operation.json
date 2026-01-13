@@ -1,0 +1,12 @@
+{
+  "value": " for a tag, a deref or a model field. It can also be a source path of a copy operation",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

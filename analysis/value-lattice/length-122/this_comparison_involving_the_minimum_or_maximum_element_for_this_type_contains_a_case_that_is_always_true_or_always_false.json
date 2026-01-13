@@ -1,0 +1,12 @@
+{
+  "value": "this comparison involving the minimum or maximum element for this type contains a case that is always true or always false",
+  "length": 122,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

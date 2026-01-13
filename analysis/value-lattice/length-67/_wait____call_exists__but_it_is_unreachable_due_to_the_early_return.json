@@ -1,0 +1,12 @@
+{
+  "value": "`wait()` call exists, but it is unreachable due to the early return",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

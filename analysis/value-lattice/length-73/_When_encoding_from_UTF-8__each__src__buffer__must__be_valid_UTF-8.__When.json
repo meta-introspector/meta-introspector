@@ -1,0 +1,12 @@
+{
+  "value": " When encoding from UTF-8, each `src` buffer _must_ be valid UTF-8. (When",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

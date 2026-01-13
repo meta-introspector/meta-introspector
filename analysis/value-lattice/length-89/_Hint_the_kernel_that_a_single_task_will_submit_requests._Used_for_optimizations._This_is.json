@@ -1,0 +1,12 @@
+{
+  "value": " Hint the kernel that a single task will submit requests. Used for optimizations. This is",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

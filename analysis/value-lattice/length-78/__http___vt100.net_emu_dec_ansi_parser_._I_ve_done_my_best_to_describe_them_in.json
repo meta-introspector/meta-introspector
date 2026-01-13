@@ -1,0 +1,12 @@
+{
+  "value": " <http://vt100.net/emu/dec_ansi_parser>. I've done my best to describe them in",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

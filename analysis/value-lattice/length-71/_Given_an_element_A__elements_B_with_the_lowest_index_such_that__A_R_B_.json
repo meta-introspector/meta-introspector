@@ -1,0 +1,12 @@
+{
+  "value": " Given an element A, elements B with the lowest index such that `A R B`",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

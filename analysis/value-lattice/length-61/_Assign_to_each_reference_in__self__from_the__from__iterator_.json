@@ -1,0 +1,12 @@
+{
+  "value": " Assign to each reference in `self` from the `from` iterator,",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

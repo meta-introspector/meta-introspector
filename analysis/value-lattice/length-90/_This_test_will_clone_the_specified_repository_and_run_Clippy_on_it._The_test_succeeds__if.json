@@ -1,0 +1,12 @@
+{
+  "value": " This test will clone the specified repository and run Clippy on it. The test succeeds, if",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

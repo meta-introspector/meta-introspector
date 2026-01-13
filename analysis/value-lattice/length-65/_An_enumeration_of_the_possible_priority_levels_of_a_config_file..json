@@ -1,0 +1,12 @@
+{
+  "value": " An enumeration of the possible priority levels of a config file.",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " However, [`push`] is best used for dynamic situations. This is a better way",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " expression of the type  `_ <bit_op> m <cmp_op> c` (where `<bit_op>`",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

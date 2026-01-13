@@ -1,0 +1,12 @@
+{
+  "value": " it'll be `None`. See [`DiagnosticBuilder::decorate`] for more information, when the",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

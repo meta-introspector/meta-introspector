@@ -1,0 +1,12 @@
+{
+  "value": " ```compile_fail,E0277\n\nuse std::rc::Rc;\n\nrustc_thread_pool::join(|| Rc::new(22), || ()); //~ ERROR\n\n``` ",
+  "length": 105,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

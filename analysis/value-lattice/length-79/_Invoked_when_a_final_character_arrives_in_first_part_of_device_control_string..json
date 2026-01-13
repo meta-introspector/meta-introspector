@@ -1,0 +1,12 @@
+{
+  "value": " Invoked when a final character arrives in first part of device control string.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

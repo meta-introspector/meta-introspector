@@ -1,0 +1,12 @@
+{
+  "value": " Each bit of the bit vector controls the transfer function for an operation.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

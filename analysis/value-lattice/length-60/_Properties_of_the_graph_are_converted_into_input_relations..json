@@ -1,0 +1,12 @@
+{
+  "value": " Properties of the graph are converted into input relations.",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

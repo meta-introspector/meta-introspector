@@ -1,0 +1,12 @@
+{
+  "value": " Combine the hash state with the hash state for the subsequent block of bytes.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

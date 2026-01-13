@@ -1,0 +1,12 @@
+{
+  "value": " attribute's range, and derives get only the specific derive that is being referred to.",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

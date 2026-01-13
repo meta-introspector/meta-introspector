@@ -1,0 +1,12 @@
+{
+  "value": " Performs a depth-first search, starting from the given `root`.",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

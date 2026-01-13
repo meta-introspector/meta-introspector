@@ -1,0 +1,12 @@
+{
+  "value": "Payment required. Include X-Payment-Token header",
+  "length": 48,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

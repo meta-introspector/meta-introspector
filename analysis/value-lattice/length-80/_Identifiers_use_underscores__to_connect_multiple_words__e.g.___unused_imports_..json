@@ -1,0 +1,12 @@
+{
+  "value": " Identifiers use underscores, to connect multiple words, e.g., \"unused_imports\".",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

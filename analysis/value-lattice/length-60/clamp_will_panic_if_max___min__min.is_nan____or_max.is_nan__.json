@@ -1,0 +1,12 @@
+{
+  "value": "clamp will panic if max < min, min.is_nan(), or max.is_nan()",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

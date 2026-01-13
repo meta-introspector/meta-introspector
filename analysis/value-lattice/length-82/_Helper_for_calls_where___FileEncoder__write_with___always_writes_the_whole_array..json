@@ -1,0 +1,12 @@
+{
+  "value": " Helper for calls where [`FileEncoder::write_with`] always writes the whole array.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

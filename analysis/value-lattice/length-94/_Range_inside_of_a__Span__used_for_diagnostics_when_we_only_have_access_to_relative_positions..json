@@ -1,0 +1,12 @@
+{
+  "value": " Range inside of a `Span` used for diagnostics when we only have access to relative positions.",
+  "length": 94,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

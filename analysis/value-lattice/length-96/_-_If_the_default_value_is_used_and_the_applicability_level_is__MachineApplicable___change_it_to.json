@@ -1,0 +1,12 @@
+{
+  "value": " - If the default value is used and the applicability level is `MachineApplicable`, change it to",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

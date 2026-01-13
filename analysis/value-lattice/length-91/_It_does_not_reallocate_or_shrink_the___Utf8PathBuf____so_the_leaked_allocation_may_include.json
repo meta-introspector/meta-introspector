@@ -1,0 +1,12 @@
+{
+  "value": " It does not reallocate or shrink the [`Utf8PathBuf`], so the leaked allocation may include",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

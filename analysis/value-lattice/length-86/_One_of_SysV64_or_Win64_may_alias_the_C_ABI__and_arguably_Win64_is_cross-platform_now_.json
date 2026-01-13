@@ -1,0 +1,12 @@
+{
+  "value": " One of SysV64 or Win64 may alias the C ABI, and arguably Win64 is cross-platform now?",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " use case, the `SelfProfiler` will only record the kinds of events that",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

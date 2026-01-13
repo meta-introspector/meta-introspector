@@ -1,0 +1,12 @@
+{
+  "value": " The `deny` level will produce an error and stop further execution after the lint",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

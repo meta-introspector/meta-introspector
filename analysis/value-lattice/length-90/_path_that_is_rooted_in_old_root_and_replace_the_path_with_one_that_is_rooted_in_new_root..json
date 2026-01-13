@@ -1,0 +1,12 @@
+{
+  "value": " path that is rooted in old_root and replace the path with one that is rooted in new_root.",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

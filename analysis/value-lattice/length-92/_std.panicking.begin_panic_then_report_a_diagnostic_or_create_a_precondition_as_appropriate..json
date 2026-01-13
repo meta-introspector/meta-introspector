@@ -1,0 +1,12 @@
+{
+  "value": " std.panicking.begin_panic then report a diagnostic or create a precondition as appropriate.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

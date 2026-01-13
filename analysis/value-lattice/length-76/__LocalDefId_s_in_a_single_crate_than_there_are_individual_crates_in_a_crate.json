@@ -1,0 +1,12 @@
+{
+  "value": " `LocalDefId`s in a single crate than there are individual crates in a crate",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

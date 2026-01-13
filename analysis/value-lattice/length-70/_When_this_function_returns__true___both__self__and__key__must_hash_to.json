@@ -1,0 +1,12 @@
+{
+  "value": " When this function returns `true`, both `self` and `key` must hash to",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

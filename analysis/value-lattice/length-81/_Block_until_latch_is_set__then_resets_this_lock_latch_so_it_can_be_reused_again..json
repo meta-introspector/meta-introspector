@@ -1,0 +1,12 @@
+{
+  "value": " Block until latch is set, then resets this lock latch so it can be reused again.",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " * `public_network_test` --- This tests contacts the public internet.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

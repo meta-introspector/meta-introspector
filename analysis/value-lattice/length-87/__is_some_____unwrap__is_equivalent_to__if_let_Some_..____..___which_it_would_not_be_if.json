@@ -1,0 +1,12 @@
+{
+  "value": " `is_some` + `unwrap` is equivalent to `if let Some(..) = ..`, which it would not be if",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

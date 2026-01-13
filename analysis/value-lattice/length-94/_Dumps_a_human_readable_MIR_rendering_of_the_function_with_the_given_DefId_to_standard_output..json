@@ -1,0 +1,12 @@
+{
+  "value": " Dumps a human readable MIR rendering of the function with the given DefId to standard output.",
+  "length": 94,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

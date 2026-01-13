@@ -1,0 +1,12 @@
+{
+  "value": " We have to model this uncertainty by weakening v to include the set of",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

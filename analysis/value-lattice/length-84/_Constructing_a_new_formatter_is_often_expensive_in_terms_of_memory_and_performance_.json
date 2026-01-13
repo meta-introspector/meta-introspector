@@ -1,0 +1,12 @@
+{
+  "value": " Constructing a new formatter is often expensive in terms of memory and performance,",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

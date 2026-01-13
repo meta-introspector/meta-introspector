@@ -1,0 +1,12 @@
+{
+  "value": " For example, if a file that is essential for running cannot be found for some reason.",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

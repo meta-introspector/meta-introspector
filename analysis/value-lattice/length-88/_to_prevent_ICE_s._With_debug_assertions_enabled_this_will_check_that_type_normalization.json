@@ -1,0 +1,12 @@
+{
+  "value": " to prevent ICE's. With debug assertions enabled this will check that type normalization",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

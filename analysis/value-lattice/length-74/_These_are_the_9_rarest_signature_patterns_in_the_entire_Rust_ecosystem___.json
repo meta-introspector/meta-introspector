@@ -1,0 +1,12 @@
+{
+  "value": "*These are the 9 rarest signature patterns in the entire Rust ecosystem,*\n",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

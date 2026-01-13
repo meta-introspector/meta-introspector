@@ -1,0 +1,12 @@
+{
+  "value": " E.g. for `5` this returns `Some(5)`, for `..5` this returns `Some(4)`,",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

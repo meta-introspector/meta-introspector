@@ -1,0 +1,12 @@
+{
+  "value": " An atomic storage for a reference counted smart pointer like [`Arc`] or `Option<Arc>`.",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

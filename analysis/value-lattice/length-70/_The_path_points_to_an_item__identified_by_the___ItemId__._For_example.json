@@ -1,0 +1,12 @@
+{
+  "value": " The path points to an item, identified by the [`ItemId`]. For example",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

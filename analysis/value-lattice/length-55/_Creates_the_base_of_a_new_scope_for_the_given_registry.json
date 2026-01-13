@@ -1,0 +1,12 @@
+{
+  "value": " Creates the base of a new scope for the given registry",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

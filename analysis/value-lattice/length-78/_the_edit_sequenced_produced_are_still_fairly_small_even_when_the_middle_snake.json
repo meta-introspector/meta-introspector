@@ -1,0 +1,12 @@
+{
+  "value": " the edit sequenced produced are still fairly small even when the middle snake",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

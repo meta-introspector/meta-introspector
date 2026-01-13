@@ -1,0 +1,12 @@
+{
+  "value": "this returns the result of the operation, without modifying the original",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

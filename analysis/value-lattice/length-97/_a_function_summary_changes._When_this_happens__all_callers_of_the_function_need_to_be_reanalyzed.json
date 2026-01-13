@@ -1,0 +1,12 @@
+{
+  "value": " a function summary changes. When this happens, all callers of the function need to be reanalyzed",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

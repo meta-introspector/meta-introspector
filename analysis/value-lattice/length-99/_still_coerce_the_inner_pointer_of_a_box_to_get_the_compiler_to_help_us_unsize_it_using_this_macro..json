@@ -1,0 +1,12 @@
+{
+  "value": " still coerce the inner pointer of a box to get the compiler to help us unsize it using this macro.",
+  "length": 99,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

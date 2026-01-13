@@ -1,0 +1,12 @@
+{
+  "value": " Reads a signed 32 bit integer from `buf`.",
+  "length": 42,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "         self.nodes.iter().map(|s| &s[..]).enumerate().collect()",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

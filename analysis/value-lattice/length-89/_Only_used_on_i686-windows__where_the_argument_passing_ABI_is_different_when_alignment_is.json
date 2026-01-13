@@ -1,0 +1,12 @@
+{
+  "value": " Only used on i686-windows, where the argument passing ABI is different when alignment is",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

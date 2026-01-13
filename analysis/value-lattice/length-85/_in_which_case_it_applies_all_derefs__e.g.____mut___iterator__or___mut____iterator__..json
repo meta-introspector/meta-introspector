@@ -1,0 +1,12 @@
+{
+  "value": " in which case it applies all derefs (e.g., `&mut **iterator` or `&mut ***iterator`).",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

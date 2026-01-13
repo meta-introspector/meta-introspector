@@ -1,0 +1,12 @@
+{
+  "value": " For example, if a macro expands to `let x = 10`, it usually needs to become `let x = 10;`.",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

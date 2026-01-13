@@ -1,0 +1,12 @@
+{
+  "value": " This function may be called concurrently, but only the first `handle` will",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

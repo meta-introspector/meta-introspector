@@ -1,0 +1,12 @@
+{
+  "value": " // both iterators have the same items remaining at this point---the 3",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

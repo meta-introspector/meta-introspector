@@ -1,0 +1,12 @@
+{
+  "value": " Note: If there isn't a next token, this will not return the lookahead token.",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

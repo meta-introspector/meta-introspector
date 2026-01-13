@@ -1,0 +1,12 @@
+{
+  "value": " A newtype around an AST node that implements the traits above if the node implements them.",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

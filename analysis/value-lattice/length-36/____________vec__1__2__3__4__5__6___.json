@@ -1,0 +1,12 @@
+{
+  "value": "            vec![1, 2, 3, 4, 5, 6]);",
+  "length": 36,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

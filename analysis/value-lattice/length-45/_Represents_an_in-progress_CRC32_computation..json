@@ -1,0 +1,12 @@
+{
+  "value": " Represents an in-progress CRC32 computation.",
+  "length": 45,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

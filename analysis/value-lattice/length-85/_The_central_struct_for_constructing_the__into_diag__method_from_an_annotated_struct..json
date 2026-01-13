@@ -1,0 +1,12 @@
+{
+  "value": " The central struct for constructing the `into_diag` method from an annotated struct.",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

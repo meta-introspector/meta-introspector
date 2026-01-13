@@ -1,0 +1,12 @@
+{
+  "value": " This is the same as [`is_expr_identity_function`], but does not consider closures",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

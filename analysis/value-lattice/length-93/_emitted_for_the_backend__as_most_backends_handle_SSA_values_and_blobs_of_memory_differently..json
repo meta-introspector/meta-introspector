@@ -1,0 +1,12 @@
+{
+  "value": " emitted for the backend, as most backends handle SSA values and blobs of memory differently.",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

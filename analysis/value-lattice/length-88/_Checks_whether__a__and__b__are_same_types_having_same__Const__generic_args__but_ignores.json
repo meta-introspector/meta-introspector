@@ -1,0 +1,12 @@
+{
+  "value": " Checks whether `a` and `b` are same types having same `Const` generic args, but ignores",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " // 2^64, greater than usize::MAX on 64-bit systems",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

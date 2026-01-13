@@ -1,0 +1,12 @@
+{
+  "value": " `[u8; 32]`. However, byte arrays and slices don't provide constant-time",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

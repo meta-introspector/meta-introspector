@@ -1,0 +1,12 @@
+{
+  "value": " Iterates through the AST, extracts individual declarations, and writes them to separate files.",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

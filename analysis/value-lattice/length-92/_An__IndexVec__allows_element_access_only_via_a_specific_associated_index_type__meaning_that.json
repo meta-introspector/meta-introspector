@@ -1,0 +1,12 @@
+{
+  "value": " An `IndexVec` allows element access only via a specific associated index type, meaning that",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

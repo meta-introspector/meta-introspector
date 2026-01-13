@@ -1,0 +1,12 @@
+{
+  "value": " import the expanded assembly code as a new `SourceFile`, which can then",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

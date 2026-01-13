@@ -1,0 +1,12 @@
+{
+  "value": " should be yielded. The predicate may fail; such failures are passed to",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

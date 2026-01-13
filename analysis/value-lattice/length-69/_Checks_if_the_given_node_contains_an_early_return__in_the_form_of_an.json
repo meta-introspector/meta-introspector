@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the given node contains an early return, in the form of an",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

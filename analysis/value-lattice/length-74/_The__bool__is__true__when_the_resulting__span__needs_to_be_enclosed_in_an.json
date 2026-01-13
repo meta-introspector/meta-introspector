@@ -1,0 +1,12 @@
+{
+  "value": " The `bool` is `true` when the resulting `span` needs to be enclosed in an",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Optional: Overrides for the path of certain crates, relative to the scan root.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

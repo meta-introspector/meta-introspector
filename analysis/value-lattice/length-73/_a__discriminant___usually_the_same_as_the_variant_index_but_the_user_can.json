@@ -1,0 +1,12 @@
+{
+  "value": " a *discriminant* (usually the same as the variant index but the user can",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

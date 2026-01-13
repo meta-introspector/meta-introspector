@@ -1,0 +1,12 @@
+{
+  "value": "unused \"map closure\" when calling `Option::map_or_else` value",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

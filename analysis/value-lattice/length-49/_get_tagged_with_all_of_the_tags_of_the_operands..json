@@ -1,0 +1,12 @@
+{
+  "value": " get tagged with all of the tags of the operands.",
+  "length": 49,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

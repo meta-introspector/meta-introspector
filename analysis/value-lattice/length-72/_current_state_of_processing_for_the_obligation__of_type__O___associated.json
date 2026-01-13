@@ -1,0 +1,12 @@
+{
+  "value": " current state of processing for the obligation (of type `O`) associated",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

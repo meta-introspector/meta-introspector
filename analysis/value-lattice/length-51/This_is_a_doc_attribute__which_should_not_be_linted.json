@@ -1,0 +1,12 @@
+{
+  "value": "This is a doc attribute, which should not be linted",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

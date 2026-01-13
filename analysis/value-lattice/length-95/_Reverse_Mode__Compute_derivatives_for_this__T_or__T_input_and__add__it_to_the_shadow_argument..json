@@ -1,0 +1,17 @@
+{
+  "value": " Reverse Mode, Compute derivatives for this &T or *T input and *add* it to the shadow argument.",
+  "length": 95,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

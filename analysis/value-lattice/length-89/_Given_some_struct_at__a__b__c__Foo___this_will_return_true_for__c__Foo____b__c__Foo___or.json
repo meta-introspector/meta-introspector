@@ -1,0 +1,12 @@
+{
+  "value": " Given some struct at `a::b::c::Foo`, this will return true for `c::Foo`, `b::c::Foo`, or",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

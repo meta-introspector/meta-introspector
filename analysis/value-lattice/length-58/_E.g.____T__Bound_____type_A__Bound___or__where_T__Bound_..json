@@ -1,0 +1,12 @@
+{
+  "value": " E.g., `<T: Bound>`, `type A: Bound`, or `where T: Bound`.",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

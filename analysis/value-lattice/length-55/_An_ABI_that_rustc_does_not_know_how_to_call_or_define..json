@@ -1,0 +1,12 @@
+{
+  "value": " An ABI that rustc does not know how to call or define.",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

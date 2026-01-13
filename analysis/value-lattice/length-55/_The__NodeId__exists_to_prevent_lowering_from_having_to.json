@@ -1,0 +1,12 @@
+{
+  "value": " The `NodeId` exists to prevent lowering from having to",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

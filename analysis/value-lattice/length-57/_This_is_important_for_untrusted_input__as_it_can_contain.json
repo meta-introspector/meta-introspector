@@ -1,0 +1,12 @@
+{
+  "value": " This is important for untrusted input, as it can contain",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

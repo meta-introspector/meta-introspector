@@ -1,0 +1,12 @@
+{
+  "value": " (including hashing, equality, and ordering) operate on that index. The use",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

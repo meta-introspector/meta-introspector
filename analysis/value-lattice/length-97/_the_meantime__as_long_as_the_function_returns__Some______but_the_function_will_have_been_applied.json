@@ -1,0 +1,12 @@
+{
+  "value": " the meantime, as long as the function returns `Some(_)`, but the function will have been applied",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

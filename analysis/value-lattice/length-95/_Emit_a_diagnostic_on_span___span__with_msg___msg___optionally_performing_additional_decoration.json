@@ -1,0 +1,12 @@
+{
+  "value": " Emit a diagnostic on span `$span` with msg `$msg` (optionally performing additional decoration",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

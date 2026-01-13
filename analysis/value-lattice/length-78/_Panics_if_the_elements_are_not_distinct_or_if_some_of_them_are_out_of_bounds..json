@@ -1,0 +1,12 @@
+{
+  "value": " Panics if the elements are not distinct or if some of them are out of bounds.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

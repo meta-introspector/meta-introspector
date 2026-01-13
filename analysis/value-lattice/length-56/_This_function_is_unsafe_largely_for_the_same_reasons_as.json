@@ -1,0 +1,12 @@
+{
+  "value": " This function is unsafe largely for the same reasons as",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

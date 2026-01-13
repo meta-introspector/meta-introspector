@@ -1,0 +1,12 @@
+{
+  "value": " the right operand, according to the rules of of memcmp in unix.",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " assert_equal((0..100).filter(|x| x % 3 == 0).tail(10), (72..100).step_by(3));",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

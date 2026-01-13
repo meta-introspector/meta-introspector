@@ -1,0 +1,12 @@
+{
+  "value": "   empty vector. Otherwise it will only be considered completed once",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Replaces a region in a text delimited by two strings. Returns the new text if both delimiters",
+  "length": 94,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

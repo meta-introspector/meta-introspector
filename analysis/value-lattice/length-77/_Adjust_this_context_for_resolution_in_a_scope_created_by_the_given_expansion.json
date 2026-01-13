@@ -1,0 +1,12 @@
+{
+  "value": " Adjust this context for resolution in a scope created by the given expansion",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

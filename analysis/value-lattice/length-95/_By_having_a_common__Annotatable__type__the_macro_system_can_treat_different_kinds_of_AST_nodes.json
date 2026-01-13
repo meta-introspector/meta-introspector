@@ -1,0 +1,12 @@
+{
+  "value": " By having a common `Annotatable` type, the macro system can treat different kinds of AST nodes",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

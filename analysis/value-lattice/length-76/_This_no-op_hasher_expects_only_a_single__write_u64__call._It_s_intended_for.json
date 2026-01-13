@@ -1,0 +1,12 @@
+{
+  "value": " This no-op hasher expects only a single `write_u64` call. It's intended for",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

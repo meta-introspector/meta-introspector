@@ -1,0 +1,12 @@
+{
+  "value": " - `lint_node_id`: A reference to a nearby AST node for associating lints.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

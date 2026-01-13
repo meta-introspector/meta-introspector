@@ -1,0 +1,12 @@
+{
+  "value": " the pool is done with them, allowing them to be used with rayon again",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Call F(target_path[i - from]), source_path[i]) for i in from..to",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

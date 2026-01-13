@@ -1,0 +1,12 @@
+{
+  "value": " Really this probably ought to be `impl Iterator<Item = &T>`, but",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

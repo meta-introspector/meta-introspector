@@ -1,0 +1,12 @@
+{
+  "value": " Treat this the same as [`transmute`](core::mem::transmute), or (preferably) don't use it at all.",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

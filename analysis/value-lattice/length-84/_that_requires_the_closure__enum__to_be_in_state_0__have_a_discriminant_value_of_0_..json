@@ -1,0 +1,12 @@
+{
+  "value": " that requires the closure (enum) to be in state 0 (have a discriminant value of 0).",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

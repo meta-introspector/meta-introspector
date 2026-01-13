@@ -1,0 +1,12 @@
+{
+  "value": " Same as `any`, but must be a valid fragment, not error.",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

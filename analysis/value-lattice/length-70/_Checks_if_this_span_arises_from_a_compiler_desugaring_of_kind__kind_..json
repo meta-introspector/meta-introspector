@@ -1,0 +1,12 @@
+{
+  "value": " Checks if this span arises from a compiler desugaring of kind `kind`.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

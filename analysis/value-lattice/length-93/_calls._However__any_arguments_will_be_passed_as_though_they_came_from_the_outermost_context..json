@@ -1,0 +1,12 @@
+{
+  "value": " calls. However, any arguments will be passed as though they came from the outermost context.",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

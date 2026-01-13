@@ -1,0 +1,12 @@
+{
+  "value": " A reference to a value that is interned, and is known to be unique.",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

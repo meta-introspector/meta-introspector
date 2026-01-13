@@ -1,0 +1,12 @@
+{
+  "value": " green/native threading. This is just a bare-bones enough solution for",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

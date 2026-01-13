@@ -1,0 +1,12 @@
+{
+  "value": " Because the init expr could have the type of `&Option<T>` which does not implements `Try`.",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

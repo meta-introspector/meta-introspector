@@ -1,0 +1,12 @@
+{
+  "value": " See the documentation of `TriColorDepthFirstSearch` to see how a node's status is updated",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

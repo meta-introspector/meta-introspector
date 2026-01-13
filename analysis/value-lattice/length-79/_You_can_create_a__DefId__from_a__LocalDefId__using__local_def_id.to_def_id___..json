@@ -1,0 +1,12 @@
+{
+  "value": " You can create a `DefId` from a `LocalDefId` using `local_def_id.to_def_id()`.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

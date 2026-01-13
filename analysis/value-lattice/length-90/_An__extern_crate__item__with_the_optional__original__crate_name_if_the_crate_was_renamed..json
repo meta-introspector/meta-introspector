@@ -1,0 +1,12 @@
+{
+  "value": " An `extern crate` item, with the optional *original* crate name if the crate was renamed.",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

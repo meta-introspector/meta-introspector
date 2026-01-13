@@ -1,0 +1,12 @@
+{
+  "value": "π ≈ 3.1415926536 (calculated using Leibniz formula)",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

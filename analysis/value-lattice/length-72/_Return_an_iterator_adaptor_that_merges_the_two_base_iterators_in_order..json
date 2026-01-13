@@ -1,0 +1,12 @@
+{
+  "value": " Return an iterator adaptor that merges the two base iterators in order.",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

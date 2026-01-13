@@ -1,0 +1,12 @@
+{
+  "value": " Select the struct model field with the given name.",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

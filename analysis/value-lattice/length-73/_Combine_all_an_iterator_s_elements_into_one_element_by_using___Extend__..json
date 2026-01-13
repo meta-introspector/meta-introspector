@@ -1,0 +1,12 @@
+{
+  "value": " Combine all an iterator's elements into one element by using [`Extend`].",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

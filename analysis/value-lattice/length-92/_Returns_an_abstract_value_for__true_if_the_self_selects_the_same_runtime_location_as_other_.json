@@ -1,0 +1,12 @@
+{
+  "value": " Returns an abstract value for \"true if the self selects the same runtime location as other\"",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

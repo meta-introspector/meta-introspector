@@ -1,0 +1,12 @@
+{
+  "value": "Add #[novelty_proof(hash = \"abc123\")] with verification",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

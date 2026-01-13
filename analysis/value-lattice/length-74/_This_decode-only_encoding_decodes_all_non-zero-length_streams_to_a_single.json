@@ -1,0 +1,12 @@
+{
+  "value": " This decode-only encoding decodes all non-zero-length streams to a single",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

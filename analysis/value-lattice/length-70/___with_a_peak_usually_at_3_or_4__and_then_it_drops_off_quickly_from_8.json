@@ -1,0 +1,12 @@
+{
+  "value": "   with a peak usually at 3 or 4, and then it drops off quickly from 8",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

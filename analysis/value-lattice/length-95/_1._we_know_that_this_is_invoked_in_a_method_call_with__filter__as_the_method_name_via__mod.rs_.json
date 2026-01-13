@@ -1,0 +1,12 @@
+{
+  "value": " 1. we know that this is invoked in a method call with `filter` as the method name via `mod.rs`",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

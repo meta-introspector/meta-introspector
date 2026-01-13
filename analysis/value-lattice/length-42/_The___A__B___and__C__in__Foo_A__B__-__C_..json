@@ -1,0 +1,12 @@
+{
+  "value": " The `(A, B)` and `C` in `Foo(A, B) -> C`.",
+  "length": 42,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

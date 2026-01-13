@@ -1,0 +1,12 @@
+{
+  "value": " will panic with the panic value from the first closure.",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

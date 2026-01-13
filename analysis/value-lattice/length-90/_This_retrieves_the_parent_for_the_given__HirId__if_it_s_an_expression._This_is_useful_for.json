@@ -1,0 +1,12 @@
+{
+  "value": " This retrieves the parent for the given `HirId` if it's an expression. This is useful for",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

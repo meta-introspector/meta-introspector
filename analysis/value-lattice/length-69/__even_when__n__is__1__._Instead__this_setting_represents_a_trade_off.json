@@ -1,0 +1,12 @@
+{
+  "value": " (even when `n` is `1`). Instead, this setting represents a trade off",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

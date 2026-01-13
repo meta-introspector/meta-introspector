@@ -1,0 +1,12 @@
+{
+  "value": " OIDs are hierarchical structures consisting of \"arcs\", i.e. integer",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

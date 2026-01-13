@@ -1,0 +1,12 @@
+{
+  "value": "ln(1 + x) can be computed more accurately",
+  "length": 41,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

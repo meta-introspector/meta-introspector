@@ -1,0 +1,12 @@
+{
+  "value": "   beginning of the path. For example, `a/./b`, `a/b/`, `a/b/.` and",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

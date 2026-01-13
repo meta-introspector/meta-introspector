@@ -1,0 +1,12 @@
+{
+  "value": " way for the caller to write from a `&[i8]` buffer. (Without this",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

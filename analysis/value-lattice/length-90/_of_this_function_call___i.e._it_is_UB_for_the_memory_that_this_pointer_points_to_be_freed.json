@@ -1,0 +1,12 @@
+{
+  "value": " of this function call\", i.e. it is UB for the memory that this pointer points to be freed",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

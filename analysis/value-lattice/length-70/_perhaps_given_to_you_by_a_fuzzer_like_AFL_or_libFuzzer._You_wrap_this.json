@@ -1,0 +1,12 @@
+{
+  "value": " perhaps given to you by a fuzzer like AFL or libFuzzer. You wrap this",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " A converter that encodes a Unicode stream into bytes according to a",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

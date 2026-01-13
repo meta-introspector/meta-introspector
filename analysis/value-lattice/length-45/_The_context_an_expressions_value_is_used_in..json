@@ -1,0 +1,12 @@
+{
+  "value": " The context an expressions value is used in.",
+  "length": 45,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " For a single-segment meta item, returns its identifier; otherwise, returns `None`.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

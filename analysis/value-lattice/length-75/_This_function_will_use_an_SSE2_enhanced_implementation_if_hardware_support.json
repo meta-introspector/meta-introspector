@@ -1,0 +1,12 @@
+{
+  "value": " This function will use an SSE2 enhanced implementation if hardware support",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

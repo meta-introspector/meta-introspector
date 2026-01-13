@@ -1,0 +1,12 @@
+{
+  "value": " Print an integer into this buffer and return a reference to its string",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

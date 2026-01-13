@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(a.iter().minmax_by(first_item_cmp), OneElement(&(1, 'a')));",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

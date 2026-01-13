@@ -1,0 +1,12 @@
+{
+  "value": " the necessary bits of memory of the const eval session to keep the constant",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

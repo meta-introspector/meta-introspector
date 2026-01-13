@@ -1,0 +1,12 @@
+{
+  "value": " The Windows code page number for this encoding is 28600, but kernel32.dll",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

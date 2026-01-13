@@ -1,0 +1,22 @@
+{
+  "value": " let numbers_given = [1.0, 2.0, 31.312e211, -11.32e91];",
+  "length": 55,
+  "total_usages": 3,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

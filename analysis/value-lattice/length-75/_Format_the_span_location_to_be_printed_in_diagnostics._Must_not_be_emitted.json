@@ -1,0 +1,12 @@
+{
+  "value": " Format the span location to be printed in diagnostics. Must not be emitted",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " The state of walking a given node.",
+  "length": 35,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " have type annotations. This is important because removing a closure with bindings can",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

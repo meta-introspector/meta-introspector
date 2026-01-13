@@ -1,0 +1,12 @@
+{
+  "value": " Using the custom derive requires that you enable the `\"derive\"` cargo",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

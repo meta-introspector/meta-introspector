@@ -1,0 +1,12 @@
+{
+  "value": "   vector `C` is a list of subobligations. The meaning of this is that",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

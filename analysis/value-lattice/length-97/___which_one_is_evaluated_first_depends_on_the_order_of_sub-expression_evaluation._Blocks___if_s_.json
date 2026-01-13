@@ -1,0 +1,12 @@
+{
+  "value": " * which one is evaluated first depends on the order of sub-expression evaluation. Blocks, `if`s,",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

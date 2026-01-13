@@ -1,0 +1,12 @@
+{
+  "value": "         err.chain().skip(1).for_each(|cause| eprintln!(\"because: {}\", cause));",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " greater than twice the length of the other. For cases where the words are close in size but not",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

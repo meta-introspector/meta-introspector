@@ -1,0 +1,12 @@
+{
+  "value": " implementations for other bitset types, if needed.",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " waiting for the minimum specified by the application. Available since kernel 6.12.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

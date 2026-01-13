@@ -1,0 +1,12 @@
+{
+  "value": " `encode_*` again with `last` set to `true` (or treat an `Unmappable` result",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

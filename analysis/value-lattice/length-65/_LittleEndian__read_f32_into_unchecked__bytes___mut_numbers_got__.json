@@ -1,0 +1,12 @@
+{
+  "value": " LittleEndian::read_f32_into_unchecked(&bytes, &mut numbers_got);",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " let hash = blake3::hash(b\"foo\");",
+  "length": 33,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

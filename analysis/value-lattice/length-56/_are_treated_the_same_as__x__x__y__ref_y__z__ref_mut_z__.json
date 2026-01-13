@@ -1,0 +1,12 @@
+{
+  "value": " are treated the same as `x: x, y: ref y, z: ref mut z`,",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

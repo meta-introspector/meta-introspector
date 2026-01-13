@@ -1,0 +1,12 @@
+{
+  "value": " That is, for an i8 primitive, a range of `254..=2` means following",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This encoding is designed to be suited for decoding the Windows code page 950",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

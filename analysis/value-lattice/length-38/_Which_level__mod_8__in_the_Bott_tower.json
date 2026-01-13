@@ -1,0 +1,12 @@
+{
+  "value": " Which level (mod 8) in the Bott tower",
+  "length": 38,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

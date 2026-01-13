@@ -1,0 +1,12 @@
+{
+  "value": " An expression which represents the result of comparing the left operand with",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

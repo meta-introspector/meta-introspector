@@ -1,0 +1,12 @@
+{
+  "value": " An iterator that yields the iteration count as well as the values of the",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Still, we can't just do `lty.peel_refs() == rty.peel_refs()` because when we have `x = &T` and",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

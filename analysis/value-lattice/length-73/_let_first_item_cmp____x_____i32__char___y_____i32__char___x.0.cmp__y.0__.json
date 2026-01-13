@@ -1,0 +1,12 @@
+{
+  "value": " let first_item_cmp = |x: &&(i32, char), y: &&(i32, char)| x.0.cmp(&y.0);",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

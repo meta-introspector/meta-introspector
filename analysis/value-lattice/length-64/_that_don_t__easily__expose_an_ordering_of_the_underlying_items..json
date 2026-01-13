@@ -1,0 +1,12 @@
+{
+  "value": " that don't (easily) expose an ordering of the underlying items.",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

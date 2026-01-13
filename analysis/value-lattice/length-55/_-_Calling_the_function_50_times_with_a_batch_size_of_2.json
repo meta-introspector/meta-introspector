@@ -1,0 +1,12 @@
+{
+  "value": " - Calling the function 50 times with a batch size of 2",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

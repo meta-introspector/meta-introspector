@@ -1,0 +1,12 @@
+{
+  "value": " The ISO-8859-3 encoding.",
+  "length": 25,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

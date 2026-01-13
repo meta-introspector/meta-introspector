@@ -1,0 +1,12 @@
+{
+  "value": " For items which are `pub` by default, like trait functions or enum variants",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

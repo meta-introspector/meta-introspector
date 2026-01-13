@@ -1,0 +1,12 @@
+{
+  "value": " Ensures no strings are lost during processing",
+  "length": 46,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

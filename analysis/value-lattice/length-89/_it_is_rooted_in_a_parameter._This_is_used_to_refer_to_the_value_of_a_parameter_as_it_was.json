@@ -1,0 +1,12 @@
+{
+  "value": " it is rooted in a parameter. This is used to refer to the value of a parameter as it was",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Checks for the `None` value, possibly in a block.",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

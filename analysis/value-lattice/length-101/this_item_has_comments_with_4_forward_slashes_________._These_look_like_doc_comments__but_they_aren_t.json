@@ -1,0 +1,12 @@
+{
+  "value": "this item has comments with 4 forward slashes (`////`). These look like doc comments, but they aren't",
+  "length": 101,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This won't visit nodes that are not reachable from the start node.",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

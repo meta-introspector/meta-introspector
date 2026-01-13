@@ -1,0 +1,12 @@
+{
+  "value": " This methods calls `decode_to_utf8` and then zeroes",
+  "length": 52,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

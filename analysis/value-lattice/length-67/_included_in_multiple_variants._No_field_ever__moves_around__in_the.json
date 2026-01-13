@@ -1,0 +1,12 @@
+{
+  "value": " included in multiple variants. No field ever \"moves around\" in the",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

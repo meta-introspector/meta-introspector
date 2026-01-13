@@ -1,0 +1,12 @@
+{
+  "value": " stderr if the compiler is invoked with -Ztime-passes.",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

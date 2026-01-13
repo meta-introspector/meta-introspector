@@ -1,0 +1,12 @@
+{
+  "value": "echo \"⚡ Compiling with polyfills (10x faster)...\"\n",
+  "length": 52,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

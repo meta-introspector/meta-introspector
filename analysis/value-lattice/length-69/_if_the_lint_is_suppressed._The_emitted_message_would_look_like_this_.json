@@ -1,0 +1,12 @@
+{
+  "value": " if the lint is suppressed. The emitted message would look like this:",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " of how the backend of these structs is implemented.",
+  "length": 52,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " If the function being called is a special function like mirai_annotations.mirai_verify or",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

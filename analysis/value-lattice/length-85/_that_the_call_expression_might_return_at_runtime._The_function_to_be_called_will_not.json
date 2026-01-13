@@ -1,0 +1,12 @@
+{
+  "value": " that the call expression might return at runtime. The function to be called will not",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

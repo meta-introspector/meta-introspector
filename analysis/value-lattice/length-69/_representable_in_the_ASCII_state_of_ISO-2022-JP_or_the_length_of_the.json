@@ -1,0 +1,12 @@
+{
+  "value": " representable in the ASCII state of ISO-2022-JP or the length of the",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

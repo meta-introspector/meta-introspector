@@ -1,0 +1,12 @@
+{
+  "value": " representations of some types might not be accurate. For example a vector of floats might be",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

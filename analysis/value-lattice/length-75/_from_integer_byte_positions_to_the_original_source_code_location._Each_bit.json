@@ -1,0 +1,12 @@
+{
+  "value": " from integer byte positions to the original source code location. Each bit",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

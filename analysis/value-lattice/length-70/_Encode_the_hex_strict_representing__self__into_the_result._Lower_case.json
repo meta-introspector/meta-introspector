@@ -1,0 +1,12 @@
+{
+  "value": " Encode the hex strict representing `self` into the result. Lower case",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

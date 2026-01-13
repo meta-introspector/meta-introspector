@@ -1,0 +1,12 @@
+{
+  "value": "Given execution trace T as analytical index A, there exists a compiler subset S₂₀ ⊆ S₁₀₀ such that:\n",
+  "length": 112,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " successors have been popped off the stack (as well as any new events triggered by visiting",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

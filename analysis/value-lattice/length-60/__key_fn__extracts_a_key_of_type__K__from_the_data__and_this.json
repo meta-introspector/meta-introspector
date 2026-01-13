@@ -1,0 +1,12 @@
+{
+  "value": " `key_fn` extracts a key of type `K` from the data, and this",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

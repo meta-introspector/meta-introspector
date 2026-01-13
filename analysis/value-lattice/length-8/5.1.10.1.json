@@ -1,0 +1,12 @@
+{
+  "value": "5.1.10.1",
+  "length": 8,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

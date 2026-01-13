@@ -1,0 +1,12 @@
+{
+  "value": " Checks if two expressions represent non-zero integer literals such that `small_expr + 1 ==",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

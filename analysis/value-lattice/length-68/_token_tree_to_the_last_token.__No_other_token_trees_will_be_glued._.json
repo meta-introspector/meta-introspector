@@ -1,0 +1,12 @@
+{
+  "value": " token tree to the last token. (No other token trees will be glued.)",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

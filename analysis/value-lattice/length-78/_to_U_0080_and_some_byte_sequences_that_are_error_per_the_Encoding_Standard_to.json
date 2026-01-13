@@ -1,0 +1,12 @@
+{
+  "value": " to U+0080 and some byte sequences that are error per the Encoding Standard to",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Gets the string that was specified by `ThreadPoolBuilder::name()`.",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " If the given expression is not an `insert` call into a `BTreeMap` or a `HashMap`, return `None`.",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

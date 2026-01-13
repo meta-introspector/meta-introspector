@@ -1,0 +1,12 @@
+{
+  "value": " Allocates a new string in the profiling data. Does not do any caching",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

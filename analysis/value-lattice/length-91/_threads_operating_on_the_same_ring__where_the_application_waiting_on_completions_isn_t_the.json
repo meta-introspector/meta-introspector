@@ -1,0 +1,12 @@
+{
+  "value": " threads operating on the same ring, where the application waiting on completions isn't the",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

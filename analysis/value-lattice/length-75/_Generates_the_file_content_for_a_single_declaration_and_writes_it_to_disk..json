@@ -1,0 +1,12 @@
+{
+  "value": " Generates the file content for a single declaration and writes it to disk.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

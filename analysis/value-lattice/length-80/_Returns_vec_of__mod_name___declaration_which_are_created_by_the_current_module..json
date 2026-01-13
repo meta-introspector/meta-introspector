@@ -1,0 +1,12 @@
+{
+  "value": " Returns vec of `mod name;` declaration which are created by the current module.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

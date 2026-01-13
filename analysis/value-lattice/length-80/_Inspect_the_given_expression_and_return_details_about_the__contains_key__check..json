@@ -1,0 +1,12 @@
+{
+  "value": " Inspect the given expression and return details about the `contains_key` check.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

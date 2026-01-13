@@ -1,0 +1,12 @@
+{
+  "value": " This struct provides basic information required by the driver. It can also",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

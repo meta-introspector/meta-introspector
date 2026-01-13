@@ -1,0 +1,12 @@
+{
+  "value": "Crate name is not valid UTF-8",
+  "length": 29,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

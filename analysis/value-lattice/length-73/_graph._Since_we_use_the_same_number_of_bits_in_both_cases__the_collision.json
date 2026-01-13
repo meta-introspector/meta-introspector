@@ -1,0 +1,12 @@
+{
+  "value": " graph. Since we use the same number of bits in both cases, the collision",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Then, we take the contiguous block of data and cast it to `*const T` or `*mut T` and use it as a slice:",
+  "length": 104,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

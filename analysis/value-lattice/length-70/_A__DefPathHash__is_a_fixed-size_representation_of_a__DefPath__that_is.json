@@ -1,0 +1,12 @@
+{
+  "value": " A `DefPathHash` is a fixed-size representation of a `DefPath` that is",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Returns `Err(Error::Length)` if bytes do not fit in `MAX_SIZE`.",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " `IntoChunks` is based on `ChunkBy`: it is iterable (implements",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

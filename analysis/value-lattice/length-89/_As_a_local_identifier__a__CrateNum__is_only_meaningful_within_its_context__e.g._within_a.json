@@ -1,0 +1,12 @@
+{
+  "value": " As a local identifier, a `CrateNum` is only meaningful within its context, e.g. within a",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

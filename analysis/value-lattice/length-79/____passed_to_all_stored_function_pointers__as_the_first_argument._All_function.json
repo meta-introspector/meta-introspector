@@ -1,0 +1,12 @@
+{
+  "value": "    passed to all stored function pointers, as the first argument. All function",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

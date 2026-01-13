@@ -1,0 +1,12 @@
+{
+  "value": " with a span that looks like it was written by the user, but which should not be linted by clippy",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

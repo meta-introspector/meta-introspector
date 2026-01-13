@@ -1,0 +1,12 @@
+{
+  "value": "# Phase 1: Build core 20% subset\n",
+  "length": 33,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

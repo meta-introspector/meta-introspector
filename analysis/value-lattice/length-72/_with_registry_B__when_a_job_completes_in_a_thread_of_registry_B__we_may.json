@@ -1,0 +1,12 @@
+{
+  "value": " with registry B, when a job completes in a thread of registry B, we may",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

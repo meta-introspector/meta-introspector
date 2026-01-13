@@ -1,0 +1,12 @@
+{
+  "value": " it. Only using `is_file` can break workflows like `diff <( prog_a )` on",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

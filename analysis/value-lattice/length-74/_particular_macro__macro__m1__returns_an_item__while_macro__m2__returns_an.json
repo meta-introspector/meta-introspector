@@ -1,0 +1,12 @@
+{
+  "value": " particular macro: macro `m1` returns an item, while macro `m2` returns an",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

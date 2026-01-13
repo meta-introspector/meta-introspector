@@ -1,0 +1,12 @@
+{
+  "value": " scope is created (such as `t`), the things spawned into that scope",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

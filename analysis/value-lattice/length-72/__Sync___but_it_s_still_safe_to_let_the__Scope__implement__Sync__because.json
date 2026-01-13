@@ -1,0 +1,12 @@
+{
+  "value": " `Sync`, but it's still safe to let the `Scope` implement `Sync` because",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

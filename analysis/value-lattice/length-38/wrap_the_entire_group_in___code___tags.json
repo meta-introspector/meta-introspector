@@ -1,0 +1,12 @@
+{
+  "value": "wrap the entire group in `<code>` tags",
+  "length": 38,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

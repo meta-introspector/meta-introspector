@@ -1,0 +1,12 @@
+{
+  "value": " Peels off all references on the expression. Returns the underlying expression and the number of",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Furthermore, any previously uninstantiated rows prior to it will be",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

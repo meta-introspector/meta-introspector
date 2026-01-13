@@ -1,0 +1,12 @@
+{
+  "value": " If self.callee_def_id is a trait (virtual) then this tries to get the def_id of the",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

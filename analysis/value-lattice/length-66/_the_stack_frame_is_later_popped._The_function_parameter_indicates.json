@@ -1,0 +1,12 @@
+{
+  "value": " the stack frame is later popped. The function parameter indicates",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

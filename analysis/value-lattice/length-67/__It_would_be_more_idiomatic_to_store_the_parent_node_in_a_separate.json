@@ -1,0 +1,12 @@
+{
+  "value": " (It would be more idiomatic to store the parent node in a separate",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

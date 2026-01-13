@@ -1,0 +1,12 @@
+{
+  "value": " Extends the given `Span` to just after the previous occurrence of `pat` when surrounded by",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

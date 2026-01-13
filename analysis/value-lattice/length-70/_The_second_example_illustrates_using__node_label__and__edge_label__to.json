@@ -1,0 +1,12 @@
+{
+  "value": " The second example illustrates using `node_label` and `edge_label` to",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

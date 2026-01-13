@@ -1,0 +1,12 @@
+{
+  "value": " Returns true if `ty` is a type on which calling `Clone` through a function instead of",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

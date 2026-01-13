@@ -1,0 +1,12 @@
+{
+  "value": " FIXME(xFrednet): These settings should be working now, but are still limited",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

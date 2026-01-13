@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(values.fold_options(5, Add::add), Some(5 + 1 + 2 - 2));",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

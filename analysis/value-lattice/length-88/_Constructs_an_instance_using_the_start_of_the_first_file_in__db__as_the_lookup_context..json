@@ -1,0 +1,12 @@
+{
+  "value": " Constructs an instance using the start of the first file in `db` as the lookup context.",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " a series of `Result::Ok` values. `Result::Err` values are unchanged.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

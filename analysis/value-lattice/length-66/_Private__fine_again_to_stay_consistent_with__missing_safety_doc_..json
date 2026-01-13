@@ -1,0 +1,17 @@
+{
+  "value": " Private, fine again to stay consistent with `missing_safety_doc`.",
+  "length": 66,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

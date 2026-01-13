@@ -1,0 +1,12 @@
+{
+  "value": " Registers the current thread with the registry so worker locals can be used on it.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

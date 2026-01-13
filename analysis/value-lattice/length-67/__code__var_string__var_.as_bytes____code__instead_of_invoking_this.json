@@ -1,0 +1,12 @@
+{
+  "value": " <code><var>string</var>.as_bytes()</code> instead of invoking this",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Imports the value of the given static variable by obtaining a summary for the corresponding def_id.",
+  "length": 100,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

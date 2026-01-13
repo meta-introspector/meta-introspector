@@ -1,0 +1,12 @@
+{
+  "value": " A `Symbol` which borrows the underlying storage for the mangled name.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

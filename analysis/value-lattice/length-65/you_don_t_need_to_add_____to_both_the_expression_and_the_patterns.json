@@ -1,0 +1,12 @@
+{
+  "value": "you don't need to add `&` to both the expression and the patterns",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Returns the call-site span of the last macro expansion which produced this `Span`.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

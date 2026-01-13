@@ -1,0 +1,12 @@
+{
+  "value": "fn example() {\n    std::fs::write(\"test.txt\", \"data\").unwrap();\n    std::fs::read_to_string(\"test.txt\").unwrap();\n}",
+  "length": 115,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

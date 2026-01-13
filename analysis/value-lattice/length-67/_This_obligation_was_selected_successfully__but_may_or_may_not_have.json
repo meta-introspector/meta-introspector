@@ -1,0 +1,12 @@
+{
+  "value": " This obligation was selected successfully, but may or may not have",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

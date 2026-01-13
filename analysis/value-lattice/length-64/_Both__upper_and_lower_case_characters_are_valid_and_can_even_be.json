@@ -1,0 +1,12 @@
+{
+  "value": " Both, upper and lower case characters are valid and can even be",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

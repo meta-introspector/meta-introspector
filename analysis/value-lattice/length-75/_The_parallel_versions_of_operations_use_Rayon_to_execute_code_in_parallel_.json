@@ -1,0 +1,12 @@
+{
+  "value": " The parallel versions of operations use Rayon to execute code in parallel,",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

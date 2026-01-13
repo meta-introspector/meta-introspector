@@ -1,0 +1,12 @@
+{
+  "value": " The list of reasons should be why nightly cargo is needed. If it is",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

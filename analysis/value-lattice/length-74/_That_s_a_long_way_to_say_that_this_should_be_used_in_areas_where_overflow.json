@@ -1,0 +1,12 @@
+{
+  "value": " That's a long way to say that this should be used in areas where overflow",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

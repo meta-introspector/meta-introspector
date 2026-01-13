@@ -1,0 +1,12 @@
+{
+  "value": "/mnt/data1/nix/vendor/rust/cargo2nix/submodules/rust",
+  "length": 52,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

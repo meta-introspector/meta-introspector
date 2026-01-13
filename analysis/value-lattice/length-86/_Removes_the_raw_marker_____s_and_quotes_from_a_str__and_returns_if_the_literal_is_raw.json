@@ -1,0 +1,12 @@
+{
+  "value": " Removes the raw marker, `#`s and quotes from a str, and returns if the literal is raw",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

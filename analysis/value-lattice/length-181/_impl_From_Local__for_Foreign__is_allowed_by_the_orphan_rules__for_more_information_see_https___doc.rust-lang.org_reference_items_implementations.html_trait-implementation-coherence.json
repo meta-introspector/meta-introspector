@@ -1,0 +1,12 @@
+{
+  "value": "`impl From<Local> for Foreign` is allowed by the orphan rules, for more information see\nhttps://doc.rust-lang.org/reference/items/implementations.html#trait-implementation-coherence",
+  "length": 181,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

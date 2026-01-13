@@ -1,0 +1,12 @@
+{
+  "value": " Captures will be written to the given slice in the order they're matched. If a",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

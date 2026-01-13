@@ -1,0 +1,12 @@
+{
+  "value": "Blocking task for AST parsing failed",
+  "length": 36,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

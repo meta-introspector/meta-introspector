@@ -1,0 +1,12 @@
+{
+  "value": "\n[workspace.package]\nedition = \"2024\"\nversion = \"0.1.0\"\nauthors = [\"Test Author\"]\n\n[workspace]\nmembers = [\"crate_a\", \"crate_b\"]\n\n[workspace.dependencies]\nrand = \"0.8\"\n",
+  "length": 167,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

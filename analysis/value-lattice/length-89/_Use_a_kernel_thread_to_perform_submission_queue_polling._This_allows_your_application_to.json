@@ -1,0 +1,12 @@
+{
+  "value": " Use a kernel thread to perform submission queue polling. This allows your application to",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

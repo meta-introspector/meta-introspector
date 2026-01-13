@@ -1,0 +1,12 @@
+{
+  "value": " https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm)",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

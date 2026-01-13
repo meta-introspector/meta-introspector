@@ -1,0 +1,12 @@
+{
+  "value": " Create core system instance (Level 11 orbits)",
+  "length": 46,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

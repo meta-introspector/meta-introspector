@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the given local is used, except for in child expression of `except`.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

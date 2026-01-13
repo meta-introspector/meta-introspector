@@ -1,0 +1,12 @@
+{
+  "value": " this module, if possible. This is used for returning import paths for use-statements.",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

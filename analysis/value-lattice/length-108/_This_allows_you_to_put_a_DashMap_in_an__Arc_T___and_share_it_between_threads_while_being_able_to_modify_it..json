@@ -1,0 +1,12 @@
+{
+  "value": " This allows you to put a DashMap in an `Arc<T>` and share it between threads while being able to modify it.",
+  "length": 108,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

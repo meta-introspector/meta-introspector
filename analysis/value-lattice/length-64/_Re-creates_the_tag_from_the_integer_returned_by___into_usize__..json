@@ -1,0 +1,12 @@
+{
+  "value": " Re-creates the tag from the integer returned by [`into_usize`].",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

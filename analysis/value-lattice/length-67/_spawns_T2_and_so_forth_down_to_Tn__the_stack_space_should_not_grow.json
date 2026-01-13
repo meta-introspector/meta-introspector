@@ -1,0 +1,12 @@
+{
+  "value": " spawns T2 and so forth down to Tn, the stack space should not grow",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

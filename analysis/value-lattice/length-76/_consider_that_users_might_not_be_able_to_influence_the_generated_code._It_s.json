@@ -1,0 +1,12 @@
+{
+  "value": " consider that users might not be able to influence the generated code. It's",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

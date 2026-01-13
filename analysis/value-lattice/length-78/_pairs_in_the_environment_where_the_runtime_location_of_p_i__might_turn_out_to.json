@@ -1,0 +1,12 @@
+{
+  "value": " pairs in the environment where the runtime location of p[i] might turn out to",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

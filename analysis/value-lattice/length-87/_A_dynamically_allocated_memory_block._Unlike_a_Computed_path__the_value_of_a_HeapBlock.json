@@ -1,0 +1,12 @@
+{
+  "value": " A dynamically allocated memory block. Unlike a Computed path, the value of a HeapBlock",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Custom sources for explicit parser calls from plugins and drivers.",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

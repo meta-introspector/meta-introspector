@@ -1,0 +1,12 @@
+{
+  "value": " After you put this in your build script you can then check for those conditions like so:",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

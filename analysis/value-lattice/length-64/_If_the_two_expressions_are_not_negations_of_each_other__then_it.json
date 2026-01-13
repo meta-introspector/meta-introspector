@@ -1,0 +1,12 @@
+{
+  "value": " If the two expressions are not negations of each other, then it",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

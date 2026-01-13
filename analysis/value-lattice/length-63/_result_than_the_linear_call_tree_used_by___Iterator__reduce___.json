@@ -1,0 +1,12 @@
+{
+  "value": " result than the linear call tree used by [`Iterator::reduce`]:",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

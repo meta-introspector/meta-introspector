@@ -1,0 +1,12 @@
+{
+  "value": " Replaces the locals in the pattern",
+  "length": 35,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " When we do know everything about a value, it is concrete rather than",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

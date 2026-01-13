@@ -1,0 +1,12 @@
+{
+  "value": " expression/statement that would panic if the precondition is not met). It is a stack",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

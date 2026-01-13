@@ -1,0 +1,12 @@
+{
+  "value": " An \"interner\" is a data structure that associates values with usize tags and",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

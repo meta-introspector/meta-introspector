@@ -1,0 +1,12 @@
+{
+  "value": " Entering a <special-name> production that is a vtable.",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

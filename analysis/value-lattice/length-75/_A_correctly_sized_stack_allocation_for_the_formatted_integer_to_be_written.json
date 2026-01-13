@@ -1,0 +1,12 @@
+{
+  "value": " A correctly sized stack allocation for the formatted integer to be written",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

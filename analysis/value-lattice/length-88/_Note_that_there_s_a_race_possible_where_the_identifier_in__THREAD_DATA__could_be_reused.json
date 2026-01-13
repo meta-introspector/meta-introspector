@@ -1,0 +1,12 @@
+{
+  "value": " Note that there's a race possible where the identifier in `THREAD_DATA` could be reused",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

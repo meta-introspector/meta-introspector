@@ -1,0 +1,12 @@
+{
+  "value": " See [`ProjectBuilder`] or [`Project::from_template`] to get started.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

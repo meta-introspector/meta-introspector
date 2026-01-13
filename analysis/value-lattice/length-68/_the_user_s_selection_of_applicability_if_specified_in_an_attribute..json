@@ -1,0 +1,12 @@
+{
+  "value": " the user's selection of applicability if specified in an attribute.",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

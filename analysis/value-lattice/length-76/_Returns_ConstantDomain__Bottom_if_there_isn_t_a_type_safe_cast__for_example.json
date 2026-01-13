@@ -1,0 +1,12 @@
+{
+  "value": " Returns ConstantDomain::Bottom if there isn't a type safe cast, for example",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

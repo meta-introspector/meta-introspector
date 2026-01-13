@@ -1,0 +1,12 @@
+{
+  "value": " Check if the pattern has any type mismatch that would prevent it from being used in an equality",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

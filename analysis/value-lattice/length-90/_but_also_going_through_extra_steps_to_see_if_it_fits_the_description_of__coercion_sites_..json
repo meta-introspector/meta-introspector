@@ -1,0 +1,12 @@
+{
+  "value": " but also going through extra steps to see if it fits the description of [coercion sites].",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

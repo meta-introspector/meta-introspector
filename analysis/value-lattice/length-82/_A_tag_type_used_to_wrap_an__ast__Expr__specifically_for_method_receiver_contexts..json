@@ -1,0 +1,12 @@
+{
+  "value": " A tag type used to wrap an `ast::Expr` specifically for method receiver contexts.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

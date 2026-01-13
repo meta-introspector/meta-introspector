@@ -1,0 +1,12 @@
+{
+  "value": " - `shift_read3` uses `<< 3` (the tag is in the most-significant bits)",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

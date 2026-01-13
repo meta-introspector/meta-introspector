@@ -1,0 +1,12 @@
+{
+  "value": " or patterns, or as a constant in types with const generics.",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

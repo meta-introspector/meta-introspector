@@ -1,0 +1,12 @@
+{
+  "value": " Bott periodicity: K^n(X) ≅ K^{n+8}(X) for real K-theory",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

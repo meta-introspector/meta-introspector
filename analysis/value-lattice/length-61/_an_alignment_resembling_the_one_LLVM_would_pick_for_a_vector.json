@@ -1,0 +1,12 @@
+{
+  "value": " an alignment resembling the one LLVM would pick for a vector",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

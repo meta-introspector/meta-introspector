@@ -1,0 +1,12 @@
+{
+  "value": " `wait()` call exists, but not all code paths definitely lead to one due to",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

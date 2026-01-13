@@ -1,0 +1,12 @@
+{
+  "value": "    - it will _usually_ contain just one element, but could have two, given patterns like",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " * Determine if there's only a single insert statement. `or_insert` can be used in this case.",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

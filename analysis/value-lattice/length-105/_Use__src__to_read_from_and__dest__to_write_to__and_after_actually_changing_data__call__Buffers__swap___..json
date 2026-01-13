@@ -1,0 +1,12 @@
+{
+  "value": " Use `src` to read from and `dest` to write to, and after actually changing data, call [Buffers::swap()].",
+  "length": 105,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

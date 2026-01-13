@@ -1,0 +1,12 @@
+{
+  "value": " files. Any normal file descriptor can be used for IO commands without needing registration.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

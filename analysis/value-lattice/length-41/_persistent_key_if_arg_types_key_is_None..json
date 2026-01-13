@@ -1,0 +1,12 @@
+{
+  "value": " persistent_key if arg_types_key is None.",
+  "length": 41,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

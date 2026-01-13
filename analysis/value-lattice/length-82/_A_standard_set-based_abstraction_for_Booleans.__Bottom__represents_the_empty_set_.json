@@ -1,0 +1,12 @@
+{
+  "value": " A standard set-based abstraction for Booleans. `Bottom` represents the empty set,",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

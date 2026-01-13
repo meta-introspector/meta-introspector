@@ -1,0 +1,12 @@
+{
+  "value": "unneeded sub `cfg` when there is only one condition",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

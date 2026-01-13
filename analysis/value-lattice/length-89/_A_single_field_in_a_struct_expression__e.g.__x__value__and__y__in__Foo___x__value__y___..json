@@ -1,0 +1,12 @@
+{
+  "value": " A single field in a struct expression, e.g. `x: value` and `y` in `Foo { x: value, y }`.",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

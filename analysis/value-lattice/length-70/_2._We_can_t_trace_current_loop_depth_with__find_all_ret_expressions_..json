@@ -1,0 +1,12 @@
+{
+  "value": " 2. We can't trace current loop depth with `find_all_ret_expressions`.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "value": " See [MCP 533](https://github.com/rust-lang/compiler-team/issues/533)",
+  "length": 69,
+  "total_usages": 3,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

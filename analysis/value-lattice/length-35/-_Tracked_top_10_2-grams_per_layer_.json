@@ -1,0 +1,12 @@
+{
+  "value": "- Tracked top 10 2-grams per layer\n",
+  "length": 35,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

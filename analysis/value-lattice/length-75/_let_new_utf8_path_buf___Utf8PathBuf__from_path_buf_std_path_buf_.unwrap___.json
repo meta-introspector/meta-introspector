@@ -1,0 +1,12 @@
+{
+  "value": " let new_utf8_path_buf = Utf8PathBuf::from_path_buf(std_path_buf).unwrap();",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

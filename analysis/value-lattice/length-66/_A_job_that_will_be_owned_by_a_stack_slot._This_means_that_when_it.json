@@ -1,0 +1,12 @@
+{
+  "value": " A job that will be owned by a stack slot. This means that when it",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

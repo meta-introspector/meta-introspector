@@ -1,0 +1,12 @@
+{
+  "value": " Performs a depth-first search, starting from `G::start_node()`.",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

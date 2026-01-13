@@ -1,0 +1,12 @@
+{
+  "value": "repo name should have format `<org>/<name>`",
+  "length": 43,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " let mut base1 = fastrand::Rng::with_seed(0x4d595df4d0f33173);",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

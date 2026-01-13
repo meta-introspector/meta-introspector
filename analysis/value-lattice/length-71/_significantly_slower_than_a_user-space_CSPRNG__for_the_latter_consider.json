@@ -1,0 +1,12 @@
+{
+  "value": " significantly slower than a user-space CSPRNG; for the latter consider",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "a_really_long_new_lint",
+  "length": 22,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

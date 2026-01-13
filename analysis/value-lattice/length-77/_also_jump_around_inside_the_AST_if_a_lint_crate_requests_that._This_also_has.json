@@ -1,0 +1,12 @@
+{
+  "value": " also jump around inside the AST if a lint crate requests that. This also has",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

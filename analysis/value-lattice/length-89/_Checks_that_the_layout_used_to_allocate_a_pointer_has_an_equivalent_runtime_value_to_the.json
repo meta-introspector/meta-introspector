@@ -1,0 +1,12 @@
+{
+  "value": " Checks that the layout used to allocate a pointer has an equivalent runtime value to the",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

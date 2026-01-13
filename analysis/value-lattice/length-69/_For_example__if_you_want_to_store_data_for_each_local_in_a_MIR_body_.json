@@ -1,0 +1,12 @@
+{
+  "value": " For example, if you want to store data for each local in a MIR body,",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Add a new EdgeType to the call graph's `edge_types`.",
+  "length": 53,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

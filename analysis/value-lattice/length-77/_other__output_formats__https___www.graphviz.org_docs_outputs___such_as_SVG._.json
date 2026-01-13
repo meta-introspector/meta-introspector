@@ -1,0 +1,12 @@
+{
+  "value": " other [output formats](https://www.graphviz.org/docs/outputs), such as SVG.)",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

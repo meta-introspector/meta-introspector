@@ -1,0 +1,12 @@
+{
+  "value": "   type Assoc<'a, 'b> where Self: 'a = () where Self: 'b;",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " The type for a closure that gets invoked when a thread starts. The",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

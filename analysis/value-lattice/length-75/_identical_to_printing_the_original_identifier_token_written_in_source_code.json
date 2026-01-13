@@ -1,0 +1,12 @@
+{
+  "value": " identical to printing the original identifier token written in source code",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

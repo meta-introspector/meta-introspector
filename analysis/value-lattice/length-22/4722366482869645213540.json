@@ -1,0 +1,12 @@
+{
+  "value": "4722366482869645213540",
+  "length": 22,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "integer_literal"
+    }
+  ]
+}

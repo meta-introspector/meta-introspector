@@ -1,0 +1,12 @@
+{
+  "value": " that the caller might push it onto the stack and start walking its",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

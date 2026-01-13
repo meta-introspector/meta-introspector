@@ -1,0 +1,12 @@
+{
+  "value": " Fields and constructor ids of enum variants and structs.",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

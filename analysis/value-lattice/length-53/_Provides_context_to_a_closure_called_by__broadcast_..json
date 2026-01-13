@@ -1,0 +1,12 @@
+{
+  "value": " Provides context to a closure called by `broadcast`.",
+  "length": 53,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

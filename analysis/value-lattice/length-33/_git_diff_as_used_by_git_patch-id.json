@@ -1,0 +1,12 @@
+{
+  "value": " git diff as used by git patch-id",
+  "length": 33,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

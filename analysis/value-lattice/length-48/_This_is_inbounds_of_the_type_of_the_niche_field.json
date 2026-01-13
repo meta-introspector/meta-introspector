@@ -1,0 +1,12 @@
+{
+  "value": " This is inbounds of the type of the niche field",
+  "length": 48,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

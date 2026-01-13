@@ -1,0 +1,12 @@
+{
+  "value": " single-threaded hashing. When benchmarks report that BLAKE3 is 10x or 20x faster than other",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

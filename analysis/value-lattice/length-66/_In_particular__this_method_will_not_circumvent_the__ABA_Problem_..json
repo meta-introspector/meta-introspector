@@ -1,0 +1,12 @@
+{
+  "value": " In particular, this method will not circumvent the [ABA Problem].",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

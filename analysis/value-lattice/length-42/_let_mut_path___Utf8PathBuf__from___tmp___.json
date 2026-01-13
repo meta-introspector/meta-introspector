@@ -1,0 +1,17 @@
+{
+  "value": " let mut path = Utf8PathBuf::from(\"/tmp\");",
+  "length": 42,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

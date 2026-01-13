@@ -1,0 +1,12 @@
+{
+  "value": " with such a hash collision would very probably lead to an ICE, and in the",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

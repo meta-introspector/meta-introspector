@@ -1,0 +1,12 @@
+{
+  "value": " Keeps track of how many try blocks we are in at any point during linting.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

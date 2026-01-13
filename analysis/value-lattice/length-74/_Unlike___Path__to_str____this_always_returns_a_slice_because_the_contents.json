@@ -1,0 +1,12 @@
+{
+  "value": " Unlike [`Path::to_str`], this always returns a slice because the contents",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

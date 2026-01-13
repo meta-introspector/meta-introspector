@@ -1,0 +1,12 @@
+{
+  "value": "this macro expands metavariables in an unsafe block",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

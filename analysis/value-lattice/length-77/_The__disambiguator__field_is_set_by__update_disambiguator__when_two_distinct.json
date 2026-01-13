@@ -1,0 +1,12 @@
+{
+  "value": " The `disambiguator` field is set by `update_disambiguator` when two distinct",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Unstable impl detail that directly uses Rust types to describe the ABI to LLVM.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

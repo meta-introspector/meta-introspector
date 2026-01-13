@@ -1,0 +1,12 @@
+{
+  "value": " Truncates `value` to `self` bits and then sign-extends it to 128 bits",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

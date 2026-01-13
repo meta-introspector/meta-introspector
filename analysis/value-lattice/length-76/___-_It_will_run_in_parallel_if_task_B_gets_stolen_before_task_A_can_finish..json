@@ -1,0 +1,12 @@
+{
+  "value": "   - It will run in parallel if task B gets stolen before task A can finish.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

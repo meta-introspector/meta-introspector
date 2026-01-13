@@ -1,0 +1,12 @@
+{
+  "value": " Returns an iterator over the items in the map that are equal to `key` along with their",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

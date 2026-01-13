@@ -1,0 +1,12 @@
+{
+  "value": " Explicitly defined crate path mappings, used to override default path resolution logic.",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

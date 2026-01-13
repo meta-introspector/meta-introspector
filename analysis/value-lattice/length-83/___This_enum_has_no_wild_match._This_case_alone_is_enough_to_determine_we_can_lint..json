@@ -1,0 +1,12 @@
+{
+  "value": " * This enum has no wild match. This case alone is enough to determine we can lint.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

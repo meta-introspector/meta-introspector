@@ -1,0 +1,17 @@
+{
+  "value": " Extract only the core eigenmatrix components",
+  "length": 45,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

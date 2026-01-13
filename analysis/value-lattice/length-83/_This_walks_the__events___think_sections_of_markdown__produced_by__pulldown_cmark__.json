@@ -1,0 +1,12 @@
+{
+  "value": " This walks the \"events\" (think sections of markdown) produced by `pulldown_cmark`,",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

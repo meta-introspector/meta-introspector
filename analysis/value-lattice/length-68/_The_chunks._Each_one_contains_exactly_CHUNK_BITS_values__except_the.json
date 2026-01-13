@@ -1,0 +1,12 @@
+{
+  "value": " The chunks. Each one contains exactly CHUNK_BITS values, except the",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

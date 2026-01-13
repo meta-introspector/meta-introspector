@@ -1,0 +1,12 @@
+{
+  "value": " This function fetches and builds all lints specified in the given [`Config`]",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

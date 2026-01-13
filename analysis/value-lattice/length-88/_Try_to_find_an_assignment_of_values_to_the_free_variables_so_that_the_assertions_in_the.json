@@ -1,0 +1,12 @@
+{
+  "value": " Try to find an assignment of values to the free variables so that the assertions in the",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

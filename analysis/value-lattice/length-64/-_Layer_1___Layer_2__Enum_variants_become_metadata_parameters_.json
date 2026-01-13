@@ -1,0 +1,12 @@
+{
+  "value": "- Layer 1 → Layer 2: Enum variants become metadata parameters\n",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

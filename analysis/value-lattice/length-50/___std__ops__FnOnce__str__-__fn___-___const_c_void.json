@@ -1,0 +1,12 @@
+{
+  "value": " ::std::ops::FnOnce(&str) -> fn() -> *const c_void",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

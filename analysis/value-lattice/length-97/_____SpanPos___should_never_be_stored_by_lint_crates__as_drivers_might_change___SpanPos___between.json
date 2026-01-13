@@ -1,0 +1,12 @@
+{
+  "value": " * [`SpanPos`] should never be stored by lint crates, as drivers might change [`SpanPos`] between",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " kernel/user transition. The exception are setups where the application uses multiple",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

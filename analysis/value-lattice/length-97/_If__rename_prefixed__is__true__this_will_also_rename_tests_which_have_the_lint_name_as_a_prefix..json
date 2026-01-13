@@ -1,0 +1,12 @@
+{
+  "value": " If `rename_prefixed` is `true` this will also rename tests which have the lint name as a prefix.",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

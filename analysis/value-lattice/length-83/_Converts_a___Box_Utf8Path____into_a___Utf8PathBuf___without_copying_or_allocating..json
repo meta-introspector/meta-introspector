@@ -1,0 +1,12 @@
+{
+  "value": " Converts a [`Box<Utf8Path>`] into a [`Utf8PathBuf`] without copying or allocating.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

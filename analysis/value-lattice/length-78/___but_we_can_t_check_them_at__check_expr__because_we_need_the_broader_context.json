@@ -1,0 +1,12 @@
+{
+  "value": "   but we can't check them at `check_expr` because we need the broader context",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

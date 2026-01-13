@@ -1,0 +1,12 @@
+{
+  "value": " `SortedMap` can be faster than a `BTreeMap` for small sizes (<50) since it",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

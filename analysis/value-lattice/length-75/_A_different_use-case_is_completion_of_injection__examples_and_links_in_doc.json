@@ -1,0 +1,12 @@
+{
+  "value": " A different use-case is completion of injection (examples and links in doc",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

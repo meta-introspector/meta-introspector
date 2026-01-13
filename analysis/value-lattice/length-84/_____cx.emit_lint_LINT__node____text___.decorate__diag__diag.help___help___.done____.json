@@ -1,0 +1,12 @@
+{
+  "value": "     cx.emit_lint(LINT, node, \"<text>\").decorate(|diag| diag.help(\"<help>\").done());",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

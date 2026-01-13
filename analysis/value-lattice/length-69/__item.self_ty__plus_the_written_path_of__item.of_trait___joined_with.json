@@ -1,0 +1,12 @@
+{
+  "value": " `item.self_ty` plus the written path of `item.of_trait`, joined with",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

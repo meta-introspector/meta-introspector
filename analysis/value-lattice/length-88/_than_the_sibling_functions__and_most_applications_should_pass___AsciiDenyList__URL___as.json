@@ -1,0 +1,17 @@
+{
+  "value": " than the sibling functions, and most applications should pass [`AsciiDenyList::URL`] as",
+  "length": 88,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

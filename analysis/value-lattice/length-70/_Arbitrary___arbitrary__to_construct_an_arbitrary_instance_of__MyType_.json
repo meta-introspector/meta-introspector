@@ -1,0 +1,12 @@
+{
+  "value": " Arbitrary>::arbitrary` to construct an arbitrary instance of `MyType`",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

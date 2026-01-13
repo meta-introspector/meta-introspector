@@ -1,0 +1,12 @@
+{
+  "value": " value that is the widen of self.value_at(path) and other.value_at(path)",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

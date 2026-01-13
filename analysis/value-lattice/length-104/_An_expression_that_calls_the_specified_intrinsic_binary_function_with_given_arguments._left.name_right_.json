@@ -1,0 +1,12 @@
+{
+  "value": " An expression that calls the specified intrinsic binary function with given arguments. left.name(right)",
+  "length": 104,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

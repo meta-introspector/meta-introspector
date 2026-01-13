@@ -1,0 +1,12 @@
+{
+  "value": "     (0..).map(|i| std::char::from_digit(i, 16)).while_some(),",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

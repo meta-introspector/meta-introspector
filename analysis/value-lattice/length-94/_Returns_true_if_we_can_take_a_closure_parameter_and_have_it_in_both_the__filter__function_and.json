@@ -1,0 +1,12 @@
+{
+  "value": " Returns true if we can take a closure parameter and have it in both the `filter` function and",
+  "length": 94,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

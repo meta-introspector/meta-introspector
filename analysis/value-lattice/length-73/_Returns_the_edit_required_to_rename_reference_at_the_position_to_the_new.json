@@ -1,0 +1,12 @@
+{
+  "value": " Returns the edit required to rename reference at the position to the new",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

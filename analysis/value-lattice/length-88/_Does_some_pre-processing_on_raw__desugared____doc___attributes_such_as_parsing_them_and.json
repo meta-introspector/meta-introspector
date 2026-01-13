@@ -1,0 +1,12 @@
+{
+  "value": " Does some pre-processing on raw, desugared `#[doc]` attributes such as parsing them and",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

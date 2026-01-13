@@ -1,0 +1,12 @@
+{
+  "value": " Returns a human readable string representation of the item defined by def_id.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

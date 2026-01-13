@@ -1,0 +1,12 @@
+{
+  "value": " Shamelessly borrowed from `can_begin_expr`, only used for diagnostics right now.",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

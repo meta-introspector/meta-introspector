@@ -1,0 +1,12 @@
+{
+  "value": " When decoding to UTF-8, the output buffer must have at least 4 bytes of",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

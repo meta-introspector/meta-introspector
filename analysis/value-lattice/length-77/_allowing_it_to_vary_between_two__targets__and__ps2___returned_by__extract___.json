@@ -1,0 +1,12 @@
+{
+  "value": " allowing it to vary between two `targets` and `ps2` (returned by `extract`),",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

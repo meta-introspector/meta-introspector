@@ -1,0 +1,12 @@
+{
+  "value": " Visit `ty` and collect the all the lifetimes appearing in it, implicit or not.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(it.next(), Some(std::path::MAIN_SEPARATOR.to_string().as_str()));",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

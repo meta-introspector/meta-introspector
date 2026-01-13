@@ -1,0 +1,12 @@
+{
+  "value": " Level 3, 11, 19...: Meta-meta-pattern (1-dimensional again)",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

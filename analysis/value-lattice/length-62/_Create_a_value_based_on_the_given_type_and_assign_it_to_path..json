@@ -1,0 +1,12 @@
+{
+  "value": " Create a value based on the given type and assign it to path.",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Advance the iterator, returning the next short flag on success",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

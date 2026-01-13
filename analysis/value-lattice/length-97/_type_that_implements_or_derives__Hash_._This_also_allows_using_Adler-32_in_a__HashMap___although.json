@@ -1,0 +1,12 @@
+{
+  "value": " type that implements or derives `Hash`. This also allows using Adler-32 in a `HashMap`, although",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

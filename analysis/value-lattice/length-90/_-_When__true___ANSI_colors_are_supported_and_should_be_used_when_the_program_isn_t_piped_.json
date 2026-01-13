@@ -1,0 +1,12 @@
+{
+  "value": " - When `true`, ANSI colors are supported and should be used when the program isn't piped,",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

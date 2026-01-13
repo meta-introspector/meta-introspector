@@ -1,0 +1,12 @@
+{
+  "value": " be the one without the ref-deref, or the actual heap block, if the path binds to a heap",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

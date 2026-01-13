@@ -1,0 +1,12 @@
+{
+  "value": " Simple test to get basic gossip functionality working without full build",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

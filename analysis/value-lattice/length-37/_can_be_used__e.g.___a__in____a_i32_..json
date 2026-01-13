@@ -1,0 +1,12 @@
+{
+  "value": " can be used, e.g. `'a` in `&'a i32`.",
+  "length": 37,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

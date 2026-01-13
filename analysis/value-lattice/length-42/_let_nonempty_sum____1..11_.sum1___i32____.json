@@ -1,0 +1,12 @@
+{
+  "value": " let nonempty_sum = (1..11).sum1::<i32>();",
+  "length": 42,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

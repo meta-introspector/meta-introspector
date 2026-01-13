@@ -1,0 +1,12 @@
+{
+  "value": " Returns an element that is true if \"self * other\" is not in range of target_type.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

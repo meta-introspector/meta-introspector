@@ -1,0 +1,12 @@
+{
+  "value": " `parent` is a member of. This state is transient: whenever we",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

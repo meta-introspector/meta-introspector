@@ -1,0 +1,12 @@
+{
+  "value": " `missing_docs` would have a larger edit distance because it does not contain the `clippy` tool prefix.",
+  "length": 103,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

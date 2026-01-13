@@ -1,0 +1,12 @@
+{
+  "value": " Find the value of the first element satisfying a predicate or return the last element, if any.",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

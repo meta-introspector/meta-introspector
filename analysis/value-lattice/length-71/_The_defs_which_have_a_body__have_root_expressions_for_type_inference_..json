@@ -1,0 +1,12 @@
+{
+  "value": " The defs which have a body (have root expressions for type inference).",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

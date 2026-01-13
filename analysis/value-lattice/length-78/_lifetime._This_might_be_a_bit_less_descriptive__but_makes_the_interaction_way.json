@@ -1,0 +1,12 @@
+{
+  "value": " lifetime. This might be a bit less descriptive, but makes the interaction way",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

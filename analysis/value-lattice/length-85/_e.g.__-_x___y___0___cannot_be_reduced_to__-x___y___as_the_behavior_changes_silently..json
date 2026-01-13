@@ -1,0 +1,12 @@
+{
+  "value": " e.g. `-(x + y + 0)` cannot be reduced to `-x + y`, as the behavior changes silently.",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

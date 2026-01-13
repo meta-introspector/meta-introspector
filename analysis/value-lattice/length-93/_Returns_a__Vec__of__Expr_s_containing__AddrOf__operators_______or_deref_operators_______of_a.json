@@ -1,0 +1,12 @@
+{
+  "value": " Returns a `Vec` of `Expr`s containing `AddrOf` operators (`&`) or deref operators (`*`) of a",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

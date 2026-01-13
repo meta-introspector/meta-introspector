@@ -1,0 +1,12 @@
+{
+  "value": " for entry in path.read_dir_utf8().expect(\"read_dir call failed\") {",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

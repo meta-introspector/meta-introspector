@@ -1,0 +1,12 @@
+{
+  "value": " It internally maintains mappings between node identifiers and their indices in vectors",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

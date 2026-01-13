@@ -1,0 +1,12 @@
+{
+  "value": " local_path is reference to a local of the promoted constant function.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

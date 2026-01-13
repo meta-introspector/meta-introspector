@@ -1,0 +1,12 @@
+{
+  "value": " Test what happens when the thread-pool is dropped but there are",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " `.rev().take(n).rev()` to have a similar result (lazy and non-allocating)",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " implementation is quite different and incurs very low",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

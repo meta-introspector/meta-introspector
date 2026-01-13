@@ -1,0 +1,12 @@
+{
+  "value": " Added for optimization purposes to avoid the need to escape",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

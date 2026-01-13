@@ -1,0 +1,12 @@
+{
+  "value": "     // That closure is fine, but now we can't use `ok` anywhere else,",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

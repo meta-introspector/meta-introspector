@@ -1,0 +1,12 @@
+{
+  "value": " WARNING: this implementation of clone_from will panic if the two",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

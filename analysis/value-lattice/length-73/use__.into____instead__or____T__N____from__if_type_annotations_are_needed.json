@@ -1,0 +1,12 @@
+{
+  "value": "use `.into()` instead, or `<[T; N]>::from` if type annotations are needed",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

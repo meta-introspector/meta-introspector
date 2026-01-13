@@ -1,0 +1,12 @@
+{
+  "value": " bytes, `with_tail` simply returns the trailing bytes along with the",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

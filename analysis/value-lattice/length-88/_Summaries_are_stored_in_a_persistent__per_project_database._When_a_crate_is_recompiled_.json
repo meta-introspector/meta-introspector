@@ -1,0 +1,12 @@
+{
+  "value": " Summaries are stored in a persistent, per project database. When a crate is recompiled,",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

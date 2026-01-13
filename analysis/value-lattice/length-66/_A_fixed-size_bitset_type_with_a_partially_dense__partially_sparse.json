@@ -1,0 +1,12 @@
+{
+  "value": " A fixed-size bitset type with a partially dense, partially sparse",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

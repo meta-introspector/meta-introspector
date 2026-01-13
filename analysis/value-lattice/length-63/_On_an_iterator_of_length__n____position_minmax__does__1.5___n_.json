@@ -1,0 +1,12 @@
+{
+  "value": " On an iterator of length `n`, `position_minmax` does `1.5 * n`",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

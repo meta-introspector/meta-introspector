@@ -1,0 +1,12 @@
+{
+  "value": " Returns the code snippet that this [`Span`] refers to or the given default",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

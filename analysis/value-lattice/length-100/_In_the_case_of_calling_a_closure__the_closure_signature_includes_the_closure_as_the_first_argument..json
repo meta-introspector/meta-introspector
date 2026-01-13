@@ -1,0 +1,12 @@
+{
+  "value": " In the case of calling a closure, the closure signature includes the closure as the first argument.",
+  "length": 100,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

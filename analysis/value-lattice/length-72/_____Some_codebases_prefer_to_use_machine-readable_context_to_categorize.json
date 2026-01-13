@@ -1,0 +1,12 @@
+{
+  "value": "     Some codebases prefer to use machine-readable context to categorize",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

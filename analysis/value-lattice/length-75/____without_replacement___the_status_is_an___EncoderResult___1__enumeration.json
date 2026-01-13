@@ -1,0 +1,12 @@
+{
+  "value": " `*_without_replacement`, the status is an [`EncoderResult`][1] enumeration",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

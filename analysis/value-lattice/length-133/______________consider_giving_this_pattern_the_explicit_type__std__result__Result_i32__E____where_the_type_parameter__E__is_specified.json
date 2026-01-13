@@ -1,0 +1,12 @@
+{
+  "value": "    |         consider giving this pattern the explicit type `std::result::Result<i32, E>`, where the type parameter `E` is specified",
+  "length": 133,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

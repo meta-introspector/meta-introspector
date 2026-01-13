@@ -1,0 +1,12 @@
+{
+  "value": " combining adjacent items.  It does so in bottom-up-merge-sort order,",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

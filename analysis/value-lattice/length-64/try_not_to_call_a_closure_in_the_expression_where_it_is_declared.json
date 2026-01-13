@@ -1,0 +1,12 @@
+{
+  "value": "try not to call a closure in the expression where it is declared",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Clamp the sizes of the submission queue and completion queue at their maximum values instead",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

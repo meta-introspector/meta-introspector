@@ -1,0 +1,12 @@
+{
+  "value": "       whether the range is inclusive or not, the output is the same.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

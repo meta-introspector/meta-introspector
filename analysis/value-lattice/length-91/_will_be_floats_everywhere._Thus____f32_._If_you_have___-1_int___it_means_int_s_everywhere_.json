@@ -1,0 +1,12 @@
+{
+  "value": " will be floats everywhere. Thus `* f32`. If you have `{-1:int}` it means int's everywhere,",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " not treated as a BOM. (Hence, the decoder never morphs into a decoder",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

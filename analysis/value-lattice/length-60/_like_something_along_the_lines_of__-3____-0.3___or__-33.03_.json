@@ -1,0 +1,12 @@
+{
+  "value": " like something along the lines of `-3`, `-0.3`, or `-33.03`",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " is updated to incorporate the `StableCrateId` of the exporting crate.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

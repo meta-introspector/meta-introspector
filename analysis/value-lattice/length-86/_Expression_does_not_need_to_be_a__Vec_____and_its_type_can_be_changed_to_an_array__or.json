@@ -1,0 +1,12 @@
+{
+  "value": " Expression does not need to be a `Vec<_>` and its type can be changed to an array (or",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

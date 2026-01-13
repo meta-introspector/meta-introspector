@@ -1,0 +1,12 @@
+{
+  "value": " It is a hash value (so we can efficiently consume it when stable-hashing",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

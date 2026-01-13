@@ -1,0 +1,12 @@
+{
+  "value": " there seems to be no real way to transform a lang-item to the path of",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

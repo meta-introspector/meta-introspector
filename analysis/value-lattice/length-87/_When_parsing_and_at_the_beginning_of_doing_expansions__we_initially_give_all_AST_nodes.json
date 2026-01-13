@@ -1,0 +1,12 @@
+{
+  "value": " When parsing and at the beginning of doing expansions, we initially give all AST nodes",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

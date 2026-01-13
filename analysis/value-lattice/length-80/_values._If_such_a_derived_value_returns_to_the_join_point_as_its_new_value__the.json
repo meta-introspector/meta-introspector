@@ -1,0 +1,12 @@
+{
+  "value": " values. If such a derived value returns to the join point as its new value, the",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

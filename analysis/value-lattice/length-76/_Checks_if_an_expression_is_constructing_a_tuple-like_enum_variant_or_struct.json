@@ -1,0 +1,12 @@
+{
+  "value": " Checks if an expression is constructing a tuple-like enum variant or struct",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

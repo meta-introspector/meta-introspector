@@ -1,0 +1,12 @@
+{
+  "value": " Since the REPLACEMENT CHARACTER fits into one UTF-16 code unit, the",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

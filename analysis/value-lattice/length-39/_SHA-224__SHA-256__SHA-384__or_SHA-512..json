@@ -1,0 +1,12 @@
+{
+  "value": " SHA-224, SHA-256, SHA-384, or SHA-512.",
+  "length": 39,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

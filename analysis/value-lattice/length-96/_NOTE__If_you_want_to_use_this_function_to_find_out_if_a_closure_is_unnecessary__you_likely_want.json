@@ -1,0 +1,12 @@
+{
+  "value": " NOTE: If you want to use this function to find out if a closure is unnecessary, you likely want",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

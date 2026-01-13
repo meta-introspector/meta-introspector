@@ -1,0 +1,12 @@
+{
+  "value": " [RFC5758]: https://www.rfc-editor.org/rfc/rfc5758#section-3.2",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

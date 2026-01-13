@@ -1,0 +1,12 @@
+{
+  "value": " where `E1` has tag `A` and `C`, `E2` has tag `B` and `D`. Suppose that addition propagates",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

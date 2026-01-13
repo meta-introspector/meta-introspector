@@ -1,0 +1,12 @@
+{
+  "value": " is pervasive and has non-trivial cost. Instead, impls of this trait must",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

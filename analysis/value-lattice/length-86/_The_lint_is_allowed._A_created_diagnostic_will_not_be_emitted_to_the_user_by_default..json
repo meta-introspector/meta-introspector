@@ -1,0 +1,12 @@
+{
+  "value": " The lint is allowed. A created diagnostic will not be emitted to the user by default.",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

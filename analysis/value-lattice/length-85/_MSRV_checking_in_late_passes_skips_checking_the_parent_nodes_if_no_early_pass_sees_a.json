@@ -1,0 +1,12 @@
+{
+  "value": " MSRV checking in late passes skips checking the parent nodes if no early pass sees a",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Because this situation arises for non-public functions, it is possible to use source spans",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

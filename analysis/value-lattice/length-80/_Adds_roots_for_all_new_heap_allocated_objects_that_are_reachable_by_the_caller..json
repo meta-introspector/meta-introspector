@@ -1,0 +1,12 @@
+{
+  "value": " Adds roots for all new heap allocated objects that are reachable by the caller.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

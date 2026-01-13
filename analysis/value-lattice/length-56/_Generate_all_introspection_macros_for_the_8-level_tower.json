@@ -1,0 +1,12 @@
+{
+  "value": " Generate all introspection macros for the 8-level tower",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "try wrapping your function pointer type in `Option<T>` instead, and using `None` as a null pointer value",
+  "length": 104,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

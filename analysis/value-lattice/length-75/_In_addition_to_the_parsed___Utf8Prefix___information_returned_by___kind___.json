@@ -1,0 +1,12 @@
+{
+  "value": " In addition to the parsed [`Utf8Prefix`] information returned by [`kind`],",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " let it = (0..2).cartesian_product(\"αβ\".chars());",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

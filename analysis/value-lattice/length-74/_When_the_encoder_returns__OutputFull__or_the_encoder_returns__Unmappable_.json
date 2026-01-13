@@ -1,0 +1,12 @@
+{
+  "value": " When the encoder returns `OutputFull` or the encoder returns `Unmappable`",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

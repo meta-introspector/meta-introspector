@@ -1,0 +1,12 @@
+{
+  "value": " Note that this includes only the `r` and `s` signature components, and not the OID.",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

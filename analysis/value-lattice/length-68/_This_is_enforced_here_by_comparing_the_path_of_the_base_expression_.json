@@ -1,0 +1,12 @@
+{
+  "value": " This is enforced here by comparing the path of the base expression;",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

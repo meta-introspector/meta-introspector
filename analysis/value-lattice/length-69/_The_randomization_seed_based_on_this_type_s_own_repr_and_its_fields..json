@@ -1,0 +1,12 @@
+{
+  "value": " The randomization seed based on this type's own repr and its fields.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

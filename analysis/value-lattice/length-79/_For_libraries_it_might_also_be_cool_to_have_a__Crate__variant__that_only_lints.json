@@ -1,0 +1,12 @@
+{
+  "value": " For libraries it might also be cool to have a `Crate` variant, that only lints",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

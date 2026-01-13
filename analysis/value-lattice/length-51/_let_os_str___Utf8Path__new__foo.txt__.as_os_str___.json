@@ -1,0 +1,12 @@
+{
+  "value": " let os_str = Utf8Path::new(\"foo.txt\").as_os_str();",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

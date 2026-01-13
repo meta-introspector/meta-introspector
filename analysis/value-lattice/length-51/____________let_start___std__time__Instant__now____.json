@@ -1,0 +1,12 @@
+{
+  "value": "            let start = std::time::Instant::now();\n",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

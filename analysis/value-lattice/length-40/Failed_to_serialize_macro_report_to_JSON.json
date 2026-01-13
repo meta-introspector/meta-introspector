@@ -1,0 +1,12 @@
+{
+  "value": "Failed to serialize macro report to JSON",
+  "length": 40,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

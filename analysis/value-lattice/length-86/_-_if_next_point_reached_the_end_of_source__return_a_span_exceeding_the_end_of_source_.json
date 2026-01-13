@@ -1,0 +1,12 @@
+{
+  "value": " - if next_point reached the end of source, return a span exceeding the end of source,",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

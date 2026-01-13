@@ -1,0 +1,12 @@
+{
+  "value": " constructed qualified path, the caller of this function should check if the selector of the",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "__rust_no_alloc_shim_is_unstable_v2",
+  "length": 35,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

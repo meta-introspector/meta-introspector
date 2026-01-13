@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(parent, Utf8Path::new(\"/foo\"));",
+  "length": 43,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

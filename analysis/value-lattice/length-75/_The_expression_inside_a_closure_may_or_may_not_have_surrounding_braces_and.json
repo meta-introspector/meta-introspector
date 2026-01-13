@@ -1,0 +1,12 @@
+{
+  "value": " The expression inside a closure may or may not have surrounding braces and",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

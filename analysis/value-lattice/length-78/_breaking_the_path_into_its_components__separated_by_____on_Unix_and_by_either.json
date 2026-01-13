@@ -1,0 +1,12 @@
+{
+  "value": " breaking the path into its components (separated by `/` on Unix and by either",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

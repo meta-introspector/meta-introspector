@@ -1,0 +1,12 @@
+{
+  "value": " Includes methods that panic rather than returning a negative value.",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

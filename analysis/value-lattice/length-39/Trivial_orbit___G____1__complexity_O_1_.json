@@ -1,0 +1,12 @@
+{
+  "value": "Trivial orbit: |G| = 1, complexity O(1)",
+  "length": 39,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Find the first ancestor span that does not come from any macro expansion.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

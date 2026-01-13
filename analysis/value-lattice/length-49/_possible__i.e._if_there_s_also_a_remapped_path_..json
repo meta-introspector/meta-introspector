@@ -1,0 +1,12 @@
+{
+  "value": " possible (i.e. if there's also a remapped path).",
+  "length": 49,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This example also illustrates how to use a type (in this case the edge",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

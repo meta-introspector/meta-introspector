@@ -1,0 +1,12 @@
+{
+  "value": " The `ChunkSize` field is the count of 1s set in the chunk, and",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

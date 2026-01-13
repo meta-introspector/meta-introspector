@@ -1,0 +1,12 @@
+{
+  "value": " The associated constant `CAN_USE_UNSTABLE_SORT` denotes whether",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

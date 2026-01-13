@@ -1,0 +1,12 @@
+{
+  "value": " **Note:** This is an **approximation** that strives to give the *human-perceived notion* of an \"impl for type\",",
+  "length": 112,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

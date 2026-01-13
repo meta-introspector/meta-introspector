@@ -1,0 +1,12 @@
+{
+  "value": " Whether to **only** check for missing documentation in items visible within the current",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

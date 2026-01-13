@@ -1,0 +1,12 @@
+{
+  "value": "if you instead know that you may want to keep some parts of the old file, call `.truncate(false)`",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

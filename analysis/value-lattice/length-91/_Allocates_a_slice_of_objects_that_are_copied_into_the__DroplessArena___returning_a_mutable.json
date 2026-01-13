@@ -1,0 +1,12 @@
+{
+  "value": " Allocates a slice of objects that are copied into the `DroplessArena`, returning a mutable",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

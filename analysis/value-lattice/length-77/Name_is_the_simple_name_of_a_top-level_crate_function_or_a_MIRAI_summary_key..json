@@ -1,0 +1,12 @@
+{
+  "value": "Name is the simple name of a top-level crate function or a MIRAI summary key.",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

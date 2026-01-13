@@ -1,0 +1,12 @@
+{
+  "value": " to these nodes. The `Annotatable` enum is a way to say \"this specific type of AST node can",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

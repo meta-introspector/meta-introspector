@@ -1,0 +1,12 @@
+{
+  "value": " If the given `Expr` is not some kind of range, the function returns `false`.",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

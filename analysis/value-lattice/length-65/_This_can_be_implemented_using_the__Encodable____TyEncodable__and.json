@@ -1,0 +1,12 @@
+{
+  "value": " This can be implemented using the `Encodable`, `TyEncodable` and",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

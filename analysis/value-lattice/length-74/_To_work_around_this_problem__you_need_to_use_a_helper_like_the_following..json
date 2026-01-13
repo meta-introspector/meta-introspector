@@ -1,0 +1,12 @@
+{
+  "value": " To work around this problem, you need to use a helper like the following.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

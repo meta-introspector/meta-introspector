@@ -1,0 +1,12 @@
+{
+  "value": " SINGLETONS: One each for 17, 19, 23, 29, 31, 41, 47, 59, 71",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This test has [a `link_with_underscores`][chunked-example] inside it. See #823.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

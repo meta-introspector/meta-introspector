@@ -1,0 +1,12 @@
+{
+  "value": " This position can map to a source file or a virtual space, when it comes",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Pass bytes as part of a device control string to the handle chosen in `hook`. C0 controls",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

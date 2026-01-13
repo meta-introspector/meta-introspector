@@ -1,0 +1,12 @@
+{
+  "value": " Peels away all the compiler generated code surrounding the body of an async function,",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

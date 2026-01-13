@@ -1,0 +1,12 @@
+{
+  "value": " let it = (1..7).interleave_shortest(vec![-1, -2]);",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " let it: Tuples<Range<u32>, (u32, u32, u32)> = (1..7).tuples();",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

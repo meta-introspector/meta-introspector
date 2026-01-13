@@ -1,0 +1,12 @@
+{
+  "value": " Creates the evaluation context from the lint context. This requires the lint context to be",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

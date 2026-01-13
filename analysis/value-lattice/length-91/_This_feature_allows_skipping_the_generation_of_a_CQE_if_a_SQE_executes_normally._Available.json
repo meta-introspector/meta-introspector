@@ -1,0 +1,12 @@
+{
+  "value": " This feature allows skipping the generation of a CQE if a SQE executes normally. Available",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

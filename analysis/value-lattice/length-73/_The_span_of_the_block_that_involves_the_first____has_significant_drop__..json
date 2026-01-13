@@ -1,0 +1,12 @@
+{
+  "value": " The span of the block that involves the first `#[has_significant_drop]`.",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

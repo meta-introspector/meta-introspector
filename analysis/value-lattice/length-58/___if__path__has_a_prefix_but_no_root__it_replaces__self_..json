@@ -1,0 +1,12 @@
+{
+  "value": " * if `path` has a prefix but no root, it replaces `self`.",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

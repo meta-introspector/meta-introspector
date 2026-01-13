@@ -1,0 +1,12 @@
+{
+  "value": " of this item. That visibility can be used to check if the item is public",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

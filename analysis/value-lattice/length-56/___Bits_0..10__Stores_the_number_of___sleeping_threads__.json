@@ -1,0 +1,12 @@
+{
+  "value": " * Bits 0..10: Stores the number of **sleeping threads**",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

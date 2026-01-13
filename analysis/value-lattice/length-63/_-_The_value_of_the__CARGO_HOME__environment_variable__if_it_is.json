@@ -1,0 +1,12 @@
+{
+  "value": " - The value of the `CARGO_HOME` environment variable, if it is",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Returns the first type inside the `Option`/`Result` type passed as argument.",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

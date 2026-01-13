@@ -1,0 +1,12 @@
+{
+  "value": " or edition, so we have to guess the rawness using the global edition.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

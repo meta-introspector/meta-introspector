@@ -1,0 +1,12 @@
+{
+  "value": " Returns `true` if the path exists on disk and is pointing at a symbolic link.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

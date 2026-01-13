@@ -1,0 +1,12 @@
+{
+  "value": " A pointer to the start of the free space.",
+  "length": 42,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

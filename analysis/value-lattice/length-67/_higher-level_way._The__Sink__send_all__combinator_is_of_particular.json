@@ -1,0 +1,12 @@
+{
+  "value": " higher-level way. The `Sink::send_all` combinator is of particular",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

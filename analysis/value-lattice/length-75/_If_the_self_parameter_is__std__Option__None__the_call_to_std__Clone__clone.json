@@ -1,0 +1,12 @@
+{
+  "value": " If the self parameter is &std::Option::None, the call to std::Clone::clone",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

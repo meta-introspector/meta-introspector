@@ -1,0 +1,12 @@
+{
+  "value": " IO operations trait - 355 calls (10.6% of all syscalls)  ",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

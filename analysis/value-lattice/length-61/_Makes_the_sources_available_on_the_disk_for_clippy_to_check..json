@@ -1,0 +1,12 @@
+{
+  "value": " Makes the sources available on the disk for clippy to check.",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

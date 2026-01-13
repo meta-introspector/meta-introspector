@@ -1,0 +1,12 @@
+{
+  "value": " The algorithm assigns a numerical weighting to each element of a linked set of objects,",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

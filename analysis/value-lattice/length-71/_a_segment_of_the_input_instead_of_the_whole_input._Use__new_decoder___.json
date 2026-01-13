@@ -1,0 +1,12 @@
+{
+  "value": " a segment of the input instead of the whole input. Use `new_decoder()`",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

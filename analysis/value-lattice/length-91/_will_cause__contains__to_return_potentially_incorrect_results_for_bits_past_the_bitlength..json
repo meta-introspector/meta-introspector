@@ -1,0 +1,12 @@
+{
+  "value": " will cause `contains` to return potentially incorrect results for bits past the bitlength.",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

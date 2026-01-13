@@ -1,0 +1,12 @@
+{
+  "value": " Unlike e.g. in the case of ISO-8859-1 and windows-1252, GBK encoder wasn't",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

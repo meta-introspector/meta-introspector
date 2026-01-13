@@ -1,0 +1,12 @@
+{
+  "value": " Per-session global variables: this struct is stored in thread-local storage",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

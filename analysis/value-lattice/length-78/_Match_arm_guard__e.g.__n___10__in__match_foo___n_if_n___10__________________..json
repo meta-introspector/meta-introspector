@@ -1,0 +1,12 @@
+{
+  "value": " Match arm guard, e.g. `n > 10` in `match foo { n if n > 10 => {}, _ => {} }`.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

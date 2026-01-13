@@ -1,0 +1,12 @@
+{
+  "value": " Will this declaration change? (0.0 = never, 1.0 = definitely)",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This method is useful for reporting errors at the exact location users wrote code",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

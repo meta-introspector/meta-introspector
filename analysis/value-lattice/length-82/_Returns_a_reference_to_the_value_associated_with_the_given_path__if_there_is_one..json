@@ -1,0 +1,12 @@
+{
+  "value": " Returns a reference to the value associated with the given path, if there is one.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

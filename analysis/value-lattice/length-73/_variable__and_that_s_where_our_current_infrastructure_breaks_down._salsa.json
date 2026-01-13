@@ -1,0 +1,12 @@
+{
+  "value": " variable, and that's where our current infrastructure breaks down. salsa",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

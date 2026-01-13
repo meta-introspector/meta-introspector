@@ -1,0 +1,12 @@
+{
+  "value": " replaced with underscores (and in C/C++ have `_ENCODING` appended to the",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

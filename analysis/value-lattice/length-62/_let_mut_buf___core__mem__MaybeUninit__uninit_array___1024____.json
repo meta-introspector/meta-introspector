@@ -1,0 +1,12 @@
+{
+  "value": " let mut buf = core::mem::MaybeUninit::uninit_array::<1024>();",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

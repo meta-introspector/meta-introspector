@@ -1,0 +1,12 @@
+{
+  "value": " Checks if a function's body represents the identity function. Looks for bodies of the form:",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

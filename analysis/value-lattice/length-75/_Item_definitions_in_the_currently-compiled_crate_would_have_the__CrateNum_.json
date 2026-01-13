@@ -1,0 +1,12 @@
+{
+  "value": " Item definitions in the currently-compiled crate would have the `CrateNum`",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

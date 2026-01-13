@@ -1,0 +1,12 @@
+{
+  "value": " The syntactic representation of an array with a known size like: [`[T; N]`](prim@array)",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

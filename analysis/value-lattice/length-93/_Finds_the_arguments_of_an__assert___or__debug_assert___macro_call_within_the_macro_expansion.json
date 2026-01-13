@@ -1,0 +1,12 @@
+{
+  "value": " Finds the arguments of an `assert!` or `debug_assert!` macro call within the macro expansion",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

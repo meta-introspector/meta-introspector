@@ -1,0 +1,12 @@
+{
+  "value": " If there is no MIR implementation available for the clone method, then fall back to a",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

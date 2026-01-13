@@ -1,0 +1,22 @@
+{
+  "value": " Incrementally decode a byte stream into UTF-8 with malformed sequences",
+  "length": 71,
+  "total_usages": 3,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

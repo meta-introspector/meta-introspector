@@ -1,0 +1,12 @@
+{
+  "value": " Sniff for UTF-8, UTF-16BE or UTF-16LE BOM",
+  "length": 42,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " not available in the C API.) Unlike the rest of the API available to Rust,",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

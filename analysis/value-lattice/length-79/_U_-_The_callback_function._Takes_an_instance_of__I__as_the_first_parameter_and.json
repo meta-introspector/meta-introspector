@@ -1,0 +1,12 @@
+{
+  "value": " U - The callback function. Takes an instance of `I` as the first parameter and",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

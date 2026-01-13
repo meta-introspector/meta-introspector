@@ -1,0 +1,17 @@
+{
+  "value": " Returns a copy of self with its last selector removed if that matches the given selector.",
+  "length": 90,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

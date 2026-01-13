@@ -1,0 +1,12 @@
+{
+  "value": " Called when a node is examined by the depth-first search.",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

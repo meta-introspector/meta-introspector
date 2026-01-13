@@ -1,0 +1,12 @@
+{
+  "value": "         unsafe { $v; } // unsafe context, it might be possible to emit a warning here, so add it to the map",
+  "length": 108,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

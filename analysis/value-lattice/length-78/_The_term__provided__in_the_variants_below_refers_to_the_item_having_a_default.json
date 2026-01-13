@@ -1,0 +1,12 @@
+{
+  "value": " The term \"provided\" in the variants below refers to the item having a default",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

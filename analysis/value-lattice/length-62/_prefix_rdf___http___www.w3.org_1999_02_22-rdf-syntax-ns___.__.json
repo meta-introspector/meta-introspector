@@ -1,0 +1,12 @@
+{
+  "value": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This is trivially true for types where encoding and decoding",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

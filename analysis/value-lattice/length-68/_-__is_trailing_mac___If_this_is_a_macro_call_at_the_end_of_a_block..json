@@ -1,0 +1,12 @@
+{
+  "value": " - `is_trailing_mac`: If this is a macro call at the end of a block.",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

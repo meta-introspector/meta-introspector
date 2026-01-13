@@ -1,0 +1,12 @@
+{
+  "value": " use constant_time_eq::constant_time_eq_n;",
+  "length": 42,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Invoked by owning thread as it prepares to sleep. Returns true",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " The builder allows more flexibility. For example, if you are using a HTTP",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

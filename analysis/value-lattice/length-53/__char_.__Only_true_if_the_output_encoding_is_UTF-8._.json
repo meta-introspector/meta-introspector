@@ -1,0 +1,12 @@
+{
+  "value": " `char`. (Only true if the output encoding is UTF-8.)",
+  "length": 53,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

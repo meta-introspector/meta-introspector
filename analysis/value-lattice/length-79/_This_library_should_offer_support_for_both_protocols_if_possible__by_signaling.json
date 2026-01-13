@@ -1,0 +1,12 @@
+{
+  "value": " This library should offer support for both protocols if possible, by signaling",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

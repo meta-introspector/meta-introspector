@@ -1,0 +1,12 @@
+{
+  "value": " Checks sub-expressions which create the value returned by the given expression for whether",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

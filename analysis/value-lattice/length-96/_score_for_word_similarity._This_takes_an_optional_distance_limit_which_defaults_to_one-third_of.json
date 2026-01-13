@@ -1,0 +1,12 @@
+{
+  "value": " score for word similarity. This takes an optional distance limit which defaults to one-third of",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

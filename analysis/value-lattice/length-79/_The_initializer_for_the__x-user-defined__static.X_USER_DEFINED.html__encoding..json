@@ -1,0 +1,12 @@
+{
+  "value": " The initializer for the [x-user-defined](static.X_USER_DEFINED.html) encoding.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

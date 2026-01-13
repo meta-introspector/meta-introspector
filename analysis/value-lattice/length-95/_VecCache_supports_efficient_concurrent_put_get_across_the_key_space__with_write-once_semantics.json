@@ -1,0 +1,12 @@
+{
+  "value": " VecCache supports efficient concurrent put/get across the key space, with write-once semantics",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

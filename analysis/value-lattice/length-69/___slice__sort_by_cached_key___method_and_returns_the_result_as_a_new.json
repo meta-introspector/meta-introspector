@@ -1,0 +1,12 @@
+{
+  "value": " [`slice::sort_by_cached_key`] method and returns the result as a new",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

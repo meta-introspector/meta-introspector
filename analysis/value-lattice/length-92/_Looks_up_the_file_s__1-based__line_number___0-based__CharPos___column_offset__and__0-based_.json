@@ -1,0 +1,12 @@
+{
+  "value": " Looks up the file's (1-based) line number, (0-based `CharPos`) column offset, and (0-based)",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

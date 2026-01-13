@@ -1,0 +1,12 @@
+{
+  "value": " fn partition<T:PartialOrd+Send>(v: &mut [T]) -> usize {",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

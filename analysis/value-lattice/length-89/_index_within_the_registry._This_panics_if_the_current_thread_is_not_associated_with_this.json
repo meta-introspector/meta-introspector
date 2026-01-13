@@ -1,0 +1,12 @@
+{
+  "value": " index within the registry. This panics if the current thread is not associated with this",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

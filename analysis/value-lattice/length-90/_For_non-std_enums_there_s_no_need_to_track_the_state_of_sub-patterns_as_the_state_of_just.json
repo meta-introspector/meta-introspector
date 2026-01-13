@@ -1,0 +1,12 @@
+{
+  "value": " For non-std enums there's no need to track the state of sub-patterns as the state of just",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "# Phase 3: Use polyfill compiler to build full compiler\n",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

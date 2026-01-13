@@ -1,0 +1,12 @@
+{
+  "value": " Extends Solana gossip to support:",
+  "length": 34,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

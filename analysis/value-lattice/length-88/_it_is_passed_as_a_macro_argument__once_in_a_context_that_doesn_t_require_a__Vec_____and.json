@@ -1,0 +1,12 @@
+{
+  "value": " it is passed as a macro argument, once in a context that doesn't require a `Vec<_>` and",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

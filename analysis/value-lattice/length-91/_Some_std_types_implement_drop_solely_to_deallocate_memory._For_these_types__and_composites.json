@@ -1,0 +1,12 @@
+{
+  "value": " Some std types implement drop solely to deallocate memory. For these types, and composites",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

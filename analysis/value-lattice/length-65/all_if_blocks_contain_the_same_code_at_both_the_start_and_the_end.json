@@ -1,0 +1,12 @@
+{
+  "value": "all if blocks contain the same code at both the start and the end",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " [`crate::parser::ChallengeParser`] directly when you want to parse lazily,",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

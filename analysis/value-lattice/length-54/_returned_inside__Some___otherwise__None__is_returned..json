@@ -1,0 +1,12 @@
+{
+  "value": " returned inside `Some`, otherwise `None` is returned.",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

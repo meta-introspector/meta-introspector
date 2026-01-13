@@ -1,0 +1,12 @@
+{
+  "value": " Return a `HashMap` of keys mapped to `Vec`s of values. The key is specified",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

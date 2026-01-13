@@ -1,0 +1,12 @@
+{
+  "value": " Parse a signature from ASN.1 DER and associate the given OID with it.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "<h1>ZOS Server - Zero Ontology System</h1><p>Stage 1 Foundation Server</p>",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " IORING_REGISTER_FILES opcode. Failure to do so will result in submitted IO being errored",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " `SortedIndexMultiMap` require *O*(*n*) time to insert a single item. This is because we may need",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

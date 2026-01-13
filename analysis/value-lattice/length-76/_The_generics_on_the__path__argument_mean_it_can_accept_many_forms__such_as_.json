@@ -1,0 +1,12 @@
+{
+  "value": " The generics on the `path` argument mean it can accept many forms, such as:",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

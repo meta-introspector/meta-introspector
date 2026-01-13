@@ -1,0 +1,12 @@
+{
+  "value": " It will create a filesystem \"sandbox\" under the \"cargo integration test\" directory for each test, such as `/path/to/cargo/target/tmp/cit/t123/`.",
+  "length": 145,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This guard object is returned from most loading methods (with the notable exception of",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

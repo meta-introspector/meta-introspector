@@ -1,0 +1,12 @@
+{
+  "value": " * `[x, y]` is the identity representation of `[x, y]`",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

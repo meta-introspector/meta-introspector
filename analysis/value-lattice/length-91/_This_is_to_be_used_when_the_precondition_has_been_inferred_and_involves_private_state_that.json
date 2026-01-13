@@ -1,0 +1,12 @@
+{
+  "value": " This is to be used when the precondition has been inferred and involves private state that",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

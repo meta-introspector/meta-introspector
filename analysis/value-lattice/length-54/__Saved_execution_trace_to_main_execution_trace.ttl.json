@@ -1,0 +1,12 @@
+{
+  "value": "💾 Saved execution trace to main_execution_trace.ttl",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

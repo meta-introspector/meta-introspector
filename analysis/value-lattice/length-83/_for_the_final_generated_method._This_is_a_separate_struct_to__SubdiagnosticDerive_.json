@@ -1,0 +1,12 @@
+{
+  "value": " for the final generated method. This is a separate struct to `SubdiagnosticDerive`",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Converts a [`Utf8PathBuf`] to a [`PathBuf`].",
+  "length": 45,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

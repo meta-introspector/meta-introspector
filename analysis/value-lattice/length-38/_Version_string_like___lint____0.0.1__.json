@@ -1,0 +1,12 @@
+{
+  "value": " Version string like: `lint = \"0.0.1\"`",
+  "length": 38,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

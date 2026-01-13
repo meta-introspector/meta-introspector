@@ -1,0 +1,12 @@
+{
+  "value": " Creates a Lisp-like runtime system for code generation",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

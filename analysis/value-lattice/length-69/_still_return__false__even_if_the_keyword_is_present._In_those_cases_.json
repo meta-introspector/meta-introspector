@@ -1,0 +1,12 @@
+{
+  "value": " still return `false` even if the keyword is present. In those cases,",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

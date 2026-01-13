@@ -1,0 +1,12 @@
+{
+  "value": " If you need to extend the span, use [`find_ancestor_inside_same_ctxt`] instead,",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

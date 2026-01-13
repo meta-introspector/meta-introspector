@@ -1,0 +1,12 @@
+{
+  "value": " are taken from `(Key, Value)` tuple pairs yielded by the input iterator.",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

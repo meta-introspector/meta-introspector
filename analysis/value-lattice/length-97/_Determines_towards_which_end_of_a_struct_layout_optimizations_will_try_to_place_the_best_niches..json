@@ -1,0 +1,12 @@
+{
+  "value": " Determines towards which end of a struct layout optimizations will try to place the best niches.",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

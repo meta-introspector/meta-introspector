@@ -1,0 +1,12 @@
+{
+  "value": " Checks if an enum tuple variant contains a single field",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

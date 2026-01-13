@@ -1,0 +1,12 @@
+{
+  "value": " Builds a chain of reference-manipulation method calls (e.g., `.as_ref()`, `.as_mut()`,",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " construct a full instance of `Self`, or they may fill out the rest of",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

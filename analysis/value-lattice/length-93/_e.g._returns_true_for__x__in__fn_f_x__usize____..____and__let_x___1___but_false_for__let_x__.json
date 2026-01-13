@@ -1,0 +1,12 @@
+{
+  "value": " e.g. returns true for `x` in `fn f(x: usize) { .. }` and `let x = 1;` but false for `let x;`",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " The type is a struct containing either zero non-zero sized fields, or multiple non-zero",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

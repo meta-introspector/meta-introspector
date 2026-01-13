@@ -1,0 +1,12 @@
+{
+  "value": " let mut multi_prod = (0..3).map(|i| (i * 2)..(i * 2 + 2))",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

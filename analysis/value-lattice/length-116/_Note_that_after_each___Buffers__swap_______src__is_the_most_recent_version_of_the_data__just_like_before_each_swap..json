@@ -1,0 +1,12 @@
+{
+  "value": " Note that after each [`Buffers::swap()`], `src` is the most recent version of the data, just like before each swap.",
+  "length": 116,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

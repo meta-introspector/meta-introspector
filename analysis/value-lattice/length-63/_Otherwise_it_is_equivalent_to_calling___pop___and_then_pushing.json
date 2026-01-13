@@ -1,0 +1,12 @@
+{
+  "value": " Otherwise it is equivalent to calling [`pop`] and then pushing",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

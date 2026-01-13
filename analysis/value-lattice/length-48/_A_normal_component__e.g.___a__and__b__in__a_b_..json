@@ -1,0 +1,12 @@
+{
+  "value": " A normal component, e.g., `a` and `b` in `a/b`.",
+  "length": 48,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

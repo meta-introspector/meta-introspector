@@ -1,0 +1,12 @@
+{
+  "value": " this function will update the environment as appropriate and return true. If the return",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

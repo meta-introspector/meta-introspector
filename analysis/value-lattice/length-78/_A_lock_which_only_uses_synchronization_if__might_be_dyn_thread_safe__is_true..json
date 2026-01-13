@@ -1,0 +1,12 @@
+{
+  "value": " A lock which only uses synchronization if `might_be_dyn_thread_safe` is true.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

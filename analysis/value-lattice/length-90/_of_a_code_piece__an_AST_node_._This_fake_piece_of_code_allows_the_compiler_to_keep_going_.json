@@ -1,0 +1,12 @@
+{
+  "value": " of a code piece (an AST node). This fake piece of code allows the compiler to keep going,",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

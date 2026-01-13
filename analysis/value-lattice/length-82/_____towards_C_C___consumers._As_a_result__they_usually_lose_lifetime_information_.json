@@ -1,0 +1,12 @@
+{
+  "value": "     towards C/C++ consumers. As a result, they usually lose lifetime information,",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " The initializer for the [UTF-16BE](static.UTF_16BE.html) encoding.",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

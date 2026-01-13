@@ -1,0 +1,12 @@
+{
+  "value": " This is a reproducer for the ICE 6793: https://github.com/rust-lang/rust-clippy/issues/6793.",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

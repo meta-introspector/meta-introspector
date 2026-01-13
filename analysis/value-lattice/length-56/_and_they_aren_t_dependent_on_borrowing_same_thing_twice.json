@@ -1,0 +1,12 @@
+{
+  "value": " and they aren't dependent on borrowing same thing twice",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

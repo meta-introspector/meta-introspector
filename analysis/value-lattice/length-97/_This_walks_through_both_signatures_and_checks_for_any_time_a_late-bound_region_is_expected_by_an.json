@@ -1,0 +1,12 @@
+{
+  "value": " This walks through both signatures and checks for any time a late-bound region is expected by an",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

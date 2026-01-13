@@ -1,0 +1,12 @@
+{
+  "value": "         //^ `glob_adjust` removes the mark from `n`, so this resolves to `foo::$i`.",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

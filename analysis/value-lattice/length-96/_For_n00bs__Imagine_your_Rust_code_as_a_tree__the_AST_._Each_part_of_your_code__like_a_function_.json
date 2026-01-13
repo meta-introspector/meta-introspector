@@ -1,0 +1,12 @@
+{
+  "value": " For n00bs: Imagine your Rust code as a tree (the AST). Each part of your code (like a function,",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

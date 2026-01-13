@@ -1,0 +1,12 @@
+{
+  "value": " Adds the pattern into the current state. Returns whether or not the current state is a wild",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

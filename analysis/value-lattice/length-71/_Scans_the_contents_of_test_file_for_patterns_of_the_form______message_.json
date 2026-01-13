@@ -1,0 +1,12 @@
+{
+  "value": " Scans the contents of test file for patterns of the form \"//~ message\"",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This is the Central European part of the ISO/IEC 8859 encoding family. This encoding is also known as Latin 2.",
+  "length": 111,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " already present, it should give all possible variants for the identifier at",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "import Lake\nopen Lake DSL\n\npackage «k_theory_proof» where\n  -- add package configuration options here\n\nlean_lib «KTheoryProof» where\n  -- add library configuration options here\n\n@[default_target]\nlean_exe «k_theory_proof» where\n  root := `Main\n",
+  "length": 250,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

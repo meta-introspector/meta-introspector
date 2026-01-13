@@ -1,0 +1,12 @@
+{
+  "value": " In general, `getrandom` will be fast enough for interactive usage, though",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

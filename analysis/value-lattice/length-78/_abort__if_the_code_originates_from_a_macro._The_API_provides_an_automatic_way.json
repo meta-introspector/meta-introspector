@@ -1,0 +1,12 @@
+{
+  "value": " abort, if the code originates from a macro. The API provides an automatic way",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

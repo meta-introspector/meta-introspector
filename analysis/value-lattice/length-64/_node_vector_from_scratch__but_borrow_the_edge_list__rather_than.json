@@ -1,0 +1,12 @@
+{
+  "value": " node vector from scratch, but borrow the edge list (rather than",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

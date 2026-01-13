@@ -1,0 +1,12 @@
+{
+  "value": " in form submissions, the encoder doesn't generate three-byte sequences.",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

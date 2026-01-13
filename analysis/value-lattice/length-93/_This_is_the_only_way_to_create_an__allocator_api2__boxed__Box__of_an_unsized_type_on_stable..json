@@ -1,0 +1,12 @@
+{
+  "value": " This is the only way to create an `allocator_api2::boxed::Box` of an unsized type on stable.",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

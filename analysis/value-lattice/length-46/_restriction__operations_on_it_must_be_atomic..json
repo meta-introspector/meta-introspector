@@ -1,0 +1,12 @@
+{
+  "value": " restriction: operations on it must be atomic.",
+  "length": 46,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

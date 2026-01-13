@@ -1,0 +1,12 @@
+{
+  "value": " input set. A powerset has length _2^n_ where _n_ is the length of the input",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

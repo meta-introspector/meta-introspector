@@ -1,0 +1,12 @@
+{
+  "value": " An identifier to describe the kind of chunk, unique within a chunk file, typically in ASCII",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

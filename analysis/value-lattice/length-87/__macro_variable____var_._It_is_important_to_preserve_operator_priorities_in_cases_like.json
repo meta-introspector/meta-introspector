@@ -1,0 +1,12 @@
+{
+  "value": " \"macro variable\" `$var`. It is important to preserve operator priorities in cases like",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

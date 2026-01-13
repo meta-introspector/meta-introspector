@@ -1,0 +1,12 @@
+{
+  "value": " Then produces Datalog and / or dot file output of the call graph.",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

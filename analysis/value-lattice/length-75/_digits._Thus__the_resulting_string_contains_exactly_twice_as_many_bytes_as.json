@@ -1,0 +1,12 @@
+{
+  "value": " digits. Thus, the resulting string contains exactly twice as many bytes as",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " * the `A = Ty` and `B = Ty` in `Trait<A = Ty, B = Ty>`",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

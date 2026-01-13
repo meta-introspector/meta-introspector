@@ -1,0 +1,12 @@
+{
+  "value": " - `InvocationKind`: This tells you what *type* of spell it is. Is it a loud \"bang\" spell (`foo!()`),",
+  "length": 101,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

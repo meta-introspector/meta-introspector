@@ -1,0 +1,12 @@
+{
+  "value": " Usage: #[source_location(file=\"src/lib.rs\", line=42, column=10)]",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

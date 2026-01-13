@@ -1,0 +1,12 @@
+{
+  "value": " Query the worst-case UTF-16 output size (with or without replacement).",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

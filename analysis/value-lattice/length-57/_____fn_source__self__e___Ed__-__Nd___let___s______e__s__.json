@@ -1,0 +1,12 @@
+{
+  "value": "     fn source(&self, e: &Ed) -> Nd { let &(s,_) = e; s }",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

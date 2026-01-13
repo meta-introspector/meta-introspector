@@ -1,0 +1,12 @@
+{
+  "value": " - Replace the original macro call with the expanded code, or a placeholder if expansion fails.",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

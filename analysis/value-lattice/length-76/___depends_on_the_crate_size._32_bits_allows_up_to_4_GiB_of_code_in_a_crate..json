@@ -1,0 +1,12 @@
+{
+  "value": "   depends on the crate size. 32 bits allows up to 4 GiB of code in a crate.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

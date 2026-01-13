@@ -1,0 +1,12 @@
+{
+  "value": " yield to the OS scheduler yourself if no Rayon work was found.",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

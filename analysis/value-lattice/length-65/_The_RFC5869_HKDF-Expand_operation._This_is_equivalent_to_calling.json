@@ -1,0 +1,12 @@
+{
+  "value": " The RFC5869 HKDF-Expand operation. This is equivalent to calling",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

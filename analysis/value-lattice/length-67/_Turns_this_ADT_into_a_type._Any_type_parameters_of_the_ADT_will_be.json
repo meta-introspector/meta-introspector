@@ -1,0 +1,12 @@
+{
+  "value": " Turns this ADT into a type. Any type parameters of the ADT will be",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

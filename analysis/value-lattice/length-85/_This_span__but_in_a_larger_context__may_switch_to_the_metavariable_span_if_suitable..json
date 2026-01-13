@@ -1,0 +1,12 @@
+{
+  "value": " This span, but in a larger context, may switch to the metavariable span if suitable.",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

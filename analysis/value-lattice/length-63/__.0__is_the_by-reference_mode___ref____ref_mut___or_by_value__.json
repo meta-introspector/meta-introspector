@@ -1,0 +1,12 @@
+{
+  "value": " `.0` is the by-reference mode (`ref`, `ref mut`, or by value),",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

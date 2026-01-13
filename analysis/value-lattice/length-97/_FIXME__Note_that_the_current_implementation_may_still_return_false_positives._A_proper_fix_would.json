@@ -1,0 +1,12 @@
+{
+  "value": " FIXME: Note that the current implementation may still return false positives. A proper fix would",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "value": " Returns an iterator over the items in the map in insertion order along with their indices.",
+  "length": 91,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " should record this internally, and all subsequent encoding operations can",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

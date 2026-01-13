@@ -1,0 +1,12 @@
+{
+  "value": " This is essentially an `AtomicPtr` but is guaranteed to always be valid",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

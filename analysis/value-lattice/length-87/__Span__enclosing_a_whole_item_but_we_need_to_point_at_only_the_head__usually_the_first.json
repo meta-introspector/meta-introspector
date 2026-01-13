@@ -1,0 +1,12 @@
+{
+  "value": " `Span` enclosing a whole item but we need to point at only the head (usually the first",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " analysis. However, we might want to, eg, ask for the type of `complete_me`",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

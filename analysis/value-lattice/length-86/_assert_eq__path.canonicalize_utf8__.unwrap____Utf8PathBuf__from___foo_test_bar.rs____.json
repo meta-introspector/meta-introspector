@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(path.canonicalize_utf8().unwrap(), Utf8PathBuf::from(\"/foo/test/bar.rs\"));",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

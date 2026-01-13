@@ -1,0 +1,12 @@
+{
+  "value": " but not otherwise. Pretty-printing is the only way for proc macros to discover token contents,",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

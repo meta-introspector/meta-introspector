@@ -1,0 +1,12 @@
+{
+  "value": " The scope will exist until all tasks spawned within the scope have been completed.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

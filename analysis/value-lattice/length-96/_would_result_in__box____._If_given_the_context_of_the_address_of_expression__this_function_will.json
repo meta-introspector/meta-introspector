@@ -1,0 +1,12 @@
+{
+  "value": " would result in `box []`. If given the context of the address of expression, this function will",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

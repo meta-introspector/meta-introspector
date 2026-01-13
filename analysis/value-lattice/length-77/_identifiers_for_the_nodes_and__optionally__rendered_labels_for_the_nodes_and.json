@@ -1,0 +1,12 @@
+{
+  "value": " identifiers for the nodes and (optionally) rendered labels for the nodes and",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

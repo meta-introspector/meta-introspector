@@ -1,0 +1,12 @@
+{
+  "value": " Recursively finds all .rs files in src directory that cargo would build",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

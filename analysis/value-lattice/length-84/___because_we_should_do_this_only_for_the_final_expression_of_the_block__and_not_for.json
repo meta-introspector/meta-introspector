@@ -1,0 +1,12 @@
+{
+  "value": "   because we should do this only for the final expression of the block, and not for",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

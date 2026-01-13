@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the two `Option`s are both `None` or some equal values as per",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

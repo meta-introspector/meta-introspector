@@ -1,0 +1,12 @@
+{
+  "value": " There are two choices. We can keep the closure as a `move` closure, but",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

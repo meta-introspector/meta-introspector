@@ -1,0 +1,12 @@
+{
+  "value": " `42` is considered expanded from `foo!` and `bar!` by `is_expn_of` but only",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

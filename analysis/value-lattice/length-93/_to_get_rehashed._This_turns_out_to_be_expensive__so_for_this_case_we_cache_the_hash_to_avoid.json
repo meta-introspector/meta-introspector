@@ -1,0 +1,12 @@
+{
+  "value": " to get rehashed. This turns out to be expensive, so for this case we cache the hash to avoid",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

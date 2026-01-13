@@ -1,0 +1,12 @@
+{
+  "value": " Generate orbit-based bandwidth filter for security layer",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

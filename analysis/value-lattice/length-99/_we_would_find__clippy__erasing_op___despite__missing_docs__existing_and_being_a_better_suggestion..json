@@ -1,0 +1,12 @@
+{
+  "value": " we would find `clippy::erasing_op`, despite `missing_docs` existing and being a better suggestion.",
+  "length": 99,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " then use `as_ref()` but this doesn't work for owned return values.",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

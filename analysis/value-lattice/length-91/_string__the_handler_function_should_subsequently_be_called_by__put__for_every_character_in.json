@@ -1,0 +1,12 @@
+{
+  "value": " string; the handler function should subsequently be called by `put` for every character in",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This is typically `false`. See [`Signature::normalize_s`] for more information.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

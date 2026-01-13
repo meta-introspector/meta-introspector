@@ -1,0 +1,12 @@
+{
+  "value": " - `mask_read3` uses `& !0b111` (the tag is in the least-significant bits)",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

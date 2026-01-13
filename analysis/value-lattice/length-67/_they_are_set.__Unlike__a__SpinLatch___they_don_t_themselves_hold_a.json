@@ -1,0 +1,12 @@
+{
+  "value": " they are set. *Unlike* a `SpinLatch`, they don't themselves hold a",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

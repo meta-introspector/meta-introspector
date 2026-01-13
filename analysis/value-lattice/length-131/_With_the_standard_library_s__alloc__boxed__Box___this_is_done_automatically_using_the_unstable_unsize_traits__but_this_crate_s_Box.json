@@ -1,0 +1,12 @@
+{
+  "value": " With the standard library's `alloc::boxed::Box`, this is done automatically using the unstable unsize traits, but this crate's Box",
+  "length": 131,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

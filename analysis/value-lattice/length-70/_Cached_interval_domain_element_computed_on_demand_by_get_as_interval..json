@@ -1,0 +1,12 @@
+{
+  "value": " Cached interval domain element computed on demand by get_as_interval.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

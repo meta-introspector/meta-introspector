@@ -1,0 +1,12 @@
+{
+  "value": " Check if a rebinding of a local changes the effect of assignments to the binding.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

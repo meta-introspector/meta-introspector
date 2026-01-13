@@ -1,0 +1,12 @@
+{
+  "value": "iso-ir-126",
+  "length": 10,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

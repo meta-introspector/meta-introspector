@@ -1,0 +1,12 @@
+{
+  "value": " Converts a [`Utf8Path`] to an owned [`Utf8PathBuf`].",
+  "length": 53,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

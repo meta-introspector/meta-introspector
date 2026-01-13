@@ -1,0 +1,12 @@
+{
+  "value": " let unsized_box: Box<dyn Any> = unsize_box!(sized_box);",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

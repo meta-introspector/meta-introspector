@@ -1,0 +1,12 @@
+{
+  "value": " the methods they share are described here and are applicable to both of them. That's why the",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

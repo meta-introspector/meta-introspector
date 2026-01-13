@@ -1,0 +1,12 @@
+{
+  "value": " semi[eval(v)] = min { semi[label[u]] | root_in_forest(v) +> u *> v }",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

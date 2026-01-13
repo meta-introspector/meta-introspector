@@ -1,0 +1,12 @@
+{
+  "value": " entry can be inspected via methods to learn about the full path or possibly other metadata.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

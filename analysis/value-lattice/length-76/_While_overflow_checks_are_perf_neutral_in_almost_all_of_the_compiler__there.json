@@ -1,0 +1,12 @@
+{
+  "value": " While overflow checks are perf neutral in almost all of the compiler, there",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This will unwrap at most one block level (curly braces). After that, if the expression",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

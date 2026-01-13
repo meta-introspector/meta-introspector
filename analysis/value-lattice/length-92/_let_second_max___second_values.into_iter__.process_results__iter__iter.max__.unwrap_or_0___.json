@@ -1,0 +1,12 @@
+{
+  "value": " let second_max = second_values.into_iter().process_results(|iter| iter.max().unwrap_or(0));",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

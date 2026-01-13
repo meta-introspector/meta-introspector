@@ -1,0 +1,12 @@
+{
+  "value": " Possible styles for suggestion subdiagnostics.",
+  "length": 47,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

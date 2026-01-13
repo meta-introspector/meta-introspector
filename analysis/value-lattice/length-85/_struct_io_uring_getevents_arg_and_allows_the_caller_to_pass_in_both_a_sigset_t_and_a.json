@@ -1,0 +1,12 @@
+{
+  "value": " struct io_uring_getevents_arg and allows the caller to pass in both a sigset_t and a",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

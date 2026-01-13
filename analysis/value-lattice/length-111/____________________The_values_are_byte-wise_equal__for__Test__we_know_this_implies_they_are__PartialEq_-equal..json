@@ -1,0 +1,12 @@
+{
+  "value": "                 // The values are byte-wise equal; for `Test` we know this implies they are `PartialEq`-equal.",
+  "length": 111,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

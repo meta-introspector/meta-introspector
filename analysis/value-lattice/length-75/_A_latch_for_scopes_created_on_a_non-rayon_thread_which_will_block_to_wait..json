@@ -1,0 +1,12 @@
+{
+  "value": " A latch for scopes created on a non-rayon thread which will block to wait.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

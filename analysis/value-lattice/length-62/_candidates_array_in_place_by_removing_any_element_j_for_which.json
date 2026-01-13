@@ -1,0 +1,12 @@
+{
+  "value": " candidates array in place by removing any element j for which",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

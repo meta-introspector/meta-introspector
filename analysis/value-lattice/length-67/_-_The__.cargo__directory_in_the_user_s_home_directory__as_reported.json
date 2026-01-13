@@ -1,0 +1,12 @@
+{
+  "value": " - The `.cargo` directory in the user's home directory, as reported",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

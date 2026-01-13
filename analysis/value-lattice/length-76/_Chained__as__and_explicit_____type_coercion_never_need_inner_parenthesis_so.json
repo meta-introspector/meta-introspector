@@ -1,0 +1,12 @@
+{
+  "value": " Chained `as` and explicit `:` type coercion never need inner parenthesis so",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

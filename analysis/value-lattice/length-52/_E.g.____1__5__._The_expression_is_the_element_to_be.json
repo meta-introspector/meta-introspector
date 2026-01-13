@@ -1,0 +1,12 @@
+{
+  "value": " E.g., `[1; 5]`. The expression is the element to be",
+  "length": 52,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

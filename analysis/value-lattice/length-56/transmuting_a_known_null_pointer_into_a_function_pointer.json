@@ -1,0 +1,12 @@
+{
+  "value": "transmuting a known null pointer into a function pointer",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

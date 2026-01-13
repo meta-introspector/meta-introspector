@@ -1,0 +1,12 @@
+{
+  "value": " serializing and deserializing ECDSA signatures using the `Serialize` and",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " stable path. This does not check, whether the item itself that is being imported is `#[unstable]`.",
+  "length": 99,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

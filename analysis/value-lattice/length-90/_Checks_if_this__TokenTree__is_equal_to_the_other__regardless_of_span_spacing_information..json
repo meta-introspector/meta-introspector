@@ -1,0 +1,12 @@
+{
+  "value": " Checks if this `TokenTree` is equal to the other, regardless of span/spacing information.",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " For n00bs: If you have a `#[derive(Debug)]` on a struct, this method lets you",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

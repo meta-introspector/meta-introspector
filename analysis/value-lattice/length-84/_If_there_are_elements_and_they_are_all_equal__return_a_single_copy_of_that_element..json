@@ -1,0 +1,12 @@
+{
+  "value": " If there are elements and they are all equal, return a single copy of that element.",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

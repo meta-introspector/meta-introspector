@@ -1,0 +1,12 @@
+{
+  "value": " An `impl Bound1 + Bound2 + Bound3` type",
+  "length": 40,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

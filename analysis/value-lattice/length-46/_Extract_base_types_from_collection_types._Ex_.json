@@ -1,0 +1,12 @@
+{
+  "value": " Extract base types from collection types. Ex:",
+  "length": 46,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

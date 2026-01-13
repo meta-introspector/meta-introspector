@@ -1,0 +1,22 @@
+{
+  "value": "20000.0",
+  "length": 7,
+  "total_usages": 3,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "float_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "float_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "float_literal"
+    }
+  ]
+}

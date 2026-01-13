@@ -1,0 +1,12 @@
+{
+  "value": " Post-substitution inline assembly from LLVM.",
+  "length": 45,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

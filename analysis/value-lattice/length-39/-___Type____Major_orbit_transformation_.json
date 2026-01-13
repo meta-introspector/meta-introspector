@@ -1,0 +1,12 @@
+{
+  "value": "- **Type**: Major orbit transformation\n",
+  "length": 39,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

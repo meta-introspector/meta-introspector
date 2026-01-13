@@ -1,0 +1,12 @@
+{
+  "value": " reference of output, an infinite loop ensues. When converting with a",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

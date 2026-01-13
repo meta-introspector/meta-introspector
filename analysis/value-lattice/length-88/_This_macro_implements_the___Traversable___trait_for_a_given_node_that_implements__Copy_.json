@@ -1,0 +1,12 @@
+{
+  "value": " This macro implements the [`Traversable`] trait for a given node that implements `Copy`",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Creates a new `rows x columns` matrix, initially empty.",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "you added something to a string. Consider using `String::push_str()` instead",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

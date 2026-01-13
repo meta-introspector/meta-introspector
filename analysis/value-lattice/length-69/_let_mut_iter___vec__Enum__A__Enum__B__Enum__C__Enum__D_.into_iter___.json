@@ -1,0 +1,12 @@
+{
+  "value": " let mut iter = vec![Enum::A, Enum::B, Enum::C, Enum::D].into_iter();",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " The `nodes` and `edges` method each return instantiations of",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

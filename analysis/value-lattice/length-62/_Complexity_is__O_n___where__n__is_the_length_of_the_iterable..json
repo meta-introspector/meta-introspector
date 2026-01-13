@@ -1,0 +1,12 @@
+{
+  "value": " Complexity is `O(n)` where `n` is the length of the iterable.",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

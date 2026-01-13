@@ -1,0 +1,12 @@
+{
+  "value": " Returns the lint name in lowercase without the `clippy::` prefix",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

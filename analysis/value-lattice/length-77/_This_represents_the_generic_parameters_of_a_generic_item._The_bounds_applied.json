@@ -1,0 +1,12 @@
+{
+  "value": " This represents the generic parameters of a generic item. The bounds applied",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

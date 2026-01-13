@@ -1,0 +1,12 @@
+{
+  "value": " spec JSON directly from `rustc`, as Cargo shouldn't know the JSON schema.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

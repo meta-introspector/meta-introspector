@@ -1,0 +1,12 @@
+{
+  "value": " If the adapted iterator is empty, the result is an iterator yielding a single empty vector.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

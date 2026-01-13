@@ -1,0 +1,12 @@
+{
+  "value": " View that reverses the direction of edges in its underlying graph, so that",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This is useful when you have some common error type for your crate and",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

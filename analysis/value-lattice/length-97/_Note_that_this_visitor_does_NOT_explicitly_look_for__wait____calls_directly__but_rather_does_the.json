@@ -1,0 +1,12 @@
+{
+  "value": " Note that this visitor does NOT explicitly look for `wait()` calls directly, but rather does the",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

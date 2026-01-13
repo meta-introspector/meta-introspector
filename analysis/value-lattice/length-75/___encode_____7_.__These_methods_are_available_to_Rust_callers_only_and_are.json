@@ -1,0 +1,12 @@
+{
+  "value": " [`encode()`][7]. (These methods are available to Rust callers only and are",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

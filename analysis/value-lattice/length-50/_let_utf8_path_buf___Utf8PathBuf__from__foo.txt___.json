@@ -1,0 +1,12 @@
+{
+  "value": " let utf8_path_buf = Utf8PathBuf::from(\"foo.txt\");",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

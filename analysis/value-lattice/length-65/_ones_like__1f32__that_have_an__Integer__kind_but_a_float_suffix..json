@@ -1,0 +1,12 @@
+{
+  "value": " ones like `1f32` that have an `Integer` kind but a float suffix.",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

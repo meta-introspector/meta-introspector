@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(a.iter().position_minmax_by_key(|x| x.abs()), MinMax(1, 4));",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

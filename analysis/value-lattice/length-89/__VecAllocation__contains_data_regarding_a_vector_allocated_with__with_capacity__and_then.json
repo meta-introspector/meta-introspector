@@ -1,0 +1,12 @@
+{
+  "value": " `VecAllocation` contains data regarding a vector allocated with `with_capacity` and then",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

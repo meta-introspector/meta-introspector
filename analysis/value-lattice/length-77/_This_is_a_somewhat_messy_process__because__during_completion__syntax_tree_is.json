@@ -1,0 +1,12 @@
+{
+  "value": " This is a somewhat messy process, because, during completion, syntax tree is",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

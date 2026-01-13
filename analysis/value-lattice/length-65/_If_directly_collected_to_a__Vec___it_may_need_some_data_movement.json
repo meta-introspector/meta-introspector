@@ -1,0 +1,12 @@
+{
+  "value": " If directly collected to a `Vec`, it may need some data movement",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Example 4: L3 Admin Function with High Privileges",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

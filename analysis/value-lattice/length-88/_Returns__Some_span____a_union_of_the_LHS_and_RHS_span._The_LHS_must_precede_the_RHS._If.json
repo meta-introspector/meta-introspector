@@ -1,0 +1,12 @@
+{
+  "value": " Returns `Some(span)`, a union of the LHS and RHS span. The LHS must precede the RHS. If",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Calculates a normalized byte position from a byte offset relative to the",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

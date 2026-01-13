@@ -1,0 +1,12 @@
+{
+  "value": " it can be represented with a `u2`. We use `repr(u8)` to guarantee the",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

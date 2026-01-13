@@ -1,0 +1,12 @@
+{
+  "value": "     \"prefix: lang(de-DE) string(The format operation will run)\"",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

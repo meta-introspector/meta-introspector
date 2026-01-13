@@ -1,0 +1,12 @@
+{
+  "value": "rustc_driver not loaded for self-compilation",
+  "length": 44,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

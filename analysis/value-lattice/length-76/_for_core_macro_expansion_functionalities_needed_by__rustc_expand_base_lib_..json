@@ -1,0 +1,12 @@
+{
+  "value": " for core macro expansion functionalities needed by `rustc_expand_base_lib`.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

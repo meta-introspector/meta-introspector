@@ -1,0 +1,12 @@
+{
+  "value": " Represents the order in which associated trait items should be ordered.",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

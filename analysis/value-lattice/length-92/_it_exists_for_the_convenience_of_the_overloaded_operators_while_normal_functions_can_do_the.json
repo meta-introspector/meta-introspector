@@ -1,0 +1,12 @@
+{
+  "value": " it exists for the convenience of the overloaded operators while normal functions can do the",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

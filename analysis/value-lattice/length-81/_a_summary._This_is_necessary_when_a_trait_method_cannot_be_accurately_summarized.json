@@ -1,0 +1,12 @@
+{
+  "value": " a summary. This is necessary when a trait method cannot be accurately summarized",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

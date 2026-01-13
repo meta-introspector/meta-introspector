@@ -1,0 +1,12 @@
+{
+  "value": " For n00bs: Think of `Annotatable` as a \"wrapper\" that can hold many different kinds of Rust",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

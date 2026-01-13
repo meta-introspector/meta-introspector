@@ -1,0 +1,12 @@
+{
+  "value": " This is useful to allow the use of iterator adaptors that would",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "constant division of `0.0` with `0.0` will always result in NaN",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

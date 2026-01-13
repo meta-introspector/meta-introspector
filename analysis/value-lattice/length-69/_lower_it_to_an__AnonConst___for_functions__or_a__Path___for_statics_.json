@@ -1,0 +1,12 @@
+{
+  "value": " lower it to an `AnonConst` (for functions) or a `Path` (for statics)",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

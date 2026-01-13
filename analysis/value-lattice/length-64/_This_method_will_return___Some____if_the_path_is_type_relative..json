@@ -1,0 +1,12 @@
+{
+  "value": " This method will return [`Some`], if the path is type relative.",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

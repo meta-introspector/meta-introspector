@@ -1,0 +1,12 @@
+{
+  "value": " Note, however, that this is not good enough for the outer fixed point because the counter",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

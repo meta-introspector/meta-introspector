@@ -1,0 +1,12 @@
+{
+  "value": " A byte string (`b\"foo\"`). The symbol is unescaped, and so may differ",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

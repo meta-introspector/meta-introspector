@@ -1,0 +1,12 @@
+{
+  "value": " architectures support fixed-size writes up to 8 bytes with one instruction, so while this",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

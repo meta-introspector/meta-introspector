@@ -1,0 +1,12 @@
+{
+  "value": " there is no other thread to share the work. However, since the pool is not running independent",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

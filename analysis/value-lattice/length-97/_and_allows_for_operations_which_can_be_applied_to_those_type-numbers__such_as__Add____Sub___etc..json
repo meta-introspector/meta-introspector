@@ -1,0 +1,12 @@
+{
+  "value": " and allows for operations which can be applied to those type-numbers, such as `Add`, `Sub`, etc.",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

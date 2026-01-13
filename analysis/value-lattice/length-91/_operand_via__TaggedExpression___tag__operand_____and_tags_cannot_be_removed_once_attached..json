@@ -1,0 +1,12 @@
+{
+  "value": " operand via `TaggedExpression { tag, operand }`, and tags cannot be removed once attached.",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

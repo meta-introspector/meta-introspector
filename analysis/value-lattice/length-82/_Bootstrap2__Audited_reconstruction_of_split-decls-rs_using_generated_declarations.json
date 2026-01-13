@@ -1,0 +1,12 @@
+{
+  "value": " Bootstrap2: Audited reconstruction of split-decls-rs using generated declarations",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

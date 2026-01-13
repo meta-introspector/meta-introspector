@@ -1,0 +1,12 @@
+{
+  "value": "\n        const uint8_t pfe_class_fw_binary[PFE_CLASS_FW_BINARY_SIZE] __attribute__((section(\".pfe_class_fw_mem\"))) = {\n            0x7fU, 0x45U, 0x4cU, 0x46U, 0x01U, 0x02U, 0x01U, 0x00U, 0x00U, 0x00U,\n        };",
+  "length": 211,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

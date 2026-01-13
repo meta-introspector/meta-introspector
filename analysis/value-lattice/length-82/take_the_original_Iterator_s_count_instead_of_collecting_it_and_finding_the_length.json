@@ -1,0 +1,12 @@
+{
+  "value": "take the original Iterator's count instead of collecting it and finding the length",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Check if the given span of an expr is already in a `vec!` call.",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

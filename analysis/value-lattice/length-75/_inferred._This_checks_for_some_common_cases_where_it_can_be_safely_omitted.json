@@ -1,0 +1,12 @@
+{
+  "value": " inferred. This checks for some common cases where it can be safely omitted",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

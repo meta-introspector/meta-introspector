@@ -1,0 +1,12 @@
+{
+  "value": " call to `in_place_scope_fifo()` will panic. If multiple panics occurs, it is",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

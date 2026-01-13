@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(hex::encode(vec![1, 2, 3, 15, 16]), \"0102030f10\");",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

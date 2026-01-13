@@ -1,0 +1,12 @@
+{
+  "value": " Same as `implements_trait_from_env` but takes the arguments as an iterator.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Display the path after the application of rewrite rules provided via `--remap-path-prefix`.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

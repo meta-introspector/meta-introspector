@@ -1,0 +1,12 @@
+{
+  "value": " from the start for it to be valid. For other encodings, the validity holds",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

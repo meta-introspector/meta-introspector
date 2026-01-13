@@ -1,0 +1,12 @@
+{
+  "value": " type TooBig = typenum::operator_aliases::Shleft<typenum::U1, typenum::U64>;",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

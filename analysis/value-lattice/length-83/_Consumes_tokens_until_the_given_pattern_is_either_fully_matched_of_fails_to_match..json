@@ -1,0 +1,12 @@
+{
+  "value": " Consumes tokens until the given pattern is either fully matched of fails to match.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

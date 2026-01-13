@@ -1,0 +1,12 @@
+{
+  "value": " Returns true if `expr` creates any temporary whose type references a non-static lifetime and has",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

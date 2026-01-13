@@ -1,0 +1,12 @@
+{
+  "value": " Return an iterator adaptor that applies the provided closure",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

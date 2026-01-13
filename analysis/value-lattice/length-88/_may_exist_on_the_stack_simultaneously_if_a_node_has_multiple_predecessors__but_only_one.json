@@ -1,0 +1,12 @@
+{
+  "value": " may exist on the stack simultaneously if a node has multiple predecessors, but only one",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

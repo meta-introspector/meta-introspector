@@ -1,0 +1,12 @@
+{
+  "value": " let empty_sum = (1..1).sum1::<i32>();",
+  "length": 38,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

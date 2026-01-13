@@ -1,0 +1,12 @@
+{
+  "value": " use case protects you from bad interactions. Derived keys also mitigate the",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

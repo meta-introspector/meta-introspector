@@ -1,0 +1,12 @@
+{
+  "value": " Absolute level (how many times we've gone around)",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

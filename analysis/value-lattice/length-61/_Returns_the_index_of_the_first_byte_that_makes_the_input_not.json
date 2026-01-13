@@ -1,0 +1,12 @@
+{
+  "value": " Returns the index of the first byte that makes the input not",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

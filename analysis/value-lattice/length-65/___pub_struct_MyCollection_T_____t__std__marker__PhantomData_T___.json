@@ -1,0 +1,12 @@
+{
+  "value": " # pub struct MyCollection<T> { _t: std::marker::PhantomData<T> }",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

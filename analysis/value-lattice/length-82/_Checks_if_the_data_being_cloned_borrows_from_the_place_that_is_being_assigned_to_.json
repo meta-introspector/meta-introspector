@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the data being cloned borrows from the place that is being assigned to:",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

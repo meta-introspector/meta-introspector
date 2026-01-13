@@ -1,0 +1,12 @@
+{
+  "value": " tokens. For example **character diffs do not work well** as most (english) text is made up of",
+  "length": 94,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Gets the node where an expression is either used, or it's type is unified with another branch.",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

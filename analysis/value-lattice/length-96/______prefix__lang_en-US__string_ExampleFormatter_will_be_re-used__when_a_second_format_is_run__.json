@@ -1,0 +1,12 @@
+{
+  "value": "     \"prefix: lang(en-US) string(ExampleFormatter will be re-used, when a second format is run)\"",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

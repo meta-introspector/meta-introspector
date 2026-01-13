@@ -1,0 +1,12 @@
+{
+  "value": " `DriverContextWrapper` implementation in the `marker_adapter` crate. That",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

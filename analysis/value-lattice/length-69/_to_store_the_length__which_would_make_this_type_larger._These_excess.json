@@ -1,0 +1,12 @@
+{
+  "value": " to store the length, which would make this type larger. These excess",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

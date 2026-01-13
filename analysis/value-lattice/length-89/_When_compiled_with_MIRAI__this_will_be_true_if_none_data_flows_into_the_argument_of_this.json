@@ -1,0 +1,12 @@
+{
+  "value": " When compiled with MIRAI, this will be true if none data flows into the argument of this",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

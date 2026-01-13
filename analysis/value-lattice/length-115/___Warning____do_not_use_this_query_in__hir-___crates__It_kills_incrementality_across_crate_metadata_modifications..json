@@ -1,0 +1,12 @@
+{
+  "value": " **Warning**: do not use this query in `hir-*` crates! It kills incrementality across crate metadata modifications.",
+  "length": 115,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

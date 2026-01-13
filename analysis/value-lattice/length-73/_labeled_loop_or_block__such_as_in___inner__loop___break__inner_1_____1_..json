@@ -1,0 +1,12 @@
+{
+  "value": " labeled loop or block, such as in `'inner: loop { break 'inner 1 } + 1`.",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

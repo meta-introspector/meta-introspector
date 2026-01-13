@@ -1,0 +1,12 @@
+{
+  "value": " Reduce structs containing a single non-zero sized field to it's contained type.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

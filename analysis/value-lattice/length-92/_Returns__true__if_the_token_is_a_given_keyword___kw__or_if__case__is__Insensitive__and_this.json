@@ -1,0 +1,12 @@
+{
+  "value": " Returns `true` if the token is a given keyword, `kw` or if `case` is `Insensitive` and this",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Checks whether the numeric literal matches the formatting of a UUID.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

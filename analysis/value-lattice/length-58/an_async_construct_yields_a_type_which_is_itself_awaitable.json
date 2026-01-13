@@ -1,0 +1,12 @@
+{
+  "value": "an async construct yields a type which is itself awaitable",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

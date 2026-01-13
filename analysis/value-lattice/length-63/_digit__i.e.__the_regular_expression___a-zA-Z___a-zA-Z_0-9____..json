@@ -1,0 +1,12 @@
+{
+  "value": " digit (i.e., the regular expression `[a-zA-Z_][a-zA-Z_0-9]*`).",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " The number of threads which are blocked in user code.",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This method performs a single heap allocation for the backing",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

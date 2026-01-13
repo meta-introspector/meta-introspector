@@ -1,0 +1,12 @@
+{
+  "value": "     rules are basically out of the question due to all the required FFI type",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " If the second item of the tuple indicates an error, the first item of the tuple",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

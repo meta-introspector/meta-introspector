@@ -1,0 +1,12 @@
+{
+  "value": " non-trivial alignment constraints. You probably want to use `is_1zst` instead.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

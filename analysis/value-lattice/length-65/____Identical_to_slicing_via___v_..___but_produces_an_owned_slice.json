@@ -1,0 +1,12 @@
+{
+  "value": " // Identical to slicing via `&v[..]` but produces an owned slice",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

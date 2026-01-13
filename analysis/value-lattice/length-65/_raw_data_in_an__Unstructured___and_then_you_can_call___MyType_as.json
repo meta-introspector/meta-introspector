@@ -1,0 +1,12 @@
+{
+  "value": " raw data in an `Unstructured`, and then you can call `<MyType as",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

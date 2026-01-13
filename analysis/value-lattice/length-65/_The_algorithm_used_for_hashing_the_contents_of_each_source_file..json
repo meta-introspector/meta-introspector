@@ -1,0 +1,12 @@
+{
+  "value": " The algorithm used for hashing the contents of each source file.",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

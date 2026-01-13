@@ -1,0 +1,12 @@
+{
+  "value": " Use a separate query provider for local and extern crates",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

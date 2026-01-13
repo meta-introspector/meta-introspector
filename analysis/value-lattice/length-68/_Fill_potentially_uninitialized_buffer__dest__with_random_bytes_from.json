@@ -1,0 +1,12 @@
+{
+  "value": " Fill potentially uninitialized buffer `dest` with random bytes from",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

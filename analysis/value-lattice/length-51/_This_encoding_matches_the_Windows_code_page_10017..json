@@ -1,0 +1,12 @@
+{
+  "value": " This encoding matches the Windows code page 10017.",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

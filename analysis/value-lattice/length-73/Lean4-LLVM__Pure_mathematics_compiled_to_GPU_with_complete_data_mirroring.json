@@ -1,0 +1,12 @@
+{
+  "value": "Lean4-LLVM: Pure mathematics compiled to GPU with complete data mirroring",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

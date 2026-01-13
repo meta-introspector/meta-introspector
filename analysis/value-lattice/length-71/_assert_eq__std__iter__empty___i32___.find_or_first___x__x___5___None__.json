@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(std::iter::empty::<i32>().find_or_first(|&x| x > 5), None);",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

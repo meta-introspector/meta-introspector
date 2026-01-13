@@ -1,0 +1,12 @@
+{
+  "value": " The first generic argument `I` must be provided, but the `R` and `U` will be",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

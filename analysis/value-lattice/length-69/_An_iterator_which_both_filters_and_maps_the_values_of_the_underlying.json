@@ -1,0 +1,12 @@
+{
+  "value": " An iterator which both filters and maps the values of the underlying",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

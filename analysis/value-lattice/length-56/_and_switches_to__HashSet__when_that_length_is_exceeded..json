@@ -1,0 +1,12 @@
+{
+  "value": " and switches to `HashSet` when that length is exceeded.",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

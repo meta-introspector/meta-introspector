@@ -1,0 +1,12 @@
+{
+  "value": " For checking aggregation of primitive types (e.g. tuples and slices of primitive type) see",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

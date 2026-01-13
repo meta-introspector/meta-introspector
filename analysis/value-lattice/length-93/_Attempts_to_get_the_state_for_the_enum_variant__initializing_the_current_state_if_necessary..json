@@ -1,0 +1,12 @@
+{
+  "value": " Attempts to get the state for the enum variant, initializing the current state if necessary.",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

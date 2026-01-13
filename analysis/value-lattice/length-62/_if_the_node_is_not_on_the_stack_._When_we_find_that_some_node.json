@@ -1,0 +1,12 @@
+{
+  "value": " if the node is not on the stack). When we find that some node",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

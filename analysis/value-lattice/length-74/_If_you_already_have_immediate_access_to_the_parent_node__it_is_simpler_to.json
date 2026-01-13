@@ -1,0 +1,12 @@
+{
+  "value": " If you already have immediate access to the parent node, it is simpler to",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

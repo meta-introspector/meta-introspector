@@ -1,0 +1,12 @@
+{
+  "value": " Note that this does *not* imply that the type is irrelevant for layout! It can still have",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Returns true if the expression contains ambiguous literals (unsuffixed float or int literals)",
+  "length": 94,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

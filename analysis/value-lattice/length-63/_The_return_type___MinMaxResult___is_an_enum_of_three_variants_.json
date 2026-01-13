@@ -1,0 +1,12 @@
+{
+  "value": " The return type [`MinMaxResult`] is an enum of three variants:",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

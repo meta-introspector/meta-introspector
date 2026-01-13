@@ -1,0 +1,12 @@
+{
+  "value": " userspace tasks can call [`Submitter::enter`] and higher level APIs. Available since 6.0.",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

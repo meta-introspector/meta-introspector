@@ -1,0 +1,12 @@
+{
+  "value": " let g2 = Guard::<_, DefaultStrategy>::from_inner(Arc::clone(&*g1));",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

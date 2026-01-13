@@ -1,0 +1,12 @@
+{
+  "value": "Just print out whether crates were analyzed and how many diagnostics were produced for each crate.",
+  "length": 98,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

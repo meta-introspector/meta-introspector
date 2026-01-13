@@ -1,0 +1,12 @@
+{
+  "value": " Assigns [`PathEnum`] variants a (somewhat) arbitrarily rank, based on perceived complexity",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

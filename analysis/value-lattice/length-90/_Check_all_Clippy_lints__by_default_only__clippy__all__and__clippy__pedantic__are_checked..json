@@ -1,0 +1,12 @@
+{
+  "value": " Check all Clippy lints, by default only `clippy::all` and `clippy::pedantic` are checked.",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

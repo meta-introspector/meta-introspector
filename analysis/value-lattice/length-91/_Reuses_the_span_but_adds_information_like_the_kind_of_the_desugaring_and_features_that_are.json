@@ -1,0 +1,12 @@
+{
+  "value": " Reuses the span but adds information like the kind of the desugaring and features that are",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

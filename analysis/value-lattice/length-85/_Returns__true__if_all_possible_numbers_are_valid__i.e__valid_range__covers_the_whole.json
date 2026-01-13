@@ -1,0 +1,12 @@
+{
+  "value": " Returns `true` if all possible numbers are valid, i.e `valid_range` covers the whole",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

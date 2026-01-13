@@ -1,0 +1,12 @@
+{
+  "value": " This function is allowed to spuriously fail even when the comparison succeeds,",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

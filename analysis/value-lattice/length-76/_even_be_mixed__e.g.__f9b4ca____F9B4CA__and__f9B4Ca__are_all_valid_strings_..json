@@ -1,0 +1,22 @@
+{
+  "value": " even be mixed (e.g. `f9b4ca`, `F9B4CA` and `f9B4Ca` are all valid strings).",
+  "length": 76,
+  "total_usages": 3,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

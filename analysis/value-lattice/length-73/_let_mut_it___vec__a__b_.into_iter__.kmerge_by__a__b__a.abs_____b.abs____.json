@@ -1,0 +1,12 @@
+{
+  "value": " let mut it = vec![a, b].into_iter().kmerge_by(|a, b| a.abs() < b.abs());",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

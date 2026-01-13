@@ -1,0 +1,12 @@
+{
+  "value": " assert!(constant_time_eq_32(&[3; 32], &[3; 32]));",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

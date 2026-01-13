@@ -1,0 +1,12 @@
+{
+  "value": " permitting an approx 10% change with a 10x input change.",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

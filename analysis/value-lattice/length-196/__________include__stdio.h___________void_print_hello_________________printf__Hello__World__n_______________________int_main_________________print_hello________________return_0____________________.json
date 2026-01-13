@@ -1,0 +1,12 @@
+{
+  "value": "\n        #include <stdio.h>\n\n        void print_hello() {\n            printf(\"Hello, World!\\n\");\n        }\n\n        int main() {\n            print_hello();\n            return 0;\n        }\n        ",
+  "length": 196,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

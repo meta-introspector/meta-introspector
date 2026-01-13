@@ -1,0 +1,12 @@
+{
+  "value": " If this is a homogeneous aggregate, returns the homogeneous",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

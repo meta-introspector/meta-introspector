@@ -1,0 +1,12 @@
+{
+  "value": " For an incremental version that accepts multiple writes, see [`Hasher::new`],",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

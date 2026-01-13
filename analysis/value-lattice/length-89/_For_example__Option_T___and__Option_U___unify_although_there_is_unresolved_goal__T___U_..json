@@ -1,0 +1,12 @@
+{
+  "value": " For example `Option<T>` and `Option<U>` unify although there is unresolved goal `T = U`.",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " this with some trickery. (Please use this forbidden knowledge carefully.)",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

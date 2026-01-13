@@ -1,0 +1,12 @@
+{
+  "value": " `SelfProfilerRef::generic_activity_with_arg_recorder`.",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

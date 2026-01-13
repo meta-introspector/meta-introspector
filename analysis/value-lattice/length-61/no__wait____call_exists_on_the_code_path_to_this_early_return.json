@@ -1,0 +1,12 @@
+{
+  "value": "no `wait()` call exists on the code path to this early return",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " probability for the crate-local part will be quite a bit higher (though",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " [_UTF-8 decode_](https://encoding.spec.whatwg.org/#utf-8-decode) spec",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

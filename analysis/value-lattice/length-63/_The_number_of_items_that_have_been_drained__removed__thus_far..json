@@ -1,0 +1,12 @@
+{
+  "value": " The number of items that have been drained (removed) thus far.",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

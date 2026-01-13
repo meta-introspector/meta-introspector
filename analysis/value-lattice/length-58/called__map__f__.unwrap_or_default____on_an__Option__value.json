@@ -1,0 +1,12 @@
+{
+  "value": "called `map(<f>).unwrap_or_default()` on an `Option` value",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

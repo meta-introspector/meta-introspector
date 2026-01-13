@@ -1,0 +1,12 @@
+{
+  "value": " UTF-8 or the length of the slice if the slice is entirely valid.",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

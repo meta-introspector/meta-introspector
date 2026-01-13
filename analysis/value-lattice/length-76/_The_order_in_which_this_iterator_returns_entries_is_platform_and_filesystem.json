@@ -1,0 +1,12 @@
+{
+  "value": " The order in which this iterator returns entries is platform and filesystem",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

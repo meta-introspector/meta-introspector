@@ -1,0 +1,12 @@
+{
+  "value": " If a predecessor has not yet been analyzed, its state does not form part of the join.",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

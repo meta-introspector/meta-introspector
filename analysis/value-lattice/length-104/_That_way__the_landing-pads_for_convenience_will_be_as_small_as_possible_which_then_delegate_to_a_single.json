@@ -1,0 +1,12 @@
+{
+  "value": " That way, the landing-pads for convenience will be as small as possible which then delegate to a single",
+  "length": 104,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

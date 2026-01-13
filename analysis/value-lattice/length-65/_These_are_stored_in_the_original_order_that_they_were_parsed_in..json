@@ -1,0 +1,12 @@
+{
+  "value": " These are stored in the original order that they were parsed in.",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

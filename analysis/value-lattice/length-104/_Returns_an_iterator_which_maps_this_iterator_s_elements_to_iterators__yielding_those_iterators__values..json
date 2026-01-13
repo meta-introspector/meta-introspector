@@ -1,0 +1,12 @@
+{
+  "value": " Returns an iterator which maps this iterator's elements to iterators, yielding those iterators' values.",
+  "length": 104,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

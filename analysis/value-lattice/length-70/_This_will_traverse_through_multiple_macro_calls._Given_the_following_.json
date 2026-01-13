@@ -1,0 +1,12 @@
+{
+  "value": " This will traverse through multiple macro calls. Given the following:",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

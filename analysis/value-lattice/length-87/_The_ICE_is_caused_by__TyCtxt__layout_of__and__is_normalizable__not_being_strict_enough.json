@@ -1,0 +1,12 @@
+{
+  "value": " The ICE is caused by `TyCtxt::layout_of` and `is_normalizable` not being strict enough",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

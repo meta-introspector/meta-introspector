@@ -1,0 +1,12 @@
+{
+  "value": " Generates a random `char` in range a-z.",
+  "length": 40,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

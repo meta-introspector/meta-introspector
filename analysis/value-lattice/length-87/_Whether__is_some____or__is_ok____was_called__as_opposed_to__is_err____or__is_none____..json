@@ -1,0 +1,12 @@
+{
+  "value": " Whether `is_some()` or `is_ok()` was called (as opposed to `is_err()` or `is_none()`).",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " If the corresponding `SourceFile` is empty, does not return a line number.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

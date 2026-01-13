@@ -1,0 +1,17 @@
+{
+  "value": " e.g., `$var`. The span covers the leading dollar and the ident. (The span within the ident",
+  "length": 91,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

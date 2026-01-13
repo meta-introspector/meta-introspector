@@ -1,0 +1,12 @@
+{
+  "value": " Note: this will return true for literals with prefixes such as raw strings and byte strings.",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

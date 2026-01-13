@@ -1,0 +1,12 @@
+{
+  "value": " needless to say the lint only applies if it (or whatever expression it is",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

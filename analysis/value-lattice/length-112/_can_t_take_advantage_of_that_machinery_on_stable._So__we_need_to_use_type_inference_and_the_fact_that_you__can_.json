@@ -1,0 +1,12 @@
+{
+  "value": " can't take advantage of that machinery on stable. So, we need to use type inference and the fact that you *can*",
+  "length": 112,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

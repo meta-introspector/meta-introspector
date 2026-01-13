@@ -1,0 +1,12 @@
+{
+  "value": " https://test.fake/doc_valid_link_broken_url_tag_three_lines",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

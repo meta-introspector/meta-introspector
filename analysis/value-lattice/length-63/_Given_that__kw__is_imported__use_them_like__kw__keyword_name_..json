@@ -1,0 +1,12 @@
+{
+  "value": " Given that `kw` is imported, use them like `kw::keyword_name`.",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " key-value options like `target_arch=\"x86\"`.",
+  "length": 44,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

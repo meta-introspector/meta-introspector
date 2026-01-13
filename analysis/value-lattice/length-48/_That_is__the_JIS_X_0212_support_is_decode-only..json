@@ -1,0 +1,12 @@
+{
+  "value": " That is, the JIS X 0212 support is decode-only.",
+  "length": 48,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

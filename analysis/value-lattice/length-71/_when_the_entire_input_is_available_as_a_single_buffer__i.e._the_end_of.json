@@ -1,0 +1,12 @@
+{
+  "value": " when the entire input is available as a single buffer (i.e. the end of",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This uses dedicated code instead of [`Self::layout_of_struct_or_enum`], as coroutine",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

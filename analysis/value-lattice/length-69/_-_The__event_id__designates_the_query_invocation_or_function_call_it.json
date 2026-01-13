@@ -1,0 +1,12 @@
+{
+  "value": " - The `event_id` designates the query invocation or function call it",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

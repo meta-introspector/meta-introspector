@@ -1,0 +1,12 @@
+{
+  "value": " An iterator which uses a fallible predicate to determine which values of the",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " provide the best coverage of the domain. In other cases this is not",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

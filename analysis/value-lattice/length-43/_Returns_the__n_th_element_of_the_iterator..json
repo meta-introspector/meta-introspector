@@ -1,0 +1,12 @@
+{
+  "value": " Returns the `n`th element of the iterator.",
+  "length": 43,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

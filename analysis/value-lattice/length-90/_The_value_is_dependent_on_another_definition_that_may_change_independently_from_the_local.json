@@ -1,0 +1,12 @@
+{
+  "value": " The value is dependent on another definition that may change independently from the local",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " (e.g. success for error) for the other obligation",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

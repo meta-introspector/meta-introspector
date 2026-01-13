@@ -1,0 +1,12 @@
+{
+  "value": " Get the completion queue of the io_uring instance from a shared reference.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This generated build.rs will then include each part as a module and call their",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

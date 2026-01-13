@@ -1,0 +1,12 @@
+{
+  "value": " A univariant, but with a prefix of an arbitrary size & alignment (e.g., enum tag).",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

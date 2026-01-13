@@ -1,0 +1,12 @@
+{
+  "value": " A dummy implementation of SmtSolver to use in configurations where a real SMT solver is not available or required.",
+  "length": 115,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

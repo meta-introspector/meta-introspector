@@ -1,0 +1,12 @@
+{
+  "value": " The sandbox will contain a `home` directory that will be used instead of your normal home directory.",
+  "length": 101,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

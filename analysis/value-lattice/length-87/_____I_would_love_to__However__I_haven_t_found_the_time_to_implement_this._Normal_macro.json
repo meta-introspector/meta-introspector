@@ -1,0 +1,12 @@
+{
+  "value": "     I would love to! However, I haven't found the time to implement this. Normal macro",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

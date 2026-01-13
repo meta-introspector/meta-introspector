@@ -1,0 +1,12 @@
+{
+  "value": " Returns spans pointing at the unneeded hashes, e.g. for a `req` of `1` and `max` of `3`:",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

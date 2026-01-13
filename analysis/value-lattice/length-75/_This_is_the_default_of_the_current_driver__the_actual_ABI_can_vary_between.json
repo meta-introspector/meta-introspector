@@ -1,0 +1,12 @@
+{
+  "value": " This is the default of the current driver, the actual ABI can vary between",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

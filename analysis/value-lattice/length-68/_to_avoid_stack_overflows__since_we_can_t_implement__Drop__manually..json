@@ -1,0 +1,12 @@
+{
+  "value": " to avoid stack overflows, since we can't implement `Drop` manually.",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

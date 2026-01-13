@@ -1,0 +1,12 @@
+{
+  "value": "[MIRAI] this argument should be a string literal, do not call this function directly",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " of the called function. Use the provenance and spans of the precondition to point out related locations.",
+  "length": 105,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

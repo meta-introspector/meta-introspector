@@ -1,0 +1,12 @@
+{
+  "value": " Although the expanded `let y = 42;` is equal, the macro call should not be included in the",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

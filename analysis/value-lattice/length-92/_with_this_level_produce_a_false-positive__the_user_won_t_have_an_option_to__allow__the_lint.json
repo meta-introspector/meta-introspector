@@ -1,0 +1,12 @@
+{
+  "value": " with this level produce a false-positive, the user won't have an option to `allow` the lint",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

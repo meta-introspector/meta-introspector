@@ -1,0 +1,12 @@
+{
+  "value": " //  vvv The operand pointing to a function called `foo`",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

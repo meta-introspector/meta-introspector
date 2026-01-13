@@ -1,0 +1,12 @@
+{
+  "value": " An element type of an SIMD type isn't a primitive",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

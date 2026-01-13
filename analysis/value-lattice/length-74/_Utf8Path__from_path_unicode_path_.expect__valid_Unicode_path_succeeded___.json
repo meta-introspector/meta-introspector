@@ -1,0 +1,12 @@
+{
+  "value": " Utf8Path::from_path(unicode_path).expect(\"valid Unicode path succeeded\");",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

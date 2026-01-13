@@ -1,0 +1,12 @@
+{
+  "value": " and the root module of a crate has the name of the crate. So, my naming the",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " may change in the future, if you wish to rely on a fixed",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

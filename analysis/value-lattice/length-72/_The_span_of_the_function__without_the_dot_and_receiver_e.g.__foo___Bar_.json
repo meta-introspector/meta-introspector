@@ -1,0 +1,12 @@
+{
+  "value": " The span of the function, without the dot and receiver e.g. `foo::<Bar,",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

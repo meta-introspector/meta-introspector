@@ -1,0 +1,12 @@
+{
+  "value": " Return the span of a given `Path` without including any of its args.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

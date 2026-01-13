@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(Utf8Path::new(\"./is_a_directory/\").is_file(), false);",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

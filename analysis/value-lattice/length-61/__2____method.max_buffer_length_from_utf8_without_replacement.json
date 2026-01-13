@@ -1,0 +1,12 @@
+{
+  "value": " [2]: #method.max_buffer_length_from_utf8_without_replacement",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

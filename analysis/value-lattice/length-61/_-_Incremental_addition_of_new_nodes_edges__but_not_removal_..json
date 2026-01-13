@@ -1,0 +1,12 @@
+{
+  "value": " - Incremental addition of new nodes/edges (but not removal).",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

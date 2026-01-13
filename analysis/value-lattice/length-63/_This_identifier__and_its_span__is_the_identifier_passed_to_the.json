@@ -1,0 +1,12 @@
+{
+  "value": " This identifier (and its span) is the identifier passed to the",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

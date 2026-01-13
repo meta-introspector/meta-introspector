@@ -1,0 +1,12 @@
+{
+  "value": " token that (a) should be pretty-printed with a space after it, or (b)",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

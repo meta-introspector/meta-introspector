@@ -1,0 +1,12 @@
+{
+  "value": "this expression returning a `std::io::Lines` may produce an infinite number of `Err` in case of a read error",
+  "length": 108,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

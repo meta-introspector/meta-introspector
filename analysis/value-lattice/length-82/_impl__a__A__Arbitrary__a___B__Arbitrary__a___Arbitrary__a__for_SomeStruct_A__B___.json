@@ -1,0 +1,12 @@
+{
+  "value": " impl<'a, A: Arbitrary<'a>, B: Arbitrary<'a>> Arbitrary<'a> for SomeStruct<A, B> {",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

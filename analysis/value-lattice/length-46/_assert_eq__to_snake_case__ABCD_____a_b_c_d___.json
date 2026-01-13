@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(to_snake_case(\"ABCD\"), \"a_b_c_d\");",
+  "length": 46,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

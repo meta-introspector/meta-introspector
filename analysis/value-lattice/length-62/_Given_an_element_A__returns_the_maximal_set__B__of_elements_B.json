@@ -1,0 +1,12 @@
+{
+  "value": " Given an element A, returns the maximal set {B} of elements B",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

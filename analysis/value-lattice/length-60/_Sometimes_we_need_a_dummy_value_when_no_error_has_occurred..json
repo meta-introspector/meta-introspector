@@ -1,0 +1,12 @@
+{
+  "value": " Sometimes we need a dummy value when no error has occurred.",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Returns true if the given type is a function, a closure, a generator, or a struct with",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

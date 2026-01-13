@@ -1,0 +1,12 @@
+{
+  "value": " hash and equality. The keys are stored in a hash map in the iterator.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

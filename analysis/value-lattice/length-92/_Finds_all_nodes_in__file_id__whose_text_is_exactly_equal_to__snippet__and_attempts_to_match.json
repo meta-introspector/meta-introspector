@@ -1,0 +1,12 @@
+{
+  "value": " Finds all nodes in `file_id` whose text is exactly equal to `snippet` and attempts to match",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

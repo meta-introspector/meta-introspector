@@ -1,0 +1,12 @@
+{
+  "value": " The number of threads in the thread pool which are running and",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " contents of the stack are drained. If multiple start nodes",
+  "length": 59,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

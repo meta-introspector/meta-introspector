@@ -1,0 +1,12 @@
+{
+  "value": " lint while visiting, because a `vec![]` invocation span can appear multiple times when",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

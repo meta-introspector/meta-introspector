@@ -1,0 +1,12 @@
+{
+  "value": " equivalent to truncating the default-length output. Note that this is a difference between",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

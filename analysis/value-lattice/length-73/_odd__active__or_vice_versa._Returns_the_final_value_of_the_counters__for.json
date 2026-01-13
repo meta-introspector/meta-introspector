@@ -1,0 +1,12 @@
+{
+  "value": " odd (active) or vice versa. Returns the final value of the counters, for",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

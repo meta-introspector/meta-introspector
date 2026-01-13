@@ -1,0 +1,12 @@
+{
+  "value": " Typically, when a worker thread is idle or blocked, it will",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " `QPath::TypeRelative`. Since this is a type relative path, we need to check the method name, the",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

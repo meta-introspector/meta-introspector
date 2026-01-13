@@ -1,0 +1,12 @@
+{
+  "value": "map with zero-sized value type",
+  "length": 30,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

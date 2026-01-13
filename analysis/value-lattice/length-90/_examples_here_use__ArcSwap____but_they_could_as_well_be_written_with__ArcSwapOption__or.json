@@ -1,0 +1,12 @@
+{
+  "value": " examples here use `ArcSwap` ‒ but they could as well be written with `ArcSwapOption` or",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

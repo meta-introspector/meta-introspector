@@ -1,0 +1,12 @@
+{
+  "value": " using a different ABI than the string per se, or describe irrelevant differences, e.g.",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

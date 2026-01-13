@@ -1,0 +1,12 @@
+{
+  "value": "Child crate root is not a descendant of parent workspace root",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

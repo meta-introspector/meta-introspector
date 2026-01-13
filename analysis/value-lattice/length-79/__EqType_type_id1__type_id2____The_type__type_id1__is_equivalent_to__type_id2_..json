@@ -1,0 +1,12 @@
+{
+  "value": " `EqType(type_id1, type_id2)`: The type `type_id1` is equivalent to `type_id2`.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

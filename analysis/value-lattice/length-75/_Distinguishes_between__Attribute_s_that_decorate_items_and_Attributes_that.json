@@ -1,0 +1,12 @@
+{
+  "value": " Distinguishes between `Attribute`s that decorate items and Attributes that",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

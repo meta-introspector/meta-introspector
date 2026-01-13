@@ -1,0 +1,12 @@
+{
+  "value": " [`slice::sort_unstable_by_key`] method and returns the result as a new",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

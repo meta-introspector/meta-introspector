@@ -1,0 +1,12 @@
+{
+  "value": " If `expr` is a desugared `.await`, return the original expression if it does not come from a",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " assert!(itertools::equal(vec![1, 2, 3], 1..4));",
+  "length": 48,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

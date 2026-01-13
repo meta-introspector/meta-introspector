@@ -1,0 +1,12 @@
+{
+  "value": " An newtype around `Ident` that calls [Ident::normalize_to_macro_rules] on",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

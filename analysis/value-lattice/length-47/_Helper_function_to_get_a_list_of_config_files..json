@@ -1,0 +1,12 @@
+{
+  "value": " Helper function to get a list of config files.",
+  "length": 47,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Declaration P2P Network: Each rustc declaration as a libp2p node",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

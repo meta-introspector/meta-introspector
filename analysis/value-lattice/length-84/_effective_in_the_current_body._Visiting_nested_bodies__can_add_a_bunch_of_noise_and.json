@@ -1,0 +1,12 @@
+{
+  "value": " effective in the current body. Visiting nested bodies, can add a bunch of noise and",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

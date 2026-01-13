@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(lookup[&3], vec![(3, 13), (3, 33)]);",
+  "length": 48,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

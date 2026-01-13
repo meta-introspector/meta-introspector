@@ -1,0 +1,12 @@
+{
+  "value": " Looks for `Vec::with_capacity(size)` or `Vec::new()` calls and returns the initialized size,",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

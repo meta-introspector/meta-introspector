@@ -1,0 +1,12 @@
+{
+  "value": " the rings are disabled due to concurrency issues. You can enable the rings with",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

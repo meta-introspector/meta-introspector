@@ -1,0 +1,12 @@
+{
+  "value": "this `as_str` is redundant and can be removed as the method immediately following exists on `String` too",
+  "length": 104,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

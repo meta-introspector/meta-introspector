@@ -1,0 +1,12 @@
+{
+  "value": " who is an indirect type, which doesn't match the primal scalar type. We can't prevent",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

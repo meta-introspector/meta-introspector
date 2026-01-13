@@ -1,0 +1,12 @@
+{
+  "value": " let en_us_memoizer: Rc<IntlLangMemoizer> = memoizer.get_for_lang(en_us);",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

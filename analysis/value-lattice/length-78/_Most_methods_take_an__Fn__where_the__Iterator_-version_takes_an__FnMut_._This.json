@@ -1,0 +1,12 @@
+{
+  "value": " Most methods take an `Fn` where the `Iterator`-version takes an `FnMut`. This",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

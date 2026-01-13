@@ -1,0 +1,12 @@
+{
+  "value": " Hashes strings <= 16 bytes, has unspecified behavior when bytes.len() > 16.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

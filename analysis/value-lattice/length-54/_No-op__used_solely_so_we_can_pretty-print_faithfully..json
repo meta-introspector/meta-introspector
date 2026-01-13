@@ -1,0 +1,12 @@
+{
+  "value": " No-op: used solely so we can pretty-print faithfully.",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

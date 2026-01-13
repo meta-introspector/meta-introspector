@@ -1,0 +1,12 @@
+{
+  "value": " The walk found a cycle, but the entire component is not known to have",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

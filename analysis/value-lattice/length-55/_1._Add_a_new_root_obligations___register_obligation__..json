@@ -1,0 +1,12 @@
+{
+  "value": " 1. Add a new root obligations (`register_obligation`).",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

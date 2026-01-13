@@ -1,0 +1,12 @@
+{
+  "value": " assignments that Unicode has made after those encodings used Private Use",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

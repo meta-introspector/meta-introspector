@@ -1,0 +1,12 @@
+{
+  "value": " An abstract domain element that all represents all possible concrete values.",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

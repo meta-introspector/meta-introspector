@@ -1,0 +1,12 @@
+{
+  "value": " OID for ECDSA with SHA-224 digests.",
+  "length": 36,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

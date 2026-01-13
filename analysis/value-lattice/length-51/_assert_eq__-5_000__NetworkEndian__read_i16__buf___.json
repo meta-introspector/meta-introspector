@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(-5_000, NetworkEndian::read_i16(&buf));",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

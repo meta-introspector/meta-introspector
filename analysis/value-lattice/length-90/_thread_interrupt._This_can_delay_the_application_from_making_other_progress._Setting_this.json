@@ -1,0 +1,12 @@
+{
+  "value": " thread interrupt. This can delay the application from making other progress. Setting this",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

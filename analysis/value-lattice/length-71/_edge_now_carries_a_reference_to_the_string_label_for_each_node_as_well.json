@@ -1,0 +1,12 @@
+{
+  "value": " edge now carries a reference to the string label for each node as well",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

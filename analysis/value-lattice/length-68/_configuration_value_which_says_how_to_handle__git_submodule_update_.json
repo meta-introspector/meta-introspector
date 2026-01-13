@@ -1,0 +1,12 @@
+{
+  "value": " configuration value which says how to handle `git submodule update`",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Checks if two expressions evaluate to the same value, and don't contain any side effects.",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

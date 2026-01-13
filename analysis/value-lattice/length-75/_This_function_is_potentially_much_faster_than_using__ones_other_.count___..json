@@ -1,0 +1,12 @@
+{
+  "value": " This function is potentially much faster than using `ones(other).count()`.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

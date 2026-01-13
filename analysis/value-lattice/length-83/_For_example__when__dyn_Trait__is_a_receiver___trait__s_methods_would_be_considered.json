@@ -1,0 +1,12 @@
+{
+  "value": " For example, when `dyn Trait` is a receiver, _trait_'s methods would be considered",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(multi_prod.next(), Some(vec![1, 3, 5]));",
+  "length": 52,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

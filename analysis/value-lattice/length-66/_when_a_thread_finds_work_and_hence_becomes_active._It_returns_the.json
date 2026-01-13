@@ -1,0 +1,12 @@
+{
+  "value": " when a thread finds work and hence becomes active. It returns the",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Identifies SCCs in the graph `G` and computes the resulting",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

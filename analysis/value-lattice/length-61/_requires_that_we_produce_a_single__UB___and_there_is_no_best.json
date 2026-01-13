@@ -1,0 +1,12 @@
+{
+  "value": " requires that we produce a single \"UB\", and there is no best",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

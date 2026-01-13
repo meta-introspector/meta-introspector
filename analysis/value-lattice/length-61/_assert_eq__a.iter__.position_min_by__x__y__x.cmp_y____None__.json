@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(a.iter().position_min_by(|x, y| x.cmp(y)), None);",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

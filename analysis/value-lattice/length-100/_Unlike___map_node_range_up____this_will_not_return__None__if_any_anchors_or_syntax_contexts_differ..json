@@ -1,0 +1,12 @@
+{
+  "value": " Unlike [`map_node_range_up`], this will not return `None` if any anchors or syntax contexts differ.",
+  "length": 100,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

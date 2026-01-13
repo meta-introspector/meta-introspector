@@ -1,0 +1,12 @@
+{
+  "value": " * result_func - A closure that is called with the node index and its PageRank score after convergence.",
+  "length": 103,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " 16 bit floating point, stored as a u16 to make it comparable.",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the given expression is extending a vector with `repeat(0).take(..)`",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " and, in most cases, vice versa. Each encoding has a name, an output",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

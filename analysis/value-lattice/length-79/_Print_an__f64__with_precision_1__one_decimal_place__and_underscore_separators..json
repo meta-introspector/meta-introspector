@@ -1,0 +1,12 @@
+{
+  "value": " Print an `f64` with precision 1 (one decimal place) and underscore separators.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

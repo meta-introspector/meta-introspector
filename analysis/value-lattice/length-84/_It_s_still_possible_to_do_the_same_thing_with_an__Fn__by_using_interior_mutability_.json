@@ -1,0 +1,12 @@
+{
+  "value": " It's still possible to do the same thing with an `Fn` by using interior mutability,",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

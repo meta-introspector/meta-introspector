@@ -1,0 +1,12 @@
+{
+  "value": " `true` if we ate a `where` token.",
+  "length": 34,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

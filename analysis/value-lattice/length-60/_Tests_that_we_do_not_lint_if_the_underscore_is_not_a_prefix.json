@@ -1,0 +1,12 @@
+{
+  "value": " Tests that we do not lint if the underscore is not a prefix",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

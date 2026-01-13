@@ -1,0 +1,12 @@
+{
+  "value": " The `edition` closure is used to get the edition for the given symbol. Doing",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

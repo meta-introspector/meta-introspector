@@ -1,0 +1,12 @@
+{
+  "value": " Optional Git reference (branch, tag, commit hash) associated with this patch.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

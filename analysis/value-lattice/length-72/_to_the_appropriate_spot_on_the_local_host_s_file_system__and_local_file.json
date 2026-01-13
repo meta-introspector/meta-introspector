@@ -1,0 +1,12 @@
+{
+  "value": " to the appropriate spot on the local host's file system, and local file",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

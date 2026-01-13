@@ -1,0 +1,12 @@
+{
+  "value": " - `ExpansionData`: This is all the \"background information\" about where and when a spell is being",
+  "length": 98,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

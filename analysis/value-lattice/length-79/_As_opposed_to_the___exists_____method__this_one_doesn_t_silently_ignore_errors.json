@@ -1,0 +1,12 @@
+{
+  "value": " As opposed to the [`exists()`] method, this one doesn't silently ignore errors",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

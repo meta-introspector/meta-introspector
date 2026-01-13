@@ -1,0 +1,12 @@
+{
+  "value": "Don't try to find local dependencies of the current crate and watch their working directories. Only watch the current directory.",
+  "length": 128,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

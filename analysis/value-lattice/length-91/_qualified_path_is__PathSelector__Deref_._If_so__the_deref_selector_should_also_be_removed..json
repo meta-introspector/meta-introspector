@@ -1,0 +1,12 @@
+{
+  "value": " qualified path is `PathSelector::Deref`. If so, the deref selector should also be removed.",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " the requirements: the query's `DepNodeIndex`. So we use the numeric value",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

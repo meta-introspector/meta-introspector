@@ -1,0 +1,12 @@
+{
+  "value": " A guard holding shared access to a `FreezeLock` which is in a locked state or frozen.",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

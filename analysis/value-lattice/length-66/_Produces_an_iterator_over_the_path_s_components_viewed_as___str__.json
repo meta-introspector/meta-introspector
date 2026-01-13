@@ -1,0 +1,12 @@
+{
+  "value": " Produces an iterator over the path's components viewed as [`str`]",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

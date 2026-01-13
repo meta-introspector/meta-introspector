@@ -1,0 +1,12 @@
+{
+  "value": " traits aren't stable, and they're expected to change in incompatible ways",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

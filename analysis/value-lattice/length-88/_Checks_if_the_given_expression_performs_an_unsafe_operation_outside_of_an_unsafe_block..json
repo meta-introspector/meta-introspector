@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the given expression performs an unsafe operation outside of an unsafe block.",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

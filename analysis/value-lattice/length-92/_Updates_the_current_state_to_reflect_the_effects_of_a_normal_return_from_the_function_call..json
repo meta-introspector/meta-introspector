@@ -1,0 +1,12 @@
+{
+  "value": " Updates the current state to reflect the effects of a normal return from the function call.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

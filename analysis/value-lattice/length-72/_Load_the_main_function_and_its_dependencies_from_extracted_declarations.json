@@ -1,0 +1,12 @@
+{
+  "value": " Load the main function and its dependencies from extracted declarations",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " expect `s.2` to execute before `s.1`, and `t.2` before `t.1`. Other",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

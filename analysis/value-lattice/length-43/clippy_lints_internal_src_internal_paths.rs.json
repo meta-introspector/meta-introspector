@@ -1,0 +1,12 @@
+{
+  "value": "clippy_lints_internal/src/internal_paths.rs",
+  "length": 43,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

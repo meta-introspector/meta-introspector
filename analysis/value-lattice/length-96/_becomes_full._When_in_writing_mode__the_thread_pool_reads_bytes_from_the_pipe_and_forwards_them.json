@@ -1,0 +1,12 @@
+{
+  "value": " becomes full. When in writing mode, the thread pool reads bytes from the pipe and forwards them",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

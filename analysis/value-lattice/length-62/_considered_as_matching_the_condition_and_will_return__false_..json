@@ -1,0 +1,12 @@
+{
+  "value": " considered as matching the condition and will return `false`.",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " it becomes true. You can test if it has been set by calling `probe()`.",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

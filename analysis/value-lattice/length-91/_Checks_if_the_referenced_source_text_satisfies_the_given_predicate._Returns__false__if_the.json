@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the referenced source text satisfies the given predicate. Returns `false` if the",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

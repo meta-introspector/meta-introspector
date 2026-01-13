@@ -1,0 +1,12 @@
+{
+  "value": " use of the returned raw pointer requires an `unsafe` block and still has to uphold the same",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

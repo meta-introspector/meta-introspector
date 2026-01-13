@@ -1,0 +1,12 @@
+{
+  "value": " let it = a.merge_by(b, |x, y| x.1 <= y.1);",
+  "length": 43,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

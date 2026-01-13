@@ -1,0 +1,17 @@
+{
+  "value": "meta-variables within meta-variable expressions must be referenced using a dollar sign",
+  "length": 86,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

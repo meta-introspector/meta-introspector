@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(numbers, [5i16.to_be(), 6500i16.to_be()]);",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

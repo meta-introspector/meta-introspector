@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the expression is an `assert!` expression and adds it to `asserts`",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

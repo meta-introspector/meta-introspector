@@ -1,0 +1,12 @@
+{
+  "value": " The macro statement had parentheses or brackets and no semicolon (e.g.,",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "         let n = pool.install(|| fib(20));",
+  "length": 42,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

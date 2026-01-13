@@ -1,0 +1,12 @@
+{
+  "value": " [`File`](https://doc.rust-lang.org/std/fs/struct.File.html): reading from a memory-mapped",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

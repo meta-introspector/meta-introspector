@@ -1,0 +1,12 @@
+{
+  "value": " If you have a test that needs to do `cargo run` multiple",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

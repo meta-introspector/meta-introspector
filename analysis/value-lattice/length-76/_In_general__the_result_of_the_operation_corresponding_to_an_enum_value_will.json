@@ -1,0 +1,12 @@
+{
+  "value": " In general, the result of the operation corresponding to an enum value will",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

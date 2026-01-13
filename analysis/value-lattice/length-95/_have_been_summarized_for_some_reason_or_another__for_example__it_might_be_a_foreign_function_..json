@@ -1,0 +1,12 @@
+{
+  "value": " have been summarized for some reason or another (for example, it might be a foreign function).",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "indexing into a string may panic if the index is within a UTF-8 character",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This obviously comes with the caveat that if the application has multiple reads or writes in flight,",
+  "length": 101,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

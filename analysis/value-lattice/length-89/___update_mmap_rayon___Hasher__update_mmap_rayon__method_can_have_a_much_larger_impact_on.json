@@ -1,0 +1,12 @@
+{
+  "value": " [`update_mmap_rayon`](Hasher::update_mmap_rayon) method can have a much larger impact on",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

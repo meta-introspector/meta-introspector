@@ -1,0 +1,12 @@
+{
+  "value": " For a variant with variant index `i`, such that `i != untagged_variant`,",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

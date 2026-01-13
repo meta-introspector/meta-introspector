@@ -1,0 +1,12 @@
+{
+  "value": " Bootstrap command: Scans the project itself into output2, builds the generated code, and reports errors.",
+  "length": 105,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

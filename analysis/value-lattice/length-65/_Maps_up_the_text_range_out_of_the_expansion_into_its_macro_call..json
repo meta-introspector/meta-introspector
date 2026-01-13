@@ -1,0 +1,12 @@
+{
+  "value": " Maps up the text range out of the expansion into its macro call.",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

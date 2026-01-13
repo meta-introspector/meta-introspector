@@ -1,0 +1,12 @@
+{
+  "value": " The number of backslash escapes in a quoted-text parameter; 0 for a plain token.",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

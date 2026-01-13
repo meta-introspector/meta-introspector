@@ -1,0 +1,12 @@
+{
+  "value": " [`crossbeam::scope`]: https://docs.rs/crossbeam/0.8/crossbeam/fn.scope.html",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

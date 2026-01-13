@@ -1,0 +1,12 @@
+{
+  "value": " default, but configure a specific program in its configuration file to specifically enable",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

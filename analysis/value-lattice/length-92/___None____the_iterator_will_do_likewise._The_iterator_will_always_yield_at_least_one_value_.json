@@ -1,0 +1,12 @@
+{
+  "value": " [`None`], the iterator will do likewise. The iterator will always yield at least one value,",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

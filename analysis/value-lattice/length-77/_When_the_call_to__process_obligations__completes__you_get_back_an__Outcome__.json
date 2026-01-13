@@ -1,0 +1,12 @@
+{
+  "value": " When the call to `process_obligations` completes, you get back an `Outcome`,",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

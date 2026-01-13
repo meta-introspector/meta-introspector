@@ -1,0 +1,12 @@
+{
+  "value": " `P` is used as a size optimization for the common case with no parameters.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " You can create [`Utf8Path`]s from [`String`]s, or even other [`Utf8Path`]s:",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

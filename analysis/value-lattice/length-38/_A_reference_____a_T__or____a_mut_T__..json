@@ -1,0 +1,12 @@
+{
+  "value": " A reference (`&'a T` or `&'a mut T`).",
+  "length": 38,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

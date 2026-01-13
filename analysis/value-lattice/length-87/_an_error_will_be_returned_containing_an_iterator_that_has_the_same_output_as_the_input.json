@@ -1,0 +1,12 @@
+{
+  "value": " an error will be returned containing an iterator that has the same output as the input",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

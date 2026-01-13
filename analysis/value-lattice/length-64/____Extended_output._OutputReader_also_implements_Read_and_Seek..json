@@ -1,0 +1,12 @@
+{
+  "value": " // Extended output. OutputReader also implements Read and Seek.",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

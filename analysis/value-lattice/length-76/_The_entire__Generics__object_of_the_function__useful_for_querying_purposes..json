@@ -1,0 +1,12 @@
+{
+  "value": " The entire `Generics` object of the function, useful for querying purposes.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

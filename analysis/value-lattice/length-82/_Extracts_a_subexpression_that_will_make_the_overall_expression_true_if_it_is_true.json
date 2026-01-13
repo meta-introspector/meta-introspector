@@ -1,0 +1,12 @@
+{
+  "value": " Extracts a subexpression that will make the overall expression true if it is true",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

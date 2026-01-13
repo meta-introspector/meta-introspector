@@ -1,0 +1,12 @@
+{
+  "value": " future HTTP requests. The handle can be previously configured with",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

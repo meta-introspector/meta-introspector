@@ -1,0 +1,12 @@
+{
+  "value": " The stack of nodes that we are visiting as part of the DFS.",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

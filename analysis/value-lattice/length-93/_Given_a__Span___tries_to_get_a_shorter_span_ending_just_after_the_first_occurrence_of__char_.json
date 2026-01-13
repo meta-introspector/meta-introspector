@@ -1,0 +1,12 @@
+{
+  "value": " Given a `Span`, tries to get a shorter span ending just after the first occurrence of `char`",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

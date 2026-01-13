@@ -1,0 +1,12 @@
+{
+  "value": " A utility function that ranks a token again a given kind and text, returning a number that",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

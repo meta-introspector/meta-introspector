@@ -1,0 +1,12 @@
+{
+  "value": " If true, the summary is incomplete, which means that the result and side effects could be",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

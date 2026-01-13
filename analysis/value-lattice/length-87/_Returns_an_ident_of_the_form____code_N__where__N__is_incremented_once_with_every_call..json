@@ -1,0 +1,12 @@
+{
+  "value": " Returns an ident of the form `__code_N` where `N` is incremented once with every call.",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

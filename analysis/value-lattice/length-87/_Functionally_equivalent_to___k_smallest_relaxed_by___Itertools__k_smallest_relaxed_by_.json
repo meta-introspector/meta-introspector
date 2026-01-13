@@ -1,0 +1,12 @@
+{
+  "value": " Functionally equivalent to [`k_smallest_relaxed_by`](Itertools::k_smallest_relaxed_by)",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

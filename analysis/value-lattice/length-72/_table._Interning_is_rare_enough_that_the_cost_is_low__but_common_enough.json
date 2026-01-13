@@ -1,0 +1,12 @@
+{
+  "value": " table. Interning is rare enough that the cost is low, but common enough",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

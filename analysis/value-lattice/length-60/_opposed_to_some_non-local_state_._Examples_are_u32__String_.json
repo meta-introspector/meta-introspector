@@ -1,0 +1,12 @@
+{
+  "value": " opposed to some non-local state). Examples are u32, String,",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

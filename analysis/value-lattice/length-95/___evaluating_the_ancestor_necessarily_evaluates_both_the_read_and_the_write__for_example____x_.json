@@ -1,0 +1,12 @@
+{
+  "value": " * evaluating the ancestor necessarily evaluates both the read and the write (for example, `&x`",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

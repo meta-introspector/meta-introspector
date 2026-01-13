@@ -1,0 +1,12 @@
+{
+  "value": "   cast. It includes a unique ID for this specific casting (`LocalExpnId`), how deep you are in a",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

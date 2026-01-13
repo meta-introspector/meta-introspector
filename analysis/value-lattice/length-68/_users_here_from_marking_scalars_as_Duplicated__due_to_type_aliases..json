@@ -1,0 +1,12 @@
+{
+  "value": " users here from marking scalars as Duplicated, due to type aliases.",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

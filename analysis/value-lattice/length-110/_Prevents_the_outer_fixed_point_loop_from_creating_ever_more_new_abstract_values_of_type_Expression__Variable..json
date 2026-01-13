@@ -1,0 +1,12 @@
+{
+  "value": " Prevents the outer fixed point loop from creating ever more new abstract values of type Expression::Variable.",
+  "length": 110,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

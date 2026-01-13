@@ -1,0 +1,12 @@
+{
+  "value": " The primitive character type; holds a Unicode scalar value (a non-surrogate code point).",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

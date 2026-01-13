@@ -1,0 +1,12 @@
+{
+  "value": " let numbers_given = [1, 2, 0xf, 0xe];",
+  "length": 38,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

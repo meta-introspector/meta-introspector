@@ -1,0 +1,12 @@
+{
+  "value": " Headers from attempting to access a registry that resulted in a HTTP 401.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

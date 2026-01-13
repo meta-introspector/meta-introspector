@@ -1,0 +1,12 @@
+{
+  "value": " Returns whether or not the file contains the given `SourceMap` byte",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

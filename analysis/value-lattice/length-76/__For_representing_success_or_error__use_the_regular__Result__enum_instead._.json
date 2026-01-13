@@ -1,0 +1,12 @@
+{
+  "value": " (For representing success or error, use the regular `Result` enum instead.)",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

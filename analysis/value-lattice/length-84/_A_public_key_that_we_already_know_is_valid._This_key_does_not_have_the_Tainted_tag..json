@@ -1,0 +1,12 @@
+{
+  "value": " A public key that we already know is valid. This key does not have the Tainted tag.",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

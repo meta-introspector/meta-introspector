@@ -1,0 +1,12 @@
+{
+  "value": "{\n    let x = 5;\n    let y = format!(\"{}\", 42);\n}",
+  "length": 49,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

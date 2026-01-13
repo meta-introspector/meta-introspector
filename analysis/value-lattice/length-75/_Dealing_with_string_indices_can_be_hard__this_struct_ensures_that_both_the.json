@@ -1,0 +1,12 @@
+{
+  "value": " Dealing with string indices can be hard, this struct ensures that both the",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

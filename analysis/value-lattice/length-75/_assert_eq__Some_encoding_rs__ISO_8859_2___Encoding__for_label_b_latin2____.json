@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(Some(encoding_rs::ISO_8859_2), Encoding::for_label(b\"latin2\"));",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

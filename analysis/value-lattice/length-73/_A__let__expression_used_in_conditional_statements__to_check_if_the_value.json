@@ -1,0 +1,12 @@
+{
+  "value": " A `let` expression used in conditional statements, to check if the value",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

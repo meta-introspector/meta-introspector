@@ -1,0 +1,12 @@
+{
+  "value": " The encoder side of this encoding is GBK with Windows code page 936 euro",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

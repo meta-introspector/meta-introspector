@@ -1,0 +1,12 @@
+{
+  "value": " Constructs a new, empty `IndexVec<I, T>`.",
+  "length": 42,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Checks if an `iter` or `iter_mut` call returns `IntoIterator::IntoIter`. Returns how the",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

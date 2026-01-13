@@ -1,0 +1,12 @@
+{
+  "value": " expansion to indicate whether a generated statement requires a trailing semicolon.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

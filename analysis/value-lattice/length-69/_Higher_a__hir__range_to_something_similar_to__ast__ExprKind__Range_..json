@@ -1,0 +1,12 @@
+{
+  "value": " Higher a `hir` range to something similar to `ast::ExprKind::Range`.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

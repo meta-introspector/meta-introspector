@@ -1,0 +1,12 @@
+{
+  "value": " Fixed-sized integer type, e.g. `i8`, `u32`, `i128`. The bool field shows signedness, e.g.",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

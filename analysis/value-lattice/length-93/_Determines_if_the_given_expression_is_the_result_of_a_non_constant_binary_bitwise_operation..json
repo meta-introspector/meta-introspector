@@ -1,0 +1,12 @@
+{
+  "value": " Determines if the given expression is the result of a non constant binary bitwise operation.",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

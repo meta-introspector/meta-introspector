@@ -1,0 +1,12 @@
+{
+  "value": " This method is useful for reporting errors in user-controllable code and avoiding",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

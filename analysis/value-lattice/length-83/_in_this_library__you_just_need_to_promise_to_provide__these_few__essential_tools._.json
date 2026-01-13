@@ -1,0 +1,12 @@
+{
+  "value": " in this library, you just need to promise to provide *these few* essential tools.\"",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

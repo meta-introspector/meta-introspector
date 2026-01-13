@@ -1,0 +1,12 @@
+{
+  "value": " The `warn` level will produce a warning if the lint was violated, however the",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

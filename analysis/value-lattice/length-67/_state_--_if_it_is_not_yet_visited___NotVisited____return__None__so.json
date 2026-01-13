@@ -1,0 +1,12 @@
+{
+  "value": " state -- if it is not yet visited (`NotVisited`), return `None` so",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "value": " also be used to implement the varint scheme we use for rmeta and dep graph encoding,",
+  "length": 85,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

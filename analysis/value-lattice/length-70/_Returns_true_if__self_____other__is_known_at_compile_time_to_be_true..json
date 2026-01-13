@@ -1,0 +1,12 @@
+{
+  "value": " Returns true if \"self => !other\" is known at compile time to be true.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

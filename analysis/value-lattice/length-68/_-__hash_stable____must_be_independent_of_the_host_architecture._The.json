@@ -1,0 +1,12 @@
+{
+  "value": " - `hash_stable()` must be independent of the host architecture. The",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

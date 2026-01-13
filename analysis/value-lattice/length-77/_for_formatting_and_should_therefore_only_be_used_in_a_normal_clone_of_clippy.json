@@ -1,0 +1,12 @@
+{
+  "value": " for formatting and should therefore only be used in a normal clone of clippy",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

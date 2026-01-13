@@ -1,0 +1,12 @@
+{
+  "value": " They are listed in parentheses separated with commas, such as:",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

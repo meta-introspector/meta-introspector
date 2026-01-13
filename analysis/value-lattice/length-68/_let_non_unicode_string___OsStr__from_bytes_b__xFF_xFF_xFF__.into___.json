@@ -1,0 +1,12 @@
+{
+  "value": " let non_unicode_string = OsStr::from_bytes(b\"\\xFF\\xFF\\xFF\").into();",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

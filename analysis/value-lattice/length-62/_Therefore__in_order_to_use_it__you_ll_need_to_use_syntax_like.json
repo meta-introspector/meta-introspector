@@ -1,0 +1,12 @@
+{
+  "value": " Therefore, in order to use it, you'll need to use syntax like",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

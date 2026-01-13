@@ -1,0 +1,12 @@
+{
+  "value": " then it must be sound to use the result of processing one obligation",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

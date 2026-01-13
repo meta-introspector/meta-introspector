@@ -1,0 +1,12 @@
+{
+  "value": "`ref` on an entire `let` pattern is discouraged, take a reference with `&` instead",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

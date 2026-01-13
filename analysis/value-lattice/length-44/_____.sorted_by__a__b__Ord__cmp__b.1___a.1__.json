@@ -1,0 +1,12 @@
+{
+  "value": "     .sorted_by(|a, b| Ord::cmp(&b.1, &a.1))",
+  "length": 44,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

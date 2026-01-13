@@ -1,0 +1,12 @@
+{
+  "value": "2.16.840.1.101.3.4.2.4",
+  "length": 22,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

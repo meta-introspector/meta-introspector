@@ -1,0 +1,12 @@
+{
+  "value": " Walk top-down and call `it` in each place where a pattern occurs",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

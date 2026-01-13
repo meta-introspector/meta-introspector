@@ -1,0 +1,12 @@
+{
+  "value": " Unqualified path patterns `A::B::C` can legally refer to variants, structs, constants",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

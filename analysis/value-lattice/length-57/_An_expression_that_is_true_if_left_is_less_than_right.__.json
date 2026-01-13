@@ -1,0 +1,12 @@
+{
+  "value": " An expression that is true if left is less than right. <",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

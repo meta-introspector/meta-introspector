@@ -1,0 +1,12 @@
+{
+  "value": " it will actually avoid descending into directories when the depth is",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

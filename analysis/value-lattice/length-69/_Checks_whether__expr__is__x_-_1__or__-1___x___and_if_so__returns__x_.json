@@ -1,0 +1,12 @@
+{
+  "value": " Checks whether `expr` is `x - 1` or `-1 + x`, and if so, returns `x`",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Field information passed to the builder. Deliberately omits attrs to discourage the",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

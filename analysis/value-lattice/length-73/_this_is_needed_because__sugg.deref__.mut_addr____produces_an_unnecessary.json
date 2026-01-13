@@ -1,0 +1,12 @@
+{
+  "value": " this is needed because `sugg.deref().mut_addr()` produces an unnecessary",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

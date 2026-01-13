@@ -1,0 +1,12 @@
+{
+  "value": " which `increment_when` is guaranteed to return false.",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

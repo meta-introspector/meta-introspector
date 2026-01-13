@@ -1,0 +1,12 @@
+{
+  "value": " - `len` is ~15 bits in `Span` (a u16, minus 1 bit for PARENT_TAG) and 32",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This is appropriate for paths that get embedded into files produced by the compiler.",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

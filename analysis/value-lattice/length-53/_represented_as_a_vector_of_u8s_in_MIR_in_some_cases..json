@@ -1,0 +1,12 @@
+{
+  "value": " represented as a vector of u8s in MIR in some cases.",
+  "length": 53,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the expression can be moved into a closure as is. This will return a list of captures",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

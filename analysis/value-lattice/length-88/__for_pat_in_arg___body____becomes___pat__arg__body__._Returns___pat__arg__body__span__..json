@@ -1,0 +1,12 @@
+{
+  "value": " `for pat in arg { body }` becomes `(pat, arg, body)`. Returns `(pat, arg, body, span)`.",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

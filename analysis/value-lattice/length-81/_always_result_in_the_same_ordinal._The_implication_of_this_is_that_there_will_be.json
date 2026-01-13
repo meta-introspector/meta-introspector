@@ -1,0 +1,12 @@
+{
+  "value": " always result in the same ordinal. The implication of this is that there will be",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

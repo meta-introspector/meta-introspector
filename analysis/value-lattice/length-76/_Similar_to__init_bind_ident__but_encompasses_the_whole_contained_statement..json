@@ -1,0 +1,12 @@
+{
+  "value": " Similar to `init_bind_ident` but encompasses the whole contained statement.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

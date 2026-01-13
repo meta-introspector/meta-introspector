@@ -1,0 +1,12 @@
+{
+  "value": " without a heap allocation. Otherwise, this method performs a single",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

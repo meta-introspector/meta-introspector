@@ -1,0 +1,12 @@
+{
+  "value": " ABIs defined for x86-{32,64}",
+  "length": 29,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

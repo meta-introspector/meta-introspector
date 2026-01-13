@@ -1,0 +1,12 @@
+{
+  "value": " This is needed because x86's u64 is 4-byte aligned and x86_64's u128 is",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

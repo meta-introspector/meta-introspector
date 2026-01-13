@@ -1,0 +1,12 @@
+{
+  "value": " However, under forward mode we overwrite the previous shadow value, while for reverse mode",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

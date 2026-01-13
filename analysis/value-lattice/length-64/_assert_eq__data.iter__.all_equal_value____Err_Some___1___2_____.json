@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(data.iter().all_equal_value(), Err(Some((&1, &2))));",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

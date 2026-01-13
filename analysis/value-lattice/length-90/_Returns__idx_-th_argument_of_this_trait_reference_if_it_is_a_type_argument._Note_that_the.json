@@ -1,0 +1,12 @@
+{
+  "value": " Returns `idx`-th argument of this trait reference if it is a type argument. Note that the",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

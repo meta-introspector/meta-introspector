@@ -1,0 +1,12 @@
+{
+  "value": " - `span.ctxt_or_parent_or_marker == span_data.parent` (must be `<= MAX_CTXT`)",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

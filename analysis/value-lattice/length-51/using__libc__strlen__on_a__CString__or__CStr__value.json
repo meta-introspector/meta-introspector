@@ -1,0 +1,12 @@
+{
+  "value": "using `libc::strlen` on a `CString` or `CStr` value",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

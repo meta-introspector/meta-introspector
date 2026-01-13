@@ -1,0 +1,12 @@
+{
+  "value": " An example of a rare thing actually affected by preferred alignment is aligning of statics.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

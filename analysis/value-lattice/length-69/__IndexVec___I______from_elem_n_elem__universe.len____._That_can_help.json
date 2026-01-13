@@ -1,0 +1,12 @@
+{
+  "value": " `IndexVec::<I, _>::from_elem_n(elem, universe.len())`. That can help",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

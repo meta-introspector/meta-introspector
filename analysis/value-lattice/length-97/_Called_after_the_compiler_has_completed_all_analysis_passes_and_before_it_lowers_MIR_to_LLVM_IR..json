@@ -1,0 +1,12 @@
+{
+  "value": " Called after the compiler has completed all analysis passes and before it lowers MIR to LLVM IR.",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

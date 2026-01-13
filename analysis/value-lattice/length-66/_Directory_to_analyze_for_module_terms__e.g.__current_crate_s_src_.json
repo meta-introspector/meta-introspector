@@ -1,0 +1,12 @@
+{
+  "value": " Directory to analyze for module terms (e.g., current crate's src)",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " trying to use the wrong index type (possibly accessing an invalid element) will fail at",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

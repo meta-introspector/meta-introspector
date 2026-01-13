@@ -1,0 +1,12 @@
+{
+  "value": " are two locations for where clause on type aliases, but their predicates",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " If you do not need to modify the span, use [`find_ancestor_inside`] instead.",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

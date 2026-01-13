@@ -1,0 +1,12 @@
+{
+  "value": "     before adding context will continue to work after you add a context, so",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

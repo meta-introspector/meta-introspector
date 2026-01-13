@@ -1,0 +1,12 @@
+{
+  "value": " enough bits for at least two chunks. This is a good choice for many bitsets",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

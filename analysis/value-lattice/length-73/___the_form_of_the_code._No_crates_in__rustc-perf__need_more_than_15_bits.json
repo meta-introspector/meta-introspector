@@ -1,0 +1,12 @@
+{
+  "value": "   the form of the code. No crates in `rustc-perf` need more than 15 bits",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

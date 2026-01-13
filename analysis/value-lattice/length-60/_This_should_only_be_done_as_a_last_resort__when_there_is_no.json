@@ -1,0 +1,12 @@
+{
+  "value": " This should only be done as a last resort, when there is no",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

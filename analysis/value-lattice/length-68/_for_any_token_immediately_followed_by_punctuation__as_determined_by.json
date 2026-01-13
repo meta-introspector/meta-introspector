@@ -1,0 +1,12 @@
+{
+  "value": " for any token immediately followed by punctuation (as determined by",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

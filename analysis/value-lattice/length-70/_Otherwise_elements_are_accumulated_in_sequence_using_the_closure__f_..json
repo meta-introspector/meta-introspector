@@ -1,0 +1,12 @@
+{
+  "value": " Otherwise elements are accumulated in sequence using the closure `f`.",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

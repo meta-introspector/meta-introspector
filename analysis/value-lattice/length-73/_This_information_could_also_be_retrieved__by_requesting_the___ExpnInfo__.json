@@ -1,0 +1,12 @@
+{
+  "value": " This information could also be retrieved, by requesting the [`ExpnInfo`]",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

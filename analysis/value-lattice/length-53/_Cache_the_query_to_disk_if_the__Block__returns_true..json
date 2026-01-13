@@ -1,0 +1,12 @@
+{
+  "value": " Cache the query to disk if the `Block` returns true.",
+  "length": 53,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

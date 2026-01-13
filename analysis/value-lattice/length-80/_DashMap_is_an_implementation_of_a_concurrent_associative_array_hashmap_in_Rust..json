@@ -1,0 +1,12 @@
+{
+  "value": " DashMap is an implementation of a concurrent associative array/hashmap in Rust.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

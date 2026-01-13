@@ -1,0 +1,12 @@
+{
+  "value": " Specifies lint crates which should be used. (Lints in `Cargo.toml` will be ignored)",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

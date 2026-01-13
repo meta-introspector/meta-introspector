@@ -1,0 +1,12 @@
+{
+  "value": " This module defines the `InvocationCollectorNode` trait and related structures, which are",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

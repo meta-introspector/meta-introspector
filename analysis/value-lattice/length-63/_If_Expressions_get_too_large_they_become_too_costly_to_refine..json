@@ -1,0 +1,12 @@
+{
+  "value": " If Expressions get too large they become too costly to refine.",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

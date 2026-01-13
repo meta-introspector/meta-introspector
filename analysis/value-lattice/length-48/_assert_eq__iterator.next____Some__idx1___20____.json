@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(iterator.next(), Some((idx1, &20)));",
+  "length": 48,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

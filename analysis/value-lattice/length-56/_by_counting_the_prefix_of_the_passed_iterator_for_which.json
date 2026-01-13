@@ -1,0 +1,12 @@
+{
+  "value": " by counting the prefix of the passed iterator for which",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

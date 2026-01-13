@@ -1,0 +1,12 @@
+{
+  "value": " Keep the conditional imports together in a submodule, so that import-sorting",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

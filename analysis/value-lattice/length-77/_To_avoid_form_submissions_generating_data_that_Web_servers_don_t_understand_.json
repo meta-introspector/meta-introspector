@@ -1,0 +1,12 @@
+{
+  "value": " To avoid form submissions generating data that Web servers don't understand,",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

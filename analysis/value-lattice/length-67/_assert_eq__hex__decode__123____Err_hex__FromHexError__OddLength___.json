@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(hex::decode(\"123\"), Err(hex::FromHexError::OddLength));",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

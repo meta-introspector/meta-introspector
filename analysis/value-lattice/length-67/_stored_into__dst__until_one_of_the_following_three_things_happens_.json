@@ -1,0 +1,12 @@
+{
+  "value": " stored into `dst` until one of the following three things happens:",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

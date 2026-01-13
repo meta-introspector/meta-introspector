@@ -1,0 +1,12 @@
+{
+  "value": " Provides a way to refer to the result value of an abstract or contract function without",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

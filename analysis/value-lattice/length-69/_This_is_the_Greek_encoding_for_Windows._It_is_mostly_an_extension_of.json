@@ -1,0 +1,12 @@
+{
+  "value": " This is the Greek encoding for Windows. It is mostly an extension of",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

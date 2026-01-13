@@ -1,0 +1,12 @@
+{
+  "value": " Returns the length of the longest LEB128 encoding of all supported integer types.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

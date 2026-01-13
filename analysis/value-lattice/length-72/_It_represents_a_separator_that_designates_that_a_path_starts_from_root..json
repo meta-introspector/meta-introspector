@@ -1,0 +1,12 @@
+{
+  "value": " It represents a separator that designates that a path starts from root.",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

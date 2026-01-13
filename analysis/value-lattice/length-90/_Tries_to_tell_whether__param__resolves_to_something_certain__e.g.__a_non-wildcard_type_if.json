@@ -1,0 +1,12 @@
+{
+  "value": " Tries to tell whether `param` resolves to something certain, e.g., a non-wildcard type if",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

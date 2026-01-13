@@ -1,0 +1,12 @@
+{
+  "value": " Tries to unwrap the `Annotatable` into a `Box<ast::Ty>`, panicking if it's another type.",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

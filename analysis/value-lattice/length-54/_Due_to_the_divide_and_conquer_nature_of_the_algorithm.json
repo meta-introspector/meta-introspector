@@ -1,0 +1,12 @@
+{
+  "value": " Due to the divide and conquer nature of the algorithm",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

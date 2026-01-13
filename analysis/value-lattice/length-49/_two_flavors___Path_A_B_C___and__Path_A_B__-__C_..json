@@ -1,0 +1,12 @@
+{
+  "value": " two flavors: `Path<A,B,C>` and `Path(A,B) -> C`.",
+  "length": 49,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

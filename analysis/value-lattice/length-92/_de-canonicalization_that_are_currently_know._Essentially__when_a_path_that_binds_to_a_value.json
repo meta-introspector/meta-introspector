@@ -1,0 +1,12 @@
+{
+  "value": " de-canonicalization that are currently know. Essentially: when a path that binds to a value",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

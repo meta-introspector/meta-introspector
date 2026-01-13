@@ -1,0 +1,12 @@
+{
+  "value": " Analyze the crate currently being compiled, using the information given in compiler and tcx.",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

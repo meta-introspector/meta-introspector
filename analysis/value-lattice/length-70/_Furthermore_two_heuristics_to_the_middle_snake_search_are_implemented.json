@@ -1,0 +1,12 @@
+{
+  "value": " Furthermore two heuristics to the middle snake search are implemented",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

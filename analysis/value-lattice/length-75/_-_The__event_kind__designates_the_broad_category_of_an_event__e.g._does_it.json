@@ -1,0 +1,12 @@
+{
+  "value": " - The `event_kind` designates the broad category of an event (e.g. does it",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

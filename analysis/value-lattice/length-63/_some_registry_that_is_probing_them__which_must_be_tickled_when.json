@@ -1,0 +1,12 @@
+{
+  "value": " some registry that is probing them, which must be tickled when",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

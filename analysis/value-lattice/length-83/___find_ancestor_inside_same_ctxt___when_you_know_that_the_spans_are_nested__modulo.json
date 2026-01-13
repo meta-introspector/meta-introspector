@@ -1,0 +1,12 @@
+{
+  "value": " [`find_ancestor_inside_same_ctxt`] when you know that the spans are nested (modulo",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

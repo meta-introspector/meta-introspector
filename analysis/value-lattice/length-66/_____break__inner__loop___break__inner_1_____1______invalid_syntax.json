@@ -1,0 +1,12 @@
+{
+  "value": "     break 'inner: loop { break 'inner 1 } + 1;  // invalid syntax",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

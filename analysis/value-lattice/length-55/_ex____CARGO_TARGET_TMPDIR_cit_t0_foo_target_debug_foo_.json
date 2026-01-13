@@ -1,0 +1,12 @@
+{
+  "value": " ex: `$CARGO_TARGET_TMPDIR/cit/t0/foo/target/debug/foo`",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

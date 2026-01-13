@@ -1,0 +1,12 @@
+{
+  "value": " able to use many of the functions on spans in source_map and you cannot assume",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

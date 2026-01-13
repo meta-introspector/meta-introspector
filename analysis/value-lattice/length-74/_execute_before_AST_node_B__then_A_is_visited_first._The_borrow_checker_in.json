@@ -1,0 +1,12 @@
+{
+  "value": " execute before AST node B, then A is visited first. The borrow checker in",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

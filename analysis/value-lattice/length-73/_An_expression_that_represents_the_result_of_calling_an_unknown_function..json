@@ -1,0 +1,12 @@
+{
+  "value": " An expression that represents the result of calling an unknown function.",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

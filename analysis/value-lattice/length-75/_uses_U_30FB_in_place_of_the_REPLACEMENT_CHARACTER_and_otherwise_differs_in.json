@@ -1,0 +1,12 @@
+{
+  "value": " uses U+30FB in place of the REPLACEMENT CHARACTER and otherwise differs in",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

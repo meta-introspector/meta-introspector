@@ -1,0 +1,12 @@
+{
+  "value": " Returns `true` if the set is a superset of another, i.e. `self` contains",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

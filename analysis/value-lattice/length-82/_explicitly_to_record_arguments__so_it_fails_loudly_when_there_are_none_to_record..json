@@ -1,0 +1,12 @@
+{
+  "value": " explicitly to record arguments, so it fails loudly when there are none to record.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

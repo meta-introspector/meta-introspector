@@ -1,0 +1,12 @@
+{
+  "value": " then file assignment needs to happen post execution of that SQE. If this flag is set, then",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

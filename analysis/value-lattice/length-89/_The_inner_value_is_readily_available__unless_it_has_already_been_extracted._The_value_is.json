@@ -1,0 +1,12 @@
+{
+  "value": " The inner value is readily available, unless it has already been extracted. The value is",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

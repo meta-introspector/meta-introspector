@@ -1,0 +1,12 @@
+{
+  "value": "\n        #include <iostream>\n\n        void print_hello() {\n            std::cout << \"Hello, World!\" << std::endl;\n        }\n\n        int main() {\n            print_hello();\n            return 0;\n        }\n        ",
+  "length": 213,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

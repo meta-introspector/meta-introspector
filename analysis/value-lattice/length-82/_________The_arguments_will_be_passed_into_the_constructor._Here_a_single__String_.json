@@ -1,0 +1,12 @@
+{
+  "value": "     /// The arguments will be passed into the constructor. Here a single `String`",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

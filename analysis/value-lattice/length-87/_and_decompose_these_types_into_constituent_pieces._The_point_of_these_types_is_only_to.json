@@ -1,0 +1,12 @@
+{
+  "value": " and decompose these types into constituent pieces. The point of these types is only to",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " BER/DER-serialized bytes (sans ASN.1 tag/length).",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

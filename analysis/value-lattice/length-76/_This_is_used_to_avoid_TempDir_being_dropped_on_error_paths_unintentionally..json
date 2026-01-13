@@ -1,0 +1,12 @@
+{
+  "value": " This is used to avoid TempDir being dropped on error paths unintentionally.",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

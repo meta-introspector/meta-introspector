@@ -1,0 +1,12 @@
+{
+  "value": " This is generic over some storage type `T` which can be either owned or",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

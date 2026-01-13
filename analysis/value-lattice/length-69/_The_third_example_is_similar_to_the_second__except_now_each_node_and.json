@@ -1,0 +1,12 @@
+{
+  "value": " The third example is similar to the second, except now each node and",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

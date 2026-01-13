@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the callee is a \"relevant\" `CStr` function considered by this lint.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " let mut map: HashMap<i32, i32, BuildHasherDefault<AHasher>> = HashMap::default();",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " subsequent calls will be cheap. If the def_id does not have an actual well",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

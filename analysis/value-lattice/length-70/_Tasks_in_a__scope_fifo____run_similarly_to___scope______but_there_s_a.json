@@ -1,0 +1,12 @@
+{
+  "value": " Tasks in a `scope_fifo()` run similarly to [`scope()`], but there's a",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

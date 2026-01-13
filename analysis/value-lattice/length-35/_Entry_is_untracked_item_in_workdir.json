@@ -1,0 +1,12 @@
+{
+  "value": " Entry is untracked item in workdir",
+  "length": 35,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

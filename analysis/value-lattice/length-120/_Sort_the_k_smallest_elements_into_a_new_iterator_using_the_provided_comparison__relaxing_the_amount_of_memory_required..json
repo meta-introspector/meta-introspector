@@ -1,0 +1,12 @@
+{
+  "value": " Sort the k smallest elements into a new iterator using the provided comparison, relaxing the amount of memory required.",
+  "length": 120,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Let's keep the error type of a pointer size. With `Arc` we may also",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

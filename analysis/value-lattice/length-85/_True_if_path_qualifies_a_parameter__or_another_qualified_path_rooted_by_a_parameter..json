@@ -1,0 +1,12 @@
+{
+  "value": " True if path qualifies a parameter, or another qualified path rooted by a parameter.",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

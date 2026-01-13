@@ -1,0 +1,12 @@
+{
+  "value": " whereas before the full set would have to be unregistered first. Available since kernel",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

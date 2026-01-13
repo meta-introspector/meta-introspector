@@ -1,0 +1,12 @@
+{
+  "value": " extract function takes three arguments: a string slice containing the source, an index in",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

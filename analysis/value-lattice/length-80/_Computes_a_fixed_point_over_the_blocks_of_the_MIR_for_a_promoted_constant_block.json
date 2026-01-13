@@ -1,0 +1,12 @@
+{
+  "value": " Computes a fixed point over the blocks of the MIR for a promoted constant block",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

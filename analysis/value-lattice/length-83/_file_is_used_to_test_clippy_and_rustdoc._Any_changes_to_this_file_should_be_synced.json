@@ -1,0 +1,12 @@
+{
+  "value": " file is used to test clippy and rustdoc. Any changes to this file should be synced",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

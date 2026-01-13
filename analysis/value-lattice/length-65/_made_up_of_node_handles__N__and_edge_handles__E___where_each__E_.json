@@ -1,0 +1,12 @@
+{
+  "value": " made up of node handles `N` and edge handles `E`, where each `E`",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

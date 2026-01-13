@@ -1,0 +1,12 @@
+{
+  "value": " meaning it uses more memory than the minimum obtained by [`k_smallest`](Itertools::k_smallest)",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " to ease special-case handling of the first or last elements.",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

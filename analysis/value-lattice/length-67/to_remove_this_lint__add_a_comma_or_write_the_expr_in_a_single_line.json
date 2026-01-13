@@ -1,0 +1,12 @@
+{
+  "value": "to remove this lint, add a comma or write the expr in a single line",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

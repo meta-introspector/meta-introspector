@@ -1,0 +1,12 @@
+{
+  "value": " TODO: Maybe we should move this to `clippy_utils` so others won't need to go down this dark,",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

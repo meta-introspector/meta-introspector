@@ -1,0 +1,12 @@
+{
+  "value": " that will arise at runtime if the sequential (packed) bytes of the source fields are copied to the",
+  "length": 99,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

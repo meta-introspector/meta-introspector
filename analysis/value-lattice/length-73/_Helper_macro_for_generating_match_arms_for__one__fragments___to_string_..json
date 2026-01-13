@@ -1,0 +1,12 @@
+{
+  "value": " Helper macro for generating match arms for `one` fragments' `to_string`.",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

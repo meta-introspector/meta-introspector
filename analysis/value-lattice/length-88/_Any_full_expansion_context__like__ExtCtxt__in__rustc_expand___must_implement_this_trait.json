@@ -1,0 +1,12 @@
+{
+  "value": " Any full expansion context (like `ExtCtxt` in `rustc_expand`) must implement this trait",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

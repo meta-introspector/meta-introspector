@@ -1,0 +1,12 @@
+{
+  "value": " Like `verbose_generic_activity`, but with an extra arg.",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

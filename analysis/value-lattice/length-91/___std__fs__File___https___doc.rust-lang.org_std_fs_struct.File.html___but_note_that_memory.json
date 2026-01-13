@@ -1,0 +1,12 @@
+{
+  "value": " [`std::fs::File`](https://doc.rust-lang.org/std/fs/struct.File.html), but note that memory",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Since both the set of nodes and the set of edges are always",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

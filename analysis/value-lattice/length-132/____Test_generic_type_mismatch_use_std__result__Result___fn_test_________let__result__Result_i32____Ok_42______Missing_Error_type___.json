@@ -1,0 +1,12 @@
+{
+  "value": "\n// Test generic type mismatch\nuse std::result::Result;\n\nfn test() {\n    let _result: Result<i32> = Ok(42); // Missing Error type\n}\n",
+  "length": 132,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

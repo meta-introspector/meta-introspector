@@ -1,0 +1,12 @@
+{
+  "value": " Unlike most compilers, the span contains not only the position in the source code, but also",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

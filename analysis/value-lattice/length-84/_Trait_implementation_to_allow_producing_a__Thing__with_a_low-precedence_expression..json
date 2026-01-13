@@ -1,0 +1,12 @@
+{
+  "value": " Trait implementation to allow producing a `Thing` with a low-precedence expression.",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

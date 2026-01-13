@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(camel_case_start_from_idx(\"AbcDef\", 0), StrIndex::new(0, 0));",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

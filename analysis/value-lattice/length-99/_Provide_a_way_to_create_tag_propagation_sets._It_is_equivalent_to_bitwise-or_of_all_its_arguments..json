@@ -1,0 +1,12 @@
+{
+  "value": " Provide a way to create tag propagation sets. It is equivalent to bitwise-or of all its arguments.",
+  "length": 99,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

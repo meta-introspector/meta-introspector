@@ -1,0 +1,12 @@
+{
+  "value": " [`Submitter::register_enable_rings`]. Available since 5.10.",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

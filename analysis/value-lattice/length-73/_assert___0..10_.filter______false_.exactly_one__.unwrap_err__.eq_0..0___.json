@@ -1,0 +1,12 @@
+{
+  "value": " assert!((0..10).filter(|&_| false).exactly_one().unwrap_err().eq(0..0));",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

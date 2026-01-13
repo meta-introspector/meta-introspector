@@ -1,0 +1,12 @@
+{
+  "value": " `Error` works a lot like `Box<dyn std::error::Error>`, but with these",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

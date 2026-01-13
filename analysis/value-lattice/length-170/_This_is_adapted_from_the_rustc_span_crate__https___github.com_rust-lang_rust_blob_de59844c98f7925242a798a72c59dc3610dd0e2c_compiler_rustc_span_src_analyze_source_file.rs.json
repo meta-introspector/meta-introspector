@@ -1,0 +1,12 @@
+{
+  "value": " This is adapted from the rustc_span crate, https://github.com/rust-lang/rust/blob/de59844c98f7925242a798a72c59dc3610dd0e2c/compiler/rustc_span/src/analyze_source_file.rs",
+  "length": 170,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

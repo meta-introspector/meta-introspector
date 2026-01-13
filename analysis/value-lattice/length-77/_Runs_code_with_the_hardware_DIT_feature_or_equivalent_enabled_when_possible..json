@@ -1,0 +1,12 @@
+{
+  "value": " Runs code with the hardware DIT feature or equivalent enabled when possible.",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

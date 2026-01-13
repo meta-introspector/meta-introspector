@@ -1,0 +1,12 @@
+{
+  "value": " The `#[cargo_test]` attribute takes several options that will affect how the test is generated.",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

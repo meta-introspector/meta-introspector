@@ -1,0 +1,12 @@
+{
+  "value": " need to call `notify_worker_latch_is_set()` to wake the thread in registry A.",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

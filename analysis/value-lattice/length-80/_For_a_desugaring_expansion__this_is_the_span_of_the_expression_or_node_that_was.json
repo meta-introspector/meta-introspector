@@ -1,0 +1,12 @@
+{
+  "value": " For a desugaring expansion, this is the span of the expression or node that was",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

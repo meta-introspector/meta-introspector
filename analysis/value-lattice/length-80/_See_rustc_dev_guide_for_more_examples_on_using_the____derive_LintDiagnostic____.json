@@ -1,0 +1,12 @@
+{
+  "value": " See rustc dev guide for more examples on using the `#[derive(LintDiagnostic)]`:",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

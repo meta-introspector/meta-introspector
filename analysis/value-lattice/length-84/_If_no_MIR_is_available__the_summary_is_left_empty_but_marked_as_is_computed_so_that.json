@@ -1,0 +1,12 @@
+{
+  "value": " If no MIR is available, the summary is left empty but marked as is_computed so that",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

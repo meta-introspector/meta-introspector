@@ -1,0 +1,12 @@
+{
+  "value": " Call `f` for the struct or for each variant of the enum, returning a `TokenStream` with the",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

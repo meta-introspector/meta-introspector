@@ -1,0 +1,12 @@
+{
+  "value": " let tree_reduce_res = (1..100).map(|x| x.to_string())",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

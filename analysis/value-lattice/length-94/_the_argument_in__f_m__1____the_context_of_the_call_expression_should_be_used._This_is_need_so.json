@@ -1,0 +1,17 @@
+{
+  "value": " the argument in `f(m!(1))` the context of the call expression should be used. This is need so",
+  "length": 94,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

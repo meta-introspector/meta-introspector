@@ -1,0 +1,12 @@
+{
+  "value": " Our index amongst the broadcast threads (ranges from `0..self.num_threads()`).",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

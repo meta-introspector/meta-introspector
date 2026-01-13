@@ -1,0 +1,12 @@
+{
+  "value": " everything off the stack that was found along the way.",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

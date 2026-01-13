@@ -1,0 +1,12 @@
+{
+  "value": " Check whether the current expr is a function call for an IO operation",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

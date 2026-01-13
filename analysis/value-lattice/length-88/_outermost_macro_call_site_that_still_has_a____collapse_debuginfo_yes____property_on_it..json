@@ -1,0 +1,12 @@
+{
+  "value": " outermost macro call site that still has a `#[collapse_debuginfo(yes)]` property on it.",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

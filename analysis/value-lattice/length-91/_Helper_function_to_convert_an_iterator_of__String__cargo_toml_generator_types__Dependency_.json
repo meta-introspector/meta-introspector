@@ -1,0 +1,12 @@
+{
+  "value": " Helper function to convert an iterator of (String, cargo_toml_generator_types::Dependency)",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

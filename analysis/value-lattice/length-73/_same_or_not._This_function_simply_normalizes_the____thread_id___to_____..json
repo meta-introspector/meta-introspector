@@ -1,0 +1,12 @@
+{
+  "value": " same or not. This function simply normalizes the `_<thread_id>` to `_*`.",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

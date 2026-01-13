@@ -1,0 +1,12 @@
+{
+  "value": " An _encoding_ defines a mapping from a `u8` sequence to a `char` sequence",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " macro call, rather than the expansion, if the span is from a child context. If the span is",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

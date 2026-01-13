@@ -1,0 +1,12 @@
+{
+  "value": " Writes a signed 48 bit integer `n` to `buf`, stored in i64.",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

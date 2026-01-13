@@ -1,0 +1,12 @@
+{
+  "value": " Calculates the Adler-32 checksum of a byte slice.",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

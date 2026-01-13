@@ -1,0 +1,12 @@
+{
+  "value": " - `sorted_edge_sources` are the edge sources, sorted",
+  "length": 53,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

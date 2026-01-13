@@ -1,0 +1,12 @@
+{
+  "value": " Turns interpolated identifier (`$i: ident`) or lifetime (`$l: lifetime`) token",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

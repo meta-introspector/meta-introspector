@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(42, **non_empty.load().as_ref().unwrap());",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

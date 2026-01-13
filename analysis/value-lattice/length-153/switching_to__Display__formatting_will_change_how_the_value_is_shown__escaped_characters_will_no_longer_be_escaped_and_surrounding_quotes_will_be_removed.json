@@ -1,0 +1,12 @@
+{
+  "value": "switching to `Display` formatting will change how the value is shown; escaped characters will no longer be escaped and surrounding quotes will be removed",
+  "length": 153,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

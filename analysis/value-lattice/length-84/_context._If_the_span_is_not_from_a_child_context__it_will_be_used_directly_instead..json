@@ -1,0 +1,12 @@
+{
+  "value": " context. If the span is not from a child context, it will be used directly instead.",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

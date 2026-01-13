@@ -1,0 +1,12 @@
+{
+  "value": " contained by the file. This implies that files for which `is_empty`",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

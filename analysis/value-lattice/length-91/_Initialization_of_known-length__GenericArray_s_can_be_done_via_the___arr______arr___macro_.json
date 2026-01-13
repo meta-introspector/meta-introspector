@@ -1,0 +1,12 @@
+{
+  "value": " Initialization of known-length `GenericArray`s can be done via the [`arr![]`](arr!) macro,",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

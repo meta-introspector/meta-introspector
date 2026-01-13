@@ -1,0 +1,12 @@
+{
+  "value": " The corresponding concrete value is the runtime address of location identified by the path.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

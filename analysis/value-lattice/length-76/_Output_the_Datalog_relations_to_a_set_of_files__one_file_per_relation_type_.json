@@ -1,0 +1,12 @@
+{
+  "value": " Output the Datalog relations to a set of files (one file per relation type)",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

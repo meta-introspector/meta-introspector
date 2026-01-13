@@ -1,0 +1,12 @@
+{
+  "value": " Is this a pre-parsed expression dropped into the token stream",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

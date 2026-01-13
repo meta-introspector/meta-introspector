@@ -1,0 +1,12 @@
+{
+  "value": " Execute `oper_a` and `oper_b` in the thread-pool and return",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

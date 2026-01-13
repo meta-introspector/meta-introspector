@@ -1,0 +1,12 @@
+{
+  "value": " //       vv The function body has an empty block",
+  "length": 49,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Note that no other normalization takes place; in particular, `a/c`",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

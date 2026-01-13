@@ -1,0 +1,12 @@
+{
+  "value": " thing being indexed must be at least this long",
+  "length": 47,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

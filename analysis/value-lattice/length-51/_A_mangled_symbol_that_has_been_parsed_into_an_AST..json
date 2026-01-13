@@ -1,0 +1,12 @@
+{
+  "value": " A mangled symbol that has been parsed into an AST.",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

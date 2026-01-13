@@ -1,0 +1,17 @@
+{
+  "value": "     // Returns `false` since it's only visible in `crate::example_1`",
+  "length": 69,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

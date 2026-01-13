@@ -1,0 +1,12 @@
+{
+  "value": " the first one. It's like putting a \"Coming Soon\" sign where something broke, so you can",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

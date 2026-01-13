@@ -1,0 +1,12 @@
+{
+  "value": " Under `scope_fifo()`, the spawns are prioritized in a FIFO order on",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " An earlier version of this code used only 4 bytes for `Span`, but that was",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

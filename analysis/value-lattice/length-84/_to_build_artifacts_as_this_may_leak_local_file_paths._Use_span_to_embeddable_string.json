@@ -1,0 +1,12 @@
+{
+  "value": " to build artifacts as this may leak local file paths. Use span_to_embeddable_string",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " secp256k1, `r` and `s` will both be 32-bytes and serialized as big endian,",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

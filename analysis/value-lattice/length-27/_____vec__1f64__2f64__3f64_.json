@@ -1,0 +1,12 @@
+{
+  "value": "     vec![1f64, 2f64, 3f64]",
+  "length": 27,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

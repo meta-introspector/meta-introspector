@@ -1,0 +1,12 @@
+{
+  "value": " this dummy AST [`NodeId`]. Then, during a later phase of expansion, we renumber them",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " A block can only yield a constant if it has exactly one constant expression.",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

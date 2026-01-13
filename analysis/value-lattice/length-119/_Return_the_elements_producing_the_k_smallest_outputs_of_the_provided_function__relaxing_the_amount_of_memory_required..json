@@ -1,0 +1,12 @@
+{
+  "value": " Return the elements producing the k smallest outputs of the provided function, relaxing the amount of memory required.",
+  "length": 119,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

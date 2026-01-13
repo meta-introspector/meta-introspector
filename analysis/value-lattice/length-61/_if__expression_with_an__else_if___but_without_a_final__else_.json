@@ -1,0 +1,12 @@
+{
+  "value": "`if` expression with an `else if`, but without a final `else`",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

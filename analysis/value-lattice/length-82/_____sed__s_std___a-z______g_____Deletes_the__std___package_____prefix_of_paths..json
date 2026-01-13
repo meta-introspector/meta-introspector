@@ -1,0 +1,12 @@
+{
+  "value": "  * `sed 's,std::[a-z]*::,,g'` — Deletes the `std::<package>::` prefix of paths.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

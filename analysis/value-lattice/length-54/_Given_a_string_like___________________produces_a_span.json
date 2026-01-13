@@ -1,0 +1,12 @@
+{
+  "value": " Given a string like \" ~~~~~~~~~~~~ \", produces a span",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

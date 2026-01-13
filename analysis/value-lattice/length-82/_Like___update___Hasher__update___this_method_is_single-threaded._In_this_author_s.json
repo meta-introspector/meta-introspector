@@ -1,0 +1,12 @@
+{
+  "value": " Like [`update`](Hasher::update), this method is single-threaded. In this author's",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

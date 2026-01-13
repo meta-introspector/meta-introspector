@@ -1,0 +1,12 @@
+{
+  "value": " Check if this path is potentially a trivial const arg, i.e., one that can _potentially_",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

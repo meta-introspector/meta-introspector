@@ -1,0 +1,12 @@
+{
+  "value": " Freeze the set, and return the spans which have been read.",
+  "length": 59,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

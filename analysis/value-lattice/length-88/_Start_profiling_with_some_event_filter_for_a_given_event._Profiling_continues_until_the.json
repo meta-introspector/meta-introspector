@@ -1,0 +1,12 @@
+{
+  "value": " Start profiling with some event filter for a given event. Profiling continues until the",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

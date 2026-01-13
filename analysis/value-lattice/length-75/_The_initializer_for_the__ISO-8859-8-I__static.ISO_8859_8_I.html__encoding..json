@@ -1,0 +1,12 @@
+{
+  "value": " The initializer for the [ISO-8859-8-I](static.ISO_8859_8_I.html) encoding.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Note that inherent methods may actually be trait methods! For example, in `dyn Trait`, the trait's methods",
+  "length": 107,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

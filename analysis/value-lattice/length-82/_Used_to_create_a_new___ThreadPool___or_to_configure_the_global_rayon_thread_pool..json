@@ -1,0 +1,12 @@
+{
+  "value": " Used to create a new [`ThreadPool`] or to configure the global rayon thread pool.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

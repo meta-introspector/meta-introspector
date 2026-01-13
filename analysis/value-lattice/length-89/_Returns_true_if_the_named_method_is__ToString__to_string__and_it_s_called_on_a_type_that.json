@@ -1,0 +1,12 @@
+{
+  "value": " Returns true if the named method is `ToString::to_string` and it's called on a type that",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

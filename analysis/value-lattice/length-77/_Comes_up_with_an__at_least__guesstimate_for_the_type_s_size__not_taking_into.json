@@ -1,0 +1,12 @@
+{
+  "value": " Comes up with an \"at least\" guesstimate for the type's size, not taking into",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

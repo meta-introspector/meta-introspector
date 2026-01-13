@@ -1,0 +1,12 @@
+{
+  "value": " Indicates a range of tokens that should be replaced by an `AttrsTarget`",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

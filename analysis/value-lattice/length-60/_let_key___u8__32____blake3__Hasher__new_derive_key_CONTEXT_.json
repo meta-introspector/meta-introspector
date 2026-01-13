@@ -1,0 +1,12 @@
+{
+  "value": " let key: [u8; 32] = blake3::Hasher::new_derive_key(CONTEXT)",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

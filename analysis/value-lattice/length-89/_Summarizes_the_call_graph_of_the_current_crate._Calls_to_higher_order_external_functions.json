@@ -1,0 +1,12 @@
+{
+  "value": " Summarizes the call graph of the current crate. Calls to higher order external functions",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

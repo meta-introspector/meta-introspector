@@ -1,0 +1,12 @@
+{
+  "value": " (As of [#124780] the underlying storage is not an actual `Vec`, but rather",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

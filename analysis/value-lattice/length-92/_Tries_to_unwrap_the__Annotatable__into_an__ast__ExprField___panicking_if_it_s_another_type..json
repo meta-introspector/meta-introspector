@@ -1,0 +1,12 @@
+{
+  "value": " Tries to unwrap the `Annotatable` into an `ast::ExprField`, panicking if it's another type.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

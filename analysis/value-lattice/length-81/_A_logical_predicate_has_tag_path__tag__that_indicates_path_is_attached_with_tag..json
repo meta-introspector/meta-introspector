@@ -1,0 +1,12 @@
+{
+  "value": " A logical predicate has_tag(path, tag) that indicates path is attached with tag.",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

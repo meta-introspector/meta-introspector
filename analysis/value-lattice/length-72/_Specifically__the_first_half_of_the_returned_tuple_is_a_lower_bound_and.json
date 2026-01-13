@@ -1,0 +1,12 @@
+{
+  "value": " Specifically, the first half of the returned tuple is a lower bound and",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

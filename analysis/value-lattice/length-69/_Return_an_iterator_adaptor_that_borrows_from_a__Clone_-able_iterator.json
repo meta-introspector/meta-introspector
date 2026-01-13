@@ -1,0 +1,12 @@
+{
+  "value": " Return an iterator adaptor that borrows from a `Clone`-able iterator",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

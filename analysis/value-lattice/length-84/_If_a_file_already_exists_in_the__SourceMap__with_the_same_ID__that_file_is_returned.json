@@ -1,0 +1,12 @@
+{
+  "value": " If a file already exists in the `SourceMap` with the same ID, that file is returned",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

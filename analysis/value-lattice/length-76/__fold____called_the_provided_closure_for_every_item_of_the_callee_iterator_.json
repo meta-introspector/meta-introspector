@@ -1,0 +1,12 @@
+{
+  "value": " `fold()` called the provided closure for every item of the callee iterator,",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

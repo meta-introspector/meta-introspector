@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(err.into_os_string(), non_unicode_string);",
+  "length": 54,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

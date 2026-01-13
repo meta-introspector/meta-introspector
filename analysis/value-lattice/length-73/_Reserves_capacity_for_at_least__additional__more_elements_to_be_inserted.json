@@ -1,0 +1,17 @@
+{
+  "value": " Reserves capacity for at least `additional` more elements to be inserted",
+  "length": 73,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

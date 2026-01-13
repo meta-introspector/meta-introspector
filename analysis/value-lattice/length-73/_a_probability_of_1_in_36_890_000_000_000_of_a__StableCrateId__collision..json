@@ -1,0 +1,12 @@
+{
+  "value": " a probability of 1 in 36,890,000,000,000 of a `StableCrateId` collision.",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

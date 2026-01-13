@@ -1,0 +1,12 @@
+{
+  "value": " This function exists for backward-compatibility. Consider using [`Uts46::to_user_interface`]",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

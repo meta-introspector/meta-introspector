@@ -1,0 +1,12 @@
+{
+  "value": " experiments for now and focus on documenting the implications of a large width.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

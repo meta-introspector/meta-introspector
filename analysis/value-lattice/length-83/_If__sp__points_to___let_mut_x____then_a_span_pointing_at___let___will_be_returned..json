@@ -1,0 +1,12 @@
+{
+  "value": " If `sp` points to `\"let mut x\"`, then a span pointing at `\"let\"` will be returned.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

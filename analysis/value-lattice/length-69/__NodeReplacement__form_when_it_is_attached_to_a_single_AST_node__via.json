@@ -1,0 +1,12 @@
+{
+  "value": " `NodeReplacement` form when it is attached to a single AST node, via",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

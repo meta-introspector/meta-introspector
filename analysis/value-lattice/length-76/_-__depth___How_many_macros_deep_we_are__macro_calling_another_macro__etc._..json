@@ -1,0 +1,12 @@
+{
+  "value": " - `depth`: How many macros deep we are (macro calling another macro, etc.).",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

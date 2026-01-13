@@ -1,0 +1,12 @@
+{
+  "value": " Macros often operate on these annotatable structures, modifying or generating new code based on them.",
+  "length": 102,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

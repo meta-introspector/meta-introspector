@@ -1,0 +1,12 @@
+{
+  "value": " of an operation result, modulo its max value, and a flag that indicates if the max value",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

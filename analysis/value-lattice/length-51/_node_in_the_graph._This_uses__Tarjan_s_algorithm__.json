@@ -1,0 +1,12 @@
+{
+  "value": " node in the graph. This uses [Tarjan's algorithm](",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

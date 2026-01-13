@@ -1,0 +1,12 @@
+{
+  "value": " This implies that the type of the place must be `Copy`; this is true",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

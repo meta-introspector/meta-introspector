@@ -1,0 +1,12 @@
+{
+  "value": " Returns the length in UTF-16 or UTF-32 code units.",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

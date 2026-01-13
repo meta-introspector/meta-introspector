@@ -1,0 +1,12 @@
+{
+  "value": " This function is intended for use when the desired match would never be",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

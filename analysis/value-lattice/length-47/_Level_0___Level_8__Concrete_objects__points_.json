@@ -1,0 +1,12 @@
+{
+  "value": " Level 0 ≅ Level 8: Concrete objects (points)",
+  "length": 47,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

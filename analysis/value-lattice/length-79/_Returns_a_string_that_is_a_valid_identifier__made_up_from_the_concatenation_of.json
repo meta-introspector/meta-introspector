@@ -1,0 +1,12 @@
+{
+  "value": " Returns a string that is a valid identifier, made up from the concatenation of",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

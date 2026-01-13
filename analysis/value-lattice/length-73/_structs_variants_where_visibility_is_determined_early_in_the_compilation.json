@@ -1,0 +1,12 @@
+{
+  "value": " structs/variants where visibility is determined early in the compilation",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

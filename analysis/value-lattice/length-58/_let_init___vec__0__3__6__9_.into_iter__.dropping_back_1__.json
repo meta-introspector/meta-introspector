@@ -1,0 +1,12 @@
+{
+  "value": " let init = vec![0, 3, 6, 9].into_iter().dropping_back(1);",
+  "length": 58,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

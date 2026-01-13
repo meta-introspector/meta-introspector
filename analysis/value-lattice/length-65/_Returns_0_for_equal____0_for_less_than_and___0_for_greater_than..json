@@ -1,0 +1,12 @@
+{
+  "value": " Returns 0 for equal, < 0 for less than and > 0 for greater than.",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

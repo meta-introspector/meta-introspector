@@ -1,0 +1,12 @@
+{
+  "value": " This module provides types, which are used by the semantic and syntactic",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

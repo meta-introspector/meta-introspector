@@ -1,0 +1,17 @@
+{
+  "value": " (e.g., `macro` item, but not `macro_rules` item) and stay different if they came from",
+  "length": 86,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

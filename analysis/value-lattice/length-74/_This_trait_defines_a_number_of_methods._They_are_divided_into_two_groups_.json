@@ -1,0 +1,12 @@
+{
+  "value": " This trait defines a number of methods. They are divided into two groups:",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

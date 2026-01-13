@@ -1,0 +1,12 @@
+{
+  "value": " Then, within `GenericArray`, the recursive structure is reinterpreted as a contiguous",
+  "length": 86,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

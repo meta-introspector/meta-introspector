@@ -27,7 +27,32 @@ path = "commit_collector.rs"
 name = "all_commits_collector"
 path = "all_commits_collector.rs"
 
+[[bin]]
+name = "https_commit_fetcher"
+path = "https_commit_fetcher.rs"
+
+[[bin]]
+name = "local_commit_cache"
+path = "local_commit_cache.rs"
+
+[[bin]]
+name = "conformal_structure_analyzer_fixed"
+path = "conformal_structure_analyzer_fixed.rs"
+
+[[bin]]
+name = "commits_by_user"
+path = "commits_by_user.rs"
+
+[[bin]]
+name = "mike_repos"
+path = "mike_repos.rs"
+
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 chrono = { version = "0.4", features = ["serde"] }
+petgraph = "0.6"
+goblin = "0.8"
+glob = "0.3"
+regex = "1.0"
+syn = { version = "2.0", features = ["full", "visit"] }

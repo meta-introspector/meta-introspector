@@ -1,0 +1,12 @@
+{
+  "value": " (since if you did the query twice, you could observe the mutations).",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

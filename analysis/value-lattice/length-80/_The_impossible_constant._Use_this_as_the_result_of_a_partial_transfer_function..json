@@ -1,0 +1,12 @@
+{
+  "value": " The impossible constant. Use this as the result of a partial transfer function.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

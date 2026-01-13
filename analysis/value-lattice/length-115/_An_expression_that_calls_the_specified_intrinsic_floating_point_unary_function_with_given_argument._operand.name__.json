@@ -1,0 +1,12 @@
+{
+  "value": " An expression that calls the specified intrinsic floating point unary function with given argument. operand.name()",
+  "length": 115,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

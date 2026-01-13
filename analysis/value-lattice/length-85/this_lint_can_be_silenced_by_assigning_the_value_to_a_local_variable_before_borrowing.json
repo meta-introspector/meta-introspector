@@ -1,0 +1,12 @@
+{
+  "value": "this lint can be silenced by assigning the value to a local variable before borrowing",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

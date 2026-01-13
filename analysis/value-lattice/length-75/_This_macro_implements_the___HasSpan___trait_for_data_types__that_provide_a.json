@@ -1,0 +1,12 @@
+{
+  "value": " This macro implements the [`HasSpan`] trait for data types, that provide a",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

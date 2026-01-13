@@ -1,0 +1,12 @@
+{
+  "value": " `ClippyWarning`s but a maximum of one `RustcIce` (at which point clippy halts execution).",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

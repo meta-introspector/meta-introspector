@@ -1,0 +1,12 @@
+{
+  "value": " `[T::Align; 0]` ensures alignment is at least that of `T::Align`.",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

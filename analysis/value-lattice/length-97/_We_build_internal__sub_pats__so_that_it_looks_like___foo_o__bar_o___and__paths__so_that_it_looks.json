@@ -1,0 +1,12 @@
+{
+  "value": " We build internal `sub_pats` so that it looks like `[foo_o, bar_o]` and `paths` so that it looks",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

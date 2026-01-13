@@ -1,0 +1,12 @@
+{
+  "value": " then searches the previous character to match '<' or '(' after skipping white space",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

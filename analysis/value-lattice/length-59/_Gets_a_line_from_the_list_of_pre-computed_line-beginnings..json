@@ -1,0 +1,12 @@
+{
+  "value": " Gets a line from the list of pre-computed line-beginnings.",
+  "length": 59,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

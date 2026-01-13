@@ -1,0 +1,12 @@
+{
+  "value": " contains at least two uppercase letters (`Clippy` is ok) and one lower-case",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

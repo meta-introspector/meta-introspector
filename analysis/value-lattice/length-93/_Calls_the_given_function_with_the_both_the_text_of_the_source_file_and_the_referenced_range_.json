@@ -1,0 +1,17 @@
+{
+  "value": " Calls the given function with the both the text of the source file and the referenced range,",
+  "length": 93,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

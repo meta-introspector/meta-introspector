@@ -1,0 +1,12 @@
+{
+  "value": " Returns `self` with any nested matches removed and made into top-level matches.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

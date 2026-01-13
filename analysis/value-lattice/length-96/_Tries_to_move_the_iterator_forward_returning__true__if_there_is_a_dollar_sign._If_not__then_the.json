@@ -1,0 +1,17 @@
+{
+  "value": " Tries to move the iterator forward returning `true` if there is a dollar sign. If not, then the",
+  "length": 96,
+  "total_usages": 2,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    },
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Returns the name under which this crate is made accessible, taking `_` into account.",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

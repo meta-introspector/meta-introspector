@@ -1,0 +1,12 @@
+{
+  "value": " first of which has `n` (1 or 2) chars, then this function performs that",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

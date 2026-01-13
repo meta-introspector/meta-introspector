@@ -1,0 +1,12 @@
+{
+  "value": " Trait for hash functions with extendable-output (XOF) able to reset themselves.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

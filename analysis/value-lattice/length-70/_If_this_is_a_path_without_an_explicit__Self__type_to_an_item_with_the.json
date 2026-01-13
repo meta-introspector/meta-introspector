@@ -1,0 +1,12 @@
+{
+  "value": " If this is a path without an explicit `Self` type to an item with the",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

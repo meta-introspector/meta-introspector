@@ -1,0 +1,12 @@
+{
+  "value": " This can be useful when trying to judge how many times to split",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

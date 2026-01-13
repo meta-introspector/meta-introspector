@@ -1,0 +1,12 @@
+{
+  "value": " were done. The number of bytes written is signaled via the length of",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

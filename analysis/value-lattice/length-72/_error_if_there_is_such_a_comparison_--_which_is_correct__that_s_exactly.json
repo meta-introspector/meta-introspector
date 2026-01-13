@@ -1,0 +1,12 @@
+{
+  "value": " error if there is such a comparison -- which is correct, that's exactly",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

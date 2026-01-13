@@ -1,0 +1,12 @@
+{
+  "value": " we push it on the stack. When we complete an SCC, we can pop",
+  "length": 61,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Do not forget about `NtIdent` when you want to match on identifiers.",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

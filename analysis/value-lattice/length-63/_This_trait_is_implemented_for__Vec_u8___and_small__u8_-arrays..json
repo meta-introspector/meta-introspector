@@ -1,0 +1,12 @@
+{
+  "value": " This trait is implemented for `Vec<u8>` and small `u8`-arrays.",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

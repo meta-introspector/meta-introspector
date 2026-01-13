@@ -1,0 +1,12 @@
+{
+  "value": " Checks whether the given `expr` is a call to `Arc::new`, `Rc::new`, or evaluates to a `Weak`",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

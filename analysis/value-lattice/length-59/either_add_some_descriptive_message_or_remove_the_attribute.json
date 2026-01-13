@@ -1,0 +1,12 @@
+{
+  "value": "either add some descriptive message or remove the attribute",
+  "length": 59,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

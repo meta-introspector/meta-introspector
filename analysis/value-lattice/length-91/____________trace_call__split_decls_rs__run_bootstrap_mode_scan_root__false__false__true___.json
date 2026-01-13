@@ -1,0 +1,12 @@
+{
+  "value": "            trace_call!(split_decls_rs::run_bootstrap_mode(scan_root, false, false, true))\n",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

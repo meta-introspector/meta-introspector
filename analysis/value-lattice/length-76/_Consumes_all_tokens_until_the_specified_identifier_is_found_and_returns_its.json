@@ -1,0 +1,12 @@
+{
+  "value": " Consumes all tokens until the specified identifier is found and returns its",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

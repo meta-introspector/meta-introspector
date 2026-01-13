@@ -1,0 +1,12 @@
+{
+  "value": " Iter<Result> with the parent expression not being a map, and not having a comment in the span of",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " This is the number of idle threads + the number of active threads.",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

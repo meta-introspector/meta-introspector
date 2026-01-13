@@ -1,0 +1,12 @@
+{
+  "value": " If the local is only used once in `visitable` returns the path expression referencing the given",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

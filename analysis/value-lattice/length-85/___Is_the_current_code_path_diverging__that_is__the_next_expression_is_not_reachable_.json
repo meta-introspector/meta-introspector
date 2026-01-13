@@ -1,0 +1,12 @@
+{
+  "value": " * Is the current code path diverging (that is, the next expression is not reachable)",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

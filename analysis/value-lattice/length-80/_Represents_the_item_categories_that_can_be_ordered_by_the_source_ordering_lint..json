@@ -1,0 +1,12 @@
+{
+  "value": " Represents the item categories that can be ordered by the source ordering lint.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Returns an iterator which yields the elements of this iterator followed",
+  "length": 72,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

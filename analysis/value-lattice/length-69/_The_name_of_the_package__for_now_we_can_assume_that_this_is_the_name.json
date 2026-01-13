@@ -1,0 +1,12 @@
+{
+  "value": " The name of the package, for now we can assume that this is the name",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

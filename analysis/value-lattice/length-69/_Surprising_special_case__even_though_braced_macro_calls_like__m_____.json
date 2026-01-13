@@ -1,0 +1,12 @@
+{
+  "value": " Surprising special case: even though braced macro calls like `m! {}`",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " So when we fixate on some `ident_k: pat_k`, we try to find `ident_k` in the other pattern",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

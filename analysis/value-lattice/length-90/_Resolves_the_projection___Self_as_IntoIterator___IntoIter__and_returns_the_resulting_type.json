@@ -1,0 +1,12 @@
+{
+  "value": " Resolves the projection `<Self as IntoIterator>::IntoIter` and returns the resulting type",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

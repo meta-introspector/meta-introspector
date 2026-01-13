@@ -1,0 +1,12 @@
+{
+  "value": " The lints included in `option_methods()` should not lint if the call to map is partially",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

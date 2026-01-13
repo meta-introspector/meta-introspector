@@ -1,0 +1,12 @@
+{
+  "value": " set of tags during an analysis. Our solution is to *lazily* record tags in a Tag domain element.",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

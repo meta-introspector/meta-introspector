@@ -1,0 +1,12 @@
+{
+  "value": " because its job is to make sure there's nothing other than assignments and the increments.",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

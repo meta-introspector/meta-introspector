@@ -1,0 +1,12 @@
+{
+  "value": " `*Kind` enums. In those cases, this struct is used, to block the user from",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

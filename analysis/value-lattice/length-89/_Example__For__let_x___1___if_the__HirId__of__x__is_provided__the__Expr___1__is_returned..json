@@ -1,0 +1,12 @@
+{
+  "value": " Example: For `let x = 1`, if the `HirId` of `x` is provided, the `Expr` `1` is returned.",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " byte sequence in the target encoding. (I.e. the code unit sequence for a",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

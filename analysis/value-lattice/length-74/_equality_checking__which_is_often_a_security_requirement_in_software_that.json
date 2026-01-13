@@ -1,0 +1,12 @@
+{
+  "value": " equality checking, which is often a security requirement in software that",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

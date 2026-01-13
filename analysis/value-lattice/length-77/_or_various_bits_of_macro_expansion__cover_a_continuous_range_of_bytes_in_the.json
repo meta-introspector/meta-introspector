@@ -1,0 +1,12 @@
+{
+  "value": " or various bits of macro expansion) cover a continuous range of bytes in the",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

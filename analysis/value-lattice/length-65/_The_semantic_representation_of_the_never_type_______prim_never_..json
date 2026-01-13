@@ -1,0 +1,12 @@
+{
+  "value": " The semantic representation of the never type [`!`](prim@never).",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

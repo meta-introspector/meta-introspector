@@ -1,0 +1,12 @@
+{
+  "value": " n1 and n2, and represents that n1 is a caller of n2.",
+  "length": 53,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

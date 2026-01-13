@@ -1,0 +1,12 @@
+{
+  "value": "         let (a, b) = rayon::join(|| fib(n - 1), || fib(n - 2)); // runs inside of `pool`",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

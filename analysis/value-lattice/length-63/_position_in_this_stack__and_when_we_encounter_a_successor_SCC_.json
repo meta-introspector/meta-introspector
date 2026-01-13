@@ -1,0 +1,12 @@
+{
+  "value": " position in this stack, and when we encounter a successor SCC,",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

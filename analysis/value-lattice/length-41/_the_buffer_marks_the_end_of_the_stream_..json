@@ -1,0 +1,12 @@
+{
+  "value": " the buffer marks the end of the stream).",
+  "length": 41,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

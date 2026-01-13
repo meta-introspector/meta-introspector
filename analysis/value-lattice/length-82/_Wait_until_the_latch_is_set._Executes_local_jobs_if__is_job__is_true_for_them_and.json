@@ -1,0 +1,12 @@
+{
+  "value": " Wait until the latch is set. Executes local jobs if `is_job` is true for them and",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

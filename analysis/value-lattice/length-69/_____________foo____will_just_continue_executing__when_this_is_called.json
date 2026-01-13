@@ -1,0 +1,12 @@
+{
+  "value": "         // `foo()` will just continue executing, when this is called",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

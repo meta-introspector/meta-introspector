@@ -1,0 +1,12 @@
+{
+  "value": " happens with its node, it can do its own traversal of the node's children,",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

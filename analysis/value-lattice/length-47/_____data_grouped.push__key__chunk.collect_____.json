@@ -1,0 +1,12 @@
+{
+  "value": "     data_grouped.push((key, chunk.collect()));",
+  "length": 47,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Y axis on the right side of the figure",
+  "length": 39,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

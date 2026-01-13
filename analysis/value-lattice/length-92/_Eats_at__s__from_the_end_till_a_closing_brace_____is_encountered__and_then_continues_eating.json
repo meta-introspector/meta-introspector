@@ -1,0 +1,12 @@
+{
+  "value": " Eats at `s` from the end till a closing brace `}` is encountered, and then continues eating",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

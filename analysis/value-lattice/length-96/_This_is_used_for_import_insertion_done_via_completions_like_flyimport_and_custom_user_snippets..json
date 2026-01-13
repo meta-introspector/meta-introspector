@@ -1,0 +1,12 @@
+{
+  "value": " This is used for import insertion done via completions like flyimport and custom user snippets.",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

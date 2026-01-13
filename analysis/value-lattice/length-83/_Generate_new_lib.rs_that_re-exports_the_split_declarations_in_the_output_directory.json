@@ -1,0 +1,12 @@
+{
+  "value": " Generate new lib.rs that re-exports the split declarations in the output directory",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

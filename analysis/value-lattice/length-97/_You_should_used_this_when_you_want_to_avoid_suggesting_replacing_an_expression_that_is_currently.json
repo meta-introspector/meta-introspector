@@ -1,0 +1,12 @@
+{
+  "value": " You should used this when you want to avoid suggesting replacing an expression that is currently",
+  "length": 97,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

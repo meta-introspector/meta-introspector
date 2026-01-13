@@ -1,0 +1,12 @@
+{
+  "value": "Cargo command(s) to execute on changes [default: check]",
+  "length": 55,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

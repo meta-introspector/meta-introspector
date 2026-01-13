@@ -1,0 +1,12 @@
+{
+  "value": " This the most notable one of the DOS Cyrillic code pages. It has the same",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

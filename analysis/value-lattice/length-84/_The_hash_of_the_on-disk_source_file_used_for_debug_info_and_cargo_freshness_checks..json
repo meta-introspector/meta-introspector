@@ -1,0 +1,12 @@
+{
+  "value": " The hash of the on-disk source file used for debug info and cargo freshness checks.",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

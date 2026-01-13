@@ -1,0 +1,12 @@
+{
+  "value": " Tries to simplify operation(self, other) by constant folding or by distribution",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

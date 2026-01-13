@@ -1,0 +1,12 @@
+{
+  "value": " Monster Group emoji assignments for 11-grams (11^2)",
+  "length": 52,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

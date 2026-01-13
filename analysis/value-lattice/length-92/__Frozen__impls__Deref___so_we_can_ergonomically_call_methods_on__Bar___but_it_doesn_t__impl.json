@@ -1,0 +1,12 @@
+{
+  "value": " `Frozen` impls `Deref`, so we can ergonomically call methods on `Bar`, but it doesn't `impl",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

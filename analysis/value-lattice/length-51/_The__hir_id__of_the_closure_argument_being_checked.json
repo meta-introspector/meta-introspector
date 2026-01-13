@@ -1,0 +1,12 @@
+{
+  "value": " The `hir_id` of the closure argument being checked",
+  "length": 51,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

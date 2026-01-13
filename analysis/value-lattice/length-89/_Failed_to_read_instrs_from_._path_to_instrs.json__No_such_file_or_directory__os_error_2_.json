@@ -1,0 +1,12 @@
+{
+  "value": " Failed to read instrs from ./path/to/instrs.json: No such file or directory (os error 2)",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " If the iterator yields no elements, `Ok(None)` will be returned. If the iterator yields",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

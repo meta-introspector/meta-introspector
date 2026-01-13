@@ -1,0 +1,12 @@
+{
+  "value": " If no panic handler is set, the default is to abort the",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

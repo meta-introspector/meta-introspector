@@ -1,0 +1,12 @@
+{
+  "value": "     // Returns the `ItemId` of the module it is declared in, in this case `crate::scope`",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

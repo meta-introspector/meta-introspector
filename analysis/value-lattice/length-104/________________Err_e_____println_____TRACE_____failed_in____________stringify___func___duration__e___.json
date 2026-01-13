@@ -1,0 +1,12 @@
+{
+  "value": "                Err(e) => println!(\"❌ TRACE: {} failed in {:?}: {}\", stringify!($func), duration, e),\n",
+  "length": 104,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

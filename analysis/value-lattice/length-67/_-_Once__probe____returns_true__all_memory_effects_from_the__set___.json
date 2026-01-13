@@ -1,0 +1,12 @@
+{
+  "value": " - Once `probe()` returns true, all memory effects from the `set()`",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

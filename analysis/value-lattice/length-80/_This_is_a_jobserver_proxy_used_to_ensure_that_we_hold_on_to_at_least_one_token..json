@@ -1,0 +1,12 @@
+{
+  "value": " This is a jobserver proxy used to ensure that we hold on to at least one token.",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Creates a path to the layout of a heap allocated memory block.",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

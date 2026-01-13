@@ -1,0 +1,12 @@
+{
+  "value": " Returns `self` if `self` is not the dummy span, and `other` otherwise.",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

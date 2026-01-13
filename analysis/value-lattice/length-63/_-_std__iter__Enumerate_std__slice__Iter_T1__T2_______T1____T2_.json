@@ -1,0 +1,12 @@
+{
+  "value": " - std::iter::Enumerate<std::slice::Iter<T1, T2>> == [T1], [T2]",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " sleeping). When this method is invoked, we typically know the",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

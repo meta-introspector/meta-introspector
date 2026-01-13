@@ -1,0 +1,12 @@
+{
+  "value": " query key, when we allocate the actual `event_id` strings in bulk.",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

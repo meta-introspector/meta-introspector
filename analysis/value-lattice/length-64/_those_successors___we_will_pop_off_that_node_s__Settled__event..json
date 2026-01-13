@@ -1,0 +1,12 @@
+{
+  "value": " those successors), we will pop off that node's `Settled` event.",
+  "length": 64,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

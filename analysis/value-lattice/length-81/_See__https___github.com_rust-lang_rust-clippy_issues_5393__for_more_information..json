@@ -1,0 +1,12 @@
+{
+  "value": " See <https://github.com/rust-lang/rust-clippy/issues/5393> for more information.",
+  "length": 81,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

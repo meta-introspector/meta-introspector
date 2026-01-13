@@ -1,0 +1,12 @@
+{
+  "value": " and buffers. In particular, it indicates that registered buffers can be updated in-place,",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

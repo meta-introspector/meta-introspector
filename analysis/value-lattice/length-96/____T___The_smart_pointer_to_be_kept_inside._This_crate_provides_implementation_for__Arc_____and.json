@@ -1,0 +1,12 @@
+{
+  "value": " * `T`: The smart pointer to be kept inside. This crate provides implementation for `Arc<_>` and",
+  "length": 96,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

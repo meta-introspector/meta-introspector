@@ -1,0 +1,12 @@
+{
+  "value": " We accomplish this by storing `Event`s on the stack that result in a (possible) state change",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

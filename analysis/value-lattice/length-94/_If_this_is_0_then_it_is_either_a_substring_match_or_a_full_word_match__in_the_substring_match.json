@@ -1,0 +1,12 @@
+{
+  "value": " If this is 0 then it is either a substring match or a full word match, in the substring match",
+  "length": 94,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

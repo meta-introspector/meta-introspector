@@ -1,0 +1,12 @@
+{
+  "value": " When the actual expression is evaluated at runtime it will resolve to a particular memory",
+  "length": 90,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

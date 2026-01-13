@@ -1,0 +1,12 @@
+{
+  "value": "\n        def print_hello():\n            print(\"Hello, World!\")\n\n        def main():\n            print_hello()\n\n        if __name__ == \"__main__\":\n            main()\n        ",
+  "length": 173,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Helper used by check_error_send_sync to ensure ThreadPoolBuildError is Send + Sync",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

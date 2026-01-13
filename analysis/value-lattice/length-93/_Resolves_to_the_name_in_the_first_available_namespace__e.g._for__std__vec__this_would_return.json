@@ -1,0 +1,12 @@
+{
+  "value": " Resolves to the name in the first available namespace, e.g. for `std::vec` this would return",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

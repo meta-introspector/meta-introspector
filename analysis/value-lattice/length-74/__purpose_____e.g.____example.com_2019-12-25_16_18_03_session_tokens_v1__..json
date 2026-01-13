@@ -1,0 +1,12 @@
+{
+  "value": " [purpose]\"`, e.g., `\"example.com 2019-12-25 16:18:03 session tokens v1\"`.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

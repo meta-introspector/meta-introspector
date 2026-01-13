@@ -1,0 +1,12 @@
+{
+  "value": " Helper to check if given type has inner mutability such as [`std::cell::Cell`] or",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

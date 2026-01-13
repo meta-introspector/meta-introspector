@@ -1,0 +1,12 @@
+{
+  "value": " always lowered to `memcpy`, which has overhead and contains a lot of logic we can bypass",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

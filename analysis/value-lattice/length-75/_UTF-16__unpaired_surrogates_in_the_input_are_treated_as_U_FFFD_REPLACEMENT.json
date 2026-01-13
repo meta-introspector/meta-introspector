@@ -1,0 +1,12 @@
+{
+  "value": " UTF-16, unpaired surrogates in the input are treated as U+FFFD REPLACEMENT",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

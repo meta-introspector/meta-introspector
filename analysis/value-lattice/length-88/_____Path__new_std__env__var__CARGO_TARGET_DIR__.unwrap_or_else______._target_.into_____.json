@@ -1,0 +1,12 @@
+{
+  "value": "     Path::new(std::env::var(\"CARGO_TARGET_DIR\").unwrap_or_else(|_| \"./target\".into())),",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " E.g., serialization of an empty list: FooBar\n```\nThat's in a code block: `PackedNode`\n```\n\nAnd BarQuz too.\nbe_sure_we_got_to_the_end_of_it\n",
+  "length": 140,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

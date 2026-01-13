@@ -1,0 +1,12 @@
+{
+  "value": " Derived traits depend on both the zeros and ones, so [0,1] is not equal to",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " For example `kw::Loop` or `kw::Break`.",
+  "length": 39,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

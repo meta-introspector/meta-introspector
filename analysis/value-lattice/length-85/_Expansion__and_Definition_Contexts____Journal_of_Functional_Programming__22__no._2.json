@@ -1,0 +1,12 @@
+{
+  "value": " Expansion, and Definition Contexts,” *Journal of Functional Programming* 22, no. 2",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

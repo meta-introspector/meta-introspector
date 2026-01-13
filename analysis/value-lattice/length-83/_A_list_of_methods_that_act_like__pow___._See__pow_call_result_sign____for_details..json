@@ -1,0 +1,12 @@
+{
+  "value": " A list of methods that act like `pow()`. See `pow_call_result_sign()` for details.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

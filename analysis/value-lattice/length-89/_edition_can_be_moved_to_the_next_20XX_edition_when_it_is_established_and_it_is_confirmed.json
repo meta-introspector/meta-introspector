@@ -1,0 +1,12 @@
+{
+  "value": " edition can be moved to the next 20XX edition when it is established and it is confirmed",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

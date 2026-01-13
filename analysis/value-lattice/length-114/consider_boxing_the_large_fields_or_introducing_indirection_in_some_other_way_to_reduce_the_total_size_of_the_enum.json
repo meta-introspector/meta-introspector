@@ -1,0 +1,12 @@
+{
+  "value": "consider boxing the large fields or introducing indirection in some other way to reduce the total size of the enum",
+  "length": 114,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

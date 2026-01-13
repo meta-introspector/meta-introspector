@@ -1,0 +1,12 @@
+{
+  "value": " JEC) will depend on whether we are using a 32- or 64-bit architecture.",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

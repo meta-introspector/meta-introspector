@@ -1,0 +1,12 @@
+{
+  "value": " Also known as an *associated item binding* (we *bind* an associated item to a term).",
+  "length": 85,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

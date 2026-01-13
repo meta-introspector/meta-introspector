@@ -1,0 +1,12 @@
+{
+  "value": "    lmdfb:hasStabilityProof \"Topological invariants preserved under transformations\" .\n\n",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

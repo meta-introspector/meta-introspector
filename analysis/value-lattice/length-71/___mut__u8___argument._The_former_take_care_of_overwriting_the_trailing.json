@@ -1,0 +1,12 @@
+{
+  "value": " `&mut [u8]` argument. The former take care of overwriting the trailing",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

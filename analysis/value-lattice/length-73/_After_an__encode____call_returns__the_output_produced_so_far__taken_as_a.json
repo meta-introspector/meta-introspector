@@ -1,0 +1,12 @@
+{
+  "value": " After an `encode_*` call returns, the output produced so far, taken as a",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

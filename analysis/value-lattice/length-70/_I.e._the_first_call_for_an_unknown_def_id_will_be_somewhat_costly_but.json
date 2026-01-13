@@ -1,0 +1,12 @@
+{
+  "value": " I.e. the first call for an unknown def id will be somewhat costly but",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

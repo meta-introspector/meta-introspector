@@ -1,0 +1,12 @@
+{
+  "value": " x2), ..., [xn, end) where all the xi, which are positions of newlines, are inside the range",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

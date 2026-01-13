@@ -1,0 +1,12 @@
+{
+  "value": " Noticing that tags are independent of each other, we define the abstraction as the Cartesian",
+  "length": 93,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " * `build_std_real` --- This is a \"real\" `-Zbuild-std` test (in the `build_std` integration test).",
+  "length": 98,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

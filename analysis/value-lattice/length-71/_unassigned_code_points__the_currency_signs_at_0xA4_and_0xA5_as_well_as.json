@@ -1,0 +1,12 @@
+{
+  "value": " unassigned code points, the currency signs at 0xA4 and 0xA5 as well as",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

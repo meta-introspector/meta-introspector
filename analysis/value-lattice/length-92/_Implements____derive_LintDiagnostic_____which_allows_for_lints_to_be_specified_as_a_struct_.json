@@ -1,0 +1,12 @@
+{
+  "value": " Implements `#[derive(LintDiagnostic)]`, which allows for lints to be specified as a struct,",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

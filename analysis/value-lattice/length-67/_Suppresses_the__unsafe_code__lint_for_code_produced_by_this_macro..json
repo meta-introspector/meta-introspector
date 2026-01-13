@@ -1,0 +1,12 @@
+{
+  "value": " Suppresses the `unsafe_code` lint for code produced by this macro.",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

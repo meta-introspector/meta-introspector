@@ -1,0 +1,12 @@
+{
+  "value": "the resulting iterator will always return the entire string followed by `None`",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

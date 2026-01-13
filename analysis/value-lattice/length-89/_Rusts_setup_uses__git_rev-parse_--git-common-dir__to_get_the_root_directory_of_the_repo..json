@@ -1,0 +1,12 @@
+{
+  "value": " Rusts setup uses `git rev-parse --git-common-dir` to get the root directory of the repo.",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

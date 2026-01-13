@@ -1,0 +1,12 @@
+{
+  "value": " Given the name of a lifetime without the first quote (`'`),",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

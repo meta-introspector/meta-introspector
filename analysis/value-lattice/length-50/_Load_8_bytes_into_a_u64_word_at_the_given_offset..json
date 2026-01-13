@@ -1,0 +1,12 @@
+{
+  "value": " Load 8 bytes into a u64 word at the given offset.",
+  "length": 50,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

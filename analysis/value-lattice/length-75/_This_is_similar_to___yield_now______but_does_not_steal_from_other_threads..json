@@ -1,0 +1,12 @@
+{
+  "value": " This is similar to [`yield_now()`], but does not steal from other threads.",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " these are then just \"dead values\" and not used to encode anything.",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

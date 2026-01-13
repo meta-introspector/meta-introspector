@@ -1,0 +1,12 @@
+{
+  "value": " Will it be rewritten? (0.0 = never, 1.0 = complete rewrite)",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": "non-binding `let` on a result of a `#[must_use]` function",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Returns `true` if `self` has no elements in common with `other`. This",
+  "length": 70,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

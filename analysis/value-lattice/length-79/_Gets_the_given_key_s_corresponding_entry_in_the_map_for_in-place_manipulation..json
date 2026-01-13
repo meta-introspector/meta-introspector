@@ -1,0 +1,12 @@
+{
+  "value": " Gets the given key's corresponding entry in the map for in-place manipulation.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

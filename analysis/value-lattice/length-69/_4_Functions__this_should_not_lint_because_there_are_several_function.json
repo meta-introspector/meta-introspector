@@ -1,0 +1,12 @@
+{
+  "value": " 4 Functions, this should not lint because there are several function",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

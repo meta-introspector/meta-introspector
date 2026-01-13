@@ -1,0 +1,12 @@
+{
+  "value": " assert_eq!(camel_case_start(\"abcd\"), StrIndex::new(4, 4));",
+  "length": 59,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

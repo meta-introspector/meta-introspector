@@ -1,0 +1,12 @@
+{
+  "value": " Rayon uses `std` APIs for threading, but some targets have incomplete implementations that",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

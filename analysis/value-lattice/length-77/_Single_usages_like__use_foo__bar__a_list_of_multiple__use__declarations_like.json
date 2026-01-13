@@ -1,0 +1,12 @@
+{
+  "value": " Single usages like `use foo::bar` a list of multiple `use` declarations like",
+  "length": 77,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

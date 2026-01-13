@@ -1,0 +1,12 @@
+{
+  "value": " are a few particularly hot areas where we don't want overflow checks in our",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

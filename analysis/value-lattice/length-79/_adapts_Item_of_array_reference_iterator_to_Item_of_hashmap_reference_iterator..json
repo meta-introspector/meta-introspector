@@ -1,0 +1,12 @@
+{
+  "value": " adapts Item of array reference iterator to Item of hashmap reference iterator.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

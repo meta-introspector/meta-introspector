@@ -1,0 +1,12 @@
+{
+  "value": " Sets every bit in the given range to the given state (`enabled`)",
+  "length": 65,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

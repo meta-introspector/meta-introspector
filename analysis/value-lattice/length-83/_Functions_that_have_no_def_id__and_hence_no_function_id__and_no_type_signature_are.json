@@ -1,0 +1,12 @@
+{
+  "value": " Functions that have no def_id (and hence no function_id) and no type signature are",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

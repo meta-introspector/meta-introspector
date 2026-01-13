@@ -1,0 +1,12 @@
+{
+  "value": " An [`Option<T>`] that keeps track of the span that caused it to be set; used with [`SetOnce`].",
+  "length": 95,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

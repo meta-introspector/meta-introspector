@@ -1,0 +1,12 @@
+{
+  "value": " is `merge_scc` and `merge_reached`: `a.merge(b) == b.merge(a)`",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

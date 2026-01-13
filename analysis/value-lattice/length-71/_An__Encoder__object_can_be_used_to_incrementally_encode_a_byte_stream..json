@@ -1,0 +1,12 @@
+{
+  "value": " An `Encoder` object can be used to incrementally encode a byte stream.",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

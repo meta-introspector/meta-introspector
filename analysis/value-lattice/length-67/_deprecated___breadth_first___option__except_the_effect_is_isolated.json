@@ -1,0 +1,12 @@
+{
+  "value": " deprecated [`breadth_first`] option, except the effect is isolated",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

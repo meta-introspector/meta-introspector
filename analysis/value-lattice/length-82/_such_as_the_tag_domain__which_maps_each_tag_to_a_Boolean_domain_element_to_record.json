@@ -1,0 +1,12 @@
+{
+  "value": " such as the tag domain, which maps each tag to a Boolean domain element to record",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

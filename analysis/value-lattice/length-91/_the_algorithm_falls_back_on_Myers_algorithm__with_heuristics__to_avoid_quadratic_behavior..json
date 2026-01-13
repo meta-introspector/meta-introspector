@@ -1,0 +1,12 @@
+{
+  "value": " the algorithm falls back on Myers algorithm (with heuristics) to avoid quadratic behavior.",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

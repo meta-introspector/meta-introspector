@@ -1,0 +1,12 @@
+{
+  "value": " precedence. If a node is matched by an earlier rule, then later rules won't be permitted to",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

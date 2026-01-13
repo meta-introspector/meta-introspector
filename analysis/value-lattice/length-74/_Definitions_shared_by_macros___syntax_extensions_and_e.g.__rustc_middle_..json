@@ -1,0 +1,12 @@
+{
+  "value": " Definitions shared by macros / syntax extensions and e.g. `rustc_middle`.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

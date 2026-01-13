@@ -1,0 +1,12 @@
+{
+  "value": " This is far less verbose than defining the `clap::Command` struct manually,",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

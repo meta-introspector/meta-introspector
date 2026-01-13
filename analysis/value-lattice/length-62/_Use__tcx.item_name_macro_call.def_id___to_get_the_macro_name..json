@@ -1,0 +1,12 @@
+{
+  "value": " Use `tcx.item_name(macro_call.def_id)` to get the macro name.",
+  "length": 62,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

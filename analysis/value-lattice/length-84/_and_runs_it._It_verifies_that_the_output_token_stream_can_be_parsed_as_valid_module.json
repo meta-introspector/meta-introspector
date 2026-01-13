@@ -1,0 +1,12 @@
+{
+  "value": " and runs it. It verifies that the output token stream can be parsed as valid module",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

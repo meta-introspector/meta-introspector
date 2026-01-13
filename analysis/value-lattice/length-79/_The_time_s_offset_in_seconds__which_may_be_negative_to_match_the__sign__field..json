@@ -1,0 +1,12 @@
+{
+  "value": " The time's offset in seconds, which may be negative to match the `sign` field.",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

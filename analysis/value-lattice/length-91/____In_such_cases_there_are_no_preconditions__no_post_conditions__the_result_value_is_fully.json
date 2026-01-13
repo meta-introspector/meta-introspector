@@ -1,0 +1,12 @@
+{
+  "value": "    In such cases there are no preconditions, no post conditions, the result value is fully",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

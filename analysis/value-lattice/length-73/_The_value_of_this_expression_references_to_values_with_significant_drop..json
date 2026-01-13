@@ -1,0 +1,12 @@
+{
+  "value": " The value of this expression references to values with significant drop.",
+  "length": 73,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

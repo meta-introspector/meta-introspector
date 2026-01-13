@@ -1,0 +1,12 @@
+{
+  "value": " Checks if a value of the given type is `Freeze`, or may be depending on the value.",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " If func returns true for the next value of this iterator, consume and return it. Otherwise, return None.",
+  "length": 105,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

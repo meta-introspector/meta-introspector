@@ -1,0 +1,12 @@
+{
+  "value": " [1]: https://github.com/bitcoin/bips/blob/master/bip-0062.mediawiki",
+  "length": 68,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

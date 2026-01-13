@@ -1,0 +1,12 @@
+{
+  "value": "The group containing the \"use\" item kind may not contain any other item kinds. The \"use\" items will (generally) be sorted by rustfmt already. Therefore it makes no sense to implement linting rules that may conflict with rustfmt.",
+  "length": 228,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

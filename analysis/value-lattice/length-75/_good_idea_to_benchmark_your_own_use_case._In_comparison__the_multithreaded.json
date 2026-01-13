@@ -1,0 +1,12 @@
+{
+  "value": " good idea to benchmark your own use case. In comparison, the multithreaded",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

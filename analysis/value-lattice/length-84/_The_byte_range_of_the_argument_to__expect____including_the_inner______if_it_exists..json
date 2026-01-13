@@ -1,0 +1,12 @@
+{
+  "value": " The byte range of the argument to `expect!`, including the inner `[]` if it exists.",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

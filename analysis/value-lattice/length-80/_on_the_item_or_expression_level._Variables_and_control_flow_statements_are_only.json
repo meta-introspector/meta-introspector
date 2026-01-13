@@ -1,0 +1,12 @@
+{
+  "value": " on the item or expression level. Variables and control flow statements are only",
+  "length": 80,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

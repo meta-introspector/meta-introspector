@@ -1,0 +1,12 @@
+{
+  "value": " [chunked-example]: https://en.wikipedia.org/wiki/Chunked_transfer_encoding#Example",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " **Performance Warning:** There are cases where multithreading hurts performance. The worst",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

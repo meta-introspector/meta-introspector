@@ -1,0 +1,12 @@
+{
+  "value": " Returns a vector of Identifiers for the collected module names and a line count report.",
+  "length": 88,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

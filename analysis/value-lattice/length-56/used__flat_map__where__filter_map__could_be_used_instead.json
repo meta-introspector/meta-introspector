@@ -1,0 +1,12 @@
+{
+  "value": "used `flat_map` where `filter_map` could be used instead",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

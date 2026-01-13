@@ -1,0 +1,12 @@
+{
+  "value": " * The function needs to be synchronized against all other creations of",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

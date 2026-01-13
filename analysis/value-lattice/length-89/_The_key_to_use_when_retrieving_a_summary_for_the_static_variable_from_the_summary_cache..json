@@ -1,0 +1,12 @@
+{
+  "value": " The key to use when retrieving a summary for the static variable from the summary cache.",
+  "length": 89,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

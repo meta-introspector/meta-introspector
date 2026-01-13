@@ -1,0 +1,12 @@
+{
+  "value": " no `DefId`s from upstream crates get thrown into the mix. There are quite a",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

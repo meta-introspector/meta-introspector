@@ -1,0 +1,12 @@
+{
+  "value": " Uninhabited variants get pruned as part of the layout calculation,",
+  "length": 67,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

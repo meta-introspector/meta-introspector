@@ -1,0 +1,12 @@
+{
+  "value": " Returns the [ABI]-required minimum alignment of the type of the value that `val` points to.",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Desugars into `Pin<&'a T>` or `Pin<&'a mut T>`.",
+  "length": 48,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

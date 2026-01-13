@@ -1,0 +1,12 @@
+{
+  "value": "introspector_decl_common",
+  "length": 24,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

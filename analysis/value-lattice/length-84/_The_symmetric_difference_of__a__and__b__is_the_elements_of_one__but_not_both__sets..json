@@ -1,0 +1,12 @@
+{
+  "value": " The symmetric difference of `a` and `b` is the elements of one, but not both, sets.",
+  "length": 84,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

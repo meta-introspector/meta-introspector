@@ -1,0 +1,12 @@
+{
+  "value": " This is just `extern \"C\"` (see `rustc_abi::ExternAbi::FALLBACK`).",
+  "length": 66,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

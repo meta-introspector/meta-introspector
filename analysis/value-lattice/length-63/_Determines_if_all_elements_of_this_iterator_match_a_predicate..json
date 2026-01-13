@@ -1,0 +1,12 @@
+{
+  "value": " Determines if all elements of this iterator match a predicate.",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

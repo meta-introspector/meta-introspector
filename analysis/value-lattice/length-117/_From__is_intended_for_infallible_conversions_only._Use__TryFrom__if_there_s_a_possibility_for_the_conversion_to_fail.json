@@ -1,0 +1,12 @@
+{
+  "value": "`From` is intended for infallible conversions only. Use `TryFrom` if there's a possibility for the conversion to fail",
+  "length": 117,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

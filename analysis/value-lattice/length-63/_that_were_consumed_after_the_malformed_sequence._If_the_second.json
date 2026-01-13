@@ -1,0 +1,12 @@
+{
+  "value": " that were consumed after the malformed sequence. If the second",
+  "length": 63,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

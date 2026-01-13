@@ -1,0 +1,12 @@
+{
+  "value": " intermediary for constructing a client that knows how to respond to a specific",
+  "length": 79,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

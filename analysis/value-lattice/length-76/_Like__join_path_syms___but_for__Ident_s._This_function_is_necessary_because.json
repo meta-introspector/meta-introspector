@@ -1,0 +1,12 @@
+{
+  "value": " Like `join_path_syms`, but for `Ident`s. This function is necessary because",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

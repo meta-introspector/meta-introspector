@@ -1,0 +1,12 @@
+{
+  "value": " //           the type `Vec<_>`. This is not a method call, as the function",
+  "length": 75,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

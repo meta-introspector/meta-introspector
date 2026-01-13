@@ -1,0 +1,12 @@
+{
+  "value": " Methods on `Vec` that also exists on slices.",
+  "length": 45,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

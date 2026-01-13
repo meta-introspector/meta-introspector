@@ -1,0 +1,12 @@
+{
+  "value": " let path: Utf8PathBuf = [r\"C:\\\", \"windows\", \"system32.dll\"].iter().collect();",
+  "length": 78,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

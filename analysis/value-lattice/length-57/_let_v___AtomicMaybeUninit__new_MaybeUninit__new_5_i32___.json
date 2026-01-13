@@ -1,0 +1,12 @@
+{
+  "value": " let v = AtomicMaybeUninit::new(MaybeUninit::new(5_i32));",
+  "length": 57,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " upon invalid label, because in those cases the caller typically wishes",
+  "length": 71,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

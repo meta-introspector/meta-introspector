@@ -1,0 +1,12 @@
+{
+  "value": " Checks if the given type has an `is_empty` method with the appropriate signature.",
+  "length": 82,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

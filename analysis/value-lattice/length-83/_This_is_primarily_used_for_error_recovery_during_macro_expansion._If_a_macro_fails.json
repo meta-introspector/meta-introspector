@@ -1,0 +1,12 @@
+{
+  "value": " This is primarily used for error recovery during macro expansion. If a macro fails",
+  "length": 83,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

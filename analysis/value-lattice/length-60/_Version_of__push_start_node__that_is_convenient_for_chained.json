@@ -1,0 +1,12 @@
+{
+  "value": " Version of `push_start_node` that is convenient for chained",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

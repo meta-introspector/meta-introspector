@@ -1,0 +1,12 @@
+{
+  "value": " of the main thread, non-blocking calls like `spawn` may not execute at all, unless a lower-",
+  "length": 92,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

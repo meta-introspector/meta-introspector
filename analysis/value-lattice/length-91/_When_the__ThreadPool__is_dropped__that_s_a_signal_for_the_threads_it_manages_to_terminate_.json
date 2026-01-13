@@ -1,0 +1,12 @@
+{
+  "value": " When the `ThreadPool` is dropped, that's a signal for the threads it manages to terminate,",
+  "length": 91,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

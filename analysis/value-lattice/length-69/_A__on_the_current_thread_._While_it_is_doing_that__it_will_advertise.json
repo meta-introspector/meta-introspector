@@ -1,0 +1,12 @@
+{
+  "value": " A (on the current thread). While it is doing that, it will advertise",
+  "length": 69,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

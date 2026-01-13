@@ -1,0 +1,12 @@
+{
+  "value": " If the function summary has a post condition, refine this and add it to the",
+  "length": 76,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

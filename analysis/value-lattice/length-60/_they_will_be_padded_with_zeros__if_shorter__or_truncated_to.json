@@ -1,0 +1,12 @@
+{
+  "value": " they will be padded with zeros (if shorter) or truncated to",
+  "length": 60,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

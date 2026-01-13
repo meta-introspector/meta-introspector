@@ -1,0 +1,12 @@
+{
+  "value": " getrandom::fill(&mut buf)?;",
+  "length": 28,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

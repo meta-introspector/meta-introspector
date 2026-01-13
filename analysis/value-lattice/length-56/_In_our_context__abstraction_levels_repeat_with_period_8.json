@@ -1,0 +1,12 @@
+{
+  "value": " In our context: abstraction levels repeat with period 8",
+  "length": 56,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "value": " Adds any heap blocks found in the associated expression to the given set.",
+  "length": 74,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}

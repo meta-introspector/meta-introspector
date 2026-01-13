@@ -1,0 +1,12 @@
+{
+  "value": " Invocations of `chain!` with one argument expand to [`arg.into_iter()`](IntoIterator):",
+  "length": 87,
+  "total_usages": 1,
+  "usages": [
+    {
+      "file_path": "processed",
+      "context": "literal_usage",
+      "usage_type": "string_literal"
+    }
+  ]
+}
