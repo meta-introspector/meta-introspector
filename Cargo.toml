@@ -4,6 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [[bin]]
+name = "simple_bootstrap"
+path = "simple_bootstrap.rs"
+
+[[bin]]
 name = "monolithic_bootstrap"
 path = "monolithic_bootstrap.rs"
 
@@ -86,7 +90,6 @@ tokio = { version = "1.0", features = ["full"] }
 libloading = "0.8"
 tempfile = "3.0"
 sha2 = "0.10"
-chrono = { version = "0.4", features = ["serde"] }
 [[bin]]
 name = "semantic_rust_compressor"
 path = "semantic_rust_compressor.rs"

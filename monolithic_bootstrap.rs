@@ -2,8 +2,14 @@
 use std::collections::HashMap;
 use std::path::PathBuf;
 
-// Include the bootstrap macro system
-include!("bootstrap_macro.rs");
+// Simple bootstrap functions instead of macros
+pub fn bootstrap_core() -> HashMap<String, String> {
+    let mut systems = HashMap::new();
+    systems.insert("emoji_registry".to_string(), "EmojiRegistry initialized".to_string());
+    systems.insert("nix_store".to_string(), "NixStore at /nix/store".to_string());
+    systems.insert("zos_runtime".to_string(), "ZOSRuntime active".to_string());
+    systems
+}
 
 // Monolithic system that contains everything
 pub struct MonolithicBootstrap {
