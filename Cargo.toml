@@ -58,6 +58,8 @@ goblin = "0.8"
 glob = "0.3"
 regex = "1.0"
 syn = { version = "2.0", features = ["full", "visit"] }
+xz2 = "0.1"
+tar = "0.4"
 [[bin]]
 name = "semantic_rust_compressor"
 path = "semantic_rust_compressor.rs"
@@ -97,3 +99,69 @@ path = "syn_function_names.rs"
 [[bin]]
 name = "syn_compressor"
 path = "syn_compressor.rs"
+[[bin]]
+name = "scan_existing_repos"
+path = "scan_existing_repos.rs"
+
+[[bin]]
+name = "extract_rust_sources"
+path = "extract_rust_sources.rs"
+
+[[bin]]
+name = "build_order_pipeline"
+path = "build_order_pipeline.rs"
+[[bin]]
+name = "crossbeam_repo_compressor"
+path = "crossbeam_repo_compressor.rs"
+
+[[bin]]
+name = "create_actual_5mb"
+path = "create_actual_5mb.rs"
+[[bin]]
+name = "complex_type_instance_markov_fixed"
+path = "complex_type_instance_markov_fixed.rs"
+[[bin]]
+name = "crossbeam_rustc_analyzer"
+path = "crossbeam_rustc_analyzer.rs"
+[[bin]]
+name = "crossbeam_value_lattice"
+path = "crossbeam_value_lattice.rs"
+[[bin]]
+name = "datatype_markov_analyzer"
+path = "datatype_markov_analyzer.rs"
+[[bin]]
+name = "enum_distribution_analyzer"
+path = "enum_distribution_analyzer.rs"
+[[bin]]
+name = "filename_content_correlation"
+path = "filename_content_correlation.rs"
+[[bin]]
+name = "global_repo_indexer"
+path = "global_repo_indexer.rs"
+[[bin]]
+name = "recent_commits_scanner"
+path = "recent_commits_scanner.rs"
+[[bin]]
+name = "repo_selector"
+path = "repo_selector.rs"
+[[bin]]
+name = "rustc_analyzer"
+path = "rustc_analyzer.rs"
+[[bin]]
+name = "rustc_tree_markov"
+path = "rustc_tree_markov.rs"
+[[bin]]
+name = "string_convergence_analyzer"
+path = "string_convergence_analyzer.rs"
+[[bin]]
+name = "struct_composition_analyzer"
+path = "struct_composition_analyzer.rs"
+[[bin]]
+name = "struct_instance_markov"
+path = "struct_instance_markov.rs"
+[[bin]]
+name = "usage_counter"
+path = "usage_counter.rs"
+[[bin]]
+name = "value_lattice_reporter"
+path = "value_lattice_reporter.rs"
