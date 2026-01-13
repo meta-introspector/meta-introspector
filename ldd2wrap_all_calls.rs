@@ -366,26 +366,14 @@ fn create_master_call_wrapper(dataset: &AllCallsDataset) {
     content.push_str("        }\n");
     content.push_str("        \n");
     
-    for (i, wrapper) in dataset.wrapped_binaries.iter().enumerate() {
-        if wrapper.wrap_success {
-            let binary_name = std::path::Path::new(&wrapper.binary_path)
-                .file_name()
-                .unwrap_or_default()
-                .to_string_lossy()
-                .replace("-", "_")
-                .replace(".", "_");
-            
-            content.push_str("        println!(\"  ");
-            content.push_str(&(i+1).to_string());
-            content.push_str(". ");
-            content.push_str(&binary_name);
-            content.push_str(" ({{}} libs, {{}} syms)\", ");
-            content.push_str(&wrapper.libraries.len().to_string());
-            content.push_str(", ");
-            content.push_str(&wrapper.symbols.len().to_string());
-            content.push_str(");\n");
-        }
-    }
+    // Generate simple macro that calls library functions
+    content.push_str("macro_rules! init_all_call_wrappers {\n");
+    content.push_str("    () => {{\n");
+    content.push_str("        telemetry_lib::preconditions();\n");
+    content.push_str("        telemetry_lib::invariants();\n");
+    content.push_str("        telemetry_lib::postconditions();\n");
+    content.push_str("    }};\n");
+    content.push_str("}\n");
     
     content.push_str("        println!(\"✅ All call wrappers initialized!\");\n");
     content.push_str("    }};\n");

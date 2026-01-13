@@ -5,7 +5,8 @@ use std::process::Command;
 use std::fs;
 
 // Include our complete telemetry system
-include!("master_all_calls_allcalls_1768325605.rs");
+include!("telemetry_lib.rs");
+include!("latest_dev.rs");
 
 fn main() {
     println!("🔥 TELEMETRY HOOK TEST DRIVER");

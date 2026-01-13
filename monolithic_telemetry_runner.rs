@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::time::Instant;
 
 // Include all our wrapped calls
-include!("master_all_calls_allcalls_1768321896.rs");
+include!("latest_dev.rs");
 
 // Global telemetry stats
 static mut CALL_STATS: Option<HashMap<String, CallStat>> = None;
@@ -58,53 +58,13 @@ fn main() {
     // Initialize all wrappers
     init_all_call_wrappers!();
     
-    // Simulate gcc calls
-    simulate_gcc_calls();
-    
-    // Simulate rustc calls  
-    simulate_rustc_calls();
+    // FIXME
+    run_nix_rebuild_of_rust();
     
     // Show telemetry stats
     show_call_statistics();
 }
 
-fn simulate_gcc_calls() {
-    println!("\n🔧 SIMULATING GCC CALLS");
-    println!("=======================");
-    
-    // Simulate typical gcc compilation calls
-    call_telemetry!("malloc", { "gcc malloc".to_string() });
-    call_telemetry!("fopen", { "gcc fopen".to_string() });
-    call_telemetry!("execve", { "gcc execve".to_string() });
-    call_telemetry!("mmap", { "gcc mmap".to_string() });
-    call_telemetry!("write", { "gcc write".to_string() });
-    
-    // Multiple calls to show frequency
-    for i in 0..5 {
-        call_telemetry!("malloc", { format!("gcc malloc {}", i) });
-    }
-    
-    println!("✅ GCC calls simulated");
-}
-
-fn simulate_rustc_calls() {
-    println!("\n🦀 SIMULATING RUSTC CALLS");
-    println!("=========================");
-    
-    // Simulate typical rustc compilation calls
-    call_telemetry!("llvm_init", { "rustc llvm_init".to_string() });
-    call_telemetry!("codegen", { "rustc codegen".to_string() });
-    call_telemetry!("link", { "rustc link".to_string() });
-    call_telemetry!("malloc", { "rustc malloc".to_string() });
-    call_telemetry!("mmap", { "rustc mmap".to_string() });
-    
-    // Heavy rustc operations
-    for i in 0..10 {
-        call_telemetry!("codegen", { format!("rustc codegen pass {}", i) });
-    }
-    
-    println!("✅ RUSTC calls simulated");
-}
 
 fn show_call_statistics() {
     println!("\n📊 CALL TELEMETRY STATISTICS");
