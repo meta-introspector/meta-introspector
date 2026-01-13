@@ -1,0 +1,2487 @@
+{
+  "Unknown": {
+    "instance_count": 3,
+    "field_patterns": {
+      "size": 3
+    },
+    "literal_values": [
+      "8",
+      "8",
+      "8"
+    ]
+  },
+  "SplitDeclsVisitor": {
+    "instance_count": 1,
+    "field_patterns": {
+      "current_file": 1,
+      "layers": 1
+    },
+    "literal_values": []
+  },
+  "LMFDBDerivation": {
+    "instance_count": 1,
+    "field_patterns": {
+      "step5_character": 1,
+      "step1_name_hash": 1,
+      "step4_weight_calc": 1,
+      "final_lmfdb_key": 1,
+      "step2_address_combine": 1,
+      "step6_orbit": 1,
+      "step3_level_calc": 1
+    },
+    "literal_values": []
+  },
+  "UnknownTypeSignature": {
+    "instance_count": 3,
+    "field_patterns": {
+      "file_path": 3,
+      "function_name": 3,
+      "usage_patterns": 3,
+      "method_calls": 3,
+      "type_hints": 3,
+      "variable_names": 3,
+      "context": 3,
+      "traits_inferred": 3
+    },
+    "literal_values": []
+  },
+  "UsagePattern": {
+    "instance_count": 1,
+    "field_patterns": {
+      "used_address": 1,
+      "user_address": 1,
+      "usage_type": 1,
+      "user_name": 1,
+      "used_name": 1
+    },
+    "literal_values": []
+  },
+  "ModularForm": {
+    "instance_count": 1,
+    "field_patterns": {
+      "coefficients": 1,
+      "level": 1,
+      "weight": 1,
+      "form_type": 1
+    },
+    "literal_values": []
+  },
+  "PeerInfo": {
+    "instance_count": 1,
+    "field_patterns": {
+      "peer_id": 1,
+      "mathematical_capabilities": 1,
+      "git_endpoint": 1,
+      "nix_store_path": 1,
+      "parquet_generation": 1,
+      "huggingface_repo": 1,
+      "lattice_support": 1,
+      "dataset_contributions": 1,
+      "last_seen": 1
+    },
+    "literal_values": [
+      "true",
+      "true"
+    ]
+  },
+  "InstructionNode": {
+    "instance_count": 1,
+    "field_patterns": {
+      "bytes": 1,
+      "lattice_position": 1,
+      "address": 1,
+      "instruction_type": 1,
+      "opcode": 1,
+      "operands": 1,
+      "monster_score": 1,
+      "semantic_label": 1
+    },
+    "literal_values": []
+  },
+  "DecodingProof": {
+    "instance_count": 1,
+    "field_patterns": {
+      "decoder_function": 1,
+      "proof_steps": 1,
+      "opcode_data_found": 1,
+      "instructions_decoded": 1
+    },
+    "literal_values": []
+  },
+  "BottDerivation": {
+    "instance_count": 1,
+    "field_patterns": {
+      "topological_invariants": 1,
+      "bott_form_id": 1,
+      "atomic_number": 1,
+      "group_calc": 1,
+      "period_calc": 1
+    },
+    "literal_values": []
+  },
+  "PowerOf2System": {
+    "instance_count": 1,
+    "field_patterns": {
+      "binary_symmetries": 1,
+      "max_power": 1,
+      "prime_power_mapping": 1,
+      "scale_factor": 1
+    },
+    "literal_values": []
+  },
+  "SynTopology": {
+    "instance_count": 1,
+    "field_patterns": {
+      "monster_correlations": 1,
+      "node_counts": 1,
+      "depth_distribution": 1,
+      "symmetry_groups": 1
+    },
+    "literal_values": []
+  },
+  "Test": {
+    "instance_count": 1,
+    "field_patterns": {
+      "x": 1
+    },
+    "literal_values": [
+      "0"
+    ]
+  },
+  "StringLocation": {
+    "instance_count": 1,
+    "field_patterns": {
+      "monster_correlation": 1,
+      "string": 1,
+      "section": 1,
+      "references": 1,
+      "offset": 1,
+      "reference_chain": 1,
+      "nearby_strings": 1,
+      "length": 1
+    },
+    "literal_values": []
+  },
+  "FunctionNode": {
+    "instance_count": 3,
+    "field_patterns": {
+      "monster_signature": 2,
+      "connections": 2,
+      "source_code": 1,
+      "similar_functions": 1,
+      "name": 3,
+      "file_path": 1,
+      "reconstruction_order": 2,
+      "coordinates": 2,
+      "lattice_position": 2,
+      "signature": 1
+    },
+    "literal_values": []
+  },
+  "InterceptionLog": {
+    "instance_count": 1,
+    "field_patterns": {
+      "return_value": 1,
+      "timestamp": 1,
+      "thread_id": 1,
+      "function_name": 1,
+      "args": 1
+    },
+    "literal_values": []
+  },
+  "ChainAnalysis": {
+    "instance_count": 1,
+    "field_patterns": {
+      "total_chain_length": 1,
+      "mathematical_flow_direction": 1,
+      "conductor_range": 1,
+      "genus_range": 1,
+      "stability_zone": 1
+    },
+    "literal_values": []
+  },
+  "LatticePoint": {
+    "instance_count": 1,
+    "field_patterns": {
+      "size": 1,
+      "address": 1,
+      "coordinates": 1,
+      "dimension": 1,
+      "enum_type": 1
+    },
+    "literal_values": []
+  },
+  "ReferenceChain": {
+    "instance_count": 2,
+    "field_patterns": {
+      "reference_type": 2,
+      "offset": 2,
+      "level": 2
+    },
+    "literal_values": [
+      "1",
+      "2"
+    ]
+  },
+  "CallGraph": {
+    "instance_count": 2,
+    "field_patterns": {
+      "morse_landscape": 1,
+      "monster_flows": 1,
+      "edges": 2,
+      "nodes": 1
+    },
+    "literal_values": []
+  },
+  "ZombieSpore": {
+    "instance_count": 2,
+    "field_patterns": {
+      "size": 2,
+      "mutations": 2,
+      "dna": 2,
+      "fitness": 2,
+      "bootstrap_time": 2,
+      "generation": 2
+    },
+    "literal_values": [
+      "0.0",
+      "0",
+      "0",
+      "0.0",
+      "0"
+    ]
+  },
+  "CargoLock": {
+    "instance_count": 1,
+    "field_patterns": {
+      "package": 1
+    },
+    "literal_values": []
+  },
+  "SystemAlignment": {
+    "instance_count": 1,
+    "field_patterns": {
+      "our_25_primes_match": 1,
+      "core_ring_31_present": 1,
+      "max_prime_71_present": 1,
+      "perfect_alignment_percentage": 1,
+      "our_2_46_scale": 1
+    },
+    "literal_values": [
+      "true"
+    ]
+  },
+  "NovelBlock": {
+    "instance_count": 1,
+    "field_patterns": {
+      "binary_name": 1,
+      "block": 1,
+      "uniqueness_score": 1
+    },
+    "literal_values": []
+  },
+  "LoadedSo": {
+    "instance_count": 1,
+    "field_patterns": {
+      "name": 1,
+      "path": 1,
+      "symbols": 1,
+      "load_time": 1,
+      "size": 1,
+      "library": 1
+    },
+    "literal_values": []
+  },
+  "ComputationTask": {
+    "instance_count": 1,
+    "field_patterns": {
+      "code": 1,
+      "estimated_cost": 1,
+      "risk_score": 1,
+      "complexity": 1
+    },
+    "literal_values": []
+  },
+  "CanonicalRepo": {
+    "instance_count": 2,
+    "field_patterns": {
+      "canonical_url": 2,
+      "forks": 2,
+      "name": 2,
+      "files": 1,
+      "cargo_projects": 1,
+      "crates_io": 1,
+      "last_updated": 1
+    },
+    "literal_values": []
+  },
+  "SplitLayer": {
+    "instance_count": 1,
+    "field_patterns": {
+      "io_signature": 1,
+      "layer_type": 1,
+      "layer_name": 1,
+      "dependencies": 1,
+      "items": 1
+    },
+    "literal_values": []
+  },
+  "PathConfig": {
+    "instance_count": 1,
+    "field_patterns": {
+      "rust_files_index": 1,
+      "lattice_csv": 1,
+      "rustc_driver_so": 1,
+      "target_debug": 1,
+      "signatures_output": 1,
+      "analysis_output": 1
+    },
+    "literal_values": []
+  },
+  "RustElement": {
+    "instance_count": 33,
+    "field_patterns": {
+      "level": 33,
+      "weight": 33,
+      "group": 33,
+      "hotness": 33,
+      "modular_key": 33,
+      "symbol": 33,
+      "name": 33,
+      "element_type": 33,
+      "atomic_number": 33,
+      "period": 33
+    },
+    "literal_values": [
+      "1",
+      "4",
+      "6",
+      "1",
+      "2",
+      "11.0",
+      "2",
+      "6",
+      "13",
+      "1",
+      "3",
+      "10.5",
+      "3",
+      "4",
+      "16",
+      "2",
+      "1",
+      "8.5",
+      "4",
+      "2",
+      "16",
+      "2",
+      "3",
+      "9.0",
+      "5",
+      "4",
+      "17",
+      "2",
+      "4",
+      "8.0",
+      "6",
+      "4",
+      "25",
+      "2",
+      "2",
+      "7.5",
+      "7",
+      "2",
+      "24",
+      "2",
+      "3",
+      "9.5",
+      "8",
+      "6",
+      "13",
+      "2",
+      "4",
+      "8.5",
+      "9",
+      "4",
+      "37",
+      "2",
+      "13",
+      "9.0",
+      "10",
+      "2",
+      "19",
+      "2",
+      "14",
+      "8.0",
+      "11",
+      "2",
+      "34",
+      "3",
+      "15",
+      "7.0",
+      "12",
+      "4",
+      "15",
+      "3",
+      "13",
+      "9.5",
+      "13",
+      "4",
+      "24",
+      "3",
+      "14",
+      "8.5",
+      "14",
+      "4",
+      "8",
+      "3",
+      "15",
+      "7.5",
+      "15",
+      "6",
+      "9",
+      "3",
+      "13",
+      "8.0",
+      "16",
+      "4",
+      "18",
+      "3",
+      "14",
+      "7.0",
+      "17",
+      "6",
+      "5",
+      "3",
+      "3",
+      "8.0",
+      "18",
+      "2",
+      "16",
+      "3",
+      "18",
+      "7.5",
+      "19",
+      "4",
+      "34",
+      "4",
+      "14",
+      "6.5",
+      "20",
+      "2",
+      "11",
+      "4",
+      "15",
+      "6.0",
+      "21",
+      "4",
+      "4",
+      "4",
+      "1",
+      "4.5",
+      "22",
+      "2",
+      "33",
+      "4",
+      "3",
+      "7.0",
+      "23",
+      "2",
+      "29",
+      "4",
+      "4",
+      "7.0",
+      "24",
+      "6",
+      "24",
+      "4",
+      "2",
+      "6.0",
+      "25",
+      "4",
+      "35",
+      "4",
+      "2",
+      "6.0",
+      "26",
+      "6",
+      "24",
+      "4",
+      "3",
+      "5.5",
+      "27",
+      "2",
+      "18",
+      "5",
+      "13",
+      "5.0",
+      "28",
+      "2",
+      "18",
+      "5",
+      "14",
+      "4.5",
+      "29",
+      "4",
+      "33",
+      "5",
+      "20",
+      "6.5",
+      "30",
+      "2",
+      "7",
+      "5",
+      "13",
+      "6.0",
+      "31",
+      "2",
+      "14",
+      "5",
+      "14",
+      "5.5",
+      "32",
+      "6",
+      "22",
+      "5",
+      "20",
+      "5.0"
+    ]
+  },
+  "CodeExtractor": {
+    "instance_count": 1,
+    "field_patterns": {
+      "imports": 1,
+      "contexts": 1,
+      "file_lines": 1,
+      "current_file": 1,
+      "file_content": 1
+    },
+    "literal_values": []
+  },
+  "BinarySemanticProfile": {
+    "instance_count": 3,
+    "field_patterns": {
+      "vulnerability_patterns": 3,
+      "instruction_types": 3,
+      "dependency_graph": 3,
+      "binary_path": 3,
+      "type_complexity": 3,
+      "operation_patterns": 3,
+      "crate_metadata": 3,
+      "total_instructions": 3,
+      "rmeta_symbols": 3,
+      "ast_pattern_counts": 3,
+      "calling_conventions": 3,
+      "abi_version": 3,
+      "target_architecture": 3,
+      "total_functions": 3,
+      "created_at": 3,
+      "function_categories": 3,
+      "node_type_counts": 3,
+      "signatures": 3,
+      "opcode_distribution": 3,
+      "generic_usage": 3,
+      "security_features": 3,
+      "total_nodes": 3,
+      "binary_name": 3
+    },
+    "literal_values": [
+      "0.0",
+      "0",
+      "0",
+      "0",
+      "0.0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "MonsterLattice": {
+    "instance_count": 1,
+    "field_patterns": {
+      "lattice_constants": 1,
+      "points": 1,
+      "dimensions": 1,
+      "symmetry_groups": 1,
+      "cluster_map": 1
+    },
+    "literal_values": [
+      "3"
+    ]
+  },
+  "AnalysisConfig": {
+    "instance_count": 1,
+    "field_patterns": {
+      "max_instruction_bytes": 1,
+      "novelty_threshold": 1,
+      "analyze_trait_bounds": 1,
+      "analyze_memory_safety": 1,
+      "track_lifetimes": 1,
+      "detect_unsafe_patterns": 1,
+      "check_stack_protection": 1,
+      "extract_generics": 1,
+      "complexity_threshold": 1
+    },
+    "literal_values": [
+      "32",
+      "10.0",
+      "75.0",
+      "true",
+      "true",
+      "true",
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "WordLevelResults": {
+    "instance_count": 1,
+    "field_patterns": {
+      "core_ring_detected": 1,
+      "section_count": 1,
+      "symbol_count": 1
+    },
+    "literal_values": []
+  },
+  "GaloisRep": {
+    "instance_count": 1,
+    "field_patterns": {
+      "conductor": 1,
+      "determinant": 1,
+      "modular_form_index": 1,
+      "dimension": 1
+    },
+    "literal_values": []
+  },
+  "UnknownTypeContext": {
+    "instance_count": 1,
+    "field_patterns": {
+      "unknown_signature": 1,
+      "inferred_generics": 1,
+      "common_patterns": 1,
+      "test_cases": 1,
+      "snippets": 1
+    },
+    "literal_values": []
+  },
+  "Pointer": {
+    "instance_count": 3,
+    "field_patterns": {
+      "target_type": 3
+    },
+    "literal_values": []
+  },
+  "ComplexLevelResults": {
+    "instance_count": 1,
+    "field_patterns": {
+      "compilation_complexity": 1,
+      "prime_lattice_coverage": 1,
+      "mathematical_genus": 1
+    },
+    "literal_values": []
+  },
+  "BasicBlock": {
+    "instance_count": 1,
+    "field_patterns": {
+      "hash": 1,
+      "function_name": 1,
+      "start_address": 1,
+      "instructions": 1,
+      "size": 1
+    },
+    "literal_values": []
+  },
+  "LatticePosition": {
+    "instance_count": 2,
+    "field_patterns": {
+      "output_cardinality": 2,
+      "purity_level": 2,
+      "input_dimension": 2
+    },
+    "literal_values": [
+      "0"
+    ]
+  },
+  "LatticeLayer": {
+    "instance_count": 2,
+    "field_patterns": {
+      "functions": 1,
+      "monster_correlation": 2,
+      "layer_id": 2,
+      "semantic_meaning": 1,
+      "instructions": 1,
+      "layer_type": 1
+    },
+    "literal_values": []
+  },
+  "DomainRelation": {
+    "instance_count": 1,
+    "field_patterns": {
+      "to_concept": 1,
+      "relation_type": 1,
+      "from_concept": 1,
+      "strength": 1
+    },
+    "literal_values": []
+  },
+  "SimilarityScore": {
+    "instance_count": 1,
+    "field_patterns": {
+      "complexity_similarity": 1,
+      "total_similarity": 1,
+      "shared_instruction_hashes": 1,
+      "binary_name": 1,
+      "shared_functions": 1
+    },
+    "literal_values": []
+  },
+  "SpectralDecodedBytecode": {
+    "instance_count": 1,
+    "field_patterns": {
+      "address": 1,
+      "decoded_instruction": 1,
+      "byte_spectra": 1,
+      "could_be_decoder": 1,
+      "monster_spectral_pattern": 1,
+      "spectral_confidence": 1,
+      "raw_bytes": 1
+    },
+    "literal_values": []
+  },
+  "ModularOperation": {
+    "instance_count": 1,
+    "field_patterns": {
+      "operands": 1,
+      "modulus": 1,
+      "function_name": 1,
+      "result_pattern": 1,
+      "operation_type": 1,
+      "address": 1
+    },
+    "literal_values": []
+  },
+  "MegaPole": {
+    "instance_count": 1,
+    "field_patterns": {
+      "count_pole": 1,
+      "prime_sums": 1,
+      "count_pole_value": 1,
+      "enum_pole_value": 1,
+      "total_coordinate_sum": 1,
+      "enum_pole": 1,
+      "size_pole": 1,
+      "size_pole_value": 1
+    },
+    "literal_values": []
+  },
+  "ValueEntry": {
+    "instance_count": 1,
+    "field_patterns": {
+      "value": 1,
+      "total_usages": 1,
+      "length": 1,
+      "usages": 1
+    },
+    "literal_values": [
+      "0"
+    ]
+  },
+  "FunctionUsage": {
+    "instance_count": 2,
+    "field_patterns": {
+      "used_names": 2,
+      "user_name": 2,
+      "used_addresses": 2,
+      "usage_type": 2,
+      "user_address": 2
+    },
+    "literal_values": []
+  },
+  "ConstantNode": {
+    "instance_count": 1,
+    "field_patterns": {
+      "source_code": 1,
+      "value_type": 1,
+      "name": 1,
+      "signature": 1
+    },
+    "literal_values": []
+  },
+  "ChainExtension": {
+    "instance_count": 1,
+    "field_patterns": {
+      "minus_one_level": 1,
+      "ring_center": 1,
+      "plus_one_level": 1
+    },
+    "literal_values": [
+      "31"
+    ]
+  },
+  "P2PNetworkTopology": {
+    "instance_count": 2,
+    "field_patterns": {
+      "connections": 2,
+      "compilation_order": 2,
+      "nodes": 2
+    },
+    "literal_values": []
+  },
+  "RepoFork": {
+    "instance_count": 1,
+    "field_patterns": {
+      "modifications": 1,
+      "timestamp": 1,
+      "fork_path": 1,
+      "fork_type": 1,
+      "commit_hash": 1
+    },
+    "literal_values": []
+  },
+  "EnhancedFunction": {
+    "instance_count": 1,
+    "field_patterns": {
+      "used_terms": 1,
+      "used_types": 1,
+      "name": 1,
+      "parameters": 1,
+      "return_type": 1,
+      "complexity_score": 1
+    },
+    "literal_values": []
+  },
+  "SymbolLMFDBMapping": {
+    "instance_count": 1,
+    "field_patterns": {
+      "address": 1,
+      "symbol_name": 1,
+      "lmfdb_index": 1,
+      "modular_signature": 1
+    },
+    "literal_values": []
+  },
+  "LatticeCluster": {
+    "instance_count": 1,
+    "field_patterns": {
+      "coordinates": 1,
+      "members": 1,
+      "size": 1
+    },
+    "literal_values": []
+  },
+  "LMFDBPrediction": {
+    "instance_count": 1,
+    "field_patterns": {
+      "actual_modular_key": 1,
+      "validation_score": 1,
+      "period": 1,
+      "predicted_weight": 1,
+      "group": 1,
+      "element_name": 1,
+      "atomic_number": 1,
+      "predicted_level": 1,
+      "predicted_modular_key": 1
+    },
+    "literal_values": []
+  },
+  "Symbol": {
+    "instance_count": 2,
+    "field_patterns": {
+      "size": 2,
+      "demangled": 2,
+      "name": 2,
+      "address": 2
+    },
+    "literal_values": []
+  },
+  "MatchResult": {
+    "instance_count": 1,
+    "field_patterns": {
+      "test_x": 1,
+      "test_result": 1,
+      "rustc_addresses": 1,
+      "rustc_count": 1,
+      "coordinates": 1
+    },
+    "literal_values": []
+  },
+  "MonsterContext": {
+    "instance_count": 1,
+    "field_patterns": {
+      "execution_semantics": 1,
+      "dominant_primes": 1,
+      "combinator_stack": 1,
+      "accumulated_monster_power": 1
+    },
+    "literal_values": [
+      "0.0"
+    ]
+  },
+  "FunctionData": {
+    "instance_count": 1,
+    "field_patterns": {
+      "section_index": 1,
+      "address": 1,
+      "index": 1,
+      "name": 1,
+      "size": 1,
+      "coord_sum": 1,
+      "coordinates": 1
+    },
+    "literal_values": []
+  },
+  "P2PConnection": {
+    "instance_count": 1,
+    "field_patterns": {
+      "to": 1,
+      "from": 1,
+      "dependency_type": 1
+    },
+    "literal_values": []
+  },
+  "JobStatus": {
+    "instance_count": 1,
+    "field_patterns": {
+      "status": 1,
+      "progress": 1,
+      "started_at": 1,
+      "completed_at": 1,
+      "error": 1,
+      "id": 1,
+      "file_path": 1
+    },
+    "literal_values": [
+      "0.0"
+    ]
+  },
+  "LFunction": {
+    "instance_count": 1,
+    "field_patterns": {
+      "modular_form_index": 1,
+      "functional_equation": 1,
+      "euler_factors": 1
+    },
+    "literal_values": []
+  },
+  "TrueMainRollup": {
+    "instance_count": 1,
+    "field_patterns": {
+      "name": 1,
+      "mathematical_dominance_signature": 1,
+      "total_dominated_functions": 1,
+      "own_lmfdb_key": 1,
+      "complete_lmfdb_rollup": 1,
+      "top_dominated_lmfdb_keys": 1,
+      "total_gogobglabulab_power": 1,
+      "max_call_depth": 1
+    },
+    "literal_values": []
+  },
+  "Integer": {
+    "instance_count": 2,
+    "field_patterns": {
+      "size": 2,
+      "signed": 2
+    },
+    "literal_values": [
+      "8",
+      "false",
+      "8",
+      "false"
+    ]
+  },
+  "LatticeLocationData": {
+    "instance_count": 1,
+    "field_patterns": {
+      "code_bytes": 1,
+      "lattice_label": 1,
+      "extracted_strings": 1,
+      "coordinates": 1,
+      "string_patterns": 1,
+      "monster_correlation": 1,
+      "related_objects": 1
+    },
+    "literal_values": []
+  },
+  "RelatedObject": {
+    "instance_count": 1,
+    "field_patterns": {
+      "object_type": 1,
+      "shared_strings": 1,
+      "name": 1,
+      "correlation_strength": 1,
+      "distance": 1
+    },
+    "literal_values": []
+  },
+  "BinarySymmetry": {
+    "instance_count": 1,
+    "field_patterns": {
+      "value": 1,
+      "prime_alignment": 1,
+      "power": 1,
+      "symmetry_type": 1
+    },
+    "literal_values": []
+  },
+  "LatticeLevel": {
+    "instance_count": 4,
+    "field_patterns": {
+      "models": 4,
+      "level": 4,
+      "prime_basis": 4
+    },
+    "literal_values": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  "RepoSummary": {
+    "instance_count": 1,
+    "field_patterns": {
+      "name": 1,
+      "cargo_files": 1,
+      "file_sizes": 1,
+      "total_files": 1,
+      "rust_files": 1,
+      "analysis_results": 1,
+      "canonical_url": 1
+    },
+    "literal_values": [
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "RustcReconstruction": {
+    "instance_count": 1,
+    "field_patterns": {
+      "dfs_traversal": 1,
+      "reconstruction_graph": 1,
+      "topological_lattice": 1,
+      "bfs_traversal": 1
+    },
+    "literal_values": []
+  },
+  "ValidationResult": {
+    "instance_count": 2,
+    "field_patterns": {
+      "purpose": 1,
+      "address": 2,
+      "validation_status": 1,
+      "extracted_strings": 2,
+      "size": 1,
+      "decompiled_logic": 1,
+      "is_valid": 1,
+      "predicted_output": 1,
+      "confidence_score": 1,
+      "enum_type": 2,
+      "match_confidence": 1,
+      "expected_output": 1
+    },
+    "literal_values": [
+      "0.0"
+    ]
+  },
+  "DuplicateBlock": {
+    "instance_count": 1,
+    "field_patterns": {
+      "functions": 1,
+      "binaries": 1,
+      "instruction_hash": 1,
+      "count": 1,
+      "size": 1
+    },
+    "literal_values": [
+      "0"
+    ]
+  },
+  "AnalysisData": {
+    "instance_count": 3,
+    "field_patterns": {
+      "timestamp": 1,
+      "function_type": 2,
+      "function_id": 1,
+      "max_coordinate": 2,
+      "name_length": 1,
+      "sample_id": 1,
+      "min_coordinate": 2,
+      "avg_coordinate": 2,
+      "file": 1,
+      "energy_density": 2,
+      "prime_dominance": 1,
+      "char_analysis": 1,
+      "syn_analysis": 1
+    },
+    "literal_values": []
+  },
+  "EnumSignature": {
+    "instance_count": 10,
+    "field_patterns": {
+      "hotness": 10,
+      "modular_key": 10,
+      "level": 10,
+      "weight": 10,
+      "variants": 10
+    },
+    "literal_values": [
+      "5",
+      "2",
+      "11.0",
+      "12",
+      "4",
+      "10.5",
+      "15",
+      "2",
+      "8.5",
+      "28",
+      "2",
+      "8.0",
+      "14",
+      "4",
+      "6.0",
+      "3",
+      "6",
+      "5.5",
+      "12",
+      "2",
+      "4.0",
+      "27",
+      "6",
+      "4.5",
+      "18",
+      "4",
+      "4.5",
+      "23",
+      "4",
+      "5.5"
+    ]
+  },
+  "BinarySignature": {
+    "instance_count": 1,
+    "field_patterns": {
+      "binary_name": 1,
+      "binary_path": 1,
+      "total_functions": 1,
+      "signatures": 1,
+      "created_at": 1
+    },
+    "literal_values": []
+  },
+  "BitLevelResults": {
+    "instance_count": 1,
+    "field_patterns": {
+      "enum_variant_count": 1,
+      "bit_entropy": 1,
+      "binary_flag_count": 1
+    },
+    "literal_values": []
+  },
+  "SpectralSlice": {
+    "instance_count": 2,
+    "field_patterns": {
+      "slice_type": 2,
+      "frequency_band": 2,
+      "rust_code": 2,
+      "wasm_efficiency": 2
+    },
+    "literal_values": [
+      "0.0",
+      "1.0"
+    ]
+  },
+  "MonsterGroupSystem": {
+    "instance_count": 1,
+    "field_patterns": {
+      "our_system_alignment": 1,
+      "mathematical_significance": 1,
+      "order": 1,
+      "prime_factorization": 1
+    },
+    "literal_values": []
+  },
+  "GogobglabulabPath": {
+    "instance_count": 1,
+    "field_patterns": {
+      "path": 1,
+      "lmfdb_sequence": 1,
+      "total_calls": 1,
+      "mathematical_signature": 1,
+      "gogobglabulab_power": 1
+    },
+    "literal_values": []
+  },
+  "NearbyString": {
+    "instance_count": 1,
+    "field_patterns": {
+      "offset": 1,
+      "string": 1,
+      "distance": 1
+    },
+    "literal_values": []
+  },
+  "Struct": {
+    "instance_count": 1,
+    "field_patterns": {
+      "size": 1,
+      "fields": 1
+    },
+    "literal_values": []
+  },
+  "String": {
+    "instance_count": 2,
+    "field_patterns": {
+      "encoding": 2
+    },
+    "literal_values": []
+  },
+  "NgramCoordinate": {
+    "instance_count": 3,
+    "field_patterns": {
+      "ngram": 3,
+      "frequency": 3,
+      "ngram_coordinates": 3,
+      "source": 3,
+      "monster_correlation": 3
+    },
+    "literal_values": [
+      "1",
+      "1"
+    ]
+  },
+  "SynVisitor": {
+    "instance_count": 1,
+    "field_patterns": {
+      "analysis": 1
+    },
+    "literal_values": []
+  },
+  "CompleteIndex": {
+    "instance_count": 1,
+    "field_patterns": {
+      "repos": 1,
+      "files": 1,
+      "total_files": 1,
+      "rust_files": 1,
+      "cargo_projects": 1,
+      "total_repos": 1
+    },
+    "literal_values": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "SpectralBytecodeDecoder": {
+    "instance_count": 1,
+    "field_patterns": {
+      "decoder_spectra": 1,
+      "decoder_address": 1,
+      "decoder_name": 1,
+      "spectral_signature": 1,
+      "monster_spectral_correlation": 1,
+      "decoded_bytecodes": 1
+    },
+    "literal_values": []
+  },
+  "TestEvent": {
+    "instance_count": 1,
+    "field_patterns": {
+      "event_type": 1,
+      "data": 1
+    },
+    "literal_values": [
+      "0"
+    ]
+  },
+  "P2PNode": {
+    "instance_count": 2,
+    "field_patterns": {
+      "dependencies": 2,
+      "version": 2,
+      "crate_name": 2,
+      "node_id": 2,
+      "capabilities": 2
+    },
+    "literal_values": []
+  },
+  "ValueUsage": {
+    "instance_count": 4,
+    "field_patterns": {
+      "complexity": 4,
+      "file_path": 4,
+      "usage_type": 4,
+      "line_number": 1,
+      "context": 2
+    },
+    "literal_values": [
+      "1",
+      "1",
+      "1"
+    ]
+  },
+  "FileEntry": {
+    "instance_count": 1,
+    "field_patterns": {
+      "repo": 1,
+      "path": 1,
+      "size": 1,
+      "file_type": 1
+    },
+    "literal_values": []
+  },
+  "ControlFlow": {
+    "instance_count": 1,
+    "field_patterns": {
+      "monster_flow_strength": 1,
+      "from_address": 1,
+      "to_address": 1,
+      "flow_type": 1
+    },
+    "literal_values": []
+  },
+  "SampleData": {
+    "instance_count": 1,
+    "field_patterns": {
+      "addresses": 1,
+      "count": 1,
+      "coordinates": 1,
+      "coord_sum": 1,
+      "total_size": 1,
+      "index": 1
+    },
+    "literal_values": []
+  },
+  "ZombieConfig": {
+    "instance_count": 1,
+    "field_patterns": {
+      "paths": 1,
+      "analysis": 1,
+      "output": 1
+    },
+    "literal_values": []
+  },
+  "BitPatternAnalysis": {
+    "instance_count": 1,
+    "field_patterns": {
+      "offset": 1,
+      "monster_powers": 1,
+      "u64_values": 1,
+      "u16_ngrams": 1,
+      "u8_values": 1,
+      "u16_values": 1,
+      "u32_values": 1,
+      "u8_ngrams": 1,
+      "u64_ngrams": 1,
+      "u32_ngrams": 1
+    },
+    "literal_values": []
+  },
+  "OutputConfig": {
+    "instance_count": 1,
+    "field_patterns": {
+      "json_pretty": 1,
+      "calculate_novelty_score": 1,
+      "include_timestamps": 1,
+      "show_unique_functions": 1,
+      "compress_large_files": 1,
+      "max_duplicates_shown": 1
+    },
+    "literal_values": [
+      "true",
+      "true",
+      "false",
+      "10",
+      "true",
+      "true"
+    ]
+  },
+  "FunctionSignature": {
+    "instance_count": 4,
+    "field_patterns": {
+      "calling_convention": 1,
+      "hash": 1,
+      "instruction_pattern": 1,
+      "complexity_class": 2,
+      "args": 1,
+      "output_type": 2,
+      "lattice_position": 2,
+      "address": 1,
+      "input_arity": 2,
+      "return_type": 1,
+      "confidence": 1,
+      "name": 2,
+      "size": 1
+    },
+    "literal_values": [
+      "0"
+    ]
+  },
+  "LabelNgramAnalysis": {
+    "instance_count": 1,
+    "field_patterns": {
+      "ngram_size": 1,
+      "frequency": 1,
+      "labels_containing": 1,
+      "monster_class_distribution": 1,
+      "ngram": 1,
+      "avg_phi_score": 1,
+      "monster_correlation": 1
+    },
+    "literal_values": []
+  },
+  "ProofTrace": {
+    "instance_count": 1,
+    "field_patterns": {
+      "address": 1,
+      "binary_offset": 1,
+      "lmfdb_derivation": 1,
+      "bott_derivation": 1,
+      "raw_bytes": 1,
+      "callees": 1,
+      "symbol_name": 1,
+      "size": 1,
+      "callers": 1
+    },
+    "literal_values": []
+  },
+  "FlowPattern": {
+    "instance_count": 9,
+    "field_patterns": {
+      "direction": 9,
+      "source": 9,
+      "target": 9,
+      "emoji": 9
+    },
+    "literal_values": []
+  },
+  "PoleAnalysis": {
+    "instance_count": 1,
+    "field_patterns": {
+      "min_coordinate": 1,
+      "total_points": 1,
+      "max_coordinate": 1
+    },
+    "literal_values": [
+      "0"
+    ]
+  },
+  "ProofStep": {
+    "instance_count": 8,
+    "field_patterns": {
+      "evidence": 8,
+      "verified": 8,
+      "description": 8,
+      "step_number": 8,
+      "monster_connection": 8
+    },
+    "literal_values": [
+      "1",
+      "41",
+      "42"
+    ]
+  },
+  "CodeSnippet": {
+    "instance_count": 1,
+    "field_patterns": {
+      "function_code": 1,
+      "surrounding_context": 1,
+      "fingerprint": 1,
+      "file_path": 1,
+      "dependencies": 1,
+      "imports": 1,
+      "line_range": 1
+    },
+    "literal_values": []
+  },
+  "ExecutionStep": {
+    "instance_count": 1,
+    "field_patterns": {
+      "semantic_context": 1,
+      "monster_flow": 1,
+      "execution_depth": 1,
+      "symbol_name": 1,
+      "address": 1,
+      "instruction_bytes": 1,
+      "monster_signature": 1
+    },
+    "literal_values": []
+  },
+  "CallEdge": {
+    "instance_count": 1,
+    "field_patterns": {
+      "from": 1,
+      "to": 1,
+      "count": 1
+    },
+    "literal_values": [
+      "1"
+    ]
+  },
+  "QueueStats": {
+    "instance_count": 1,
+    "field_patterns": {
+      "failed": 1,
+      "total_files_processed": 1,
+      "completed": 1,
+      "queued": 1,
+      "memory_usage_gb": 1,
+      "processing": 1
+    },
+    "literal_values": []
+  },
+  "LMFDBModularForm": {
+    "instance_count": 1,
+    "field_patterns": {
+      "level": 1,
+      "weight": 1,
+      "label": 1,
+      "character": 1,
+      "dimension": 1,
+      "coefficients": 1
+    },
+    "literal_values": [
+      "1"
+    ]
+  },
+  "SignatureExtractor": {
+    "instance_count": 1,
+    "field_patterns": {
+      "current_file": 1,
+      "current_repo": 1,
+      "signatures": 1
+    },
+    "literal_values": []
+  },
+  "MonsterTopologyNode": {
+    "instance_count": 1,
+    "field_patterns": {
+      "coordinates": 1,
+      "symbol_name": 1,
+      "ngrams": 1,
+      "phi_score": 1,
+      "syn_ast_data": 1,
+      "monster_signature": 1,
+      "lattice_label": 1,
+      "topology_connections": 1
+    },
+    "literal_values": []
+  },
+  "MonsterFactorization": {
+    "instance_count": 1,
+    "field_patterns": {
+      "single_primes": 1,
+      "power_5_9": 1,
+      "power_2_46": 1,
+      "power_11_2": 1,
+      "power_13_3": 1,
+      "power_3_20": 1,
+      "power_7_6": 1
+    },
+    "literal_values": []
+  },
+  "PrimeByteAnalysis": {
+    "instance_count": 1,
+    "field_patterns": {
+      "byte_positions": 1,
+      "likely_constants": 1,
+      "u8_count": 1,
+      "prime": 1,
+      "u32_count": 1,
+      "u16_count": 1,
+      "u64_count": 1
+    },
+    "literal_values": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "ExpandingModel": {
+    "instance_count": 1,
+    "field_patterns": {
+      "concepts": 1,
+      "model_version": 1,
+      "pattern_library": 1,
+      "total_files_processed": 1,
+      "type_graph": 1
+    },
+    "literal_values": [
+      "0",
+      "1"
+    ]
+  },
+  "StringToken": {
+    "instance_count": 4,
+    "field_patterns": {
+      "token": 4,
+      "original": 4,
+      "method": 4
+    },
+    "literal_values": []
+  },
+  "TopologicalLattice": {
+    "instance_count": 1,
+    "field_patterns": {
+      "monster_flow": 1,
+      "layers": 1,
+      "total_functions": 1
+    },
+    "literal_values": []
+  },
+  "SymbolicExecutionState": {
+    "instance_count": 1,
+    "field_patterns": {
+      "execution_path": 1,
+      "semantic_meaning": 1,
+      "current_address": 1,
+      "monster_context": 1,
+      "call_stack": 1,
+      "visited_addresses": 1
+    },
+    "literal_values": []
+  },
+  "CallNode": {
+    "instance_count": 1,
+    "field_patterns": {
+      "self_time": 1,
+      "name": 1,
+      "call_count": 1,
+      "total_time": 1
+    },
+    "literal_values": [
+      "0",
+      "0.0",
+      "0.0"
+    ]
+  },
+  "DomainConcept": {
+    "instance_count": 1,
+    "field_patterns": {
+      "related_functions": 1,
+      "frequency": 1,
+      "semantic_category": 1,
+      "name": 1,
+      "abstraction_level": 1
+    },
+    "literal_values": []
+  },
+  "RustLanguageConstruction": {
+    "instance_count": 1,
+    "field_patterns": {
+      "purity_ratio": 1,
+      "language_components": 1,
+      "total_blocks": 1,
+      "io_functions": 1,
+      "complexity_distribution": 1,
+      "total_functions": 1
+    },
+    "literal_values": []
+  },
+  "AutomorphicTrace": {
+    "instance_count": 1,
+    "field_patterns": {
+      "function_name": 1,
+      "self_references": 1,
+      "address": 1,
+      "compilation_depth": 1
+    },
+    "literal_values": []
+  },
+  "MonsterEvidence": {
+    "instance_count": 1,
+    "field_patterns": {
+      "genus_3_structures": 1,
+      "total_monster_score": 1,
+      "power_2_46_found": 1,
+      "prime_71_max_found": 1,
+      "prime_31_core_ring": 1,
+      "binary_symmetries": 1
+    },
+    "literal_values": [
+      "false",
+      "false",
+      "false",
+      "0",
+      "0",
+      "0.0"
+    ]
+  },
+  "TopologyMetrics": {
+    "instance_count": 1,
+    "field_patterns": {
+      "total_nodes": 1,
+      "total_ngrams": 1,
+      "topology_completeness": 1,
+      "syn_coverage": 1,
+      "monster_density": 1
+    },
+    "literal_values": []
+  },
+  "Reference": {
+    "instance_count": 2,
+    "field_patterns": {
+      "context_bytes": 2,
+      "referencing_offset": 2,
+      "reference_type": 2
+    },
+    "literal_values": []
+  },
+  "DatasetAnalysis": {
+    "instance_count": 1,
+    "field_patterns": {
+      "monster_correlations": 1,
+      "total_syn_nodes": 1,
+      "strongest_patterns": 1,
+      "crate_count": 1
+    },
+    "literal_values": [
+      "0",
+      "0"
+    ]
+  },
+  "LMFDBIndex": {
+    "instance_count": 1,
+    "field_patterns": {
+      "label": 1,
+      "level": 1,
+      "dimension": 1,
+      "weight": 1,
+      "character": 1
+    },
+    "literal_values": []
+  },
+  "FunctionAnalysis": {
+    "instance_count": 1,
+    "field_patterns": {
+      "size": 1,
+      "name": 1,
+      "energy": 1,
+      "classification": 1,
+      "coordinates": 1
+    },
+    "literal_values": [
+      "0"
+    ]
+  },
+  "LatticeAnalysis": {
+    "instance_count": 1,
+    "field_patterns": {
+      "total_points": 1,
+      "dimension": 1,
+      "clusters": 1,
+      "prime_basis": 1,
+      "density_map": 1,
+      "lattice_constants": 1
+    },
+    "literal_values": []
+  },
+  "DecodedBytecode": {
+    "instance_count": 1,
+    "field_patterns": {
+      "raw_bytes": 1,
+      "decoder_confidence": 1,
+      "monster_pattern": 1,
+      "address": 1,
+      "decoded_instruction": 1,
+      "could_be_decoder": 1
+    },
+    "literal_values": []
+  },
+  "ExperimentResults": {
+    "instance_count": 1,
+    "field_patterns": {
+      "passed": 1,
+      "total_features": 1,
+      "failed": 1,
+      "results": 1
+    },
+    "literal_values": []
+  },
+  "MainFunctionRollup": {
+    "instance_count": 1,
+    "field_patterns": {
+      "name": 1,
+      "own_lmfdb_key": 1,
+      "top_dependency_lmfdb_keys": 1,
+      "total_dependencies": 1,
+      "total_gogobglabulab_power": 1,
+      "mathematical_signature": 1,
+      "direct_calls": 1,
+      "rolled_up_lmfdb_frequencies": 1,
+      "dependency_tree_depth": 1
+    },
+    "literal_values": []
+  },
+  "UnknownClassifier": {
+    "instance_count": 1,
+    "field_patterns": {
+      "current_file": 1,
+      "current_function": 1,
+      "signatures": 1
+    },
+    "literal_values": []
+  },
+  "MonsterTopology": {
+    "instance_count": 1,
+    "field_patterns": {
+      "ngram_coordinate_map": 1,
+      "nodes": 1,
+      "topology_metrics": 1
+    },
+    "literal_values": []
+  },
+  "SymbolSignature": {
+    "instance_count": 1,
+    "field_patterns": {
+      "prime_divisibility": 1,
+      "entropy": 1,
+      "address": 1,
+      "dominant_prime": 1,
+      "size": 1,
+      "name": 1,
+      "monster_signature": 1,
+      "byte_patterns": 1
+    },
+    "literal_values": []
+  },
+  "CompactPrimeModel": {
+    "instance_count": 1,
+    "field_patterns": {
+      "memory_efficient": 1,
+      "model_hierarchy": 1,
+      "prime_25": 1
+    },
+    "literal_values": [
+      "true"
+    ]
+  },
+  "SampleAnalysis": {
+    "instance_count": 1,
+    "field_patterns": {
+      "total_population": 1,
+      "sampling_rate": 1,
+      "coordinate_distributions": 1,
+      "size_stats": 1,
+      "sample_size": 1,
+      "count_distribution": 1,
+      "coverage_analysis": 1
+    },
+    "literal_values": []
+  },
+  "CanonicalStructure": {
+    "instance_count": 1,
+    "field_patterns": {
+      "total_repos": 1,
+      "repos": 1,
+      "total_forks": 1
+    },
+    "literal_values": [
+      "0",
+      "0"
+    ]
+  },
+  "TrampolineInfo": {
+    "instance_count": 1,
+    "field_patterns": {
+      "original_address": 1,
+      "original_bytes": 1,
+      "wrapper_address": 1
+    },
+    "literal_values": []
+  },
+  "TypedDomainConcept": {
+    "instance_count": 5,
+    "field_patterns": {
+      "name": 5,
+      "related_items": 5,
+      "semantic_category": 5,
+      "abstraction_level": 5,
+      "concept_type": 5,
+      "frequency": 5,
+      "used_terms": 5
+    },
+    "literal_values": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ]
+  },
+  "InstructionLattice": {
+    "instance_count": 1,
+    "field_patterns": {
+      "instructions": 1,
+      "function_name": 1,
+      "function_address": 1,
+      "lattice_layers": 1,
+      "monster_instruction_map": 1,
+      "control_flow": 1
+    },
+    "literal_values": []
+  },
+  "CompilationResult": {
+    "instance_count": 4,
+    "field_patterns": {
+      "errors": 3,
+      "compilation_time": 3,
+      "genus": 1,
+      "output_path": 3,
+      "success": 3,
+      "warnings": 3,
+      "name": 3,
+      "source_path": 3,
+      "complexity": 1
+    },
+    "literal_values": [
+      "3",
+      "3"
+    ]
+  },
+  "DomainAnalyzer": {
+    "instance_count": 1,
+    "field_patterns": {
+      "relations": 1,
+      "concepts": 1,
+      "function_names": 1
+    },
+    "literal_values": []
+  },
+  "SynAstData": {
+    "instance_count": 1,
+    "field_patterns": {
+      "syn_ngrams": 1,
+      "ast_type": 1,
+      "ast_structure": 1,
+      "ast_monster_correlation": 1
+    },
+    "literal_values": []
+  },
+  "ConceptNode": {
+    "instance_count": 1,
+    "field_patterns": {
+      "last_seen": 1,
+      "name": 1,
+      "connections": 1,
+      "frequency": 1,
+      "semantic_weight": 1
+    },
+    "literal_values": [
+      "0",
+      "1.0"
+    ]
+  },
+  "AutomorphicProof": {
+    "instance_count": 1,
+    "field_patterns": {
+      "orbit_cycles": 1,
+      "fixed_points": 1,
+      "compilation_matrix": 1,
+      "trace_invariants": 1
+    },
+    "literal_values": []
+  },
+  "PolePosition": {
+    "instance_count": 1,
+    "field_patterns": {
+      "count_pole_functions": 1,
+      "weighted_pole_value": 1,
+      "count_pole_value": 1,
+      "weighted_pole": 1,
+      "total_coordinate_sum": 1,
+      "prime_dimension_sums": 1,
+      "count_pole": 1
+    },
+    "literal_values": []
+  },
+  "MonsterProof": {
+    "instance_count": 1,
+    "field_patterns": {
+      "final_equivalence": 1,
+      "steps": 1,
+      "monster_evidence": 1,
+      "rustc_binary": 1
+    },
+    "literal_values": []
+  },
+  "LatticeAnalyzer": {
+    "instance_count": 1,
+    "field_patterns": {
+      "functions": 1,
+      "current_file": 1,
+      "lattice_classes": 1,
+      "constants": 1
+    },
+    "literal_values": []
+  },
+  "TargetFunction": {
+    "instance_count": 1,
+    "field_patterns": {
+      "mangled_name": 1,
+      "original_bytes": 1,
+      "address": 1,
+      "name": 1
+    },
+    "literal_values": []
+  },
+  "SemanticMonsterMapping": {
+    "instance_count": 1,
+    "field_patterns": {
+      "mangled_name": 1,
+      "ngram_analysis": 1,
+      "monster_signature": 1,
+      "semantic_category": 1,
+      "monster_type_correlation": 1,
+      "type_components": 1,
+      "demangled_name": 1
+    },
+    "literal_values": []
+  },
+  "TypeComponent": {
+    "instance_count": 1,
+    "field_patterns": {
+      "name": 1,
+      "monster_score": 1,
+      "component_type": 1,
+      "type_semantics": 1
+    },
+    "literal_values": []
+  },
+  "CodeItem": {
+    "instance_count": 5,
+    "field_patterns": {
+      "item_type": 5,
+      "complexity": 5,
+      "name": 5,
+      "dependencies": 5,
+      "source_code": 5
+    },
+    "literal_values": [
+      "1"
+    ]
+  },
+  "SampleFunction": {
+    "instance_count": 2,
+    "field_patterns": {
+      "total_size": 2,
+      "coordinates": 1,
+      "coordinates_str": 1,
+      "coord_sum": 1,
+      "addresses": 2,
+      "count": 2,
+      "index": 2
+    },
+    "literal_values": []
+  },
+  "BytecodeDecoder": {
+    "instance_count": 1,
+    "field_patterns": {
+      "decoder_address": 1,
+      "decoder_name": 1,
+      "self_reference_score": 1,
+      "monster_decoder_signature": 1,
+      "decoder_pattern": 1,
+      "decoded_bytecodes": 1
+    },
+    "literal_values": []
+  },
+  "MonsterLabel": {
+    "instance_count": 1,
+    "field_patterns": {
+      "monster_signature": 1,
+      "dominant_prime": 1,
+      "size": 1,
+      "classification": 1,
+      "monster_class": 1,
+      "name": 1,
+      "phi_score": 1,
+      "ngram_correlations": 1,
+      "address": 1
+    },
+    "literal_values": []
+  },
+  "IORelation": {
+    "instance_count": 1,
+    "field_patterns": {
+      "ast_complexity": 1,
+      "output_types": 1,
+      "function_name": 1,
+      "basic_block_count": 1,
+      "file_path": 1,
+      "char_frequency": 1,
+      "input_types": 1
+    },
+    "literal_values": []
+  },
+  "ExecutionTrace": {
+    "instance_count": 1,
+    "field_patterns": {
+      "path": 1,
+      "automorphic_properties": 1,
+      "self_compilation_depth": 1,
+      "orbit_cycle": 1
+    },
+    "literal_values": []
+  },
+  "SemanticSignature": {
+    "instance_count": 2,
+    "field_patterns": {
+      "size": 2,
+      "demangled_name": 2,
+      "side_effects": 2,
+      "generic_parameters": 2,
+      "semantic_category": 2,
+      "memory_safety_markers": 2,
+      "unsafe_operations": 2,
+      "instruction_hash": 2,
+      "address": 2,
+      "complexity_score": 2,
+      "trait_bounds": 2,
+      "name": 2,
+      "lifetime_annotations": 2,
+      "parameter_types": 2,
+      "calling_convention": 2,
+      "operation_type": 2,
+      "return_type": 2,
+      "stack_protection": 2
+    },
+    "literal_values": [
+      "false",
+      "0"
+    ]
+  },
+  "SymbolMonsterData": {
+    "instance_count": 1,
+    "field_patterns": {
+      "address": 1,
+      "bytes": 1,
+      "name": 1,
+      "monster_signature": 1,
+      "morse_critical_points": 1,
+      "symmetry_group": 1,
+      "size": 1
+    },
+    "literal_values": []
+  },
+  "NgramMonsterCorrelation": {
+    "instance_count": 1,
+    "field_patterns": {
+      "char_monster_score": 1,
+      "phi_inference": 1,
+      "frequency": 1,
+      "functions": 1,
+      "ngram": 1,
+      "byte_monster_score": 1
+    },
+    "literal_values": []
+  },
+  "MonsterPowers": {
+    "instance_count": 1,
+    "field_patterns": {
+      "u64_monster_scores": 1,
+      "u8_monster_scores": 1,
+      "u32_monster_scores": 1,
+      "ngram_monster_scores": 1,
+      "total_monster_correlation": 1,
+      "u16_monster_scores": 1
+    },
+    "literal_values": []
+  },
+  "DuplicateGroup": {
+    "instance_count": 1,
+    "field_patterns": {
+      "coordinates": 1,
+      "total_size": 1,
+      "addresses": 1,
+      "enum_count": 1,
+      "avg_size": 1,
+      "count": 1
+    },
+    "literal_values": []
+  },
+  "LearnedFunction": {
+    "instance_count": 1,
+    "field_patterns": {
+      "name": 1,
+      "size": 1,
+      "address": 1,
+      "function_type": 1,
+      "demangled_name": 1
+    },
+    "literal_values": []
+  },
+  "ByteLevelResults": {
+    "instance_count": 1,
+    "field_patterns": {
+      "markov_chain_count": 1,
+      "byte_distribution": 1,
+      "token_frequency_map": 1
+    },
+    "literal_values": []
+  },
+  "RustSignature": {
+    "instance_count": 1,
+    "field_patterns": {
+      "output_types": 1,
+      "line_count": 1,
+      "char_frequency": 1,
+      "function_name": 1,
+      "input_types": 1,
+      "dependencies": 1,
+      "complexity_score": 1,
+      "repository": 1,
+      "file_path": 1
+    },
+    "literal_values": []
+  },
+  "MonsterLatticePoint": {
+    "instance_count": 1,
+    "field_patterns": {
+      "symbol_name": 1,
+      "monster_class": 1,
+      "prime_vector": 1,
+      "cluster_id": 1,
+      "neighbors": 1,
+      "coordinates": 1,
+      "lattice_label": 1,
+      "phi_score": 1
+    },
+    "literal_values": [
+      "0"
+    ]
+  },
+  "ModuloFunction": {
+    "instance_count": 1,
+    "field_patterns": {
+      "offset": 1,
+      "multiplier": 1,
+      "base": 1
+    },
+    "literal_values": [
+      "0",
+      "1"
+    ]
+  },
+  "LatticeEntry": {
+    "instance_count": 2,
+    "field_patterns": {
+      "count": 2,
+      "functions": 1,
+      "enum_types": 1,
+      "total_size": 2,
+      "coordinates": 1,
+      "addresses": 1,
+      "enum_count": 1
+    },
+    "literal_values": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "IOVisitor": {
+    "instance_count": 1,
+    "field_patterns": {
+      "relations": 1,
+      "current_file": 1
+    },
+    "literal_values": []
+  },
+  "WasmDeployment": {
+    "instance_count": 1,
+    "field_patterns": {
+      "slice_type": 1,
+      "slice_id": 1,
+      "hosts": 1,
+      "efficiency": 1
+    },
+    "literal_values": []
+  },
+  "ConstantContext": {
+    "instance_count": 4,
+    "field_patterns": {
+      "int_size": 4,
+      "position": 4,
+      "surrounding_bytes": 4,
+      "likely_usage": 4
+    },
+    "literal_values": [
+      "8",
+      "16",
+      "32",
+      "64"
+    ]
+  },
+  "Point": {
+    "instance_count": 2,
+    "field_patterns": {
+      "x": 2,
+      "y": 2
+    },
+    "literal_values": [
+      "1",
+      "2",
+      "1",
+      "2"
+    ]
+  },
+  "TypedDomainAnalyzer": {
+    "instance_count": 1,
+    "field_patterns": {
+      "concepts": 1,
+      "functions": 1,
+      "current_file": 1,
+      "type_usage_graph": 1
+    },
+    "literal_values": []
+  },
+  "Self": {
+    "instance_count": 39,
+    "field_patterns": {
+      "increment_pattern": 1,
+      "cargo_path": 1,
+      "modular_keys": 1,
+      "git_manager": 1,
+      "memory_usage": 1,
+      "values_in_memory": 1,
+      "sources": 1,
+      "rustc_path": 1,
+      "total_concepts": 1,
+      "evolution_depth": 1,
+      "byte_scanner": 1,
+      "markov_chains": 1,
+      "all_addresses": 1,
+      "lmfdb_path": 1,
+      "current_memory_usage": 1,
+      "elf": 1,
+      "prime_lattice": 1,
+      "reserved_nodes": 1,
+      "file_path": 4,
+      "base_dir": 3,
+      "primes": 1,
+      "index_file": 1,
+      "base_offset": 1,
+      "samples": 1,
+      "total_cases": 1,
+      "lattice_levels": 1,
+      "syscalls": 1,
+      "concepts": 1,
+      "hunger_level": 1,
+      "datasets": 1,
+      "discovered_mappings": 1,
+      "hf_manager": 1,
+      "consumed_binaries": 2,
+      "model_sizes": 1,
+      "rustc_driver_path": 1,
+      "binary_path": 6,
+      "generation": 1,
+      "results": 2,
+      "usage_graph": 1,
+      "version": 1,
+      "current_batch": 1,
+      "rustc_forms": 1,
+      "function_patterns": 1,
+      "address_map": 1,
+      "modular_space": 1,
+      "elements": 1,
+      "expansion_rate": 1,
+      "plugin_driver": 1,
+      "last_run": 1,
+      "modular_forms": 1,
+      "store": 2,
+      "matches": 1,
+      "rustc_driver_loaded": 1,
+      "discovered_codecs": 1,
+      "event_registry": 1,
+      "batch_size": 2,
+      "loaded_sos": 1,
+      "rate_limits": 1,
+      "bit_analysis": 1,
+      "functions": 2,
+      "primes_71": 1,
+      "queue": 1,
+      "target": 1,
+      "model": 1,
+      "memory_snapshots": 1,
+      "output_dir": 3,
+      "page_offsets": 1,
+      "word_analysis": 1,
+      "start_address": 1,
+      "byte_analysis": 1,
+      "cases": 1,
+      "trace_log": 1,
+      "hyphae_network": 1,
+      "function_analyses": 1,
+      "usage_patterns": 1,
+      "features": 1,
+      "flush_counter": 1,
+      "constants": 2,
+      "peers": 1,
+      "count": 1,
+      "rustc_driver": 1,
+      "enum_signatures": 1,
+      "binary": 1,
+      "pages_in_memory": 1,
+      "learned_functions": 1,
+      "nix_manager": 1,
+      "nutrient_reserves": 1,
+      "lmfdb_forms": 1,
+      "cargo_loaded": 1,
+      "string_tokens": 1,
+      "stored_data": 1,
+      "lattice_cache": 1,
+      "paid_tier_nodes": 1,
+      "prime_counts": 1,
+      "basic_blocks": 1,
+      "symbols": 1,
+      "temp_dir": 1,
+      "io_patterns": 1,
+      "reverse_graph": 1,
+      "traces": 1,
+      "binary_entropy": 1,
+      "total_entries_processed": 1,
+      "syn_analyzer": 1,
+      "total_time": 1,
+      "elf_analyzer": 1,
+      "codec_functions": 1,
+      "compilation_results": 1,
+      "registry": 1,
+      "learned_addresses": 1,
+      "free_tier_wasm": 1,
+      "complex_analysis": 1,
+      "species": 1,
+      "modular_operations": 1,
+      "section_ratios": 1,
+      "page_access_order": 1
+    },
+    "literal_values": [
+      "false",
+      "false",
+      "0",
+      "0",
+      "0.0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1",
+      "0",
+      "0",
+      "0.0",
+      "100",
+      "1.0",
+      "1",
+      "0.0",
+      "1000",
+      "1",
+      "1.0"
+    ]
+  }
+}

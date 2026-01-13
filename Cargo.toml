@@ -36,8 +36,8 @@ name = "local_commit_cache"
 path = "local_commit_cache.rs"
 
 [[bin]]
-name = "conformal_structure_analyzer_fixed"
-path = "conformal_structure_analyzer_fixed.rs"
+name = "complex_type_instance_markov"
+path = "complex_type_instance_markov_fixed.rs"
 
 [[bin]]
 name = "commits_by_user"

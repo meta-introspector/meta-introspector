@@ -1,0 +1,21 @@
+{
+  "type_name": "u8",
+  "bit_width": 8,
+  "value_counts": {
+    "32": 2,
+    "9": 1
+  },
+  "context_counts": {
+    "unknown": 3
+  },
+  "transitions": {
+    "0": {
+      "1": 4,
+      "0": 14
+    },
+    "1": {
+      "0": 3
+    }
+  },
+  "total_instances": 3
+}

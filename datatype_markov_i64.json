@@ -1,0 +1,21 @@
+{
+  "type_name": "i64",
+  "bit_width": 64,
+  "value_counts": {
+    "100": 2
+  },
+  "context_counts": {
+    "unknown": 2
+  },
+  "transitions": {
+    "1": {
+      "1": 2,
+      "0": 4
+    },
+    "0": {
+      "1": 4,
+      "0": 116
+    }
+  },
+  "total_instances": 2
+}
