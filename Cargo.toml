@@ -36,8 +36,8 @@ name = "local_commit_cache"
 path = "local_commit_cache.rs"
 
 [[bin]]
-name = "repo_selector"
-path = "repo_selector.rs"
+name = "crossbeam_rustc_analyzer_complete"
+path = "crossbeam_rustc_analyzer_complete.rs"
 
 [[bin]]
 name = "commits_by_user"
@@ -50,9 +50,25 @@ path = "mike_repos.rs"
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+crossbeam = "0.8"
 chrono = { version = "0.4", features = ["serde"] }
 petgraph = "0.6"
 goblin = "0.8"
 glob = "0.3"
 regex = "1.0"
 syn = { version = "2.0", features = ["full", "visit"] }
+[[bin]]
+name = "semantic_rust_compressor"
+path = "semantic_rust_compressor.rs"
+[[bin]]
+name = "grammar_rust_compressor"
+path = "grammar_rust_compressor.rs"
+[[bin]]
+name = "massive_rustc_grammar_plan"
+path = "massive_rustc_grammar_plan.rs"
+[[bin]]
+name = "prove_compression"
+path = "prove_compression.rs"
+[[bin]]
+name = "full_rustc_compressor"
+path = "full_rustc_compressor.rs"

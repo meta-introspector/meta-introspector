@@ -1,0 +1,15 @@
+{
+  "filename_patterns": {
+    "compile": 1,
+    "program": 1,
+    "test": 2,
+    "zombie": 1,
+    "fuzzywuzzy": 1,
+    "send": 1,
+    "input": 1,
+    "launcher": 2,
+    "self": 1
+  },
+  "content_patterns": {},
+  "correlations": []
+}
