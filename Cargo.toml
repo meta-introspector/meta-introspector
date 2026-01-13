@@ -110,6 +110,43 @@ path = "extract_rust_sources.rs"
 [[bin]]
 name = "build_order_pipeline"
 path = "build_order_pipeline.rs"
+
+[[bin]]
+name = "compressed_proof"
+path = "compressed_proof.rs"
+[[bin]]
+name = "compressed_rust_compiler"
+path = "compressed_rust_compiler.rs"
+[[bin]]
+name = "compression_report"
+path = "compression_report.rs"
+[[bin]]
+name = "direct_ast_codec"
+path = "direct_ast_codec.rs"
+[[bin]]
+name = "ordered_decl_compressor"
+path = "ordered_decl_compressor.rs"
+[[bin]]
+name = "perfect_hash_compressor"
+path = "perfect_hash_compressor.rs"
+[[bin]]
+name = "real_compile_proof"
+path = "real_compile_proof.rs"
+[[bin]]
+name = "rust_build_compressor"
+path = "rust_build_compressor.rs"
+[[bin]]
+name = "rustc_markov_skeleton"
+path = "rustc_markov_skeleton.rs"
+[[bin]]
+name = "rustc_profile_system"
+path = "rustc_profile_system.rs"
+[[bin]]
+name = "save_compressed_data"
+path = "save_compressed_data.rs"
+[[bin]]
+name = "size_histogram"
+path = "size_histogram.rs"
 [[bin]]
 name = "crossbeam_repo_compressor"
 path = "crossbeam_repo_compressor.rs"

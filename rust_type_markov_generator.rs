@@ -95,6 +95,7 @@ impl<'ast> Visit<'ast> for TypeCollector {
                     Lit::Float(lit_float) => ("float", lit_float.base10_digits().to_string()),
                     Lit::Bool(lit_bool) => ("bool", lit_bool.value.to_string()),
                     Lit::Verbatim(_) => ("verbatim", "complex".to_string()),
+                    _ => ("unknown", "unknown".to_string()),
                 };
                 
                 self.add_instance(type_name, &value, "literal");

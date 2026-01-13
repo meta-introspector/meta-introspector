@@ -1,0 +1,186 @@
+[
+  {
+    "repo_name": "split-decls",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000019494
+  },
+  {
+    "repo_name": "tld-stats",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000066167
+  },
+  {
+    "repo_name": "value-lattice",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000027194
+  },
+  {
+    "repo_name": "rust-index-guix",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000109999
+  },
+  {
+    "repo_name": "docs",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000037842
+  },
+  {
+    "repo_name": "rust-ecosystem",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000069706
+  },
+  {
+    "repo_name": "092f560f26c1866dbd8e323827c9f953",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000146936
+  },
+  {
+    "repo_name": "rust-overlay",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000190609
+  },
+  {
+    "repo_name": "triton-os-nix",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000209086
+  },
+  {
+    "repo_name": "tools",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000060604
+  },
+  {
+    "repo_name": "corepkgs-ekala-nix",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000247878
+  },
+  {
+    "repo_name": "just",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.00009719
+  },
+  {
+    "repo_name": "rust-monorepo-indexer",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.000206107
+  },
+  {
+    "repo_name": "sccache",
+    "files_processed": 74,
+    "total_original_bytes": 1586806,
+    "total_compressed_bytes": 47567,
+    "compression_ratio": 0.029976569284461994,
+    "processing_time_seconds": 0.001110156
+  },
+  {
+    "repo_name": "kowalski",
+    "files_processed": 74,
+    "total_original_bytes": 314584,
+    "total_compressed_bytes": 9402,
+    "compression_ratio": 0.029887088981003482,
+    "processing_time_seconds": 0.001916918
+  },
+  {
+    "repo_name": "analysis",
+    "files_processed": 0,
+    "total_original_bytes": 0,
+    "total_compressed_bytes": 0,
+    "compression_ratio": null,
+    "processing_time_seconds": 0.030575757
+  },
+  {
+    "repo_name": "vtcode",
+    "files_processed": 636,
+    "total_original_bytes": 6510043,
+    "total_compressed_bytes": 194989,
+    "compression_ratio": 0.029952029502723715,
+    "processing_time_seconds": 0.036063753
+  },
+  {
+    "repo_name": "split-decls-rs",
+    "files_processed": 5066,
+    "total_original_bytes": 10941586,
+    "total_compressed_bytes": 325488,
+    "compression_ratio": 0.029747789762836943,
+    "processing_time_seconds": 0.066327236
+  },
+  {
+    "repo_name": "oracle",
+    "files_processed": 8,
+    "total_original_bytes": 20561,
+    "total_compressed_bytes": 613,
+    "compression_ratio": 0.029813725013374835,
+    "processing_time_seconds": 0.081104405
+  },
+  {
+    "repo_name": "zombie_driver",
+    "files_processed": 7,
+    "total_original_bytes": 91791,
+    "total_compressed_bytes": 2750,
+    "compression_ratio": 0.029959364207819937,
+    "processing_time_seconds": 0.162684494
+  },
+  {
+    "repo_name": "swarms-terraform",
+    "files_processed": 3101,
+    "total_original_bytes": 14016216,
+    "total_compressed_bytes": 418950,
+    "compression_ratio": 0.029890378401702715,
+    "processing_time_seconds": 0.595595588
+  },
+  {
+    "repo_name": "zos-server",
+    "files_processed": 3101,
+    "total_original_bytes": 14016216,
+    "total_compressed_bytes": 418950,
+    "compression_ratio": 0.029890378401702715,
+    "processing_time_seconds": 0.59874016
+  },
+  {
+    "repo_name": "split-decls-genesis",
+    "files_processed": 8319,
+    "total_original_bytes": 127073238,
+    "total_compressed_bytes": 3808065,
+    "compression_ratio": 0.02996748221682995,
+    "processing_time_seconds": 12.689875536
+  }
+]

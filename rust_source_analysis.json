@@ -1,0 +1,21 @@
+{
+  "total_files": 3805,
+  "models": {
+    "bool": {
+      "instances": 3716,
+      "patterns": {}
+    },
+    "String": {
+      "instances": 370277,
+      "patterns": {}
+    },
+    "other": {
+      "instances": 108033,
+      "patterns": {}
+    },
+    "integer": {
+      "instances": 339020,
+      "patterns": {}
+    }
+  }
+}
