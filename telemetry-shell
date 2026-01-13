@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Telemetry Shell Wrapper - replaces /bin/sh and /bin/bash
+# This script intercepts ALL shell invocations and routes them through our telemetry driver
+
+TELEMETRY_DRIVER="/mnt/data1/meta-introspector/rust-telemetry-driver/target/release/rust-telemetry-driver"
+REAL_SHELL="${REAL_SHELL:-/bin/bash}"
+
+# Set up telemetry session
+export TELEMETRY_SESSION_ID="${TELEMETRY_SESSION_ID:-$(date +%s)_$$}"
+export TELEMETRY_LOG="${TELEMETRY_LOG:-/tmp/build_telemetry_${TELEMETRY_SESSION_ID}.jsonl}"
+
+echo "🔍 Telemetry Shell Active - Session: $TELEMETRY_SESSION_ID" >&2
+echo "📊 Logging to: $TELEMETRY_LOG" >&2
+
+# If we have arguments, execute them through telemetry driver
+if [ $# -gt 0 ]; then
+    # Check if it's a script execution
+    if [ "$1" = "-c" ] && [ $# -eq 2 ]; then
+        # Execute shell command through telemetry
+        exec "$TELEMETRY_DRIVER" "$REAL_SHELL" "$@"
+    else
+        # Execute command directly through telemetry
+        exec "$TELEMETRY_DRIVER" "$@"
+    fi
+else
+    # Interactive shell - start telemetry-wrapped shell
+    echo "🚀 Starting interactive telemetry shell..." >&2
+    exec "$TELEMETRY_DRIVER" "$REAL_SHELL"
+fi

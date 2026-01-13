@@ -155,6 +155,10 @@ path = "data_registry.rs"
 [[bin]]
 name = "pipeline_runner"
 path = "pipeline_runner.rs"
+
+[[bin]]
+name = "build_order_processor"
+path = "build_order_processor.rs"
 [[bin]]
 name = "crossbeam_repo_compressor"
 path = "crossbeam_repo_compressor.rs"

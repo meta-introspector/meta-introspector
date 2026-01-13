@@ -5,6 +5,7 @@ use std::fs;
 use std::path::Path;
 use std::process::Command;
 use std::collections::HashMap;
+use std::io::Write;
 use serde_json;
 
 #[derive(Debug)]
@@ -80,14 +81,44 @@ impl RustcInterceptor {
         let total_original: u64 = self.compressed_files.iter().map(|(_, _, size)| size).sum();
         let total_compressed: u64 = self.compressed_files.iter().map(|(_, tokens, _)| tokens.len() as u64 * 2).sum();
         
+        // Load existing results if they exist
+        let mut all_files = Vec::new();
+        let mut all_patterns = HashMap::new();
+        
+        if Path::new("rustc_intercept_compression.json").exists() {
+            let existing_content = fs::read_to_string("rustc_intercept_compression.json")?;
+            if let Ok(existing_data) = serde_json::from_str::<serde_json::Value>(&existing_content) {
+                if let Some(files) = existing_data["files"].as_array() {
+                    all_files.extend(files.clone());
+                }
+                if let Some(patterns) = existing_data["patterns"].as_object() {
+                    for (k, v) in patterns {
+                        if let Some(num) = v.as_u64() {
+                            all_patterns.insert(k.clone(), num as u16);
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Add new files
+        for (path, tokens, size) in &self.compressed_files {
+            all_files.push(serde_json::json!([path, tokens, size]));
+        }
+        
+        // Merge patterns
+        for (pattern, token) in &self.patterns {
+            all_patterns.insert(pattern.clone(), *token);
+        }
+        
         let results = serde_json::json!({
-            "files_compressed": self.compressed_files.len(),
+            "files_compressed": all_files.len(),
             "total_original_bytes": total_original,
             "total_compressed_bytes": total_compressed,
             "compression_ratio": total_compressed as f64 / total_original as f64,
             "space_saved_percent": (1.0 - (total_compressed as f64 / total_original as f64)) * 100.0,
-            "patterns": self.patterns,
-            "files": self.compressed_files
+            "patterns": all_patterns,
+            "files": all_files
         });
         
         fs::write("rustc_intercept_compression.json", serde_json::to_string_pretty(&results)?)?;
@@ -117,23 +148,31 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Only compress if we have actual .rs files
     let has_rs_files = args.iter().any(|arg| arg.ends_with(".rs") && Path::new(arg).exists());
+    // Always pass through to real rustc - we're just logging the build order
+    let real_rustc = env::var("REAL_RUSTC").unwrap_or_else(|_| "rustc".to_string());
+    let mut cmd = Command::new(real_rustc);
+    cmd.args(&args[1..]);
     
-    if has_rs_files {
-        // Initialize interceptor
-        let mut interceptor = RustcInterceptor::new();
+    // Log this rustc invocation for build order analysis
+    if args.len() > 1 {
+        let log_entry = serde_json::json!({
+            "timestamp": std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap()
+                .as_secs(),
+            "args": args,
+            "cwd": std::env::current_dir().unwrap_or_default()
+        });
         
-        // Compress all .rs files passed to rustc
-        for arg in &args[1..] {
-            if arg.ends_with(".rs") && Path::new(arg).exists() {
-                let _ = interceptor.compress_file(arg);
-            }
+        // Append to build log
+        if let Ok(mut file) = std::fs::OpenOptions::new()
+            .create(true)
+            .append(true)
+            .open("rustc_build_log.jsonl") {
+            let _ = writeln!(file, "{}", log_entry);
         }
-        
-        // Save compression results
-        let _ = interceptor.save_results();
     }
     
-    // Don't call real rustc - we're just reading files
-    eprintln!("🚫 Rustc backend disabled - compression only mode");
-    std::process::exit(0);
+    let status = cmd.status()?;
+    std::process::exit(status.code().unwrap_or(1));
 }
