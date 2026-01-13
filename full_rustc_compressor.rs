@@ -147,9 +147,20 @@ impl RustcCompatibleCompressor {
 }
 
 fn collect_all_rust_files(dir: &Path) -> Vec<PathBuf> {
+    // Use existing file list if available, otherwise scan
+    if let Ok(content) = fs::read_to_string("/mnt/data1/files.txt") {
+        return content.lines()
+            .filter(|line| line.contains("rust-build") && line.ends_with(".rs"))
+            .map(|line| PathBuf::from(line))
+            .collect();
+    }
+    
+    // Fallback to scanning
     let mut files = Vec::new();
     
     fn collect_recursive(dir: &Path, files: &mut Vec<PathBuf>) {
+        if files.len() > 10000 { return; } // Limit for safety
+        
         if let Ok(entries) = fs::read_dir(dir) {
             for entry in entries.flatten() {
                 let path = entry.path();

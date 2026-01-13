@@ -1,0 +1,10 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "fn",
+  "name": "make_display",
+  "tokens": [
+    2
+  ],
+  "original_size": 466,
+  "syn_data": "# [doc = \" Turns a closure that takes an `&mut Formatter` into something that can be display-formatted.\"] pub fn make_display (f : impl Fn (& mut fmt :: Formatter < '_ >) -> fmt :: Result) -> impl fmt"
+}

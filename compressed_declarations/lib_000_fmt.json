@@ -1,0 +1,17 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "use",
+  "name": "fmt",
+  "tokens": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    73,
+    1
+  ],
+  "original_size": 255,
+  "line_start": 41,
+  "line_end": 48
+}

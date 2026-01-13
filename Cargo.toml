@@ -49,6 +49,7 @@ path = "mike_repos.rs"
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
+quote = "1.0"
 serde_json = "1.0"
 crossbeam = "0.8"
 chrono = { version = "0.4", features = ["serde"] }
@@ -72,3 +73,27 @@ path = "prove_compression.rs"
 [[bin]]
 name = "full_rustc_compressor"
 path = "full_rustc_compressor.rs"
+[[bin]]
+name = "batch_runner"
+path = "batch_runner.rs"
+[[bin]]
+name = "fast_rust_compressor"
+path = "fast_rust_compressor.rs"
+[[bin]]
+name = "rustc_interceptor"
+path = "rustc_interceptor.rs"
+[[bin]]
+name = "compression_aggregator"
+path = "compression_aggregator.rs"
+[[bin]]
+name = "declaration_compressor"
+path = "declaration_compressor.rs"
+[[bin]]
+name = "archive_declarations"
+path = "archive_declarations.rs"
+[[bin]]
+name = "syn_names"
+path = "syn_function_names.rs"
+[[bin]]
+name = "syn_compressor"
+path = "syn_compressor.rs"

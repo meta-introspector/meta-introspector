@@ -1,500 +1,255 @@
 {
   "total_files": 22,
   "filename_patterns": {
-    "attrs": 1,
-    "format": 1,
-    "unicode": 1,
-    "mod": 2,
-    "token": 1,
-    "comments": 1,
-    "parser": 1,
-    "allocator": 1,
-    "classify": 1,
-    "literal": 1,
-    "typetree": 1,
-    "visit": 2,
-    "autodiff": 1,
-    "ast": 2,
-    "traits": 1,
-    "node": 1,
     "id": 1,
     "tokenstream": 1,
-    "entry": 1,
+    "parser": 1,
+    "traits": 1,
+    "tests": 1,
+    "node": 1,
+    "comments": 1,
+    "format": 1,
+    "typetree": 1,
+    "mod": 2,
     "case": 1,
+    "literal": 1,
+    "classify": 1,
+    "autodiff": 1,
+    "entry": 1,
+    "allocator": 1,
+    "attrs": 1,
+    "visit": 2,
+    "ast": 2,
+    "unicode": 1,
+    "token": 1,
     "mut": 1,
-    "lib": 1,
-    "tests": 1
+    "lib": 1
   },
   "content_patterns": {
-    "AllocatorMethodInput": 1,
-    "StructRest": 1,
-    "CaptureBy": 1,
-    "Label": 1,
-    "Fn": 1,
-    "GenericParam": 1,
-    "ByRef": 1,
-    "MethodCall": 1,
-    "QSelf": 1,
-    "Ty": 1,
-    "ForeignMod": 1,
-    "FieldDef": 1,
-    "StaticItem": 1,
-    "FormatArgs": 1,
-    "LitIntType": 1,
-    "Attribute": 1,
-    "LitFloatType": 1,
-    "InlineAsmOptions": 1,
-    "AutoDiffAttrs": 1,
-    "BindingMode": 1,
-    "InlineAsmTemplatePiece": 1,
-    "TyKind": 1,
-    "Const": 1,
-    "AssocItemKind": 1,
-    "FlatToken": 1,
-    "AutoDiffItem": 1,
-    "DelimSpacing": 1,
-    "Expr": 1,
-    "Generics": 1,
-    "AttrsTarget": 1,
-    "Local": 1,
-    "StructExpr": 1,
-    "PolyTraitRef": 1,
-    "MetaItemInner": 1,
-    "ClosureBinder": 1,
-    "AttrTokenStream": 1,
-    "TokenStreamIter": 1,
-    "AngleBracketedArg": 1,
-    "Term": 1,
-    "BoundAsyncness": 1,
-    "AssignOpKind": 1,
-    "AttrStyle": 1,
-    "Spacing": 1,
-    "RangeSyntax": 1,
-    "AttrKind": 1,
-    "Recovered": 1,
-    "MetaItemLit": 1,
-    "VariantData": 1,
-    "BoundConstness": 1,
-    "Delimiter": 1,
-    "AssocOp": 1,
-    "RangeEnd": 1,
-    "Variant": 1,
-    "SpecialAllocatorMethod": 1,
-    "WhereEqPredicate": 1,
-    "Trait": 1,
-    "Impl": 1,
-    "BorrowKind": 1,
-    "MutTy": 1,
-    "Item": 1,
-    "TraitObjectSyntax": 1,
-    "WhereBoundPredicate": 1,
-    "MetaItem": 1,
-    "FormatSign": 1,
-    "Lit": 1,
-    "MetaVarKind": 1,
-    "IdentIsRaw": 1,
-    "MacroDef": 1,
-    "ExprKind": 1,
-    "BinOpKind": 1,
-    "MatchKind": 1,
-    "Defaultness": 1,
-    "Delegation": 1,
-    "YieldKind": 1,
-    "Parens": 1,
-    "TraitImplHeader": 1,
-    "FnContract": 1,
-    "InlineAsmOperand": 1,
-    "ParamKindOrd": 1,
-    "TokenTreeCursor": 1,
-    "PreciseCapturingArg": 1,
-    "FnHeader": 1,
-    "FormatArguments": 1,
-    "FnRetTy": 1,
-    "Crate": 1,
-    "Case": 1,
-    "ForLoopKind": 1,
-    "GenericArg": 1,
-    "VisibilityKind": 1,
-    "Closure": 1,
-    "Param": 1,
-    "ForeignItemKind": 1,
-    "ParserRange": 1,
-    "UseTreeKind": 1,
-    "AsmMacro": 1,
-    "TyPat": 1,
-    "FormatDebugHex": 1,
-    "BoundKind": 1,
-    "Visibility": 1,
-    "AllocatorTy": 1,
-    "DelegationMac": 1,
-    "CommentStyle": 1,
-    "Stmt": 1,
-    "LazyAttrTokenStreamInner": 1,
-    "IsAuto": 1,
-    "FormatCount": 1,
-    "FormatArgPosition": 1,
-    "PatKind": 1,
-    "LifetimeCtxt": 1,
-    "TokenTree": 1,
-    "FnCtxt": 1,
-    "ExprPrecedence": 1,
-    "CommentKind": 1,
-    "ExprField": 1,
-    "FncTree": 1,
-    "FnDecl": 1,
-    "UseTree": 1,
-    "LitKind": 2,
-    "NormalAttr": 1,
-    "MacCallStmt": 1,
-    "FormatTrait": 1,
-    "InvisibleOrigin": 1,
-    "AnonConst": 1,
-    "MacCall": 1,
-    "FormatArgument": 1,
-    "DelimArgs": 1,
-    "AttrIdGenerator": 1,
-    "AllocatorMethod": 1,
-    "FnPtrTy": 1,
-    "AssocItemConstraint": 1,
-    "AttrItem": 1,
-    "UnsafeSource": 1,
-    "AssocItemConstraintKind": 1,
-    "MetaItemKind": 1,
-    "AttrArgs": 1,
-    "FormatAlignment": 1,
-    "MarkedAttrs": 1,
-    "StrStyle": 1,
-    "DiffActivity": 1,
-    "GenericBound": 1,
-    "AllocatorKind": 1,
-    "AngleBracketedArgs": 1,
-    "ModKind": 1,
-    "MacStmtStyle": 1,
-    "TyPatKind": 1,
-    "StmtKind": 1,
-    "GenBlockKind": 1,
-    "FormatOptions": 1,
-    "LazyAttrTokenStream": 1,
-    "TraitRef": 1,
-    "PathSegment": 1,
-    "FnSig": 1,
-    "TokenCursor": 1,
-    "TokenStream": 1,
-    "NonterminalKind": 1,
-    "ConstItem": 1,
-    "AstNodeWrapper": 1,
-    "NodeRange": 1,
-    "DelimSpan": 1,
-    "NtExprKind": 1,
-    "BlockCheckMode": 1,
-    "InlineAsmRegOrRegClass": 1,
-    "WherePredicate": 1,
-    "Block": 1,
-    "GenericArgs": 1,
-    "WhereClause": 1,
-    "UnOp": 1,
-    "Path": 1,
-    "WherePredicateKind": 1,
-    "ParenthesizedArgs": 1,
     "SelfKind": 1,
-    "Inline": 1,
-    "EntryPointType": 1,
+    "StrStyle": 1,
+    "InlineAsmOptions": 1,
+    "AttrArgs": 1,
+    "CaptureBy": 1,
     "Safety": 1,
-    "CoroutineKind": 1,
-    "TokenKind": 1,
-    "LocalKind": 1,
-    "UnsafeBinderCastKind": 1,
-    "InlineAsm": 1,
-    "EnumDef": 1,
-    "TrailingBrace": 1,
-    "FormatArgsPiece": 1,
-    "AttrTokenTree": 1,
-    "Pat": 1,
-    "TraitBoundModifiers": 1,
-    "TyAlias": 1,
-    "GenericParamKind": 1,
-    "ModSpans": 1,
+    "AnonConst": 1,
+    "StructExpr": 1,
     "ImplPolarity": 1,
-    "BoundPolarity": 1,
+    "UnsafeSource": 1,
+    "Inline": 1,
+    "UseTreeKind": 1,
+    "Term": 1,
     "Extern": 1,
-    "ItemKind": 1,
-    "TypeTree": 1,
-    "Token": 1,
-    "FormatPlaceholder": 1,
-    "Comment": 1,
-    "Type": 1,
-    "Kind": 1,
-    "FormatArgumentKind": 1,
+    "ForeignItemKind": 1,
+    "Parens": 1,
+    "FormatArgs": 1,
+    "ParserRange": 1,
     "Fixity": 1,
-    "Lifetime": 1,
-    "UnsafeBinderTy": 1,
-    "RangeLimits": 1,
+    "TraitImplHeader": 1,
+    "MetaItem": 1,
+    "FnRetTy": 1,
+    "AttrStyle": 1,
     "PatField": 1,
-    "WhereRegionPredicate": 1,
-    "FormatArgPositionKind": 1,
-    "InlineAsmSym": 1,
-    "StrLit": 1,
-    "PatFieldsRest": 1,
-    "NtPatKind": 1,
-    "LitError": 1,
-    "Arm": 1,
+    "Type": 1,
+    "GenericParamKind": 1,
+    "StaticItem": 1,
+    "FieldDef": 1,
+    "Block": 1,
+    "GenericArg": 1,
+    "WherePredicateKind": 1,
+    "Crate": 1,
+    "TyKind": 1,
+    "ModKind": 1,
     "DiffMode": 1,
-    "AssocCtxt": 1
+    "AttrIdGenerator": 1,
+    "Item": 1,
+    "TokenTree": 1,
+    "GenericBound": 1,
+    "WhereBoundPredicate": 1,
+    "ForeignMod": 1,
+    "Case": 1,
+    "AssocItemConstraintKind": 1,
+    "InlineAsmOperand": 1,
+    "FormatArguments": 1,
+    "NonterminalKind": 1,
+    "TyAlias": 1,
+    "BorrowKind": 1,
+    "BlockCheckMode": 1,
+    "AsmMacro": 1,
+    "IsAuto": 1,
+    "Variant": 1,
+    "StmtKind": 1,
+    "Delegation": 1,
+    "ParenthesizedArgs": 1,
+    "TypeTree": 1,
+    "DelimSpacing": 1,
+    "Generics": 1,
+    "DelimSpan": 1,
+    "TyPat": 1,
+    "AttrTokenStream": 1,
+    "AttrsTarget": 1,
+    "AssocCtxt": 1,
+    "Expr": 1,
+    "LazyAttrTokenStreamInner": 1,
+    "TraitRef": 1,
+    "WherePredicate": 1,
+    "AssocItemKind": 1,
+    "NormalAttr": 1,
+    "AutoDiffAttrs": 1,
+    "Path": 1,
+    "MacroDef": 1,
+    "AssocItemConstraint": 1,
+    "PathSegment": 1,
+    "BoundAsyncness": 1,
+    "Impl": 1,
+    "ModSpans": 1,
+    "AllocatorKind": 1,
+    "BoundConstness": 1,
+    "AssocOp": 1,
+    "NodeRange": 1,
+    "MacCallStmt": 1,
+    "CommentStyle": 1,
+    "Visibility": 1,
+    "MetaItemKind": 1,
+    "TokenKind": 1,
+    "BinOpKind": 1,
+    "LitIntType": 1,
+    "VisibilityKind": 1,
+    "FormatPlaceholder": 1,
+    "UnsafeBinderTy": 1,
+    "RangeEnd": 1,
+    "MatchKind": 1,
+    "TyPatKind": 1,
+    "LitKind": 2,
+    "DelegationMac": 1,
+    "FormatArgPositionKind": 1,
+    "VariantData": 1,
+    "TokenCursor": 1,
+    "BoundPolarity": 1,
+    "FormatCount": 1,
+    "QSelf": 1,
+    "WhereRegionPredicate": 1,
+    "Const": 1,
+    "PolyTraitRef": 1,
+    "FormatArgPosition": 1,
+    "Kind": 1,
+    "WhereClause": 1,
+    "BindingMode": 1,
+    "Stmt": 1,
+    "Arm": 1,
+    "FormatArgument": 1,
+    "AttrItem": 1,
+    "Closure": 1,
+    "ParamKindOrd": 1,
+    "FnHeader": 1,
+    "Defaultness": 1,
+    "ConstItem": 1,
+    "FnPtrTy": 1,
+    "MetaItemLit": 1,
+    "LocalKind": 1,
+    "YieldKind": 1,
+    "Recovered": 1,
+    "EnumDef": 1,
+    "Fn": 1,
+    "StrLit": 1,
+    "StructRest": 1,
+    "ClosureBinder": 1,
+    "TokenStreamIter": 1,
+    "Spacing": 1,
+    "FormatTrait": 1,
+    "Trait": 1,
+    "TrailingBrace": 1,
+    "ItemKind": 1,
+    "FlatToken": 1,
+    "CommentKind": 1,
+    "InvisibleOrigin": 1,
+    "PatKind": 1,
+    "FormatSign": 1,
+    "AngleBracketedArgs": 1,
+    "TraitBoundModifiers": 1,
+    "Delimiter": 1,
+    "NtPatKind": 1,
+    "InlineAsm": 1,
+    "TokenTreeCursor": 1,
+    "LifetimeCtxt": 1,
+    "ForLoopKind": 1,
+    "SpecialAllocatorMethod": 1,
+    "FnDecl": 1,
+    "RangeLimits": 1,
+    "DelimArgs": 1,
+    "LazyAttrTokenStream": 1,
+    "FncTree": 1,
+    "MutTy": 1,
+    "InlineAsmTemplatePiece": 1,
+    "ExprKind": 1,
+    "LitFloatType": 1,
+    "AllocatorMethodInput": 1,
+    "CoroutineKind": 1,
+    "FormatOptions": 1,
+    "PatFieldsRest": 1,
+    "MacStmtStyle": 1,
+    "MetaItemInner": 1,
+    "Attribute": 1,
+    "Lifetime": 1,
+    "RangeSyntax": 1,
+    "AttrTokenTree": 1,
+    "AstNodeWrapper": 1,
+    "AttrKind": 1,
+    "TokenStream": 1,
+    "DiffActivity": 1,
+    "GenericParam": 1,
+    "UseTree": 1,
+    "WhereEqPredicate": 1,
+    "AllocatorMethod": 1,
+    "AssignOpKind": 1,
+    "MetaVarKind": 1,
+    "FormatDebugHex": 1,
+    "Label": 1,
+    "EntryPointType": 1,
+    "FormatArgumentKind": 1,
+    "AllocatorTy": 1,
+    "AutoDiffItem": 1,
+    "Lit": 1,
+    "IdentIsRaw": 1,
+    "Pat": 1,
+    "FnSig": 1,
+    "FormatArgsPiece": 1,
+    "FnCtxt": 1,
+    "MethodCall": 1,
+    "ExprField": 1,
+    "Comment": 1,
+    "AngleBracketedArg": 1,
+    "GenBlockKind": 1,
+    "MarkedAttrs": 1,
+    "NtExprKind": 1,
+    "MacCall": 1,
+    "ExprPrecedence": 1,
+    "Token": 1,
+    "LitError": 1,
+    "Ty": 1,
+    "UnsafeBinderCastKind": 1,
+    "Local": 1,
+    "TraitObjectSyntax": 1,
+    "ByRef": 1,
+    "UnOp": 1,
+    "PreciseCapturingArg": 1,
+    "GenericArgs": 1,
+    "InlineAsmRegOrRegClass": 1,
+    "FormatAlignment": 1,
+    "InlineAsmSym": 1,
+    "BoundKind": 1,
+    "Param": 1,
+    "FnContract": 1
   },
   "correlations": [
     [
-      "attrs",
-      "AutoDiffAttrs",
-      1.0
-    ],
-    [
-      "attrs",
-      "AutoDiffItem",
-      1.0
-    ],
-    [
-      "attrs",
-      "DiffActivity",
-      1.0
-    ],
-    [
-      "attrs",
-      "DiffMode",
-      1.0
-    ],
-    [
-      "format",
-      "FormatArgs",
-      1.0
-    ],
-    [
-      "format",
-      "FormatSign",
-      1.0
-    ],
-    [
-      "format",
-      "FormatArguments",
-      1.0
-    ],
-    [
-      "format",
-      "FormatDebugHex",
-      1.0
-    ],
-    [
-      "format",
-      "FormatCount",
-      1.0
-    ],
-    [
-      "format",
-      "FormatArgPosition",
-      1.0
-    ],
-    [
-      "format",
-      "FormatTrait",
-      1.0
-    ],
-    [
-      "format",
-      "FormatArgument",
-      1.0
-    ],
-    [
-      "format",
-      "FormatAlignment",
-      1.0
-    ],
-    [
-      "format",
-      "FormatOptions",
-      1.0
-    ],
-    [
-      "format",
-      "FormatArgsPiece",
-      1.0
-    ],
-    [
-      "format",
-      "FormatPlaceholder",
-      1.0
-    ],
-    [
-      "format",
-      "FormatArgumentKind",
-      1.0
-    ],
-    [
-      "format",
-      "FormatArgPositionKind",
-      1.0
-    ],
-    [
-      "token",
-      "Delimiter",
-      1.0
-    ],
-    [
-      "token",
-      "Lit",
-      1.0
-    ],
-    [
-      "token",
-      "MetaVarKind",
-      1.0
-    ],
-    [
-      "token",
-      "IdentIsRaw",
-      1.0
-    ],
-    [
-      "token",
-      "CommentKind",
-      1.0
-    ],
-    [
-      "token",
-      "InvisibleOrigin",
-      1.0
-    ],
-    [
-      "token",
-      "NonterminalKind",
-      1.0
-    ],
-    [
-      "token",
-      "NtExprKind",
-      1.0
-    ],
-    [
-      "token",
-      "TokenKind",
-      1.0
-    ],
-    [
-      "token",
-      "Token",
-      1.0
-    ],
-    [
-      "token",
-      "NtPatKind",
-      1.0
-    ],
-    [
-      "comments",
-      "CommentStyle",
-      1.0
-    ],
-    [
-      "comments",
-      "Comment",
-      1.0
-    ],
-    [
-      "parser",
-      "AssocOp",
-      1.0
-    ],
-    [
-      "parser",
-      "ExprPrecedence",
-      1.0
-    ],
-    [
-      "parser",
-      "Fixity",
-      1.0
-    ],
-    [
-      "allocator",
-      "AllocatorMethodInput",
-      1.0
-    ],
-    [
-      "allocator",
-      "SpecialAllocatorMethod",
-      1.0
-    ],
-    [
-      "allocator",
-      "AllocatorTy",
-      1.0
-    ],
-    [
-      "allocator",
-      "AllocatorMethod",
-      1.0
-    ],
-    [
-      "allocator",
-      "AllocatorKind",
-      1.0
-    ],
-    [
-      "classify",
-      "TrailingBrace",
-      1.0
-    ],
-    [
-      "literal",
-      "LitError",
-      1.0
-    ],
-    [
-      "typetree",
-      "FncTree",
-      1.0
-    ],
-    [
-      "typetree",
-      "TypeTree",
-      1.0
-    ],
-    [
-      "typetree",
-      "Type",
-      1.0
-    ],
-    [
-      "typetree",
-      "Kind",
-      1.0
-    ],
-    [
-      "autodiff",
-      "AutoDiffAttrs",
-      1.0
-    ],
-    [
-      "autodiff",
-      "AutoDiffItem",
-      1.0
-    ],
-    [
-      "autodiff",
-      "DiffActivity",
-      1.0
-    ],
-    [
-      "autodiff",
-      "DiffMode",
-      1.0
-    ],
-    [
-      "traits",
-      "AstNodeWrapper",
+      "tokenstream",
+      "ParserRange",
       1.0
     ],
     [
       "tokenstream",
-      "FlatToken",
+      "TokenTree",
       1.0
     ],
     [
@@ -504,12 +259,32 @@
     ],
     [
       "tokenstream",
-      "AttrsTarget",
+      "DelimSpan",
       1.0
     ],
     [
       "tokenstream",
       "AttrTokenStream",
+      1.0
+    ],
+    [
+      "tokenstream",
+      "AttrsTarget",
+      1.0
+    ],
+    [
+      "tokenstream",
+      "LazyAttrTokenStreamInner",
+      1.0
+    ],
+    [
+      "tokenstream",
+      "NodeRange",
+      1.0
+    ],
+    [
+      "tokenstream",
+      "TokenCursor",
       1.0
     ],
     [
@@ -524,22 +299,12 @@
     ],
     [
       "tokenstream",
+      "FlatToken",
+      1.0
+    ],
+    [
+      "tokenstream",
       "TokenTreeCursor",
-      1.0
-    ],
-    [
-      "tokenstream",
-      "ParserRange",
-      1.0
-    ],
-    [
-      "tokenstream",
-      "LazyAttrTokenStreamInner",
-      1.0
-    ],
-    [
-      "tokenstream",
-      "TokenTree",
       1.0
     ],
     [
@@ -549,7 +314,7 @@
     ],
     [
       "tokenstream",
-      "TokenCursor",
+      "AttrTokenTree",
       1.0
     ],
     [
@@ -558,18 +323,158 @@
       1.0
     ],
     [
-      "tokenstream",
-      "NodeRange",
+      "parser",
+      "Fixity",
       1.0
     ],
     [
-      "tokenstream",
-      "DelimSpan",
+      "parser",
+      "AssocOp",
       1.0
     ],
     [
-      "tokenstream",
-      "AttrTokenTree",
+      "parser",
+      "ExprPrecedence",
+      1.0
+    ],
+    [
+      "traits",
+      "AstNodeWrapper",
+      1.0
+    ],
+    [
+      "comments",
+      "CommentStyle",
+      1.0
+    ],
+    [
+      "comments",
+      "Comment",
+      1.0
+    ],
+    [
+      "format",
+      "FormatArgs",
+      1.0
+    ],
+    [
+      "format",
+      "FormatArguments",
+      1.0
+    ],
+    [
+      "format",
+      "FormatPlaceholder",
+      1.0
+    ],
+    [
+      "format",
+      "FormatArgPositionKind",
+      1.0
+    ],
+    [
+      "format",
+      "FormatCount",
+      1.0
+    ],
+    [
+      "format",
+      "FormatArgPosition",
+      1.0
+    ],
+    [
+      "format",
+      "FormatArgument",
+      1.0
+    ],
+    [
+      "format",
+      "FormatTrait",
+      1.0
+    ],
+    [
+      "format",
+      "FormatSign",
+      1.0
+    ],
+    [
+      "format",
+      "FormatOptions",
+      1.0
+    ],
+    [
+      "format",
+      "FormatDebugHex",
+      1.0
+    ],
+    [
+      "format",
+      "FormatArgumentKind",
+      1.0
+    ],
+    [
+      "format",
+      "FormatArgsPiece",
+      1.0
+    ],
+    [
+      "format",
+      "FormatAlignment",
+      1.0
+    ],
+    [
+      "typetree",
+      "Type",
+      1.0
+    ],
+    [
+      "typetree",
+      "TypeTree",
+      1.0
+    ],
+    [
+      "typetree",
+      "Kind",
+      1.0
+    ],
+    [
+      "typetree",
+      "FncTree",
+      1.0
+    ],
+    [
+      "case",
+      "Case",
+      1.0
+    ],
+    [
+      "literal",
+      "LitError",
+      1.0
+    ],
+    [
+      "classify",
+      "TrailingBrace",
+      1.0
+    ],
+    [
+      "autodiff",
+      "DiffMode",
+      1.0
+    ],
+    [
+      "autodiff",
+      "AutoDiffAttrs",
+      1.0
+    ],
+    [
+      "autodiff",
+      "DiffActivity",
+      1.0
+    ],
+    [
+      "autodiff",
+      "AutoDiffItem",
       1.0
     ],
     [
@@ -578,8 +483,103 @@
       1.0
     ],
     [
-      "case",
-      "Case",
+      "allocator",
+      "AllocatorKind",
+      1.0
+    ],
+    [
+      "allocator",
+      "SpecialAllocatorMethod",
+      1.0
+    ],
+    [
+      "allocator",
+      "AllocatorMethodInput",
+      1.0
+    ],
+    [
+      "allocator",
+      "AllocatorMethod",
+      1.0
+    ],
+    [
+      "allocator",
+      "AllocatorTy",
+      1.0
+    ],
+    [
+      "attrs",
+      "DiffMode",
+      1.0
+    ],
+    [
+      "attrs",
+      "AutoDiffAttrs",
+      1.0
+    ],
+    [
+      "attrs",
+      "DiffActivity",
+      1.0
+    ],
+    [
+      "attrs",
+      "AutoDiffItem",
+      1.0
+    ],
+    [
+      "token",
+      "NonterminalKind",
+      1.0
+    ],
+    [
+      "token",
+      "TokenKind",
+      1.0
+    ],
+    [
+      "token",
+      "CommentKind",
+      1.0
+    ],
+    [
+      "token",
+      "InvisibleOrigin",
+      1.0
+    ],
+    [
+      "token",
+      "Delimiter",
+      1.0
+    ],
+    [
+      "token",
+      "NtPatKind",
+      1.0
+    ],
+    [
+      "token",
+      "MetaVarKind",
+      1.0
+    ],
+    [
+      "token",
+      "Lit",
+      1.0
+    ],
+    [
+      "token",
+      "IdentIsRaw",
+      1.0
+    ],
+    [
+      "token",
+      "NtExprKind",
+      1.0
+    ],
+    [
+      "token",
+      "Token",
       1.0
     ],
     [
@@ -593,13 +593,8 @@
       0.5
     ],
     [
-      "token",
-      "LitKind",
-      0.5
-    ],
-    [
       "visit",
-      "BoundKind",
+      "AssocCtxt",
       0.5
     ],
     [
@@ -614,82 +609,17 @@
     ],
     [
       "visit",
-      "AssocCtxt",
+      "BoundKind",
       0.5
     ],
     [
       "ast",
-      "StructRest",
+      "SelfKind",
       0.5
     ],
     [
       "ast",
-      "CaptureBy",
-      0.5
-    ],
-    [
-      "ast",
-      "Label",
-      0.5
-    ],
-    [
-      "ast",
-      "Fn",
-      0.5
-    ],
-    [
-      "ast",
-      "GenericParam",
-      0.5
-    ],
-    [
-      "ast",
-      "ByRef",
-      0.5
-    ],
-    [
-      "ast",
-      "MethodCall",
-      0.5
-    ],
-    [
-      "ast",
-      "QSelf",
-      0.5
-    ],
-    [
-      "ast",
-      "Ty",
-      0.5
-    ],
-    [
-      "ast",
-      "ForeignMod",
-      0.5
-    ],
-    [
-      "ast",
-      "FieldDef",
-      0.5
-    ],
-    [
-      "ast",
-      "StaticItem",
-      0.5
-    ],
-    [
-      "ast",
-      "LitIntType",
-      0.5
-    ],
-    [
-      "ast",
-      "Attribute",
-      0.5
-    ],
-    [
-      "ast",
-      "LitFloatType",
+      "StrStyle",
       0.5
     ],
     [
@@ -699,42 +629,22 @@
     ],
     [
       "ast",
-      "BindingMode",
+      "AttrArgs",
       0.5
     ],
     [
       "ast",
-      "InlineAsmTemplatePiece",
+      "CaptureBy",
       0.5
     ],
     [
       "ast",
-      "TyKind",
+      "Safety",
       0.5
     ],
     [
       "ast",
-      "Const",
-      0.5
-    ],
-    [
-      "ast",
-      "AssocItemKind",
-      0.5
-    ],
-    [
-      "ast",
-      "Expr",
-      0.5
-    ],
-    [
-      "ast",
-      "Generics",
-      0.5
-    ],
-    [
-      "ast",
-      "Local",
+      "AnonConst",
       0.5
     ],
     [
@@ -744,22 +654,22 @@
     ],
     [
       "ast",
-      "PolyTraitRef",
+      "ImplPolarity",
       0.5
     ],
     [
       "ast",
-      "MetaItemInner",
+      "UnsafeSource",
       0.5
     ],
     [
       "ast",
-      "ClosureBinder",
+      "Inline",
       0.5
     ],
     [
       "ast",
-      "AngleBracketedArg",
+      "UseTreeKind",
       0.5
     ],
     [
@@ -769,137 +679,12 @@
     ],
     [
       "ast",
-      "BoundAsyncness",
+      "Extern",
       0.5
     ],
     [
       "ast",
-      "AssignOpKind",
-      0.5
-    ],
-    [
-      "ast",
-      "AttrStyle",
-      0.5
-    ],
-    [
-      "ast",
-      "RangeSyntax",
-      0.5
-    ],
-    [
-      "ast",
-      "AttrKind",
-      0.5
-    ],
-    [
-      "ast",
-      "Recovered",
-      0.5
-    ],
-    [
-      "ast",
-      "MetaItemLit",
-      0.5
-    ],
-    [
-      "ast",
-      "VariantData",
-      0.5
-    ],
-    [
-      "ast",
-      "BoundConstness",
-      0.5
-    ],
-    [
-      "ast",
-      "RangeEnd",
-      0.5
-    ],
-    [
-      "ast",
-      "Variant",
-      0.5
-    ],
-    [
-      "ast",
-      "WhereEqPredicate",
-      0.5
-    ],
-    [
-      "ast",
-      "Trait",
-      0.5
-    ],
-    [
-      "ast",
-      "Impl",
-      0.5
-    ],
-    [
-      "ast",
-      "BorrowKind",
-      0.5
-    ],
-    [
-      "ast",
-      "MutTy",
-      0.5
-    ],
-    [
-      "ast",
-      "Item",
-      0.5
-    ],
-    [
-      "ast",
-      "TraitObjectSyntax",
-      0.5
-    ],
-    [
-      "ast",
-      "WhereBoundPredicate",
-      0.5
-    ],
-    [
-      "ast",
-      "MetaItem",
-      0.5
-    ],
-    [
-      "ast",
-      "MacroDef",
-      0.5
-    ],
-    [
-      "ast",
-      "ExprKind",
-      0.5
-    ],
-    [
-      "ast",
-      "BinOpKind",
-      0.5
-    ],
-    [
-      "ast",
-      "MatchKind",
-      0.5
-    ],
-    [
-      "ast",
-      "Defaultness",
-      0.5
-    ],
-    [
-      "ast",
-      "Delegation",
-      0.5
-    ],
-    [
-      "ast",
-      "YieldKind",
+      "ForeignItemKind",
       0.5
     ],
     [
@@ -914,27 +699,7 @@
     ],
     [
       "ast",
-      "FnContract",
-      0.5
-    ],
-    [
-      "ast",
-      "InlineAsmOperand",
-      0.5
-    ],
-    [
-      "ast",
-      "ParamKindOrd",
-      0.5
-    ],
-    [
-      "ast",
-      "PreciseCapturingArg",
-      0.5
-    ],
-    [
-      "ast",
-      "FnHeader",
+      "MetaItem",
       0.5
     ],
     [
@@ -944,367 +709,7 @@
     ],
     [
       "ast",
-      "Crate",
-      0.5
-    ],
-    [
-      "ast",
-      "ForLoopKind",
-      0.5
-    ],
-    [
-      "ast",
-      "GenericArg",
-      0.5
-    ],
-    [
-      "ast",
-      "VisibilityKind",
-      0.5
-    ],
-    [
-      "ast",
-      "Closure",
-      0.5
-    ],
-    [
-      "ast",
-      "Param",
-      0.5
-    ],
-    [
-      "ast",
-      "ForeignItemKind",
-      0.5
-    ],
-    [
-      "ast",
-      "UseTreeKind",
-      0.5
-    ],
-    [
-      "ast",
-      "AsmMacro",
-      0.5
-    ],
-    [
-      "ast",
-      "TyPat",
-      0.5
-    ],
-    [
-      "ast",
-      "Visibility",
-      0.5
-    ],
-    [
-      "ast",
-      "DelegationMac",
-      0.5
-    ],
-    [
-      "ast",
-      "Stmt",
-      0.5
-    ],
-    [
-      "ast",
-      "IsAuto",
-      0.5
-    ],
-    [
-      "ast",
-      "PatKind",
-      0.5
-    ],
-    [
-      "ast",
-      "ExprField",
-      0.5
-    ],
-    [
-      "ast",
-      "FnDecl",
-      0.5
-    ],
-    [
-      "ast",
-      "UseTree",
-      0.5
-    ],
-    [
-      "ast",
-      "NormalAttr",
-      0.5
-    ],
-    [
-      "ast",
-      "MacCallStmt",
-      0.5
-    ],
-    [
-      "ast",
-      "AnonConst",
-      0.5
-    ],
-    [
-      "ast",
-      "MacCall",
-      0.5
-    ],
-    [
-      "ast",
-      "DelimArgs",
-      0.5
-    ],
-    [
-      "ast",
-      "FnPtrTy",
-      0.5
-    ],
-    [
-      "ast",
-      "AssocItemConstraint",
-      0.5
-    ],
-    [
-      "ast",
-      "AttrItem",
-      0.5
-    ],
-    [
-      "ast",
-      "UnsafeSource",
-      0.5
-    ],
-    [
-      "ast",
-      "AssocItemConstraintKind",
-      0.5
-    ],
-    [
-      "ast",
-      "MetaItemKind",
-      0.5
-    ],
-    [
-      "ast",
-      "AttrArgs",
-      0.5
-    ],
-    [
-      "ast",
-      "StrStyle",
-      0.5
-    ],
-    [
-      "ast",
-      "GenericBound",
-      0.5
-    ],
-    [
-      "ast",
-      "AngleBracketedArgs",
-      0.5
-    ],
-    [
-      "ast",
-      "ModKind",
-      0.5
-    ],
-    [
-      "ast",
-      "MacStmtStyle",
-      0.5
-    ],
-    [
-      "ast",
-      "TyPatKind",
-      0.5
-    ],
-    [
-      "ast",
-      "StmtKind",
-      0.5
-    ],
-    [
-      "ast",
-      "GenBlockKind",
-      0.5
-    ],
-    [
-      "ast",
-      "TraitRef",
-      0.5
-    ],
-    [
-      "ast",
-      "PathSegment",
-      0.5
-    ],
-    [
-      "ast",
-      "FnSig",
-      0.5
-    ],
-    [
-      "ast",
-      "ConstItem",
-      0.5
-    ],
-    [
-      "ast",
-      "AstNodeWrapper",
-      0.5
-    ],
-    [
-      "ast",
-      "BlockCheckMode",
-      0.5
-    ],
-    [
-      "ast",
-      "InlineAsmRegOrRegClass",
-      0.5
-    ],
-    [
-      "ast",
-      "WherePredicate",
-      0.5
-    ],
-    [
-      "ast",
-      "Block",
-      0.5
-    ],
-    [
-      "ast",
-      "GenericArgs",
-      0.5
-    ],
-    [
-      "ast",
-      "WhereClause",
-      0.5
-    ],
-    [
-      "ast",
-      "UnOp",
-      0.5
-    ],
-    [
-      "ast",
-      "Path",
-      0.5
-    ],
-    [
-      "ast",
-      "WherePredicateKind",
-      0.5
-    ],
-    [
-      "ast",
-      "ParenthesizedArgs",
-      0.5
-    ],
-    [
-      "ast",
-      "SelfKind",
-      0.5
-    ],
-    [
-      "ast",
-      "Inline",
-      0.5
-    ],
-    [
-      "ast",
-      "Safety",
-      0.5
-    ],
-    [
-      "ast",
-      "CoroutineKind",
-      0.5
-    ],
-    [
-      "ast",
-      "LocalKind",
-      0.5
-    ],
-    [
-      "ast",
-      "UnsafeBinderCastKind",
-      0.5
-    ],
-    [
-      "ast",
-      "InlineAsm",
-      0.5
-    ],
-    [
-      "ast",
-      "EnumDef",
-      0.5
-    ],
-    [
-      "ast",
-      "Pat",
-      0.5
-    ],
-    [
-      "ast",
-      "TraitBoundModifiers",
-      0.5
-    ],
-    [
-      "ast",
-      "TyAlias",
-      0.5
-    ],
-    [
-      "ast",
-      "GenericParamKind",
-      0.5
-    ],
-    [
-      "ast",
-      "ModSpans",
-      0.5
-    ],
-    [
-      "ast",
-      "ImplPolarity",
-      0.5
-    ],
-    [
-      "ast",
-      "BoundPolarity",
-      0.5
-    ],
-    [
-      "ast",
-      "Extern",
-      0.5
-    ],
-    [
-      "ast",
-      "ItemKind",
-      0.5
-    ],
-    [
-      "ast",
-      "Lifetime",
-      0.5
-    ],
-    [
-      "ast",
-      "UnsafeBinderTy",
-      0.5
-    ],
-    [
-      "ast",
-      "RangeLimits",
+      "AttrStyle",
       0.5
     ],
     [
@@ -1314,12 +719,367 @@
     ],
     [
       "ast",
+      "GenericParamKind",
+      0.5
+    ],
+    [
+      "ast",
+      "StaticItem",
+      0.5
+    ],
+    [
+      "ast",
+      "FieldDef",
+      0.5
+    ],
+    [
+      "ast",
+      "Block",
+      0.5
+    ],
+    [
+      "ast",
+      "GenericArg",
+      0.5
+    ],
+    [
+      "ast",
+      "WherePredicateKind",
+      0.5
+    ],
+    [
+      "ast",
+      "Crate",
+      0.5
+    ],
+    [
+      "ast",
+      "TyKind",
+      0.5
+    ],
+    [
+      "ast",
+      "ModKind",
+      0.5
+    ],
+    [
+      "ast",
+      "Item",
+      0.5
+    ],
+    [
+      "ast",
+      "GenericBound",
+      0.5
+    ],
+    [
+      "ast",
+      "WhereBoundPredicate",
+      0.5
+    ],
+    [
+      "ast",
+      "ForeignMod",
+      0.5
+    ],
+    [
+      "ast",
+      "AssocItemConstraintKind",
+      0.5
+    ],
+    [
+      "ast",
+      "InlineAsmOperand",
+      0.5
+    ],
+    [
+      "ast",
+      "TyAlias",
+      0.5
+    ],
+    [
+      "ast",
+      "BorrowKind",
+      0.5
+    ],
+    [
+      "ast",
+      "BlockCheckMode",
+      0.5
+    ],
+    [
+      "ast",
+      "AsmMacro",
+      0.5
+    ],
+    [
+      "ast",
+      "IsAuto",
+      0.5
+    ],
+    [
+      "ast",
+      "Variant",
+      0.5
+    ],
+    [
+      "ast",
+      "StmtKind",
+      0.5
+    ],
+    [
+      "ast",
+      "Delegation",
+      0.5
+    ],
+    [
+      "ast",
+      "ParenthesizedArgs",
+      0.5
+    ],
+    [
+      "ast",
+      "Generics",
+      0.5
+    ],
+    [
+      "ast",
+      "TyPat",
+      0.5
+    ],
+    [
+      "ast",
+      "Expr",
+      0.5
+    ],
+    [
+      "ast",
+      "TraitRef",
+      0.5
+    ],
+    [
+      "ast",
+      "WherePredicate",
+      0.5
+    ],
+    [
+      "ast",
+      "AssocItemKind",
+      0.5
+    ],
+    [
+      "ast",
+      "NormalAttr",
+      0.5
+    ],
+    [
+      "ast",
+      "Path",
+      0.5
+    ],
+    [
+      "ast",
+      "MacroDef",
+      0.5
+    ],
+    [
+      "ast",
+      "AssocItemConstraint",
+      0.5
+    ],
+    [
+      "ast",
+      "PathSegment",
+      0.5
+    ],
+    [
+      "ast",
+      "BoundAsyncness",
+      0.5
+    ],
+    [
+      "ast",
+      "Impl",
+      0.5
+    ],
+    [
+      "ast",
+      "ModSpans",
+      0.5
+    ],
+    [
+      "ast",
+      "BoundConstness",
+      0.5
+    ],
+    [
+      "ast",
+      "MacCallStmt",
+      0.5
+    ],
+    [
+      "ast",
+      "Visibility",
+      0.5
+    ],
+    [
+      "ast",
+      "MetaItemKind",
+      0.5
+    ],
+    [
+      "ast",
+      "BinOpKind",
+      0.5
+    ],
+    [
+      "ast",
+      "LitIntType",
+      0.5
+    ],
+    [
+      "ast",
+      "VisibilityKind",
+      0.5
+    ],
+    [
+      "ast",
+      "UnsafeBinderTy",
+      0.5
+    ],
+    [
+      "ast",
+      "RangeEnd",
+      0.5
+    ],
+    [
+      "ast",
+      "MatchKind",
+      0.5
+    ],
+    [
+      "ast",
+      "TyPatKind",
+      0.5
+    ],
+    [
+      "ast",
+      "DelegationMac",
+      0.5
+    ],
+    [
+      "ast",
+      "VariantData",
+      0.5
+    ],
+    [
+      "ast",
+      "BoundPolarity",
+      0.5
+    ],
+    [
+      "ast",
+      "QSelf",
+      0.5
+    ],
+    [
+      "ast",
       "WhereRegionPredicate",
       0.5
     ],
     [
       "ast",
-      "InlineAsmSym",
+      "Const",
+      0.5
+    ],
+    [
+      "ast",
+      "PolyTraitRef",
+      0.5
+    ],
+    [
+      "ast",
+      "WhereClause",
+      0.5
+    ],
+    [
+      "ast",
+      "BindingMode",
+      0.5
+    ],
+    [
+      "ast",
+      "Stmt",
+      0.5
+    ],
+    [
+      "ast",
+      "Arm",
+      0.5
+    ],
+    [
+      "ast",
+      "AttrItem",
+      0.5
+    ],
+    [
+      "ast",
+      "Closure",
+      0.5
+    ],
+    [
+      "ast",
+      "ParamKindOrd",
+      0.5
+    ],
+    [
+      "ast",
+      "FnHeader",
+      0.5
+    ],
+    [
+      "ast",
+      "Defaultness",
+      0.5
+    ],
+    [
+      "ast",
+      "ConstItem",
+      0.5
+    ],
+    [
+      "ast",
+      "FnPtrTy",
+      0.5
+    ],
+    [
+      "ast",
+      "MetaItemLit",
+      0.5
+    ],
+    [
+      "ast",
+      "LocalKind",
+      0.5
+    ],
+    [
+      "ast",
+      "YieldKind",
+      0.5
+    ],
+    [
+      "ast",
+      "Recovered",
+      0.5
+    ],
+    [
+      "ast",
+      "EnumDef",
+      0.5
+    ],
+    [
+      "ast",
+      "Fn",
       0.5
     ],
     [
@@ -1329,12 +1089,252 @@
     ],
     [
       "ast",
+      "StructRest",
+      0.5
+    ],
+    [
+      "ast",
+      "ClosureBinder",
+      0.5
+    ],
+    [
+      "ast",
+      "Trait",
+      0.5
+    ],
+    [
+      "ast",
+      "ItemKind",
+      0.5
+    ],
+    [
+      "ast",
+      "PatKind",
+      0.5
+    ],
+    [
+      "ast",
+      "AngleBracketedArgs",
+      0.5
+    ],
+    [
+      "ast",
+      "TraitBoundModifiers",
+      0.5
+    ],
+    [
+      "ast",
+      "InlineAsm",
+      0.5
+    ],
+    [
+      "ast",
+      "ForLoopKind",
+      0.5
+    ],
+    [
+      "ast",
+      "FnDecl",
+      0.5
+    ],
+    [
+      "ast",
+      "RangeLimits",
+      0.5
+    ],
+    [
+      "ast",
+      "DelimArgs",
+      0.5
+    ],
+    [
+      "ast",
+      "MutTy",
+      0.5
+    ],
+    [
+      "ast",
+      "InlineAsmTemplatePiece",
+      0.5
+    ],
+    [
+      "ast",
+      "ExprKind",
+      0.5
+    ],
+    [
+      "ast",
+      "LitFloatType",
+      0.5
+    ],
+    [
+      "ast",
+      "CoroutineKind",
+      0.5
+    ],
+    [
+      "ast",
       "PatFieldsRest",
       0.5
     ],
     [
       "ast",
-      "Arm",
+      "MacStmtStyle",
+      0.5
+    ],
+    [
+      "ast",
+      "MetaItemInner",
+      0.5
+    ],
+    [
+      "ast",
+      "Attribute",
+      0.5
+    ],
+    [
+      "ast",
+      "Lifetime",
+      0.5
+    ],
+    [
+      "ast",
+      "RangeSyntax",
+      0.5
+    ],
+    [
+      "ast",
+      "AstNodeWrapper",
+      0.5
+    ],
+    [
+      "ast",
+      "AttrKind",
+      0.5
+    ],
+    [
+      "ast",
+      "GenericParam",
+      0.5
+    ],
+    [
+      "ast",
+      "UseTree",
+      0.5
+    ],
+    [
+      "ast",
+      "WhereEqPredicate",
+      0.5
+    ],
+    [
+      "ast",
+      "AssignOpKind",
+      0.5
+    ],
+    [
+      "ast",
+      "Label",
+      0.5
+    ],
+    [
+      "ast",
+      "Pat",
+      0.5
+    ],
+    [
+      "ast",
+      "FnSig",
+      0.5
+    ],
+    [
+      "ast",
+      "MethodCall",
+      0.5
+    ],
+    [
+      "ast",
+      "ExprField",
+      0.5
+    ],
+    [
+      "ast",
+      "AngleBracketedArg",
+      0.5
+    ],
+    [
+      "ast",
+      "GenBlockKind",
+      0.5
+    ],
+    [
+      "ast",
+      "MacCall",
+      0.5
+    ],
+    [
+      "ast",
+      "Ty",
+      0.5
+    ],
+    [
+      "ast",
+      "UnsafeBinderCastKind",
+      0.5
+    ],
+    [
+      "ast",
+      "Local",
+      0.5
+    ],
+    [
+      "ast",
+      "TraitObjectSyntax",
+      0.5
+    ],
+    [
+      "ast",
+      "ByRef",
+      0.5
+    ],
+    [
+      "ast",
+      "UnOp",
+      0.5
+    ],
+    [
+      "ast",
+      "PreciseCapturingArg",
+      0.5
+    ],
+    [
+      "ast",
+      "GenericArgs",
+      0.5
+    ],
+    [
+      "ast",
+      "InlineAsmRegOrRegClass",
+      0.5
+    ],
+    [
+      "ast",
+      "InlineAsmSym",
+      0.5
+    ],
+    [
+      "ast",
+      "Param",
+      0.5
+    ],
+    [
+      "ast",
+      "FnContract",
+      0.5
+    ],
+    [
+      "token",
+      "LitKind",
       0.5
     ],
     [

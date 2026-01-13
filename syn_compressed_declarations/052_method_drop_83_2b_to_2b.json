@@ -1,0 +1,10 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "method",
+  "name": "drop",
+  "tokens": [
+    1
+  ],
+  "original_size": 83,
+  "syn_data": "# [inline] fn drop (& mut self) { if let Some (f) = self . 0 . take () { f () ; } }"
+}

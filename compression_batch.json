@@ -1,0 +1,32 @@
+{
+  "jobs": [
+    {
+      "name": "Grammar Compression Test",
+      "binary": "grammar_rust_compressor",
+      "args": [],
+      "timeout_seconds": 60,
+      "output_file": "grammar_test.log",
+      "depends_on": []
+    },
+    {
+      "name": "Prove Compression",
+      "binary": "prove_compression",
+      "args": [],
+      "timeout_seconds": 120,
+      "output_file": "compression_proof.log",
+      "depends_on": []
+    },
+    {
+      "name": "Crossbeam Analysis",
+      "binary": "crossbeam_rustc_analyzer_complete",
+      "args": [
+        "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_ast"
+      ],
+      "timeout_seconds": 300,
+      "output_file": "crossbeam_analysis.log",
+      "depends_on": []
+    }
+  ],
+  "max_parallel": 3,
+  "global_timeout_minutes": 10
+}

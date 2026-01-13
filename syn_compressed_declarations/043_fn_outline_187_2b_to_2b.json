@@ -1,0 +1,10 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "fn",
+  "name": "outline",
+  "tokens": [
+    1
+  ],
+  "original_size": 187,
+  "syn_data": "# [doc = \" This calls the passed function while ensuring it won't be inlined into the caller.\"] # [inline (never)] # [cold] pub fn outline < F : FnOnce () -> R , R > (f : F) -> R { f () }"
+}

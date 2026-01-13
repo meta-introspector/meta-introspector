@@ -1,0 +1,15 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "fn",
+  "name": "fn",
+  "tokens": [
+    2,
+    0,
+    15,
+    38,
+    22
+  ],
+  "original_size": 129,
+  "line_start": 142,
+  "line_end": 146
+}

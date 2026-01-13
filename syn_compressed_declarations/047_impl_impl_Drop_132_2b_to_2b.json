@@ -1,0 +1,10 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "impl",
+  "name": "impl_Drop",
+  "tokens": [
+    4
+  ],
+  "original_size": 132,
+  "syn_data": "impl < F : FnOnce () > Drop for OnDrop < F > { # [inline] fn drop (& mut self) { if let Some (f) = self . 0 . take () { f () ; } } }"
+}

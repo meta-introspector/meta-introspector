@@ -1,0 +1,15 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "mod",
+  "name": "atomic_ref",
+  "tokens": [
+    15,
+    0,
+    86,
+    16,
+    7
+  ],
+  "original_size": 128,
+  "line_start": 87,
+  "line_end": 91
+}

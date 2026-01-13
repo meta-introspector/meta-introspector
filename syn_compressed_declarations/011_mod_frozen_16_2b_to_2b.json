@@ -1,0 +1,10 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "mod",
+  "name": "frozen",
+  "tokens": [
+    8
+  ],
+  "original_size": 16,
+  "syn_data": "pub mod frozen ;"
+}

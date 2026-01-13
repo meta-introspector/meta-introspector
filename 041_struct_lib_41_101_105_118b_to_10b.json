@@ -1,0 +1,15 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "struct",
+  "name": "struct",
+  "tokens": [
+    4,
+    0,
+    29,
+    30,
+    13
+  ],
+  "original_size": 118,
+  "line_start": 101,
+  "line_end": 105
+}

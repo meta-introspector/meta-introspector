@@ -1,0 +1,14 @@
+{
+  "jobs": [
+    {
+      "name": "Compress Entire Rust-Build",
+      "binary": "full_rustc_compressor",
+      "args": [],
+      "timeout_seconds": 600,
+      "output_file": "rust_build_full_compression.log",
+      "depends_on": []
+    }
+  ],
+  "max_parallel": 1,
+  "global_timeout_minutes": 15
+}

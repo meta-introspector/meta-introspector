@@ -1,0 +1,11 @@
+{
+  "original_path": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/rustc_data_structures/src/lib.rs",
+  "decl_type": "mod",
+  "name": "mod",
+  "tokens": [
+    6
+  ],
+  "original_size": 12,
+  "line_start": 70,
+  "line_end": 70
+}
