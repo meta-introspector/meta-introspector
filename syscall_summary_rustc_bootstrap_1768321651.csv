@@ -1,0 +1,8 @@
+syscall,count,total_duration_us
+mmap,245,0
+unknown,16,0
+ENOENT,1,0
+newfstatat,4,0
+openat,2173,0
+execve,10,0
+write,1,0

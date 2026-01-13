@@ -1,0 +1,102 @@
+[
+  {
+    "timestamp": 0,
+    "pid": 669236,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  },
+  {
+    "timestamp": 144,
+    "pid": 669236,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  },
+  {
+    "timestamp": 2496,
+    "pid": 669242,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  },
+  {
+    "timestamp": 2497,
+    "pid": 669242,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  },
+  {
+    "timestamp": 2498,
+    "pid": 669242,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  },
+  {
+    "timestamp": 2954,
+    "pid": 669242,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  },
+  {
+    "timestamp": 3347,
+    "pid": 669247,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  },
+  {
+    "timestamp": 3686,
+    "pid": 669248,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  },
+  {
+    "timestamp": 4457,
+    "pid": 669250,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  },
+  {
+    "timestamp": 4636,
+    "pid": 669251,
+    "syscall": "execve",
+    "args": [
+      "..."
+    ],
+    "result": "0",
+    "duration_us": 0
+  }
+]

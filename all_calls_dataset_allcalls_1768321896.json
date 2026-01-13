@@ -1,0 +1,199 @@
+{
+  "session_id": "allcalls_1768321896",
+  "wrapped_binaries": [
+    {
+      "binary_path": "/nix/store/dwiyp91lmxq864plaas14jm14m87sg3f-binutils-wrapper-2.44/bin/ld",
+      "libraries": [],
+      "symbols": [],
+      "wrapper_file": "ld_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/usr/bin/as",
+      "libraries": [
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libc.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2"
+      ],
+      "symbols": [
+        "_obstack_allocated_p",
+        "_obstack_begin",
+        "_obstack_begin_1",
+        "_obstack_free",
+        "_obstack_memory_used",
+        "_obstack_newchunk"
+      ],
+      "wrapper_file": "as_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/nix/store/qjv64w8q2higlmsa5wl9dxnizvqplkrp-rustc-wrapper-1.75.0/bin/rustc",
+      "libraries": [],
+      "symbols": [],
+      "wrapper_file": "rustc_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/usr/bin/gcc",
+      "libraries": [
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libc.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2"
+      ],
+      "symbols": [
+        "_obstack_allocated_p",
+        "_obstack_begin",
+        "_obstack_begin_1",
+        "_obstack_free",
+        "_obstack_memory_used",
+        "_obstack_newchunk"
+      ],
+      "wrapper_file": "gcc_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/bin/sh",
+      "libraries": [
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libc.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2"
+      ],
+      "symbols": [],
+      "wrapper_file": "sh_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/nix/store/3vs2fr2mazafcdwyza15bfhpmccx1k7z-patchelf-0.15.2/bin/cc",
+      "libraries": [],
+      "symbols": [],
+      "wrapper_file": "cc_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/nix/store/qarrb8yfby1yyypm32vabzgxgq3w41ma-gcc-15.2.0/bin/gcc",
+      "libraries": [
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libm.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libc.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2"
+      ],
+      "symbols": [
+        "_obstack_allocated_p",
+        "_obstack_begin",
+        "_obstack_begin_1",
+        "_obstack_free",
+        "_obstack_memory_used",
+        "_obstack_newchunk"
+      ],
+      "wrapper_file": "gcc_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/nix/store/8x1k9hmn5mgzaad34p1i37ii7n0l16yc-rustc-1.75.0/lib/rustlib/x86_64-unknown-linux-gnu/bin/cc",
+      "libraries": [],
+      "symbols": [],
+      "wrapper_file": "cc_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/nix/store/cl88v2m1y5q3k6jlkq5jjf73nmfgl1px-binutils-2.44/bin/ld",
+      "libraries": [
+        "/nix/store/in5vxpbk3gb2acanwxmid5530pdx0n9h-binutils-2.44-lib/lib/libbfd-2.44.so",
+        "/nix/store/in5vxpbk3gb2acanwxmid5530pdx0n9h-binutils-2.44-lib/lib/libctf.so.0",
+        "/nix/store/in5vxpbk3gb2acanwxmid5530pdx0n9h-binutils-2.44-lib/lib/libsframe.so.1",
+        "/nix/store/c2qsgf2832zi4n29gfkqgkjpvmbmxam6-zlib-1.3.1/lib/libz.so.1",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libc.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2"
+      ],
+      "symbols": [
+        "_obstack_allocated_p",
+        "_obstack_begin",
+        "_obstack_begin_1",
+        "_obstack_free",
+        "_obstack_memory_used",
+        "_obstack_newchunk"
+      ],
+      "wrapper_file": "ld_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/nix/store/d75200gb22v7p0703h5jrkgg8bqydk5q-coreutils-9.8/bin/readlink",
+      "libraries": [
+        "/nix/store/ysybzx4slid45akig0q5b89afh32ar6k-gmp-with-cxx-6.3.0/lib/libgmp.so.10",
+        "/nix/store/42hsdp2wh69pclsi2flbarql4fls0sm8-acl-2.3.2/lib/libacl.so.1",
+        "/nix/store/6lnqmp6z002x7i7if04a8y7y4v29pv2k-attr-2.5.2/lib/libattr.so.1",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libc.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2"
+      ],
+      "symbols": [
+        "error",
+        "error_at_line"
+      ],
+      "wrapper_file": "readlink_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/usr/bin/ld",
+      "libraries": [
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libc.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2"
+      ],
+      "symbols": [
+        "_obstack_allocated_p",
+        "_obstack_begin",
+        "_obstack_begin_1",
+        "_obstack_free",
+        "_obstack_memory_used",
+        "_obstack_newchunk"
+      ],
+      "wrapper_file": "ld_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/nix/store/r9wbjib6xxjkyb9yvjvrkl4sq61i2lyn-gcc-wrapper-15.2.0/bin/cc",
+      "libraries": [],
+      "symbols": [],
+      "wrapper_file": "cc_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/nix/store/qarrb8yfby1yyypm32vabzgxgq3w41ma-gcc-15.2.0/libexec/gcc/x86_64-unknown-linux-gnu/15.2.0/collect2",
+      "libraries": [
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libm.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/libc.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2"
+      ],
+      "symbols": [
+        "_obstack_allocated_p",
+        "_obstack_begin",
+        "_obstack_begin_1",
+        "_obstack_free",
+        "_obstack_memory_used",
+        "_obstack_newchunk"
+      ],
+      "wrapper_file": "collect2_all_calls_wrapper.rs",
+      "wrap_success": true
+    },
+    {
+      "binary_path": "/nix/store/8x1k9hmn5mgzaad34p1i37ii7n0l16yc-rustc-1.75.0/bin/rustc",
+      "libraries": [
+        "/nix/store/8x1k9hmn5mgzaad34p1i37ii7n0l16yc-rustc-1.75.0/bin/../lib/librustc_driver-686d20105d1a2cf7.so",
+        "/nix/store/8x1k9hmn5mgzaad34p1i37ii7n0l16yc-rustc-1.75.0/bin/../lib/libstd-bf2160fadd66da13.so",
+        "/nix/store/cyrrf49i2hm1w7vn2j945ic3rrzgxbqs-glibc-2.38-44/lib/libc.so.6",
+        "/nix/store/haaq5vqgkfpqx59x76hm2fganyds74jp-llvm-17.0.6-lib/lib/libLLVM-17.so",
+        "/nix/store/1s98ricsglmfjjqkfnpvywnip5z7gp9q-gcc-13.2.0-lib/lib/libstdc++.so.6",
+        "/nix/store/1s98ricsglmfjjqkfnpvywnip5z7gp9q-gcc-13.2.0-lib/lib/libgcc_s.so.1",
+        "/nix/store/cyrrf49i2hm1w7vn2j945ic3rrzgxbqs-glibc-2.38-44/lib/libm.so.6",
+        "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2",
+        "/nix/store/zabxhfpsgkb9c4sb7fy50pn1l1kczzv2-libffi-3.4.4/lib/libffi.so.8",
+        "/nix/store/cyrrf49i2hm1w7vn2j945ic3rrzgxbqs-glibc-2.38-44/lib/librt.so.1",
+        "/nix/store/cyrrf49i2hm1w7vn2j945ic3rrzgxbqs-glibc-2.38-44/lib/libdl.so.2",
+        "/nix/store/ilr7br1ck7i6wcgfkynwpnjp7n964h38-zlib-1.3.1/lib/libz.so.1",
+        "/nix/store/wyw0d6r22mzl4g7wk1rkif9fsks00qbv-ncurses-6.4/lib/libncursesw.so.6",
+        "/nix/store/kq8cmm07g2dzmxn3pa8x9328agps28d1-libxml2-2.12.4/lib/libxml2.so.2"
+      ],
+      "symbols": [],
+      "wrapper_file": "rustc_all_calls_wrapper.rs",
+      "wrap_success": true
+    }
+  ],
+  "total_libraries": 39,
+  "total_symbols": 38,
+  "master_wrapper": ""
+}

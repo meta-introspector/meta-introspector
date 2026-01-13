@@ -1,0 +1,139 @@
+{
+  "session_id": "frontrun_1768325224",
+  "intercepted_binaries": [
+    {
+      "binary_path": "/nix/store/r9wbjib6xxjkyb9yvjvrkl4sq61i2lyn-gcc-wrapper-15.2.0/bin/cc",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: -1)"
+    },
+    {
+      "binary_path": "/usr/bin/gcc",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: 1)"
+    },
+    {
+      "binary_path": "/bin/sh",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: 1)"
+    },
+    {
+      "binary_path": "/nix/store/3vs2fr2mazafcdwyza15bfhpmccx1k7z-patchelf-0.15.2/bin/cc",
+      "pid": 0,
+      "syscalls_made": [],
+      "preload_result": "FAILED - binary not accessible"
+    },
+    {
+      "binary_path": "/nix/store/8x1k9hmn5mgzaad34p1i37ii7n0l16yc-rustc-1.75.0/lib/rustlib/x86_64-unknown-linux-gnu/bin/cc",
+      "pid": 0,
+      "syscalls_made": [],
+      "preload_result": "FAILED - binary not accessible"
+    },
+    {
+      "binary_path": "/nix/store/qarrb8yfby1yyypm32vabzgxgq3w41ma-gcc-15.2.0/libexec/gcc/x86_64-unknown-linux-gnu/15.2.0/collect2",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: -1)"
+    },
+    {
+      "binary_path": "/nix/store/qjv64w8q2higlmsa5wl9dxnizvqplkrp-rustc-wrapper-1.75.0/bin/rustc",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: -1)"
+    },
+    {
+      "binary_path": "/nix/store/dwiyp91lmxq864plaas14jm14m87sg3f-binutils-wrapper-2.44/bin/ld",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: -1)"
+    },
+    {
+      "binary_path": "/nix/store/d75200gb22v7p0703h5jrkgg8bqydk5q-coreutils-9.8/bin/readlink",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: -1)"
+    },
+    {
+      "binary_path": "/usr/bin/ld",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: 1)"
+    },
+    {
+      "binary_path": "/nix/store/8x1k9hmn5mgzaad34p1i37ii7n0l16yc-rustc-1.75.0/bin/rustc",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: -1)"
+    },
+    {
+      "binary_path": "/usr/bin/as",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: 1)"
+    },
+    {
+      "binary_path": "/nix/store/qarrb8yfby1yyypm32vabzgxgq3w41ma-gcc-15.2.0/bin/gcc",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: -1)"
+    },
+    {
+      "binary_path": "/nix/store/cl88v2m1y5q3k6jlkq5jjf73nmfgl1px-binutils-2.44/bin/ld",
+      "pid": 0,
+      "syscalls_made": [
+        "execve",
+        "fopen",
+        "malloc"
+      ],
+      "preload_result": "FAILED with --version (exit: -1)"
+    }
+  ],
+  "preload_library": "/mnt/data1/meta-introspector/libpreload_interceptor.so",
+  "total_interceptions": 14
+}
