@@ -215,9 +215,6 @@ fn get_binary_symbols(binary_path: &str) -> Vec<String> {
     
     symbols.sort();
     symbols.dedup();
-    
-    // Limit symbols to prevent huge files
-    symbols.truncate(50);
     symbols
 }
 
@@ -336,12 +333,13 @@ fn create_master_call_wrapper(dataset: &AllCallsDataset) {
     }
     content.push_str("\n");
     
-    // Master initialization
+    // Master initialization with dynamic service registry
     content.push_str("macro_rules! init_all_call_wrappers {\n");
     content.push_str("    () => {{\n");
     content.push_str("        use std::fs::OpenOptions;\n");
     content.push_str("        use std::io::Write;\n");
     content.push_str("        use std::time::{SystemTime, UNIX_EPOCH};\n");
+    content.push_str("        use std::collections::HashMap;\n");
     content.push_str("        \n");
     content.push_str("        std::fs::create_dir_all(\"/mnt/data1/meta-introspector/data/telemetry\").ok();\n");
     content.push_str("        let timestamp = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();\n");
@@ -349,6 +347,12 @@ fn create_master_call_wrapper(dataset: &AllCallsDataset) {
     content.push_str("        let log_file = format!(\"/mnt/data1/meta-introspector/data/telemetry/{}_{}.jsonl\", project, timestamp);\n");
     content.push_str("        \n");
     content.push_str("        println!(\"🔥 INITIALIZING ALL CALL WRAPPERS -> {}\", log_file);\n");
+    content.push_str("        \n");
+    content.push_str("        // Dynamic service registry - no hardcoding\n");
+    content.push_str("        let mut services = HashMap::new();\n");
+    content.push_str("        \n");
+    content.push_str("        // Services will register themselves when called\n");
+    content.push_str("        println!(\"📋 SERVICES WILL REGISTER DYNAMICALLY\");\n");
     content.push_str("        \n");
     content.push_str("        if let Ok(mut file) = OpenOptions::new().create(true).append(true).open(&log_file) {\n");
     content.push_str("            writeln!(file, r#\"{{\\\"type\\\":\\\"init\\\",\\\"message\\\":\\\"All call wrappers initialized\\\",\\\"timestamp\\\":{},\\\"project\\\":\\\"{}\\\",\\\"binaries\\\":{},\\\"libraries\\\":{},\\\"symbols\\\":{}}}\\\"#, \n");
@@ -375,7 +379,7 @@ fn create_master_call_wrapper(dataset: &AllCallsDataset) {
             content.push_str(&(i+1).to_string());
             content.push_str(". ");
             content.push_str(&binary_name);
-            content.push_str(" ({} libs, {} syms)\", ");
+            content.push_str(" ({{}} libs, {{}} syms)\", ");
             content.push_str(&wrapper.libraries.len().to_string());
             content.push_str(", ");
             content.push_str(&wrapper.symbols.len().to_string());

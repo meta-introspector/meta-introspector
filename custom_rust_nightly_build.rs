@@ -3,7 +3,7 @@ use std::process::Command;
 use std::env;
 
 // Include our complete telemetry system
-include!("master_all_calls_allcalls_1768325238.rs");
+include!("master_all_calls_allcalls_1768325605.rs");
 
 fn main() {
     println!("🔥 CUSTOM RUST OVERLAY NIGHTLY BUILD");

@@ -29,6 +29,10 @@ name = "custom_rust_nightly_build"
 path = "custom_rust_nightly_build.rs"
 
 [[bin]]
+name = "telemetry_hook_test_driver"
+path = "telemetry_hook_test_driver.rs"
+
+[[bin]]
 name = "monolithic_telemetry_runner"
 path = "monolithic_telemetry_runner.rs"
 

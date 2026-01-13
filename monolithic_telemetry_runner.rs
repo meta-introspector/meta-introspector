@@ -119,7 +119,7 @@ fn show_call_statistics() {
             println!("Symbol                 | Count | Total μs | Avg μs");
             println!("----------------------|-------|----------|--------");
             
-            for (symbol, stat) in sorted_stats.iter().take(15) {
+            for (symbol, stat) in sorted_stats.iter() {
                 println!("{:20} | {:5} | {:8} | {:6}", 
                     symbol, stat.count, stat.total_duration_us, stat.avg_duration_us);
             }

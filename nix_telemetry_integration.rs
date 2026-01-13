@@ -258,7 +258,7 @@ macro_rules! telemetry_wrap {
     
     // Add symbol wrappers (first 20 to avoid huge files)
     content.push_str("// 🔍 SYMBOL WRAPPERS:\n");
-    for symbol in symbols.iter().take(20) {
+    for symbol in symbols.iter() {
         let clean_name = symbol.replace("@", "_").replace(".", "_");
         content.push_str(&format!(
             r#"

@@ -469,11 +469,362 @@ macro_rules! call_realloc_wrapped {
     }};
 }
 
+macro_rules! call_setgid_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("setgid", {
+            // Actual symbol call would go here
+            "Called setgid".to_string()
+        })
+    }};
+}
+
+macro_rules! call_setpgid_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("setpgid", {
+            // Actual symbol call would go here
+            "Called setpgid".to_string()
+        })
+    }};
+}
+
+macro_rules! call_setrlimit_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("setrlimit", {
+            // Actual symbol call would go here
+            "Called setrlimit".to_string()
+        })
+    }};
+}
+
+macro_rules! call_setuid_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("setuid", {
+            // Actual symbol call would go here
+            "Called setuid".to_string()
+        })
+    }};
+}
+
+macro_rules! call_sigaction_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("sigaction", {
+            // Actual symbol call would go here
+            "Called sigaction".to_string()
+        })
+    }};
+}
+
+macro_rules! call_sigfillset_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("sigfillset", {
+            // Actual symbol call would go here
+            "Called sigfillset".to_string()
+        })
+    }};
+}
+
+macro_rules! call_signal_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("signal", {
+            // Actual symbol call would go here
+            "Called signal".to_string()
+        })
+    }};
+}
+
+macro_rules! call_sigprocmask_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("sigprocmask", {
+            // Actual symbol call would go here
+            "Called sigprocmask".to_string()
+        })
+    }};
+}
+
+macro_rules! call_sigsetmask_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("sigsetmask", {
+            // Actual symbol call would go here
+            "Called sigsetmask".to_string()
+        })
+    }};
+}
+
+macro_rules! call_sigsuspend_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("sigsuspend", {
+            // Actual symbol call would go here
+            "Called sigsuspend".to_string()
+        })
+    }};
+}
+
+macro_rules! call_stat64_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("stat64", {
+            // Actual symbol call would go here
+            "Called stat64".to_string()
+        })
+    }};
+}
+
+macro_rules! call_stpcpy_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("stpcpy", {
+            // Actual symbol call would go here
+            "Called stpcpy".to_string()
+        })
+    }};
+}
+
+macro_rules! call_stpncpy_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("stpncpy", {
+            // Actual symbol call would go here
+            "Called stpncpy".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strcasecmp_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strcasecmp", {
+            // Actual symbol call would go here
+            "Called strcasecmp".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strchr_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strchr", {
+            // Actual symbol call would go here
+            "Called strchr".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strchrnul_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strchrnul", {
+            // Actual symbol call would go here
+            "Called strchrnul".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strcmp_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strcmp", {
+            // Actual symbol call would go here
+            "Called strcmp".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strcpy_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strcpy", {
+            // Actual symbol call would go here
+            "Called strcpy".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strcspn_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strcspn", {
+            // Actual symbol call would go here
+            "Called strcspn".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strdup_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strdup", {
+            // Actual symbol call would go here
+            "Called strdup".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strerror_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strerror", {
+            // Actual symbol call would go here
+            "Called strerror".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strlen_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strlen", {
+            // Actual symbol call would go here
+            "Called strlen".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strpbrk_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strpbrk", {
+            // Actual symbol call would go here
+            "Called strpbrk".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strsignal_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strsignal", {
+            // Actual symbol call would go here
+            "Called strsignal".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strspn_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strspn", {
+            // Actual symbol call would go here
+            "Called strspn".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strstr_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strstr", {
+            // Actual symbol call would go here
+            "Called strstr".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strtod_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strtod", {
+            // Actual symbol call would go here
+            "Called strtod".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strtoimax_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strtoimax", {
+            // Actual symbol call would go here
+            "Called strtoimax".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strtok_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strtok", {
+            // Actual symbol call would go here
+            "Called strtok".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strtol_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strtol", {
+            // Actual symbol call would go here
+            "Called strtol".to_string()
+        })
+    }};
+}
+
+macro_rules! call_strtoumax_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("strtoumax", {
+            // Actual symbol call would go here
+            "Called strtoumax".to_string()
+        })
+    }};
+}
+
+macro_rules! call_sysconf_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("sysconf", {
+            // Actual symbol call would go here
+            "Called sysconf".to_string()
+        })
+    }};
+}
+
+macro_rules! call_tcgetpgrp_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("tcgetpgrp", {
+            // Actual symbol call would go here
+            "Called tcgetpgrp".to_string()
+        })
+    }};
+}
+
+macro_rules! call_tcsetpgrp_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("tcsetpgrp", {
+            // Actual symbol call would go here
+            "Called tcsetpgrp".to_string()
+        })
+    }};
+}
+
+macro_rules! call_times_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("times", {
+            // Actual symbol call would go here
+            "Called times".to_string()
+        })
+    }};
+}
+
+macro_rules! call_umask_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("umask", {
+            // Actual symbol call would go here
+            "Called umask".to_string()
+        })
+    }};
+}
+
+macro_rules! call_vfork_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("vfork", {
+            // Actual symbol call would go here
+            "Called vfork".to_string()
+        })
+    }};
+}
+
+macro_rules! call_wait3_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("wait3", {
+            // Actual symbol call would go here
+            "Called wait3".to_string()
+        })
+    }};
+}
+
+macro_rules! call_write_wrapped {
+    ($($args:expr),*) => {{
+        call_telemetry!("write", {
+            // Actual symbol call would go here
+            "Called write".to_string()
+        })
+    }};
+}
+
 // Master initialization
 macro_rules! init_sh_wrappers {
     () => {{
         println!("🔧 Initializing wrappers for /bin/sh");
-        println!("📚 {} libraries, {} symbols", 2, 50);
+        println!("📚 {} libraries, {} symbols", 2, 89);
         println!("✅ sh ready!");
     }};
 }
