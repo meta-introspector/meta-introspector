@@ -101,9 +101,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let total_files = finder_handle.join().unwrap();
     
     // Monitor progress and save partial results
+    println!("\nMonitoring progress...");
     let mut last_saved = 0;
+    let mut last_processed = 0;
+    let mut stalled_count = 0;
+    
     loop {
-        thread::sleep(std::time::Duration::from_secs(5));
+        thread::sleep(std::time::Duration::from_secs(10));
         
         let symbols_count = results.lock().unwrap().len();
         let processed = *files_processed.lock().unwrap();
@@ -111,12 +115,24 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         println!("Status: {}/{} files processed, {} symbols extracted", 
                  processed, total_files, symbols_count);
         
+        // Check if stalled
+        if processed == last_processed {
+            stalled_count += 1;
+            if stalled_count >= 3 {
+                println!("WARNING: No progress for 30 seconds, assuming workers finished");
+                break;
+            }
+        } else {
+            stalled_count = 0;
+        }
+        last_processed = processed;
+        
         // Save partial results every 1000 new symbols
         if symbols_count - last_saved >= 1000 {
             let partial = results.lock().unwrap().clone();
             let json = serde_json::to_string_pretty(&partial)?;
             fs::write("markov_symbol_scores_partial.json", json)?;
-            println!("  → Saved partial results");
+            println!("  → Saved partial results ({} symbols)", symbols_count);
             last_saved = symbols_count;
         }
         
@@ -169,6 +185,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<SymbolScore>>>, 
           distributions: Arc<Mutex<Vec<FileDistribution>>>, files_processed: Arc<Mutex<usize>>) {
     let mut processed = 0;
+    println!("Worker {} started", worker_id);
+    
     while let Ok(path) = receiver.recv() {
         if let Ok((symbols, dist)) = analyze_file_with_distribution(&path, 32) {
             if let Ok(mut res) = results.lock() {
@@ -185,7 +203,8 @@ fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<S
             println!("Worker {}: {} files processed", worker_id, processed);
         }
     }
-    println!("Worker {} finished: {} files", worker_id, processed);
+    
+    println!("Worker {} finished: {} files processed (channel closed)", worker_id, processed);
 }
 
 fn find_elf_files(root: &str, limit: usize) -> Result<Vec<String>, Box<dyn std::error::Error>> {
