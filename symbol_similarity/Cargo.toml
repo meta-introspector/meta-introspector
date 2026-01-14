@@ -22,3 +22,7 @@ path = "src/label_mapper.rs"
 [[bin]]
 name = "fingerprint_decoder"
 path = "src/fingerprint_decoder.rs"
+
+[[bin]]
+name = "moonshine"
+path = "src/moonshine.rs"
