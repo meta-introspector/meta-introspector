@@ -33,3 +33,7 @@ path = "src/codec_extractor.rs"
 
 [dependencies.goblin]
 version = "0.8"
+
+[[bin]]
+name = "lmfdb_orbits"
+path = "src/lmfdb_orbits.rs"
