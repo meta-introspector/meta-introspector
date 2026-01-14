@@ -137,25 +137,31 @@ impl UnifiedNixService {
     async fn build_nix_flake(&self, flake_url: &str, outputs: &[String]) -> Result<NixBuildResult, Box<dyn std::error::Error>> {
         println!("🔥 Building nix flake: {}", flake_url);
         
-        let mut nix_cmd = Command::new("nix");
-        nix_cmd.args(&["build", "--json", "--no-link"]);
+        // Use canonical builder
+        use crate::nix_canonical_builder::{NixCanonicalBuilder, NixBuildRequest};
         
+        let mut args = vec!["build".to_string(), "--json".to_string(), "--no-link".to_string()];
         for output in outputs {
-            nix_cmd.arg(format!("{}#{}", flake_url, output));
+            args.push(format!("{}#{}", flake_url, output));
         }
         
-        let output = nix_cmd.output()?;
+        let builder = NixCanonicalBuilder::new();
+        let result = builder.build(NixBuildRequest {
+            args,
+            env: vec![],
+            working_dir: None,
+        }).map_err(|e| e.to_string())?;
         
-        if !output.status.success() {
-            return Err(format!("Nix build failed: {}", String::from_utf8_lossy(&output.stderr)).into());
+        if !result.success {
+            return Err(format!("Nix build failed: {}", result.stderr).into());
         }
 
-        let build_results: Vec<serde_json::Value> = serde_json::from_slice(&output.stdout)?;
+        let build_results: Vec<serde_json::Value> = serde_json::from_str(&result.stdout)?;
         let mut store_paths = Vec::new();
         let mut library_names = Vec::new();
 
-        for result in &build_results {
-            if let Some(path_str) = result["outputs"]["out"].as_str() {
+        for build_result in &build_results {
+            if let Some(path_str) = build_result["outputs"]["out"].as_str() {
                 let path = PathBuf::from(path_str);
                 store_paths.push(path.clone());
                 
