@@ -1,0 +1,89 @@
+% bott8_layout_example.dzn
+% Example data for 8D Bott manifold layout optimization
+
+num_nodes = 24;  % 3 nodes per type (3 × 8 = 24)
+
+% Node names
+node_names = [
+    "GPT4", "Claude", "Gemini",                    % LLMs (1-3)
+    "Alice", "Bob", "Carol",                       % Users (4-6)
+    "MolochDAO", "MetaCartel", "GitcoinDAO",      % DAOs (7-9)
+    "Ethereum", "Bitcoin", "Solana",               % Blockchains (10-12)
+    "Wikidata", "DBpedia", "YAGO",                % WikiData (13-15)
+    "OSM_EU", "OSM_US", "OSM_Asia",               % OSM (16-18)
+    "Twitter", "Mastodon", "Bluesky",             % Social (19-21)
+    "Mycelium_Core", "Mycelium_Edge1", "Mycelium_Edge2"  % Mycelium (22-24)
+];
+
+% Node capacity (arbitrary units, higher = more processing power)
+node_capacity = [
+    1000, 900, 950,      % LLMs: high capacity
+    100, 100, 100,       % Users: low capacity
+    500, 400, 450,       % DAOs: medium capacity
+    800, 900, 700,       % Blockchains: high capacity
+    600, 550, 500,       % WikiData: medium-high capacity
+    400, 400, 400,       % OSM: medium capacity
+    300, 250, 280,       % Social: medium-low capacity
+    1000, 800, 800       % Mycelium: high capacity (substrate)
+];
+
+% Node latency (milliseconds)
+node_latency = [
+    200, 150, 180,       % LLMs: moderate latency
+    50, 50, 50,          % Users: low latency
+    300, 350, 320,       % DAOs: high latency (consensus)
+    500, 600, 450,       % Blockchains: very high latency
+    100, 120, 110,       % WikiData: low latency
+    80, 80, 80,          % OSM: low latency
+    100, 90, 95,         % Social: low latency
+    10, 20, 20           % Mycelium: very low latency (substrate)
+];
+
+% Node reliability (0.0 - 1.0)
+node_reliability = [
+    0.99, 0.98, 0.97,    % LLMs: very reliable
+    0.80, 0.85, 0.82,    % Users: less reliable (human factor)
+    0.90, 0.88, 0.89,    % DAOs: reliable
+    0.95, 0.99, 0.93,    % Blockchains: very reliable
+    0.98, 0.97, 0.96,    % WikiData: very reliable
+    0.95, 0.95, 0.95,    % OSM: very reliable
+    0.85, 0.80, 0.83,    % Social: less reliable
+    0.99, 0.98, 0.98     % Mycelium: very reliable (substrate)
+];
+
+% Connection matrix (24×24, 1 = can connect, 0 = cannot)
+% For simplicity, allow all connections (full mesh)
+can_connect = array2d(1..24, 1..24, [
+    if i != j then 1 else 0 endif | i, j in 1..24
+]);
+
+% Type affinity matrix (8×8, how well types work together)
+% Higher = better synergy
+type_affinity = array2d(1..8, 1..8, [
+    % LLM  User  DAO  BC   Wiki OSM  Twit Myc
+    1.0,  0.9,  0.7, 0.6, 0.8, 0.5, 0.7, 0.9,  % LLM
+    0.9,  1.0,  0.8, 0.5, 0.7, 0.6, 0.9, 0.8,  % User
+    0.7,  0.8,  1.0, 0.9, 0.6, 0.5, 0.7, 0.8,  % DAO
+    0.6,  0.5,  0.9, 1.0, 0.5, 0.4, 0.6, 0.7,  % Blockchain
+    0.8,  0.7,  0.6, 0.5, 1.0, 0.8, 0.6, 0.9,  % WikiData
+    0.5,  0.6,  0.5, 0.4, 0.8, 1.0, 0.5, 0.7,  % OSM
+    0.7,  0.9,  0.7, 0.6, 0.6, 0.5, 1.0, 0.8,  % Twitter
+    0.9,  0.8,  0.8, 0.7, 0.9, 0.7, 0.8, 1.0   % Mycelium
+]);
+
+% Type dimension weights (8 types × 8 dimensions)
+% How important each dimension is for each type
+type_dim_weights = array2d(1..8, 1..8, [
+    % Real Cplx Quat Oct  Time Info Soc  Sem
+    0.8,  0.9,  0.7, 0.6, 0.5, 1.0, 0.6, 0.9,  % LLM: high info, semantic
+    0.9,  0.7,  0.5, 0.4, 0.8, 0.6, 1.0, 0.7,  % User: high real, social, time
+    0.6,  0.7,  0.8, 0.7, 0.6, 0.7, 0.9, 0.8,  % DAO: high social, quaternion
+    0.7,  0.8,  0.9, 0.8, 0.9, 0.8, 0.5, 0.6,  % Blockchain: high quat, oct, time
+    0.5,  0.6,  0.5, 0.4, 0.7, 0.9, 0.4, 1.0,  % WikiData: high info, semantic
+    0.9,  0.8,  0.7, 0.6, 0.6, 0.7, 0.5, 0.6,  % OSM: high real, complex (spatial)
+    0.8,  0.7,  0.5, 0.4, 0.9, 0.7, 1.0, 0.8,  % Twitter: high time, social, semantic
+    0.9,  0.9,  0.9, 0.9, 0.9, 0.9, 0.9, 0.9   % Mycelium: high all (substrate)
+]);
+
+% Target type distribution (3 of each type)
+target_type_count = [3, 3, 3, 3, 3, 3, 3, 3];
