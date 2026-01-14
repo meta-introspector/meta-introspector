@@ -1,0 +1,8 @@
+[package]
+name = "symbol_similarity"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+parquet = "53"
+[workspace]
