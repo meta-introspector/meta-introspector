@@ -1,0 +1,18 @@
+{
+  "coordinates_8d": {
+    "Real": 0,
+    "Complex": 0,
+    "Quaternion": -50,
+    "Octonion": -50,
+    "Time": 0,
+    "Information": 0,
+    "Social": 0,
+    "Semantic": 0
+  },
+  "raw_metrics": {},
+  "derived_metrics": {
+    "ipc": 0,
+    "cache_miss_rate": 0,
+    "branch_miss_rate": 0
+  }
+}

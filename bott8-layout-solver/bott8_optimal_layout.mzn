@@ -139,24 +139,8 @@ solve maximize objective;
 % --- Output ---
 
 output [
-    "% Optimal 8D Bott[8] Layout\n",
-    "% Objective: ", show(objective), "\n",
-    "% Total Affinity: ", show(total_affinity), "\n",
-    "% Total Reliability: ", show(total_reliability), "\n",
-    "% Total Distance Cost: ", show(total_distance_cost), "\n\n"
-] ++ [
-    "% Node ", show(n), ": ", node_names[n], " (", type_names[node_type[n]], ")\n",
-    "%   Position: [",
-    show(position[n,1]), ", ", show(position[n,2]), ", ", show(position[n,3]), ", ", 
-    show(position[n,4]), ", ", show(position[n,5]), ", ", show(position[n,6]), ", ", 
-    show(position[n,7]), ", ", show(position[n,8]), "]\n",
-    "%   Capacity: ", show(node_capacity[n]), 
-    ", Latency: ", show(node_latency[n]), 
-    ", Reliability: ", show(node_reliability[n]), "\n\n"
-    | n in 1..num_nodes
-] ++ [
-    "\n% Octant Distribution:\n"
-] ++ [
-    "% Octant ", show(oct), ": ", show(octant_count[oct]), " nodes\n"
-    | oct in 1..8
+    "Objective: ", show(objective), "\n",
+    "Total Affinity: ", show(total_affinity), "\n",
+    "Total Reliability: ", show(total_reliability), "\n",
+    "Total Distance Cost: ", show(total_distance_cost), "\n"
 ];

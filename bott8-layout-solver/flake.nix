@@ -76,7 +76,7 @@
           # Map to 8D
           echo ""
           echo "🌀 Mapping to 8D Bott manifold..."
-          PERF_8D="$OUTPUT_DIR/perf_$TIMESTAMP''_8d.json"
+          PERF_8D="$OUTPUT_DIR/perf_''${TIMESTAMP}_8d.json"
           ${pkgs.python3}/bin/python3 ./map_perf_to_8d.py \
             "$PERF_JSON" "$PERF_8D"
           
