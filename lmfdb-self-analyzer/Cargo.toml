@@ -60,6 +60,14 @@ name = "rust_perf_decoder"
 path = "../rust_perf_decoder.rs"
 
 [[bin]]
+name = "find_divergence"
+path = "src/bin/find_divergence.rs"
+
+[[bin]]
+name = "find_unique_instructions"
+path = "src/bin/find_unique_instructions.rs"
+
+[[bin]]
 name = "find_word_sequences"
 path = "src/bin/find_word_sequences.rs"
 
