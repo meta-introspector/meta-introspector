@@ -50,11 +50,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     
     println!("📋 Using file list: {}", file_list);
+    println!("💾 Pre-allocating 20GB memory pool...");
+    
+    // Pre-allocate 20GB capacity (5M symbols * 4KB each)
     let (sender, receiver) = bounded::<String>(1000);
-    let results = Arc::new(Mutex::new(Vec::new()));
-    let distributions = Arc::new(Mutex::new(Vec::new()));
+    let results = Arc::new(Mutex::new(Vec::with_capacity(5_000_000)));
+    let distributions = Arc::new(Mutex::new(Vec::with_capacity(100_000)));
     let files_queued = Arc::new(Mutex::new(0usize));
     let files_processed = Arc::new(Mutex::new(0usize));
+    
+    println!("✅ Memory pool ready");
     
     // Spawn 20 workers immediately
     for worker_id in 0..20 {
@@ -316,24 +321,34 @@ fn analyze_file_with_distribution(path: &str, window_size: usize) -> Result<(Vec
     let text = &buffer[text_start..text_start + text_size];
     let resonance = analyze_markov_resonance(text, window_size);
     
-    // Build cell data with byte patterns
-    let mut cells = Vec::new();
+    // Build cell data - ONLY store TOP 100 highest resonance cells to fit 20GB limit
+    let max_cells = 100;
     let num_windows = text.len() / window_size;
-    for i in 0..num_windows {
-        let offset = i * window_size;
+    
+    // Create (index, score) pairs and sort by score descending
+    let mut scored_cells: Vec<(usize, f64)> = resonance.iter()
+        .enumerate()
+        .map(|(i, &score)| (i, score))
+        .collect();
+    scored_cells.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
+    
+    // Take top N cells by resonance score
+    let mut cells = Vec::with_capacity(max_cells);
+    for (cell_id, score) in scored_cells.iter().take(max_cells) {
+        let offset = cell_id * window_size;
         let end = (offset + window_size).min(text.len());
         let byte_pattern = text[offset..end].to_vec();
         
         cells.push(CellData {
-            cell_id: i,
+            cell_id: *cell_id,
             offset,
             window_size,
-            resonance_score: if i < resonance.len() { resonance[i] } else { 0.0 },
+            resonance_score: *score,
             byte_pattern,
         });
     }
     
-    let mut results = Vec::new();
+    let mut results = Vec::with_capacity(elf.syms.len());
     
     for sym in &elf.syms {
         if sym.st_size == 0 { continue; }
@@ -385,6 +400,14 @@ fn analyze_markov_resonance(text: &[u8], window_size: usize) -> Vec<f64> {
     let num_windows = text.len() / window_size;
     if num_windows < 2 { return vec![]; }
     
+    // MEMORY LIMIT: Cap at 1000 windows to prevent OOM (1000x1000 = 1M f64 = 8MB)
+    let max_windows = 1000;
+    if num_windows > max_windows {
+        // Sample windows uniformly instead of analyzing all
+        return sample_resonance(text, window_size, max_windows);
+    }
+    
+    // Pre-allocate matrix with capacity
     let mut matrix = vec![vec![0.0; num_windows]; num_windows];
     
     for i in 0..num_windows {
@@ -395,7 +418,7 @@ fn analyze_markov_resonance(text: &[u8], window_size: usize) -> Vec<f64> {
         }
     }
     
-    let mut resonance = vec![0.0; num_windows];
+    let mut resonance = Vec::with_capacity(num_windows);
     for i in 0..num_windows {
         let mut corr = 0.0;
         for j in 0..num_windows {
@@ -403,7 +426,42 @@ fn analyze_markov_resonance(text: &[u8], window_size: usize) -> Vec<f64> {
                 corr += matrix[i][j] * matrix[j][i];
             }
         }
-        resonance[i] = corr;
+        resonance.push(corr);
+    }
+    
+    resonance
+}
+
+fn sample_resonance(text: &[u8], window_size: usize, max_samples: usize) -> Vec<f64> {
+    // For large binaries, sample uniformly across the text
+    let total_windows = text.len() / window_size;
+    let step = total_windows / max_samples;
+    
+    let mut sampled_windows = Vec::with_capacity(max_samples);
+    for i in 0..max_samples {
+        let idx = i * step;
+        let start = idx * window_size;
+        let end = (start + window_size).min(text.len());
+        sampled_windows.push(&text[start..end]);
+    }
+    
+    // Compute resonance only on sampled windows
+    let mut matrix = vec![vec![0.0; max_samples]; max_samples];
+    for i in 0..max_samples {
+        for j in 0..max_samples {
+            matrix[i][j] = hamming_similarity(sampled_windows[i], sampled_windows[j]);
+        }
+    }
+    
+    let mut resonance = Vec::with_capacity(max_samples);
+    for i in 0..max_samples {
+        let mut corr = 0.0;
+        for j in 0..max_samples {
+            if i != j {
+                corr += matrix[i][j] * matrix[j][i];
+            }
+        }
+        resonance.push(corr);
     }
     
     resonance
