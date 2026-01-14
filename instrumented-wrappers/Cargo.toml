@@ -1,0 +1,15 @@
+[package]
+name = "instrumented-wrappers"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+libc = "0.2"
+hex = "0.4"
+paste = "1.0"
+
+[build-dependencies]
+goblin = "0.8"

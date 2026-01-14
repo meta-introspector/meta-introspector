@@ -7,6 +7,42 @@ edition = "2021"
 name = "meta_introspector"
 path = "src/lib.rs"
 
+[[bin]]
+name = "rust_perf_decoder"
+path = "rust_perf_decoder.rs"
+
+[[bin]]
+name = "binary_symbol_study"
+path = "binary_symbol_study.rs"
+
+[[bin]]
+name = "markov_instruction_sampler"
+path = "markov_instruction_sampler.rs"
+
+[[bin]]
+name = "name_instruction_mapper"
+path = "name_instruction_mapper.rs"
+
+[[bin]]
+name = "lmfdb_instruction_classifier"
+path = "lmfdb_instruction_classifier.rs"
+
+[[bin]]
+name = "lmfdb_function_composer"
+path = "lmfdb_function_composer.rs"
+
+[[bin]]
+name = "nix2parquet"
+path = "nix2parquet.rs"
+
+[[bin]]
+name = "universal_instruction_decoder"
+path = "universal_instruction_decoder.rs"
+
+[[bin]]
+name = "setup_perf_probes"
+path = "setup_perf_probes.rs"
+
 [dependencies]
 libc = "0.2"
 serde = { version = "1.0", features = ["derive"] }
@@ -23,6 +59,11 @@ tar = "0.4"
 serde_json = "1.0"
 rustc-demangle = "0.1"
 cpp_demangle = "0.4"
+linux-perf-data = "0.8"
+anyhow = "1.0"
+parquet = "53.3"
+arrow = "53.3"
+capstone = "0.12"
 
 [build-dependencies]
 serde = { version = "1.0", features = ["derive"] }
