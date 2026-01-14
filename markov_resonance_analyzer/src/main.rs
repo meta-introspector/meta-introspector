@@ -6,13 +6,24 @@ use std::sync::{Arc, Mutex};
 use crossbeam::channel::{bounded, Receiver, Sender};
 use std::thread;
 use serde::{Serialize, Deserialize};
+use std::env;
 
 #[derive(Clone, Serialize, Deserialize)]
 struct SymbolScore {
     name: String,
     file: String,
     cell: usize,
+    cell_offset: usize,
     score: f64,
+}
+
+#[derive(Clone, Serialize, Deserialize)]
+struct CellData {
+    cell_id: usize,
+    offset: usize,
+    window_size: usize,
+    resonance_score: f64,
+    byte_pattern: Vec<u8>,
 }
 
 #[derive(Clone, Serialize, Deserialize)]
@@ -21,6 +32,7 @@ struct FileDistribution {
     window_size: usize,
     num_windows: usize,
     resonance_vector: Vec<f64>,
+    cells: Vec<CellData>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -30,6 +42,14 @@ struct GlobalMatrix {
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let args: Vec<String> = env::args().collect();
+    let file_list = if args.len() > 1 {
+        args[1].clone()
+    } else {
+        "elf_files_list.txt".to_string()
+    };
+    
+    println!("📋 Using file list: {}", file_list);
     let (sender, receiver) = bounded::<String>(1000);
     let results = Arc::new(Mutex::new(Vec::new()));
     let distributions = Arc::new(Mutex::new(Vec::new()));
@@ -53,16 +73,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Spawn finder thread that streams files to workers
     let finder_handle = thread::spawn(move || {
-        let cache_file = "elf_files_list.txt";
+        let cache_file = file_list;
         
-        if !Path::new(cache_file).exists() {
+        if !Path::new(&cache_file).exists() {
             eprintln!("ERROR: File list not found: {}", cache_file);
             eprintln!("Please run: find /nix/store -type f \\( -name \"*.so\" -o -executable \\) > {}", cache_file);
             std::process::exit(1);
         }
         
         println!("📂 Loading file list from: {}", cache_file);
-        let cached = fs::read_to_string(cache_file).expect("Failed to read file list");
+        let cached = fs::read_to_string(&cache_file).expect("Failed to read file list");
         let lines: Vec<&str> = cached.lines().collect();
         let count = lines.len();
         
@@ -188,28 +208,56 @@ fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<S
     let mut processed = 0;
     println!("🔧 Worker {} started", worker_id);
     
-    while let Ok(path) = receiver.recv() {
-        if processed % 50 == 0 && processed > 0 {
-            println!("Worker {}: Processing {}", worker_id, path);
-        }
-        
-        if let Ok((symbols, dist)) = analyze_file_with_distribution(&path, 32) {
-            if let Ok(mut res) = results.lock() {
-                res.extend(symbols);
+    loop {
+        match receiver.recv() {
+            Ok(path) => {
+                if processed % 50 == 0 && processed > 0 {
+                    println!("Worker {}: Processing {}", worker_id, path);
+                }
+                
+                match analyze_file_with_distribution(&path, 32) {
+                    Ok((symbols, dist)) => {
+                        let sym_count = symbols.len();
+                        
+                        match results.lock() {
+                            Ok(mut res) => {
+                                res.extend(symbols);
+                            }
+                            Err(e) => {
+                                eprintln!("Worker {}: Failed to lock results: {}", worker_id, e);
+                            }
+                        }
+                        
+                        match distributions.lock() {
+                            Ok(mut dists) => {
+                                dists.push(dist);
+                            }
+                            Err(e) => {
+                                eprintln!("Worker {}: Failed to lock distributions: {}", worker_id, e);
+                            }
+                        }
+                        
+                        processed += 1;
+                        *files_processed.lock().unwrap() += 1;
+                        
+                        if processed % 100 == 0 {
+                            println!("Worker {}: {} files processed, {} symbols from last file", 
+                                     worker_id, processed, sym_count);
+                        }
+                    }
+                    Err(e) => {
+                        eprintln!("Worker {}: Error analyzing {}: {}", worker_id, path, e);
+                        processed += 1;
+                        *files_processed.lock().unwrap() += 1;
+                    }
+                }
             }
-            if let Ok(mut dists) = distributions.lock() {
-                dists.push(dist);
+            Err(_) => {
+                println!("✅ Worker {} finished: {} files processed (channel closed)", worker_id, processed);
+                break;
             }
-        }
-        processed += 1;
-        *files_processed.lock().unwrap() += 1;
-        
-        if processed % 100 == 0 {
-            println!("Worker {}: {} files processed", worker_id, processed);
         }
     }
-    
-    println!("✅ Worker {} finished: {} files processed (channel closed)", worker_id, processed);
 }
 
 fn find_elf_files(root: &str, limit: usize) -> Result<Vec<String>, Box<dyn std::error::Error>> {
@@ -262,10 +310,28 @@ fn analyze_file_with_distribution(path: &str, window_size: usize) -> Result<(Vec
         window_size,
         num_windows: 0,
         resonance_vector: vec![],
+        cells: vec![],
     })); }
     
     let text = &buffer[text_start..text_start + text_size];
     let resonance = analyze_markov_resonance(text, window_size);
+    
+    // Build cell data with byte patterns
+    let mut cells = Vec::new();
+    let num_windows = text.len() / window_size;
+    for i in 0..num_windows {
+        let offset = i * window_size;
+        let end = (offset + window_size).min(text.len());
+        let byte_pattern = text[offset..end].to_vec();
+        
+        cells.push(CellData {
+            cell_id: i,
+            offset,
+            window_size,
+            resonance_score: if i < resonance.len() { resonance[i] } else { 0.0 },
+            byte_pattern,
+        });
+    }
     
     let mut results = Vec::new();
     
@@ -287,6 +353,7 @@ fn analyze_file_with_distribution(path: &str, window_size: usize) -> Result<(Vec
             name,
             file: path.to_string(),
             cell,
+            cell_offset: relative_offset,
             score: resonance[cell],
         });
     }
@@ -296,6 +363,7 @@ fn analyze_file_with_distribution(path: &str, window_size: usize) -> Result<(Vec
         window_size,
         num_windows: resonance.len(),
         resonance_vector: resonance,
+        cells,
     };
     
     Ok((results, distribution))

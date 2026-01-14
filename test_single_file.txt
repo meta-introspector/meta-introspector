@@ -1,0 +1,1 @@
+/nix/store/9v5d40jyvmwgnq1nj8f19ji2rcc5dksd-glibc-2.37-45/lib/gconv/IBM5347.so
