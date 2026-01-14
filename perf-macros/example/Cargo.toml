@@ -1,0 +1,8 @@
+[package]
+name = "perf-macros-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+perf-macros = { path = "../perf-macros" }
+perf-runtime = { path = "../perf-runtime" }
