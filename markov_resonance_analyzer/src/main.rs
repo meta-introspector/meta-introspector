@@ -3,10 +3,16 @@ use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 use std::sync::{Arc, Mutex};
+use std::sync::atomic::{AtomicUsize, Ordering};
 use crossbeam::channel::{bounded, Receiver, Sender};
 use std::thread;
 use serde::{Serialize, Deserialize};
 use std::env;
+
+// Shared memory budget tracker (20GB = 20 * 1024^3 bytes)
+const MEMORY_BUDGET_BYTES: usize = 20 * 1024 * 1024 * 1024;
+const MAX_CELLS_PER_FILE: usize = 100;
+const CELL_SIZE_ESTIMATE: usize = 64; // 32 bytes window + overhead
 
 #[derive(Clone, Serialize, Deserialize)]
 struct SymbolScore {
@@ -50,16 +56,20 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     
     println!("📋 Using file list: {}", file_list);
-    println!("💾 Pre-allocating 20GB memory pool...");
+    println!("💾 Pre-allocating 20GB shared memory pool...");
     
-    // Pre-allocate 20GB capacity (5M symbols * 4KB each)
+    // Shared memory budget tracker - all workers share this
+    let memory_used = Arc::new(AtomicUsize::new(0));
+    
+    // Pre-allocate collections with capacity
     let (sender, receiver) = bounded::<String>(1000);
     let results = Arc::new(Mutex::new(Vec::with_capacity(5_000_000)));
     let distributions = Arc::new(Mutex::new(Vec::with_capacity(100_000)));
     let files_queued = Arc::new(Mutex::new(0usize));
     let files_processed = Arc::new(Mutex::new(0usize));
+    let files_skipped = Arc::new(AtomicUsize::new(0));
     
-    println!("✅ Memory pool ready");
+    println!("✅ Memory pool ready (20GB budget shared across 20 workers)");
     
     // Spawn 20 workers immediately
     for worker_id in 0..20 {
@@ -67,9 +77,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let results_clone = Arc::clone(&results);
         let distributions_clone = Arc::clone(&distributions);
         let processed_clone = Arc::clone(&files_processed);
+        let memory_clone = Arc::clone(&memory_used);
+        let skipped_clone = Arc::clone(&files_skipped);
         
         thread::spawn(move || {
-            worker(worker_id, rx, results_clone, distributions_clone, processed_clone);
+            worker(worker_id, rx, results_clone, distributions_clone, 
+                   processed_clone, memory_clone, skipped_clone);
         });
     }
     
@@ -136,10 +149,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         let symbols_count = results.lock().unwrap().len();
         let processed = *files_processed.lock().unwrap();
+        let skipped = files_skipped.load(Ordering::Relaxed);
+        let mem_used = memory_used.load(Ordering::Relaxed);
+        let mem_gb = mem_used as f64 / (1024.0 * 1024.0 * 1024.0);
         let percent = (processed as f64 / total_files as f64 * 100.0) as u32;
         
-        println!("📈 Progress: {}/{} files ({}%), {} symbols extracted", 
-                 processed, total_files, percent, symbols_count);
+        println!("📈 Progress: {}/{} files ({}%), {} symbols, {:.2}GB used, {} skipped", 
+                 processed, total_files, percent, symbols_count, mem_gb, skipped);
         
         // Check if stalled
         if processed == last_processed {
@@ -171,8 +187,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     let all_symbols = results.lock().unwrap().clone();
     let all_distributions = distributions.lock().unwrap().clone();
-    println!("\nTotal symbols extracted: {} from {} files\n", all_symbols.len(), total_files);
-    println!("Total distributions: {}\n", all_distributions.len());
+    let final_mem = memory_used.load(Ordering::Relaxed);
+    let final_skipped = files_skipped.load(Ordering::Relaxed);
+    
+    println!("\nTotal symbols extracted: {} from {} files", all_symbols.len(), total_files);
+    println!("Total distributions: {}", all_distributions.len());
+    println!("Memory used: {:.2}GB / 20GB", final_mem as f64 / (1024.0 * 1024.0 * 1024.0));
+    println!("Files skipped (budget exceeded): {}\n", final_skipped);
     
     // Save final JSON
     let json = serde_json::to_string_pretty(&all_symbols)?;
@@ -208,8 +229,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<SymbolScore>>>, 
-          distributions: Arc<Mutex<Vec<FileDistribution>>>, files_processed: Arc<Mutex<usize>>) {
+fn worker(worker_id: usize, receiver: Receiver<String>, 
+          results: Arc<Mutex<Vec<SymbolScore>>>, 
+          distributions: Arc<Mutex<Vec<FileDistribution>>>, 
+          files_processed: Arc<Mutex<usize>>,
+          memory_used: Arc<AtomicUsize>,
+          files_skipped: Arc<AtomicUsize>) {
     let mut processed = 0;
     println!("🔧 Worker {} started", worker_id);
     
@@ -220,9 +245,30 @@ fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<S
                     println!("Worker {}: Processing {}", worker_id, path);
                 }
                 
+                // Check memory budget before processing
+                let current_mem = memory_used.load(Ordering::Relaxed);
+                if current_mem >= MEMORY_BUDGET_BYTES {
+                    files_skipped.fetch_add(1, Ordering::Relaxed);
+                    processed += 1;
+                    *files_processed.lock().unwrap() += 1;
+                    if processed % 100 == 0 {
+                        println!("Worker {}: Skipping {} (memory budget exceeded)", worker_id, path);
+                    }
+                    continue;
+                }
+                
                 match analyze_file_with_distribution(&path, 32) {
                     Ok((symbols, dist)) => {
                         let sym_count = symbols.len();
+                        
+                        // Estimate memory used by this file's data
+                        let symbols_bytes = sym_count * std::mem::size_of::<SymbolScore>();
+                        let cells_bytes = dist.cells.len() * (CELL_SIZE_ESTIMATE + dist.window_size);
+                        let resonance_bytes = dist.resonance_vector.len() * 8;
+                        let total_bytes = symbols_bytes + cells_bytes + resonance_bytes;
+                        
+                        // Atomically add to memory counter
+                        memory_used.fetch_add(total_bytes, Ordering::Relaxed);
                         
                         match results.lock() {
                             Ok(mut res) => {
@@ -246,8 +292,9 @@ fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<S
                         *files_processed.lock().unwrap() += 1;
                         
                         if processed % 100 == 0 {
-                            println!("Worker {}: {} files processed, {} symbols from last file", 
-                                     worker_id, processed, sym_count);
+                            let mem_mb = memory_used.load(Ordering::Relaxed) as f64 / (1024.0 * 1024.0);
+                            println!("Worker {}: {} files, {} symbols, {:.1}MB used", 
+                                     worker_id, processed, sym_count, mem_mb);
                         }
                     }
                     Err(e) => {
