@@ -8,6 +8,13 @@ use crossbeam::channel::{bounded, Receiver, Sender};
 use std::thread;
 use serde::{Serialize, Deserialize};
 use std::env;
+use parquet::file::properties::WriterProperties;
+use parquet::file::writer::SerializedFileWriter;
+use parquet::schema::parser::parse_message_type;
+use arrow::array::{StringArray, UInt64Array, Float64Array};
+use arrow::record_batch::RecordBatch;
+use parquet::arrow::ArrowWriter;
+use std::sync::Arc as ArrowArc;
 
 // Shared memory budget tracker (20GB = 20 * 1024^3 bytes)
 const MEMORY_BUDGET_BYTES: usize = 20 * 1024 * 1024 * 1024;
@@ -226,6 +233,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mapping_json = serde_json::to_string_pretty(&file_mapping)?;
     fs::write("markov_file_index_mapping.json", mapping_json)?;
     println!("✓ Saved file index mapping ({} files)", file_mapping.len());
+    
+    // Save symbols as Parquet (much faster to load than JSON)
+    println!("💾 Saving symbols as Parquet...");
+    save_symbols_parquet(&all_symbols)?;
+    println!("✓ Saved symbols to markov_symbol_scores.parquet");
     
     // Compute global similarity matrix in parallel
     println!("\nComputing global distribution similarity matrix with {} workers...", num_workers);
@@ -567,4 +579,45 @@ fn sample_resonance(text: &[u8], window_size: usize, max_samples: usize) -> Vec<
 fn hamming_similarity(a: &[u8], b: &[u8]) -> f64 {
     let matches = a.iter().zip(b.iter()).filter(|(x, y)| x == y).count();
     matches as f64 / a.len() as f64
+}
+
+fn save_symbols_parquet(symbols: &[SymbolScore]) -> Result<(), Box<dyn std::error::Error>> {
+    use arrow::datatypes::{DataType, Field, Schema};
+    
+    let schema = ArrowArc::new(Schema::new(vec![
+        Field::new("name", DataType::Utf8, false),
+        Field::new("file", DataType::Utf8, false),
+        Field::new("cell", DataType::UInt64, false),
+        Field::new("cell_offset", DataType::UInt64, false),
+        Field::new("score", DataType::Float64, false),
+    ]));
+    
+    let file = fs::File::create("markov_symbol_scores.parquet")?;
+    let mut writer = ArrowWriter::try_new(file, schema.clone(), None)?;
+    
+    // Write in batches of 100k rows
+    let batch_size = 100_000;
+    for chunk in symbols.chunks(batch_size) {
+        let names: Vec<&str> = chunk.iter().map(|s| s.name.as_str()).collect();
+        let files: Vec<&str> = chunk.iter().map(|s| s.file.as_str()).collect();
+        let cells: Vec<u64> = chunk.iter().map(|s| s.cell as u64).collect();
+        let offsets: Vec<u64> = chunk.iter().map(|s| s.cell_offset as u64).collect();
+        let scores: Vec<f64> = chunk.iter().map(|s| s.score).collect();
+        
+        let batch = RecordBatch::try_new(
+            schema.clone(),
+            vec![
+                ArrowArc::new(StringArray::from(names)),
+                ArrowArc::new(StringArray::from(files)),
+                ArrowArc::new(UInt64Array::from(cells)),
+                ArrowArc::new(UInt64Array::from(offsets)),
+                ArrowArc::new(Float64Array::from(scores)),
+            ],
+        )?;
+        
+        writer.write(&batch)?;
+    }
+    
+    writer.close()?;
+    Ok(())
 }
