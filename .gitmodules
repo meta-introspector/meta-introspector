@@ -1,3 +1,18 @@
-[submodule "submodules/solfunmeme-introspector"]
-	path = submodules/solfunmeme-introspector
-	url = https://github.com/meta-introspector/solfunmeme-introspector
+[submodule "data-markov-analysis"]
+	path = data-markov-analysis
+	url = ./data-markov-analysis
+[submodule "data-eigenvectors"]
+	path = data-eigenvectors
+	url = ./data-eigenvectors
+[submodule "data-moonshine"]
+	path = data-moonshine
+	url = ./data-moonshine
+[submodule "data-blockchain"]
+	path = data-blockchain
+	url = ./data-blockchain
+[submodule "data-telemetry"]
+	path = data-telemetry
+	url = ./data-telemetry
+[submodule "data-const71"]
+	path = data-const71
+	url = ./data-const71
