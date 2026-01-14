@@ -26,3 +26,10 @@ path = "src/fingerprint_decoder.rs"
 [[bin]]
 name = "moonshine"
 path = "src/moonshine.rs"
+
+[[bin]]
+name = "codec_extractor"
+path = "src/codec_extractor.rs"
+
+[dependencies.goblin]
+version = "0.8"
