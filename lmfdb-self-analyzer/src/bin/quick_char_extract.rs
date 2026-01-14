@@ -4,11 +4,22 @@ use std::collections::HashMap;
 use std::fs;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let path = "/nix/store/1mi8g663wg72aibci7wl1whfyd21pgp0-openssl-3.0.9/lib/libssl.so";
+    // Use rustc - it has keyword parsing!
+    let path = std::env::args().nth(1)
+        .unwrap_or_else(|| "/nix/store/*/lib/librustc_driver*.so".to_string());
     
-    println!("🔍 Extracting characters from: {}\n", path);
+    let actual_path = if path.contains('*') {
+        glob::glob(&path).ok()
+            .and_then(|mut g| g.next())
+            .and_then(|r| r.ok())
+            .expect("No rustc_driver found")
+    } else {
+        std::path::PathBuf::from(path)
+    };
     
-    let binary_data = fs::read(path)?;
+    println!("🔍 Extracting characters from: {}\n", actual_path.display());
+    
+    let binary_data = fs::read(&actual_path)?;
     let elf = Elf::parse(&binary_data)?;
     
     let text_section = elf.section_headers.iter()

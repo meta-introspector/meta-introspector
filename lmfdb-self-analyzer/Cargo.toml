@@ -71,6 +71,10 @@ path = "src/bin/inspect_parquet.rs"
 name = "quick_char_extract"
 path = "src/bin/quick_char_extract.rs"
 
+[[bin]]
+name = "label_known_functions"
+path = "src/bin/label_known_functions.rs"
+
 [dependencies]
 lmfdb-rust-mapping = { path = "../lmfdb-rust-mapping" }
 serde = { version = "1.0", features = ["derive"] }
