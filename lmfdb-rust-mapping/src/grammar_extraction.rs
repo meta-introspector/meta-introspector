@@ -47,12 +47,12 @@ impl GrammarExtractor {
         let mut states = Vec::new();
         let mut state_map: HashMap<u64, DFAState> = HashMap::new();
         
-        // Scan for state transition patterns
+        // Scan for state transition patterns - looking for character checks
         for window in func_bytes.windows(4) {
             // Pattern: cmp + jmp = state transition
             if self.is_transition_pattern(window) {
                 let state_id = self.compute_state_id(window);
-                let char_check = window[1]; // Character being checked
+                let char_check = window[1]; // THE ACTUAL CHARACTER BEING CHECKED
                 let next_state = self.compute_next_state(&window[2..]);
                 
                 state_map.entry(state_id)
