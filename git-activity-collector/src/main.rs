@@ -313,10 +313,10 @@ impl YearlyGitActivity {
         format!(
             "# Git Activity Report - Year {}\n\n\
              ## Executive Summary\n\
-             - **Total Commits**: {:,}\n\
+             - **Total Commits**: {}\n\
              - **Active Repositories**: {}\n\
-             - **Lines Added**: {:,}\n\
-             - **Lines Removed**: {:,}\n\n\
+             - **Lines Added**: {}\n\
+             - **Lines Removed**: {}\n\n\
              ## Top 10 Projects\n{}\n\n\
              ## Technologies Used\n{}\n",
             self.year,
@@ -346,7 +346,7 @@ impl YearlyGitActivity {
         
         techs.iter()
             .map(|(name, stats)| format!(
-                "- **{}**: {} commits, {:,} lines\n",
+                "- **{}**: {} commits, {} lines\n",
                 name, stats.commits, stats.lines
             ))
             .collect::<Vec<_>>()

@@ -8,6 +8,8 @@ members = [
     "nixso2wrap",
     "rust-telemetry-driver",
     "instrumented-wrappers",
+    "git-activity-collector",
+    "flake-71-perf-collector",
 ]
 resolver = "2"
 
