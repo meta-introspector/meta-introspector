@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Uniswap_V3_Router",
+    "address": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+    "tvl": 4000000000
+  },
+  {
+    "name": "Aave_V3_Pool",
+    "address": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
+    "tvl": 6000000000
+  },
+  {
+    "name": "Curve_3pool",
+    "address": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+    "tvl": 2000000000
+  },
+  {
+    "name": "MakerDAO_DAI",
+    "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "tvl": 5000000000
+  },
+  {
+    "name": "Compound_cETH",
+    "address": "0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5",
+    "tvl": 1500000000
+  },
+  {
+    "name": "Lido_stETH",
+    "address": "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+    "tvl": 20000000000
+  },
+  {
+    "name": "Uniswap_V2_Router",
+    "address": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+    "tvl": 3000000000
+  },
+  {
+    "name": "SushiSwap_Router",
+    "address": "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F",
+    "tvl": 800000000
+  },
+  {
+    "name": "Balancer_Vault",
+    "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    "tvl": 1200000000
+  },
+  {
+    "name": "1inch_Router",
+    "address": "0x1111111254EEB25477B68fb85Ed929f73A960582",
+    "tvl": 500000000
+  }
+]

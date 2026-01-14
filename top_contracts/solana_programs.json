@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Serum_DEX",
+    "address": "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin",
+    "tvl": 500000000
+  },
+  {
+    "name": "Raydium_AMM",
+    "address": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+    "tvl": 800000000
+  },
+  {
+    "name": "Orca_Whirlpool",
+    "address": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+    "tvl": 300000000
+  },
+  {
+    "name": "Marinade_Finance",
+    "address": "MarBmsSgKXdrN1egZf5sqe1TMai9K1rChYNDJgjq7aD",
+    "tvl": 400000000
+  },
+  {
+    "name": "Jupiter_Aggregator",
+    "address": "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+    "tvl": 200000000
+  },
+  {
+    "name": "Solend_Protocol",
+    "address": "So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo",
+    "tvl": 150000000
+  },
+  {
+    "name": "Mango_Markets",
+    "address": "mv3ekLzLbnVPNxjSKvqBpU3ZeZXPQdEC3bp5MDEBG68",
+    "tvl": 100000000
+  },
+  {
+    "name": "Saber_StableSwap",
+    "address": "SSwpkEEcbUqx4vtoEByFjSkhKdCT862DNVb52nZg1UZ",
+    "tvl": 120000000
+  },
+  {
+    "name": "Drift_Protocol",
+    "address": "dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH",
+    "tvl": 80000000
+  },
+  {
+    "name": "Phoenix_DEX",
+    "address": "PhoeNiXZ8ByJGLkxNfZRnkUfjvmuYqLR89jjFHGqdXY",
+    "tvl": 50000000
+  }
+]

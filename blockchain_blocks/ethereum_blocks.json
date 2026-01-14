@@ -1,0 +1,42 @@
+[
+  {
+    "number": 18900000,
+    "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "timestamp": 1705234800,
+    "transactions": 150,
+    "gas_used": 15000000,
+    "base_fee": 20000000000
+  },
+  {
+    "number": 18900001,
+    "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "timestamp": 1705234812,
+    "transactions": 160,
+    "gas_used": 16000000,
+    "base_fee": 21000000000
+  },
+  {
+    "number": 18900002,
+    "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "timestamp": 1705234824,
+    "transactions": 170,
+    "gas_used": 17000000,
+    "base_fee": 22000000000
+  },
+  {
+    "number": 18900003,
+    "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "timestamp": 1705234836,
+    "transactions": 180,
+    "gas_used": 18000000,
+    "base_fee": 23000000000
+  },
+  {
+    "number": 18900004,
+    "hash": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "timestamp": 1705234848,
+    "transactions": 190,
+    "gas_used": 19000000,
+    "base_fee": 24000000000
+  }
+]

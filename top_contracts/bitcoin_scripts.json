@@ -1,0 +1,50 @@
+[
+  {
+    "name": "P2PKH",
+    "type": "Pay-to-PubKey-Hash",
+    "usage": 40000000,
+    "market_cap": 850000000000
+  },
+  {
+    "name": "P2SH",
+    "type": "Pay-to-Script-Hash",
+    "usage": 30000000,
+    "market_cap": 850000000000
+  },
+  {
+    "name": "P2WPKH",
+    "type": "SegWit v0",
+    "usage": 50000000,
+    "market_cap": 850000000000
+  },
+  {
+    "name": "P2WSH",
+    "type": "SegWit Script",
+    "usage": 5000000,
+    "market_cap": 850000000000
+  },
+  {
+    "name": "P2TR",
+    "type": "Taproot",
+    "usage": 10000000,
+    "market_cap": 850000000000
+  },
+  {
+    "name": "Multisig_2of3",
+    "type": "Multisig",
+    "usage": 2000000,
+    "market_cap": 850000000000
+  },
+  {
+    "name": "Lightning_HTLC",
+    "type": "Lightning",
+    "usage": 1000000,
+    "market_cap": 850000000000
+  },
+  {
+    "name": "Timelock",
+    "type": "CLTV/CSV",
+    "usage": 500000,
+    "market_cap": 850000000000
+  }
+]
