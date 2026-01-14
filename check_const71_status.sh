@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "📊 Const x=71 Build Status"
+echo "=========================="
+echo ""
+echo "Processes:"
+ps aux | grep -E "(build_and_analyze|nix build)" | grep -v grep | awk '{print "  " $2 " " $11 " " $12 " " $13}'
+echo ""
+echo "Latest log (last 10 lines):"
+tail -10 const71_build_full.log 2>/dev/null || echo "  No log yet"
+echo ""
+echo "Binaries created:"
+ls -lh const_71_analysis/binary_* 2>/dev/null || echo "  None yet"
+echo ""
+echo "Nix store results:"
+ls -d const_71_test/*/result 2>/dev/null || echo "  None yet"
