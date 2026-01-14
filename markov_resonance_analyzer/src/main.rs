@@ -61,6 +61,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Shared memory budget tracker - all workers share this
     let memory_used = Arc::new(AtomicUsize::new(0));
     
+    // Use 2x CPU cores for I/O bound workload
+    let num_workers = num_cpus::get() * 2;
+    
     // Pre-allocate collections with capacity
     let (sender, receiver) = bounded::<String>(1000);
     let results = Arc::new(Mutex::new(Vec::with_capacity(5_000_000)));
@@ -69,11 +72,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let files_processed = Arc::new(Mutex::new(0usize));
     let files_skipped = Arc::new(AtomicUsize::new(0));
     
-    println!("✅ Memory pool ready (20GB budget shared across workers)");
-    
-    // Use 1.5x CPU cores for I/O bound workload (24 cores = 36 workers)
-    let num_workers = (num_cpus::get() as f32 * 1.5) as usize;
-    println!("🔧 Spawning {} workers (1.5x {} CPU cores)", num_workers, num_cpus::get());
+    println!("✅ Memory pool ready (20GB budget shared across {} workers)", num_workers);
+    println!("🔧 Spawning {} workers (2x {} CPU cores)", num_workers, num_cpus::get());
     
     // Spawn workers
     for worker_id in 0..num_workers {
@@ -149,7 +149,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut stalled_count = 0;
     
     loop {
-        thread::sleep(std::time::Duration::from_secs(10));
+        thread::sleep(std::time::Duration::from_secs(5));
         
         let symbols_count = results.lock().unwrap().len();
         let processed = *files_processed.lock().unwrap();
@@ -164,7 +164,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Check if stalled
         if processed == last_processed {
             stalled_count += 1;
-            if stalled_count >= 3 {
+            if stalled_count >= 6 {
                 println!("⚠️  No progress for 30 seconds, assuming workers finished");
                 break;
             }
