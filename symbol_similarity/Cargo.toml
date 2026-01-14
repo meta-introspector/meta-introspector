@@ -37,3 +37,7 @@ version = "0.8"
 [[bin]]
 name = "lmfdb_orbits"
 path = "src/lmfdb_orbits.rs"
+
+[[bin]]
+name = "term_eigenvectors"
+path = "src/term_eigenvectors.rs"
