@@ -7,6 +7,24 @@ edition = "2021"
 name = "analyze"
 path = "src/main.rs"
 
+[[bin]]
+name = "extract_grammar"
+path = "src/bin/extract_grammar.rs"
+
+[[bin]]
+name = "reconstruct_grammar"
+path = "src/bin/reconstruct_grammar.rs"
+
+[[bin]]
+name = "complete_grammar"
+path = "src/bin/complete_grammar.rs"
+
+[[bin]]
+name = "scan_nix_store"
+path = "src/bin/scan_nix_store.rs"
+
 [dependencies]
 lmfdb-rust-mapping = { path = "../lmfdb-rust-mapping" }
+serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+goblin = "0.8"
