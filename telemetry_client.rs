@@ -35,7 +35,8 @@ fn main() {
     println!("🔥 PRELOAD CLIENT ACTIVE");
     
     // Test telemetry
-    send_telemetry_event("malloc", 42);
+    send_telemetry_event("write", 42);
+    panic!("FIXME NOW: get the real data");
     send_telemetry_event("execve", 123);
     send_telemetry_event("mmap", 456);
     

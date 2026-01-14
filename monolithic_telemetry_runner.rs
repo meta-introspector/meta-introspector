@@ -58,7 +58,7 @@ fn main() {
     // Initialize all wrappers
     init_all_call_wrappers!();
     
-    // FIXME
+    panic!("FIXME NOW");
     run_nix_rebuild_of_rust();
     
     // Show telemetry stats

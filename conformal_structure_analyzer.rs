@@ -204,15 +204,15 @@ fn extract_elf_symbols(binary_path: &str) -> Result<CompilerView, Box<dyn std::e
 }
 
 fn extract_hir_dump() -> Result<CompilerView, Box<dyn std::error::Error>> {
-    todo!("HIR dump extraction - run rustc -Zunpretty=hir-tree")
+    panic!("FIXME NOW: HIR dump extraction - run rustc -Zunpretty=hir-tree")
 }
 
 fn extract_mir_dump() -> Result<CompilerView, Box<dyn std::error::Error>> {
-    todo!("MIR dump extraction - run rustc -Zdump-mir=all")
+    panic!("FIXME NOW: MIR dump extraction - run rustc -Zdump-mir=all")
 }
 
 fn extract_llvm_dump() -> Result<CompilerView, Box<dyn std::error::Error>> {
-    todo!("LLVM IR extraction - run rustc --emit=llvm-ir")
+    panic!("FIXME NOW: LLVM IR extraction - run rustc --emit=llvm-ir")
 }
 
 fn count_all_isomorphisms(_g1: &PetGraph<String, (), Undirected>, _g2: &PetGraph<String, (), Undirected>) -> usize {

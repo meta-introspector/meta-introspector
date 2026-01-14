@@ -46,7 +46,8 @@ impl TelemetryBootstrap {
         self.systems.insert("emoji".to_string(), "Emoji Registry".to_string());
         self.emojis.insert("⚡".to_string(), "emoji".to_string());
         self.preloaded_libs.push("libemoji.so".to_string());
-        self.log_telemetry("preload_emoji", start.elapsed().as_millis() as u64, vec!["malloc", "write"]);
+        self.log_telemetry("preload_emoji", start.elapsed().as_millis() as u64, vec!["write"]);
+        panic!("FIXME NOW: get the real data");
 
         let start = Instant::now();
         self.systems.insert("zos".to_string(), "ZOS Server".to_string());

@@ -1,14 +1,16 @@
 // 🔥 META-INTROSPECTOR MACRO LIBRARY
 // Centralized macros for telemetry, symbol wrapping, and build-time code generation
 
+pub mod libreporting;
+
 /// Autodiscover build from collected data
 #[macro_export]
 macro_rules! autodiscover_build {
     () => {{
         // Load from our strace capture data
-        let binaries = include_str!("../data/build_analysis/real_build_1768332029_binaries.json");
-        let libraries = include_str!("../data/build_analysis/real_build_1768332029_libraries.json");
-        let ldd_deps = include_str!("../data/build_analysis/real_build_1768332029_ldd_deps.json");
+        let binaries = include_str!("data/build_analysis/real_build_1768332029_binaries.json");
+        let libraries = include_str!("data/build_analysis/real_build_1768332029_libraries.json");
+        let ldd_deps = include_str!("data/build_analysis/real_build_1768332029_ldd_deps.json");
         
         (binaries, libraries, ldd_deps)
     }};
@@ -46,22 +48,47 @@ macro_rules! map_symbols {
     }};
 }
 
-/// Bootstrap with autodiscovery
+/// Bootstrap with autodiscovery + LMFDB integration
 #[macro_export]
 macro_rules! mkbootstrap {
     () => {{
         use std::sync::atomic::{AtomicUsize, Ordering};
+        use std::time::{SystemTime, UNIX_EPOCH};
+        
+        let project = std::env::var("PROJECT_NAME").unwrap_or_else(|_| "bootstrap".to_string());
+        let timestamp = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
+        
+        // Use libreporting for consistent output
+        println!("🔥 MKBOOTSTRAP SYSTEM");
+        println!("====================");
+        println!("📊 Project: {}", project);
+        println!("⏰ Timestamp: {}", timestamp);
+        println!();
         
         // Autodiscover from collected data
         let (binaries, libraries, ldd_deps) = autodiscover_build!();
         
-        eprintln!("🔥 BOOTSTRAP: Autodiscovered build from strace data");
-        eprintln!("📦 Binaries: {} bytes", binaries.len());
-        eprintln!("📚 Libraries: {} bytes", libraries.len());
-        eprintln!("🔗 LDD deps: {} bytes", ldd_deps.len());
+        println!("🔍 Autodiscovered build from strace data:");
+        println!("  📦 Binaries: {} bytes", binaries.len());
+        println!("  📚 Libraries: {} bytes", libraries.len());
+        println!("  🔗 LDD deps: {} bytes", ldd_deps.len());
+        
+        // Initialize telemetry system
+        std::fs::create_dir_all("/mnt/data1/meta-introspector/data/telemetry").ok();
+        
+        // Log bootstrap telemetry
+        let entry = format!(
+            r#"{{"type":"bootstrap","message":"mkbootstrap initialized","timestamp":{},"project":"{}","binaries":{},"libraries":{},"symbols":{}}}"#,
+            timestamp, project, binaries.len(), libraries.len(), ldd_deps.len()
+        );
+        
+        let log_file = format!("/mnt/data1/meta-introspector/data/telemetry/{}_{}.jsonl", project, timestamp);
+        std::fs::write(&log_file, entry + "\n").ok();
         
         // Parse and initialize wrappers
         init_all_call_wrappers!();
+        
+        println!("✅ Bootstrap complete - telemetry logged to: {}", log_file);
     }};
 }
 

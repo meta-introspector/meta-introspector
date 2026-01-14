@@ -5,3 +5,22 @@ logs/
 all_commits.log
 target/
 Cargo.lock
+
+# Build artifacts
+*.o
+*.so
+*.a
+*.rlib
+*.dylib
+*.dll
+*.exe
+
+# Telemetry output
+*.csv
+*.parquet
+/tmp/
+
+# Submodule changes
+rust-overlay-test/
+rustc-only-build/
+result
