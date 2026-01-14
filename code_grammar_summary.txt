@@ -1,0 +1,89 @@
+# Code Grammar Tokens from 49,655 Functions
+
+## Top Keywords Found in Function Names:
+
+get: 3313          - Accessor pattern
+const: 2074        - Constant/constprop optimization
+trait: 2033        - Rust trait implementations (char_traits)
+set: 1977          - Mutator pattern
+parse: 1640        - Parser functions
+if: 1588           - Conditional logic
+type: 1342         - Type operations
+init: 1189         - Initialization
+check: 1185        - Validation
+find: 1041         - Search operations
+for: 988           - Loop/iteration
+impl: 823          - Implementation functions
+mod: 703           - Module operations
+let: 643           - Variable binding
+decode: 585        - Decoding operations
+create: 568        - Constructor pattern
+encode: 521        - Encoding operations
+hash: 497          - Hash functions
+fn: 454            - Function markers
+match: 428         - Pattern matching
+use: 403           - Resource usage
+struct: 252        - Structure operations
+loop: 238          - Loop constructs
+search: 194        - Search algorithms
+verify: 157        - Verification
+validate: 136      - Validation
+async: 91          - Async operations
+pub: 89            - Public visibility
+enum: 87           - Enumeration operations
+break: 69          - Loop control
+
+## Example Functions:
+
+### "else" pattern (29 occurrences):
+- _ZN6google8protobuf8internal8MapFieldINS_3api50MonitoredResourceMetadata_UserLabelsEntry_DoNotUseE...
+- Mostly in C++ template instantiations
+
+### "struct" pattern (252 occurrences):
+- QRinput_splitQRinputToStruct
+- _asn1_create_static_structure
+- _asn1_copy_structure3
+- Structure manipulation in C/ASN.1 code
+
+### "enum" pattern (87 occurrences):
+- _ZN6google4type11PhoneNumber8CopyFromERKS1_
+- _ZN5arrow6engine12_GLOBAL__N_110EnumParserINS1_17TemporalComponentEED2Ev
+- Enum parsers and type operations
+
+### "trait" pattern (2033 occurrences):
+- _Z24__gmp_istream_set_digitsRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE...
+- Mostly C++ char_traits template instantiations
+
+### "impl" pattern (823 occurrences):
+- _asn1_decode_simple_der
+- _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZN5arrow6flight...
+- Implementation functions, especially thread state
+
+### "match" pattern (428 occurrences):
+- matchTok
+- _ZNSt6vectorINSt7__cxx119sub_matchIN9__gnu_cxx17__normal_iteratorIPKcNS0_12basic_stringIcSt11char_traitsIcESaIcEEEEEEESaISC_EEaSERKSE_.isra.0
+- Pattern matching and regex operations
+
+### "const" pattern (2074 occurrences):
+- loop_init.constprop.0
+- k5ev_timer_start.constprop.0
+- Compiler constant propagation optimizations
+
+### "static" pattern (47 occurrences):
+- _asn1_create_static_structure
+- static_calloc
+- static_malloc
+- Static memory allocation functions
+
+## Grammar Patterns Discovered:
+
+1. **Accessor/Mutator**: get/set (5290 total)
+2. **Parser/Encoder**: parse/encode/decode (2746 total)
+3. **Type System**: trait/type/struct/enum (3714 total)
+4. **Control Flow**: if/for/loop/match/break (3121 total)
+5. **Initialization**: init/create (1757 total)
+6. **Validation**: check/verify/validate (1478 total)
+7. **Search**: find/search (1235 total)
+8. **Optimization**: const (2074 total)
+
+Total: 21,415 keyword occurrences across 49,655 functions (43% contain keywords)

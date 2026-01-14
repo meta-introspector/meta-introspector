@@ -47,6 +47,14 @@ path = "src/bin/markov_tree.rs"
 name = "markov_full_traversal"
 path = "src/bin/markov_full_traversal.rs"
 
+[[bin]]
+name = "extract_code_tokens"
+path = "src/bin/extract_code_tokens.rs"
+
+[[bin]]
+name = "show_code_functions"
+path = "src/bin/show_code_functions.rs"
+
 [dependencies]
 lmfdb-rust-mapping = { path = "../lmfdb-rust-mapping" }
 serde = { version = "1.0", features = ["derive"] }
