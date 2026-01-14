@@ -1,5 +1,5 @@
 // perf-macros/src/lib.rs
-// Proc macros for wrapping any code in perf recording
+// Proc macros for wrapping any code in perf recording + parquet capture
 
 use proc_macro::TokenStream;
 use quote::quote;
@@ -107,6 +107,83 @@ pub fn perf_record(_attr: TokenStream, item: TokenStream) -> TokenStream {
             perf_runtime::telemetry_send(&__perf_data);
             
             (__result, __perf_data)
+        }
+    };
+    
+    TokenStream::from(expanded)
+}
+
+/// Capture any value or type as parquet data feed
+/// 
+/// # Example
+/// ```
+/// #[perf_probe]
+/// fn process_data(x: i32, y: String) -> Vec<u8> {
+///     // All inputs and output captured to parquet
+///     vec![x as u8]
+/// }
+/// ```
+#[proc_macro_attribute]
+pub fn perf_probe(_attr: TokenStream, item: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(item as ItemFn);
+    let fn_name = &input.sig.ident;
+    let fn_name_str = fn_name.to_string();
+    let fn_block = &input.block;
+    let fn_sig = &input.sig;
+    let fn_vis = &input.vis;
+    let fn_attrs = &input.attrs;
+    
+    // Extract parameter names
+    let param_names: Vec<_> = fn_sig.inputs.iter().filter_map(|arg| {
+        if let syn::FnArg::Typed(pat_type) = arg {
+            if let syn::Pat::Ident(pat_ident) = &*pat_type.pat {
+                return Some(&pat_ident.ident);
+            }
+        }
+        None
+    }).collect();
+    
+    let expanded = quote! {
+        #(#fn_attrs)*
+        #fn_vis #fn_sig {
+            // Start probe session
+            let mut __probe_session = perf_runtime::ProbeSession::start(#fn_name_str);
+            
+            // Capture inputs
+            #(
+                __probe_session.capture_input(stringify!(#param_names), &#param_names);
+            )*
+            
+            // Execute function
+            let __result = #fn_block;
+            
+            // Capture output
+            __probe_session.capture_output(&__result);
+            
+            // Write to parquet
+            __probe_session.write_parquet();
+            
+            __result
+        }
+    };
+    
+    TokenStream::from(expanded)
+}
+
+/// Capture a value to parquet (inline)
+/// 
+/// # Example
+/// ```
+/// let x = 42;
+/// probe!(x, "my_value");
+/// ```
+#[proc_macro]
+pub fn probe(input: TokenStream) -> TokenStream {
+    let expr = parse_macro_input!(input as Expr);
+    
+    let expanded = quote! {
+        {
+            perf_runtime::probe_capture(stringify!(#expr), &#expr);
         }
     };
     
