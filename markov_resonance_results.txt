@@ -1,0 +1,31 @@
+Found 500 ELF files, starting parallel analysis
+
+Worker 18: 10 files processed
+Worker 18: 20 files processed
+Worker 18: 30 files processed
+Worker 18: 40 files processed
+Worker 18: 50 files processed
+Worker 7: 10 files processed
+Worker 7: 20 files processed
+Worker 7: 30 files processed
+Worker 18: 60 files processed
+Worker 7: 40 files processed
+Worker 18: 70 files processed
+Worker 7: 50 files processed
+Worker 18: 80 files processed
+Worker 7: 60 files processed
+Worker 18: 90 files processed
+Worker 18: 100 files processed
+Worker 18: 110 files processed
+Worker 18: 120 files processed
+Worker 18: 130 files processed
+Worker 18: 140 files processed
+Worker 18: 150 files processed
+Worker 18: 160 files processed
+Worker 7: 70 files processed
+Worker 18: 170 files processed
+Worker 7: 80 files processed
+Worker 18: 180 files processed
+Worker 7: 90 files processed
+Worker 13: 10 files processed
+Progress: 6760 symbols extracted from 500 files
