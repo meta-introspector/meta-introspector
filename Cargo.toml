@@ -1,0 +1,15 @@
+[workspace]
+members = [
+    "markov_resonance_analyzer",
+    "rust_preload_interceptor",
+    "dynamic-library-interceptor",
+    "nixso2probe",
+    "rust-libc-interceptor",
+    "nixso2wrap",
+    "rust-telemetry-driver",
+    "instrumented-wrappers",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
