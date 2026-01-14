@@ -43,21 +43,41 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Look for character comparisons
     println!("\n🔤 Character comparison instructions:\n");
-    println!("Enum:");
+    
+    let char_map = [
+        (0x65, 'e'), (0x6e, 'n'), (0x75, 'u'), (0x6d, 'm'),  // enum
+        (0x73, 's'), (0x74, 't'), (0x72, 'r'), (0x63, 'c'),  // struct
+        (0x69, 'i'), (0x6d, 'm'), (0x70, 'p'), (0x6c, 'l'),  // impl
+        (0x66, 'f'), (0x6e, 'n'),  // fn
+    ];
+    
+    println!("Enum-only:");
+    let mut enum_chars = Vec::new();
     for (addr, instr) in &enum_instrs {
-        if instr.contains("cmp") && (instr.contains("0x65") || instr.contains("0x6e") || 
-                                     instr.contains("0x75") || instr.contains("0x6d")) {
-            println!("  0x{:x}: {} <- 'e','n','u','m'", addr, instr);
+        for (hex, ch) in &char_map {
+            let hex_str = format!("0x{:x}", hex);
+            if instr.contains("cmp") && instr.contains(&hex_str) {
+                println!("  0x{:x}: {} <- '{}'", addr, instr, ch);
+                enum_chars.push(*ch);
+            }
         }
     }
     
-    println!("\nStruct:");
+    println!("\nStruct-only:");
+    let mut struct_chars = Vec::new();
     for (addr, instr) in &struct_instrs {
-        if instr.contains("cmp") && (instr.contains("0x73") || instr.contains("0x74") || 
-                                     instr.contains("0x72") || instr.contains("0x75")) {
-            println!("  0x{:x}: {} <- 's','t','r','u'", addr, instr);
+        for (hex, ch) in &char_map {
+            let hex_str = format!("0x{:x}", hex);
+            if instr.contains("cmp") && instr.contains(&hex_str) {
+                println!("  0x{:x}: {} <- '{}'", addr, instr, ch);
+                struct_chars.push(*ch);
+            }
         }
     }
+    
+    println!("\n📊 Character frequency:");
+    println!("  Enum: {:?}", enum_chars);
+    println!("  Struct: {:?}", struct_chars);
     
     Ok(())
 }
@@ -82,20 +102,26 @@ fn get_perf_addresses(perf_file: &str, lib: &str) -> Result<HashSet<u64>, Box<dy
 fn disassemble_addresses(lib: &str, addrs: &HashSet<&u64>) -> Result<Vec<(u64, String)>, Box<dyn std::error::Error>> {
     let mut instrs = Vec::new();
     
-    // Get full disassembly
-    let output = Command::new("objdump")
-        .args(&["-d", lib])
+    // Use grep to filter only relevant addresses - much faster
+    let addr_pattern = addrs.iter()
+        .map(|a| format!("{:x}", a))
+        .collect::<Vec<_>>()
+        .join("\\|");
+    
+    let output = Command::new("sh")
+        .arg("-c")
+        .arg(format!("objdump -d {} 2>/dev/null | grep -E '({}):'", lib, addr_pattern))
         .output()?;
     
     let disasm = String::from_utf8_lossy(&output.stdout);
     
     for line in disasm.lines() {
-        if let Some(addr_str) = line.split(':').next() {
-            if let Ok(addr) = u64::from_str_radix(addr_str.trim(), 16) {
+        let parts: Vec<&str> = line.split(':').collect();
+        if parts.len() >= 2 {
+            let addr_str = parts[0].trim();
+            if let Ok(addr) = u64::from_str_radix(addr_str, 16) {
                 if addrs.contains(&addr) {
-                    if let Some(instr) = line.split(':').nth(1) {
-                        instrs.push((addr, instr.trim().to_string()));
-                    }
+                    instrs.push((addr, parts[1].trim().to_string()));
                 }
             }
         }
