@@ -23,8 +23,28 @@ path = "src/bin/complete_grammar.rs"
 name = "scan_nix_store"
 path = "src/bin/scan_nix_store.rs"
 
+[[bin]]
+name = "nix_store_grammar"
+path = "src/bin/nix_store_grammar.rs"
+
+[[bin]]
+name = "merge_grammar"
+path = "src/bin/merge_grammar.rs"
+
+[[bin]]
+name = "analyze_transitions"
+path = "src/bin/analyze_transitions.rs"
+
+[[bin]]
+name = "analyze_char_transitions"
+path = "src/bin/analyze_char_transitions.rs"
+
 [dependencies]
 lmfdb-rust-mapping = { path = "../lmfdb-rust-mapping" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 goblin = "0.8"
+crossbeam = "0.8"
+num_cpus = "1.0"
+arrow = "53"
+parquet = "53"
