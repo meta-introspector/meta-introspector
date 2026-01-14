@@ -194,32 +194,79 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let final_mem = memory_used.load(Ordering::Relaxed);
     let final_skipped = files_skipped.load(Ordering::Relaxed);
     
-    println!("\nTotal symbols extracted: {} from {} files", all_symbols.len(), total_files);
-    println!("Total distributions: {}", all_distributions.len());
-    println!("Memory used: {:.2}GB / 20GB", final_mem as f64 / (1024.0 * 1024.0 * 1024.0));
-    println!("Files skipped (budget exceeded): {}\n", final_skipped);
+    println!("\n✅ Analysis complete!");
+    println!("   Symbols: {}", all_symbols.len());
+    println!("   Distributions: {}", all_distributions.len());
+    println!("   Memory: {:.2}GB / 20GB", final_mem as f64 / (1024.0 * 1024.0 * 1024.0));
+    println!("   Skipped: {}\n", final_skipped);
+    
+    // Merge failed files from all workers
+    let mut all_failed = Vec::new();
+    for worker_id in 0..num_workers {
+        let exclude_file = format!("failed_files_worker_{}.txt", worker_id);
+        if let Ok(content) = fs::read_to_string(&exclude_file) {
+            all_failed.extend(content.lines().map(String::from));
+            let _ = fs::remove_file(&exclude_file);
+        }
+    }
+    if !all_failed.is_empty() {
+        fs::write("failed_files_exclude.txt", all_failed.join("\n"))?;
+        println!("📝 Wrote {} failed files to failed_files_exclude.txt", all_failed.len());
+    }
     
     // Save final JSON
     let json = serde_json::to_string_pretty(&all_symbols)?;
     fs::write("markov_symbol_scores.json", json)?;
     println!("✓ Saved final results to markov_symbol_scores.json");
     
-    // Compute global similarity matrix
-    println!("\nComputing global distribution similarity matrix...");
+    // Compute global similarity matrix in parallel
+    println!("\nComputing global distribution similarity matrix with {} workers...", num_workers);
     let n = all_distributions.len();
     let mut similarity_matrix = vec![vec![0.0; n]; n];
     
+    let distributions_arc = Arc::new(all_distributions.clone());
+    let matrix_arc = Arc::new(Mutex::new(&mut similarity_matrix));
+    let rows_processed = Arc::new(AtomicUsize::new(0));
+    
+    // Create work queue for rows
+    let (row_sender, row_receiver) = bounded::<usize>(n);
     for i in 0..n {
-        for j in i..n {
-            let sim = cosine_similarity(&all_distributions[i].resonance_vector, 
-                                       &all_distributions[j].resonance_vector);
+        row_sender.send(i).unwrap();
+    }
+    drop(row_sender);
+    
+    // Spawn workers for similarity computation
+    let mut handles = vec![];
+    for _ in 0..num_workers {
+        let rx = row_receiver.clone();
+        let dists = Arc::clone(&distributions_arc);
+        let processed = Arc::clone(&rows_processed);
+        
+        let handle = thread::spawn(move || {
+            let mut local_results = vec![];
+            while let Ok(i) = rx.recv() {
+                for j in i..n {
+                    let sim = cosine_similarity(&dists[i].resonance_vector, 
+                                               &dists[j].resonance_vector);
+                    local_results.push((i, j, sim));
+                }
+                processed.fetch_add(1, Ordering::Relaxed);
+            }
+            local_results
+        });
+        handles.push(handle);
+    }
+    
+    // Collect results from workers
+    for handle in handles {
+        let results = handle.join().unwrap();
+        for (i, j, sim) in results {
             similarity_matrix[i][j] = sim;
             similarity_matrix[j][i] = sim;
         }
-        if (i + 1) % 100 == 0 {
-            println!("  Computed {}/{} rows", i + 1, n);
-        }
     }
+    
+    println!("  ✓ Computed {} x {} similarity matrix", n, n);
     
     let global_matrix = GlobalMatrix {
         files: all_distributions,
@@ -240,24 +287,17 @@ fn worker(worker_id: usize, receiver: Receiver<String>,
           memory_used: Arc<AtomicUsize>,
           files_skipped: Arc<AtomicUsize>) {
     let mut processed = 0;
-    println!("🔧 Worker {} started", worker_id);
+    let mut failed_files = Vec::new();
     
     loop {
         match receiver.recv() {
             Ok(path) => {
-                if processed % 50 == 0 && processed > 0 {
-                    println!("Worker {}: Processing {}", worker_id, path);
-                }
-                
                 // Check memory budget before processing
                 let current_mem = memory_used.load(Ordering::Relaxed);
                 if current_mem >= MEMORY_BUDGET_BYTES {
                     files_skipped.fetch_add(1, Ordering::Relaxed);
                     processed += 1;
                     *files_processed.lock().unwrap() += 1;
-                    if processed % 100 == 0 {
-                        println!("Worker {}: Skipping {} (memory budget exceeded)", worker_id, path);
-                    }
                     continue;
                 }
                 
@@ -274,42 +314,26 @@ fn worker(worker_id: usize, receiver: Receiver<String>,
                         // Atomically add to memory counter
                         memory_used.fetch_add(total_bytes, Ordering::Relaxed);
                         
-                        match results.lock() {
-                            Ok(mut res) => {
-                                res.extend(symbols);
-                            }
-                            Err(e) => {
-                                eprintln!("Worker {}: Failed to lock results: {}", worker_id, e);
-                            }
-                        }
-                        
-                        match distributions.lock() {
-                            Ok(mut dists) => {
-                                dists.push(dist);
-                            }
-                            Err(e) => {
-                                eprintln!("Worker {}: Failed to lock distributions: {}", worker_id, e);
-                            }
-                        }
+                        results.lock().unwrap().extend(symbols);
+                        distributions.lock().unwrap().push(dist);
                         
                         processed += 1;
                         *files_processed.lock().unwrap() += 1;
-                        
-                        if processed % 100 == 0 {
-                            let mem_mb = memory_used.load(Ordering::Relaxed) as f64 / (1024.0 * 1024.0);
-                            println!("Worker {}: {} files, {} symbols, {:.1}MB used", 
-                                     worker_id, processed, sym_count, mem_mb);
-                        }
                     }
                     Err(e) => {
-                        eprintln!("Worker {}: Error analyzing {}: {}", worker_id, path, e);
+                        // Collect failed files for exclusion list
+                        failed_files.push(path.clone());
                         processed += 1;
                         *files_processed.lock().unwrap() += 1;
                     }
                 }
             }
             Err(_) => {
-                println!("✅ Worker {} finished: {} files processed (channel closed)", worker_id, processed);
+                // Write failed files to exclusion list on worker exit
+                if !failed_files.is_empty() {
+                    let exclude_file = format!("failed_files_worker_{}.txt", worker_id);
+                    let _ = fs::write(&exclude_file, failed_files.join("\n"));
+                }
                 break;
             }
         }
