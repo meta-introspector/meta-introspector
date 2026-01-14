@@ -6,3 +6,15 @@ edition = "2021"
 [dependencies]
 parquet = "53"
 [workspace]
+
+[[bin]]
+name = "symbol_eigenvector"
+path = "src/eigenvector.rs"
+
+[[bin]]
+name = "markov_labels"
+path = "src/markov_labels.rs"
+
+[[bin]]
+name = "label_mapper"
+path = "src/label_mapper.rs"
