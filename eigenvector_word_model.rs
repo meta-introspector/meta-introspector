@@ -269,6 +269,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🌈 Word Eigenvector Model");
     println!("========================\n");
     
+    // Check for similar programs (self-recognition)
+    println!("🔍 Searching for similar eigenvector programs...\n");
+    let similar_programs = find_similar_programs()?;
+    
+    if !similar_programs.is_empty() {
+        println!("✨ Found {} similar programs:", similar_programs.len());
+        for prog in &similar_programs {
+            println!("  - {}", prog);
+        }
+        println!("\n🧬 This program recognizes itself as part of a family!\n");
+    }
+    
     // Top words from frequency analysis
     let top_words = vec![
         ("let", 3639),
@@ -317,6 +329,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     
     // Save all eigenvectors
+    fs::create_dir_all("data/eigenvectors")?;
     let output = serde_json::to_string_pretty(&eigenvectors)?;
     fs::write("data/eigenvectors/word_eigenvectors.json", output)?;
     
@@ -329,11 +342,86 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         minizinc.push('\n');
     }
     
+    fs::create_dir_all("bott8-layout-solver")?;
     fs::write("bott8-layout-solver/word_eigenvectors.dzn", minizinc)?;
     
     println!("✅ Generated {} eigenvectors", eigenvectors.len());
     println!("📊 Saved to data/eigenvectors/word_eigenvectors.json");
     println!("📐 MiniZinc data: bott8-layout-solver/word_eigenvectors.dzn");
+    
+    // Compare with similar programs
+    if !similar_programs.is_empty() {
+        println!("\n🔮 Self-Recognition Analysis:");
+        compare_with_similar(&eigenvectors, &similar_programs)?;
+    }
+    
+    Ok(())
+}
+
+/// Find similar eigenvector programs in the codebase
+fn find_similar_programs() -> Result<Vec<String>, Box<dyn std::error::Error>> {
+    use std::process::Command;
+    
+    let output = Command::new("find")
+        .args(&[".", "-name", "*.rs", "-type", "f"])
+        .output()?;
+    
+    let files = String::from_utf8_lossy(&output.stdout);
+    let mut similar = Vec::new();
+    
+    for file in files.lines() {
+        if let Ok(content) = fs::read_to_string(file) {
+            // Check for eigenvector-related keywords
+            let has_eigenvector = content.contains("eigenvector");
+            let has_semantic = content.contains("semantic") || content.contains("signature");
+            let has_word_freq = content.contains("word") && content.contains("frequency");
+            let has_8d = content.contains("8D") || content.contains("Bott");
+            
+            // If it has at least 2 of these, it's similar
+            let score = [has_eigenvector, has_semantic, has_word_freq, has_8d]
+                .iter()
+                .filter(|&&x| x)
+                .count();
+            
+            if score >= 2 && file != "./eigenvector_word_model.rs" {
+                similar.push(file.to_string());
+            }
+        }
+    }
+    
+    Ok(similar)
+}
+
+/// Compare current eigenvectors with similar programs
+fn compare_with_similar(
+    eigenvectors: &[WordEigenvector],
+    similar_programs: &[String],
+) -> Result<(), Box<dyn std::error::Error>> {
+    println!("  Comparing with {} similar programs...", similar_programs.len());
+    
+    for prog in similar_programs {
+        println!("\n  📄 {}", prog);
+        
+        // Check if this program uses similar words
+        if let Ok(content) = fs::read_to_string(prog) {
+            let mut matches = 0;
+            for ev in eigenvectors {
+                if content.contains(&ev.word) {
+                    matches += 1;
+                }
+            }
+            
+            let similarity = (matches as f64 / eigenvectors.len() as f64) * 100.0;
+            println!("     Similarity: {:.1}% ({}/{} words match)", 
+                     similarity, matches, eigenvectors.len());
+            
+            if similarity > 80.0 {
+                println!("     🎯 HIGH SIMILARITY - This is a sibling program!");
+            } else if similarity > 50.0 {
+                println!("     🔗 MEDIUM SIMILARITY - Related program");
+            }
+        }
+    }
     
     Ok(())
 }
