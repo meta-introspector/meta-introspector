@@ -1,14 +1,14 @@
 #!/bin/bash
 # Build and analyze const x = 71 across Rust, GCC, LLVM
 
-echo "🔬 Building const x = 71 across 3 compilers with perf tracing"
+echo "🔬 Building const x = 71 across 8 compilers with perf tracing"
 echo "================================================================"
 
 OUTPUT="const_71_analysis"
 mkdir -p "$OUTPUT"
 
 # Build each with perf tracing
-for compiler in rust gcc llvm; do
+for compiler in rust gcc llvm python node ocaml haskell lean4; do
     echo ""
     echo "🔨 Building with $compiler..."
     
@@ -63,7 +63,7 @@ echo "================================================================"
 echo "📊 Comparison Results"
 echo "================================================================"
 
-for compiler in rust gcc llvm; do
+for compiler in rust gcc llvm python node ocaml haskell lean4; do
     if [ -f "$OUTPUT/binary_${compiler}" ]; then
         SIZE=$(stat -c%s "$OUTPUT/binary_${compiler}")
         CONST_REFS=$(wc -l < "$OUTPUT/const_refs_${compiler}.txt" 2>/dev/null || echo 0)
