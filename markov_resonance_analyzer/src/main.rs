@@ -69,10 +69,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let files_processed = Arc::new(Mutex::new(0usize));
     let files_skipped = Arc::new(AtomicUsize::new(0));
     
-    println!("✅ Memory pool ready (20GB budget shared across 20 workers)");
+    println!("✅ Memory pool ready (20GB budget shared across workers)");
     
-    // Spawn 20 workers immediately
-    for worker_id in 0..20 {
+    // Use 1.5x CPU cores for I/O bound workload (24 cores = 36 workers)
+    let num_workers = (num_cpus::get() as f32 * 1.5) as usize;
+    println!("🔧 Spawning {} workers (1.5x {} CPU cores)", num_workers, num_cpus::get());
+    
+    // Spawn workers
+    for worker_id in 0..num_workers {
         let rx = receiver.clone();
         let results_clone = Arc::clone(&results);
         let distributions_clone = Arc::clone(&distributions);
