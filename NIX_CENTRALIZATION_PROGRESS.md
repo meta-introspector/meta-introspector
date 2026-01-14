@@ -1,11 +1,26 @@
 # Nix Build Centralization Progress
 
-## ✅ Migrated (1/40)
+## ✅ Migrated (4/40)
 
 ### 1. `unified_nix_builder.rs` ✅
-**Before**: 172 lines, direct Command::new("nix")
-**After**: 27 lines, uses nix_canonical_builder
-**Reduction**: 84% code reduction
+**Before**: 172 lines
+**After**: 27 lines
+**Reduction**: 84% (145 lines)
+
+### 2. `nix_build_telemetry.rs` ✅
+**Before**: 239 lines
+**After**: 44 lines
+**Reduction**: 82% (195 lines)
+
+### 3. `nix_telemetry_integration.rs` ✅
+**Before**: 333 lines
+**After**: 33 lines
+**Reduction**: 90% (300 lines)
+
+### 4. `unified_nix_service.rs` ✅
+**Before**: Direct Command::new("nix")
+**After**: Uses canonical builder
+**Reduction**: ~20 lines
 
 ```rust
 // Before
@@ -48,11 +63,13 @@ pub fn build(&self, args: &[&str]) -> Result<NixBuildResult, String> {
 
 ## 📊 Impact
 
-**Lines of code eliminated**: 145 (from first migration)
+**Lines of code eliminated**: 640
 **Projected total elimination**: ~5,800 lines (145 × 40)
 **Single audit point**: nix_canonical_builder.rs (150 lines)
 
 **Code reduction**: ~97% (5,800 → 150)
+
+**Progress**: 4/40 files (10%)
 
 ## 🎯 Migration Template
 
