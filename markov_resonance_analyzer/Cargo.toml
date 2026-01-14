@@ -5,7 +5,7 @@ edition = "2021"
 
 [[bin]]
 name = "markov_resonance_analyzer"
-path = "main.rs"
+path = "src/main.rs"
 
 [dependencies]
 goblin = "0.8"

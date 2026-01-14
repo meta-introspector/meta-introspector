@@ -61,35 +61,35 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             std::process::exit(1);
         }
         
-        println!("Loading file list from: {}", cache_file);
+        println!("📂 Loading file list from: {}", cache_file);
         let cached = fs::read_to_string(cache_file).expect("Failed to read file list");
         let lines: Vec<&str> = cached.lines().collect();
         let count = lines.len();
         
-        println!("Verifying {} files exist...", count);
+        println!("📊 Found {} files to analyze", count);
+        println!("🔍 Verifying files exist and queueing...");
+        
         let mut missing = 0;
         for (i, line) in lines.iter().enumerate() {
             if !Path::new(line).exists() {
                 missing += 1;
                 if missing <= 5 {
-                    eprintln!("  WARNING: File missing: {}", line);
+                    eprintln!("  ⚠️  File missing: {}", line);
                 }
             }
             if sender_clone.send(line.to_string()).is_err() {
                 break;
             }
-            if (i + 1) % 1000 == 0 {
-                println!("  Queued {}/{} files...", i + 1, count);
+            if (i + 1) % 5000 == 0 {
+                println!("  ⏳ Queued {}/{} files...", i + 1, count);
             }
         }
         
         if missing > 0 {
-            eprintln!("WARNING: {} files are missing (may have been deleted)", missing);
-        } else {
-            println!("✓ All {} files verified", count);
+            eprintln!("⚠️  {} files are missing (may have been deleted)", missing);
         }
         
-        println!("✓ File discovery complete: {} files queued", count);
+        println!("✅ File discovery complete: {} files queued for processing", count);
         *queued_clone.lock().unwrap() = count;
         count
     });
@@ -101,7 +101,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let total_files = finder_handle.join().unwrap();
     
     // Monitor progress and save partial results
-    println!("\nMonitoring progress...");
+    println!("\n📊 Monitoring progress...");
     let mut last_saved = 0;
     let mut last_processed = 0;
     let mut stalled_count = 0;
@@ -111,15 +111,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         let symbols_count = results.lock().unwrap().len();
         let processed = *files_processed.lock().unwrap();
+        let percent = (processed as f64 / total_files as f64 * 100.0) as u32;
         
-        println!("Status: {}/{} files processed, {} symbols extracted", 
-                 processed, total_files, symbols_count);
+        println!("📈 Progress: {}/{} files ({}%), {} symbols extracted", 
+                 processed, total_files, percent, symbols_count);
         
         // Check if stalled
         if processed == last_processed {
             stalled_count += 1;
             if stalled_count >= 3 {
-                println!("WARNING: No progress for 30 seconds, assuming workers finished");
+                println!("⚠️  No progress for 30 seconds, assuming workers finished");
                 break;
             }
         } else {
@@ -132,13 +133,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             let partial = results.lock().unwrap().clone();
             let json = serde_json::to_string_pretty(&partial)?;
             fs::write("markov_symbol_scores_partial.json", json)?;
-            println!("  → Saved partial results ({} symbols)", symbols_count);
+            println!("💾 Saved partial results ({} symbols)", symbols_count);
             last_saved = symbols_count;
         }
         
         // Check if done
         if processed >= total_files {
-            println!("✓ All files processed!");
+            println!("✅ All files processed!");
             break;
         }
     }
@@ -185,9 +186,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<SymbolScore>>>, 
           distributions: Arc<Mutex<Vec<FileDistribution>>>, files_processed: Arc<Mutex<usize>>) {
     let mut processed = 0;
-    println!("Worker {} started", worker_id);
+    println!("🔧 Worker {} started", worker_id);
     
     while let Ok(path) = receiver.recv() {
+        if processed % 50 == 0 && processed > 0 {
+            println!("Worker {}: Processing {}", worker_id, path);
+        }
+        
         if let Ok((symbols, dist)) = analyze_file_with_distribution(&path, 32) {
             if let Ok(mut res) = results.lock() {
                 res.extend(symbols);
@@ -199,12 +204,12 @@ fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<S
         processed += 1;
         *files_processed.lock().unwrap() += 1;
         
-        if processed % 10 == 0 {
+        if processed % 100 == 0 {
             println!("Worker {}: {} files processed", worker_id, processed);
         }
     }
     
-    println!("Worker {} finished: {} files processed (channel closed)", worker_id, processed);
+    println!("✅ Worker {} finished: {} files processed (channel closed)", worker_id, processed);
 }
 
 fn find_elf_files(root: &str, limit: usize) -> Result<Vec<String>, Box<dyn std::error::Error>> {
