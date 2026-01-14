@@ -39,6 +39,10 @@ path = "src/bin/analyze_transitions.rs"
 name = "analyze_char_transitions"
 path = "src/bin/analyze_char_transitions.rs"
 
+[[bin]]
+name = "markov_tree"
+path = "src/bin/markov_tree.rs"
+
 [dependencies]
 lmfdb-rust-mapping = { path = "../lmfdb-rust-mapping" }
 serde = { version = "1.0", features = ["derive"] }
