@@ -1,0 +1,12 @@
+[package]
+name = "nix_telemetry_preload"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "nix_telemetry_preload"
+path = "nix_telemetry_preload.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+libc = "0.2"

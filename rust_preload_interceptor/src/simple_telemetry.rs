@@ -16,7 +16,7 @@ fn count_bins() -> (u32, u32, u32) {
     if let Ok(content) = std::fs::read_to_string(build_data_path) {
         if let Ok(data) = serde_json::from_str::<serde_json::Value>(&content) {
             let binaries = data["binaries"].as_array().map(|a| a.len() as u32).unwrap_or(0);
-            return (binaries, 71, 1061); // TODO: get real lib/symbol counts
+            panic!("FIXME NOW: get real lib/symbol counts");
         }
     }
     (14, 39, 1843) // fallback to old counts
