@@ -273,9 +273,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         similarity_matrix,
     };
     
-    let matrix_json = serde_json::to_string_pretty(&global_matrix)?;
-    fs::write("markov_global_matrix.json", matrix_json)?;
-    println!("✓ Saved global matrix to markov_global_matrix.json\n");
+    // Save matrix as binary file (much faster than JSON for large matrices)
+    println!("💾 Saving similarity matrix as binary...");
+    let matrix_bytes: Vec<u8> = global_matrix.similarity_matrix
+        .iter()
+        .flat_map(|row| row.iter().flat_map(|&f| f.to_le_bytes()))
+        .collect();
+    fs::write("markov_similarity_matrix.bin", matrix_bytes)?;
+    
+    // Save metadata as JSON (small)
+    let metadata = serde_json::json!({
+        "dimensions": [n, n],
+        "num_distributions": n,
+        "binary_file": "markov_similarity_matrix.bin",
+        "format": "f64 little-endian row-major"
+    });
+    fs::write("markov_similarity_matrix_meta.json", serde_json::to_string_pretty(&metadata)?)?;
+    println!("✓ Saved binary matrix ({} x {}) and metadata", n, n);
     
     Ok(())
 }
