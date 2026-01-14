@@ -1,13 +1,45 @@
 // perf_canonical_recorder.rs
 // Centralized perf record tool - all perf recording goes through here
 // Collects data in canonical JSON format for downstream analysis
+// Can be used as both binary and library
 
 use serde::{Deserialize, Serialize};
 use std::fs::{self, File};
 use std::io::Write;
 use std::path::{Path, PathBuf};
-use std::process::{Command, Stdio};
+use std::process::{Command, Stdio, Child};
 use std::time::{SystemTime, UNIX_EPOCH};
+
+// Public API for library usage
+pub use PerfSession;
+pub use SessionType;
+pub use PerfReport;
+pub use SymbolSample;
+
+/// Record a perf session and return the report
+pub fn record_session(
+    session_type: SessionType,
+    command: Vec<String>,
+) -> Result<PerfReport, Box<dyn std::error::Error>> {
+    let mut session = PerfSession::new(session_type, command, None);
+    session.record()?;
+    session.generate_report()
+}
+
+/// Record a perf session with custom options
+pub fn record_session_with_options(
+    session_type: SessionType,
+    command: Vec<String>,
+    probes: Option<Vec<String>>,
+    timeout: Option<u64>,
+) -> Result<PerfReport, Box<dyn std::error::Error>> {
+    let mut session = PerfSession::new(session_type, command, timeout);
+    if let Some(probes) = probes {
+        session.add_probes(probes);
+    }
+    session.record()?;
+    session.generate_report()
+}
 
 #[derive(Debug, Serialize, Deserialize)]
 struct PerfSession {
@@ -21,6 +53,7 @@ struct PerfSession {
     perf_report_path: PathBuf,
     perf_json_path: PathBuf,
     status: SessionStatus,
+    custom_probes: Vec<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -97,7 +130,13 @@ impl PerfSession {
             perf_report_path,
             perf_json_path,
             status: SessionStatus::Recording,
+            custom_probes: Vec::new(),
         }
+    }
+    
+    /// Add custom probes (e.g., "probe_*")
+    pub fn add_probes(&mut self, probes: Vec<String>) {
+        self.custom_probes = probes;
     }
     
     fn record(&mut self) -> Result<(), Box<dyn std::error::Error>> {
