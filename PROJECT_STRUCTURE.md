@@ -92,17 +92,23 @@
 **Data Location**: `data/telemetry/*.jsonl`
 
 ### 6. Build Analysis
-**Purpose**: Analyze real nix builds
+**Purpose**: Analyze real nix builds + 71 flakes perf collection
 
 **Key Files**:
+- `flake-71-perf-collector` ⭐ - Dual perf (build + run) for 71 flakes
 - `real_build_analysis.sh` - Capture build with strace
 - `analyze_real_build.py` - Parse strace output
 
-**Data Location**: `data/build_analysis/`
-- `real_build_1768332029_binaries.json` - 32 binaries
-- `real_build_1768332029_libraries.json` - 91 .so files
-- `real_build_1768332029_ldd_deps.json` - 71 dependencies ⭐
-- `real_build_1768332029_strace.log` - 5.4 MB raw data
+**Data Location**: 
+- `data/71_flakes_perf/` - Perf data for all 71 const_71_test flakes
+- `data/build_analysis/` - Real build strace analysis
+
+**71 Flakes Results**:
+- `rust_1768412514_build.perf.data` - 23.7MB build perf
+- `rust_1768412514_run.perf.data` - Run perf
+- `rust_1768412514.json` - Metadata (output: "x = 71")
+
+**Documentation**: `71_FLAKES_PERF_COLLECTION.md`
 
 ## 📁 Directory Structure
 
