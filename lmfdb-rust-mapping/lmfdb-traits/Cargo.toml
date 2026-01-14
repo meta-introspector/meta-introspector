@@ -1,0 +1,8 @@
+[package]
+name = "lmfdb-traits"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lmfdb-types = { path = "../lmfdb-types" }
+async-trait = "0.1"

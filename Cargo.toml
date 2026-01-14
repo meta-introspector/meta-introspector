@@ -10,6 +10,10 @@ members = [
     "instrumented-wrappers",
     "git-activity-collector",
     "flake-71-perf-collector",
+    "lmfdb-rust-mapping",
+    "lmfdb-rust-mapping/lmfdb-types",
+    "lmfdb-rust-mapping/lmfdb-traits",
+    "lmfdb-self-analyzer",
 ]
 resolver = "2"
 

@@ -95,7 +95,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Build with perf
         let build_status = Command::new("perf")
             .args(&["record", "-o", build_perf.to_str().unwrap(), "--call-graph", "dwarf",
-                    "nix", "build", "--print-build-logs"])
+                    "nix", "build", "--rebuild", "--print-build-logs"])
             .current_dir(&flake_path)
             .status()?;
         

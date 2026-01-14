@@ -2,7 +2,42 @@
 
 Comprehensive analysis of 57,106 domains across 33.9M files with advanced semantic analysis and parallel processing systems.
 
-## 🔥 Latest: Real Build Analysis with Complete Strace Capture
+## 🔥 Latest: LMFDB Rust Mapping Library + Self-Analysis
+
+**New Achievement**: Created unified **LMFDB mapping library** and successfully analyzed itself!
+
+### 📚 LMFDB Rust Mapping
+
+**Location**: `lmfdb-rust-mapping/`
+
+**Structure**:
+- `lmfdb-types/` - Core data types (LMFDBLabel, OrbitLevel)
+- `lmfdb-traits/` - Trait definitions (LMFDBClient, LMFDBMapper)
+- `src/lib.rs` - Main implementation
+
+**Self-Analysis Results** (libserde_derive.so):
+- **8174 symbols** mapped to LMFDB labels
+- **Conductor**: 618
+- **Orbit Distribution**:
+  - Genesis (11): 3715 symbols (45%)
+  - Trinity (23): 3826 symbols (47%)
+  - Completeness (47): 633 symbols (8%)
+
+**Key Insight**: Most Rust symbols fall into Genesis/Trinity orbits (foundational/stable complexity).
+
+### 🎯 71 Flakes Perf Collection
+
+**Status**: V2 complete - 34/71 flakes successful with syscall analysis
+
+**Features**:
+- Dual perf capture (build + run)
+- Inline perf analysis using linux-perf-data
+- Syscall/event type extraction (FORK, MMAP2, SAMPLE, EXIT)
+- No slow perf report or addr2line
+
+**Data**: `/mnt/data1/meta-introspector/data/71_flakes_perf/`
+
+## 🔥 Previous: Real Build Analysis with Complete Strace Capture
 
 **Breakthrough Achievement**: Complete **real nix build analysis** with **structured data capture** - discovered actual build complexity vs telemetry assumptions.
 
