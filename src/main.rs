@@ -15,103 +15,190 @@ struct SymbolScore {
     score: f64,
 }
 
+#[derive(Clone, Serialize, Deserialize)]
+struct FileDistribution {
+    file: String,
+    window_size: usize,
+    num_windows: usize,
+    resonance_vector: Vec<f64>,
+}
+
+#[derive(Serialize, Deserialize)]
+struct GlobalMatrix {
+    files: Vec<FileDistribution>,
+    similarity_matrix: Vec<Vec<f64>>,
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let (sender, receiver) = bounded::<String>(1000);
     let results = Arc::new(Mutex::new(Vec::new()));
+    let distributions = Arc::new(Mutex::new(Vec::new()));
+    let files_queued = Arc::new(Mutex::new(0usize));
+    let files_processed = Arc::new(Mutex::new(0usize));
     
-    // Spawn 20 workers
+    // Spawn 20 workers immediately
     for worker_id in 0..20 {
         let rx = receiver.clone();
         let results_clone = Arc::clone(&results);
+        let distributions_clone = Arc::clone(&distributions);
+        let processed_clone = Arc::clone(&files_processed);
         
         thread::spawn(move || {
-            worker(worker_id, rx, results_clone);
+            worker(worker_id, rx, results_clone, distributions_clone, processed_clone);
         });
     }
     
-    // Find ELF files
-    let paths = find_elf_files("/nix/store", 500)?;
-    println!("Found {} ELF files, starting parallel analysis\n", paths.len());
+    let sender_clone = sender.clone();
+    let queued_clone = Arc::clone(&files_queued);
     
-    let total_files = paths.len();
+    // Spawn finder thread that streams files to workers
+    let finder_handle = thread::spawn(move || {
+        let cache_file = "elf_files_list.txt";
+        
+        if !Path::new(cache_file).exists() {
+            eprintln!("ERROR: File list not found: {}", cache_file);
+            eprintln!("Please run: find /nix/store -type f \\( -name \"*.so\" -o -executable \\) > {}", cache_file);
+            std::process::exit(1);
+        }
+        
+        println!("Loading file list from: {}", cache_file);
+        let cached = fs::read_to_string(cache_file).expect("Failed to read file list");
+        let lines: Vec<&str> = cached.lines().collect();
+        let count = lines.len();
+        
+        println!("Verifying {} files exist...", count);
+        let mut missing = 0;
+        for (i, line) in lines.iter().enumerate() {
+            if !Path::new(line).exists() {
+                missing += 1;
+                if missing <= 5 {
+                    eprintln!("  WARNING: File missing: {}", line);
+                }
+            }
+            if sender_clone.send(line.to_string()).is_err() {
+                break;
+            }
+            if (i + 1) % 1000 == 0 {
+                println!("  Queued {}/{} files...", i + 1, count);
+            }
+        }
+        
+        if missing > 0 {
+            eprintln!("WARNING: {} files are missing (may have been deleted)", missing);
+        } else {
+            println!("✓ All {} files verified", count);
+        }
+        
+        println!("✓ File discovery complete: {} files queued", count);
+        *queued_clone.lock().unwrap() = count;
+        count
+    });
     
-    // Send to workers
-    for path in paths {
-        sender.send(path)?;
-    }
+    // Drop sender so workers know when queue is done
     drop(sender);
     
-    // Wait for completion with progress
-    for i in 0..60 {
-        thread::sleep(std::time::Duration::from_secs(1));
-        let count = results.lock().unwrap().len();
-        if i % 5 == 0 {
-            println!("Progress: {} symbols extracted from {} files", count, total_files);
+    // Wait for finder to complete
+    let total_files = finder_handle.join().unwrap();
+    
+    // Monitor progress and save partial results
+    let mut last_saved = 0;
+    loop {
+        thread::sleep(std::time::Duration::from_secs(5));
+        
+        let symbols_count = results.lock().unwrap().len();
+        let processed = *files_processed.lock().unwrap();
+        
+        println!("Status: {}/{} files processed, {} symbols extracted", 
+                 processed, total_files, symbols_count);
+        
+        // Save partial results every 1000 new symbols
+        if symbols_count - last_saved >= 1000 {
+            let partial = results.lock().unwrap().clone();
+            let json = serde_json::to_string_pretty(&partial)?;
+            fs::write("markov_symbol_scores_partial.json", json)?;
+            println!("  → Saved partial results");
+            last_saved = symbols_count;
+        }
+        
+        // Check if done
+        if processed >= total_files {
+            println!("✓ All files processed!");
+            break;
         }
     }
     
     let all_symbols = results.lock().unwrap().clone();
-    println!("\nTotal symbols extracted: {}\n", all_symbols.len());
+    let all_distributions = distributions.lock().unwrap().clone();
+    println!("\nTotal symbols extracted: {} from {} files\n", all_symbols.len(), total_files);
+    println!("Total distributions: {}\n", all_distributions.len());
     
-    // Save to JSON
+    // Save final JSON
     let json = serde_json::to_string_pretty(&all_symbols)?;
     fs::write("markov_symbol_scores.json", json)?;
-    println!("Saved to markov_symbol_scores.json\n");
+    println!("✓ Saved final results to markov_symbol_scores.json");
     
-    // Rank globally
-    let mut ranked: Vec<_> = all_symbols.iter().collect();
-    ranked.sort_by(|a, b| b.score.partial_cmp(&a.score).unwrap());
+    // Compute global similarity matrix
+    println!("\nComputing global distribution similarity matrix...");
+    let n = all_distributions.len();
+    let mut similarity_matrix = vec![vec![0.0; n]; n];
     
-    println!("\n=== TOP 50 SYMBOLS BY MARKOV RESONANCE ===\n");
-    for (i, sym) in ranked.iter().take(50).enumerate() {
-        let short_file = Path::new(&sym.file).file_name().unwrap().to_string_lossy();
-        println!("{:3}. {:40} cell={:4} score={:.4} | {}", 
-                 i+1, &sym.name[..sym.name.len().min(40)], sym.cell, sym.score, short_file);
+    for i in 0..n {
+        for j in i..n {
+            let sim = cosine_similarity(&all_distributions[i].resonance_vector, 
+                                       &all_distributions[j].resonance_vector);
+            similarity_matrix[i][j] = sim;
+            similarity_matrix[j][i] = sim;
+        }
+        if (i + 1) % 100 == 0 {
+            println!("  Computed {}/{} rows", i + 1, n);
+        }
     }
     
-    // Group by file
-    let mut by_file: HashMap<String, Vec<&SymbolScore>> = HashMap::new();
-    for sym in &all_symbols {
-        by_file.entry(sym.file.clone()).or_insert_with(Vec::new).push(sym);
-    }
+    let global_matrix = GlobalMatrix {
+        files: all_distributions,
+        similarity_matrix,
+    };
     
-    let mut file_scores: Vec<_> = by_file.iter()
-        .map(|(file, syms)| {
-            let avg = syms.iter().map(|s| s.score).sum::<f64>() / syms.len() as f64;
-            let max = syms.iter().map(|s| s.score).fold(0.0, f64::max);
-            (file, avg, max, syms.len())
-        })
-        .collect();
-    
-    file_scores.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap());
-    
-    println!("\n=== TOP 30 FILES BY AVERAGE RESONANCE ===\n");
-    for (i, (file, avg, max, count)) in file_scores.iter().take(30).enumerate() {
-        let short_name = Path::new(file).file_name().unwrap().to_string_lossy();
-        println!("{:3}. {:40} avg={:.4} max={:.4} syms={}", 
-                 i+1, short_name, avg, max, count);
-    }
+    let matrix_json = serde_json::to_string_pretty(&global_matrix)?;
+    fs::write("markov_global_matrix.json", matrix_json)?;
+    println!("✓ Saved global matrix to markov_global_matrix.json\n");
     
     Ok(())
 }
 
-fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<SymbolScore>>>) {
+fn worker(worker_id: usize, receiver: Receiver<String>, results: Arc<Mutex<Vec<SymbolScore>>>, 
+          distributions: Arc<Mutex<Vec<FileDistribution>>>, files_processed: Arc<Mutex<usize>>) {
     let mut processed = 0;
     while let Ok(path) = receiver.recv() {
-        if let Ok(symbols) = analyze_file(&path, 32) {
+        if let Ok((symbols, dist)) = analyze_file_with_distribution(&path, 32) {
             if let Ok(mut res) = results.lock() {
                 res.extend(symbols);
-                processed += 1;
-                if processed % 10 == 0 {
-                    println!("Worker {}: {} files processed", worker_id, processed);
-                }
             }
+            if let Ok(mut dists) = distributions.lock() {
+                dists.push(dist);
+            }
+        }
+        processed += 1;
+        *files_processed.lock().unwrap() += 1;
+        
+        if processed % 10 == 0 {
+            println!("Worker {}: {} files processed", worker_id, processed);
         }
     }
     println!("Worker {} finished: {} files", worker_id, processed);
 }
 
 fn find_elf_files(root: &str, limit: usize) -> Result<Vec<String>, Box<dyn std::error::Error>> {
+    let cache_file = "elf_files_cache.txt";
+    
+    // Try to load from cache
+    if let Ok(cached) = fs::read_to_string(cache_file) {
+        println!("Loading {} ELF files from cache", cached.lines().count());
+        return Ok(cached.lines().take(limit).map(String::from).collect());
+    }
+    
+    // Cache miss - do the slow find
+    println!("Building ELF file cache (this is slow, only happens once)...");
     let output = std::process::Command::new("find")
         .arg(root)
         .arg("-type").arg("f")
@@ -122,16 +209,14 @@ fn find_elf_files(root: &str, limit: usize) -> Result<Vec<String>, Box<dyn std::
         .arg(")")
         .output()?;
     
-    let paths: Vec<String> = String::from_utf8_lossy(&output.stdout)
-        .lines()
-        .take(limit)
-        .map(String::from)
-        .collect();
+    let all_paths = String::from_utf8_lossy(&output.stdout);
+    fs::write(cache_file, &*all_paths)?;
+    println!("Cached {} files to {}", all_paths.lines().count(), cache_file);
     
-    Ok(paths)
+    Ok(all_paths.lines().take(limit).map(String::from).collect())
 }
 
-fn analyze_file(path: &str, window_size: usize) -> Result<Vec<SymbolScore>, Box<dyn std::error::Error>> {
+fn analyze_file_with_distribution(path: &str, window_size: usize) -> Result<(Vec<SymbolScore>, FileDistribution), Box<dyn std::error::Error>> {
     let buffer = fs::read(path)?;
     let elf = Elf::parse(&buffer)?;
     
@@ -148,7 +233,12 @@ fn analyze_file(path: &str, window_size: usize) -> Result<Vec<SymbolScore>, Box<
         }
     }
     
-    if text_size == 0 { return Ok(vec![]); }
+    if text_size == 0 { return Ok((vec![], FileDistribution {
+        file: path.to_string(),
+        window_size,
+        num_windows: 0,
+        resonance_vector: vec![],
+    })); }
     
     let text = &buffer[text_start..text_start + text_size];
     let resonance = analyze_markov_resonance(text, window_size);
@@ -177,7 +267,26 @@ fn analyze_file(path: &str, window_size: usize) -> Result<Vec<SymbolScore>, Box<
         });
     }
     
-    Ok(results)
+    let distribution = FileDistribution {
+        file: path.to_string(),
+        window_size,
+        num_windows: resonance.len(),
+        resonance_vector: resonance,
+    };
+    
+    Ok((results, distribution))
+}
+
+fn cosine_similarity(a: &[f64], b: &[f64]) -> f64 {
+    let min_len = a.len().min(b.len());
+    if min_len == 0 { return 0.0; }
+    
+    let dot: f64 = a.iter().zip(b.iter()).take(min_len).map(|(x, y)| x * y).sum();
+    let mag_a: f64 = a.iter().take(min_len).map(|x| x * x).sum::<f64>().sqrt();
+    let mag_b: f64 = b.iter().take(min_len).map(|x| x * x).sum::<f64>().sqrt();
+    
+    if mag_a == 0.0 || mag_b == 0.0 { return 0.0; }
+    dot / (mag_a * mag_b)
 }
 
 fn analyze_markov_resonance(text: &[u8], window_size: usize) -> Vec<f64> {
