@@ -219,6 +219,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     fs::write("markov_symbol_scores.json", json)?;
     println!("✓ Saved final results to markov_symbol_scores.json");
     
+    // Save file index mapping for eigenvector interpretation
+    let file_mapping: Vec<String> = all_distributions.iter()
+        .map(|d| d.file.clone())
+        .collect();
+    let mapping_json = serde_json::to_string_pretty(&file_mapping)?;
+    fs::write("markov_file_index_mapping.json", mapping_json)?;
+    println!("✓ Saved file index mapping ({} files)", file_mapping.len());
+    
     // Compute global similarity matrix in parallel
     println!("\nComputing global distribution similarity matrix with {} workers...", num_workers);
     let n = all_distributions.len();
