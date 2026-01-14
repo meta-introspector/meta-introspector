@@ -18,3 +18,7 @@ path = "src/markov_labels.rs"
 [[bin]]
 name = "label_mapper"
 path = "src/label_mapper.rs"
+
+[[bin]]
+name = "fingerprint_decoder"
+path = "src/fingerprint_decoder.rs"
