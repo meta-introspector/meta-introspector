@@ -77,8 +77,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     println!("🔍 Fetching comprehensive GitHub activity for {}/{:02} - @{}", year, month, user);
     
-    let token = std::env::var("GITHUB_TOKEN").expect("GITHUB_TOKEN required");
-    let octocrab = Octocrab::builder().personal_token(token).build()?;
+    let octocrab = if let Ok(token) = std::env::var("GITHUB_TOKEN") {
+        println!("Using authenticated access");
+        Octocrab::builder().personal_token(token).build()?
+    } else {
+        println!("⚠️  No GITHUB_TOKEN - using unauthenticated (rate limited to 60/hour)");
+        Octocrab::builder().build()?
+    };
     
     let mut activity = GitHubActivity {
         year,
@@ -109,89 +114,49 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             println!("  Skipping event from @{} (looking for @{})", event.actor.login, user);
             continue;
         }
-        println!("  Found event from @{}: {:?}", event.actor.login, event.r#type);
         
-        // Filter by date
-        let event_date = event.created_at.to_string();
-        if !event_date.starts_with(&format!("{}-{:02}", year, month)) {
-            continue;
-        }
+        println!("  ✓ Event from @{}: {:?} at {}", 
+            event.actor.login, 
+            event.r#type, 
+            event.created_at
+        );
+        println!("    Repo: {}", event.repo.name);
         
-        match event.r#type.as_str() {
-            "PushEvent" => {
-                if let Some(payload) = event.payload {
-                    if let Some(commits) = payload.get("commits") {
-                        if let Some(commits_array) = commits.as_array() {
-                            for commit in commits_array {
-                                activity.commits.push(CommitEvent {
-                                    date: event_date.clone(),
-                                    repo: event.repo.name.clone(),
-                                    sha: commit["sha"].as_str().unwrap_or("").to_string(),
-                                    message: commit["message"].as_str().unwrap_or("").to_string(),
-                                });
-                            }
-                        }
-                    }
-                }
+        // TODO_PARSE_EVENT_TYPE! - Match on EventType enum variants
+        // TODO_EXTRACT_COMMITS! - Get commits from PushEvent payload
+        // TODO_EXTRACT_STARS! - Get starred repo from WatchEvent
+        // TODO_EXTRACT_FORKS! - Get fork info from ForkEvent payload
+        // TODO_EXTRACT_PRS! - Get PR details from PullRequestEvent payload
+        // TODO_EXTRACT_ISSUES! - Get issue details from IssuesEvent payload
+        // TODO_EXTRACT_REVIEWS! - Get review details from PullRequestReviewEvent payload
+        
+        // For now, just count by type
+        match event.r#type {
+            octocrab::models::events::EventType::PushEvent => {
+                activity.commits.push(CommitEvent {
+                    date: event.created_at.to_string(),
+                    repo: event.repo.name.clone(),
+                    sha: "TODO".to_string(), // TODO_EXTRACT_COMMITS!
+                    message: "TODO".to_string(),
+                });
             }
-            "WatchEvent" => {
-                // Star event
+            octocrab::models::events::EventType::WatchEvent => {
                 activity.stars.push(StarEvent {
-                    date: event_date.clone(),
+                    date: event.created_at.to_string(),
                     repo: event.repo.name.clone(),
                     repo_url: format!("https://github.com/{}", event.repo.name),
                 });
             }
-            "ForkEvent" => {
-                if let Some(payload) = event.payload {
-                    if let Some(forkee) = payload.get("forkee") {
-                        activity.forks.push(ForkEvent {
-                            date: event_date.clone(),
-                            source_repo: event.repo.name.clone(),
-                            forked_repo: forkee["full_name"].as_str().unwrap_or("").to_string(),
-                        });
-                    }
-                }
+            octocrab::models::events::EventType::ForkEvent => {
+                activity.forks.push(ForkEvent {
+                    date: event.created_at.to_string(),
+                    source_repo: event.repo.name.clone(),
+                    forked_repo: "TODO".to_string(), // TODO_EXTRACT_FORKS!
+                });
             }
-            "PullRequestEvent" => {
-                if let Some(payload) = event.payload {
-                    if let Some(pr) = payload.get("pull_request") {
-                        activity.pull_requests.push(PREvent {
-                            date: event_date.clone(),
-                            repo: event.repo.name.clone(),
-                            number: pr["number"].as_u64().unwrap_or(0),
-                            title: pr["title"].as_str().unwrap_or("").to_string(),
-                            state: pr["state"].as_str().unwrap_or("").to_string(),
-                        });
-                    }
-                }
+            _ => {
+                // TODO_HANDLE_OTHER_EVENTS! - PRs, Issues, Reviews
             }
-            "IssuesEvent" => {
-                if let Some(payload) = event.payload {
-                    if let Some(issue) = payload.get("issue") {
-                        activity.issues.push(IssueEvent {
-                            date: event_date.clone(),
-                            repo: event.repo.name.clone(),
-                            number: issue["number"].as_u64().unwrap_or(0),
-                            title: issue["title"].as_str().unwrap_or("").to_string(),
-                            state: issue["state"].as_str().unwrap_or("").to_string(),
-                        });
-                    }
-                }
-            }
-            "PullRequestReviewEvent" => {
-                if let Some(payload) = event.payload {
-                    if let Some(review) = payload.get("review") {
-                        activity.reviews.push(ReviewEvent {
-                            date: event_date.clone(),
-                            repo: event.repo.name.clone(),
-                            pr_number: payload["pull_request"]["number"].as_u64().unwrap_or(0),
-                            state: review["state"].as_str().unwrap_or("").to_string(),
-                        });
-                    }
-                }
-            }
-            _ => {}
         }
     }
     
