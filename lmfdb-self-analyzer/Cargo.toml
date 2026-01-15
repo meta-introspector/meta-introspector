@@ -68,6 +68,54 @@ name = "find_unique_instructions"
 path = "src/bin/find_unique_instructions.rs"
 
 [[bin]]
+name = "extract_dfa"
+path = "src/bin/extract_dfa.rs"
+
+[[bin]]
+name = "trace_keywords"
+path = "src/bin/trace_keywords.rs"
+
+[[bin]]
+name = "extract_dfa_rust"
+path = "src/bin/extract_dfa_rust.rs"
+
+[[bin]]
+name = "find_e_n_functions"
+path = "src/bin/find_e_n_functions.rs"
+
+[[bin]]
+name = "find_enum_string"
+path = "src/bin/find_enum_string.rs"
+
+[[bin]]
+name = "extract_string_comparisons"
+path = "src/bin/extract_string_comparisons.rs"
+
+[[bin]]
+name = "extract_all_strings"
+path = "src/bin/extract_all_strings.rs"
+
+[[bin]]
+name = "extract_keywords"
+path = "src/bin/extract_keywords.rs"
+
+[[bin]]
+name = "find_string_usage"
+path = "src/bin/find_string_usage.rs"
+
+[[bin]]
+name = "find_single_string_usage"
+path = "src/bin/find_single_string_usage.rs"
+
+[[bin]]
+name = "extract_all_string_usage"
+path = "src/bin/extract_all_string_usage.rs"
+
+[[bin]]
+name = "find_string_refs"
+path = "src/bin/find_string_refs.rs"
+
+[[bin]]
 name = "find_word_sequences"
 path = "src/bin/find_word_sequences.rs"
 
@@ -103,3 +151,4 @@ parquet = "53"
 glob = "0.3"
 linux-perf-data = "0.8"
 anyhow = "1.0"
+iced-x86 = "1.21"
