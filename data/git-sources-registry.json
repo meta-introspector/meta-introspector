@@ -1,40 +1,13 @@
 {
   "sources": {
-    "emigo": {
-      "name": "emigo",
-      "url": "https://github.com/MatthewZMD/emigo.git",
+    "solfunmeme-index": {
+      "name": "solfunmeme-index",
+      "url": "https://huggingface.co/datasets/introspector/solfunmeme-index",
       "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/emigo",
-      "canonical_link": "data/git-sources/emigo",
-      "last_commit": "b19f32c56cb4586c9e5b9a6a68e47bfae94508f5",
-      "last_updated": "2026-01-15T10:09:00.079413526+00:00"
-    },
-    "bootstrap": {
-      "name": "bootstrap",
-      "url": "ssh://git@github.com/meta-introspector/bootstrap",
-      "branch": "master",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/bootstrap",
-      "canonical_link": "data/git-sources/bootstrap",
-      "last_commit": "7cb0a53dd17e156385c19ca35c8db83c3001b8ae",
-      "last_updated": "2026-01-15T10:08:59.848681818+00:00"
-    },
-    "ragit": {
-      "name": "ragit",
-      "url": "ssh://git@github.com/meta-introspector/ragit",
-      "branch": "feature/emoji-vectorization-hf-dataset",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit",
-      "canonical_link": "data/git-sources/ragit",
-      "last_commit": "75eac7c23882a666407f1401849bbe20fbd5a3de",
-      "last_updated": "2026-01-15T10:08:59.999185006+00:00"
-    },
-    "amazon-q-developer-cli": {
-      "name": "amazon-q-developer-cli",
-      "url": "https://github.com/aws/amazon-q-developer-cli.git",
-      "branch": "feature/gemini",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/amazon-q-developer-cli",
-      "canonical_link": "data/git-sources/amazon-q-developer-cli",
-      "last_commit": "007ce3f01e08dafb22160a31f812b8211773cce9",
-      "last_updated": "2026-01-15T10:08:59.322015054+00:00"
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/solfunmeme-index",
+      "canonical_link": "data/git-sources/solfunmeme-index",
+      "last_commit": "91b29f01c42137652f56b86189a018e7f40fd4c4",
+      "last_updated": "2026-01-15T10:08:59.493979973+00:00"
     },
     "meta-introspector": {
       "name": "meta-introspector",
@@ -63,23 +36,23 @@
       "last_commit": "b493e209eca8f1eec08134d0abd0acfde438a684",
       "last_updated": "2026-01-15T10:08:59.546214256+00:00"
     },
-    "hf-rust-dataset": {
-      "name": "hf-rust-dataset",
-      "url": "https://huggingface.co/datasets/introspector/rust",
+    "emigo": {
+      "name": "emigo",
+      "url": "https://github.com/MatthewZMD/emigo.git",
       "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/hf-rust-dataset",
-      "canonical_link": "data/git-sources/hf-rust-dataset",
-      "last_commit": "cbdc8d27fdc0044f18fc065f7abd0e665de569bc",
-      "last_updated": "2026-01-15T10:08:59.669950020+00:00"
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/emigo",
+      "canonical_link": "data/git-sources/emigo",
+      "last_commit": "b19f32c56cb4586c9e5b9a6a68e47bfae94508f5",
+      "last_updated": "2026-01-15T10:09:00.079413526+00:00"
     },
-    "zombie-driver2": {
-      "name": "zombie-driver2",
-      "url": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust/",
-      "branch": "bootstrap-singularity-clean",
-      "checkout_path": "/mnt/data1/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/zombie_driver2",
-      "canonical_link": "data/git-sources/zombie-driver2",
-      "last_commit": "f923679fc3b693120dc389007d94171702639d91",
-      "last_updated": "2026-01-15T10:10:47.837606700+00:00"
+    "ragit": {
+      "name": "ragit",
+      "url": "ssh://git@github.com/meta-introspector/ragit",
+      "branch": "feature/emoji-vectorization-hf-dataset",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit",
+      "canonical_link": "data/git-sources/ragit",
+      "last_commit": "75eac7c23882a666407f1401849bbe20fbd5a3de",
+      "last_updated": "2026-01-15T10:08:59.999185006+00:00"
     },
     "rust-analyser-hf-dataset": {
       "name": "rust-analyser-hf-dataset",
@@ -99,14 +72,50 @@
       "last_commit": "327d4b34eaf97d321bbff3875b307f3e78b7ea74",
       "last_updated": "2026-01-15T10:09:00.094690153+00:00"
     },
-    "solfunmeme-index": {
-      "name": "solfunmeme-index",
-      "url": "https://huggingface.co/datasets/introspector/solfunmeme-index",
+    "zombie-driver2": {
+      "name": "zombie-driver2",
+      "url": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust/",
+      "branch": "bootstrap-singularity-clean",
+      "checkout_path": "/mnt/data1/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/zombie_driver2",
+      "canonical_link": "data/git-sources/zombie-driver2",
+      "last_commit": "f923679fc3b693120dc389007d94171702639d91",
+      "last_updated": "2026-01-15T10:10:47.837606700+00:00"
+    },
+    "hf-rust-dataset": {
+      "name": "hf-rust-dataset",
+      "url": "https://huggingface.co/datasets/introspector/rust",
       "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/solfunmeme-index",
-      "canonical_link": "data/git-sources/solfunmeme-index",
-      "last_commit": "91b29f01c42137652f56b86189a018e7f40fd4c4",
-      "last_updated": "2026-01-15T10:08:59.493979973+00:00"
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/hf-rust-dataset",
+      "canonical_link": "data/git-sources/hf-rust-dataset",
+      "last_commit": "cbdc8d27fdc0044f18fc065f7abd0e665de569bc",
+      "last_updated": "2026-01-15T10:08:59.669950020+00:00"
+    },
+    "bootstrap": {
+      "name": "bootstrap",
+      "url": "ssh://git@github.com/meta-introspector/bootstrap",
+      "branch": "master",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/bootstrap",
+      "canonical_link": "data/git-sources/bootstrap",
+      "last_commit": "7cb0a53dd17e156385c19ca35c8db83c3001b8ae",
+      "last_updated": "2026-01-15T10:08:59.848681818+00:00"
+    },
+    "amazon-q-developer-cli": {
+      "name": "amazon-q-developer-cli",
+      "url": "https://github.com/aws/amazon-q-developer-cli.git",
+      "branch": "feature/gemini",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/amazon-q-developer-cli",
+      "canonical_link": "data/git-sources/amazon-q-developer-cli",
+      "last_commit": "007ce3f01e08dafb22160a31f812b8211773cce9",
+      "last_updated": "2026-01-15T10:08:59.322015054+00:00"
+    },
+    "zos-server": {
+      "name": "zos-server",
+      "url": "https://github.com/meta-introspector/zos-server",
+      "branch": "bootstrap-singularity",
+      "checkout_path": "/mnt/data1/nix/time/2024/12/10/swarms-terraform/services/submodules/zos-server",
+      "canonical_link": "data/git-sources/zos-server",
+      "last_commit": "63c64f1f309f1182c3e92256ad6d1cb0e413b2fb",
+      "last_updated": "2026-01-15T10:11:10.515134473+00:00"
     }
   },
   "base_checkout_dir": "/mnt/data1/nix/time/2025/08/07",
