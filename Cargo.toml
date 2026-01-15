@@ -39,6 +39,18 @@ path = "github-comprehensive-activity.rs"
 name = "github-events-collector"
 path = "github-events-collector.rs"
 
+[[bin]]
+name = "git-metrics-report"
+path = "git-metrics-report.rs"
+
+[[bin]]
+name = "investor-report-2025"
+path = "investor-report-2025.rs"
+
+[[bin]]
+name = "generate-dashboard"
+path = "generate-dashboard.rs"
+
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"

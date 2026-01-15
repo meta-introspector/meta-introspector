@@ -1,0 +1,69 @@
+name: Generate Activity Reports
+
+on:
+  push:
+    branches: ["main"]
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  generate-reports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: meta-introspector/checkout@main
+
+      - name: Install Rust
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Download HuggingFace Dataset
+        run: |
+          mkdir -p data
+          wget -q https://huggingface.co/datasets/introspector/git-activity/resolve/main/git-metrics-report.json -O data/git-metrics-report.json
+          wget -q https://huggingface.co/datasets/introspector/git-activity/resolve/main/git-sources-registry.json -O data/git-sources-registry.json
+
+      - name: Build Report Tools
+        run: |
+          cargo build --release --bin git-metrics-report
+          cargo build --release --bin investor-report-2025
+
+      - name: Generate Reports
+        run: |
+          ./target/release/git-metrics-report > reports/metrics-summary.txt
+          ./target/release/investor-report-2025 > reports/investor-summary.txt
+
+      - name: Create HTML Reports
+        run: |
+          mkdir -p reports
+          cp investor-report-2025.html reports/
+          cp data/git-metrics-report.json reports/
+          cp data/investor-report-2025.json reports/
+
+      - name: Create Archive
+        run: |
+          cd reports
+          zip -r ../activity-reports-$(date +%Y%m%d).zip .
+          cd ..
+
+      - name: Upload Reports Artifact
+        uses: meta-introspector/upload-artifact@main
+        with:
+          name: activity-reports
+          path: |
+            reports/
+            activity-reports-*.zip
+
+      - name: Commit Reports
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add reports/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update activity reports [skip ci]"
+          git push
