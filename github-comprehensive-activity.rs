@@ -92,17 +92,25 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         reviews: Vec::new(),
     };
     
-    // Get events for the user
-    println!("Fetching events...");
-    let events = octocrab
-        .activity()
+    // Get events (public events, last 90 days max)
+    println!("Fetching public events...");
+    let response = octocrab
         .events()
-        .user_events(user)
         .per_page(100)
         .send()
         .await?;
     
-    for event in events {
+    let page = response.value.ok_or("No events returned")?;
+    println!("Processing {} events...", page.items.len());
+    
+    for event in page.items {
+        // Check user (actor)
+        if event.actor.login != user {
+            println!("  Skipping event from @{} (looking for @{})", event.actor.login, user);
+            continue;
+        }
+        println!("  Found event from @{}: {:?}", event.actor.login, event.r#type);
+        
         // Filter by date
         let event_date = event.created_at.to_string();
         if !event_date.starts_with(&format!("{}-{:02}", year, month)) {
