@@ -1,0 +1,9 @@
+# Git repositories to ingest
+# One path per line - can be individual repos or directories containing repos
+
+# HF Dataset Validator (just pushed)
+/mnt/data1/nix/time/2025/08/07/hf-dataset-validator-rust
+
+# Scan these directories for repos
+/mnt/data1/nix/time/2025/08/07
+/mnt/data1/meta-introspector
