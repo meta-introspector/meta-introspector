@@ -62,8 +62,8 @@
       in
       {
         packages = {
-          default = rust-telemetry-driver;
-          rust-telemetry-driver = rust-telemetry-driver;
+          default = rust-telemetry-driver.packages.${system}.default;
+          rust-telemetry-driver = rust-telemetry-driver.packages.${system}.default;
           telemetry-shell = telemetry-shell;
           telemetry-env = telemetry-env;
         };
