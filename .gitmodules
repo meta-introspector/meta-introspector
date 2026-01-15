@@ -40,3 +40,6 @@
 [submodule "hf-git-activity"]
 	path = hf-git-activity
 	url = git@hf.co:datasets/introspector/git-activity
+[submodule "hf-build-telemetry-upload"]
+	path = hf-build-telemetry-upload
+	url = git@hf.co:datasets/introspector/build-telemetry
