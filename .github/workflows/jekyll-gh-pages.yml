@@ -27,16 +27,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       - name: Setup Pages
-        uses: meta-introspector/configure-pages@v5
+        uses: meta-introspector/configure-pages@main
       - name: Build with Jekyll
-        uses: meta-introspector/jekyll-build-pages@v1
+        uses: meta-introspector/jekyll-build-pages@main
         with:
           source: ./
           destination: ./_site
       - name: Upload artifact
-        uses: meta-introspector/upload-pages-artifact@v3
+        uses: meta-introspector/upload-pages-artifact@main
 
   # Deployment job
   deploy:
@@ -48,4 +48,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: meta-introspector/deploy-pages@v4
+        uses: meta-introspector/deploy-pages@main
