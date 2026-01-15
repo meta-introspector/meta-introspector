@@ -175,6 +175,61 @@ impl GitRegistry {
             println!();
         }
     }
+
+    pub fn status(&self) {
+        println!("Git Sources Status ({} repos):", self.sources.len());
+        println!();
+        for (canonical_name, source) in &self.sources {
+            println!("=== {} ===", canonical_name);
+            let output = Command::new("git")
+                .args(&["-C", source.checkout_path.to_str().unwrap(), "status", "--short"])
+                .output();
+            
+            match output {
+                Ok(out) => {
+                    let status = String::from_utf8_lossy(&out.stdout);
+                    if status.trim().is_empty() {
+                        println!("  ✓ Clean");
+                    } else {
+                        print!("{}", status);
+                    }
+                }
+                Err(e) => println!("  ✗ Error: {}", e),
+            }
+            println!();
+        }
+    }
+
+    pub fn foreach<F>(&self, mut cmd: F) -> Result<(), Box<dyn std::error::Error>>
+    where
+        F: FnMut(&str, &GitSource) -> Result<(), Box<dyn std::error::Error>>,
+    {
+        for (canonical_name, source) in &self.sources {
+            println!("=== {} ===", canonical_name);
+            if let Err(e) = cmd(canonical_name, source) {
+                eprintln!("Error in {}: {}", canonical_name, e);
+            }
+            println!();
+        }
+        Ok(())
+    }
+
+    pub fn foreach_shell(&self, shell_cmd: &str) -> Result<(), Box<dyn std::error::Error>> {
+        for (canonical_name, source) in &self.sources {
+            println!("=== {} ===", canonical_name);
+            let output = Command::new("sh")
+                .args(&["-c", shell_cmd])
+                .current_dir(&source.checkout_path)
+                .output()?;
+            
+            print!("{}", String::from_utf8_lossy(&output.stdout));
+            if !output.stderr.is_empty() {
+                eprint!("{}", String::from_utf8_lossy(&output.stderr));
+            }
+            println!();
+        }
+        Ok(())
+    }
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -216,14 +271,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         Some("list") => {
             registry.list();
         }
+        Some("status") => {
+            registry.status();
+        }
+        Some("foreach") => {
+            let cmd = args.get(2).ok_or("Missing command")?;
+            registry.foreach_shell(cmd)?;
+        }
         _ => {
             println!("Git Sources - Centralized Repository Management");
             println!();
             println!("Usage:");
-            println!("  git-sources ingest [list.txt]     - Ingest repos from list file");
-            println!("  git-sources scan [directory]      - Scan directory for git repos");
-            println!("  git-sources register <name> <path> - Register existing checkout");
-            println!("  git-sources list                  - List all registered repos");
+            println!("  git-sources ingest [list.txt]        - Ingest repos from list file");
+            println!("  git-sources scan [directory]         - Scan directory for git repos");
+            println!("  git-sources register <name> <path>   - Register existing checkout");
+            println!("  git-sources list                     - List all registered repos");
+            println!("  git-sources status                   - Show git status for all repos");
+            println!("  git-sources foreach <command>        - Run command in each repo");
             println!();
             println!("Registry: {}", registry_file.display());
             println!("Symlinks: {}", links_dir.display());
