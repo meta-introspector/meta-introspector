@@ -50,12 +50,11 @@
             (rust-bin.stable.latest.default.override {
               extensions = [ "rust-src" "rust-analyzer" ];
             })
-            cargo
             git
             jq
             strace
             linuxPackages.perf
-            rust-telemetry-driver
+            rust-telemetry-driver.packages.${system}.default
             telemetry-shell
           ];
         };
