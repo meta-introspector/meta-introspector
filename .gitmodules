@@ -16,3 +16,21 @@
 [submodule "data-const71"]
 	path = data-const71
 	url = ./data-const71
+[submodule ".github/actions/checkout"]
+	path = .github/actions/checkout
+	url = https://github.com/actions/checkout.git
+[submodule ".github/actions/configure-pages"]
+	path = .github/actions/configure-pages
+	url = https://github.com/actions/configure-pages.git
+[submodule ".github/actions/jekyll-build-pages"]
+	path = .github/actions/jekyll-build-pages
+	url = https://github.com/actions/jekyll-build-pages.git
+[submodule ".github/actions/upload-pages-artifact"]
+	path = .github/actions/upload-pages-artifact
+	url = https://github.com/actions/upload-pages-artifact.git
+[submodule ".github/actions/deploy-pages"]
+	path = .github/actions/deploy-pages
+	url = https://github.com/actions/deploy-pages.git
+[submodule ".github/actions/upload-artifact"]
+	path = .github/actions/upload-artifact
+	url = https://github.com/actions/upload-artifact.git
