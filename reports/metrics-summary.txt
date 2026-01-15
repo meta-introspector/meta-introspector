@@ -1,0 +1,13 @@
+📊 Git Metrics Report
+═══════════════════════
+Total Commits: 211
+Total Authors: 5
+
+🔝 Top 10 Contributors:
+1. Mike DuPont - 161 commits, 11 repos, +111728 -1407
+2. jmikedupont2 - 42 commits, 2 repos, +1257 -182
+3. mike dupont - 5 commits, 1 repos, +481 -12
+4. james m dupont - 2 commits, 1 repos, +70501 -70534
+5. James Michael DuPont - 1 commits, 1 repos, +0 -0
+
+✅ Full report saved to: data/git-metrics-report.json
