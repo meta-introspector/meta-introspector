@@ -51,6 +51,18 @@ fn main() {
             min-height: 100vh;
         }
         .container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .logo { 
+            width: 300px; 
+            height: 300px; 
+            margin: 0 auto 30px; 
+            border-radius: 50%;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.5), 0 0 80px rgba(220, 20, 60, 0.3);
+            animation: pulse 3s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(0, 255, 255, 0.5), 0 0 80px rgba(220, 20, 60, 0.3); }
+            50% { box-shadow: 0 0 60px rgba(0, 255, 255, 0.8), 0 0 120px rgba(220, 20, 60, 0.5); }
+        }
         h1 { 
             font-size: 3em; 
             color: #00FFFF; 
@@ -77,6 +89,7 @@ fn main() {
 </head>
 <body>
     <div class="container">
+        <img src="solfunmeme-logo.png" alt="SOLFUNMEME" class="logo">
         <h1>📊 Meta-Introspector</h1>
         <p>Git Activity Analysis & Reports</p>
         <div class="links">
