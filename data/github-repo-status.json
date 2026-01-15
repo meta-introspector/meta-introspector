@@ -236,7 +236,7 @@
     "full_name": "pick-up-nix",
     "url": "https://github.com/meta-introspector/pick-up-nix",
     "last_push": "",
-    "in_registry": false,
+    "in_registry": true,
     "needs_refresh": false
   },
   {

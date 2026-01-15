@@ -18,6 +18,8 @@ struct CachedRepo {
     updated_at: String,
     #[serde(default)]
     fork: bool,
+    #[serde(default)]
+    owner: Option<serde_json::Value>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -25,6 +27,7 @@ struct RepoStatus {
     name: String,
     full_name: String,
     url: String,
+    owner: String,
     last_push: String,
     in_registry: bool,
     needs_refresh: bool,
@@ -51,10 +54,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Check if needs refresh (pushed in 2025)
         let needs_refresh = repo.pushed_at.starts_with("2025");
         
+        // Extract owner
+        let owner = repo.owner
+            .as_ref()
+            .and_then(|o| o["login"].as_str())
+            .unwrap_or("unknown")
+            .to_string();
+        
         statuses.push(RepoStatus {
             name: repo.name.clone(),
             full_name: repo.full_name.clone(),
             url: repo.html_url.clone(),
+            owner,
             last_push: repo.pushed_at.clone(),
             in_registry,
             needs_refresh,
@@ -79,8 +90,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     println!("\n❌ MISSING from registry (top 30):");
     for status in statuses.iter().filter(|s| !s.in_registry).take(30) {
-        println!("  {} - {} (pushed: {})", 
-            status.full_name, 
+        println!("  {} by @{} - {} (pushed: {})", 
+            status.full_name,
+            status.owner,
             status.url,
             status.last_push.get(..10).unwrap_or(&status.last_push)
         );
