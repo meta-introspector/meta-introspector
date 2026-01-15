@@ -4,6 +4,8 @@
 
 This document outlines the comprehensive analysis and restructuring of the meta-introspector ecosystem, transitioning from scattered repositories to a unified canonical structure.
 
+The `git-sources` project is a sophisticated Rust-based data engineering toolkit designed for comprehensive analysis of Git and GitHub repository activity. It functions through a modular architecture of independent command-line binaries that cooperatively form a robust data pipeline. The core objective is to extract, transform, and load Git-related data, such as commit logs, into structured formats like JSON and Parquet for in-depth insights into software development processes and codebases. This analysis is applied across a diverse set of repositories, including internal `meta-introspector` projects, Nix-related configurations, various Rust ecosystem components, Hugging Face datasets, and developer tooling.
+
 ## Analysis Results
 
 ### Repository Coverage Analysis
