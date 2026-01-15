@@ -24,25 +24,41 @@ done
 echo "Monitoring builds (Ctrl+C to stop monitoring, builds continue)..."
 sleep 2
 
-while true; do
+# Monitor for max 1 hour
+MAX_ITERATIONS=1200  # 1 hour at 3 second intervals
+ITERATION=0
+
+while [ $ITERATION -lt $MAX_ITERATIONS ]; do
   clear
   echo "🔨 Const x=71 Build Status - $(date +%H:%M:%S)"
   echo "================================================"
+  
+  DONE_COUNT=0
   for lang in "${LANGS[@]}"; do
     if [ -f "$LOG_DIR/${lang}.log" ]; then
       status=$(tail -1 "$LOG_DIR/${lang}.log")
       echo "$lang: $status"
+      if echo "$status" | grep -q "SUCCESS\|FAILED"; then
+        ((DONE_COUNT++))
+      fi
     else
       echo "$lang: Waiting..."
     fi
   done
   
   # Check if all done
-  if grep -q "SUCCESS\|FAILED" "$LOG_DIR"/*.log 2>/dev/null | wc -l | grep -q 10; then
+  if [ $DONE_COUNT -eq ${#LANGS[@]} ]; then
     echo ""
     echo "✅ All builds complete!"
     break
   fi
   
   sleep 3
+  ((ITERATION++))
 done
+
+if [ $ITERATION -eq $MAX_ITERATIONS ]; then
+  echo ""
+  echo "⏱️  Timeout after 1 hour - some builds still running"
+  echo "Check logs in: $LOG_DIR/"
+fi
