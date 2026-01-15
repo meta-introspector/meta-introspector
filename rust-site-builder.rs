@@ -15,10 +15,13 @@ fn main() {
         }
     }
 
-    // Copy logo
-    if Path::new("solfunmeme-logo.png").exists() {
-        fs::copy("solfunmeme-logo.png", output_dir.join("solfunmeme-logo.png")).unwrap();
-        println!("Copied: solfunmeme-logo.png");
+    // Copy logo (all sizes)
+    for size in &["", "-128", "-256", "-512"] {
+        let logo_file = format!("solfunmeme-logo{}.png", size);
+        if Path::new(&logo_file).exists() {
+            fs::copy(&logo_file, output_dir.join(&logo_file)).unwrap();
+            println!("Copied: {}", logo_file);
+        }
     }
 
     // Copy reports directory
@@ -95,7 +98,7 @@ fn main() {
 </head>
 <body>
     <div class="container">
-        <img src="solfunmeme-logo.png" alt="SOLFUNMEME" class="logo">
+        <img src="solfunmeme-logo-256.png" alt="SOLFUNMEME" class="logo">
         <h1>📊 Meta-Introspector</h1>
         <p>SOLFUNMEME/ZOS (Zero Ontology System) - Git Activity Analysis & Reports</p>
         <div class="links">
