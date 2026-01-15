@@ -19,9 +19,20 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Fetch all events first (verbatim)
     println!("\n📥 Fetching all events...");
-    let output = Command::new("gh")
+    
+    // Try user events first, fall back to org events
+    let mut output = Command::new("gh")
         .args(&["api", &format!("/users/{}/events", user), "--paginate"])
         .output()?;
+    
+    // Check if empty array
+    let stdout_str = String::from_utf8_lossy(&output.stdout);
+    if !output.status.success() || stdout_str.trim() == "[]" {
+        println!("   Trying org events API...");
+        output = Command::new("gh")
+            .args(&["api", &format!("/orgs/{}/events", user), "--paginate"])
+            .output()?;
+    }
     
     if !output.status.success() {
         eprintln!("Error fetching events: {}", String::from_utf8_lossy(&output.stderr));
