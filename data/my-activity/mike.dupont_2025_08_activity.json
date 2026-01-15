@@ -1,0 +1,50 @@
+[
+  {
+    "commit_hash": "296eac2b5a1313fca49a8dab50309fe56148264d",
+    "author_name": "mike dupont",
+    "author_email": "mike.dupont@introspector.local",
+    "author_date": "2025-08-07T19:44:48-04:00",
+    "committer_name": "mike dupont",
+    "committer_email": "mike.dupont@introspector.local",
+    "committer_date": "2025-08-07T19:44:48-04:00",
+    "message": "Add cargo2hf dataset: Comprehensive Cargo project analysis",
+    "repo_name": "rust-analyser-hf-dataset",
+    "repo_url": "",
+    "platform": "unknown",
+    "files_changed": 3,
+    "insertions": 148,
+    "deletions": 3
+  },
+  {
+    "commit_hash": "2fa3a172d3296f75a427e1c79c014da6006c52e5",
+    "author_name": "mike dupont",
+    "author_email": "mike.dupont@introspector.local",
+    "author_date": "2025-08-07T15:38:35-04:00",
+    "committer_name": "mike dupont",
+    "committer_email": "mike.dupont@introspector.local",
+    "committer_date": "2025-08-07T15:38:35-04:00",
+    "message": "Add deployment summary and technical documentation",
+    "repo_name": "rust-analyser-hf-dataset",
+    "repo_url": "",
+    "platform": "unknown",
+    "files_changed": 1,
+    "insertions": 97,
+    "deletions": 0
+  },
+  {
+    "commit_hash": "464650e24fc7ae1efc423b1490c2f7226cd54db2",
+    "author_name": "mike dupont",
+    "author_email": "mike.dupont@introspector.local",
+    "author_date": "2025-08-07T15:37:56-04:00",
+    "committer_name": "mike dupont",
+    "committer_email": "mike.dupont@introspector.local",
+    "committer_date": "2025-08-07T15:37:56-04:00",
+    "message": "Initial commit: Rust-Analyzer Semantic Analysis Dataset",
+    "repo_name": "rust-analyser-hf-dataset",
+    "repo_url": "",
+    "platform": "unknown",
+    "files_changed": 14,
+    "insertions": 186,
+    "deletions": 0
+  }
+]
