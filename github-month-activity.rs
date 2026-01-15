@@ -27,29 +27,25 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🔍 Fetching GitHub activity for {}/{:02} - @{}", year, month, user);
     
     // Setup octocrab
-    let octocrab = if let Some(token) = std::env::var("GITHUB_TOKEN").ok() {
-        octocrab::OctocrabBuilder::new()
-            .personal_token(token)
-            .build()?
-    } else {
-        println!("⚠️  No GITHUB_TOKEN, using unauthenticated (rate limited)");
-        octocrab::Octocrab::default()
-    };
+    let token = std::env::var("GITHUB_TOKEN").expect("GITHUB_TOKEN env variable is required");
+    let octocrab = octocrab::Octocrab::builder().personal_token(token).build()?;
     
     // Get user's repos
     println!("Fetching repositories...");
     let repos = octocrab
-        .repos(user, "")
-        .list()
+        .current()
+        .list_repos_for_authenticated_user()
+        .type_("owner")
+        .per_page(100)
         .send()
         .await?;
     
-    println!("Found {} repositories", repos.items.len());
+    println!("Found {} repositories", repos.len());
     
     let mut all_commits = Vec::new();
     
     // Check each repo for commits in the target month
-    for repo in repos.items {
+    for repo in repos {
         let repo_name = &repo.name;
         
         // Get commits for this month
