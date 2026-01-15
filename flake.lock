@@ -257,11 +257,11 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1768261219,
-        "narHash": "sha256-OXB6Gu5mwnUGL7yOhTO6T3uavsH3Xrl/L7dJ3UmyOi0=",
+        "lastModified": 1768501613,
+        "narHash": "sha256-zKrhElU8Es3+1gxP/+IsUHFoO1v/uwch9DIaGgqLqNw=",
         "owner": "meta-introspector",
         "repo": "zos-server",
-        "rev": "63c64f1f309f1182c3e92256ad6d1cb0e413b2fb",
+        "rev": "19e289f6a2bd45999366bf90bf6da8ea30c7922a",
         "type": "github"
       },
       "original": {
