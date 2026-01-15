@@ -170,7 +170,11 @@ impl GitRegistry {
             println!("    Path: {}", source.checkout_path.display());
             println!("    Link: {}", source.canonical_link.display());
             if let Some(commit) = &source.last_commit {
-                println!("    Commit: {}", &commit[..8]);
+                if commit.len() >= 8 {
+                    println!("    Commit: {}", &commit[..8]);
+                } else if !commit.is_empty() {
+                    println!("    Commit: {}", commit);
+                }
             }
             println!();
         }
