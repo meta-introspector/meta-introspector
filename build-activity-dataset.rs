@@ -111,6 +111,9 @@ impl ActivityDataset {
     }
 
     fn detect_platform(url: &str) -> String {
+        if url.is_empty() {
+            return "local".to_string();
+        }
         if url.contains("github.com") {
             "github".to_string()
         } else if url.contains("codeberg.org") {
@@ -119,6 +122,10 @@ impl ActivityDataset {
             "huggingface".to_string()
         } else if url.contains("gitlab") {
             "gitlab".to_string()
+        } else if url.contains("sr.ht") {
+            "sourcehut".to_string()
+        } else if url.starts_with('/') || url.starts_with("file://") {
+            "local".to_string()
         } else {
             "unknown".to_string()
         }
