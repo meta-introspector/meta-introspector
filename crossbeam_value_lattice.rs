@@ -1,10 +1,31 @@
 use std::collections::HashMap;
 use std::fs;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use crossbeam::channel::{bounded, Receiver, Sender};
 use std::thread;
 use serde::{Deserialize, Serialize};
 use syn::{parse_file, visit::Visit, Expr, Lit};
+use clap::Parser; // Add this line
+
+#[derive(Parser, Debug)]
+#[command(author, version, about, long_about = None)]
+struct Args {
+    /// Path to the Rust project to analyze
+    #[arg(short, long, value_name = "DIR")]
+    input_path: PathBuf,
+
+    /// Directory to store the analysis results
+    #[arg(short, long, value_name = "DIR")]
+    output_dir: PathBuf,
+
+    /// Run in plan mode, only print actions without execution
+    #[arg(short, long)]
+    plan_mode: bool,
+
+    /// Only list Rust files that would be processed, one per line, and exit.
+    #[arg(long)]
+    list_files_only: bool,
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct ValueUsage {
@@ -59,9 +80,9 @@ impl<'ast> Visit<'ast> for ConstantVisitor {
     }
 }
 
-fn load_progress() -> Progress {
-    let progress_file = "/mnt/data1/meta-introspector/analysis/progress.json";
-    if let Ok(content) = fs::read_to_string(progress_file) {
+fn load_progress(output_dir: &Path) -> Progress {
+    let progress_file = output_dir.join("progress.json");
+    if let Ok(content) = fs::read_to_string(&progress_file) {
         if let Ok(progress) = serde_json::from_str(&content) {
             return progress;
         }
@@ -73,8 +94,8 @@ fn load_progress() -> Progress {
     }
 }
 
-fn save_progress(progress: &Progress) {
-    let progress_file = "/mnt/data1/meta-introspector/analysis/progress.json";
+fn save_progress(progress: &Progress, output_dir: &Path) {
+    let progress_file = output_dir.join("progress.json");
     if let Ok(json) = serde_json::to_string_pretty(progress) {
         let _ = fs::write(progress_file, json);
     }
@@ -108,16 +129,40 @@ fn collect_rust_files(dir: &Path, files: &mut Vec<String>) {
 }
 
 fn main() {
+    let args = Args::parse(); // Parse arguments
+
+    if args.list_files_only {
+        let mut rust_files = Vec::new();
+        collect_rust_files(&args.input_path, &mut rust_files);
+        for file in rust_files {
+            println!("{}", file);
+        }
+        return;
+    }
+
+    if args.plan_mode {
+        println!("--- Plan Mode ---");
+        println!("Would analyze project at: {}", args.input_path.display());
+        println!("Would save results to: {}", args.output_dir.display());
+        let mut rust_files = Vec::new();
+        collect_rust_files(&args.input_path, &mut rust_files);
+        println!("Would process {} Rust files.", rust_files.len());
+        for file in rust_files {
+            println!("  - Would analyze file: {}", file);
+        }
+        println!("--- End Plan Mode ---");
+        return;
+    }
+
     println!("🔢 RECOVERABLE 20-CORE VALUE LATTICE INDEXER");
     println!("============================================");
 
-    fs::create_dir_all("/mnt/data1/meta-introspector/analysis").unwrap();
+    fs::create_dir_all(&args.output_dir).unwrap(); // Use output_dir
     
-    let current_dir = std::env::current_dir().unwrap();
     let mut rust_files = Vec::new();
-    collect_rust_files(&current_dir, &mut rust_files);
+    collect_rust_files(&args.input_path, &mut rust_files); // Use input_path
     
-    let mut progress = load_progress();
+    let mut progress = load_progress(&args.output_dir); // Use output_dir
     
     // Filter out already processed files
     let remaining_files: Vec<String> = rust_files.into_iter()
@@ -162,7 +207,8 @@ fn main() {
     let mut value_map: HashMap<String, ValueEntry> = HashMap::new();
     
     while let Ok((file_path, constants)) = receiver.recv() {
-        progress.processed_files.push(file_path);
+        let file_path_for_progress = file_path.clone(); // Clone for progress tracking
+        progress.processed_files.push(file_path_for_progress);
         progress.current_count += 1;
         
         if progress.current_count % 100 == 0 {
@@ -170,7 +216,7 @@ fn main() {
                      progress.current_count, 
                      progress.total_files,
                      (progress.current_count as f64 / progress.total_files as f64) * 100.0);
-            save_progress(&progress);
+            save_progress(&progress, &args.output_dir); // Use output_dir
         }
         
         for (value, context, usage_type) in constants {
@@ -183,7 +229,7 @@ fn main() {
             
             entry.total_usages += 1;
             entry.usages.push(ValueUsage {
-                file_path: "processed".to_string(),
+                file_path: file_path.clone(), // Use clone here to keep original file_path for later use if needed
                 context,
                 usage_type,
             });
@@ -196,12 +242,13 @@ fn main() {
     }
     
     // Final progress save
-    save_progress(&progress);
+    save_progress(&progress, &args.output_dir); // Use output_dir
     
     println!("💾 Saving {} unique values...", value_map.len());
     
     // Save results by length in parallel
-    fs::create_dir_all("/mnt/data1/meta-introspector/analysis/value-lattice").unwrap();
+    let value_lattice_output_dir = args.output_dir.join("value-lattice"); // Use output_dir
+    fs::create_dir_all(&value_lattice_output_dir).unwrap();
     
     let entries: Vec<_> = value_map.into_iter().collect();
     let save_chunk_size = (entries.len() + 19) / 20;
@@ -209,16 +256,17 @@ fn main() {
     
     for chunk in entries.chunks(save_chunk_size) {
         let chunk_vec = chunk.to_vec();
+        let value_lattice_output_dir_clone = value_lattice_output_dir.clone(); // Clone for each thread
         let handle = thread::spawn(move || {
             for (_, entry) in chunk_vec {
-                let length_dir = format!("/mnt/data1/meta-introspector/analysis/value-lattice/length-{}", entry.length);
+                let length_dir = value_lattice_output_dir_clone.join(format!("length-{}", entry.length)); // Use value_lattice_output_dir_clone
                 fs::create_dir_all(&length_dir).unwrap();
                 
                 let safe_filename = entry.value.chars()
                     .map(|c| if c.is_alphanumeric() || c == '.' || c == '-' { c } else { '_' })
                     .collect::<String>();
                 
-                let file_path = format!("{}/{}.json", length_dir, safe_filename);
+                let file_path = length_dir.join(format!("{}.json", safe_filename)); // Use length_dir
                 let json_data = serde_json::to_string_pretty(&entry).unwrap();
                 fs::write(file_path, json_data).unwrap();
             }
