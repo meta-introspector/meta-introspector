@@ -1,0 +1,88 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    ZOS QUICK REFERENCE CARD                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📁 ROOT: ~/meta-introspector
+
+┌─ STRUCTURE ──────────────────────────────────────────────────────────────────┐
+│ repos/              Git repositories (symlinked)                             │
+│ envs/               Environment configs (dev/qa/prod/local)                  │
+│ deployments/        All deployment targets (oracle/hf/vercel/cf/local)      │
+│ telemetry/          Centralized logs/metrics/traces                          │
+│ credentials/        Credentials (gitignored)                                 │
+│ tools/              Management tools                                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌─ QUICK COMMANDS ─────────────────────────────────────────────────────────────┐
+│ Setup:                                                                       │
+│   ./setup-canonical.sh                    Setup canonical structure          │
+│                                                                              │
+│ Search:                                                                      │
+│   ./quick-find.sh oci                     Find OCI code                     │
+│   ./quick-find.sh deploy                  Find deployment scripts           │
+│   ./quick-find.sh creds                   Check credentials                 │
+│   cat PROJECT_INDEX.md                    View project index                │
+│                                                                              │
+│ Deploy:                                                                      │
+│   ./tools/deploy.sh deploy oracle node1 prod    Deploy to Oracle           │
+│   ./tools/deploy.sh deploy local laptop dev     Deploy locally             │
+│   ./tools/deploy.sh list                         List all nodes            │
+│   ./tools/deploy.sh status oracle-node1          Check status              │
+│   ./tools/deploy.sh logs oracle-node1            View logs                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌─ KEY FILES ──────────────────────────────────────────────────────────────────┐
+│ OCI Client:         repos/zos-qa/zos-oci/src/lib.rs                         │
+│ Oracle Plugin:      repos/zos-qa/zos-oracle/src/lib.rs                      │
+│ Stack Deployer:     repos/zos-qa/zos-oracle/src/stack_deployer.rs           │
+│ Unified Server:     repos/zos-qa/src/unified_server.rs                      │
+│ LibP2P Server:      repos/zos-qa/unified_p2p_server.rs                      │
+│ Terraform:          repos/zos-qa/templates/oracle-zos-instance/main.tf      │
+│ OCI Config:         credentials/oracle/oci_config                           │
+│ SSH Keys:           credentials/ssh/id_rsa{,.pub}                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌─ PLATFORMS ──────────────────────────────────────────────────────────────────┐
+│ oracle          Oracle Cloud (Always Free: 4 ARM OCPUs, 24 GB RAM)          │
+│ huggingface     Hugging Face Spaces (Free GPU/CPU)                          │
+│ vercel          Vercel (Serverless functions)                                │
+│ cloudflare      Cloudflare Workers (Edge computing)                          │
+│ local           Local nodes (laptop/phone/desktop)                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌─ ENVIRONMENTS ───────────────────────────────────────────────────────────────┐
+│ dev             Development (debug logs, no auth, 100% sampling)             │
+│ qa              Testing (info logs, SSH auth, 50% sampling)                  │
+│ prod            Production (warn logs, SSH auth, 10% sampling)               │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌─ DOCUMENTATION ──────────────────────────────────────────────────────────────┐
+│ SETUP_SUMMARY.md           What we built today                              │
+│ PROJECT_INDEX.md            Quick reference guide                            │
+│ CANONICAL_STRUCTURE.md      Detailed structure                               │
+│ DEPLOYMENT_SYSTEM.md        System overview                                  │
+│ .project_map                Machine-readable index                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌─ TELEMETRY ──────────────────────────────────────────────────────────────────┐
+│ Logs:           telemetry/logs/{platform}-{node}/                            │
+│ Metrics:        telemetry/metrics/{platform}-{node}/                         │
+│ Traces:         telemetry/traces/{platform}-{node}/                          │
+│ OTLP:           localhost:4317 (gRPC), localhost:4318 (HTTP)                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌─ REGISTRY ───────────────────────────────────────────────────────────────────┐
+│ Location:       deployments/registry.json                                    │
+│ View:           jq . deployments/registry.json                               │
+│ List nodes:     ./tools/deploy.sh list                                       │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+┌─ NEXT STEPS ─────────────────────────────────────────────────────────────────┐
+│ 1. ./setup-canonical.sh                   Setup structure                    │
+│ 2. ./tools/deploy.sh deploy oracle node1 prod    Deploy to Oracle           │
+│ 3. ./tools/deploy.sh status oracle-node1         Check status               │
+│ 4. ./tools/deploy.sh logs oracle-node1           View logs                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+💡 TIP: Run './quick-find.sh' for search help
+📖 DOCS: cat SETUP_SUMMARY.md for today's work

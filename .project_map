@@ -1,0 +1,93 @@
+# Project Map - Machine Readable Index
+# Root: ~/meta-introspector
+# Format: category|repo_name|relative_path|description
+
+# Oracle/OCI
+oci_client|zos-qa|zos-oci/src/lib.rs|OCI API client with reqwest
+oci_plugin|zos-qa|zos-oracle/src/lib.rs|Oracle plugin with CLI wrapper
+oci_deployer|zos-qa|zos-oracle/src/stack_deployer.rs|Resource Manager API client
+oci_deploy_bin|zos-qa|zos-oracle/src/bin/deploy.rs|Deployment CLI binary
+oci_config|.solfunmeme-keys|oci_config|OCI credentials
+oci_key|.solfunmeme-keys|oci_private_key.pem|OCI private key
+
+# Servers
+libp2p_server|zos-qa|unified_p2p_server.rs|Main P2P server (40K lines)
+unified_server|zos-qa|src/unified_server.rs|Axum + LibP2P unified server
+minimal_server|zos-qa|zos-minimal-server/src/lib.rs|Minimal server implementation
+value_lattice_server|zombie_driver2|value_lattice_server.rs|Value lattice server
+
+# Deployment Scripts
+deploy_rust|zos-qa|deploy-oracle-rust.sh|Rust-based Oracle deployment
+deploy_oci|zos-qa|deploy-zos-oracle.sh|OCI CLI-based deployment
+deploy_old|zombie_driver2|deploy-oracle.sh|Old deployment script
+deploy_stack|zos-qa|deploy-oracle-stack.sh|Stack deployment
+
+# Terraform
+tf_main|zos-qa|templates/oracle-zos-instance/main.tf|Oracle infrastructure
+tf_vars|zos-qa|templates/oracle-zos-instance/terraform.tfvars|Terraform variables
+tf_boot|zos-qa|templates/oracle-zos-instance/zos-boot-script.sh|Cloud-init script
+tf_wallet_boot|zos-qa|templates/oracle-zos-instance/zos-wallet-qos-boot.sh|Wallet QoS boot
+
+# Workspaces
+workspace_zos|zos-qa|Cargo.toml|Main ZOS workspace (15 crates)
+workspace_zombie|zombie_driver2|Cargo.toml|Zombie driver workspace
+workspace_meta|meta-introspector|Cargo.toml|Meta-introspector workspace
+
+# ZOS-QA Crates
+zos_macros|zos-qa|zos-macros/src/lib.rs|Zero-dep macros
+zos_traits|zos-qa|zos-traits/src/lib.rs|Core traits
+zos_types|zos-qa|zos-types/src/lib.rs|Type definitions
+zos_deploy|zos-qa|zos-deploy/src/lib.rs|Deployment utilities
+zos_libp2p|zos-qa|zos-libp2p/src/lib.rs|LibP2P networking
+zos_plugins|zos-qa|zos-plugins/src/lib.rs|Plugin system
+zos_bootstrap|zos-qa|zos-bootstrap/src/lib.rs|Bootstrap utilities
+zos_analysis|zos-qa|zos-analysis/src/lib.rs|Analysis tools
+
+# Credentials
+ssh_pub|.ssh|id_rsa.pub|SSH public key
+ssh_priv|.ssh|id_rsa|SSH private key
+keys_dir|.solfunmeme-keys||All credentials directory
+
+# Documentation
+index|meta-introspector|PROJECT_INDEX.md|Master project index
+project_map|meta-introspector|.project_map|Machine-readable map
+deploy_docs|zos-qa|DEPLOY_ORACLE_RUST.md|Oracle deployment guide
+readme_zos|zos-qa|README.md|ZOS project README
+readme_meta|meta-introspector|README.md|Meta-introspector README
+readme_zombie|zombie_driver2|README.md|Zombie driver README
+
+# Analysis Tools - Meta Introspector
+grammar_compressor|meta-introspector|grammar_rust_compressor.rs|Sequitur compression
+syn_compressor|meta-introspector|syn_compressor.rs|AST-level compression
+rustc_interceptor|meta-introspector|rustc_interceptor.rs|Cargo build hijacking
+semantic_signature|meta-introspector|semantic_signature_generator.rs|4-layer semantic analysis
+crossbeam_analyzer|meta-introspector|crossbeam_rustc_analyzer_complete.rs|20-core parallel analyzer
+batch_runner|meta-introspector|batch_runner.rs|Generic job execution
+
+# Analysis Tools - Zombie Driver
+basic_block_analyzer|zombie_driver2|basic_block_analyzer.rs|Instruction block analysis
+binary_signature|zombie_driver2|binary_signature_generator.rs|Binary signature generation
+automorphic_orbit|zombie_driver2|automorphic_orbit_tracer.rs|Orbit tracing
+perf_recorder|zombie_driver2|advanced_perf_recorder.rs|Performance recording
+
+# Analysis Tools - ZOS Server
+elf_analyzer|zos-server|elf_target_analyzer.rs|ELF target analysis
+compiler_matcher|zos-server|compiler_path_matcher.rs|Compiler path matching
+markov_analyzer|zos-server|markov_1_4m_analyzer.rs|Markov chain analysis
+git_pack_analyzer|zos-server|git_pack_analyzer.rs|Git pack analysis
+
+# Build Artifacts (relative to repo)
+zos_binary|zos-qa|target/release/zos_server|Main server binary
+deploy_binary|zos-qa|target/release/deploy|Deployment CLI
+oracle_plugin|zos-qa|target/release/libzos_oracle.so|Oracle plugin library
+
+# Data Directories
+telemetry_data|meta-introspector|data/telemetry/|Telemetry JSON logs
+build_analysis|meta-introspector|data/build_analysis/|Build analysis results
+perf_data|meta-introspector|data/71_flakes_perf/|Perf collection data
+compressed_decls|meta-introspector|compressed_declarations/|Grammar-compressed declarations
+
+# Helper Scripts
+quick_find|meta-introspector|quick-find.sh|Quick search helper
+thermal_monitor|meta-introspector|thermal_monitor.sh|CPU temperature monitoring
+nix_rebuild_telemetry|meta-introspector|nix_rebuild_telemetry.sh|Nix rebuild with telemetry
