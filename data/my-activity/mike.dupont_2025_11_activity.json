@@ -1,0 +1,18 @@
+[
+  {
+    "commit_hash": "ee2d77af11f4f4d84fa0e58d76ff5cb14749154e",
+    "author_name": "mike dupont",
+    "author_email": "mike.dupont@introspector.local",
+    "author_date": "2025-11-23T16:23:42-05:00",
+    "committer_name": "mike dupont",
+    "committer_email": "mike.dupont@introspector.local",
+    "committer_date": "2025-11-23T16:23:42-05:00",
+    "message": "wup",
+    "repo_name": "pick-up-nix",
+    "repo_url": "https://github.com/meta-introspector/pick-up-nix.git",
+    "platform": "github",
+    "files_changed": 2,
+    "insertions": 30,
+    "deletions": 29
+  }
+]

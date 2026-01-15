@@ -1,0 +1,18 @@
+[
+  {
+    "commit_hash": "a664b66774b15cf0f782135a66649c9285c0b645",
+    "author_name": "mike dupont",
+    "author_email": "mdupont@blink.org",
+    "author_date": "2024-02-23T06:13:06-05:00",
+    "committer_name": "mike dupont",
+    "committer_email": "mdupont@blink.org",
+    "committer_date": "2024-02-23T06:13:06-05:00",
+    "message": "nix",
+    "repo_name": "pick-up-nix",
+    "repo_url": "https://github.com/meta-introspector/pick-up-nix.git",
+    "platform": "github",
+    "files_changed": 4,
+    "insertions": 4,
+    "deletions": 0
+  }
+]
