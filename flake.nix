@@ -7,9 +7,11 @@
     flake-utils.url = "github:numtide/flake-utils";
     rust-telemetry-driver.url = "github:meta-introspector/rust-telemetry-driver";
     rust-telemetry-driver.inputs.nixpkgs.follows = "nixpkgs";
+    zos-server.url = "github:meta-introspector/zos-server/nix-build-setup";
+    zos-server.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, rust-telemetry-driver }:
+  outputs = { self, nixpkgs, rust-overlay, flake-utils, rust-telemetry-driver, zos-server }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         overlays = [ (import rust-overlay) ];
