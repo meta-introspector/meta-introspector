@@ -1,0 +1,11 @@
+[environment]
+name = "qa"
+tier = "testing"
+log_level = "info"
+
+[telemetry]
+endpoint = "http://localhost:4317"
+sample_rate = 0.5
+
+[auth]
+require_ssh_key = true

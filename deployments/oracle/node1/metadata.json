@@ -1,0 +1,14 @@
+{
+  "deployment_id": "oracle-node1-20260115111927",
+  "platform": "oracle",
+  "node_name": "node1",
+  "environment": "prod",
+  "owner": "mdupont",
+  "created_at": "2026-01-15T11:19:27-05:00",
+  "status": "deploying",
+  "endpoints": {},
+  "telemetry": {
+    "logs": "telemetry/logs/oracle-node1/",
+    "metrics_endpoint": ""
+  }
+}

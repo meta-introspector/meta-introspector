@@ -1,0 +1,11 @@
+[environment]
+name = "prod"
+tier = "production"
+log_level = "warn"
+
+[telemetry]
+endpoint = "http://telemetry.example.com:4317"
+sample_rate = 0.1
+
+[auth]
+require_ssh_key = true
