@@ -1,0 +1,564 @@
+778dd8e6 refs/heads/nix-build-setup@{0}: commit: Add multi-dimensional semiotic message capture
+778dd8e6 HEAD@{0}: commit: Add multi-dimensional semiotic message capture
+3235fc83 refs/heads/nix-build-setup@{1}: commit: Update zos-server flake input with all 75 binaries
+3235fc83 HEAD@{1}: commit: Update zos-server flake input with all 75 binaries
+7b8b40ee refs/heads/nix-build-setup@{2}: commit: Add all 184 Rust binaries to Cargo.toml
+7b8b40ee HEAD@{2}: commit: Add all 184 Rust binaries to Cargo.toml
+5feeda7e refs/heads/nix-build-setup@{3}: commit: Add zos-server as flake input
+5feeda7e HEAD@{3}: commit: Add zos-server as flake input
+f8dc7f5e refs/heads/nix-build-setup@{4}: commit: Fix nix build: properly reference rust-telemetry-driver package
+f8dc7f5e HEAD@{4}: commit: Fix nix build: properly reference rust-telemetry-driver package
+a716522f refs/heads/nix-build-setup@{5}: commit: Fix nix develop: use rust-telemetry-driver as remote flake
+a716522f HEAD@{5}: commit: Fix nix develop: use rust-telemetry-driver as remote flake
+5f38adf5 refs/heads/nix-build-setup@{6}: commit: Use rust-telemetry-driver as remote flake input
+5f38adf5 HEAD@{6}: commit: Use rust-telemetry-driver as remote flake input
+d3f4071e refs/remotes/origin/nix-build-setup@{0}: update by push
+d3f4071e refs/heads/nix-build-setup@{7}: commit: Add HuggingFace upload plan for data files
+d3f4071e HEAD@{7}: commit: Add HuggingFace upload plan for data files
+1db6c059 refs/heads/nix-build-setup@{8}: commit: Add new analysis tools and enhance crossbeam value lattice
+1db6c059 HEAD@{8}: commit: Add new analysis tools and enhance crossbeam value lattice
+271e91d1 refs/heads/nix-build-setup@{9}: commit: Add build configuration for new analysis tools
+271e91d1 HEAD@{9}: commit: Add build configuration for new analysis tools
+d577075c refs/heads/nix-build-setup@{10}: commit: Document unstaged Rust code changes
+d577075c HEAD@{10}: commit: Document unstaged Rust code changes
+665e06ed refs/remotes/origin/nix-build-setup@{1}: update by push
+665e06ed refs/heads/nix-build-setup@{11}: commit: Remove data-* submodules, add to gitignore
+665e06ed HEAD@{11}: commit: Remove data-* submodules, add to gitignore
+91a1b975 refs/remotes/origin/nix-build-setup@{2}: update by push
+91a1b975 refs/heads/nix-build-setup@{12}: commit: Add hf-build-telemetry-upload submodule
+91a1b975 HEAD@{12}: commit: Add hf-build-telemetry-upload submodule
+81c47fe6 refs/remotes/origin/nix-build-setup@{3}: update by push
+81c47fe6 refs/heads/nix-build-setup@{13}: commit: Fix hf-git-activity submodule
+81c47fe6 HEAD@{13}: commit: Fix hf-git-activity submodule
+e0ac6bf5 refs/remotes/origin/nix-build-setup@{4}: update by push
+e0ac6bf5 refs/heads/nix-build-setup@{14}: commit: Remove broken hf-git-activity submodule
+e0ac6bf5 HEAD@{14}: commit: Remove broken hf-git-activity submodule
+85cb2345 refs/remotes/origin/nix-build-setup@{5}: update by push
+85cb2345 refs/heads/nix-build-setup@{15}: commit: Update rust-telemetry-driver submodule
+85cb2345 HEAD@{15}: commit: Update rust-telemetry-driver submodule
+c6d82623 refs/remotes/origin/nix-build-setup@{6}: update by push
+c6d82623 refs/heads/nix-build-setup@{16}: commit: Convert rust-telemetry-driver to submodule
+c6d82623 HEAD@{16}: commit: Convert rust-telemetry-driver to submodule
+c3915017 refs/remotes/origin/nix-build-setup@{7}: update by push
+c3915017 refs/heads/nix-build-setup@{17}: branch: Created from HEAD
+c3915017 HEAD@{17}: checkout: moving from main to nix-build-setup
+c3915017 refs/heads/main@{0}: commit: Add rust-telemetry-driver Cargo.lock for nix build
+c3915017 HEAD@{18}: commit: Add rust-telemetry-driver Cargo.lock for nix build
+2bc3e332 refs/heads/main@{1}: pull --rebase (finish): refs/heads/main onto bd18372a15a0272af6d2475c8358625f86ccb2df
+2bc3e332 refs/remotes/origin/main@{0}: update by push
+2bc3e332 HEAD@{19}: pull --rebase (finish): returning to refs/heads/main
+2bc3e332 HEAD@{20}: pull --rebase (pick): Add Nix build and reproducibility proof system
+bd18372a HEAD@{21}: pull --rebase (start): checkout bd18372a15a0272af6d2475c8358625f86ccb2df
+bd18372a refs/remotes/origin/main@{1}: pull --rebase: fast-forward
+0e33f8d5 HEAD@{22}: reset: moving to HEAD
+0e33f8d5 refs/heads/main@{2}: commit: Add Nix build and reproducibility proof system
+0e33f8d5 HEAD@{23}: commit: Add Nix build and reproducibility proof system
+72a6f90f refs/remotes/origin/main@{2}: update by push
+72a6f90f refs/heads/main@{3}: pull --rebase (finish): refs/heads/main onto eba831cb65a6cd21af0be5c4b88a6dfa074da038
+eba831cb refs/remotes/origin/main@{3}: pull --rebase: fast-forward
+72a6f90f HEAD@{24}: pull --rebase (finish): returning to refs/heads/main
+72a6f90f HEAD@{25}: pull --rebase (pick): Add self-deploying system with deployment chain
+eba831cb HEAD@{26}: pull --rebase (start): checkout eba831cb65a6cd21af0be5c4b88a6dfa074da038
+d357cadb HEAD@{27}: reset: moving to HEAD
+d357cadb refs/heads/main@{4}: commit: Add self-deploying system with deployment chain
+d357cadb HEAD@{28}: commit: Add self-deploying system with deployment chain
+254a967a refs/heads/main@{5}: pull --rebase (finish): refs/heads/main onto b9aba865ae6b67ba3632aee9d0026e62de35cc5e
+254a967a refs/remotes/origin/main@{4}: update by push
+254a967a HEAD@{29}: pull --rebase (finish): returning to refs/heads/main
+254a967a HEAD@{30}: pull --rebase (pick): Add canonical deployment structure and documentation
+b9aba865 HEAD@{31}: pull --rebase (start): checkout b9aba865ae6b67ba3632aee9d0026e62de35cc5e
+b9aba865 refs/remotes/origin/main@{5}: pull --rebase: fast-forward
+876cd08c HEAD@{32}: reset: moving to HEAD
+876cd08c refs/heads/main@{6}: commit: Add canonical deployment structure and documentation
+876cd08c HEAD@{33}: commit: Add canonical deployment structure and documentation
+a146791e HEAD@{34}: reset: moving to HEAD
+a146791e refs/remotes/origin/main@{6}: update by push
+a146791e refs/heads/main@{7}: pull --rebase (finish): refs/heads/main onto 5d2e03074d3858728b6abc33d6ffbb8996c87c7f
+5d2e0307 refs/remotes/origin/main@{7}: pull --rebase: fast-forward
+a146791e HEAD@{35}: pull --rebase (finish): returning to refs/heads/main
+a146791e HEAD@{36}: pull --rebase (pick): Add scaled logo versions (128, 256, 512px) and use 256px for faster loading
+5d2e0307 HEAD@{37}: pull --rebase (start): checkout 5d2e03074d3858728b6abc33d6ffbb8996c87c7f
+21f90eae refs/heads/main@{8}: commit: Add scaled logo versions (128, 256, 512px) and use 256px for faster loading
+21f90eae HEAD@{38}: commit: Add scaled logo versions (128, 256, 512px) and use 256px for faster loading
+bce623f7 refs/remotes/origin/main@{8}: update by push
+bce623f7 refs/heads/main@{9}: pull --rebase (finish): refs/heads/main onto a3922391e3b7656cb7e567ab01043d26a66d431e
+a3922391 refs/remotes/origin/main@{9}: pull --rebase: fast-forward
+bce623f7 HEAD@{39}: pull --rebase (finish): returning to refs/heads/main
+bce623f7 HEAD@{40}: pull --rebase (pick): Fix: Copy solfunmeme-logo.png to _site directory
+a3922391 HEAD@{41}: pull --rebase (start): checkout a3922391e3b7656cb7e567ab01043d26a66d431e
+32bcc1fe HEAD@{42}: reset: moving to HEAD
+32bcc1fe refs/heads/main@{10}: commit: Fix: Copy solfunmeme-logo.png to _site directory
+32bcc1fe HEAD@{43}: commit: Fix: Copy solfunmeme-logo.png to _site directory
+25413a73 refs/remotes/origin/main@{10}: update by push
+25413a73 refs/heads/main@{11}: pull --rebase (finish): refs/heads/main onto d4b404e22cdbf5fbaf69c5edf7ced5152530f919
+d4b404e2 refs/remotes/origin/main@{11}: pull --rebase: fast-forward
+25413a73 HEAD@{44}: pull --rebase (finish): returning to refs/heads/main
+25413a73 HEAD@{45}: pull --rebase (pick): Update Cargo.toml and built site
+986c59ce HEAD@{46}: pull --rebase (pick): Add SOLFUNMEME/ZOS (Zero Ontology System) subtitle to all pages
+2b284963 HEAD@{47}: pull --rebase (pick): Add canonical dataset index with sizes and HF upload plan
+54f00b46 HEAD@{48}: pull --rebase (pick): Add cascading repo analyzer with perf capture
+d4b404e2 HEAD@{49}: pull --rebase (start): checkout d4b404e22cdbf5fbaf69c5edf7ced5152530f919
+0f1d2ab8 refs/heads/main@{12}: commit: Update Cargo.toml and built site
+0f1d2ab8 HEAD@{50}: commit: Update Cargo.toml and built site
+a16e501c refs/heads/main@{13}: commit: Add SOLFUNMEME/ZOS (Zero Ontology System) subtitle to all pages
+a16e501c HEAD@{51}: commit: Add SOLFUNMEME/ZOS (Zero Ontology System) subtitle to all pages
+e69681df refs/heads/main@{14}: commit: Add canonical dataset index with sizes and HF upload plan
+e69681df HEAD@{52}: commit: Add canonical dataset index with sizes and HF upload plan
+f60979fc refs/heads/main@{15}: commit: Add cascading repo analyzer with perf capture
+f60979fc HEAD@{53}: commit: Add cascading repo analyzer with perf capture
+1593ead0 refs/remotes/origin/main@{12}: update by push
+1593ead0 refs/heads/main@{16}: pull --rebase (finish): refs/heads/main onto f47c303c75da35f90032b860f99c750f44b3e522
+1593ead0 HEAD@{54}: pull --rebase (finish): returning to refs/heads/main
+1593ead0 HEAD@{55}: pull --rebase (pick): Add SOLFUNMEME logo to all pages with pulsing glow animation
+f47c303c refs/remotes/origin/main@{13}: pull --rebase: fast-forward
+d4f09218 HEAD@{56}: pull --rebase (pick): Add SOLFUNMEME logo
+c81218a3 HEAD@{57}: pull --rebase (pick): Apply SOLFUNMEME psychedelic color palette to site
+f47c303c HEAD@{58}: pull --rebase (start): checkout f47c303c75da35f90032b860f99c750f44b3e522
+9783fed7 refs/heads/main@{17}: commit: Add SOLFUNMEME logo to all pages with pulsing glow animation
+9783fed7 HEAD@{59}: commit: Add SOLFUNMEME logo to all pages with pulsing glow animation
+e858ef31 refs/heads/main@{18}: commit: Add SOLFUNMEME logo
+e858ef31 HEAD@{60}: commit: Add SOLFUNMEME logo
+199a81be refs/heads/main@{19}: commit: Apply SOLFUNMEME psychedelic color palette to site
+199a81be HEAD@{61}: commit: Apply SOLFUNMEME psychedelic color palette to site
+809545fe refs/remotes/origin/main@{14}: update by push
+809545fe refs/heads/main@{20}: commit: Replace Jekyll with pure Rust static site builder
+809545fe HEAD@{62}: commit: Replace Jekyll with pure Rust static site builder
+a1ce53eb refs/heads/main@{21}: commit: Add automated report generation from HuggingFace dataset
+a1ce53eb refs/remotes/origin/main@{15}: update by push
+a1ce53eb HEAD@{63}: commit: Add automated report generation from HuggingFace dataset
+7245ee63 refs/remotes/origin/main@{16}: update by push
+7245ee63 refs/heads/main@{22}: commit: Update Jekyll workflow to use @main branch for all meta-introspector actions
+7245ee63 HEAD@{64}: commit: Update Jekyll workflow to use @main branch for all meta-introspector actions
+fb58bdde refs/remotes/origin/main@{17}: update by push
+fb58bdde refs/heads/main@{23}: commit: Add GitHub Actions as submodules with meta-introspector references
+fb58bdde HEAD@{65}: commit: Add GitHub Actions as submodules with meta-introspector references
+31513c39 refs/heads/main@{24}: pull: Fast-forward
+31513c39 refs/remotes/origin/HEAD@{0}: fetch
+31513c39 refs/remotes/origin/main@{18}: pull: fast-forward
+31513c39 HEAD@{66}: pull: Fast-forward
+15002e4a HEAD@{67}: reset: moving to HEAD
+15002e4a refs/remotes/origin/main@{19}: update by push
+15002e4a refs/heads/main@{25}: commit: Add 2025 investor report for GitHub Pages
+15002e4a HEAD@{68}: commit: Add 2025 investor report for GitHub Pages
+8fe4e79f refs/heads/main@{26}: commit: Add meta-introspector org events to canonical store
+8fe4e79f HEAD@{69}: commit: Add meta-introspector org events to canonical store
+25079166 refs/heads/main@{27}: commit: GitHub events collector - store verbatim in canonical format
+25079166 HEAD@{70}: commit: GitHub events collector - store verbatim in canonical format
+414d2118 refs/heads/main@{28}: commit: Collect ALL GitHub activity - raw and by month
+414d2118 HEAD@{71}: commit: Collect ALL GitHub activity - raw and by month
+b364b1bb refs/heads/main@{29}: commit: Collect GitHub activity using gh api
+b364b1bb HEAD@{72}: commit: Collect GitHub activity using gh api
+9023d3e6 refs/heads/main@{30}: commit: GitHub comprehensive activity tracker with TODO macros
+9023d3e6 HEAD@{73}: commit: GitHub comprehensive activity tracker with TODO macros
+2a3cd01c refs/heads/main@{31}: commit: WIP: GitHub comprehensive activity tracker
+2a3cd01c HEAD@{74}: commit: WIP: GitHub comprehensive activity tracker
+67496f3a refs/heads/main@{32}: commit: Add comprehensive GitHub activity tracker
+67496f3a HEAD@{75}: commit: Add comprehensive GitHub activity tracker
+0207bebe refs/heads/main@{33}: commit: Add GitHub month activity fetcher (WIP)
+0207bebe HEAD@{76}: commit: Add GitHub month activity fetcher (WIP)
+f365da7b refs/heads/main@{34}: commit: Extract my git activity for last 3 years (2022-2025)
+f365da7b HEAD@{77}: commit: Extract my git activity for last 3 years (2022-2025)
+45bc7827 refs/heads/main@{35}: commit: Final activity dataset summary: 36K files, 563MB, all years
+45bc7827 HEAD@{78}: commit: Final activity dataset summary: 36K files, 563MB, all years
+257155ef refs/heads/main@{36}: commit: Fix platform detection: handle empty URLs and add sourcehut
+257155ef HEAD@{79}: commit: Fix platform detection: handle empty URLs and add sourcehut
+6d5df214 refs/heads/main@{37}: commit: Document activity dataset and add coverage checker
+6d5df214 HEAD@{80}: commit: Document activity dataset and add coverage checker
+8e18a3b0 refs/heads/main@{38}: commit: Build canonical git activity dataset
+8e18a3b0 HEAD@{81}: commit: Build canonical git activity dataset
+bf209c47 refs/heads/main@{39}: commit: Register pick-up-nix and add owner field to scanner
+bf209c47 HEAD@{82}: commit: Register pick-up-nix and add owner field to scanner
+eabf56ae refs/heads/main@{40}: commit: Add GitHub cached scanner: 919 repos found, 898 missing
+eabf56ae HEAD@{83}: commit: Add GitHub cached scanner: 919 repos found, 898 missing
+1f6c6938 refs/heads/main@{41}: commit: Recursive submodule registration: 14 → 52 repos
+1f6c6938 HEAD@{84}: commit: Recursive submodule registration: 14 → 52 repos
+1a8049d7 refs/heads/main@{42}: commit: Register all ~/nix submodules in git-sources
+1a8049d7 HEAD@{85}: commit: Register all ~/nix submodules in git-sources
+dcbf07ae refs/heads/main@{43}: commit: Document git-submodule-tools-rs restoration
+dcbf07ae HEAD@{86}: commit: Document git-submodule-tools-rs restoration
+553e9e90 refs/heads/main@{44}: commit: Register git-submodule-tools-rs
+553e9e90 HEAD@{87}: commit: Register git-submodule-tools-rs
+c8f9d083 refs/heads/main@{45}: commit: Complete git usage audit: meta-introspector + zos-server
+c8f9d083 HEAD@{88}: commit: Complete git usage audit: meta-introspector + zos-server
+6700ef2b refs/heads/main@{46}: commit: Fix build_const71_bg.sh: Add 1 hour timeout
+6700ef2b HEAD@{89}: commit: Fix build_const71_bg.sh: Add 1 hour timeout
+d1b53b70 refs/heads/main@{47}: commit: Add repo_spider.rs from zos-server
+d1b53b70 HEAD@{90}: commit: Add repo_spider.rs from zos-server
+202eb603 refs/heads/main@{48}: commit: Add GitHub stars/forks analysis tool
+202eb603 HEAD@{91}: commit: Add GitHub stars/forks analysis tool
+a34437fb refs/heads/main@{49}: commit: Add status and foreach commands to git-sources
+a34437fb HEAD@{92}: commit: Add status and foreach commands to git-sources
+9aaa3adc refs/remotes/origin/main@{20}: update by push
+9aaa3adc refs/heads/main@{50}: cherry-pick: Checkpoint: git-sources registry with 13 repos
+f1029b45 refs/heads/main@{51}: cherry-pick: Add zos-server to git-sources registry
+4d259300 refs/heads/main@{52}: cherry-pick: Add zombie-driver2 to git-sources registry
+267dfb20 refs/heads/main@{53}: cherry-pick: Add git-sources: Centralized repo management with symlinks
+9aaa3adc HEAD@{93}: cherry-pick: Checkpoint: git-sources registry with 13 repos
+f1029b45 HEAD@{94}: cherry-pick: Add zos-server to git-sources registry
+4d259300 HEAD@{95}: cherry-pick: Add zombie-driver2 to git-sources registry
+267dfb20 HEAD@{96}: cherry-pick: Add git-sources: Centralized repo management with symlinks
+aa81a43f refs/heads/main@{54}: reset: moving to aa81a43f644d964b9b98a65124729aee807db08d
+aa81a43f HEAD@{97}: reset: moving to aa81a43f644d964b9b98a65124729aee807db08d
+518c73f1 refs/heads/main@{55}: cherry-pick: Final report: Generic DFA extraction complete
+518c73f1 HEAD@{98}: cherry-pick: Final report: Generic DFA extraction complete
+aa81a43f HEAD@{99}: reset: moving to aa81a43f644d964b9b98a65124729aee807db08d
+aa81a43f HEAD@{100}: reset: moving to aa81a43f644d964b9b98a65124729aee807db08d
+2e2a9ce4 refs/stash@{0}: WIP on main: aa81a43 removing large
+aa81a43f HEAD@{101}: reset: moving to HEAD
+aa81a43f refs/remotes/origin/main@{21}: update by push
+aa81a43f refs/heads/main@{56}: commit: removing large
+aa81a43f HEAD@{102}: commit: removing large
+660964db refs/heads/main@{57}: reset: moving to HEAD~
+660964db HEAD@{103}: reset: moving to HEAD~
+f08bf5bc refs/heads/main@{58}: reset: moving to HEAD~
+f08bf5bc HEAD@{104}: reset: moving to HEAD~
+27856022 refs/heads/main@{59}: commit: removing large
+27856022 HEAD@{105}: commit: removing large
+f08bf5bc refs/heads/main@{60}: reset: moving to HEAD~
+f08bf5bc HEAD@{106}: reset: moving to HEAD~
+91690597 refs/heads/main@{61}: commit: removing large
+91690597 HEAD@{107}: commit: removing large
+f08bf5bc refs/heads/main@{62}: reset: moving to f08bf5bce0325eb34cb27a59f0fffe0b377f1c84
+f08bf5bc HEAD@{108}: reset: moving to f08bf5bce0325eb34cb27a59f0fffe0b377f1c84
+1e0011fd refs/heads/main@{63}: commit: Checkpoint: git-sources registry with 13 repos
+1e0011fd HEAD@{109}: commit: Checkpoint: git-sources registry with 13 repos
+c80ee85f refs/heads/main@{64}: commit: Add zos-server to git-sources registry
+c80ee85f HEAD@{110}: commit: Add zos-server to git-sources registry
+8496e0fb refs/heads/main@{65}: commit: Add zombie-driver2 to git-sources registry
+8496e0fb HEAD@{111}: commit: Add zombie-driver2 to git-sources registry
+fc610098 refs/heads/main@{66}: commit: Add git-sources: Centralized repo management with symlinks
+fc610098 HEAD@{112}: commit: Add git-sources: Centralized repo management with symlinks
+bd1fc614 refs/heads/main@{67}: commit: Blockchain-native telemetry: Perf traces as blockchain logs
+bd1fc614 HEAD@{113}: commit: Blockchain-native telemetry: Perf traces as blockchain logs
+7cb4600b refs/heads/main@{68}: commit: Analysis-as-a-Service: Scalable architecture for hundreds of repos
+7cb4600b HEAD@{114}: commit: Analysis-as-a-Service: Scalable architecture for hundreds of repos
+f805c3bd refs/heads/main@{69}: commit: Comprehensive Nix build + analysis pipeline plan
+f805c3bd HEAD@{115}: commit: Comprehensive Nix build + analysis pipeline plan
+8723cb17 refs/heads/main@{70}: commit: Inventory existing perf/nix infrastructure - DO NOT DUPLICATE
+8723cb17 HEAD@{116}: commit: Inventory existing perf/nix infrastructure - DO NOT DUPLICATE
+8b44080f refs/heads/main@{71}: commit: Today's progress: Parquet Lattice implements Phase 2 of Meta-Introspector vision
+8b44080f HEAD@{117}: commit: Today's progress: Parquet Lattice implements Phase 2 of Meta-Introspector vision
+276b51f7 refs/heads/main@{72}: commit: The Parquet Lattice - rebuilding the onion as layered queries
+276b51f7 HEAD@{118}: commit: The Parquet Lattice - rebuilding the onion as layered queries
+29efafa0 refs/heads/main@{73}: commit: The Complete Decoding - enums, labelers, orbits, syscalls
+29efafa0 HEAD@{119}: commit: The Complete Decoding - enums, labelers, orbits, syscalls
+dfb6464e refs/heads/main@{74}: commit: The Introspector Bootstrap - from eigenvectors to self-building system
+dfb6464e HEAD@{120}: commit: The Introspector Bootstrap - from eigenvectors to self-building system
+b346feab refs/heads/main@{75}: commit: String-based enum discovery and automatic function labeling
+b346feab HEAD@{121}: commit: String-based enum discovery and automatic function labeling
+c0926692 refs/heads/main@{76}: commit: The enum subset is universal - 2% can describe 100%
+c0926692 HEAD@{122}: commit: The enum subset is universal - 2% can describe 100%
+60203e5c refs/heads/main@{77}: commit: Autosemiosis - the compiler labels itself through introspection
+60203e5c HEAD@{123}: commit: Autosemiosis - the compiler labels itself through introspection
+5681f940 refs/heads/main@{78}: commit: Path-based code filtering - telemetry labels input, path splits code
+5681f940 HEAD@{124}: commit: Path-based code filtering - telemetry labels input, path splits code
+c9063be6 refs/heads/main@{79}: commit: Perf-based complexity metric - instruction profile as sparse matrix
+c9063be6 HEAD@{125}: commit: Perf-based complexity metric - instruction profile as sparse matrix
+b2d4527d refs/heads/main@{80}: commit: AST as bitstring - code is a path through decision tree
+b2d4527d HEAD@{126}: commit: AST as bitstring - code is a path through decision tree
+e7192911 refs/heads/main@{81}: commit: The pattern: Decurrying the compiler - remove layers of the onion
+e7192911 HEAD@{127}: commit: The pattern: Decurrying the compiler - remove layers of the onion
+03d16b95 refs/heads/main@{82}: commit: Skip Markov model layer - inject distribution directly into HIR
+03d16b95 HEAD@{128}: commit: Skip Markov model layer - inject distribution directly into HIR
+0105e5e8 refs/heads/main@{83}: commit: Add quick summary of Markov compilation concept
+0105e5e8 HEAD@{129}: commit: Add quick summary of Markov compilation concept
+7654067b refs/heads/main@{84}: commit: Document Markov model compilation concept - compile code from probabilistic representation
+7654067b HEAD@{130}: commit: Document Markov model compilation concept - compile code from probabilistic representation
+65eb30d4 refs/heads/main@{85}: commit: Document complete string analysis system - 31 tools, 6 for strings
+65eb30d4 HEAD@{131}: commit: Document complete string analysis system - 31 tools, 6 for strings
+6f9050a0 refs/heads/main@{86}: commit: Extract ALL string usage to parquet - COMPLETE
+6f9050a0 HEAD@{132}: commit: Extract ALL string usage to parquet - COMPLETE
+f52a272c refs/heads/main@{87}: commit: Find which functions use each keyword string
+f52a272c HEAD@{133}: commit: Find which functions use each keyword string
+5b04c13e refs/heads/main@{88}: commit: COMPLETE: Extract keywords from packed string format
+5b04c13e HEAD@{134}: commit: COMPLETE: Extract keywords from packed string format
+f47c53a4 refs/heads/main@{89}: commit: Extract all strings from binary using goblin
+f47c53a4 HEAD@{135}: commit: Extract all strings from binary using goblin
+bad6f338 refs/heads/main@{90}: commit: Final report: Generic DFA extraction complete
+bad6f338 HEAD@{136}: commit: Final report: Generic DFA extraction complete
+e20484e9 refs/heads/main@{91}: commit: Document why enum keyword not found in character checks
+e20484e9 HEAD@{137}: commit: Document why enum keyword not found in character checks
+dc15b471 refs/heads/main@{92}: commit: Analyze character checks by function - find lexer candidates
+dc15b471 HEAD@{138}: commit: Analyze character checks by function - find lexer candidates
+f08bf5bc refs/heads/main@{93}: commit: Add Rust-based DFA extractor using iced-x86
+f08bf5bc HEAD@{139}: commit: Add Rust-based DFA extractor using iced-x86
+660964db refs/heads/main@{94}: commit: Document grammar extraction system status
+660964db HEAD@{140}: commit: Document grammar extraction system status
+7983a1d5 refs/heads/main@{95}: commit: FINAL SUMMARY - Complete Enum vs Struct Grammar Auto-Labeling
+7983a1d5 HEAD@{141}: commit: FINAL SUMMARY - Complete Enum vs Struct Grammar Auto-Labeling
+53bf981a refs/heads/main@{96}: commit: Unique Instruction Finder - Enum vs Struct Divergence Analysis
+53bf981a HEAD@{142}: commit: Unique Instruction Finder - Enum vs Struct Divergence Analysis
+e5895981 refs/heads/main@{97}: commit: Perf Data Analysis Complete - Enum vs Struct Comparison
+e5895981 HEAD@{143}: commit: Perf Data Analysis Complete - Enum vs Struct Comparison
+139fad1b refs/heads/main@{98}: commit: Profile Analysis Complete - Enum vs Struct Signatures Identified
+139fad1b HEAD@{144}: commit: Profile Analysis Complete - Enum vs Struct Signatures Identified
+2043a85c refs/heads/main@{99}: commit: Rustc Profile Comparison - Enum vs Struct Auto-Labeling
+2043a85c HEAD@{145}: commit: Rustc Profile Comparison - Enum vs Struct Auto-Labeling
+fd700e39 refs/heads/main@{100}: commit: Labeled Function Approach - Searching for Character Sequences
+fd700e39 HEAD@{146}: commit: Labeled Function Approach - Searching for Character Sequences
+b7fb708e refs/heads/main@{101}: commit: Character Extraction from Binary DFAs - Real Grammar Characters
+b7fb708e HEAD@{147}: commit: Character Extraction from Binary DFAs - Real Grammar Characters
+78661032 refs/heads/main@{102}: commit: Code Grammar Token Extraction - 21,415 Keywords from Function Names
+78661032 HEAD@{148}: commit: Code Grammar Token Extraction - 21,415 Keywords from Function Names
+f655b2aa refs/heads/main@{103}: commit: Markov Full Traversal - 5,686 Paths to Depth 10
+f655b2aa HEAD@{149}: commit: Markov Full Traversal - 5,686 Paths to Depth 10
+ba022b86 refs/heads/main@{104}: commit: Markov Probability Tree - Grammar Reconstruction to Depth 5
+ba022b86 HEAD@{150}: commit: Markov Probability Tree - Grammar Reconstruction to Depth 5
+85aa4761 refs/heads/main@{105}: commit: Merged Grammar Analysis - 49,655 Grammars from 12,811 Binaries
+85aa4761 HEAD@{151}: commit: Merged Grammar Analysis - 49,655 Grammars from 12,811 Binaries
+2559ab94 refs/heads/main@{106}: commit: Canonical Infrastructure - Data Store + Directory Walker
+2559ab94 HEAD@{152}: commit: Canonical Infrastructure - Data Store + Directory Walker
+481187e3 refs/heads/main@{107}: commit: Complete Grammar Extraction System + Nix Store Scanner
+481187e3 HEAD@{153}: commit: Complete Grammar Extraction System + Nix Store Scanner
+4ec2d121 refs/heads/main@{108}: commit: Grammar Extraction + Markov Conformity Analysis
+4ec2d121 HEAD@{154}: commit: Grammar Extraction + Markov Conformity Analysis
+c9421dcc refs/heads/main@{109}: commit: LMFDB Rust Mapping Library - Self-Analysis Complete
+c9421dcc HEAD@{155}: commit: LMFDB Rust Mapping Library - Self-Analysis Complete
+92b8c55d refs/heads/main@{110}: commit: Add inline perf syscall analysis to 71 flakes collector
+92b8c55d HEAD@{156}: commit: Add inline perf syscall analysis to 71 flakes collector
+4e1c750d refs/heads/main@{111}: commit: Create canonical perf reader - centralized perf.data parsing
+4e1c750d HEAD@{157}: commit: Create canonical perf reader - centralized perf.data parsing
+063d9aea refs/heads/main@{112}: commit: Add -a flag to perf record for child process capture
+063d9aea HEAD@{158}: commit: Add -a flag to perf record for child process capture
+d47e10f8 refs/heads/main@{113}: commit: Document 71 flakes perf collection system
+d47e10f8 HEAD@{159}: commit: Document 71 flakes perf collection system
+9125526c refs/heads/main@{114}: commit: 71 Flakes Perf Collector: Build + Run telemetry
+9125526c HEAD@{160}: commit: 71 Flakes Perf Collector: Build + Run telemetry
+d461981d refs/heads/main@{115}: commit: Add Cargo.lock for const-71-rust flake
+d461981d HEAD@{161}: commit: Add Cargo.lock for const-71-rust flake
+f72a9e76 refs/remotes/origin/main@{22}: update by push
+f72a9e76 refs/heads/main@{116}: commit: Git Activity Collector for investor report
+f72a9e76 HEAD@{162}: commit: Git Activity Collector for investor report
+98a60466 refs/heads/main@{117}: commit: Session complete: Meta-Introspector consolidation + eigenvector model
+98a60466 HEAD@{163}: commit: Session complete: Meta-Introspector consolidation + eigenvector model
+284f6f68 refs/heads/main@{118}: commit: Meta-Introspector Consolidation Plan
+284f6f68 HEAD@{164}: commit: Meta-Introspector Consolidation Plan
+cf776447 refs/heads/main@{119}: commit: Add self-recognition to eigenvector model
+cf776447 HEAD@{165}: commit: Add self-recognition to eigenvector model
+242ac68b refs/heads/main@{120}: commit: Word Eigenvector Model: Map words → code → binaries → perf
+242ac68b HEAD@{166}: commit: Word Eigenvector Model: Map words → code → binaries → perf
+75cf7d82 refs/heads/main@{121}: commit: Word frequency spectrum analysis
+75cf7d82 HEAD@{167}: commit: Word frequency spectrum analysis
+ae8afa53 refs/heads/main@{122}: commit: Document complete project structure
+ae8afa53 HEAD@{168}: commit: Document complete project structure
+c3f2075d refs/heads/main@{123}: commit: Perf recording status check
+c3f2075d HEAD@{169}: commit: Perf recording status check
+8b7ad525 refs/heads/main@{124}: commit: The 71 Omen: Mathematical pattern as meme magic
+8b7ad525 HEAD@{170}: commit: The 71 Omen: Mathematical pattern as meme magic
+4fce9209 refs/heads/main@{125}: commit: Perf reader audit: Design canonical reader
+4fce9209 HEAD@{171}: commit: Perf reader audit: Design canonical reader
+7a639503 refs/heads/main@{126}: commit: Progress update: 4/40 files migrated (10%)
+7a639503 HEAD@{172}: commit: Progress update: 4/40 files migrated (10%)
+3fc721cd refs/heads/main@{127}: commit: Migrate 2 more files to canonical builder
+3fc721cd HEAD@{173}: commit: Migrate 2 more files to canonical builder
+1d3d8e4b refs/heads/main@{128}: commit: Nix canonical builder: Add trait-based executors
+1d3d8e4b HEAD@{174}: commit: Nix canonical builder: Add trait-based executors
+64b9dc1a refs/heads/main@{129}: commit: Start nix build centralization: Migrate unified_nix_builder
+64b9dc1a HEAD@{175}: commit: Start nix build centralization: Migrate unified_nix_builder
+4c21d44c refs/heads/main@{130}: commit: Nix Canonical Builder: Single audited entry point
+4c21d44c HEAD@{176}: commit: Nix Canonical Builder: Single audited entry point
+074ccd80 refs/heads/main@{131}: commit: Add #[perf_probe] for Parquet data capture
+074ccd80 HEAD@{177}: commit: Add #[perf_probe] for Parquet data capture
+304cd35d refs/heads/main@{132}: commit: Perf Proc Macros: Wrap any code in perf recording
+304cd35d HEAD@{178}: commit: Perf Proc Macros: Wrap any code in perf recording
+6df030ea refs/heads/main@{133}: commit: Perf + Nix Build Integration Plans
+6df030ea HEAD@{179}: commit: Perf + Nix Build Integration Plans
+7ef3550d refs/heads/main@{134}: commit: Perf Centralization: Single canonical recorder
+7ef3550d HEAD@{180}: commit: Perf Centralization: Single canonical recorder
+1087793b refs/heads/main@{135}: commit: Perf Record Status: Complete data captured
+1087793b HEAD@{181}: commit: Perf Record Status: Complete data captured
+c2d1e6de refs/heads/main@{136}: commit: Bott[8] Layout Solver: Parked with status doc
+c2d1e6de HEAD@{182}: commit: Bott[8] Layout Solver: Parked with status doc
+22772ffc refs/heads/main@{137}: commit: Add Bott[8] layout solver with perf integration
+22772ffc HEAD@{183}: commit: Add Bott[8] layout solver with perf integration
+d7fa671d refs/heads/main@{138}: commit: Beyond 71: The surface of something deeper
+d7fa671d HEAD@{184}: commit: Beyond 71: The surface of something deeper
+57c0a8c2 refs/heads/main@{139}: commit: Complete 71 Discovery: Seven convergent streams
+57c0a8c2 HEAD@{185}: commit: Complete 71 Discovery: Seven convergent streams
+dfc58c1b refs/heads/main@{140}: commit: Document 71 in LMFDB: The mathematical foundation
+dfc58c1b HEAD@{186}: commit: Document 71 in LMFDB: The mathematical foundation
+4408c864 refs/heads/main@{141}: commit: Discover meta-meme connection: 71 was always there
+4408c864 HEAD@{187}: commit: Discover meta-meme connection: 71 was always there
+ee8a78c9 refs/heads/main@{142}: commit: Add 'The Semiosis of 71': Academic treatise in Eco's style
+ee8a78c9 HEAD@{188}: commit: Add 'The Semiosis of 71': Academic treatise in Eco's style
+a528e265 refs/heads/main@{143}: commit: Document complete system: 71-Quine + existing Gödel code integration
+a528e265 HEAD@{189}: commit: Document complete system: 71-Quine + existing Gödel code integration
+9819c7e5 refs/heads/main@{144}: commit: Analyze existing Gödel code: Perfect match with 71-Quine system
+9819c7e5 HEAD@{190}: commit: Analyze existing Gödel code: Perfect match with 71-Quine system
+b402c5d0 refs/heads/main@{145}: commit: Add complete ProofChain system documentation
+b402c5d0 HEAD@{191}: commit: Add complete ProofChain system documentation
+1812d252 refs/heads/main@{146}: commit: Add Homomorphic Reed-Solomon Sharding with ZK Proof of Decodability
+1812d252 HEAD@{192}: commit: Add Homomorphic Reed-Solomon Sharding with ZK Proof of Decodability
+50590f42 refs/heads/main@{147}: commit: Add Universal Encoding: .so = Gödel = Emoji = Curve = Monster
+50590f42 HEAD@{193}: commit: Add Universal Encoding: .so = Gödel = Emoji = Curve = Monster
+af75bb40 refs/heads/main@{148}: commit: Add ProofChain.so: self-hosting blockchain shared library
+af75bb40 HEAD@{194}: commit: Add ProofChain.so: self-hosting blockchain shared library
+e967fc88 refs/heads/main@{149}: commit: Add ProofChain Genesis: Rosetta, OEIS, LMFDB mining pools
+e967fc88 HEAD@{195}: commit: Add ProofChain Genesis: Rosetta, OEIS, LMFDB mining pools
+689757f2 refs/heads/main@{150}: commit: Add ProofChain: blockchain where PoW = proving optimizations
+689757f2 HEAD@{196}: commit: Add ProofChain: blockchain where PoW = proving optimizations
+6dff1fc8 refs/heads/main@{151}: commit: Add binary byte attribution: trace every byte to source line and commit
+6dff1fc8 HEAD@{197}: commit: Add binary byte attribution: trace every byte to source line and commit
+1eebefd5 refs/heads/main@{152}: commit: Add cost attribution analysis: trace cost to source lines and authors
+1eebefd5 HEAD@{198}: commit: Add cost attribution analysis: trace cost to source lines and authors
+c52f0ef8 refs/heads/main@{153}: commit: Add 71-Quine theory: automorphic orbit and hypergraph analysis
+c52f0ef8 HEAD@{199}: commit: Add 71-Quine theory: automorphic orbit and hypergraph analysis
+659eefc1 refs/heads/main@{154}: commit: Add 71 flakes expressing const x=71 - perfect resonance
+659eefc1 HEAD@{200}: commit: Add 71 flakes expressing const x=71 - perfect resonance
+bcfdb0e7 refs/heads/main@{155}: commit: Add 10 proof systems and constraint solvers for const x=71
+bcfdb0e7 HEAD@{201}: commit: Add 10 proof systems and constraint solvers for const x=71
+3ef97d9b refs/heads/main@{156}: commit: Add data bucket submodules
+3ef97d9b HEAD@{202}: commit: Add data bucket submodules
+36366a94 refs/heads/main@{157}: commit: Add data bucket organization system
+36366a94 HEAD@{203}: commit: Add data bucket organization system
+6f3a78ad refs/heads/main@{158}: commit: Add blockchain inputs: smart contracts and recent blocks as nix flakes
+6f3a78ad HEAD@{204}: commit: Add blockchain inputs: smart contracts and recent blocks as nix flakes
+9c31d137 refs/heads/main@{159}: commit: Update plan: Prefer Rust, add Assembly + Brainfuck for proof
+9c31d137 HEAD@{205}: commit: Update plan: Prefer Rust, add Assembly + Brainfuck for proof
+419a1a15 refs/heads/main@{160}: commit: Add 5 more languages to const x=71 equivalence test
+419a1a15 HEAD@{206}: commit: Add 5 more languages to const x=71 equivalence test
+9bb9afdf refs/heads/main@{161}: commit: Add const equivalence test summary and status checker
+9bb9afdf HEAD@{207}: commit: Add const equivalence test summary and status checker
+756f6488 refs/heads/main@{162}: commit: Add cross-language const equivalence test with nix flakes
+756f6488 HEAD@{208}: commit: Add cross-language const equivalence test with nix flakes
+764c409a refs/heads/main@{163}: commit: Create 8D automorphic orbit representation with LMFDB labels
+764c409a HEAD@{209}: commit: Create 8D automorphic orbit representation with LMFDB labels
+f6c1281d refs/heads/main@{164}: commit: Extract codec binary code from modular resonance positions
+f6c1281d HEAD@{210}: commit: Extract codec binary code from modular resonance positions
+00f94a39 refs/heads/main@{165}: commit: Add ELF Moonshine: Modular forms in codec resonance
+00f94a39 HEAD@{211}: commit: Add ELF Moonshine: Modular forms in codec resonance
+f2e64766 refs/heads/main@{166}: commit: Add binary fingerprint decoder for mangled names
+f2e64766 HEAD@{212}: commit: Add binary fingerprint decoder for mangled names
+3063fa47 refs/heads/main@{167}: commit: Add comprehensive Markov analysis summary document
+3063fa47 HEAD@{213}: commit: Add comprehensive Markov analysis summary document
+657db70e refs/heads/main@{168}: commit: Add Markov-based auto-labeling and eigenvector cluster mapping
+657db70e HEAD@{214}: commit: Add Markov-based auto-labeling and eigenvector cluster mapping
+5b49267b refs/heads/main@{169}: commit: Add fast Parquet-based symbol similarity calculator
+5b49267b HEAD@{215}: commit: Add fast Parquet-based symbol similarity calculator
+77486da1 refs/heads/main@{170}: commit: Add Parquet output for symbol scores
+77486da1 HEAD@{216}: commit: Add Parquet output for symbol scores
+79af7410 refs/heads/main@{171}: commit: Add file index mapping and eigenvector calculator
+79af7410 HEAD@{217}: commit: Add file index mapping and eigenvector calculator
+6254374b refs/heads/main@{172}: commit: Save similarity matrix as binary file instead of JSON
+6254374b HEAD@{218}: commit: Save similarity matrix as binary file instead of JSON
+945e01b9 refs/heads/main@{173}: commit: Quiet workers and create failed files exclusion list
+945e01b9 HEAD@{219}: commit: Quiet workers and create failed files exclusion list
+ec0213f5 refs/heads/main@{174}: commit: Increase workers to 2x CPU cores and status updates every 5s
+ec0213f5 HEAD@{220}: commit: Increase workers to 2x CPU cores and status updates every 5s
+89386c84 refs/heads/main@{175}: commit: Scale workers to 1.5x CPU cores for better I/O utilization
+89386c84 HEAD@{221}: commit: Scale workers to 1.5x CPU cores for better I/O utilization
+caa4e117 refs/heads/main@{176}: commit: Add batch runner for all 35 chunks with memory tracking
+caa4e117 HEAD@{222}: commit: Add batch runner for all 35 chunks with memory tracking
+22cf3a64 refs/heads/main@{177}: commit: Add shared 20GB memory budget tracking across workers
+22cf3a64 HEAD@{223}: commit: Add shared 20GB memory budget tracking across workers
+b9758785 refs/heads/main@{178}: commit: Memory-efficient Markov resonance analyzer with 20GB preallocation
+b9758785 HEAD@{224}: commit: Memory-efficient Markov resonance analyzer with 20GB preallocation
+a0746b97 refs/heads/main@{179}: commit: Add ELF file chunking and batch processing system
+a0746b97 HEAD@{225}: commit: Add ELF file chunking and batch processing system
+67a8f853 refs/heads/main@{180}: commit: Memory-optimized Markov analyzer with top-20 cells per file
+67a8f853 HEAD@{226}: commit: Memory-optimized Markov analyzer with top-20 cells per file
+45d8b8ee refs/heads/main@{181}: commit: Add comprehensive worker logging and cell data export
+45d8b8ee HEAD@{227}: commit: Add comprehensive worker logging and cell data export
+904d751b refs/heads/main@{182}: commit: Improve Markov analyzer logging with clear progress indicators
+904d751b HEAD@{228}: commit: Improve Markov analyzer logging with clear progress indicators
+5080b512 refs/heads/main@{183}: commit: Create Cargo workspace for all crates
+5080b512 HEAD@{229}: commit: Create Cargo workspace for all crates
+bc6e98c6 refs/heads/main@{184}: commit: Add better logging and stall detection to Markov analyzer
+bc6e98c6 HEAD@{230}: commit: Add better logging and stall detection to Markov analyzer
+0abfe35b refs/heads/main@{185}: commit: Move Markov resonance analyzer to dedicated crate
+0abfe35b HEAD@{231}: commit: Move Markov resonance analyzer to dedicated crate
+723b5bf0 refs/heads/main@{186}: commit: Add global distribution matrix for cross-file comparison
+723b5bf0 HEAD@{232}: commit: Add global distribution matrix for cross-file comparison
+ec841ec7 refs/heads/main@{187}: commit: Add runner script for Markov analysis without timeout
+ec841ec7 HEAD@{233}: commit: Add runner script for Markov analysis without timeout
+8507f45f refs/heads/main@{188}: commit: Add Markov resonance analysis for automorphic binary patterns
+8507f45f HEAD@{234}: commit: Add Markov resonance analysis for automorphic binary patterns
+a699ee85 refs/heads/main@{189}: commit: Fix rustc build hash, ready for perf recording
+a699ee85 HEAD@{235}: commit: Fix rustc build hash, ready for perf recording
+95adb4e6 refs/remotes/origin/main@{23}: update by push
+95adb4e6 refs/heads/main@{190}: commit: Emphasize performance: 31,401 functions/sec, 1500-3000x faster than traditional tools
+95adb4e6 HEAD@{236}: commit: Emphasize performance: 31,401 functions/sec, 1500-3000x faster than traditional tools
+26e5e880 refs/heads/main@{191}: commit: Add NotebookLM summary
+26e5e880 HEAD@{237}: commit: Add NotebookLM summary
+1fecbc7e refs/heads/main@{192}: commit: Universal Binary Understanding System - Complete
+1fecbc7e HEAD@{238}: commit: Universal Binary Understanding System - Complete
+a893001f refs/remotes/origin/main@{24}: update by push
+a893001f refs/heads/main@{193}: commit: cleanup
+a893001f HEAD@{239}: commit: cleanup
+2f3b6317 refs/heads/main@{194}: commit: LMFDB Telemetry: Harmonic filtering for 37k symbols
+2f3b6317 HEAD@{240}: commit: LMFDB Telemetry: Harmonic filtering for 37k symbols
+a175809a HEAD@{241}: reset: moving to HEAD
+a175809a refs/heads/main@{195}: reset: moving to HEAD~
+a175809a HEAD@{242}: reset: moving to HEAD~
+e87a85ce refs/heads/main@{196}: commit: LMFDB Telemetry: 37k symbol wrappers with harmonic filtering
+e87a85ce HEAD@{243}: commit: LMFDB Telemetry: 37k symbol wrappers with harmonic filtering
+a175809a refs/heads/main@{197}: reset: moving to HEAD~
+a175809a HEAD@{244}: reset: moving to HEAD~
+4c7fa01a refs/heads/main@{198}: commit: cleanup
+4c7fa01a HEAD@{245}: commit: cleanup
+a175809a refs/heads/main@{199}: commit: Unified build system: merge ldd2wrap + crossbeam + telemetry_lib + macros
+a175809a HEAD@{246}: commit: Unified build system: merge ldd2wrap + crossbeam + telemetry_lib + macros
+ed6dbd8c refs/heads/main@{200}: commit: wip
+ed6dbd8c HEAD@{247}: commit: wip
+e9c63ae5 refs/heads/main@{201}: commit: remove hard coded
+e9c63ae5 HEAD@{248}: commit: remove hard coded
+1c43232e refs/heads/main@{202}: commit: wip
+1c43232e HEAD@{249}: commit: wip
+7ac5cb35 refs/heads/main@{203}: commit: 🔥 Structured telemetry with goblin ELF parsing and script wrapper following
+7ac5cb35 HEAD@{250}: commit: 🔥 Structured telemetry with goblin ELF parsing and script wrapper following
+1f8df342 refs/remotes/origin/main@{25}: update by push
+1f8df342 refs/heads/main@{204}: commit: 🚀 NIX + TRANSPARENT TELEMETRY INTEGRATION
+1f8df342 HEAD@{251}: commit: 🚀 NIX + TRANSPARENT TELEMETRY INTEGRATION
+6cb04e0a refs/heads/main@{205}: commit: 🔧 TRANSPARENT TELEMETRY: Build-time API Wrapping
+6cb04e0a HEAD@{252}: commit: 🔧 TRANSPARENT TELEMETRY: Build-time API Wrapping
+fb733add refs/heads/main@{206}: commit: 🔥 TETRAGRAMMATON BOOTSTRAP: Four Sacred Emojis = Complete System
+fb733add HEAD@{253}: commit: 🔥 TETRAGRAMMATON BOOTSTRAP: Four Sacred Emojis = Complete System
+c355a73f refs/heads/main@{207}: commit: 🌟 MONOLITHIC BOOTSTRAP: Single Binary = Complete System
+c355a73f HEAD@{254}: commit: 🌟 MONOLITHIC BOOTSTRAP: Single Binary = Complete System
+728537f5 refs/heads/main@{208}: commit: 🌟 BOOTSTRAP MACRO: Single Macro → Complete System
+728537f5 HEAD@{255}: commit: 🌟 BOOTSTRAP MACRO: Single Macro → Complete System
+3c509ecc refs/heads/main@{209}: commit: 🌟 BOOTSTRAP EVOLUTION: Self-Reproducing System
+3c509ecc HEAD@{256}: commit: 🌟 BOOTSTRAP EVOLUTION: Self-Reproducing System
+ce25b3d9 refs/heads/main@{210}: commit: 🌟 PERSONAL DATA SOVEREIGNTY: Complete Web3 Revolution
+ce25b3d9 HEAD@{257}: commit: 🌟 PERSONAL DATA SOVEREIGNTY: Complete Web3 Revolution
+a1b46f76 refs/heads/main@{211}: commit: 🌟 NIX-AS-A-SERVICE: Complete Integration with ZOS + MCP + Solana
+a1b46f76 HEAD@{258}: commit: 🌟 NIX-AS-A-SERVICE: Complete Integration with ZOS + MCP + Solana
+3519b8e2 refs/heads/main@{212}: commit: 🎯 COMPLETE BOOTSTRAP INTROSPECTION FOUNDATION
+3519b8e2 HEAD@{259}: commit: 🎯 COMPLETE BOOTSTRAP INTROSPECTION FOUNDATION
+3fa88c83 refs/heads/main@{213}: commit: Add Nix flake for hermetic rustc build
+3fa88c83 HEAD@{260}: commit: Add Nix flake for hermetic rustc build
+dd61a7f3 refs/heads/main@{214}: commit: Add structured data collection system with proven pipelines
+dd61a7f3 HEAD@{261}: commit: Add structured data collection system with proven pipelines
+1e77cde6 refs/heads/main@{215}: commit: Fix compilation errors and add all compression analysis tools
+1e77cde6 HEAD@{262}: commit: Fix compilation errors and add all compression analysis tools
+8ac3310f refs/heads/main@{216}: commit: Document rustc interceptor integration plan
+8ac3310f HEAD@{263}: commit: Document rustc interceptor integration plan
+23626fac refs/heads/main@{217}: commit: Add build order pipeline with in-memory compressed archive processing
+23626fac HEAD@{264}: commit: Add build order pipeline with in-memory compressed archive processing
+3fb507c9 refs/remotes/origin/main@{26}: update by push
+3fb507c9 refs/heads/main@{218}: commit: Add syn-based declaration compression with real names
+3fb507c9 HEAD@{265}: commit: Add syn-based declaration compression with real names
+2b9f510c refs/heads/main@{219}: commit: Add grammar-based compression system with 93.3% proven savings
+2b9f510c HEAD@{266}: commit: Add grammar-based compression system with 93.3% proven savings
+b1316b12 refs/heads/main@{220}: commit: 🚀 Comprehensive complexity lattice scaling framework
+b1316b12 HEAD@{267}: commit: 🚀 Comprehensive complexity lattice scaling framework
+e68a5f3f refs/heads/main@{221}: commit: 🏭 Complete complex type instance Markov analysis
+e68a5f3f HEAD@{268}: commit: 🏭 Complete complex type instance Markov analysis
+b6809371 refs/heads/main@{222}: commit: 🔬 Initial conformal structure analysis implementation and results
+b6809371 HEAD@{269}: commit: 🔬 Initial conformal structure analysis implementation and results
+fa68fb4f refs/heads/main@{223}: commit: 📐 Document conformal structure analysis theoretical framework
+fa68fb4f HEAD@{270}: commit: 📐 Document conformal structure analysis theoretical framework
+fc2e1e83 refs/heads/main@{224}: commit: 📊 Update README with semantic analysis achievements and thermal work measurement
+fc2e1e83 HEAD@{271}: commit: 📊 Update README with semantic analysis achievements and thermal work measurement
+c1d45346 refs/remotes/origin/main@{27}: update by push
+c1d45346 refs/heads/main@{225}: commit: Add commit collection tools and comprehensive analysis reports
+c1d45346 HEAD@{272}: commit: Add commit collection tools and comprehensive analysis reports
+e9ed354f refs/remotes/origin/main@{28}: update by push
+e9ed354f refs/heads/main@{226}: commit: wip
+e9ed354f HEAD@{273}: commit: wip
+76e0c99a refs/heads/main@{227}: commit: Document zombie_driver2 code analysis tools integration
+76e0c99a HEAD@{274}: commit: Document zombie_driver2 code analysis tools integration
+bafa84a4 refs/heads/main@{228}: commit: Add comprehensive TLD ecosystem implementation plan
+bafa84a4 HEAD@{275}: commit: Add comprehensive TLD ecosystem implementation plan
+76bdebef refs/heads/main@{229}: commit (initial): Initial commit: Create canonical meta-introspector repository structure
+76bdebef HEAD@{276}: commit (initial): Initial commit: Create canonical meta-introspector repository structure
