@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Activity Report - Meta-Introspector</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 40px 20px; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .stat-card { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+        .stat-card .value { font-size: 2.5em; font-weight: bold; margin-bottom: 5px; }
+        .stat-card .label { opacity: 0.9; }
+        .section { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+        .section h2 { font-size: 1.8em; margin-bottom: 20px; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; }
+        .matrix { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+        th, td { padding: 12px 8px; text-align: center; border: 1px solid rgba(255,255,255,0.2); }
+        th { background: rgba(255,255,255,0.2); font-weight: 600; position: sticky; top: 0; }
+        td.month { background: rgba(255,255,255,0.15); font-weight: 500; text-align: left; }
+        td.empty { opacity: 0.3; }
+        td.active { background: rgba(255,255,255,0.2); font-weight: bold; }
+        .repo-list { display: grid; gap: 10px; }
+        .repo-item { background: rgba(255,255,255,0.1); padding: 15px 20px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .repo-rank { font-size: 1.2em; font-weight: bold; margin-right: 15px; opacity: 0.7; }
+        .repo-name { flex: 1; font-weight: 500; }
+        .repo-commits { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 12px; }
+        .footer { text-align: center; margin-top: 50px; opacity: 0.8; }
+        a { color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Meta-Introspector 2025</h1>
+            <p style="font-size: 1.2em; opacity: 0.9;">Annual Activity Report</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="value">337</div>
+                <div class="label">Commits</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">2,689</div>
+                <div class="label">Files Changed</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">+693K</div>
+                <div class="label">Lines Added</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">-95K</div>
+                <div class="label">Lines Removed</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📈 Month/Repository Activity Matrix</h2>
+            <div class="matrix">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>ai-agent-terraform</th>
+                            <th>quasi-meta-meme</th>
+                            <th>solfunmeme-dioxus</th>
+                            <th>agave-solana-validator</th>
+                            <th>meta-meme</th>
+                            <th>solfunmeme</th>
+                            <th>ragit</th>
+                            <th>bootstrap</th>
+                            <th>amazon-q-cli</th>
+                            <th>lattice-introspector</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="month">January</td>
+                            <td class="active">73</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="active">3</td>
+                            <td class="active">7</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                        </tr>
+                        <tr>
+                            <td class="month">February</td>
+                            <td class="active">50</td>
+                            <td class="active">5</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="active">1</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                        </tr>
+                        <tr>
+                            <td class="month">March</td>
+                            <td class="active">17</td>
+                            <td class="active">37</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="active">6</td>
+                            <td class="active">5</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                        </tr>
+                        <tr>
+                            <td class="month">April</td>
+                            <td class="empty">·</td>
+                            <td class="active">12</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="active">1</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                        </tr>
+                        <tr>
+                            <td class="month">May</td>
+                            <td class="active">2</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="active">27</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                        </tr>
+                        <tr>
+                            <td class="month">June</td>
+                            <td class="active">1</td>
+                            <td class="empty">·</td>
+                            <td class="active">46</td>
+                            <td class="empty">·</td>
+                            <td class="active">9</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                        </tr>
+                        <tr>
+                            <td class="month">July</td>
+                            <td class="empty">·</td>
+                            <td class="active">3</td>
+                            <td class="active">7</td>
+                            <td class="empty">·</td>
+                            <td class="active">1</td>
+                            <td class="empty">·</td>
+                            <td class="active">1</td>
+                            <td class="active">4</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                        </tr>
+                        <tr>
+                            <td class="month">August</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="active">2</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="active">9</td>
+                            <td class="empty">·</td>
+                            <td class="active">3</td>
+                            <td class="empty">·</td>
+                        </tr>
+                        <tr>
+                            <td class="month">September</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="empty">·</td>
+                            <td class="active">2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Top 10 Repositories</h2>
+            <div class="repo-list">
+                <div class="repo-item">
+                    <span class="repo-rank">1</span>
+                    <span class="repo-name">ai-agent-terraform</span>
+                    <span class="repo-commits">143 commits</span>
+                </div>
+                <div class="repo-item">
+                    <span class="repo-rank">2</span>
+                    <span class="repo-name">quasi-meta-meme</span>
+                    <span class="repo-commits">57 commits</span>
+                </div>
+                <div class="repo-item">
+                    <span class="repo-rank">3</span>
+                    <span class="repo-name">solfunmeme-dioxus</span>
+                    <span class="repo-commits">55 commits</span>
+                </div>
+                <div class="repo-item">
+                    <span class="repo-rank">4</span>
+                    <span class="repo-name">agave-solana-validator</span>
+                    <span class="repo-commits">27 commits</span>
+                </div>
+                <div class="repo-item">
+                    <span class="repo-rank">5</span>
+                    <span class="repo-name">meta-meme</span>
+                    <span class="repo-commits">20 commits</span>
+                </div>
+                <div class="repo-item">
+                    <span class="repo-rank">6</span>
+                    <span class="repo-name">solfunmeme</span>
+                    <span class="repo-commits">13 commits</span>
+                </div>
+                <div class="repo-item">
+                    <span class="repo-rank">7</span>
+                    <span class="repo-name">ragit</span>
+                    <span class="repo-commits">10 commits</span>
+                </div>
+                <div class="repo-item">
+                    <span class="repo-rank">8</span>
+                    <span class="repo-name">bootstrap</span>
+                    <span class="repo-commits">4 commits</span>
+                </div>
+                <div class="repo-item">
+                    <span class="repo-rank">9</span>
+                    <span class="repo-name">amazon-q-developer-cli</span>
+                    <span class="repo-commits">3 commits</span>
+                </div>
+                <div class="repo-item">
+                    <span class="repo-rank">10</span>
+                    <span class="repo-name">lattice-introspector</span>
+                    <span class="repo-commits">2 commits</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Generated 2026-01-15 from comprehensive git activity dataset</p>
+            <p><a href="https://huggingface.co/datasets/introspector/git-activity">View Full Dataset</a></p>
+        </div>
+    </div>
+</body>
+</html>
