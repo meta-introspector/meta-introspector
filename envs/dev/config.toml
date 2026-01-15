@@ -1,0 +1,11 @@
+[environment]
+name = "dev"
+tier = "development"
+log_level = "debug"
+
+[telemetry]
+endpoint = "http://localhost:4317"
+sample_rate = 1.0
+
+[auth]
+require_ssh_key = false

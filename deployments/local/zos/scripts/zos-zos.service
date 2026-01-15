@@ -1,0 +1,15 @@
+[Unit]
+Description=ZOS Server - zos
+After=network.target
+
+[Service]
+Type=simple
+User=mdupont
+WorkingDirectory=/home/mdupont/meta-introspector/repos/zos-qa
+Environment="ZOS_ENV=dev"
+Environment="ZOS_NODE_ID=local-zos"
+ExecStart=/home/mdupont/meta-introspector/repos/zos-qa/target/release/zos_server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

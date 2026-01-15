@@ -1,0 +1,15 @@
+[Unit]
+Description=ZOS Server - prod-node
+After=network.target
+
+[Service]
+Type=simple
+User=mdupont
+WorkingDirectory=/home/mdupont/meta-introspector/repos/zos-qa
+Environment="ZOS_ENV=prod"
+Environment="ZOS_NODE_ID=local-prod-node"
+ExecStart=/home/mdupont/meta-introspector/repos/zos-qa/target/release/zos_server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

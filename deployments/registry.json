@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-01-15T10:53:03-05:00",
+  "nodes": [
+    {
+      "id": "local-zos-20260115105320",
+      "platform": "local",
+      "node_name": "zos",
+      "environment": "dev",
+      "owner": "mdupont",
+      "status": "deploying",
+      "endpoints": {},
+      "telemetry": {
+        "logs": "telemetry/logs/local-zos/",
+        "metrics_endpoint": ""
+      }
+    },
+    {
+      "id": "local-qa-node-20260115105350",
+      "platform": "local",
+      "node_name": "qa-node",
+      "environment": "qa",
+      "owner": "mdupont",
+      "status": "deploying",
+      "endpoints": {},
+      "telemetry": {
+        "logs": "telemetry/logs/local-qa-node/",
+        "metrics_endpoint": ""
+      }
+    },
+    {
+      "id": "local-prod-node-20260115111101",
+      "platform": "local",
+      "node_name": "prod-node",
+      "environment": "prod",
+      "owner": "mdupont",
+      "status": "deploying",
+      "endpoints": {},
+      "telemetry": {
+        "logs": "telemetry/logs/local-prod-node/",
+        "metrics_endpoint": ""
+      }
+    }
+  ]
+}
