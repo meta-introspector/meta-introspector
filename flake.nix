@@ -5,9 +5,13 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
+    rust-telemetry-driver.url = "github:meta-introspector/rust-telemetry-driver";
+    rust-telemetry-driver.inputs.nixpkgs.follows = "nixpkgs";
+    zos-server.url = "github:meta-introspector/zos-server/nix-build-setup";
+    zos-server.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils }:
+  outputs = { self, nixpkgs, rust-overlay, flake-utils, rust-telemetry-driver, zos-server }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         overlays = [ (import rust-overlay) ];
@@ -18,7 +22,7 @@
         # Our telemetry shell that wraps everything
         telemetry-shell = pkgs.writeShellScriptBin "telemetry-shell" ''
           #!/usr/bin/env bash
-          TELEMETRY_DRIVER="${self.packages.${system}.rust-telemetry-driver}/bin/rust-telemetry-driver"
+          TELEMETRY_DRIVER="${rust-telemetry-driver.packages.${system}.default}/bin/rust-telemetry-driver"
           REAL_SHELL="''${REAL_SHELL:-${pkgs.bash}/bin/bash}"
           
           export TELEMETRY_SESSION_ID="''${TELEMETRY_SESSION_ID:-$(date +%s)_$$}"
@@ -39,14 +43,7 @@
           fi
         '';
         
-        # Rust telemetry driver package
-        rust-telemetry-driver = pkgs.rustPlatform.buildRustPackage {
-          pname = "rust-telemetry-driver";
-          version = "0.1.0";
-          src = ./rust-telemetry-driver;
-          cargoLock.lockFile = ./rust-telemetry-driver/Cargo.lock;
-          nativeBuildInputs = with pkgs; [ pkg-config ];
-        };
+        # Remove local rust-telemetry-driver build - now using flake input
         
         # Custom environment with telemetry shell as default
         telemetry-env = pkgs.buildEnv {
@@ -55,12 +52,11 @@
             (rust-bin.stable.latest.default.override {
               extensions = [ "rust-src" "rust-analyzer" ];
             })
-            cargo
             git
             jq
             strace
             linuxPackages.perf
-            rust-telemetry-driver
+            rust-telemetry-driver.packages.${system}.default
             telemetry-shell
           ];
         };
@@ -68,8 +64,8 @@
       in
       {
         packages = {
-          default = rust-telemetry-driver;
-          rust-telemetry-driver = rust-telemetry-driver;
+          default = rust-telemetry-driver.packages.${system}.default;
+          rust-telemetry-driver = rust-telemetry-driver.packages.${system}.default;
           telemetry-shell = telemetry-shell;
           telemetry-env = telemetry-env;
         };

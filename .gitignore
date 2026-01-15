@@ -1,26 +1,27 @@
-# Ignore large generated files
-data/
-logs/
-*.log
-all_commits.log
-target/
-Cargo.lock
+# Credentials
+credentials/
+*.pem
+*.key
+*.token
+.env
+
+# Telemetry data
+telemetry/logs/
+telemetry/metrics/
+telemetry/traces/
 
 # Build artifacts
-*.o
+target/
 *.so
-*.a
-*.rlib
 *.dylib
-*.dll
-*.exe
 
-# Telemetry output
-*.csv
-*.parquet
-/tmp/
+# State files
+*.tfstate
+*.tfstate.backup
+deployment.json
 
-# Submodule changes
-rust-overlay-test/
-rustc-only-build/
-result
+# Logs
+*.log
+data/
+target/
+result*

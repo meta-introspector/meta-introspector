@@ -1,21 +1,3 @@
-[submodule "data-markov-analysis"]
-	path = data-markov-analysis
-	url = ./data-markov-analysis
-[submodule "data-eigenvectors"]
-	path = data-eigenvectors
-	url = ./data-eigenvectors
-[submodule "data-moonshine"]
-	path = data-moonshine
-	url = ./data-moonshine
-[submodule "data-blockchain"]
-	path = data-blockchain
-	url = ./data-blockchain
-[submodule "data-telemetry"]
-	path = data-telemetry
-	url = ./data-telemetry
-[submodule "data-const71"]
-	path = data-const71
-	url = ./data-const71
 [submodule ".github/actions/checkout"]
 	path = .github/actions/checkout
 	url = https://github.com/actions/checkout.git
@@ -34,3 +16,12 @@
 [submodule ".github/actions/upload-artifact"]
 	path = .github/actions/upload-artifact
 	url = https://github.com/actions/upload-artifact.git
+[submodule "rust-telemetry-driver"]
+	path = rust-telemetry-driver
+	url = https://github.com/meta-introspector/rust-telemetry-driver
+[submodule "hf-git-activity"]
+	path = hf-git-activity
+	url = git@hf.co:datasets/introspector/git-activity
+[submodule "hf-build-telemetry-upload"]
+	path = hf-build-telemetry-upload
+	url = git@hf.co:datasets/introspector/build-telemetry
