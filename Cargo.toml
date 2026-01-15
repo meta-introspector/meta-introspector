@@ -23,6 +23,10 @@ path = "github-cached-scanner.rs"
 name = "build-activity-dataset"
 path = "build-activity-dataset.rs"
 
+[[bin]]
+name = "check-activity-coverage"
+path = "check-activity-coverage.rs"
+
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
