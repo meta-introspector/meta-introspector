@@ -15,6 +15,12 @@ fn main() {
         }
     }
 
+    // Copy logo
+    if Path::new("solfunmeme-logo.png").exists() {
+        fs::copy("solfunmeme-logo.png", output_dir.join("solfunmeme-logo.png")).unwrap();
+        println!("Copied: solfunmeme-logo.png");
+    }
+
     // Copy reports directory
     if Path::new("reports").exists() {
         copy_dir_recursive("reports", &output_dir.join("reports")).unwrap();
