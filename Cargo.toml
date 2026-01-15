@@ -90,3 +90,663 @@ crossbeam = "0.8"
 clap = { version = "4", features = ["derive"] }
 syn = { version = "2", features = ["full", "visit"] }
 quote = "1"
+[[bin]]
+name = "all_commits_collector"
+path = "all_commits_collector.rs"
+
+[[bin]]
+name = "archive_declarations"
+path = "archive_declarations.rs"
+
+[[bin]]
+name = "automorphic_orbit_71"
+path = "automorphic_orbit_71.rs"
+
+[[bin]]
+name = "automorphic_orbit_lmfdb"
+path = "automorphic_orbit_lmfdb.rs"
+
+[[bin]]
+name = "batch_runner"
+path = "batch_runner.rs"
+
+[[bin]]
+name = "binary_byte_attribution"
+path = "binary_byte_attribution.rs"
+
+[[bin]]
+name = "binary_fingerprint_decoder"
+path = "binary_fingerprint_decoder.rs"
+
+[[bin]]
+name = "binary_symbol_study"
+path = "binary_symbol_study.rs"
+
+[[bin]]
+name = "bootstrap_evolution"
+path = "bootstrap_evolution.rs"
+
+[[bin]]
+name = "bootstrap_macro"
+path = "bootstrap_macro.rs"
+
+[[bin]]
+name = "bootstrap_telemetry_system"
+path = "bootstrap_telemetry_system.rs"
+
+[[bin]]
+name = "bootstrap_test"
+path = "bootstrap_test.rs"
+
+[[bin]]
+name = "build_instrumented"
+path = "build_instrumented.rs"
+
+[[bin]]
+name = "build_order_pipeline"
+path = "build_order_pipeline.rs"
+
+[[bin]]
+name = "build_order_processor"
+path = "build_order_processor.rs"
+
+[[bin]]
+name = "build_overpowered"
+path = "build_overpowered.rs"
+
+[[bin]]
+name = "build_telemetry_lib"
+path = "build_telemetry_lib.rs"
+
+[[bin]]
+name = "build_transparent"
+path = "build_transparent.rs"
+
+[[bin]]
+name = "canonical_data_store"
+path = "canonical_data_store.rs"
+
+[[bin]]
+name = "canonical_directory_walker"
+path = "canonical_directory_walker.rs"
+
+[[bin]]
+name = "codec_binary_extractor"
+path = "codec_binary_extractor.rs"
+
+[[bin]]
+name = "commit_collector"
+path = "commit_collector.rs"
+
+[[bin]]
+name = "commits_by_user"
+path = "commits_by_user.rs"
+
+[[bin]]
+name = "complex_abi_wrapper"
+path = "complex_abi_wrapper.rs"
+
+[[bin]]
+name = "complex_type_instance_markov_fixed"
+path = "complex_type_instance_markov_fixed.rs"
+
+[[bin]]
+name = "compressed_proof"
+path = "compressed_proof.rs"
+
+[[bin]]
+name = "compressed_rust_compiler"
+path = "compressed_rust_compiler.rs"
+
+[[bin]]
+name = "compression_aggregator"
+path = "compression_aggregator.rs"
+
+[[bin]]
+name = "compression_report"
+path = "compression_report.rs"
+
+[[bin]]
+name = "conformal_heat_generator"
+path = "conformal_heat_generator.rs"
+
+[[bin]]
+name = "conformal_structure_analyzer"
+path = "conformal_structure_analyzer.rs"
+
+[[bin]]
+name = "conformal_structure_analyzer_fixed"
+path = "conformal_structure_analyzer_fixed.rs"
+
+[[bin]]
+name = "cost_attribution_71"
+path = "cost_attribution_71.rs"
+
+[[bin]]
+name = "create_actual_5mb"
+path = "create_actual_5mb.rs"
+
+[[bin]]
+name = "crossbeam_repo_compressor"
+path = "crossbeam_repo_compressor.rs"
+
+[[bin]]
+name = "crossbeam_rustc_analyzer"
+path = "crossbeam_rustc_analyzer.rs"
+
+[[bin]]
+name = "crossbeam_rustc_analyzer_complete"
+path = "crossbeam_rustc_analyzer_complete.rs"
+
+[[bin]]
+name = "crossbeam_value_lattice"
+path = "crossbeam_value_lattice.rs"
+
+[[bin]]
+name = "custom_rust_nightly_build"
+path = "custom_rust_nightly_build.rs"
+
+[[bin]]
+name = "data_registry"
+path = "data_registry.rs"
+
+[[bin]]
+name = "datatype_markov_analyzer"
+path = "datatype_markov_analyzer.rs"
+
+[[bin]]
+name = "declaration_compressor"
+path = "declaration_compressor.rs"
+
+[[bin]]
+name = "demangle_and_hook_generator"
+path = "demangle_and_hook_generator.rs"
+
+[[bin]]
+name = "direct_ast_codec"
+path = "direct_ast_codec.rs"
+
+[[bin]]
+name = "duplicate_code_detector"
+path = "duplicate_code_detector.rs"
+
+[[bin]]
+name = "eigenvector_calculator"
+path = "eigenvector_calculator.rs"
+
+[[bin]]
+name = "eigenvector_label_mapper"
+path = "eigenvector_label_mapper.rs"
+
+[[bin]]
+name = "eigenvector_word_model"
+path = "eigenvector_word_model.rs"
+
+[[bin]]
+name = "elf_moonshine_detector"
+path = "elf_moonshine_detector.rs"
+
+[[bin]]
+name = "emoji_universal_registry"
+path = "emoji_universal_registry.rs"
+
+[[bin]]
+name = "enum_distribution_analyzer"
+path = "enum_distribution_analyzer.rs"
+
+[[bin]]
+name = "existing_code_collector"
+path = "existing_code_collector.rs"
+
+[[bin]]
+name = "extract_rust_sources"
+path = "extract_rust_sources.rs"
+
+[[bin]]
+name = "extract_so_functions"
+path = "extract_so_functions.rs"
+
+[[bin]]
+name = "fast_rust_compressor"
+path = "fast_rust_compressor.rs"
+
+[[bin]]
+name = "filename_content_correlation"
+path = "filename_content_correlation.rs"
+
+[[bin]]
+name = "focused_queue_builder"
+path = "focused_queue_builder.rs"
+
+[[bin]]
+name = "full_rustc_compressor"
+path = "full_rustc_compressor.rs"
+
+[[bin]]
+name = "global_repo_indexer"
+path = "global_repo_indexer.rs"
+
+[[bin]]
+name = "grammar_rust_compressor"
+path = "grammar_rust_compressor.rs"
+
+[[bin]]
+name = "hello_telemetry_wrappers"
+path = "hello_telemetry_wrappers.rs"
+
+[[bin]]
+name = "https_commit_fetcher"
+path = "https_commit_fetcher.rs"
+
+[[bin]]
+name = "hypergraph_71_analysis"
+path = "hypergraph_71_analysis.rs"
+
+[[bin]]
+name = "latest_dev"
+path = "latest_dev.rs"
+
+[[bin]]
+name = "ldd2macro"
+path = "ldd2macro.rs"
+
+[[bin]]
+name = "ldd2macro_secure"
+path = "ldd2macro_secure.rs"
+
+[[bin]]
+name = "ldd2wrap_all_calls"
+path = "ldd2wrap_all_calls.rs"
+
+[[bin]]
+name = "ldd_wrappers_secure"
+path = "ldd_wrappers_secure.rs"
+
+[[bin]]
+name = "ld_preload_frontrun"
+path = "ld_preload_frontrun.rs"
+
+[[bin]]
+name = "lmfdb_function_composer"
+path = "lmfdb_function_composer.rs"
+
+[[bin]]
+name = "lmfdb_instruction_classifier"
+path = "lmfdb_instruction_classifier.rs"
+
+[[bin]]
+name = "local_commit_cache"
+path = "local_commit_cache.rs"
+
+[[bin]]
+name = "logistical_graph"
+path = "logistical_graph.rs"
+
+[[bin]]
+name = "markov_instruction_sampler"
+path = "markov_instruction_sampler.rs"
+
+[[bin]]
+name = "markov_name_path_analyzer"
+path = "markov_name_path_analyzer.rs"
+
+[[bin]]
+name = "massive_rustc_grammar_plan"
+path = "massive_rustc_grammar_plan.rs"
+
+[[bin]]
+name = "master_telemetry"
+path = "master_telemetry.rs"
+
+[[bin]]
+name = "mcp_nix_wrapper"
+path = "mcp_nix_wrapper.rs"
+
+[[bin]]
+name = "mike_repos"
+path = "mike_repos.rs"
+
+[[bin]]
+name = "monolithic_bootstrap"
+path = "monolithic_bootstrap.rs"
+
+[[bin]]
+name = "monolithic_telemetry_runner"
+path = "monolithic_telemetry_runner.rs"
+
+[[bin]]
+name = "multi_worker"
+path = "multi_worker.rs"
+
+[[bin]]
+name = "name_instruction_mapper"
+path = "name_instruction_mapper.rs"
+
+[[bin]]
+name = "nix2parquet"
+path = "nix2parquet.rs"
+
+[[bin]]
+name = "nix_as_a_service"
+path = "nix_as_a_service.rs"
+
+[[bin]]
+name = "nix_binary_lmfdb_analyzer"
+path = "nix_binary_lmfdb_analyzer.rs"
+
+[[bin]]
+name = "nix_build_telemetry"
+path = "nix_build_telemetry.rs"
+
+[[bin]]
+name = "nix_build_telemetry_old"
+path = "nix_build_telemetry_old.rs"
+
+[[bin]]
+name = "nix_canonical_builder"
+path = "nix_canonical_builder.rs"
+
+[[bin]]
+name = "nix_cargo_interceptor"
+path = "nix_cargo_interceptor.rs"
+
+[[bin]]
+name = "nix_telemetry_integration"
+path = "nix_telemetry_integration.rs"
+
+[[bin]]
+name = "nix_telemetry_integration_old"
+path = "nix_telemetry_integration_old.rs"
+
+[[bin]]
+name = "nix_telemetry_preload"
+path = "nix_telemetry_preload.rs"
+
+[[bin]]
+name = "ordered_decl_compressor"
+path = "ordered_decl_compressor.rs"
+
+[[bin]]
+name = "parquet_abi_interceptor"
+path = "parquet_abi_interceptor.rs"
+
+[[bin]]
+name = "parquet_telemetry_proof"
+path = "parquet_telemetry_proof.rs"
+
+[[bin]]
+name = "perf_canonical_reader"
+path = "perf_canonical_reader.rs"
+
+[[bin]]
+name = "perf_canonical_recorder"
+path = "perf_canonical_recorder.rs"
+
+[[bin]]
+name = "perfect_hash_compressor"
+path = "perfect_hash_compressor.rs"
+
+[[bin]]
+name = "personal_data_sovereignty"
+path = "personal_data_sovereignty.rs"
+
+[[bin]]
+name = "pipeline_runner"
+path = "pipeline_runner.rs"
+
+[[bin]]
+name = "prime_resonance_detector"
+path = "prime_resonance_detector.rs"
+
+[[bin]]
+name = "prove_compression"
+path = "prove_compression.rs"
+
+[[bin]]
+name = "query_ast_types"
+path = "query_ast_types.rs"
+
+[[bin]]
+name = "real_compile_proof"
+path = "real_compile_proof.rs"
+
+[[bin]]
+name = "recent_commits_scanner"
+path = "recent_commits_scanner.rs"
+
+[[bin]]
+name = "recursive_rustc_wrapper"
+path = "recursive_rustc_wrapper.rs"
+
+[[bin]]
+name = "repo_analysis_planner"
+path = "repo_analysis_planner.rs"
+
+[[bin]]
+name = "repo_queue_manager"
+path = "repo_queue_manager.rs"
+
+[[bin]]
+name = "repo_selector"
+path = "repo_selector.rs"
+
+[[bin]]
+name = "repo_spider"
+path = "repo_spider.rs"
+
+[[bin]]
+name = "repo_worker"
+path = "repo_worker.rs"
+
+[[bin]]
+name = "runtime_lmfdb_abi_wrapper"
+path = "runtime_lmfdb_abi_wrapper.rs"
+
+[[bin]]
+name = "rust_as_a_service"
+path = "rust_as_a_service.rs"
+
+[[bin]]
+name = "rust_build_compressor"
+path = "rust_build_compressor.rs"
+
+[[bin]]
+name = "rustc_analyzer"
+path = "rustc_analyzer.rs"
+
+[[bin]]
+name = "rustc_interceptor"
+path = "rustc_interceptor.rs"
+
+[[bin]]
+name = "rustc_markov_skeleton"
+path = "rustc_markov_skeleton.rs"
+
+[[bin]]
+name = "rustc_profile_system"
+path = "rustc_profile_system.rs"
+
+[[bin]]
+name = "rustc_syscall_proof"
+path = "rustc_syscall_proof.rs"
+
+[[bin]]
+name = "rustc_tree_markov"
+path = "rustc_tree_markov.rs"
+
+[[bin]]
+name = "rust_perf_decoder"
+path = "rust_perf_decoder.rs"
+
+[[bin]]
+name = "rust_type_markov_generator"
+path = "rust_type_markov_generator.rs"
+
+[[bin]]
+name = "save_compressed_data"
+path = "save_compressed_data.rs"
+
+[[bin]]
+name = "scan_existing_repos"
+path = "scan_existing_repos.rs"
+
+[[bin]]
+name = "semantic_rust_compressor"
+path = "semantic_rust_compressor.rs"
+
+[[bin]]
+name = "setup_perf_probes"
+path = "setup_perf_probes.rs"
+
+[[bin]]
+name = "simple_bootstrap"
+path = "simple_bootstrap.rs"
+
+[[bin]]
+name = "simple_code_collector"
+path = "simple_code_collector.rs"
+
+[[bin]]
+name = "size_histogram"
+path = "size_histogram.rs"
+
+[[bin]]
+name = "solana_as_a_service"
+path = "solana_as_a_service.rs"
+
+[[bin]]
+name = "solfunmeme_ca_service"
+path = "solfunmeme_ca_service.rs"
+
+[[bin]]
+name = "solfunmeme_introspect"
+path = "solfunmeme_introspect.rs"
+
+[[bin]]
+name = "solfunmeme_routes"
+path = "solfunmeme_routes.rs"
+
+[[bin]]
+name = "string_convergence_analyzer"
+path = "string_convergence_analyzer.rs"
+
+[[bin]]
+name = "struct_composition_analyzer"
+path = "struct_composition_analyzer.rs"
+
+[[bin]]
+name = "struct_instance_markov"
+path = "struct_instance_markov.rs"
+
+[[bin]]
+name = "symbol2macro"
+path = "symbol2macro.rs"
+
+[[bin]]
+name = "symbol_dissolver_macros"
+path = "symbol_dissolver_macros.rs"
+
+[[bin]]
+name = "symbol_eigenvector"
+path = "symbol_eigenvector.rs"
+
+[[bin]]
+name = "symbol_similarity_calculator"
+path = "symbol_similarity_calculator.rs"
+
+[[bin]]
+name = "syn_compressor"
+path = "syn_compressor.rs"
+
+[[bin]]
+name = "syn_function_names"
+path = "syn_function_names.rs"
+
+[[bin]]
+name = "telemetry_bootstrap"
+path = "telemetry_bootstrap.rs"
+
+[[bin]]
+name = "telemetry_client"
+path = "telemetry_client.rs"
+
+[[bin]]
+name = "telemetry_hook_test_driver"
+path = "telemetry_hook_test_driver.rs"
+
+[[bin]]
+name = "telemetry_lib"
+path = "telemetry_lib.rs"
+
+[[bin]]
+name = "telemetry_server"
+path = "telemetry_server.rs"
+
+[[bin]]
+name = "term_eigenvector_analyzer"
+path = "term_eigenvector_analyzer.rs"
+
+[[bin]]
+name = "test_bootstrap"
+path = "test_bootstrap.rs"
+
+[[bin]]
+name = "test_nightly"
+path = "test_nightly.rs"
+
+[[bin]]
+name = "transparent_telemetry_demo"
+path = "transparent_telemetry_demo.rs"
+
+[[bin]]
+name = "unified_nix_builder"
+path = "unified_nix_builder.rs"
+
+[[bin]]
+name = "unified_nix_builder_old"
+path = "unified_nix_builder_old.rs"
+
+[[bin]]
+name = "unified_nix_service"
+path = "unified_nix_service.rs"
+
+[[bin]]
+name = "unified_nix_so_wrapper"
+path = "unified_nix_so_wrapper.rs"
+
+[[bin]]
+name = "unified_nix_so_wrapper_old"
+path = "unified_nix_so_wrapper_old.rs"
+
+[[bin]]
+name = "universal_client_node"
+path = "universal_client_node.rs"
+
+[[bin]]
+name = "universal_function_discovery"
+path = "universal_function_discovery.rs"
+
+[[bin]]
+name = "universal_instruction_decoder"
+path = "universal_instruction_decoder.rs"
+
+[[bin]]
+name = "universal_wrapper"
+path = "universal_wrapper.rs"
+
+[[bin]]
+name = "usage_counter"
+path = "usage_counter.rs"
+
+[[bin]]
+name = "userspace_perf_profiler"
+path = "userspace_perf_profiler.rs"
+
+[[bin]]
+name = "value_lattice_reporter"
+path = "value_lattice_reporter.rs"
+
+[[bin]]
+name = "zos_nix_integration"
+path = "zos_nix_integration.rs"
+
