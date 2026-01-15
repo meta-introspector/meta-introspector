@@ -37,3 +37,6 @@
 [submodule "rust-telemetry-driver"]
 	path = rust-telemetry-driver
 	url = https://github.com/meta-introspector/rust-telemetry-driver
+[submodule "hf-git-activity"]
+	path = hf-git-activity
+	url = git@hf.co:datasets/introspector/git-activity
