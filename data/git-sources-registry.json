@@ -1,50 +1,5 @@
 {
   "sources": {
-    "solfunmeme-metameme": {
-      "name": "solfunmeme-metameme",
-      "url": "https://github.com/meta-introspector/solfunmeme-metameme",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/solfunmeme-metameme",
-      "canonical_link": "data/git-sources/solfunmeme-metameme",
-      "last_commit": "b493e209eca8f1eec08134d0abd0acfde438a684",
-      "last_updated": "2026-01-15T10:08:59.546214256+00:00"
-    },
-    "meta-introspector": {
-      "name": "meta-introspector",
-      "url": "https://github.com/meta-introspector/meta-introspector",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/meta-introspector",
-      "canonical_link": "data/git-sources/meta-introspector",
-      "last_commit": "bd1fc6140526444d3d6edfc3036f7ab9c1767833",
-      "last_updated": "2026-01-15T10:09:00.330248746+00:00"
-    },
-    "hf-rust-dataset": {
-      "name": "hf-rust-dataset",
-      "url": "https://huggingface.co/datasets/introspector/rust",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/hf-rust-dataset",
-      "canonical_link": "data/git-sources/hf-rust-dataset",
-      "last_commit": "cbdc8d27fdc0044f18fc065f7abd0e665de569bc",
-      "last_updated": "2026-01-15T10:08:59.669950020+00:00"
-    },
-    "solfunmeme-index": {
-      "name": "solfunmeme-index",
-      "url": "https://huggingface.co/datasets/introspector/solfunmeme-index",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/solfunmeme-index",
-      "canonical_link": "data/git-sources/solfunmeme-index",
-      "last_commit": "91b29f01c42137652f56b86189a018e7f40fd4c4",
-      "last_updated": "2026-01-15T10:08:59.493979973+00:00"
-    },
-    "rust-analyser-hf-dataset": {
-      "name": "rust-analyser-hf-dataset",
-      "url": "",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/rust-analyser-hf-dataset",
-      "canonical_link": "data/git-sources/rust-analyser-hf-dataset",
-      "last_commit": "296eac2b5a1313fca49a8dab50309fe56148264d",
-      "last_updated": "2026-01-15T10:09:00.169069224+00:00"
-    },
     "emigo": {
       "name": "emigo",
       "url": "https://github.com/MatthewZMD/emigo.git",
@@ -53,24 +8,6 @@
       "canonical_link": "data/git-sources/emigo",
       "last_commit": "b19f32c56cb4586c9e5b9a6a68e47bfae94508f5",
       "last_updated": "2026-01-15T10:09:00.079413526+00:00"
-    },
-    "dataset-viewer": {
-      "name": "dataset-viewer",
-      "url": "https://github.com/huggingface/dataset-viewer",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/dataset-viewer",
-      "canonical_link": "data/git-sources/dataset-viewer",
-      "last_commit": "2436c56aec13cb1bf2dfe1ab56bd90a54f078755",
-      "last_updated": "2026-01-15T10:09:00.308974039+00:00"
-    },
-    "hf-dataset-validator-rust": {
-      "name": "hf-dataset-validator-rust",
-      "url": "https://github.com/meta-introspector/hugging-face-dataset-validator-rust",
-      "branch": "lattice-system-2025-01-15",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/hf-dataset-validator-rust",
-      "canonical_link": "data/git-sources/hf-dataset-validator-rust",
-      "last_commit": "327d4b34eaf97d321bbff3875b307f3e78b7ea74",
-      "last_updated": "2026-01-15T10:09:00.094690153+00:00"
     },
     "bootstrap": {
       "name": "bootstrap",
@@ -98,6 +35,78 @@
       "canonical_link": "data/git-sources/amazon-q-developer-cli",
       "last_commit": "007ce3f01e08dafb22160a31f812b8211773cce9",
       "last_updated": "2026-01-15T10:08:59.322015054+00:00"
+    },
+    "meta-introspector": {
+      "name": "meta-introspector",
+      "url": "https://github.com/meta-introspector/meta-introspector",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/meta-introspector",
+      "canonical_link": "data/git-sources/meta-introspector",
+      "last_commit": "bd1fc6140526444d3d6edfc3036f7ab9c1767833",
+      "last_updated": "2026-01-15T10:09:00.330248746+00:00"
+    },
+    "dataset-viewer": {
+      "name": "dataset-viewer",
+      "url": "https://github.com/huggingface/dataset-viewer",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/dataset-viewer",
+      "canonical_link": "data/git-sources/dataset-viewer",
+      "last_commit": "2436c56aec13cb1bf2dfe1ab56bd90a54f078755",
+      "last_updated": "2026-01-15T10:09:00.308974039+00:00"
+    },
+    "solfunmeme-metameme": {
+      "name": "solfunmeme-metameme",
+      "url": "https://github.com/meta-introspector/solfunmeme-metameme",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/solfunmeme-metameme",
+      "canonical_link": "data/git-sources/solfunmeme-metameme",
+      "last_commit": "b493e209eca8f1eec08134d0abd0acfde438a684",
+      "last_updated": "2026-01-15T10:08:59.546214256+00:00"
+    },
+    "hf-rust-dataset": {
+      "name": "hf-rust-dataset",
+      "url": "https://huggingface.co/datasets/introspector/rust",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/hf-rust-dataset",
+      "canonical_link": "data/git-sources/hf-rust-dataset",
+      "last_commit": "cbdc8d27fdc0044f18fc065f7abd0e665de569bc",
+      "last_updated": "2026-01-15T10:08:59.669950020+00:00"
+    },
+    "zombie-driver2": {
+      "name": "zombie-driver2",
+      "url": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust/",
+      "branch": "bootstrap-singularity-clean",
+      "checkout_path": "/mnt/data1/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/zombie_driver2",
+      "canonical_link": "data/git-sources/zombie-driver2",
+      "last_commit": "f923679fc3b693120dc389007d94171702639d91",
+      "last_updated": "2026-01-15T10:10:47.837606700+00:00"
+    },
+    "rust-analyser-hf-dataset": {
+      "name": "rust-analyser-hf-dataset",
+      "url": "",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/rust-analyser-hf-dataset",
+      "canonical_link": "data/git-sources/rust-analyser-hf-dataset",
+      "last_commit": "296eac2b5a1313fca49a8dab50309fe56148264d",
+      "last_updated": "2026-01-15T10:09:00.169069224+00:00"
+    },
+    "hf-dataset-validator-rust": {
+      "name": "hf-dataset-validator-rust",
+      "url": "https://github.com/meta-introspector/hugging-face-dataset-validator-rust",
+      "branch": "lattice-system-2025-01-15",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/hf-dataset-validator-rust",
+      "canonical_link": "data/git-sources/hf-dataset-validator-rust",
+      "last_commit": "327d4b34eaf97d321bbff3875b307f3e78b7ea74",
+      "last_updated": "2026-01-15T10:09:00.094690153+00:00"
+    },
+    "solfunmeme-index": {
+      "name": "solfunmeme-index",
+      "url": "https://huggingface.co/datasets/introspector/solfunmeme-index",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/solfunmeme-index",
+      "canonical_link": "data/git-sources/solfunmeme-index",
+      "last_commit": "91b29f01c42137652f56b86189a018e7f40fd4c4",
+      "last_updated": "2026-01-15T10:08:59.493979973+00:00"
     }
   },
   "base_checkout_dir": "/mnt/data1/nix/time/2025/08/07",
