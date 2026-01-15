@@ -3,16 +3,31 @@
   "total_commits": 211,
   "total_authors": 5,
   "authors": {
-    "mike dupont": {
-      "total_commits": 5,
-      "total_files": 9,
-      "total_insertions": 481,
-      "total_deletions": 12,
+    "james m dupont": {
+      "total_commits": 2,
+      "total_files": 552,
+      "total_insertions": 70501,
+      "total_deletions": 70534,
       "repos": {
-        "pick-up-nix": 5
+        "ai-agent-terraform": 2
       },
       "platforms": {
-        "github": 5
+        "github": 2
+      },
+      "emails": [
+        "jmikedupont2@gmail.com"
+      ]
+    },
+    "James Michael DuPont": {
+      "total_commits": 1,
+      "total_files": 0,
+      "total_insertions": 0,
+      "total_deletions": 0,
+      "repos": {
+        "ai-agent-terraform": 1
+      },
+      "platforms": {
+        "github": 1
       },
       "emails": [
         "jmikedupont2@gmail.com"
@@ -41,16 +56,16 @@
       "total_deletions": 1407,
       "repos": {
         "cache": 1,
-        "quasi-meta-meme": 52,
-        "bootstrap": 4,
         "zos-server": 1,
-        "ai-agent-terraform": 18,
-        "solfunmeme": 8,
-        "agave-solana-validator": 19,
-        "solfunmeme-dioxus": 11,
         "ragit": 6,
+        "quasi-meta-meme": 52,
         "meta-meme": 39,
-        "lattice-introspector": 2
+        "ai-agent-terraform": 18,
+        "bootstrap": 4,
+        "lattice-introspector": 2,
+        "solfunmeme-dioxus": 11,
+        "agave-solana-validator": 19,
+        "solfunmeme": 8
       },
       "platforms": {
         "github": 161
@@ -59,31 +74,16 @@
         "jmikedupont2@gmail.com"
       ]
     },
-    "James Michael DuPont": {
-      "total_commits": 1,
-      "total_files": 0,
-      "total_insertions": 0,
-      "total_deletions": 0,
+    "mike dupont": {
+      "total_commits": 5,
+      "total_files": 9,
+      "total_insertions": 481,
+      "total_deletions": 12,
       "repos": {
-        "ai-agent-terraform": 1
+        "pick-up-nix": 5
       },
       "platforms": {
-        "github": 1
-      },
-      "emails": [
-        "jmikedupont2@gmail.com"
-      ]
-    },
-    "james m dupont": {
-      "total_commits": 2,
-      "total_files": 552,
-      "total_insertions": 70501,
-      "total_deletions": 70534,
-      "repos": {
-        "ai-agent-terraform": 2
-      },
-      "platforms": {
-        "github": 2
+        "github": 5
       },
       "emails": [
         "jmikedupont2@gmail.com"
