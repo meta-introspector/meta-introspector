@@ -1,0 +1,10 @@
+[package]
+name = "query_ast_types"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+parquet = "53"
+arrow = "53"
