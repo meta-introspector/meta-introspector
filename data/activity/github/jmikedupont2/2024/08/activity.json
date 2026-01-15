@@ -1,0 +1,50 @@
+[
+  {
+    "commit_hash": "7e84f549540dce15bfa5e7d9990f7e0f2188d53a",
+    "author_name": "Mike DuPont",
+    "author_email": "jmikedupont2@gmail.com",
+    "author_date": "2024-08-04T19:16:59-04:00",
+    "committer_name": "GitHub",
+    "committer_email": "noreply@github.com",
+    "committer_date": "2024-08-04T19:16:59-04:00",
+    "message": "Update README.md",
+    "repo_name": "meta-meme",
+    "repo_url": "https://github.com/meta-introspector/meta-meme",
+    "platform": "github",
+    "files_changed": 1,
+    "insertions": 127,
+    "deletions": 99
+  },
+  {
+    "commit_hash": "40f2e9e7bf195160e029288441c8b6e469be2cf0",
+    "author_name": "Mike DuPont",
+    "author_email": "jmikedupont2@gmail.com",
+    "author_date": "2024-08-03T11:21:09-04:00",
+    "committer_name": "GitHub",
+    "committer_email": "noreply@github.com",
+    "committer_date": "2024-08-03T11:21:09-04:00",
+    "message": "Addiing more extracted",
+    "repo_name": "meta-meme",
+    "repo_url": "https://github.com/meta-introspector/meta-meme",
+    "platform": "github",
+    "files_changed": 12,
+    "insertions": 2649,
+    "deletions": 0
+  },
+  {
+    "commit_hash": "022129efbc39e7cacccf64507cc3f158378d634b",
+    "author_name": "Mike DuPont",
+    "author_email": "jmikedupont2@gmail.com",
+    "author_date": "2024-08-03T11:15:36-04:00",
+    "committer_name": "GitHub",
+    "committer_email": "noreply@github.com",
+    "committer_date": "2024-08-03T11:15:36-04:00",
+    "message": "Monster group",
+    "repo_name": "meta-meme",
+    "repo_url": "https://github.com/meta-introspector/meta-meme",
+    "platform": "github",
+    "files_changed": 1,
+    "insertions": 344,
+    "deletions": 0
+  }
+]
