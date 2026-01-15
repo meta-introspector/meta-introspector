@@ -1,5 +1,7 @@
 # Meta-Introspector Repository Analysis
 
+For a comprehensive overview of the `meta-introspector` project, its architecture, key technologies, and detailed analysis results, please refer to the [Meta-Introspector Analysis Document](docs/META_INTROSPECTOR_ANALYSIS.md).
+
 Comprehensive analysis of 57,106 domains across 33.9M files with advanced semantic analysis and parallel processing systems.
 
 ## 🔥 Latest: LMFDB Rust Mapping Library + Self-Analysis
@@ -211,6 +213,13 @@ The telemetry system was **severely underestimating** build complexity:
 - **Compression Breakthrough**: 93-96% space savings with queryable grammar compression
 - **Real-time Processing**: Cargo build interception for seamless compression
 
+### 2025 Activity Highlights (from Investor Report)
+- **Total Commits**: 337
+- **Files Changed**: 2,689
+- **Lines Added**: +693K
+- **Lines Removed**: -95K
+- **Top Repository**: ai-agent-terraform (143 commits)
+
 ## Analysis Programs
 
 ### Compression & Grammar Systems
@@ -239,6 +248,10 @@ The telemetry system was **severely underestimating** build complexity:
 - `commits_by_user.rs` - Analyze commit patterns by user
 - `local_commit_cache.rs` - Fast local-only commit caching
 - `https_commit_fetcher.rs` - Remote commit fetching with SSH to HTTPS conversion
+
+### Reporting and Visualization
+- `investor-report-2025.rs` - A Rust program that aggregates Git activity data, calculates statistics (total commits, files changed, insertions, deletions, monthly repo matrix, top repositories), and generates a JSON report for 2025.
+- `investor-report-2025.html` - An HTML document that visually presents the summarized 2025 Git activity data, including overall statistics, a month-by-repository activity matrix, and top 10 repositories, styled as an annual report.
 
 ### Results
 - **289,795 unique instruction blocks** catalogued across 153 binaries
