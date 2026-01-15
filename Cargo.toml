@@ -67,6 +67,18 @@ path = "dataset-indexer.rs"
 name = "metis-partition-markov"
 path = "metis-partition-markov.rs"
 
+[[bin]]
+name = "generate-monthly-reports"
+path = "generate-monthly-reports.rs"
+
+[[bin]]
+name = "repo-analysis-planner"
+path = "repo_analysis_planner.rs"
+
+[[bin]]
+name = "crossbeam-value-lattice"
+path = "crossbeam_value_lattice.rs"
+
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
@@ -75,3 +87,6 @@ octocrab = "0.41"
 gix = "0.68"
 tokio = { version = "1", features = ["full"] }
 crossbeam = "0.8"
+clap = { version = "4", features = ["derive"] }
+syn = { version = "2", features = ["full", "visit"] }
+quote = "1"
