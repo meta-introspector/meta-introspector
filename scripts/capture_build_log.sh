@@ -54,5 +54,5 @@ echo "📝 First occurrence of each top error:"
 for error_code in $(head -3 "$LOG_DIR/error_summary.txt" | grep -oP 'error\[E\d+\]'); do
     echo ""
     echo "=== $error_code ==="
-    grep -F "$error_code" "$LOG_DIR/full_build.log" -A 3 | head -6
+    grep -F "$error_code" "$LOG_DIR/full_build.log" -m 1 -A 4
 done
