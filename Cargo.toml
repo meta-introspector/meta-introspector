@@ -51,6 +51,10 @@ path = "investor-report-2025.rs"
 name = "generate-dashboard"
 path = "generate-dashboard.rs"
 
+[[bin]]
+name = "rust-site-builder"
+path = "rust-site-builder.rs"
+
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"

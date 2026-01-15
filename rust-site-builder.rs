@@ -1,0 +1,85 @@
+use std::fs;
+use std::path::Path;
+
+fn main() {
+    let output_dir = Path::new("_site");
+    fs::create_dir_all(output_dir).unwrap();
+
+    // Copy all HTML files
+    for entry in fs::read_dir(".").unwrap().flatten() {
+        let path = entry.path();
+        if path.extension().map_or(false, |ext| ext == "html") {
+            let filename = path.file_name().unwrap();
+            fs::copy(&path, output_dir.join(filename)).unwrap();
+            println!("Copied: {:?}", filename);
+        }
+    }
+
+    // Copy reports directory
+    if Path::new("reports").exists() {
+        copy_dir_recursive("reports", &output_dir.join("reports")).unwrap();
+        println!("Copied: reports/");
+    }
+
+    // Copy data files
+    if Path::new("data").exists() {
+        fs::create_dir_all(output_dir.join("data")).unwrap();
+        for file in ["git-metrics-report.json", "investor-report-2025.json", "git-sources-registry.json"] {
+            let src = Path::new("data").join(file);
+            if src.exists() {
+                fs::copy(&src, output_dir.join("data").join(file)).unwrap();
+                println!("Copied: data/{}", file);
+            }
+        }
+    }
+
+    // Generate index if not exists
+    if !Path::new("index.html").exists() {
+        let index = r#"<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta-Introspector</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; padding: 40px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        h1 { font-size: 3em; color: #58a6ff; margin-bottom: 20px; }
+        .links { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
+        .btn { background: #238636; color: #fff; padding: 15px 30px; border-radius: 6px; text-decoration: none; font-weight: 500; }
+        .btn:hover { background: #2ea043; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Meta-Introspector</h1>
+        <p style="font-size: 1.2em; color: #8b949e;">Git Activity Analysis & Reports</p>
+        <div class="links">
+            <a href="investor-report-2025.html" class="btn">2025 Investor Report</a>
+            <a href="reports/" class="btn">All Reports</a>
+            <a href="https://huggingface.co/datasets/introspector/git-activity" class="btn">Dataset</a>
+        </div>
+    </div>
+</body>
+</html>"#;
+        fs::write(output_dir.join("index.html"), index).unwrap();
+        println!("Generated: index.html");
+    }
+
+    println!("\n✅ Site built in _site/");
+}
+
+fn copy_dir_recursive(src: impl AsRef<Path>, dst: impl AsRef<Path>) -> std::io::Result<()> {
+    fs::create_dir_all(&dst)?;
+    for entry in fs::read_dir(src)? {
+        let entry = entry?;
+        let ty = entry.file_type()?;
+        if ty.is_dir() {
+            copy_dir_recursive(entry.path(), dst.as_ref().join(entry.file_name()))?;
+        } else {
+            fs::copy(entry.path(), dst.as_ref().join(entry.file_name()))?;
+        }
+    }
+    Ok(())
+}
