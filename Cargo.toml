@@ -59,6 +59,14 @@ path = "rust-site-builder.rs"
 name = "cascading-repo-analyzer"
 path = "cascading-repo-analyzer.rs"
 
+[[bin]]
+name = "dataset-indexer"
+path = "dataset-indexer.rs"
+
+[[bin]]
+name = "metis-partition-markov"
+path = "metis-partition-markov.rs"
+
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
