@@ -25,3 +25,4 @@ deployment.json
 data/
 target/
 result*
+markov_symbol_scores.parquet
