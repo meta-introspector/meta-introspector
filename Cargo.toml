@@ -97,6 +97,10 @@ name = "demo_p2p_network"
 path = "demo_p2p_network.rs"
 
 [[bin]]
+name = "demo_proof_matrix"
+path = "demo_proof_matrix.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
