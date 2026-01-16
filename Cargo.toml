@@ -570,9 +570,10 @@ path = "massive_rustc_grammar_plan.rs"
 name = "master_telemetry"
 path = "master_telemetry.rs"
 
-[[bin]]
-name = "mcp_nix_wrapper"
-path = "mcp_nix_wrapper.rs"
+# Disabled - incomplete
+# [[bin]]
+# name = "mcp_nix_wrapper"
+# path = "mcp_nix_wrapper.rs"
 
 [[bin]]
 name = "mike_repos"
