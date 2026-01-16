@@ -4,6 +4,7 @@
 mod xz_to_syn_mapper;
 mod rand_shim;
 mod rustc_fuzzer;
+mod rust_spectrum_comprehension;
 
 use xz_to_syn_mapper::{XzToSynMapper, XzBlock};
 use rand_shim::{init_rand, random_u64};
@@ -167,6 +168,45 @@ fn main() {
     
     market.report();
     mapper.report();
+    
+    // Build spectrum from processed blocks
+    println!("\n🔬 Building Rust Spectrum from processed blocks...\n");
+    
+    let mut spectrum = rust_spectrum_comprehension::RustSpectrum::new();
+    
+    for node in &market.nodes {
+        if !node.coverage_found.is_empty() {
+            spectrum.add_pattern(
+                format!("Node_{}", node.id),
+                node.coverage_found.clone(),
+                0.3
+            );
+        }
+    }
+    
+    spectrum.report();
+    
+    // Comprehend our own code
+    println!("\n🔍 Using spectrum to comprehend our code...\n");
+    
+    let our_files = vec![
+        "demo_shared_memory.rs",
+        "distributed_trading.rs",
+    ];
+    
+    for file_path in our_files {
+        let full_path = format!("/mnt/data1/meta-introspector/{}", file_path);
+        
+        if let Ok(source) = std::fs::read_to_string(&full_path) {
+            println!("📄 {}", file_path);
+            
+            if let Ok(syn_spectrum) = rustc_fuzzer::SynToRustcSpectrum::from_source(source, 0) {
+                let comprehension = spectrum.comprehend(&syn_spectrum.rustc_ips);
+                comprehension.report(&spectrum);
+                println!();
+            }
+        }
+    }
     
     println!("\n✅ Deep order filled!");
     println!("\n💡 Key insights:");

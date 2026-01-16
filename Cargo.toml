@@ -65,6 +65,10 @@ name = "demo_block_market"
 path = "demo_block_market.rs"
 
 [[bin]]
+name = "demo_spectrum_comprehension"
+path = "demo_spectrum_comprehension.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
