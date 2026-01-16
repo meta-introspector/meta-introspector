@@ -109,6 +109,10 @@ name = "demo_ast_proof"
 path = "demo_proof_table.rs"
 
 [[bin]]
+name = "demo_swarm_hunt"
+path = "demo_swarm_hunt.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
