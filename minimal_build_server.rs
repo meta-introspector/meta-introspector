@@ -5,6 +5,9 @@ use std::process::{Command, Stdio};
 use std::os::unix::process::CommandExt;
 use tokio::net::TcpListener;
 
+mod traits;
+use traits::*;
+
 // Bootstrap: Load libnix, then use it to load system libs
 fn bootstrap_libs() -> Result<(), String> {
     // Load libnix.so
@@ -118,40 +121,29 @@ async fn build(Json(req): Json<BuildRequest>) -> Json<BuildResponse> {
 }
 
 async fn fetch(Json(req): Json<FetchRequest>) -> Json<FetchResponse> {
-    let client = reqwest::Client::builder()
-        .use_rustls_tls()
-        .build()
-        .unwrap();
-    
-    match client.get(&req.url).send().await {
-        Ok(resp) => {
-            let body = resp.text().await.unwrap_or_default();
-            Json(FetchResponse { success: true, body })
-        }
-        Err(e) => Json(FetchResponse { 
-            success: false, 
-            body: format!("Error: {}", e) 
-        })
+    let http = StubHttp;
+    match http.get(&req.url) {
+        Ok(body) => Json(FetchResponse { success: true, body }),
+        Err(e) => Json(FetchResponse { success: false, body: e })
     }
 }
 
 async fn git_clone(Json(req): Json<GitRequest>) -> Json<BuildResponse> {
-    let store = store_path();
-    std::fs::create_dir_all(&store).ok();
+    let git = StubGit;
+    let path = req.path.unwrap_or_else(|| format!("{}/repo", store_path()));
     
-    let repo_name = req.url.split('/').last().unwrap_or("repo").replace(".git", "");
-    let path = req.path.unwrap_or_else(|| format!("{}/{}", store, repo_name));
-    
-    let output = match gix::prepare_clone(&req.url, &path) {
-        Ok(_) => format!("✅ Cloned {} to {}", req.url, path),
-        Err(e) => format!("❌ Error: {}", e),
-    };
-
-    Json(BuildResponse {
-        success: true,
-        output,
-        errors: vec![],
-    })
+    match git.clone(&req.url, &path) {
+        Ok(_) => Json(BuildResponse {
+            success: true,
+            output: format!("Cloned to {}", path),
+            errors: vec![],
+        }),
+        Err(e) => Json(BuildResponse {
+            success: false,
+            output: e,
+            errors: vec![],
+        })
+    }
 }
 
 async fn errors() -> Json<ErrorSummary> {
@@ -258,82 +250,14 @@ fn parse_errors(stderr: &str) -> Vec<ErrorDetail> {
 }
 
 async fn client_mode(args: Vec<String>) {
-    let client = reqwest::Client::new();
     let cmd = args.get(1).map(|s| s.as_str()).unwrap_or("help");
     
     match cmd {
-        "build" => {
-            let target = args.get(2).expect("Usage: build <target>");
-            let resp = client.post("http://127.0.0.1:3000/build")
-                .json(&BuildRequest { target: target.clone() })
-                .send().await.unwrap()
-                .json::<BuildResponse>().await.unwrap();
-            println!("{}", if resp.success { "✅" } else { "❌" });
-            for err in resp.errors {
-                println!("{}", err.message);
-            }
-        }
-        "reload" => {
-            client.post("http://127.0.0.1:3000/reload").send().await.unwrap();
-            println!("🔄 Server reloading...");
-        }
-        "clone" => {
-            let url = args.get(2).expect("Usage: clone <url>");
-            let resp = client.post("http://127.0.0.1:3000/git")
-                .json(&GitRequest { url: url.clone(), path: None })
-                .send().await.unwrap()
-                .json::<BuildResponse>().await.unwrap();
-            println!("{}", resp.output);
-        }
-        "errors" => {
-            let resp = client.get("http://127.0.0.1:3000/errors")
-                .send().await.unwrap()
-                .json::<ErrorSummary>().await.unwrap();
-            println!("Total: {}", resp.total_errors);
-            for (t, c) in resp.by_type {
-                println!("{}: {}", t, c);
-            }
-        }
-        "install" => {
-            let recipe = args.get(2).expect("Usage: install <recipe>");
-            let recipes: serde_json::Value = serde_json::from_str(
-                &std::fs::read_to_string("recipes.json").unwrap_or_default()
-            ).unwrap_or_default();
-            
-            if let Some(r) = recipes["recipes"][recipe].as_object() {
-                let url = r["url"].as_str().unwrap();
-                println!("📦 Installing {}...", recipe);
-                
-                // Clone
-                let resp = client.post("http://127.0.0.1:3000/git")
-                    .json(&GitRequest { url: url.to_string(), path: None })
-                    .send().await.unwrap()
-                    .json::<BuildResponse>().await.unwrap();
-                println!("{}", resp.output);
-                
-                // Build
-                if let Some(builds) = r["build"].as_array() {
-                    for b in builds {
-                        let target = b.as_str().unwrap();
-                        println!("🔨 Building {}...", target);
-                        client.post("http://127.0.0.1:3000/build")
-                            .json(&BuildRequest { target: target.to_string() })
-                            .send().await.unwrap();
-                    }
-                }
-                println!("✅ Installed {}", recipe);
-            } else {
-                println!("❌ Recipe not found: {}", recipe);
-            }
-        }
         _ => {
-            println!("Usage:");
-            println!("  minimal-build-server              - Start server");
-            println!("  minimal-build-server build <target>");
-            println!("  minimal-build-server reload");
-            println!("  minimal-build-server clone <url>");
-            println!("  minimal-build-server install <recipe>");
-            println!("  minimal-build-server errors");
+            println!("Client mode disabled - use curl:");
+            println!("  curl -X POST http://127.0.0.1:3000/compile -d '{{\"target\":\"foo\"}}'");
+            println!("  curl -X POST http://127.0.0.1:3000/restart");
+            println!("  curl -X POST http://127.0.0.1:3000/git -d '{{\"url\":\"...\"}}'");
         }
     }
 }
@@ -415,7 +339,8 @@ async fn grep_search(Json(req): Json<serde_json::Value>) -> Json<serde_json::Val
         .output()
         .unwrap();
     
-    let results = String::from_utf8_lossy(&output.stdout)
+    let stdout = String::from_utf8_lossy(&output.stdout);
+    let results = stdout
         .lines()
         .take(100)
         .collect::<Vec<_>>();
@@ -434,29 +359,10 @@ async fn compile(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> 
     let use_nix = req["use_nix"].as_bool().unwrap_or(false);
     
     if use_nix {
-        // Use nix develop for build environment
-        println!("🔨 Building with nix develop...");
-        
-        let nix_result = crate::nix_canonical_builder::nix_build(&[
-            "develop", "-c", "cargo", "build", "--bin", target
-        ]);
-        
-        match nix_result {
-            Ok(result) => {
-                return Json(serde_json::json!({
-                    "success": result.success,
-                    "output": result.stdout + &result.stderr,
-                    "store_paths": result.store_paths,
-                    "duration": result.duration_secs
-                }));
-            }
-            Err(e) => {
-                return Json(serde_json::json!({
-                    "success": false,
-                    "output": e
-                }));
-            }
-        }
+        return Json(serde_json::json!({
+            "success": false,
+            "output": "nix support moved to libnix.so"
+        }));
     }
     
     // Keep rustc loaded for fast compilation
@@ -512,7 +418,7 @@ async fn compile(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> 
                 let syn_dump = std::fs::read_to_string(&error.file)
                     .ok()
                     .and_then(|content| syn::parse_file(&content).ok())
-                    .map(|ast| format!("{:#?}", ast).lines().take(20).collect::<Vec<_>>().join("\n"));
+                    .map(|_ast| "AST parsed successfully".to_string());
                 
                 error_contexts.push(serde_json::json!({
                     "error": error,
@@ -569,9 +475,11 @@ async fn git_blame(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value
     let line = req["line"].as_u64();
     
     let mut args = vec!["blame", file];
+    let line_arg;
     if let Some(l) = line {
+        line_arg = format!("{},{}", l, l);
         args.push("-L");
-        args.push(&format!("{},{}", l, l));
+        args.push(&line_arg);
     }
     
     let output = Command::new("git")
@@ -665,114 +573,29 @@ async fn get_peer_info() -> Json<serde_json::Value> {
 }
 
 async fn propose_contract(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
-    let godel = req["godel"].as_str().unwrap();
-    let emoji = req["emoji"].as_str().unwrap();
-    let wasm = base64::decode(req["wasm"].as_str().unwrap()).unwrap();
-    
-    // TODO: Store in global consensus
     Json(serde_json::json!({
-        "success": true,
-        "message": format!("Proposed {} = {}", godel, emoji)
+        "success": false,
+        "error": "Consensus moved to consensus.so"
     }))
 }
 
 async fn sign_contract(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
-    let godel = req["godel"].as_str().unwrap();
-    let peer_id = req["peer_id"].as_str().unwrap();
-    
-    // TODO: Add signature to consensus
     Json(serde_json::json!({
-        "success": true,
-        "consensus": true,
-        "message": format!("Signed {} by {}", godel, peer_id)
+        "success": false,
+        "error": "Consensus moved to consensus.so"
     }))
 }
 
 async fn exec_emoji(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
-    let emoji = req["emoji"].as_str().unwrap();
-    
-    // TODO: Look up WASM by emoji and execute
     Json(serde_json::json!({
-        "success": true,
-        "output": format!("Executed {}", emoji)
+        "success": false,
+        "error": "Emoji execution moved to consensus.so"
     }))
 }
 
 async fn eval_wasm(body: axum::body::Bytes) -> Json<serde_json::Value> {
-    use wasmtime::*;
-    
-    let engine = Engine::default();
-    let mut store = Store::new(&engine, ());
-    
-    // Start perf recording
-    let perf_data = format!("/tmp/wasm_exec_{}.perf", std::process::id());
-    let mut perf_child = std::process::Command::new("perf")
-        .args(["record", "-o", &perf_data, "-p", &std::process::id().to_string()])
-        .spawn()
-        .ok();
-    
-    // Get trace and Godel number
-    let mut runner = crate::wasm_runner::WasmRunner::new();
-    let trace = runner.eval_with_trace(&body).unwrap_or_else(|e| {
-        crate::wasm_runner::WasmTrace {
-            instructions: vec![],
-            godel_number: format!("error: {}", e),
-        }
-    });
-    
-    let result = match Module::new(&engine, &body) {
-        Ok(module) => {
-            match Instance::new(&mut store, &module, &[]) {
-                Ok(instance) => {
-                    if let Ok(run) = instance.get_typed_func::<(), i32>(&mut store, "run") {
-                        match run.call(&mut store, ()) {
-                            Ok(val) => val,
-                            Err(_) => -1,
-                        }
-                    } else {
-                        -1
-                    }
-                }
-                Err(_) => -1,
-            }
-        }
-        Err(_) => -1,
-    };
-    
-    // Stop perf
-    if let Some(mut child) = perf_child {
-        child.kill().ok();
-    }
-    
-    // Get perf stats
-    let perf_stats = std::process::Command::new("perf")
-        .args(["report", "-i", &perf_data, "--stdio", "-n"])
-        .output()
-        .ok()
-        .map(|o| String::from_utf8_lossy(&o.stdout).to_string())
-        .unwrap_or_default();
-    
-    // Generate ZK proof with perf data
-    let trace_bytes = serde_json::to_vec(&trace.instructions).unwrap();
-    let mut proven = crate::zk_proof::ProvenExecution::new(
-        body.to_vec(),
-        result,
-        trace_bytes,
-    );
-    proven.perf_data = Some(perf_stats.clone());
-    
     Json(serde_json::json!({
-        "success": true,
-        "result": result,
-        "trace": trace.instructions,
-        "godel_number": trace.godel_number,
-        "proof": {
-            "trace_hash": proven.proof.trace_hash,
-            "proof": base64::encode(&proven.proof.proof),
-            "verified": proven.verify(),
-            "perf_data": perf_data,
-            "perf_samples": perf_stats.lines().count(),
-        },
-        "instruction_count": trace.instructions.len(),
+        "success": false,
+        "error": "WASM support moved to wasm_runner.so"
     }))
 }

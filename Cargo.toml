@@ -3,14 +3,14 @@ name = "git-sources"
 version = "0.1.0"
 edition = "2021"
 
-[[bin]]
-name = "minimal-build-server"
-path = "minimal_build_server.rs"
-
-[[lib]]
+[lib]
 name = "libnix"
 path = "libnix.rs"
 crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "minimal-build-server"
+path = "minimal_build_server.rs"
 
 [[bin]]
 name = "git-sources"
@@ -93,7 +93,6 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 chrono = "0.4.31"
 octocrab = "0.41"
-gix = "0.68"
 tokio = { version = "1", features = ["full"] }
 crossbeam = "0.8"
 clap = { version = "4", features = ["derive"] }
@@ -110,7 +109,7 @@ parquet = { version = "57", features = ["arrow"] }
 linux-perf-data = "0.12"
 regex = "1.10"
 rustc-demangle = "0.1"
-cpp_demangle = "0.1"
+cpp_demangle = "0.4"
 perf-macros = { path = "./perf-macros" }
 arrow = "57"
 tracing = "0.1"
@@ -118,7 +117,7 @@ sha2 = "0.10"
 paste = "1.0"
 wasmtime = "20"
 tracing-subscriber = "0.3"
-reqwest = { version = "0.12", features = ["rustls-tls", "json"] }
+md5 = "0.7"
 [[bin]]
 name = "all_commits_collector"
 path = "all_commits_collector.rs"
