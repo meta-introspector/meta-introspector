@@ -9,12 +9,16 @@ mod shared_memory_bus;
 mod distributed_trading;
 mod meme_marketplace;
 mod program_evolution;
+mod rand_shim;
 
 use shared_memory_bus::{SharedMemoryBus, SharedMemoryNode, Message};
 use distributed_trading::Portfolio;
 use meme_marketplace::Meme;
+use rand_shim::{random_u64, random_usize, init_rand};
 
 fn main() {
+    init_rand();
+    
     println!("🚀 Starting 24-node trading network with shared memory bus\n");
     
     let num_nodes = 24;
@@ -50,11 +54,11 @@ fn main() {
             
             // Send offers to random peers
             for _ in 0..3 {
-                let peer = rand::random::<usize>() % num_nodes;
+                let peer = random_usize() % num_nodes;
                 if peer != node.node_id {
                     node.send_trade_offer(peer, 
-                        rand::random(), 
-                        rand::random(), 
+                        random_u64(), 
+                        random_u64(), 
                         10.0);
                 }
             }
