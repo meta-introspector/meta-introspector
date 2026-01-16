@@ -7,7 +7,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     rust-telemetry-driver.url = "github:meta-introspector/rust-telemetry-driver";
     rust-telemetry-driver.inputs.nixpkgs.follows = "nixpkgs";
-    zos-server.url = "github:meta-introspector/zos-server/nix-build-setup";
+    zos-server.url = "github:meta-introspector/zos-server";
     zos-server.inputs.nixpkgs.follows = "nixpkgs";
     librustc.url = "github:meta-introspector/librustc";
     librustc.inputs.nixpkgs.follows = "nixpkgs";
@@ -115,12 +115,12 @@
             '';
           };
           
-          # Individual packages
-          rust-telemetry-driver = rust-telemetry-driver.packages.${system}.default;
-          zos-server = zos-server.packages.${system}.default;
-          librustc = librustc.packages.${system}.default or null;
-          telemetry-shell = telemetry-shell;
-          telemetry-env = telemetry-env;
+          # Individual packages from flake inputs
+          telemetry-driver = rust-telemetry-driver.packages.${system}.default;
+          zos = zos-server.packages.${system}.default;
+          librustc-pkg = librustc.packages.${system}.default;
+          shell = telemetry-shell;
+          env = telemetry-env;
         };
         
         # Nix build with telemetry shell interception
