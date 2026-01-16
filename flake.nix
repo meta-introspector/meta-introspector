@@ -11,9 +11,11 @@
     zos-server.inputs.nixpkgs.follows = "nixpkgs";
     librustc.url = "github:meta-introspector/librustc";
     librustc.inputs.nixpkgs.follows = "nixpkgs";
+    gemini-cli.url = "github:meta-introspector/gemini-cli";
+    gemini-cli.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, rust-telemetry-driver, zos-server, librustc }:
+  outputs = { self, nixpkgs, rust-overlay, flake-utils, rust-telemetry-driver, zos-server, librustc, gemini-cli }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         overlays = [ (import rust-overlay) ];
@@ -119,6 +121,7 @@
           telemetry-driver = rust-telemetry-driver.packages.${system}.default;
           zos = zos-server.packages.${system}.default;
           librustc-pkg = librustc.packages.${system}.default;
+          gemini = gemini-cli.packages.${system}.default;
           shell = telemetry-shell;
           env = telemetry-env;
         };
@@ -174,6 +177,7 @@
             pkgs.curl.dev
             pkgs.libgit2
             pkgs.libgit2.dev
+            gemini-cli.packages.${system}.default
           ];
           
           PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig:${pkgs.curl.dev}/lib/pkgconfig:${pkgs.libgit2.dev}/lib/pkgconfig";
