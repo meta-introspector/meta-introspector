@@ -52,15 +52,26 @@ pub fn get_report() -> Option<ErrorReport> {
 }
 
 pub fn suggest_fix(error: &BuildError) -> Option<String> {
-    match error.error_type.as_str() {
-        "E0433" if error.message.contains("gix") => {
+    let error_code = error.error_type.trim_start_matches("E");
+    
+    match error_code {
+        "E0433" | "0433" if error.message.contains("gix") => {
             Some("Move gix usage to libgit.so - use git trait instead".to_string())
         }
-        "E0433" if error.message.contains("reqwest") => {
+        "E0433" | "0433" if error.message.contains("reqwest") => {
             Some("Move reqwest usage to libhttp.so - use http trait instead".to_string())
         }
-        "E0601" if error.message.contains("main") => {
+        "E0433" | "0433" if error.message.contains("sha256") => {
+            Some("Add sha2 crate: use sha2::{Sha256, Digest}; let hash = Sha256::digest(data);".to_string())
+        }
+        "E0601" | "0601" if error.message.contains("main") => {
             Some("Add fn main() {} or remove [[bin]] entry from Cargo.toml".to_string())
+        }
+        "E0599" | "0599" if error.message.contains("no method named `clone`") => {
+            Some("Add #[derive(Clone)] to the struct/enum definition".to_string())
+        }
+        "E0277" | "0277" if error.message.contains("Handler") => {
+            Some("Function signature mismatch - check axum handler requirements".to_string())
         }
         _ => None
     }

@@ -54,6 +54,25 @@ fn main() {
         );
         println!("   {}", build_error.message);
         
+        // Show lines around error
+        if let Some(ref file) = build_error.file {
+            if let Some(line_num) = build_error.line {
+                if let Ok(content) = std::fs::read_to_string(file) {
+                    let lines: Vec<&str> = content.lines().collect();
+                    let start = (line_num as usize).saturating_sub(2);
+                    let end = ((line_num as usize) + 2).min(lines.len());
+                    
+                    println!("");
+                    for (i, line) in lines[start..end].iter().enumerate() {
+                        let line_no = start + i + 1;
+                        let marker = if line_no == line_num as usize { "→" } else { " " };
+                        println!("   {} {:4} | {}", marker, line_no, line);
+                    }
+                    println!("");
+                }
+            }
+        }
+        
         if let Some(suggestion) = &build_error.suggestion {
             println!("   💡 {}", suggestion);
         }
@@ -71,8 +90,9 @@ fn main() {
 
 fn parse_errors(stderr: &str) -> Vec<CompileError> {
     let mut errors = Vec::new();
+    let lines: Vec<&str> = stderr.lines().collect();
     
-    for line in stderr.lines() {
+    for (i, line) in lines.iter().enumerate() {
         if line.contains("error[E") {
             let error_type = line.split("error[")
                 .nth(1)
@@ -85,11 +105,33 @@ fn parse_errors(stderr: &str) -> Vec<CompileError> {
                 .unwrap_or(line)
                 .to_string();
             
+            // Parse file and line from next line (format: " --> file.rs:123:45")
+            let (file, line_num) = if i + 1 < lines.len() {
+                let next = lines[i + 1];
+                if next.contains(" --> ") {
+                    let parts: Vec<&str> = next.split(" --> ").collect();
+                    if parts.len() > 1 {
+                        let location = parts[1];
+                        let file_parts: Vec<&str> = location.split(':').collect();
+                        let file = file_parts[0].to_string();
+                        let line = file_parts.get(1)
+                            .and_then(|s| s.parse::<u32>().ok());
+                        (file, line)
+                    } else {
+                        ("unknown".to_string(), None)
+                    }
+                } else {
+                    ("unknown".to_string(), None)
+                }
+            } else {
+                ("unknown".to_string(), None)
+            };
+            
             errors.push(CompileError {
                 error_type: format!("E{}", error_type),
                 message,
-                file: "unknown".to_string(),
-                line: None,
+                file,
+                line: line_num,
             });
         }
     }
