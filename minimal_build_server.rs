@@ -358,7 +358,7 @@ async fn grep_search(Json(req): Json<serde_json::Value>) -> Json<serde_json::Val
 
 static RUSTC_LOADED: std::sync::OnceLock<()> = std::sync::OnceLock::new();
 
-async fn hot_build(Json(req): Json<BuildRequest>) -> Json<BuildResponse> {
+async fn hot_build(Json(req): Json<BuildRequest>) -> Json<serde_json::Value> {
     // Keep rustc loaded
     RUSTC_LOADED.get_or_init(|| {
         println!("🔥 Loading rustc (once)...");
@@ -373,12 +373,68 @@ async fn hot_build(Json(req): Json<BuildRequest>) -> Json<BuildResponse> {
 
     let stderr = String::from_utf8_lossy(&output.stderr).to_string();
     let errors = parse_errors(&stderr);
+    
+    if !errors.is_empty() {
+        // Get comprehensive error context
+        let mut error_contexts = vec![];
+        
+        for error in &errors {
+            if error.file != "unknown" {
+                // Get file lines around error
+                let lines = std::fs::read_to_string(&error.file)
+                    .ok()
+                    .and_then(|content| {
+                        let all_lines: Vec<_> = content.lines().collect();
+                        error.line.map(|l| {
+                            let start = l.saturating_sub(3) as usize;
+                            let end = (l + 3).min(all_lines.len() as u32) as usize;
+                            all_lines[start..end].join("\n")
+                        })
+                    });
+                
+                // Get git blame
+                let blame = Command::new("git")
+                    .args(["blame", "-L", &format!("{},{}", error.line.unwrap_or(1), error.line.unwrap_or(1)), &error.file])
+                    .output()
+                    .ok()
+                    .map(|o| String::from_utf8_lossy(&o.stdout).to_string());
+                
+                // Get git status
+                let status = Command::new("git")
+                    .args(["status", "--short", &error.file])
+                    .output()
+                    .ok()
+                    .map(|o| String::from_utf8_lossy(&o.stdout).to_string());
+                
+                // Parse with syn
+                let syn_dump = std::fs::read_to_string(&error.file)
+                    .ok()
+                    .and_then(|content| syn::parse_file(&content).ok())
+                    .map(|ast| format!("{:#?}", ast).lines().take(20).collect::<Vec<_>>().join("\n"));
+                
+                error_contexts.push(serde_json::json!({
+                    "error": error,
+                    "lines": lines,
+                    "blame": blame,
+                    "status": status,
+                    "syn_ast": syn_dump,
+                }));
+            }
+        }
+        
+        return Json(serde_json::json!({
+            "success": false,
+            "output": stderr,
+            "errors": errors,
+            "contexts": error_contexts
+        }));
+    }
 
-    Json(BuildResponse {
-        success: output.status.success(),
-        output: stderr,
-        errors,
-    })
+    Json(serde_json::json!({
+        "success": output.status.success(),
+        "output": stderr,
+        "errors": errors
+    }))
 }
 
 async fn fix_all_errors() -> Json<serde_json::Value> {
