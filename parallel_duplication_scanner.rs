@@ -7,6 +7,8 @@ use std::sync::{Arc, Mutex};
 pub struct DuplicationRecord {
     pub fingerprint_ast: String,
     pub fingerprint_structure: String,
+    pub fingerprint_markov: String,        // NEW: Markov model fingerprint
+    pub markov_transitions: String,        // NEW: Top transitions
     pub file1: String,
     pub file2: String,
     pub function1: String,
@@ -28,12 +30,25 @@ impl ParallelScanner {
         }
     }
     
-    pub fn scan_file_list(&self, list_path: &str) -> Result<(), Box<dyn std::error::Error>> {
+    pub fn scan_file_list(&self, list_path: &str, base_dir: Option<&str>) -> Result<(), Box<dyn std::error::Error>> {
         println!("📂 Reading file list: {}", list_path);
         let files: Vec<String> = std::fs::read_to_string(list_path)?
             .lines()
             .filter(|l| l.ends_with(".rs"))
-            .map(|s| s.to_string())
+            .map(|s| {
+                // Handle relative paths
+                if let Some(base) = base_dir {
+                    if s.starts_with("./") {
+                        format!("{}/{}", base, &s[2..])
+                    } else if !s.starts_with("/") {
+                        format!("{}/{}", base, s)
+                    } else {
+                        s.to_string()
+                    }
+                } else {
+                    s.to_string()
+                }
+            })
             .collect();
         
         println!("📊 Found {} Rust files", files.len());
@@ -82,6 +97,10 @@ impl ParallelScanner {
     
     fn scan_file(&self, file_path: &str) -> Result<Vec<DuplicationRecord>, Box<dyn std::error::Error>> {
         let content = std::fs::read_to_string(file_path)?;
+        
+        // Compute Markov model for entire file
+        let markov_fp = self.compute_markov_fingerprint(&content);
+        
         let syntax = syn::parse_file(&content)?;
         
         let mut records = Vec::new();
@@ -95,6 +114,8 @@ impl ParallelScanner {
                 records.push(DuplicationRecord {
                     fingerprint_ast: fp.0,
                     fingerprint_structure: fp.1,
+                    fingerprint_markov: markov_fp.0.clone(),
+                    markov_transitions: markov_fp.1.clone(),
                     file1: file_path.to_string(),
                     file2: String::new(), // Will be filled by deduplication
                     function1: func.sig.ident.to_string(),
@@ -106,6 +127,58 @@ impl ParallelScanner {
         }
         
         Ok(records)
+    }
+    
+    fn compute_markov_fingerprint(&self, content: &str) -> (String, String) {
+        use std::collections::HashMap;
+        use std::collections::hash_map::DefaultHasher;
+        use std::hash::{Hash, Hasher};
+        
+        // Build character-level Markov chain (3-char window)
+        let mut transitions: HashMap<String, HashMap<char, usize>> = HashMap::new();
+        let chars: Vec<char> = content.chars().collect();
+        
+        for i in 0..chars.len().saturating_sub(3) {
+            let state: String = chars[i..i+3].iter().collect();
+            let next = chars[i+3];
+            
+            *transitions.entry(state)
+                .or_insert_with(HashMap::new)
+                .entry(next)
+                .or_insert(0) += 1;
+        }
+        
+        // Hash the transition matrix
+        let mut hasher = DefaultHasher::new();
+        let mut sorted_transitions: Vec<_> = transitions.iter().collect();
+        sorted_transitions.sort_by_key(|(k, _)| k.as_str());
+        
+        for (state, nexts) in &sorted_transitions {
+            state.hash(&mut hasher);
+            let mut sorted_nexts: Vec<_> = nexts.iter().collect();
+            sorted_nexts.sort_by_key(|(c, _)| *c);
+            for (c, count) in sorted_nexts {
+                c.hash(&mut hasher);
+                count.hash(&mut hasher);
+            }
+        }
+        
+        let markov_hash = format!("{:x}", hasher.finish());
+        
+        // Get top 10 transitions for debugging
+        let mut top_transitions: Vec<_> = transitions.iter()
+            .flat_map(|(state, nexts)| {
+                nexts.iter().map(move |(c, count)| (state.clone(), *c, *count))
+            })
+            .collect();
+        top_transitions.sort_by_key(|(_, _, count)| std::cmp::Reverse(*count));
+        
+        let top_10: Vec<String> = top_transitions.iter()
+            .take(10)
+            .map(|(s, c, cnt)| format!("{}→{}:{}", s, c, cnt))
+            .collect();
+        
+        (markov_hash, top_10.join(","))
     }
     
     fn compute_fingerprint(&self, func: &syn::ItemFn) -> (String, String) {
@@ -165,6 +238,8 @@ impl ParallelScanner {
                         duplicates.push(DuplicationRecord {
                             fingerprint_ast: fp.clone(),
                             fingerprint_structure: group[i].fingerprint_structure.clone(),
+                            fingerprint_markov: group[i].fingerprint_markov.clone(),
+                            markov_transitions: group[i].markov_transitions.clone(),
                             file1: group[i].file1.clone(),
                             file2: group[j].file1.clone(),
                             function1: group[i].function1.clone(),
@@ -207,11 +282,11 @@ impl ParallelScanner {
     }
 }
 
-pub fn run_parallel_scan(list_path: &str, output_path: &str, num_cpus: usize) -> Result<(), Box<dyn std::error::Error>> {
+pub fn run_parallel_scan(list_path: &str, output_path: &str, num_cpus: usize, base_dir: Option<&str>) -> Result<(), Box<dyn std::error::Error>> {
     let scanner = ParallelScanner::new(num_cpus);
     
     // Scan all files
-    scanner.scan_file_list(list_path)?;
+    scanner.scan_file_list(list_path, base_dir)?;
     
     // Deduplicate
     scanner.deduplicate()?;

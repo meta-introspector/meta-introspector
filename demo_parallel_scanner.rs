@@ -20,15 +20,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .and_then(|s| s.parse().ok())
         .unwrap_or(24);
     
+    let base_dir = std::env::args().nth(4);
+    
     println!("📋 Configuration:");
     println!("  Input: {}", list_path);
     println!("  Output: {}", output_path);
-    println!("  CPUs: {}\n", num_cpus);
+    println!("  CPUs: {}", num_cpus);
+    if let Some(ref dir) = base_dir {
+        println!("  Base dir: {}", dir);
+    }
+    println!();
     
     // Run scan
     let start = std::time::Instant::now();
     
-    run_parallel_scan(&list_path, &output_path, num_cpus)?;
+    run_parallel_scan(&list_path, &output_path, num_cpus, base_dir.as_deref())?;
     
     let duration = start.elapsed();
     
@@ -40,17 +46,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("  # Default (24 CPUs)");
     println!("  cargo run --release --bin demo_parallel_scanner");
     
-    println!("\n  # Custom");
+    println!("\n  # With base dir for relative paths");
     println!("  cargo run --release --bin demo_parallel_scanner \\");
-    println!("    ~/nix/index/allrs.txt \\");
-    println!("    /tmp/duplications.parquet \\");
-    println!("    24");
+    println!("    /mnt/data1/newfiles.txt \\");
+    println!("    /tmp/newfiles-duplications.parquet \\");
+    println!("    24 \\");
+    println!("    /mnt/data1");
     
-    println!("\n📊 Dataset Ready:");
-    println!("  • Parquet format");
-    println!("  • Compressed");
-    println!("  • Deduplicated");
-    println!("  • Ready for HuggingFace");
+    println!("\n📊 Dataset Includes:");
+    println!("  • AST fingerprints");
+    println!("  • Structure fingerprints");
+    println!("  • Markov model fingerprints (3-char window)");
+    println!("  • Top 10 Markov transitions per file");
+    println!("  • Duplicate pairs");
     
     Ok(())
 }
