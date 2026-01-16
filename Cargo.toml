@@ -129,6 +129,10 @@ name = "demo_markov_mining"
 path = "demo_markov_mining.rs"
 
 [[bin]]
+name = "demo_universal_llm_proxy"
+path = "demo_universal_llm_proxy.rs"
+
+[[bin]]
 name = "demo_backend_equivalence"
 path = "demo_backend_equivalence.rs"
 
