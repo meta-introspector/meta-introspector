@@ -25,6 +25,18 @@ name = "demo_self_compilation"
 path = "demo_self_compilation.rs"
 
 [[bin]]
+name = "demo_syn_spectrum"
+path = "demo_syn_spectrum.rs"
+
+[[bin]]
+name = "demo_language_markets"
+path = "demo_language_markets.rs"
+
+[[bin]]
+name = "demo_universal_quine"
+path = "demo_universal_quine.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
