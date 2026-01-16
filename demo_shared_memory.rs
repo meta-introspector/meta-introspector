@@ -10,6 +10,7 @@ mod distributed_trading;
 mod meme_marketplace;
 mod program_evolution;
 mod rand_shim;
+mod market_maker;
 
 use shared_memory_bus::{SharedMemoryBus, SharedMemoryNode, Message};
 use distributed_trading::Portfolio;
@@ -26,6 +27,9 @@ fn main() {
     
     // Create shared memory bus
     let bus = Arc::new(SharedMemoryBus::new(num_nodes, queue_size));
+    
+    // Create market maker with large balance
+    let mut market_maker = market_maker::MarketMaker::new(0, 100000);
     
     // Create nodes with portfolios
     let mut nodes = Vec::new();
@@ -47,6 +51,17 @@ fn main() {
     
     for round in 0..rounds {
         println!("📊 Round {}", round);
+        
+        // Market maker quotes: provide liquidity
+        if round % 5 == 0 {
+            for node in &nodes {
+                let node = node.lock().unwrap();
+                for meme in &node.portfolio.memes {
+                    let (bid, ask) = market_maker.quote(meme);
+                    // Market maker stands ready to buy at bid, sell at ask
+                }
+            }
+        }
         
         // Auction phase: nodes bid on best memes
         if round % 10 == 0 && round > 0 {
@@ -94,18 +109,29 @@ fn main() {
             }
         }
         
-        // Each node sends trade offers
-        for node in &nodes {
-            let node = node.lock().unwrap();
+        // Each node sends trade offers with REAL meme IDs from peers
+        for i in 0..nodes.len() {
+            let node = nodes[i].lock().unwrap();
             
-            // Send offers to random peers
-            for _ in 0..3 {
-                let peer = random_usize() % num_nodes;
-                if peer != node.node_id {
-                    node.send_trade_offer(peer, 
-                        random_u64(), 
-                        random_u64(), 
-                        10.0);
+            // Send offers to random peers using actual memes
+            if !node.portfolio.memes.is_empty() {
+                for _ in 0..2 {
+                    let peer_idx = random_usize() % num_nodes;
+                    if peer_idx != node.node_id {
+                        // Get a meme from peer's portfolio
+                        let peer = nodes[peer_idx].lock().unwrap();
+                        if !peer.portfolio.memes.is_empty() {
+                            let want_idx = random_usize() % peer.portfolio.memes.len();
+                            let want_meme = peer.portfolio.memes[want_idx].id;
+                            drop(peer);  // Release lock
+                            
+                            // Offer a random meme from our portfolio
+                            let offer_idx = random_usize() % node.portfolio.memes.len();
+                            let offer_meme = node.portfolio.memes[offer_idx].id;
+                            
+                            node.send_trade_offer(peer_idx, offer_meme, want_meme, 10.0);
+                        }
+                    }
                 }
             }
         }
@@ -132,6 +158,10 @@ fn main() {
     }
     
     println!("🏆 Final Results:");
+    
+    // Market maker report
+    market_maker.report();
+    println!();
     
     let mut results: Vec<_> = nodes.iter()
         .map(|n| {

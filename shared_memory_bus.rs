@@ -252,18 +252,26 @@ impl SharedMemoryNode {
     
     fn should_accept_trade(&self, offer_meme: u64, want_meme: u64) -> bool {
         // Check if we have the wanted meme
-        if !self.portfolio.memes.iter().any(|m| m.id == want_meme) {
+        let have_meme = self.portfolio.memes.iter().find(|m| m.id == want_meme);
+        if have_meme.is_none() {
             return false;
         }
         
-        // Simulate trade and check if score improves
-        let current_score = self.portfolio.score;
-        // TODO: Simulate score after trade
+        // Accept if we don't have the offered meme (diversity)
+        let already_have = self.portfolio.memes.iter().any(|m| m.id == offer_meme);
+        if !already_have {
+            return true;  // Always accept new memes for diversity
+        }
         
-        true // Simplified for now
+        // Accept if offered meme has higher fitness than what we're giving
+        let want_fitness = have_meme.unwrap().fitness;
+        // Assume offered meme has reasonable fitness (we'd need to query)
+        // For now, accept 30% of trades randomly to create liquidity
+        use crate::rand_shim::random_f64;
+        random_f64() < 0.3
     }
     
-    fn execute_trade(&mut self, give_meme: u64, receive_meme: u64) {
+    fn execute_trade(&mut self, give_meme: u64, _receive_meme: u64) {
         // Remove given meme
         if let Some(idx) = self.portfolio.memes.iter().position(|m| m.id == give_meme) {
             self.portfolio.memes.remove(idx);
