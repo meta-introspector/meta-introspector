@@ -21,7 +21,7 @@ fn main() {
     init_rand();
     
     println!("🔬 PROOF: Matrix, AST Histogram, IP Coverage\n");
-    println!("=" .repeat(80));
+    println!("{}", "=".repeat(80));
     
     let rust_src = "/nix/store/x7wirg5c34zsgm7b5pvsl1hvq2dvqr9s-rust-src-1.92.0.tar.xz";
     
@@ -129,10 +129,10 @@ fn main() {
     }
     
     // Print AST Histogram
-    println!("=" .repeat(80));
+    println!("{}", "=".repeat(80));
     println!("\n📊 AST TYPE HISTOGRAM\n");
     println!("{:<15} {:>10} {:>15} {:>20}", "AST Type", "Count", "Unique IPs", "IP Range");
-    println!("-" .repeat(80));
+    println!("{}", "-".repeat(80));
     
     let mut sorted_stats: Vec<_> = ast_stats.values().collect();
     sorted_stats.sort_by(|a, b| b.count.cmp(&a.count));
@@ -147,11 +147,11 @@ fn main() {
     }
     
     // Print Matrix
-    println!("\n" .repeat(2));
-    println!("=" .repeat(80));
+    println!("{}", "\n".repeat(2));
+    println!("{}", "=".repeat(80));
     println!("\n📐 SOURCE → AST MATRIX (First 15 rows)\n");
     println!("{:<8} {:>8} {:>8} {:>8} {:>8} {:>8} {:>10}", "Block", "Fn", "Struct", "Enum", "Impl", "Trait", "Total IPs");
-    println!("-" .repeat(80));
+    println!("{}", "-".repeat(80));
     
     for row in matrix_rows.iter().take(15) {
         println!("{:<8} {:>8} {:>8} {:>8} {:>8} {:>8} {:>10}", 
@@ -159,8 +159,8 @@ fn main() {
     }
     
     // IP Coverage Analysis
-    println!("\n" .repeat(2));
-    println!("=" .repeat(80));
+    println!("{}", "\n".repeat(2));
+    println!("{}", "=".repeat(80));
     println!("\n🎯 IP COVERAGE ANALYSIS\n");
     
     let total_ips = all_ips.len();
@@ -173,7 +173,7 @@ fn main() {
     println!("Range span: {} bytes", ip_range);
     
     println!("\n{:<15} {:>15} {:>15} {:>15}", "AST Type", "Unique IPs", "% of Total", "% of Range");
-    println!("-" .repeat(80));
+    println!("{}", "-".repeat(80));
     
     for stat in &sorted_stats {
         let pct_total = (stat.ips.len() as f64 / total_ips as f64) * 100.0;
@@ -192,8 +192,8 @@ fn main() {
     }
     
     // Union verification
-    println!("\n" .repeat(2));
-    println!("=" .repeat(80));
+    println!("{}", "\n".repeat(2));
+    println!("{}", "=".repeat(80));
     println!("\n✅ PROOF: Union of AST types covers entire IP range\n");
     
     let union_ips: HashSet<u64> = sorted_stats.iter()
@@ -212,6 +212,6 @@ fn main() {
     println!("  • This proves: source AST → rustc execution mapping");
     println!("  • Matrix shows: which features use which compiler parts");
     
-    println!("\n" .repeat(1));
-    println!("=" .repeat(80));
+    println!("{}", "\n".repeat(1));
+    println!("{}", "=".repeat(80));
 }

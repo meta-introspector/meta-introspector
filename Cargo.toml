@@ -105,7 +105,7 @@ name = "demo_trace_expansion"
 path = "demo_trace_expansion.rs"
 
 [[bin]]
-name = "demo_proof_table"
+name = "demo_ast_proof"
 path = "demo_proof_table.rs"
 
 [[bin]]
