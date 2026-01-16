@@ -95,9 +95,9 @@ num_weights = {};
         )
     }
     
-    pub fn solve(&self) -> Option<String> {
+    pub fn solve(&self, num_syn_types: usize, num_ips: usize, num_weights: usize) -> Option<String> {
         // Write model and data files
-        fs::write(&self.model_file, self.generate_model(11, 103, 768)).ok()?;
+        fs::write(&self.model_file, self.generate_model(num_syn_types, num_ips, num_weights)).ok()?;
         
         // Run MiniZinc solver
         let output = Command::new("minizinc")
@@ -111,13 +111,13 @@ num_weights = {};
         Some(String::from_utf8_lossy(&output.stdout).to_string())
     }
     
-    pub fn prove_uniqueness(&self) -> Option<String> {
+    pub fn prove_uniqueness(&self, num_syn_types: usize, num_ips: usize) -> Option<String> {
         // Model to prove each syn type has unique IP signature
-        let model = r#"
+        let model = format!(r#"
 % Prove uniqueness of syn type → IP mappings
 
-int: n = 11;  % 11 syn types
-array[1..n] of var 1..103: ip_signatures;
+int: n = {};  % syn types
+array[1..n] of var 1..{}: ip_signatures;
 
 % Each syn type must have unique IP signature
 constraint alldifferent(ip_signatures);
@@ -130,7 +130,7 @@ constraint forall(i in 1..n-1)(
 solve satisfy;
 
 output ["PROOF: All syn types have unique IP signatures\n"];
-"#;
+"#, num_syn_types, num_ips);
         
         fs::write(&self.model_file, model).ok()?;
         
@@ -142,15 +142,15 @@ output ["PROOF: All syn types have unique IP signatures\n"];
         Some(String::from_utf8_lossy(&output.stdout).to_string())
     }
     
-    pub fn prove_transitivity(&self) -> Option<String> {
+    pub fn prove_transitivity(&self, num_syn_types: usize, num_ips: usize, num_weights: usize) -> Option<String> {
         // Prove transitive property: syn → IP → weight → embedding
-        let model = r#"
+        let model = format!(r#"
 % Prove transitivity of mappings
 
-int: n = 11;
-array[1..n] of var 1..103: syn_to_ip;
-array[1..103] of var 1..768: ip_to_weight;
-array[1..n] of var 1..768: syn_to_embedding;
+int: n = {};
+array[1..n] of var 1..{}: syn_to_ip;
+array[1..{}] of var 1..{}: ip_to_weight;
+array[1..n] of var 1..{}: syn_to_embedding;
 
 % Transitive property
 constraint forall(i in 1..n)(
@@ -163,7 +163,7 @@ constraint alldifferent(syn_to_ip);
 solve satisfy;
 
 output ["PROOF: Transitive mapping holds: syn → IP → weight → embedding\n"];
-"#;
+"#, num_syn_types, num_ips, num_ips, num_weights, num_weights);
         
         fs::write(&self.model_file, model).ok()?;
         
