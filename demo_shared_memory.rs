@@ -11,6 +11,7 @@ mod meme_marketplace;
 mod program_evolution;
 mod rand_shim;
 mod market_maker;
+mod meme_evolver;
 
 use shared_memory_bus::{SharedMemoryBus, SharedMemoryNode, Message};
 use distributed_trading::Portfolio;
@@ -31,8 +32,12 @@ fn main() {
     // Create market maker with large balance
     let mut market_maker = market_maker::MarketMaker::new(0, 100000);
     
-    // Create nodes with portfolios
+    // Track profitable trades
+    let mut trade_sequences = Vec::new();
+    
+    // Create nodes with portfolios and evolvers
     let mut nodes = Vec::new();
+    let mut evolvers = Vec::new();
     for node_id in 0..num_nodes {
         let mut memes = Vec::new();
         for _ in 0..10 {
@@ -42,6 +47,7 @@ fn main() {
         let portfolio = Portfolio::new(node_id, memes);
         let node = SharedMemoryNode::new(node_id, portfolio, Arc::clone(&bus));
         nodes.push(Arc::new(std::sync::Mutex::new(node)));
+        evolvers.push(meme_evolver::MemeEvolver::new(node_id));
     }
     
     println!("✅ Created {} nodes with portfolios\n", num_nodes);
@@ -51,6 +57,78 @@ fn main() {
     
     for round in 0..rounds {
         println!("📊 Round {}", round);
+        
+        // Evolution phase: buy, evolve, sell
+        if round % 7 == 0 && round > 0 {
+            println!("  🧬 Evolution phase!");
+            for i in 0..nodes.len() {
+                let mut node = nodes[i].lock().unwrap();
+                let evolver = &evolvers[i];
+                
+                // Find a meme to evolve
+                if let Some(meme_idx) = (0..node.portfolio.memes.len())
+                    .max_by_key(|&idx| (node.portfolio.memes[idx].fitness * 100.0) as u64) {
+                    
+                    let meme = node.portfolio.memes[meme_idx].clone();
+                    let buy_price = (meme.fitness * 100.0) as u64;
+                    
+                    // Evolve it
+                    let evolved = evolver.evolve(&meme);
+                    let sell_price = (evolved.fitness * 100.0) as u64;
+                    let profit = sell_price as i64 - buy_price as i64;
+                    
+                    // Replace original with evolved
+                    node.portfolio.memes[meme_idx] = evolved.clone();
+                    
+                    // Record profitable trade
+                    if profit > 0 {
+                        trade_sequences.push(meme_evolver::TradeSequence {
+                            node_id: node.node_id,
+                            bought_meme_id: meme.id,
+                            buy_price,
+                            evolved_meme_id: evolved.id,
+                            sell_price,
+                            profit,
+                            strategy: "evolve".to_string(),
+                        });
+                    }
+                }
+                
+                // Try combining two rare memes
+                if node.portfolio.memes.len() >= 2 {
+                    let rare_memes: Vec<_> = node.portfolio.memes.iter()
+                        .enumerate()
+                        .filter(|(_, m)| m.rarity > 0.8)
+                        .map(|(idx, m)| (idx, m.clone()))
+                        .collect();
+                    
+                    if rare_memes.len() >= 2 {
+                        let meme1 = &rare_memes[0].1;
+                        let meme2 = &rare_memes[1].1;
+                        let cost = ((meme1.fitness + meme2.fitness) * 100.0) as u64;
+                        
+                        let hybrid = evolver.combine(meme1, meme2);
+                        let sell_price = (hybrid.fitness * 100.0) as u64;
+                        let profit = sell_price as i64 - cost as i64;
+                        
+                        // Add hybrid to portfolio
+                        node.portfolio.memes.push(hybrid.clone());
+                        
+                        if profit > 0 {
+                            trade_sequences.push(meme_evolver::TradeSequence {
+                                node_id: node.node_id,
+                                bought_meme_id: meme1.id,
+                                buy_price: cost,
+                                evolved_meme_id: hybrid.id,
+                                sell_price,
+                                profit,
+                                strategy: format!("combine {} + {}", meme1.id, meme2.id),
+                            });
+                        }
+                    }
+                }
+            }
+        }
         
         // Market maker quotes: provide liquidity
         if round % 5 == 0 {
@@ -162,6 +240,15 @@ fn main() {
     // Market maker report
     market_maker.report();
     println!();
+    
+    // Report profitable trades
+    if !trade_sequences.is_empty() {
+        println!("\n💎 Top 5 Profitable Trades:");
+        trade_sequences.sort_by_key(|t| -t.profit);
+        for trade in trade_sequences.iter().take(5) {
+            trade.report();
+        }
+    }
     
     let mut results: Vec<_> = nodes.iter()
         .map(|n| {
