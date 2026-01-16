@@ -125,6 +125,14 @@ name = "demo_backend_equivalence"
 path = "demo_backend_equivalence.rs"
 
 [[bin]]
+name = "demo_so_mapper"
+path = "demo_so_mapper.rs"
+
+[[bin]]
+name = "demo_nix_recorder"
+path = "demo_nix_recorder.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
