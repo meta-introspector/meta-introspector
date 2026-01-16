@@ -61,6 +61,10 @@ name = "demo_xz_to_syn"
 path = "demo_xz_to_syn.rs"
 
 [[bin]]
+name = "demo_block_market"
+path = "demo_block_market.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
