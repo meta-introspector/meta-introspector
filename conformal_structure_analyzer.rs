@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use petgraph::{Graph as PetGraph, Undirected};
 use petgraph::algo::is_isomorphic_matching;
 use serde::{Deserialize, Serialize};
+use glob::glob;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct CompilerView {
@@ -141,7 +142,7 @@ fn extract_source_asts(pattern: &str) -> Result<CompilerView, Box<dyn std::error
     let mut edges = Vec::new();
     
     // Parse all Rust files and extract module dependencies
-    for entry in glob::glob(pattern)? {
+    for entry in glob(pattern)? {
         let path = entry?;
         if let Ok(content) = std::fs::read_to_string(&path) {
             if let Ok(file) = syn::parse_file(&content) {
@@ -223,6 +224,33 @@ fn count_all_isomorphisms(_g1: &PetGraph<String, (), Undirected>, _g2: &PetGraph
 fn compute_eigenvalues(_graph: &Graph) -> Vec<f64> {
     // TODO: Implement proper Laplacian eigenvalue computation
     vec![1.0, 0.5, 0.1]
+}
+
+fn cosine_similarity(v1: &[f64], v2: &[f64]) -> f64 {
+    if v1.is_empty() || v2.is_empty() || v1.len() != v2.len() {
+        return 0.0;
+    }
+    let dot: f64 = v1.iter().zip(v2.iter()).map(|(a, b)| a * b).sum();
+    let mag1: f64 = v1.iter().map(|x| x * x).sum::<f64>().sqrt();
+    let mag2: f64 = v2.iter().map(|x| x * x).sum::<f64>().sqrt();
+    if mag1 == 0.0 || mag2 == 0.0 {
+        0.0
+    } else {
+        dot / (mag1 * mag2)
+    }
+}
+
+fn jaccard_similarity<T: Eq + std::hash::Hash>(set1: &[T], set2: &[T]) -> f64 {
+    use std::collections::HashSet;
+    let s1: HashSet<_> = set1.iter().collect();
+    let s2: HashSet<_> = set2.iter().collect();
+    let intersection = s1.intersection(&s2).count();
+    let union = s1.union(&s2).count();
+    if union == 0 {
+        0.0
+    } else {
+        intersection as f64 / union as f64
+    }
 }
 
 fn find_conformal_boundary(views: &[CompilerView]) -> Result<Graph, Box<dyn std::error::Error>> {
@@ -316,16 +344,6 @@ fn to_petgraph(graph: &Graph) -> PetGraph<String, (), Undirected> {
     }
     
     pg
-}
-
-fn count_all_isomorphisms(_g1: &PetGraph<String, (), Undirected>, _g2: &PetGraph<String, (), Undirected>) -> usize {
-    // TODO: Implement proper VF2 isomorphism enumeration
-    1
-}
-
-fn compute_eigenvalues(_graph: &Graph) -> Vec<f64> {
-    // TODO: Implement proper Laplacian eigenvalue computation
-    vec![1.0, 0.5, 0.1]
 }
 
 fn project_to_boundary(vector: &[f64], boundary_nodes: &[String], graph_nodes: &[String]) -> Vec<f64> {
