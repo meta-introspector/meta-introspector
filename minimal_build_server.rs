@@ -5,6 +5,46 @@ use std::process::{Command, Stdio};
 use std::os::unix::process::CommandExt;
 use tokio::net::TcpListener;
 
+// Bootstrap: Load libnix, then use it to load system libs
+fn bootstrap_libs() -> Result<(), String> {
+    // Load libnix.so
+    let libnix_path = "./target/debug/liblibnix.so";
+    
+    if std::path::Path::new(libnix_path).exists() {
+        println!("📦 Loading libnix...");
+        
+        // Use libnix to load system libraries via nix
+        use libloading::{Library, Symbol};
+        unsafe {
+            let lib = Library::new(libnix_path)
+                .map_err(|e| format!("Failed to load libnix: {}", e))?;
+            
+            let load_fn: Symbol<extern "C" fn(*const *const i8, usize) -> i32> = 
+                lib.get(b"libnix_load")
+                .map_err(|e| format!("Failed to find libnix_load: {}", e))?;
+            
+            // Load ssl, git, curl via nix
+            let libs = vec![
+                std::ffi::CString::new("ssl").unwrap(),
+                std::ffi::CString::new("git").unwrap(),
+                std::ffi::CString::new("curl").unwrap(),
+            ];
+            let ptrs: Vec<*const i8> = libs.iter().map(|s| s.as_ptr()).collect();
+            
+            let result = load_fn(ptrs.as_ptr(), ptrs.len());
+            if result == 0 {
+                println!("✅ Loaded system libs via nix");
+                Ok(())
+            } else {
+                Err("Failed to load libs via nix".to_string())
+            }
+        }
+    } else {
+        println!("⚠️  libnix not found, using system libs");
+        Ok(())
+    }
+}
+
 #[derive(Deserialize, Serialize)]
 struct BuildRequest {
     target: String,
@@ -305,6 +345,11 @@ async fn main() {
     if args.len() > 1 {
         client_mode(args).await;
         return;
+    }
+    
+    // Bootstrap: Load system libs via libnix
+    if let Err(e) = bootstrap_libs() {
+        eprintln!("⚠️  Bootstrap warning: {}", e);
     }
     
     // Deterministic peer ID from machine

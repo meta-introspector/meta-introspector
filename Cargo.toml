@@ -7,6 +7,11 @@ edition = "2021"
 name = "minimal-build-server"
 path = "minimal_build_server.rs"
 
+[[lib]]
+name = "libnix"
+path = "libnix.rs"
+crate-type = ["cdylib", "rlib"]
+
 [[bin]]
 name = "git-sources"
 path = "git-sources.rs"
