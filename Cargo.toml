@@ -57,6 +57,10 @@ name = "demo_scan_rust_src"
 path = "demo_scan_rust_src.rs"
 
 [[bin]]
+name = "demo_xz_to_syn"
+path = "demo_xz_to_syn.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
