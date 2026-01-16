@@ -81,6 +81,10 @@ name = "demo_ingest_rustc"
 path = "demo_ingest_rustc.rs"
 
 [[bin]]
+name = "demo_nix_build_analyze"
+path = "demo_nix_build_analyze.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
