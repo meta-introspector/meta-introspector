@@ -1,5 +1,5 @@
 // 🦀 RUST-AS-A-SERVICE: Load rustc_driver.so and charge for compilation
-use axum::{extract::Query, http::StatusCode, response::Json, routing::post, Router};
+use axum::{extract::Query, http::StatusCode, response::{Json, IntoResponse}, routing::post, Router};
 use libloading::{Library, Symbol};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -36,7 +36,7 @@ pub struct RustcMetrics {
 }
 
 // Pricing model for Rust compilation
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct RustPricing {
     pub base_cost: u64,           // Base cost per compilation
     pub per_line_cost: u64,       // Cost per line of code
@@ -96,9 +96,39 @@ impl RustAsAService {
         let start_time = Instant::now();
         let cost = self.calculate_cost(&request);
         
-        // Create temporary files for compilation
-        let temp_dir = tempfile::tempdir()?;
-        let source_path = temp_dir.path().join("main.rs");
+        // Content-addressable build directory (like nix)
+        use std::collections::hash_map::DefaultHasher;
+        use std::hash::{Hash, Hasher};
+        
+        let mut hasher = DefaultHasher::new();
+        request.source_code.hash(&mut hasher);
+        request.target.hash(&mut hasher);
+        request.optimization.hash(&mut hasher);
+        request.features.hash(&mut hasher);
+        let content_hash = format!("{:x}", hasher.finish());
+        
+        // Store in content-addressable location
+        let build_dir = std::path::PathBuf::from("/tmp/rust-builds")
+            .join(&content_hash[..2])  // First 2 chars for sharding
+            .join(&content_hash);
+        
+        // Check if already built (cache hit!)
+        let binary_path = build_dir.join("output");
+        if binary_path.exists() {
+            let binary_size = std::fs::metadata(&binary_path)?.len();
+            return Ok(CompileResponse {
+                success: true,
+                output: Some(format!("Cache hit! Binary at: {}", binary_path.display())),
+                errors: None,
+                cost_lamports: 0, // Free for cached builds!
+                execution_time_ms: 0,
+                binary_size: Some(binary_size),
+            });
+        }
+        
+        // New build - create content-addressable directory
+        std::fs::create_dir_all(&build_dir)?;
+        let source_path = build_dir.join("main.rs");
         std::fs::write(&source_path, &request.source_code)?;
         
         // Build rustc command using zombie_driver2
@@ -124,11 +154,14 @@ impl RustAsAService {
         let output = cmd.output()?;
         let execution_time = start_time.elapsed();
         
-        // Calculate binary size if successful
+        // Calculate binary size if successful and save to content-addressable location
         let binary_size = if output.status.success() {
-            let binary_path = temp_dir.path().join("main");
-            if binary_path.exists() {
-                Some(std::fs::metadata(binary_path)?.len())
+            let output_binary = build_dir.join("main");
+            let stored_binary = build_dir.join("output");
+            if output_binary.exists() {
+                // Move to canonical location for caching
+                std::fs::rename(&output_binary, &stored_binary)?;
+                Some(std::fs::metadata(&stored_binary)?.len())
             } else {
                 None
             }
@@ -186,11 +219,11 @@ pub async fn compile_endpoint(
     }
 }
 
-pub async fn pricing_endpoint() -> Json<RustPricing> {
+pub async fn pricing_endpoint() -> impl IntoResponse {
     Json(RustPricing::default())
 }
 
-pub async fn metrics_endpoint() -> Json<HashMap<String, String>> {
+pub async fn metrics_endpoint() -> impl IntoResponse {
     let mut metrics = HashMap::new();
     metrics.insert("service".to_string(), "rust-as-a-service".to_string());
     metrics.insert("version".to_string(), "1.0.0".to_string());
