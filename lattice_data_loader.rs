@@ -12,16 +12,18 @@ pub struct LatticeData {
 }
 
 impl LatticeData {
-    pub fn load_from_huggingface(dataset_name: &str) -> Result<Self, String> {
-        // Use huggingface-cli to load dataset
+    pub fn load_from_huggingface(subdir: &str) -> Result<Self, String> {
+        // Load from introspector/rust dataset with subdirs
+        let dataset_path = format!("introspector/rust/{}", subdir);
+        
         let output = Command::new("python3")
             .arg("-c")
             .arg(format!(
                 "from datasets import load_dataset; \
-                 ds = load_dataset('{}'); \
+                 ds = load_dataset('introspector/rust', data_dir='{}'); \
                  print(len(ds['train'])); \
                  print(ds['train'].column_names)",
-                dataset_name
+                subdir
             ))
             .output()
             .map_err(|e| e.to_string())?;
@@ -35,7 +37,7 @@ impl LatticeData {
             .unwrap_or(0);
         
         Ok(LatticeData {
-            num_syn_types: 11, // Will be loaded from dataset
+            num_syn_types: 11,
             num_ips: num_rows,
             num_weights: 768,
             syn_types: vec![
@@ -56,18 +58,21 @@ impl LatticeData {
     }
     
     pub fn load_from_available_datasets() -> Result<Self, String> {
-        // Try multiple HuggingFace datasets
-        let datasets = vec![
-            "meta-introspector/rust-lattice",
-            "meta-introspector/syn-mappings",
-            "meta-introspector/rustc-ips",
-            "meta-introspector/pokemon-storage",
+        // Try subdirs in introspector/rust dataset
+        let subdirs = vec![
+            "lattice",
+            "syn-mappings",
+            "rustc-ips",
+            "pokemon-storage",
+            "blockchain",
+            "embeddings",
+            "ziggurat",
         ];
         
-        for dataset in datasets {
-            println!("  Trying dataset: {}", dataset);
-            if let Ok(data) = Self::load_from_huggingface(dataset) {
-                println!("  ✓ Loaded from {}", dataset);
+        for subdir in subdirs {
+            println!("  Trying introspector/rust/{}", subdir);
+            if let Ok(data) = Self::load_from_huggingface(subdir) {
+                println!("  ✓ Loaded from {}", subdir);
                 return Ok(data);
             }
         }
