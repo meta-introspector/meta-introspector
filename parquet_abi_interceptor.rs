@@ -217,33 +217,34 @@ impl ParquetInterceptor {
 }
 
 // Enhanced ABI wrapper with parquet interception
-pub struct InterceptingAbiWrapper {
-    base_wrapper: crate::complex_abi_wrapper::ComplexAbiWrapper,
-    interceptor: ParquetInterceptor,
-}
+// Enhanced ABI wrapper with parquet interception
+// pub struct InterceptingAbiWrapper {
+//     base_wrapper: crate::complex_abi_wrapper::ComplexAbiWrapper,
+//     interceptor: ParquetInterceptor,
+// }
 
-impl InterceptingAbiWrapper {
-    pub fn new(library_path: &str, parquet_output: &str) -> Result<Self, String> {
-        let base_wrapper = crate::complex_abi_wrapper::ComplexAbiWrapper::new(library_path)?;
-        let interceptor = ParquetInterceptor::new(parquet_output, 1000); // 1000 calls per batch
+// impl InterceptingAbiWrapper {
+//     pub fn new(library_path: &str, parquet_output: &str) -> Result<Self, String> {
+//         let base_wrapper = crate::complex_abi_wrapper::ComplexAbiWrapper::new(library_path)?;
+//         let interceptor = ParquetInterceptor::new(parquet_output, 1000); // 1000 calls per batch
         
-        Ok(InterceptingAbiWrapper {
-            base_wrapper,
-            interceptor,
-        })
-    }
+//         Ok(InterceptingAbiWrapper {
+//             base_wrapper,
+//             interceptor,
+//         })
+//     }
 
-    pub fn intercepted_call(&mut self, 
-                           symbol: &str,
-                           params: Vec<ParameterValue>,
-                           call_func: impl FnOnce() -> Result<crate::complex_abi_wrapper::AbiValue, String>) 
-                           -> Result<crate::complex_abi_wrapper::AbiValue, String> {
+//     pub fn intercepted_call(&mut self, 
+//                            symbol: &str,
+//                            params: Vec<ParameterValue>,
+//                            call_func: impl FnOnce() -> Result<crate::complex_abi_wrapper::AbiValue, String>) 
+//                            -> Result<crate::complex_abi_wrapper::AbiValue, String> {
         
-        let library_path = "/lib/x86_64-linux-gnu/libc.so.6"; // Would extract from wrapper
+//         let library_path = "/lib/x86_64-linux-gnu/libc.so.6"; // Would extract from wrapper
         
-        self.interceptor.intercept_call(symbol, library_path, params, call_func)
-    }
-}
+//         self.interceptor.intercept_call(symbol, library_path, params, call_func)
+//     }
+// }
 
 // Demonstration of parquet interception
 fn main() -> Result<(), Box<dyn std::error::Error>> {

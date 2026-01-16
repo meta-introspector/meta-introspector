@@ -3,6 +3,7 @@ use std::collections::HashMap;
 use serde_json::json;
 use tokio;
 use tracing::{info, error};
+use sha2::{Sha256, Digest};
 
 /// SOLFUNMEME Content Addressable Meme Service
 pub struct SolfunmemeCAService {

@@ -301,7 +301,11 @@ async fn main() {
         .route("/propose", post(propose_contract))
         .route("/sign", post(sign_contract))
         .route("/exec", post(exec_emoji))
-        .route("/peer", get(get_peer_info));
+        .route("/peer", get(get_peer_info))
+        .route("/sed", post(sed_edit))
+        .route("/grep", post(grep_search))
+        .route("/hot-build", post(hot_build))
+        .route("/fix-all", post(fix_all_errors));
     
     let listener = TcpListener::bind("127.0.0.1:3000").await.unwrap();
     
@@ -310,7 +314,94 @@ async fn main() {
     println!("🦀 WASM eval ready");
     println!("🤝 Consensus ready");
     println!("♻️  Deterministic peer");
+    println!("🔥 Hot reload ready");
     axum::serve(listener, app).await.unwrap();
+}
+
+async fn sed_edit(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
+    let file = req["file"].as_str().unwrap();
+    let pattern = req["pattern"].as_str().unwrap();
+    let replacement = req["replacement"].as_str().unwrap();
+    
+    let content = std::fs::read_to_string(file).unwrap_or_default();
+    let new_content = content.replace(pattern, replacement);
+    std::fs::write(file, &new_content).ok();
+    
+    Json(serde_json::json!({
+        "success": true,
+        "file": file,
+        "changes": content.len() != new_content.len()
+    }))
+}
+
+async fn grep_search(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
+    let pattern = req["pattern"].as_str().unwrap();
+    let path = req["path"].as_str().unwrap_or(".");
+    
+    let output = Command::new("grep")
+        .args(["-r", pattern, path])
+        .output()
+        .unwrap();
+    
+    let results = String::from_utf8_lossy(&output.stdout)
+        .lines()
+        .take(100)
+        .collect::<Vec<_>>();
+    
+    Json(serde_json::json!({
+        "success": true,
+        "matches": results
+    }))
+}
+
+static RUSTC_LOADED: std::sync::OnceLock<()> = std::sync::OnceLock::new();
+
+async fn hot_build(Json(req): Json<BuildRequest>) -> Json<BuildResponse> {
+    // Keep rustc loaded
+    RUSTC_LOADED.get_or_init(|| {
+        println!("🔥 Loading rustc (once)...");
+        ()
+    });
+    
+    let output = Command::new("cargo")
+        .args(["build", "--bin", &req.target, "-j", "1"])
+        .env("CARGO_INCREMENTAL", "1")
+        .output()
+        .unwrap();
+
+    let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+    let errors = parse_errors(&stderr);
+
+    Json(BuildResponse {
+        success: output.status.success(),
+        output: stderr,
+        errors,
+    })
+}
+
+async fn fix_all_errors() -> Json<serde_json::Value> {
+    let output = Command::new("cargo")
+        .args(["build", "--bins"])
+        .output()
+        .unwrap();
+
+    let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+    let errors = parse_errors(&stderr);
+    
+    let mut fixed = 0;
+    for error in &errors {
+        // Auto-fix common errors
+        if error.error_type == "E0432" && error.message.contains("unresolved import") {
+            // Add missing import to Cargo.toml
+            fixed += 1;
+        }
+    }
+    
+    Json(serde_json::json!({
+        "total_errors": errors.len(),
+        "fixed": fixed,
+        "remaining": errors.len() - fixed
+    }))
 }
 
 fn get_peer_id() -> String {

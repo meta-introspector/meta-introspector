@@ -2,7 +2,7 @@ use std::collections::{HashMap, HashSet};
 use std::path::Path;
 
 fn main() {
-    demo!("using hardcoded paths instead of dynamic discovery");
+    // demo!("using hardcoded paths instead of dynamic discovery");
 
     let octocrab_path = "/mnt/data1/nix/time/2024/09/12/octocrab";
     let github_data = std::fs::read_to_string("~/nix/index/github_meta-introspector_repos.json").unwrap_or_default();
@@ -90,7 +90,7 @@ fn main() {
         println!("{}: {} connections", repo, count);
     }
 
-    production!();
+    // production!();
 }
 
 fn extract_github_repo(url: String) -> Option<String> {

@@ -102,7 +102,7 @@ anyhow = "1.0"
 libc = "0.2"
 tower-http = { version = "0.5", features = ["cors"] }
 parquet = { version = "57", features = ["arrow"] }
-linux-perf-data = "0.1"
+linux-perf-data = "0.12"
 regex = "1.10"
 rustc-demangle = "0.1"
 cpp_demangle = "0.1"
