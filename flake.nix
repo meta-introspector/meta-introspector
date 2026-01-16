@@ -139,7 +139,18 @@
         };
         
         devShells.default = pkgs.mkShell {
-          buildInputs = [ telemetry-env ];
+          buildInputs = [ 
+            telemetry-env 
+            pkgs.openssl
+            pkgs.openssl.dev
+            pkgs.pkg-config
+            pkgs.curl
+            pkgs.curl.dev
+            pkgs.libgit2
+            pkgs.libgit2.dev
+          ];
+          
+          PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig:${pkgs.curl.dev}/lib/pkgconfig:${pkgs.libgit2.dev}/lib/pkgconfig";
           
           # Override shell in dev environment
           SHELL = "${telemetry-shell}/bin/telemetry-shell";
