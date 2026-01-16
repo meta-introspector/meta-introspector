@@ -386,6 +386,33 @@ static RUSTC_LOADED: std::sync::OnceLock<()> = std::sync::OnceLock::new();
 async fn compile(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
     let target = req["target"].as_str().unwrap();
     let fast = req["fast"].as_bool().unwrap_or(true);
+    let use_nix = req["use_nix"].as_bool().unwrap_or(false);
+    
+    if use_nix {
+        // Use nix develop for build environment
+        println!("🔨 Building with nix develop...");
+        
+        let nix_result = crate::nix_canonical_builder::nix_build(&[
+            "develop", "-c", "cargo", "build", "--bin", target
+        ]);
+        
+        match nix_result {
+            Ok(result) => {
+                return Json(serde_json::json!({
+                    "success": result.success,
+                    "output": result.stdout + &result.stderr,
+                    "store_paths": result.store_paths,
+                    "duration": result.duration_secs
+                }));
+            }
+            Err(e) => {
+                return Json(serde_json::json!({
+                    "success": false,
+                    "output": e
+                }));
+            }
+        }
+    }
     
     // Keep rustc loaded for fast compilation
     if fast {
