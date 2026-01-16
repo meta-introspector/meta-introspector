@@ -148,9 +148,16 @@ async fn reload() -> Json<BuildResponse> {
 
     if output.status.success() {
         println!("✅ Rebuilt! Replacing process...");
+        
+        // Copy new binary over running one
+        std::fs::copy(
+            "./target/debug/minimal-build-server",
+            "/tmp/minimal-build-server-new"
+        ).ok();
+        
         std::thread::spawn(|| {
             std::thread::sleep(std::time::Duration::from_millis(100));
-            Command::new("./target/debug/minimal-build-server")
+            Command::new("/tmp/minimal-build-server-new")
                 .exec();
         });
     }
@@ -160,6 +167,45 @@ async fn reload() -> Json<BuildResponse> {
         output: stderr,
         errors,
     })
+}
+
+async fn auto_update() -> Json<serde_json::Value> {
+    println!("🔄 Auto-update: Building latest version...");
+    
+    let output = Command::new("cargo")
+        .args(["build", "--bin", "minimal-build-server", "--release"])
+        .output()
+        .unwrap();
+
+    let success = output.status.success();
+    
+    if success {
+        println!("✅ Build successful! Updating running server...");
+        
+        // Replace binary
+        std::fs::copy(
+            "./target/release/minimal-build-server",
+            std::env::current_exe().unwrap()
+        ).ok();
+        
+        // Restart
+        std::thread::spawn(|| {
+            std::thread::sleep(std::time::Duration::from_millis(500));
+            std::process::exit(0); // systemd/supervisor will restart
+        });
+        
+        Json(serde_json::json!({
+            "success": true,
+            "message": "Updated! Restarting..."
+        }))
+    } else {
+        let stderr = String::from_utf8_lossy(&output.stderr).to_string();
+        Json(serde_json::json!({
+            "success": false,
+            "message": "Build failed",
+            "output": stderr
+        }))
+    }
 }
 
 fn parse_errors(stderr: &str) -> Vec<ErrorDetail> {
@@ -307,7 +353,8 @@ async fn main() {
         .route("/hot-build", post(hot_build))
         .route("/fix-all", post(fix_all_errors))
         .route("/blame", post(git_blame))
-        .route("/status", get(git_status));
+        .route("/status", get(git_status))
+        .route("/auto-update", post(auto_update));
     
     let listener = TcpListener::bind("127.0.0.1:3000").await.unwrap();
     
