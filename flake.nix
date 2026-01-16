@@ -7,7 +7,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     rust-telemetry-driver.url = "github:meta-introspector/rust-telemetry-driver";
     rust-telemetry-driver.inputs.nixpkgs.follows = "nixpkgs";
-    zos-server.url = "github:meta-introspector/zos-server";
+    zos-server.url = "github:meta-introspector/zos-server/nix-build-setup";
     zos-server.inputs.nixpkgs.follows = "nixpkgs";
     librustc.url = "github:meta-introspector/librustc";
     librustc.inputs.nixpkgs.follows = "nixpkgs";
