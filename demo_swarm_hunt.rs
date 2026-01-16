@@ -28,8 +28,9 @@ impl Hunter {
         }
     }
     
-    fn hunt_repo(&mut self, repo_path: &str, rare_types: &HashSet<String>) -> HashMap<String, usize> {
-        let mut found = HashMap::new();
+    fn hunt_repo(&mut self, repo_path: &str, rare_types: &HashSet<String>, 
+                 store: &mut ContentStore) -> HashMap<String, Vec<String>> {
+        let mut found: HashMap<String, Vec<String>> = HashMap::new();
         
         // Scan .rs files in repo
         if let Ok(output) = Command::new("find")
@@ -62,7 +63,14 @@ impl Hunter {
                             };
                             
                             if rare_types.contains(type_name) {
-                                *found.entry(type_name.to_string()).or_insert(0) += 1;
+                                // Store the sample in content store
+                                let sample = format!("{}", quote::quote!(#item));
+                                let hash = store.store(&sample);
+                                
+                                found.entry(type_name.to_string())
+                                    .or_insert_with(Vec::new)
+                                    .push(hash.clone());
+                                
                                 *self.rare_types_found.entry(type_name.to_string()).or_insert(0) += 1;
                             }
                         }
@@ -84,7 +92,27 @@ impl Hunter {
 
 struct Swarm {
     hunters: Vec<Hunter>,
-    global_rare_finds: HashMap<String, usize>,
+    global_rare_finds: HashMap<String, Vec<String>>,  // type -> hashes
+    blockchain: Vec<Block>,
+}
+
+#[derive(Clone)]
+struct Block {
+    index: usize,
+    timestamp: u64,
+    hunter_id: usize,
+    rare_type: String,
+    sample_hash: String,
+    prev_hash: String,
+}
+
+impl Block {
+    fn hash(&self) -> String {
+        format!("{:x}", 
+                (self.index as u64)
+                .wrapping_mul(self.timestamp)
+                .wrapping_add(self.hunter_id as u64))
+    }
 }
 
 impl Swarm {
@@ -92,23 +120,51 @@ impl Swarm {
         Self {
             hunters: (0..num_hunters).map(Hunter::new).collect(),
             global_rare_finds: HashMap::new(),
+            blockchain: Vec::new(),
         }
     }
     
-    fn hunt(&mut self, repos: Vec<String>, rare_types: &HashSet<String>) {
+    fn add_to_blockchain(&mut self, hunter_id: usize, rare_type: String, sample_hash: String) {
+        let prev_hash = self.blockchain.last()
+            .map(|b| b.hash())
+            .unwrap_or_else(|| "genesis".to_string());
+        
+        let block = Block {
+            index: self.blockchain.len(),
+            timestamp: std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap()
+                .as_secs(),
+            hunter_id,
+            rare_type,
+            sample_hash,
+            prev_hash,
+        };
+        
+        self.blockchain.push(block);
+    }
+    
+    fn hunt(&mut self, repos: Vec<String>, rare_types: &HashSet<String>, store: &mut ContentStore) {
         println!("🎯 Swarm hunting for rare types in {} repos\n", repos.len());
         
         for (i, repo) in repos.iter().enumerate() {
             let hunter_id = i % self.hunters.len();
             let hunter = &mut self.hunters[hunter_id];
             
-            let found = hunter.hunt_repo(repo, rare_types);
+            let found = hunter.hunt_repo(repo, rare_types, store);
             
             if !found.is_empty() {
                 println!("  Hunter {} found {:?} in repo {}", hunter_id, found.keys().collect::<Vec<_>>(), i);
                 
-                for (type_name, count) in found {
-                    *self.global_rare_finds.entry(type_name).or_insert(0) += count;
+                for (type_name, hashes) in found {
+                    for hash in &hashes {
+                        // Add to blockchain
+                        self.add_to_blockchain(hunter_id, type_name.clone(), hash.clone());
+                    }
+                    
+                    self.global_rare_finds.entry(type_name)
+                        .or_insert_with(Vec::new)
+                        .extend(hashes);
                 }
             }
         }
@@ -116,14 +172,24 @@ impl Swarm {
     
     fn report(&self, rare_types: &HashSet<String>) {
         println!("\n📊 Swarm Hunt Report\n");
-        println!("{:<20} {:>10} {:>15}", "Rare Type", "Found", "Status");
+        println!("{:<20} {:>10} {:>15}", "Rare Type", "Samples", "Status");
         println!("{}", "-".repeat(80));
         
         for rare_type in rare_types {
-            if let Some(count) = self.global_rare_finds.get(rare_type) {
-                println!("{:<20} {:>10} {:>15}", rare_type, count, "✅ CAUGHT");
+            if let Some(hashes) = self.global_rare_finds.get(rare_type) {
+                println!("{:<20} {:>10} {:>15}", rare_type, hashes.len(), "✅ CAUGHT");
             } else {
                 println!("{:<20} {:>10} {:>15}", rare_type, 0, "❌ MISSING");
+            }
+        }
+        
+        println!("\n⛓️  Blockchain: {} blocks", self.blockchain.len());
+        if !self.blockchain.is_empty() {
+            println!("\n  Recent blocks:");
+            for block in self.blockchain.iter().rev().take(5) {
+                println!("    Block {}: Hunter {} found {} (hash: {})", 
+                         block.index, block.hunter_id, block.rare_type, 
+                         &block.sample_hash[..8.min(block.sample_hash.len())]);
             }
         }
         
@@ -182,11 +248,28 @@ fn main() {
     
     println!("{}", "=".repeat(80));
     
-    // Create swarm
+    // Create swarm and storage
     let mut swarm = Swarm::new(24);
+    let mut store = ContentStore::new("/tmp/pokemon-storage");
     
     // Release the swarm!
-    swarm.hunt(repos, &rare_types);
+    swarm.hunt(repos, &rare_types, &mut store);
+    
+    println!("\n{}", "=".repeat(80));
+    
+    swarm.report(&rare_types);
+    
+    println!("\n{}", "=".repeat(80));
+    println!("\n📦 Pokemon Storage Report\n");
+    
+    store.report();
+    
+    let parquet_path = "/tmp/pokemon-storage/pokemon.parquet";
+    if let Ok(_) = store.save_to_parquet(parquet_path) {
+        if let Ok(meta) = std::fs::metadata(parquet_path) {
+            println!("\n  ✓ Saved to {} ({} bytes)", parquet_path, meta.len());
+        }
+    }
     
     println!("\n{}", "=".repeat(80));
     
