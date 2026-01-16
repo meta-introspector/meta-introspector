@@ -149,6 +149,10 @@ name = "demo_duplication_scanner"
 path = "demo_duplication_scanner.rs"
 
 [[bin]]
+name = "demo_parallel_scanner"
+path = "demo_parallel_scanner.rs"
+
+[[bin]]
 name = "demo_backend_equivalence"
 path = "demo_backend_equivalence.rs"
 
@@ -269,6 +273,8 @@ goblin = "0.8"
 anyhow = "1.0"
 libc = "0.2"
 glob = "0.3"
+rayon = "1.8"
+reqwest = { version = "0.11", features = ["json"] }
 tower-http = { version = "0.5", features = ["cors"] }
 parquet = { version = "57", features = ["arrow"] }
 linux-perf-data = "0.12"
