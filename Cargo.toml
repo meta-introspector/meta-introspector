@@ -125,6 +125,10 @@ name = "demo_branch_mining"
 path = "demo_branch_mining.rs"
 
 [[bin]]
+name = "demo_markov_mining"
+path = "demo_markov_mining.rs"
+
+[[bin]]
 name = "demo_backend_equivalence"
 path = "demo_backend_equivalence.rs"
 
