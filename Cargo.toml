@@ -145,6 +145,10 @@ name = "demo_self_deploy"
 path = "demo_self_deploy.rs"
 
 [[bin]]
+name = "demo_duplication_scanner"
+path = "demo_duplication_scanner.rs"
+
+[[bin]]
 name = "demo_backend_equivalence"
 path = "demo_backend_equivalence.rs"
 
