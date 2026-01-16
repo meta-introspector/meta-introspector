@@ -385,9 +385,10 @@ path = "compression_report.rs"
 name = "conformal_heat_generator"
 path = "conformal_heat_generator.rs"
 
-[[bin]]
-name = "conformal_structure_analyzer"
-path = "conformal_structure_analyzer.rs"
+# Disabled - duplicate functions
+# [[bin]]
+# name = "conformal_structure_analyzer"
+# path = "conformal_structure_analyzer.rs"
 
 [[bin]]
 name = "conformal_structure_analyzer_fixed"
