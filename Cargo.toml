@@ -85,6 +85,14 @@ name = "demo_nix_build_analyze"
 path = "demo_nix_build_analyze.rs"
 
 [[bin]]
+name = "demo_scan_git_packs"
+path = "demo_scan_git_packs.rs"
+
+[[bin]]
+name = "demo_git_pack_market"
+path = "demo_git_pack_market.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
