@@ -9,6 +9,10 @@ path = "libnix.rs"
 crate-type = ["cdylib", "rlib"]
 
 [[bin]]
+name = "test_driver"
+path = "test_driver.rs"
+
+[[bin]]
 name = "minimal-build-server"
 path = "minimal_build_server.rs"
 

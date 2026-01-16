@@ -8,6 +8,9 @@ use tokio::net::TcpListener;
 mod traits;
 use traits::*;
 
+mod error_store;
+use error_store::*;
+
 // Bootstrap: Load libnix, then use it to load system libs
 fn bootstrap_libs() -> Result<(), String> {
     // Load libnix.so
@@ -146,25 +149,16 @@ async fn git_clone(Json(req): Json<GitRequest>) -> Json<BuildResponse> {
     }
 }
 
-async fn errors() -> Json<ErrorSummary> {
-    let output = Command::new("cargo")
-        .args(["build", "--bins"])
-        .output()
-        .unwrap();
-
-    let stderr = String::from_utf8_lossy(&output.stderr).to_string();
-    let details = parse_errors(&stderr);
-    
-    let mut by_type = HashMap::new();
-    for err in &details {
-        *by_type.entry(err.error_type.clone()).or_insert(0) += 1;
+async fn errors() -> Json<serde_json::Value> {
+    if let Some(report) = get_report() {
+        Json(serde_json::json!(report))
+    } else {
+        Json(serde_json::json!({
+            "total_errors": 0,
+            "by_type": {},
+            "by_bin": {}
+        }))
     }
-
-    Json(ErrorSummary {
-        total_errors: details.len(),
-        by_type,
-        details,
-    })
 }
 
 async fn restart() -> Json<BuildResponse> {
@@ -381,6 +375,26 @@ async fn compile(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> 
 
     let stderr = String::from_utf8_lossy(&output.stderr).to_string();
     let errors = parse_errors(&stderr);
+    
+    // Store errors and generate suggestions
+    for error in &errors {
+        let build_error = BuildError {
+            bin: target.to_string(),
+            error_type: error.error_type.clone(),
+            message: error.message.clone(),
+            file: Some(error.file.clone()),
+            line: error.line,
+            suggestion: suggest_fix(&BuildError {
+                bin: target.to_string(),
+                error_type: error.error_type.clone(),
+                message: error.message.clone(),
+                file: Some(error.file.clone()),
+                line: error.line,
+                suggestion: None,
+            }),
+        };
+        add_error(build_error);
+    }
     
     if !errors.is_empty() {
         // Get comprehensive error context
