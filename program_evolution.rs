@@ -238,7 +238,7 @@ fn compute_fitness(program: &ProgramDNA) -> f64 {
     fitness
 }
 
-fn is_prime(n: u64) -> bool {
+pub fn is_prime(n: u64) -> bool {
     if n < 2 { return false; }
     if n == 2 { return true; }
     if n % 2 == 0 { return false; }

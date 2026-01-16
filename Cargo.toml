@@ -9,6 +9,14 @@ path = "libnix.rs"
 crate-type = ["cdylib", "rlib"]
 
 [[bin]]
+name = "demo_shared_memory"
+path = "demo_shared_memory.rs"
+
+[[bin]]
+name = "trading_node"
+path = "trading_node.rs"
+
+[[bin]]
 name = "test_driver"
 path = "test_driver.rs"
 

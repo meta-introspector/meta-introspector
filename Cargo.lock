@@ -1171,6 +1171,7 @@ dependencies = [
  "clap",
  "cpp_demangle",
  "crossbeam",
+ "flate2",
  "goblin",
  "libc",
  "libloading",

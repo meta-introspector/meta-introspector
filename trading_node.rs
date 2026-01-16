@@ -128,6 +128,10 @@ async fn trading_loop(state: NodeState) {
 }
 
 async fn try_trade_with_peer(state: &NodeState, peer_port: u16) -> Result<(), Box<dyn std::error::Error>> {
+    // TODO: Enable when reqwest is in main Cargo.toml
+    // Preserved for future implementation
+    
+    /*
     // Get peer's portfolio
     let peer_url = format!("http://localhost:{}/portfolio", peer_port);
     let client = reqwest::Client::new();
@@ -153,6 +157,10 @@ async fn try_trade_with_peer(state: &NodeState, peer_port: u16) -> Result<(), Bo
             println!("  ✅ Trade executed with node on port {}", peer_port);
         }
     }
+    */
+    
+    // STUB: Simplified version for now
+    println!("  [STUB] Would query peer on port {} and attempt trade", peer_port);
     
     Ok(())
 }
@@ -256,7 +264,7 @@ struct TradeResponse {
 }
 
 use crate::distributed_trading::{Portfolio, TradeOffer, simulate_trade_score};
-use crate::meme_marketplace::Meme;
+use crate::meme_marketplace::{Meme, MemeID};
 
 impl Portfolio {
     pub fn save_to_parquet(&self, path: &str) -> Result<(), Box<dyn std::error::Error>> {
