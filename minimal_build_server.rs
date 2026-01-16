@@ -135,8 +135,8 @@ async fn errors() -> Json<ErrorSummary> {
     })
 }
 
-async fn reload() -> Json<BuildResponse> {
-    println!("🔄 Rebuilding and replacing self...");
+async fn restart() -> Json<BuildResponse> {
+    println!("🔄 Restarting server...");
     
     let output = Command::new("cargo")
         .args(["build", "--bin", "minimal-build-server"])
@@ -147,18 +147,10 @@ async fn reload() -> Json<BuildResponse> {
     let errors = parse_errors(&stderr);
 
     if output.status.success() {
-        println!("✅ Rebuilt! Replacing process...");
-        
-        // Copy new binary over running one
-        std::fs::copy(
-            "./target/debug/minimal-build-server",
-            "/tmp/minimal-build-server-new"
-        ).ok();
-        
+        println!("✅ Rebuilt! Restarting...");
         std::thread::spawn(|| {
             std::thread::sleep(std::time::Duration::from_millis(100));
-            Command::new("/tmp/minimal-build-server-new")
-                .exec();
+            Command::new("./target/debug/minimal-build-server").exec();
         });
     }
 
@@ -169,42 +161,29 @@ async fn reload() -> Json<BuildResponse> {
     })
 }
 
-async fn auto_update() -> Json<serde_json::Value> {
-    println!("🔄 Auto-update: Building latest version...");
+async fn upgrade() -> Json<serde_json::Value> {
+    println!("⬆️  Upgrading server...");
     
     let output = Command::new("cargo")
         .args(["build", "--bin", "minimal-build-server", "--release"])
         .output()
         .unwrap();
 
-    let success = output.status.success();
-    
-    if success {
-        println!("✅ Build successful! Updating running server...");
-        
-        // Replace binary
+    if output.status.success() {
+        println!("✅ Upgraded! Restarting...");
         std::fs::copy(
             "./target/release/minimal-build-server",
             std::env::current_exe().unwrap()
         ).ok();
         
-        // Restart
         std::thread::spawn(|| {
             std::thread::sleep(std::time::Duration::from_millis(500));
-            std::process::exit(0); // systemd/supervisor will restart
+            std::process::exit(0);
         });
         
-        Json(serde_json::json!({
-            "success": true,
-            "message": "Updated! Restarting..."
-        }))
+        Json(serde_json::json!({"success": true, "message": "Upgraded!"}))
     } else {
-        let stderr = String::from_utf8_lossy(&output.stderr).to_string();
-        Json(serde_json::json!({
-            "success": false,
-            "message": "Build failed",
-            "output": stderr
-        }))
+        Json(serde_json::json!({"success": false, "output": String::from_utf8_lossy(&output.stderr)}))
     }
 }
 
@@ -338,9 +317,10 @@ async fn main() {
     println!("🤝 Consensus state loaded");
     
     let app = Router::new()
-        .route("/build", post(build))
+        .route("/compile", post(compile))
         .route("/errors", get(errors))
-        .route("/reload", post(reload))
+        .route("/restart", post(restart))
+        .route("/upgrade", post(upgrade))
         .route("/fetch", post(fetch))
         .route("/git", post(git_clone))
         .route("/eval", post(eval_wasm))
@@ -350,11 +330,9 @@ async fn main() {
         .route("/peer", get(get_peer_info))
         .route("/sed", post(sed_edit))
         .route("/grep", post(grep_search))
-        .route("/hot-build", post(hot_build))
         .route("/fix-all", post(fix_all_errors))
         .route("/blame", post(git_blame))
-        .route("/status", get(git_status))
-        .route("/auto-update", post(auto_update));
+        .route("/status", get(git_status));
     
     let listener = TcpListener::bind("127.0.0.1:3000").await.unwrap();
     
@@ -405,16 +383,21 @@ async fn grep_search(Json(req): Json<serde_json::Value>) -> Json<serde_json::Val
 
 static RUSTC_LOADED: std::sync::OnceLock<()> = std::sync::OnceLock::new();
 
-async fn hot_build(Json(req): Json<BuildRequest>) -> Json<serde_json::Value> {
-    // Keep rustc loaded
-    RUSTC_LOADED.get_or_init(|| {
-        println!("🔥 Loading rustc (once)...");
-        ()
-    });
+async fn compile(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
+    let target = req["target"].as_str().unwrap();
+    let fast = req["fast"].as_bool().unwrap_or(true);
+    
+    // Keep rustc loaded for fast compilation
+    if fast {
+        RUSTC_LOADED.get_or_init(|| {
+            println!("🔥 Loading rustc (once)...");
+            ()
+        });
+    }
     
     let output = Command::new("cargo")
-        .args(["build", "--bin", &req.target, "-j", "1"])
-        .env("CARGO_INCREMENTAL", "1")
+        .args(["build", "--bin", target, "-j", "1"])
+        .env("CARGO_INCREMENTAL", if fast { "1" } else { "0" })
         .output()
         .unwrap();
 
