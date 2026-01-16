@@ -43,7 +43,7 @@ impl CompilerAsCompression {
         
         CompilationResult {
             compressed_source: compressed_source.to_vec(),
-            compressed_elf,
+            compressed_elf: compressed_elf.clone(),
             compressed_wasm,
             compressed_trace,
             compression_ratio: self.calculate_ratio(compressed_source, &compressed_elf),

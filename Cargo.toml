@@ -17,6 +17,10 @@ name = "demo_compression_study"
 path = "demo_compression_study.rs"
 
 [[bin]]
+name = "demo_compression_evolution"
+path = "demo_compression_evolution.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
