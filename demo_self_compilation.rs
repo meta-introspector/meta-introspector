@@ -36,13 +36,13 @@ fn main() {
         .collect();
     
     // Step 4: Nodes buy and process snippets
-    println!("\n💼 Nodes buying and processing snippets...\n");
+    println!("\n💼 Nodes buying, processing, and evolving snippets...\n");
     
-    let rounds = 10.min(queue.snippets.len());
+    let rounds = 20.min(queue.snippets.len());
     for round in 0..rounds {
         println!("📊 Round {}", round);
         
-        // Each node tries to buy a snippet
+        // Each node tries to buy and evolve a snippet
         for node in &mut nodes {
             if node.balance < 10 {
                 continue;  // Can't afford anything
@@ -52,6 +52,7 @@ fn main() {
             let snippet_idx = random_usize() % queue.snippets.len();
             let snippet_id = queue.snippets[snippet_idx].id;
             let snippet_price = queue.snippets[snippet_idx].price;
+            let snippet = queue.snippets[snippet_idx].clone();
             
             // Try to buy
             if node.balance >= snippet_price {
@@ -65,6 +66,23 @@ fn main() {
                     println!("  Node {} processed snippet {} - score: {:.2}", 
                              node.node_id, snippet_id, score);
                 }
+                
+                // Evolve it every 5 rounds
+                if round % 5 == 0 {
+                    let evolved = node.evolve_snippet(&snippet);
+                    let old_size = snippet.compressed_size;
+                    let new_size = evolved.compressed_size;
+                    
+                    if new_size < old_size {
+                        let improvement = old_size - new_size;
+                        println!("  🧬 Node {} evolved snippet {} - saved {} bytes, earned {} coins", 
+                                 node.node_id, snippet_id, improvement, improvement * 100);
+                        
+                        // Sell back to queue
+                        let sale_price = node.sell_snippet(evolved.clone());
+                        queue.snippets.push(evolved);
+                    }
+                }
             }
         }
         
@@ -76,23 +94,50 @@ fn main() {
     
     println!("\n👥 Node Results:");
     let mut sorted_nodes = nodes.clone();
-    sorted_nodes.sort_by_key(|n| n.coverage_gained);
+    sorted_nodes.sort_by_key(|n| n.earnings);
     sorted_nodes.reverse();
     
+    println!("\n  Top 5 by earnings:");
     for (i, node) in sorted_nodes.iter().take(5).enumerate() {
-        println!("  {}. Node {}: {} snippets, {} coverage, {} coins left",
+        println!("  {}. Node {}: {} snippets, {} coverage, {} coins, 💰 {} earned, {} evolved",
                  i + 1,
                  node.node_id,
                  node.processed_snippets.len(),
                  node.coverage_gained,
-                 node.balance);
+                 node.balance,
+                 node.earnings,
+                 node.evolved_snippets.len());
+    }
+    
+    // Show evolved snippets
+    let total_evolved: usize = nodes.iter().map(|n| n.evolved_snippets.len()).sum();
+    if total_evolved > 0 {
+        println!("\n🧬 Evolution Results:");
+        println!("  Total evolved snippets: {}", total_evolved);
+        
+        for node in &nodes {
+            for evolved in &node.evolved_snippets {
+                let original = queue.snippets.iter()
+                    .find(|s| s.file == evolved.file && s.start_line == evolved.start_line);
+                
+                if let Some(orig) = original {
+                    let saved = orig.compressed_size.saturating_sub(evolved.compressed_size);
+                    if saved > 0 {
+                        println!("  {} compressed {} → {} bytes (saved {})", 
+                                 evolved.file, orig.compressed_size, evolved.compressed_size, saved);
+                    }
+                }
+            }
+        }
     }
     
     println!("\n✅ Self-compilation complete!");
     println!("\n💡 Key insights:");
     println!("  • System reads its own source in drips");
     println!("  • Nodes buy snippets that reach new coverage");
-    println!("  • Perf trace = execution profile");
-    println!("  • Minimal snippets that reach new nodes = valuable");
-    println!("  • Job queue forces incremental processing");
+    println!("  • Nodes evolve snippets for better compression");
+    println!("  • Better compression = earnings (100 coins per byte saved)");
+    println!("  • Evolved snippets sold back at 2x markup");
+    println!("  • System improves its own representation");
+    println!("  • Economic incentive drives optimization");
 }

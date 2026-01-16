@@ -224,6 +224,8 @@ pub struct NodeJob {
     pub balance: u64,
     pub processed_snippets: Vec<u64>,
     pub coverage_gained: usize,
+    pub evolved_snippets: Vec<SourceSnippet>,
+    pub earnings: u64,
 }
 
 impl NodeJob {
@@ -233,6 +235,8 @@ impl NodeJob {
             balance,
             processed_snippets: Vec::new(),
             coverage_gained: 0,
+            evolved_snippets: Vec::new(),
+            earnings: 0,
         }
     }
     
@@ -255,6 +259,68 @@ impl NodeJob {
         } else {
             0.0
         }
+    }
+    
+    /// Evolve snippet: compress better, optimize code
+    pub fn evolve_snippet(&mut self, snippet: &SourceSnippet) -> SourceSnippet {
+        use crate::rand_shim::random_u64;
+        
+        let mut evolved = snippet.clone();
+        evolved.id = random_u64();
+        
+        // Evolution strategies
+        let strategy = random_u64() % 4;
+        
+        match strategy {
+            0 => {
+                // Remove whitespace
+                evolved.code = evolved.code.split_whitespace().collect::<Vec<_>>().join(" ");
+            }
+            1 => {
+                // Inline small functions
+                if evolved.code.contains("fn ") && evolved.code.len() < 200 {
+                    evolved.code = format!("#[inline]\n{}", evolved.code);
+                }
+            }
+            2 => {
+                // Add const
+                evolved.code = evolved.code.replace("let ", "const ");
+            }
+            3 => {
+                // Optimize loops
+                evolved.code = evolved.code.replace("for ", "for _ in ");
+            }
+            _ => {}
+        }
+        
+        // Recompress
+        use flate2::write::GzEncoder;
+        use flate2::Compression;
+        use std::io::Write;
+        
+        let mut encoder = GzEncoder::new(Vec::new(), Compression::best());
+        let _ = encoder.write_all(evolved.code.as_bytes());
+        if let Ok(compressed) = encoder.finish() {
+            evolved.compressed_size = compressed.len();
+            
+            // If better compression, earn reward
+            if evolved.compressed_size < snippet.compressed_size {
+                let improvement = snippet.compressed_size - evolved.compressed_size;
+                self.earnings += improvement as u64 * 100;
+                evolved.price = (evolved.compressed_size as u64 * 10).max(10);
+            }
+        }
+        
+        evolved
+    }
+    
+    /// Sell evolved snippet back to queue
+    pub fn sell_snippet(&mut self, snippet: SourceSnippet) -> u64 {
+        let sale_price = snippet.price * 2;  // 2x markup
+        self.balance += sale_price;
+        self.earnings += sale_price;
+        self.evolved_snippets.push(snippet);
+        sale_price
     }
 }
 
