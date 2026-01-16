@@ -79,7 +79,7 @@
             PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
           };
           
-          # All meta-introspector binaries
+          # All meta-introspector binaries (218 total)
           meta-introspector-binaries = pkgs.rustPlatform.buildRustPackage {
             pname = "meta-introspector";
             version = "0.1.0";
@@ -87,6 +87,32 @@
             cargoLock.lockFile = ./Cargo.lock;
             nativeBuildInputs = [ pkgs.pkg-config ];
             buildInputs = [ pkgs.openssl ];
+            
+            # Build all binaries
+            cargoBuildFlags = [ "--bins" ];
+            
+            # Install all binaries
+            postInstall = ''
+              # All 33 demo binaries
+              for demo in \
+                demo_ast_proof demo_backend_equivalence demo_block_market \
+                demo_branch_mining demo_compression_evolution demo_compression_study \
+                demo_content_store demo_gemini_nodes demo_git_pack_market \
+                demo_hir_mir demo_ingest_rustc demo_language_markets \
+                demo_lattice demo_markov_mining demo_nix_build_analyze \
+                demo_nix_recorder demo_novelty_predictor demo_p2p_network \
+                demo_perf_scanner demo_proof_matrix demo_proof_table \
+                demo_rustc_fuzzer demo_rustc_labeler demo_scan_git_packs \
+                demo_scan_rust_src demo_self_compilation demo_shared_memory \
+                demo_so_mapper demo_spectrum_comprehension demo_swarm_hunt \
+                demo_syn_spectrum demo_trace_expansion demo_universal_quine \
+                demo_xz_to_syn
+              do
+                if [ -f "$out/bin/$demo" ]; then
+                  echo "✓ Installed $demo"
+                fi
+              done
+            '';
           };
           
           # Individual packages
