@@ -101,11 +101,17 @@ goblin = "0.8"
 anyhow = "1.0"
 libc = "0.2"
 tower-http = { version = "0.5", features = ["cors"] }
-parquet = { version = "5", features = ["arrow"] }
+parquet = { version = "57", features = ["arrow"] }
 linux-perf-data = "0.1"
 regex = "1.10"
 rustc-demangle = "0.1"
-cpp-demangle = "0.1"
+cpp_demangle = "0.1"
+perf-macros = { path = "./perf-macros" }
+arrow = "57"
+tracing = "0.1"
+sha2 = "0.10"
+paste = "1.0"
+tracing-subscriber = "0.3"
 reqwest = { version = "0.12", features = ["rustls-tls", "json"] }
 [[bin]]
 name = "all_commits_collector"
@@ -769,3 +775,4 @@ wat = "1.219"
 base64 = "0.22"
 risc0-zkvm = "1.2"
 sha2 = "0.10"
+cpp_demangle = "0.4"
