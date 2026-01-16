@@ -315,6 +315,100 @@ Library profile → Perf trace → Type classification
 
 **The perf trace IS the ground truth type.**
 
+## Kolmogorov Complexity = Type Complexity
+
+**The longer the compressed trace, the bigger the type.**
+
+```
+Type Complexity = K(trace)
+
+Where K(trace) = length of shortest program that generates the trace
+```
+
+### Compression Lattice
+
+```
+Trace → Compress with all algorithms → Find shortest
+    ↓
+LZ4:    1024 bytes
+DEFLATE: 512 bytes
+Zstd:    256 bytes  ← Shortest!
+Brotli:  300 bytes
+LZMA:    280 bytes
+
+Type Complexity = 256 (Zstd compression)
+```
+
+### Type Ordering
+
+```
+Simple types = Short compressed traces
+Complex types = Long compressed traces
+
+Constant function:
+  Trace: [mov, ret]
+  Compressed: 2 bytes
+  Type: Trivial
+
+Bubble sort:
+  Trace: [cmp, jmp, swap, ...] × n²
+  Compressed: 100 bytes
+  Type: Quadratic
+
+Compiler:
+  Trace: [parse, analyze, optimize, ...] × millions
+  Compressed: 10 MB
+  Type: Extremely Complex
+```
+
+### The Lattice
+
+```
+Type lattice ordered by compressed trace length:
+
+K(trace) = 0:     Constant (no-op)
+K(trace) < 10:    Trivial (simple ops)
+K(trace) < 100:   Simple (basic algorithms)
+K(trace) < 1K:    Medium (sorting, searching)
+K(trace) < 10K:   Complex (compression, crypto)
+K(trace) < 100K:  Very Complex (parsers, compilers)
+K(trace) > 100K:  Extremely Complex (full systems)
+```
+
+### Compression as Type Inference
+
+```rust
+fn infer_type_complexity(trace: &PerfTrace) -> usize {
+    let mut min_size = usize::MAX;
+    
+    // Try all compression algorithms
+    for compressor in ALL_COMPRESSORS {
+        let compressed = compressor.compress(&trace.to_bytes());
+        min_size = min_size.min(compressed.len());
+    }
+    
+    min_size  // This is the type complexity!
+}
+```
+
+### Type Equivalence
+
+```
+Two functions have equivalent types if their compressed traces have similar length:
+
+|K(trace1) - K(trace2)| < ε
+
+Where ε is tolerance threshold
+```
+
+### Type Subsumption
+
+```
+Type A ⊆ Type B  iff  K(trace_A) ≤ K(trace_B)
+
+Simpler types subsume by more complex types
+```
+
 ## Next Steps
 
 1. [ ] Record perf traces for all functions
