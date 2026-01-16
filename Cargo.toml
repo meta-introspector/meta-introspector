@@ -69,6 +69,14 @@ name = "demo_spectrum_comprehension"
 path = "demo_spectrum_comprehension.rs"
 
 [[bin]]
+name = "demo_perf_scanner"
+path = "demo_perf_scanner.rs"
+
+[[bin]]
+name = "demo_content_store"
+path = "demo_content_store.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
