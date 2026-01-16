@@ -1,0 +1,4 @@
+original: markov_file_index_mapping.json
+size: 3003554
+parts: 4
+reconstruct: cat markov_file_index_mapping.json.part_* > markov_file_index_mapping.json

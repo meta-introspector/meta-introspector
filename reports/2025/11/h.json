@@ -1,0 +1,13 @@
+{
+  "year": 2025,
+  "month": "11",
+  "user": "h",
+  "commits": 5,
+  "files": 140,
+  "insertions": 10029,
+  "deletions": 233,
+  "repos": {
+    "pick-up-nix": 1,
+    "zombie-driver2": 4
+  }
+}

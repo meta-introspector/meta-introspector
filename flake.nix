@@ -9,9 +9,11 @@
     rust-telemetry-driver.inputs.nixpkgs.follows = "nixpkgs";
     zos-server.url = "github:meta-introspector/zos-server/nix-build-setup";
     zos-server.inputs.nixpkgs.follows = "nixpkgs";
+    librustc.url = "github:meta-introspector/librustc";
+    librustc.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, rust-telemetry-driver, zos-server }:
+  outputs = { self, nixpkgs, rust-overlay, flake-utils, rust-telemetry-driver, zos-server, librustc }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         overlays = [ (import rust-overlay) ];
@@ -62,10 +64,24 @@
         };
         
       in
-      {
-        packages = {
-          default = rust-telemetry-driver.packages.${system}.default;
+      rec {
+        packages = rec {
+          default = meta-introspector-binaries;
+          
+          # All meta-introspector binaries
+          meta-introspector-binaries = pkgs.rustPlatform.buildRustPackage {
+            pname = "meta-introspector";
+            version = "0.1.0";
+            src = ./.;
+            cargoLock.lockFile = ./Cargo.lock;
+            nativeBuildInputs = [ pkgs.pkg-config ];
+            buildInputs = [ pkgs.openssl ];
+          };
+          
+          # Individual packages
           rust-telemetry-driver = rust-telemetry-driver.packages.${system}.default;
+          zos-server = zos-server.packages.${system}.default;
+          librustc = librustc.packages.${system}.default or null;
           telemetry-shell = telemetry-shell;
           telemetry-env = telemetry-env;
         };

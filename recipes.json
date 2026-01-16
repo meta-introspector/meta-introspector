@@ -1,0 +1,36 @@
+{
+  "recipes": {
+    "meta-introspector": {
+      "url": "https://github.com/meta-introspector/meta-introspector",
+      "build": ["minimal-build-server", "investor-report-2025"],
+      "run": "investor-report-2025"
+    },
+    "zos-server": {
+      "url": "https://github.com/meta-introspector/zos-server",
+      "build": ["zos-server"],
+      "run": "zos-server"
+    },
+    "librustc": {
+      "url": "https://github.com/meta-introspector/librustc",
+      "build": ["librustc"],
+      "run": "librustc"
+    }
+  },
+  "contracts": {
+    "🚀": {
+      "godel": "a3f5c8d9e2b1f4a6",
+      "description": "Deploy meme",
+      "consensus": 3
+    },
+    "💰": {
+      "godel": "b4e6d7f8c3a2e5b7",
+      "description": "Transfer value",
+      "consensus": 5
+    },
+    "🔨": {
+      "godel": "c5f7e8a9d4b3f6c8",
+      "description": "Build code",
+      "consensus": 3
+    }
+  }
+}

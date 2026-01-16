@@ -187,6 +187,7 @@ impl ComplexAbiWrapper {
     }
 
     // C++ method calling (with 'this' pointer)
+    #[cfg(not(doc))]
     fn call_cpp_method(&self, func_ptr: *mut c_void, call: &AbiCall) -> Result<AbiValue, String> {
         if call.params.is_empty() {
             return Err("C++ method requires 'this' pointer".to_string());
@@ -225,6 +226,7 @@ impl ComplexAbiWrapper {
     }
 
     // C++ virtual method calling (through vtable)
+    #[cfg(not(doc))]
     fn call_cpp_virtual(&self, _func_ptr: *mut c_void, call: &AbiCall) -> Result<AbiValue, String> {
         if call.params.is_empty() {
             return Err("C++ virtual method requires 'this' pointer".to_string());

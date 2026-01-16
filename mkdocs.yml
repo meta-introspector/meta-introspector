@@ -1,0 +1,34 @@
+site_name: Meta-Introspector Documentation
+site_url: https://meta-introspector.github.io/
+nav:
+    - Home: index.md
+    - Documentation Index: PROJECT_DOCUMENTATION_INDEX.md
+theme:
+    name: material
+    features:
+        - navigation.tabs
+        - navigation.indexes
+        - search.suggest
+        - search.highlight
+        - content.tabs.link
+        - content.code.copy
+plugins:
+    - search
+markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+    - pymdownx.critic
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+    - def_list
+    - footnotes
+    - attr_list
+    - md_in_html
+    - toc:
+        permalink: true
+edit_uri: ""
+repo_url: https://github.com/meta-introspector/meta-introspector
+repo_name: meta-introspector

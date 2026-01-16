@@ -53,28 +53,28 @@ macro_rules! libc_6_telemetry {
     };
 }
 
-macro_rules! /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv_glibc_2_40_66/lib/ld_linux_x86_64_2_telemetry {
-    () => {
-        println!("📚 Preloading /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2", "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2");
-        println!("🔒 Expected MD5: d060b6579ed382f2b0bb5ef85efc90dd", "d060b6579ed382f2b0bb5ef85efc90dd");
-        let start = std::time::Instant::now();
+// macro_rules! /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv_glibc_2_40_66/lib/ld_linux_x86_64_2_telemetry {
+//     () => {
+//         println!("📚 Preloading /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2", "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2");
+//         println!("🔒 Expected MD5: d060b6579ed382f2b0bb5ef85efc90dd", "d060b6579ed382f2b0bb5ef85efc90dd");
+//         let start = std::time::Instant::now();
         
-        // Verify MD5 checksum before loading  
-        let current_md5 = calculate_file_md5("/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2");
-        if current_md5 != "d060b6579ed382f2b0bb5ef85efc90dd" {
-            panic!("🚨 SECURITY ALERT: /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2 MD5 mismatch! Expected: d060b6579ed382f2b0bb5ef85efc90dd, Got: {}", current_md5);
-        }
-        println!("✅ MD5 verified for /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2", "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2");
+//         // Verify MD5 checksum before loading  
+//         let current_md5 = calculate_file_md5("/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2");
+//         if current_md5 != "d060b6579ed382f2b0bb5ef85efc90dd" {
+//             panic!("🚨 SECURITY ALERT: /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2 MD5 mismatch! Expected: d060b6579ed382f2b0bb5ef85efc90dd, Got: {}", current_md5);
+//         }
+//         println!("✅ MD5 verified for /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2", "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2");
         
-        let syscalls = vec!["open", "mmap", "mprotect"];
-        println!("📊 /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2 loaded in {}ms", "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2", start.elapsed().as_millis());
-    };
-}
+//         let syscalls = vec!["open", "mmap", "mprotect"];
+//         println!("📊 /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2 loaded in {}ms", "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib/ld-linux-x86-64.so.2", start.elapsed().as_millis());
+//     };
+// }
 
 macro_rules! preload_all_dependencies_secure {
     () => {
         println!("🔒 Preloading all 3 dependencies with MD5 verification...");
-        /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv_glibc_2_40_66/lib/ld_linux_x86_64_2_telemetry!();
+        // /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv_glibc_2_40_66/lib/ld_linux_x86_64_2_telemetry!();
         libgcc_s_1_telemetry!();
         libc_6_telemetry!();
         println!("✅ All dependencies securely preloaded!");

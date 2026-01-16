@@ -4,6 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [[bin]]
+name = "minimal-build-server"
+path = "minimal_build_server.rs"
+
+[[bin]]
 name = "git-sources"
 path = "git-sources.rs"
 
@@ -90,6 +94,16 @@ crossbeam = "0.8"
 clap = { version = "4", features = ["derive"] }
 syn = { version = "2", features = ["full", "visit"] }
 quote = "1"
+libloading = "0.8"
+axum = "0.7"
+petgraph = "0.6"
+goblin = "0.8"
+anyhow = "1.0"
+libc = "0.2"
+tower-http = { version = "0.5", features = ["cors"] }
+parquet = { version = "5", features = ["arrow"] }
+linux-perf-data = "0.1"
+reqwest = { version = "0.12", features = ["rustls-tls", "json"] }
 [[bin]]
 name = "all_commits_collector"
 path = "all_commits_collector.rs"
@@ -238,9 +252,6 @@ path = "crossbeam_rustc_analyzer.rs"
 name = "crossbeam_rustc_analyzer_complete"
 path = "crossbeam_rustc_analyzer_complete.rs"
 
-[[bin]]
-name = "crossbeam_value_lattice"
-path = "crossbeam_value_lattice.rs"
 
 [[bin]]
 name = "custom_rust_nightly_build"
@@ -518,9 +529,6 @@ path = "recent_commits_scanner.rs"
 name = "recursive_rustc_wrapper"
 path = "recursive_rustc_wrapper.rs"
 
-[[bin]]
-name = "repo_analysis_planner"
-path = "repo_analysis_planner.rs"
 
 [[bin]]
 name = "repo_queue_manager"
@@ -750,3 +758,11 @@ path = "value_lattice_reporter.rs"
 name = "zos_nix_integration"
 path = "zos_nix_integration.rs"
 
+libp2p = { version = "0.54", features = ["gossipsub", "kad", "mdns", "noise", "tcp", "tokio", "yamux"] }
+wasmtime = "27"
+wasmparser = "0.219"
+md5 = "0.7"
+wat = "1.219"
+base64 = "0.22"
+risc0-zkvm = "1.2"
+sha2 = "0.10"

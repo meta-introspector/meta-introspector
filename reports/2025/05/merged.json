@@ -1,0 +1,13 @@
+{
+  "year": 2025,
+  "month": "05",
+  "user": "merged",
+  "commits": 29,
+  "files": 587,
+  "insertions": 70774,
+  "deletions": 70715,
+  "repos": {
+    "agave-solana-validator": 27,
+    "ai-agent-terraform": 2
+  }
+}

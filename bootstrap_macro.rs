@@ -5,7 +5,7 @@ use syn::{parse_macro_input, DeriveInput};
 
 /// The ultimate bootstrap macro - expands to complete system
 #[proc_macro]
-pub fn bootstrap!(input: TokenStream) -> TokenStream {
+pub fn bootstrap(input: TokenStream) -> TokenStream {
     let expanded = quote! {
         // 🔥 BOOTSTRAP EXPANSION: .so → macros → system
         
