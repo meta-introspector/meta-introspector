@@ -141,6 +141,10 @@ name = "demo_universal_exporter"
 path = "demo_universal_exporter.rs"
 
 [[bin]]
+name = "demo_self_deploy"
+path = "demo_self_deploy.rs"
+
+[[bin]]
 name = "demo_backend_equivalence"
 path = "demo_backend_equivalence.rs"
 
