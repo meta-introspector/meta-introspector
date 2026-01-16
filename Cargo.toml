@@ -13,6 +13,10 @@ name = "demo_shared_memory"
 path = "demo_shared_memory.rs"
 
 [[bin]]
+name = "demo_compression_study"
+path = "demo_compression_study.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
