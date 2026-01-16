@@ -5,19 +5,94 @@ mod error_store;
 use error_store::*;
 
 use std::process::Command;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let target = args.get(1).expect("Usage: test_driver <binary_name>");
+    
+    if args.len() < 2 {
+        eprintln!("Usage: test_driver <binary_name> [--nix] [--perf]");
+        std::process::exit(1);
+    }
+    
+    let target = &args[1];
+    let use_nix = args.contains(&"--nix".to_string());
+    let use_perf = args.contains(&"--perf".to_string());
     
     println!("🔨 Testing build: {}", target);
+    if use_nix {
+        println!("📦 Using nix develop");
+    }
+    if use_perf {
+        println!("📊 Recording perf data");
+    }
     println!("");
     
-    // Run cargo build
-    let output = Command::new("cargo")
-        .args(["build", "--bin", target])
-        .output()
-        .expect("Failed to run cargo");
+    let start = Instant::now();
+    
+    // Start perf recording if requested
+    let perf_file = format!("/tmp/build_{}_{}.perf", target, std::process::id());
+    let mut perf_child = if use_perf {
+        println!("🔍 Starting perf record...");
+        Some(Command::new("perf")
+            .args(["record", "-o", &perf_file, "-a", "-g"])
+            .spawn()
+            .ok())
+    } else {
+        None
+    };
+    
+    // Give perf time to start
+    if use_perf {
+        std::thread::sleep(std::time::Duration::from_millis(500));
+    }
+    
+    // Run cargo build (with or without nix)
+    let output = if use_nix {
+        Command::new("nix")
+            .args(["develop", "-c", "cargo", "build", "--bin", target])
+            .output()
+            .expect("Failed to run nix develop")
+    } else {
+        Command::new("cargo")
+            .args(["build", "--bin", target])
+            .output()
+            .expect("Failed to run cargo")
+    };
+    
+    let duration = start.elapsed();
+    
+    // Stop perf
+    if let Some(Some(mut child)) = perf_child {
+        std::thread::sleep(std::time::Duration::from_millis(100));
+        let _ = child.kill();
+        let _ = child.wait();
+        
+        if std::path::Path::new(&perf_file).exists() {
+            println!("📊 Perf data saved to: {}", perf_file);
+            
+            // Generate perf report
+            let report = Command::new("perf")
+                .args(["report", "-i", &perf_file, "--stdio", "-n"])
+                .output();
+            
+            if let Ok(output) = report {
+                let report_text = String::from_utf8_lossy(&output.stdout);
+                let lines: Vec<&str> = report_text.lines().take(20).collect();
+                if !lines.is_empty() {
+                    println!("\n📈 Top functions:");
+                    for line in lines {
+                        if line.contains('%') {
+                            println!("   {}", line.trim());
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    println!("⏱️  Build took: {:.2}s", duration.as_secs_f64());
+    println!("");
     
     let stderr = String::from_utf8_lossy(&output.stderr).to_string();
     
