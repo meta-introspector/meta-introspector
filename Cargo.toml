@@ -37,6 +37,26 @@ name = "demo_universal_quine"
 path = "demo_universal_quine.rs"
 
 [[bin]]
+name = "demo_rustc_fuzzer"
+path = "demo_rustc_fuzzer.rs"
+
+[[bin]]
+name = "demo_rustc_labeler"
+path = "demo_rustc_labeler.rs"
+
+[[bin]]
+name = "demo_proof_table"
+path = "demo_proof_table.rs"
+
+[[bin]]
+name = "demo_novelty_predictor"
+path = "demo_novelty_predictor.rs"
+
+[[bin]]
+name = "demo_scan_rust_src"
+path = "demo_scan_rust_src.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
