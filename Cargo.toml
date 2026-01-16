@@ -133,6 +133,10 @@ name = "demo_nix_recorder"
 path = "demo_nix_recorder.rs"
 
 [[bin]]
+name = "demo_gemini_nodes"
+path = "demo_gemini_nodes.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
