@@ -133,6 +133,10 @@ name = "demo_universal_llm_proxy"
 path = "demo_universal_llm_proxy.rs"
 
 [[bin]]
+name = "demo_nix_workflow"
+path = "demo_nix_workflow.rs"
+
+[[bin]]
 name = "demo_backend_equivalence"
 path = "demo_backend_equivalence.rs"
 
