@@ -129,20 +129,20 @@ impl Marketplace {
             return Err("Swap expired".to_string());
         }
         
-        let meme1 = self.memes.get_mut(&swap.offer_meme).ok_or("Meme not found")?;
-        if meme1.owner != swap.offerer {
+        // Get owners first to avoid double borrow
+        let meme1_owner = self.memes.get(&swap.offer_meme).ok_or("Meme not found")?.owner.clone();
+        let meme2_owner = self.memes.get(&swap.want_meme).ok_or("Meme not found")?.owner.clone();
+        
+        if meme1_owner != swap.offerer {
             return Err("Offerer no longer owns meme".to_string());
         }
-        
-        let meme2 = self.memes.get_mut(&swap.want_meme).ok_or("Meme not found")?;
-        if meme2.owner != self.current_user {
+        if meme2_owner != self.current_user {
             return Err("You don't own wanted meme".to_string());
         }
         
         // Atomic swap
-        let temp_owner = meme1.owner.clone();
-        meme1.owner = meme2.owner.clone();
-        meme2.owner = temp_owner;
+        self.memes.get_mut(&swap.offer_meme).unwrap().owner = meme2_owner;
+        self.memes.get_mut(&swap.want_meme).unwrap().owner = meme1_owner;
         
         Ok(())
     }

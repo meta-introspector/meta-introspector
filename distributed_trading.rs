@@ -12,16 +12,23 @@ pub struct Portfolio {
     pub memes: Vec<Meme>,
     pub score: f64,
     pub trades: usize,
+    pub balance: u64,  // Money for auctions
+    pub memory_used: usize,  // Track memory consumption
+    pub memory_limit: usize,  // Max memory allowed
 }
 
 impl Portfolio {
     pub fn new(node_id: usize, initial_memes: Vec<Meme>) -> Self {
         let score = Self::compute_score(&initial_memes);
+        let memory_used = initial_memes.iter().map(|m| m.code.len()).sum();
         Self {
             node_id,
             memes: initial_memes,
             score,
             trades: 0,
+            balance: 10000,  // Start with 10k coins
+            memory_used,
+            memory_limit: 100000,  // 100KB limit
         }
     }
     
@@ -38,6 +45,11 @@ impl Portfolio {
         
         // Rarity bonus
         score += memes.iter().map(|m| m.rarity).sum::<f64>() * 5.0;
+        
+        // Memory efficiency: penalize large memes
+        let total_size: usize = memes.iter().map(|m| m.code.len()).sum();
+        let efficiency_bonus = 1000.0 / (total_size as f64 + 1.0);
+        score += efficiency_bonus;
         
         // Prime orbit bonus
         for meme in memes {
@@ -203,7 +215,8 @@ fn node_trading_loop(
     // Try to find beneficial trades
     for _ in 0..10 {
         // Pick random partner
-        let partner_idx = rand::random::<usize>() % all_nodes.len();
+        use crate::rand_shim::random_usize;
+        let partner_idx = random_usize() % all_nodes.len();
         if partner_idx == node_id {
             continue;
         }
@@ -273,16 +286,17 @@ use crate::program_evolution::is_prime;
 
 impl Meme {
     pub fn random() -> Self {
-        let id = rand::random();
-        let godel = rand::random::<u64>();
+        use crate::rand_shim::random_u64;
+        let id = random_u64();
+        let godel = random_u64();
         
         Self {
             id,
             godel_number: godel,
             emoji: "🧬".to_string(),
-            code: (0..32).map(|_| rand::random()).collect(),
-            complexity: rand::random::<usize>() % 100,
-            fitness: rand::random::<f64>() * 100.0,
+            code: (0..32).map(|_| (random_u64() & 0xFF) as u8).collect(),
+            complexity: (random_u64() % 100) as usize,
+            fitness: (random_u64() as f64 / u64::MAX as f64) * 100.0,
             rarity: 1.0,
             generation: 0,
             owner: "network".to_string(),

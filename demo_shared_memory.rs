@@ -43,10 +43,56 @@ fn main() {
     println!("✅ Created {} nodes with portfolios\n", num_nodes);
     
     // Run trading rounds
-    let rounds = 10;
+    let rounds = 100;
     
     for round in 0..rounds {
         println!("📊 Round {}", round);
+        
+        // Auction phase: nodes bid on best memes
+        if round % 10 == 0 && round > 0 {
+            println!("  💰 Auction phase!");
+            for node in &nodes {
+                let node = node.lock().unwrap();
+                // Find best meme in portfolio
+                if let Some(best_meme) = node.portfolio.memes.iter().max_by(|a, b| a.fitness.partial_cmp(&b.fitness).unwrap()) {
+                    // Broadcast auction bid
+                    for peer in 0..num_nodes {
+                        if peer != node.node_id {
+                            let bid = (best_meme.fitness * 10.0) as u64;
+                            if node.portfolio.balance >= bid {
+                                let msg = shared_memory_bus::Message::AuctionBid {
+                                    meme_id: best_meme.id,
+                                    bid_amount: bid,
+                                    bidder_id: node.node_id,
+                                };
+                                let _ = node.bus.send(node.node_id, peer, msg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Replication phase: best memes spread
+        if round % 5 == 0 {
+            for node in &nodes {
+                let node = node.lock().unwrap();
+                for meme in &node.portfolio.memes {
+                    if meme.fitness > 50.0 && meme.code.len() < 100 {
+                        // Lean, high-fitness meme - replicate!
+                        for peer in 0..num_nodes {
+                            if peer != node.node_id {
+                                let msg = shared_memory_bus::Message::MemeReplicate {
+                                    meme_id: meme.id,
+                                    fitness: meme.fitness,
+                                };
+                                let _ = node.bus.send(node.node_id, peer, msg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
         // Each node sends trade offers
         for node in &nodes {
@@ -101,4 +147,39 @@ fn main() {
         println!("  {}. Node {}: score={:.2}, trades={}", 
                  i + 1, node_id, score, trades);
     }
+    
+    // Meme statistics
+    println!("\n🧬 Top 3 Memes by Rarity:");
+    let mut meme_details = std::collections::HashMap::new();
+    for node in &nodes {
+        let node = node.lock().unwrap();
+        for meme in &node.portfolio.memes {
+            let entry = meme_details.entry(meme.id).or_insert((0, meme.clone()));
+            entry.0 += 1;
+        }
+    }
+    
+    let mut meme_stats: Vec<_> = meme_details.iter()
+        .map(|(&id, (count, meme))| {
+            let rarity = 1.0 / *count as f64;
+            (id, *count, rarity, meme.clone())
+        })
+        .collect();
+    meme_stats.sort_by(|a, b| b.2.partial_cmp(&a.2).unwrap());
+    
+    for (i, (id, count, rarity, meme)) in meme_stats.iter().take(3).enumerate() {
+        println!("  {}. Meme {} {}", i + 1, id, meme.emoji);
+        println!("     Held by {} nodes, rarity={:.4}", count, rarity);
+        println!("     Gödel: {}, complexity: {}, fitness: {:.2}, size: {} bytes", 
+                 meme.godel_number, meme.complexity, meme.fitness, meme.code.len());
+    }
+    
+    // Economic stats
+    println!("\n💰 Economic Stats:");
+    let total_balance: u64 = nodes.iter().map(|n| n.lock().unwrap().portfolio.balance).sum();
+    let avg_balance = total_balance / num_nodes as u64;
+    let total_memory: usize = nodes.iter().map(|n| n.lock().unwrap().portfolio.memory_used).sum();
+    println!("  Total balance: {} coins", total_balance);
+    println!("  Average balance: {} coins", avg_balance);
+    println!("  Total memory used: {} bytes", total_memory);
 }

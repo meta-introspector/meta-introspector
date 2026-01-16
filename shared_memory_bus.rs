@@ -81,6 +81,19 @@ pub enum Message {
     TradeReject {
         offer_meme: u64,
     },
+    AuctionBid {
+        meme_id: u64,
+        bid_amount: u64,
+        bidder_id: usize,
+    },
+    AuctionWin {
+        meme_id: u64,
+        price: u64,
+    },
+    MemeReplicate {
+        meme_id: u64,
+        fitness: f64,
+    },
     PortfolioQuery,
     PortfolioResponse {
         memes: Vec<MemeInfo>,
@@ -174,6 +187,34 @@ impl SharedMemoryNode {
             
             Message::TradeReject { .. } => {
                 // Trade rejected, try another
+            }
+            
+            Message::AuctionBid { meme_id, bid_amount, bidder_id } => {
+                // Check if we have this meme and want to sell
+                if let Some(meme) = self.portfolio.memes.iter().find(|m| m.id == meme_id) {
+                    let min_price = (meme.fitness * 100.0) as u64;
+                    if bid_amount >= min_price {
+                        // Accept bid
+                        let response = Message::AuctionWin { meme_id, price: bid_amount };
+                        let _ = self.bus.send(self.node_id, bidder_id, response);
+                        self.portfolio.balance += bid_amount;
+                    }
+                }
+            }
+            
+            Message::AuctionWin { meme_id, price } => {
+                // Won auction! Pay and receive meme
+                if self.portfolio.balance >= price {
+                    self.portfolio.balance -= price;
+                    println!("  [Node {}] 💰 Won auction for meme {} at {}", self.node_id, meme_id, price);
+                }
+            }
+            
+            Message::MemeReplicate { meme_id, fitness } => {
+                // High-fitness meme spreading
+                if fitness > 50.0 && self.portfolio.memory_used < self.portfolio.memory_limit {
+                    println!("  [Node {}] 🧬 Replicating high-fitness meme {}", self.node_id, meme_id);
+                }
             }
             
             Message::PortfolioQuery => {

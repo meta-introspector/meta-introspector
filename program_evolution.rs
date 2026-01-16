@@ -19,10 +19,11 @@ pub struct ProgramDNA {
 
 impl ProgramDNA {
     pub fn random(size: usize) -> Self {
-        let code: Vec<u8> = (0..size).map(|_| rand::random()).collect();
+        use crate::rand_shim::random_u64;
+        let code: Vec<u8> = (0..size).map(|_| (random_u64() & 0xFF) as u8).collect();
         
         Self {
-            id: rand::random(),
+            id: random_u64(),
             code,
             vector: Vec::new(),
             complexity: 0,
@@ -44,7 +45,7 @@ impl ProgramDNA {
         let primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47];
         
         for (i, &byte) in self.code.iter().take(15).enumerate() {
-            godel = godel.wrapping_mul(primes[i].wrapping_pow(byte as u32));
+            godel = godel.wrapping_mul((primes[i] as u64).wrapping_pow(byte as u32));
         }
         
         godel
@@ -136,10 +137,11 @@ impl EvolutionWorld {
         let mut selected = Vec::new();
         
         // Tournament selection
+        use crate::rand_shim::random_usize;
         for _ in 0..self.programs.len() {
             let mut tournament = Vec::new();
             for _ in 0..3 {
-                let idx = rand::random::<usize>() % self.programs.len();
+                let idx = random_usize() % self.programs.len();
                 tournament.push(&self.programs[idx]);
             }
             
@@ -161,7 +163,8 @@ impl EvolutionWorld {
             let parent2 = &selected[(i + 1) % selected.len()];
             
             // Crossover
-            let mut child = if rand::random::<f64>() < self.crossover_rate {
+            use crate::rand_shim::{random_usize, random_f64, random_u64};
+            let mut child = if random_f64() < self.crossover_rate {
                 self.crossover(parent1, parent2)
             } else {
                 parent1.clone()
@@ -178,14 +181,15 @@ impl EvolutionWorld {
     }
     
     fn crossover(&self, parent1: &ProgramDNA, parent2: &ProgramDNA) -> ProgramDNA {
-        let point = rand::random::<usize>() % parent1.code.len().min(parent2.code.len());
+        use crate::rand_shim::{random_usize, random_u64};
+        let point = random_usize() % parent1.code.len().min(parent2.code.len());
         
         let mut code = Vec::new();
         code.extend_from_slice(&parent1.code[..point]);
         code.extend_from_slice(&parent2.code[point..]);
         
         ProgramDNA {
-            id: rand::random(),
+            id: random_u64(),
             code,
             vector: Vec::new(),
             complexity: 0,
@@ -197,9 +201,10 @@ impl EvolutionWorld {
     }
     
     fn mutate(&self, program: &mut ProgramDNA) {
+        use crate::rand_shim::{random_f64, random_u64};
         for byte in &mut program.code {
-            if rand::random::<f64>() < self.mutation_rate {
-                *byte = rand::random();
+            if random_f64() < self.mutation_rate {
+                *byte = (random_u64() & 0xFF) as u8;
             }
         }
     }
