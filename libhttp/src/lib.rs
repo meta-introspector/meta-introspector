@@ -5,10 +5,8 @@ use std::os::raw::c_char;
 pub extern "C" fn http_get(url: *const c_char, out: *mut *mut c_char) -> i32 {
     let url = unsafe { CStr::from_ptr(url).to_str().unwrap() };
     
-    let rt = tokio::runtime::Runtime::new().unwrap();
-    let result = rt.block_on(async {
-        reqwest::get(url).await?.text().await
-    });
+    let result = reqwest::blocking::get(url)
+        .and_then(|r| r.text());
     
     match result {
         Ok(body) => {
