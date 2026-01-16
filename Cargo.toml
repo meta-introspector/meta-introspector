@@ -103,6 +103,9 @@ libc = "0.2"
 tower-http = { version = "0.5", features = ["cors"] }
 parquet = { version = "5", features = ["arrow"] }
 linux-perf-data = "0.1"
+regex = "1.10"
+rustc-demangle = "0.1"
+cpp-demangle = "0.1"
 reqwest = { version = "0.12", features = ["rustls-tls", "json"] }
 [[bin]]
 name = "all_commits_collector"

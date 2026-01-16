@@ -2,7 +2,8 @@
 // All API calls automatically wrapped with telemetry!
 
 // Include the auto-generated telemetry macros
-include!(concat!(env!("OUT_DIR"), "/telemetry_macros.rs"));
+// Include the auto-generated telemetry macros
+// include!(concat!(env!("OUT_DIR"), "/telemetry_macros.rs"));
 
 use std::ffi::CString;
 
