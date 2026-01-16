@@ -121,6 +121,10 @@ name = "demo_lattice"
 path = "demo_lattice.rs"
 
 [[bin]]
+name = "demo_branch_mining"
+path = "demo_branch_mining.rs"
+
+[[bin]]
 name = "demo_backend_equivalence"
 path = "demo_backend_equivalence.rs"
 
