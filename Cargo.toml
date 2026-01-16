@@ -93,6 +93,10 @@ name = "demo_git_pack_market"
 path = "demo_git_pack_market.rs"
 
 [[bin]]
+name = "demo_p2p_network"
+path = "demo_p2p_network.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
