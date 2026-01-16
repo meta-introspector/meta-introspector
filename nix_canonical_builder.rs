@@ -161,12 +161,6 @@ fn extract_store_paths(output: &str) -> Vec<String> {
         .collect()
 }
 
-impl Default for NixCanonicalBuilder {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 // Convenience functions for common use cases
 
 /// Build a nix flake

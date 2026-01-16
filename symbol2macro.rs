@@ -105,21 +105,21 @@ impl Symbol2Macro {
     fn generate_symbol_wrapper(&self, symbol_name: &str, address: &str) -> String {
         format!(
             r#"{{
-        println!("🎯 Calling symbol: {} at {}", "{}", "{}");
+        println!("🎯 Calling symbol: {} at {}", symbol_name, address);
         let start = std::time::Instant::now();
         
         // Log symbol call with telemetry
-        log_symbol_call("{}", "{}", &[$($args),*]);
+        log_symbol_call(symbol_name, address, &[$($args),*]);
         
         let duration = start.elapsed().as_micros();
-        println!("📊 {} completed in {}μs", "{}", duration);
+        println!("📊 {} completed in {}μs", symbol_name, duration);
         
-        format!("Symbol {} called", "{}")
+        format!("Symbol {} called", symbol_name)
     }}"#,
-            symbol_name, address,  // For first println
-            symbol_name, address,  // For log_symbol_call
-            symbol_name,           // For second println
-            symbol_name            // For format! return
+            symbol_name, address,  // These are passed to the outer format!, but used by the inner macros
+            symbol_name, address,  // These are passed to the outer format!, but used by the inner macros
+            symbol_name,           // These are passed to the outer format!, but used by the inner macros
+            symbol_name            // These are passed to the outer format!, but used by the inner macros
         )
     }
 

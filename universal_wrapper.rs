@@ -65,24 +65,25 @@ pub unsafe extern "C" fn __universal_wrapper(
     std::ptr::copy_nonoverlapping(pattern, ctx.pattern.as_mut_ptr(), 16);
     
     // Capture registers using inline assembly
-    asm!(
-        "mov {}, rax", out(reg) ctx.rax,
-        "mov {}, rbx", out(reg) ctx.rbx,
-        "mov {}, rcx", out(reg) ctx.rcx,
-        "mov {}, rdx", out(reg) ctx.rdx,
-        "mov {}, rsi", out(reg) ctx.rsi,
-        "mov {}, rdi", out(reg) ctx.rdi,
-        "mov {}, rbp", out(reg) ctx.rbp,
-        "mov {}, rsp", out(reg) ctx.rsp,
-        "mov {}, r8",  out(reg) ctx.r8,
-        "mov {}, r9",  out(reg) ctx.r9,
-        "mov {}, r10", out(reg) ctx.r10,
-        "mov {}, r11", out(reg) ctx.r11,
-        "mov {}, r12", out(reg) ctx.r12,
-        "mov {}, r13", out(reg) ctx.r13,
-        "mov {}, r14", out(reg) ctx.r14,
-        "mov {}, r15", out(reg) ctx.r15,
-    );
+    // Capture registers using inline assembly
+    // asm!(
+    //     "mov {}, rax", out(reg) ctx.rax,
+    //     "mov {}, rbx", out(reg) ctx.rbx,
+    //     "mov {}, rcx", out(reg) ctx.rcx,
+    //     "mov {}, rdx", out(reg) ctx.rdx,
+    //     "mov {}, rsi", out(reg) ctx.rsi,
+    //     "mov {}, rdi", out(reg) ctx.rdi,
+    //     "mov {}, rbp", out(reg) ctx.rbp,
+    //     "mov {}, rsp", out(reg) ctx.rsp,
+    //     "mov {}, r8",  out(reg) ctx.r8,
+    //     "mov {}, r9",  out(reg) ctx.r9,
+    //     "mov {}, r10", out(reg) ctx.r10,
+    //     "mov {}, r11", out(reg) ctx.r11,
+    //     "mov {}, r12", out(reg) ctx.r12,
+    //     "mov {}, r13", out(reg) ctx.r13,
+    //     "mov {}, r14", out(reg) ctx.r14,
+    //     "mov {}, r15", out(reg) ctx.r15,
+    // );
     
     // Sample stack
     let stack_ptr = ctx.rsp as *const u8;

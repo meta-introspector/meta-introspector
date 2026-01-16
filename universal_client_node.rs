@@ -20,14 +20,14 @@ pub struct ZKProof {
 
 pub struct UniversalClientNode {
     pub zos_blockchain: HashMap<String, BlockchainSO>,
-    pub emoji_registry: crate::emoji_universal_registry::EmojiRegistry,
+    // pub emoji_registry: crate::emoji_universal_registry::EmojiRegistry,
 }
 
 impl UniversalClientNode {
     pub fn new() -> Self {
         Self {
             zos_blockchain: HashMap::new(),
-            emoji_registry: crate::emoji_universal_registry::EmojiRegistry::new(),
+            // emoji_registry: crate::emoji_universal_registry::EmojiRegistry::new(),
         }
     }
 

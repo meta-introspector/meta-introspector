@@ -7,7 +7,8 @@ use std::fs;
 use std::path::Path;
 
 // Include our transparent telemetry macros
-include!(concat!(env!("OUT_DIR"), "/telemetry_macros.rs"));
+// Include our transparent telemetry macros
+// include!(concat!(env!("OUT_DIR"), "/telemetry_macros.rs"));
 
 fn main() {
     println!("🔧 NIX BUILD + TRANSPARENT TELEMETRY");

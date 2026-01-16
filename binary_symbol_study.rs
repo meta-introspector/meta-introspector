@@ -3,7 +3,7 @@
 // Phase 2: Parse each binary with goblin
 // Phase 3: Build symbol table for address resolution
 
-use linux_perf_data::{PerfFileReader, PerfFileRecord};
+// use linux_perf_data::{PerfFileReader, PerfFileRecord};
 use goblin::elf::Elf;
 use std::collections::{HashMap, HashSet};
 use std::fs::{self, File};
