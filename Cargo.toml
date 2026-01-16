@@ -77,6 +77,10 @@ name = "demo_content_store"
 path = "demo_content_store.rs"
 
 [[bin]]
+name = "demo_ingest_rustc"
+path = "demo_ingest_rustc.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
