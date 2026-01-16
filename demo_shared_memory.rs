@@ -12,6 +12,8 @@ mod program_evolution;
 mod rand_shim;
 mod market_maker;
 mod meme_evolver;
+mod bits_to_rust;
+mod wasm_runner;
 
 use shared_memory_bus::{SharedMemoryBus, SharedMemoryNode, Message};
 use distributed_trading::Portfolio;
@@ -289,6 +291,35 @@ fn main() {
         println!("     Held by {} nodes, rarity={:.4}", count, rarity);
         println!("     Gödel: {}, complexity: {}, fitness: {:.2}, size: {} bytes", 
                  meme.godel_number, meme.complexity, meme.fitness, meme.code.len());
+        
+        // Show generated Rust code for top meme
+        if i == 0 {
+            println!("\n     📝 Generated Rust Code:");
+            let code = meme.to_rust_code();
+            for line in code.lines() {
+                println!("        {}", line);
+            }
+            
+            // Show metrics
+            println!();
+            let metrics = meme.metrics();
+            println!("     📊 Code Metrics:");
+            println!("        Complexity: {}", metrics.complexity);
+            println!("        Lines: {}", metrics.lines);
+            println!("        Tokens: {}", metrics.tokens);
+            println!("        Compiles: {}", if metrics.compiles { "✅" } else { "❌" });
+            
+            // Try WASM compilation and trace
+            if let Some((wasm, trace)) = meme.compile_and_trace() {
+                println!("\n     🔍 WASM Execution Trace:");
+                println!("        WASM size: {} bytes", wasm.len());
+                println!("        Instructions: {}", trace.instructions.len());
+                println!("        Gödel number: {}", trace.godel_number);
+                if !trace.instructions.is_empty() {
+                    println!("        First instruction: {}", trace.instructions[0].opcode);
+                }
+            }
+        }
     }
     
     // Economic stats

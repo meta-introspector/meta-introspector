@@ -290,18 +290,56 @@ impl Meme {
         let id = random_u64();
         let godel = random_u64();
         
+        // Generate random bits
+        let bits: Vec<u8> = (0..32).map(|_| (random_u64() & 0xFF) as u8).collect();
+        let complexity = (random_u64() % 100) as usize;
+        
         Self {
             id,
             godel_number: godel,
             emoji: "🧬".to_string(),
-            code: (0..32).map(|_| (random_u64() & 0xFF) as u8).collect(),
-            complexity: (random_u64() % 100) as usize,
+            code: bits,
+            complexity,
             fitness: (random_u64() as f64 / u64::MAX as f64) * 100.0,
             rarity: 1.0,
             generation: 0,
             owner: "network".to_string(),
             price: None,
         }
+    }
+    
+    /// Generate Rust code from meme bits
+    pub fn to_rust_code(&self) -> String {
+        use crate::bits_to_rust::BitsToRust;
+        let converter = BitsToRust::new();
+        converter.generate_program(&self.code, self.complexity.min(7))
+    }
+    
+    /// Compile to WASM and get trace using existing wasm_runner
+    pub fn compile_and_trace(&self) -> Option<(Vec<u8>, crate::wasm_runner::WasmTrace)> {
+        use crate::bits_to_rust::BitsToRust;
+        
+        let converter = BitsToRust::new();
+        let code = self.to_rust_code();
+        
+        if let Some(wasm) = converter.compile_to_wasm(&code) {
+            let mut runner = crate::wasm_runner::WasmRunner::new();
+            if let Ok(trace) = runner.eval_with_trace(&wasm) {
+                return Some((wasm, trace));
+            }
+        }
+        None
+    }
+    
+    /// Get code metrics
+    pub fn metrics(&self) -> crate::bits_to_rust::CodeMetrics {
+        use crate::bits_to_rust::{BitsToRust, CodeMetrics};
+        
+        let converter = BitsToRust::new();
+        let code = self.to_rust_code();
+        let compiles = converter.verify_compiles(&code);
+        
+        CodeMetrics::analyze(&code, compiles)
     }
 }
 

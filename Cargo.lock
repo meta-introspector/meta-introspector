@@ -1193,7 +1193,9 @@ dependencies = [
  "tower-http 0.5.2",
  "tracing",
  "tracing-subscriber",
+ "wasmparser 0.202.0",
  "wasmtime",
+ "wat",
 ]
 
 [[package]]
