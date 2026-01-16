@@ -153,6 +153,10 @@ name = "demo_parallel_scanner"
 path = "demo_parallel_scanner.rs"
 
 [[bin]]
+name = "code_duplication_scanner"
+path = "code_duplication_scanner.rs"
+
+[[bin]]
 name = "demo_backend_equivalence"
 path = "demo_backend_equivalence.rs"
 

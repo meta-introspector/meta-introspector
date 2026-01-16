@@ -89,10 +89,11 @@ impl ParallelScanner {
         
         // Merge into global results
         let mut results = self.results.lock().unwrap();
+        let dup_count = local_results.len();
         results.extend(local_results);
         
         println!("  ✓ CPU {} complete: {} files, {} duplicates", 
-            cpu_id, processed, local_results.len());
+            cpu_id, processed, dup_count);
     }
     
     fn scan_file(&self, file_path: &str) -> Result<Vec<DuplicationRecord>, Box<dyn std::error::Error>> {
@@ -185,9 +186,9 @@ impl ParallelScanner {
         use std::collections::hash_map::DefaultHasher;
         use std::hash::{Hash, Hasher};
         
-        // AST hash
+        // AST hash using quote to convert to string
         let mut ast_hasher = DefaultHasher::new();
-        format!("{:?}", func).hash(&mut ast_hasher);
+        quote::quote!(#func).to_string().hash(&mut ast_hasher);
         let ast_hash = format!("{:x}", ast_hasher.finish());
         
         // Structure hash (simplified)
