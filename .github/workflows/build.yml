@@ -2,9 +2,9 @@ name: Build All Binaries
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, meme-marketplace ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, meme-marketplace ]
 
 jobs:
   build:
@@ -16,17 +16,27 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
       
-      - name: Build meta-introspector binaries
+      - name: Build meta-introspector binaries (217 binaries)
         run: nix build .#meta-introspector-binaries
       
+      - name: Build minimal-build-server
+        run: nix build .#minimal-build-server
+      
       - name: Build zos-server
-        run: nix build .#zos-server
+        run: nix build .#zos
       
       - name: Build rust-telemetry-driver
-        run: nix build .#rust-telemetry-driver
+        run: nix build .#telemetry-driver
       
       - name: Build librustc
-        run: nix build .#librustc || true
+        run: nix build .#librustc-pkg
       
       - name: List built binaries
-        run: ls -lah result/bin/ || true
+        run: |
+          echo "=== Meta-introspector binaries ==="
+          ls -lh result/bin/ | head -20
+          echo ""
+          echo "Total binaries: $(ls result/bin/ | wc -l)"
+          echo ""
+          echo "=== Demo binaries ==="
+          ls result/bin/ | grep "^demo_"
