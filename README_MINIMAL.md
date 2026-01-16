@@ -1,15 +1,43 @@
 # 🚀 Minimal Build Server
 
-A self-contained, self-replacing build system that is also a P2P network, smart contract platform, consensus mechanism, and hot-reloading IDE.
+A self-contained, self-replacing build system with zero SSL dependencies in the core.
 
-## One Binary, Everything
+## Architecture
+
+**Zero-dependency core** with dynamically loaded, GPG-signed capabilities:
+
+```
+minimal-build-server (1.6MB, no SSL)
+    ↓ loads
+libnix.so (nix wrapper, signed)
+    ↓ finds & loads
+libhttp.so (signed, 4.4MB) - HTTP with rustls
+libgit.so (signed, 3.1MB) - Git with libgit2
+```
+
+See [SIGNED_BINARIES.md](SIGNED_BINARIES.md) for security model.
+
+## Quick Start
 
 ```bash
-./minimal-build-server              # Server mode
-./minimal-build-server build foo    # Client mode
-./minimal-build-server install meme # Install recipe
-./minimal-build-server swarm        # P2P mode
+# Build core (no SSL dependencies)
+cargo build --bin minimal-build-server
+
+# Build SSL libraries with nix
+cd libhttp && nix develop -c cargo build --release
+cd libgit && nix develop -c cargo build --release
+
+# Sign all binaries
+./sign_binaries.sh
+
+# Verify signatures
+./verify_binaries.sh
+
+# Run
+./target/debug/minimal-build-server
 ```
+
+Server runs on http://127.0.0.1:3000
 
 ## The Stack
 

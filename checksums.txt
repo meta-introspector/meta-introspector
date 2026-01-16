@@ -1,0 +1,4 @@
+d701318585b71a77a7f7d4fc0e3723a9b9b150247d7cb38d4f183cabe1c37c31  target/debug/minimal-build-server
+31dba6a5d81e223bc8b5bb062f736eda7979ce34abaa04972859789ae626af56  target/debug/liblibnix.so
+e905235915f924b480419cdaa58e850d614b3301765f2263f0997523587ed40c  libhttp/target/release/liblibhttp.so
+7d5110675504f0ca26cfac61bb9d0db9345bc8f8582b904e3e15e25426a02d68  libgit/target/release/liblibgit.so
