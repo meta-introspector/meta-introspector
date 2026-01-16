@@ -105,6 +105,10 @@ name = "demo_trace_expansion"
 path = "demo_trace_expansion.rs"
 
 [[bin]]
+name = "demo_proof_table"
+path = "demo_proof_table.rs"
+
+[[bin]]
 name = "trading_node"
 path = "trading_node.rs"
 
