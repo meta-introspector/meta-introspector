@@ -66,7 +66,17 @@
       in
       rec {
         packages = rec {
-          default = meta-introspector-binaries;
+          default = minimal-build-server;
+          
+          # Minimal build server - the core
+          minimal-build-server = pkgs.rustPlatform.buildRustPackage {
+            pname = "minimal-build-server";
+            version = "0.1.0";
+            src = ./.;
+            cargoLock.lockFile = ./Cargo.lock;
+            nativeBuildInputs = [ pkgs.pkg-config ];
+            buildInputs = [ pkgs.openssl ];
+          };
           
           # All meta-introspector binaries
           meta-introspector-binaries = pkgs.rustPlatform.buildRustPackage {
