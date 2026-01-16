@@ -305,7 +305,9 @@ async fn main() {
         .route("/sed", post(sed_edit))
         .route("/grep", post(grep_search))
         .route("/hot-build", post(hot_build))
-        .route("/fix-all", post(fix_all_errors));
+        .route("/fix-all", post(fix_all_errors))
+        .route("/blame", post(git_blame))
+        .route("/status", get(git_status));
     
     let listener = TcpListener::bind("127.0.0.1:3000").await.unwrap();
     
@@ -401,6 +403,65 @@ async fn fix_all_errors() -> Json<serde_json::Value> {
         "total_errors": errors.len(),
         "fixed": fixed,
         "remaining": errors.len() - fixed
+    }))
+}
+
+async fn git_blame(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
+    let file = req["file"].as_str().unwrap_or("git-sources.rs");
+    let line = req["line"].as_u64();
+    
+    let mut args = vec!["blame", file];
+    if let Some(l) = line {
+        args.push("-L");
+        args.push(&format!("{},{}", l, l));
+    }
+    
+    let output = Command::new("git")
+        .args(&args)
+        .output()
+        .unwrap();
+    
+    let blame = String::from_utf8_lossy(&output.stdout).to_string();
+    let lines: Vec<_> = blame.lines().take(20).collect();
+    
+    // Get git status
+    let status_output = Command::new("git")
+        .args(["status", "--short", file])
+        .output()
+        .unwrap();
+    let status = String::from_utf8_lossy(&status_output.stdout).to_string();
+    
+    Json(serde_json::json!({
+        "file": file,
+        "blame": lines,
+        "last_author": lines.first()
+            .and_then(|l| l.split_whitespace().nth(1)),
+        "status": status.trim(),
+        "modified": !status.is_empty()
+    }))
+}
+
+async fn git_status() -> Json<serde_json::Value> {
+    let output = Command::new("git")
+        .args(["status", "--short"])
+        .output()
+        .unwrap();
+    
+    let status = String::from_utf8_lossy(&output.stdout).to_string();
+    let files: Vec<_> = status.lines()
+        .map(|l| {
+            let parts: Vec<_> = l.splitn(2, ' ').collect();
+            serde_json::json!({
+                "status": parts[0].trim(),
+                "file": parts.get(1).unwrap_or(&"").trim()
+            })
+        })
+        .collect();
+    
+    Json(serde_json::json!({
+        "unstaged": files.iter().filter(|f| f["status"].as_str().unwrap().contains("M")).count(),
+        "untracked": files.iter().filter(|f| f["status"].as_str().unwrap().contains("?")).count(),
+        "files": files
     }))
 }
 

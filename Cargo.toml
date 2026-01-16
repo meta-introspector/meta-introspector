@@ -86,7 +86,7 @@ path = "crossbeam_value_lattice.rs"
 [dependencies]
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-chrono = "0.4"
+chrono = "0.4.31"
 octocrab = "0.41"
 gix = "0.68"
 tokio = { version = "1", features = ["full"] }
@@ -111,6 +111,7 @@ arrow = "57"
 tracing = "0.1"
 sha2 = "0.10"
 paste = "1.0"
+wasmtime = "20"
 tracing-subscriber = "0.3"
 reqwest = { version = "0.12", features = ["rustls-tls", "json"] }
 [[bin]]
@@ -731,9 +732,6 @@ path = "unified_nix_service.rs"
 name = "unified_nix_so_wrapper"
 path = "unified_nix_so_wrapper.rs"
 
-[[bin]]
-name = "unified_nix_so_wrapper_old"
-path = "unified_nix_so_wrapper_old.rs"
 
 [[bin]]
 name = "universal_client_node"

@@ -114,7 +114,7 @@ impl Symbol2Macro {
         let duration = start.elapsed().as_micros();
         println!("📊 {} completed in {}μs", symbol_name, duration);
         
-        format!("Symbol {} called", symbol_name)
+        format!("Symbol {{}} called", symbol_name)
     }}"#,
             symbol_name, address,  // These are passed to the outer format!, but used by the inner macros
             symbol_name, address,  // These are passed to the outer format!, but used by the inner macros
