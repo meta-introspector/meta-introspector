@@ -5,12 +5,75 @@ mod rand_shim;
 
 use self_compilation_queue::{SelfCompilationQueue, NodeJob};
 use rand_shim::{init_rand, random_usize};
+use std::fs;
+
+#[derive(Debug)]
+struct Config {
+    rounds: usize,
+    num_nodes: usize,
+    initial_balance: u64,
+    evolution_interval: usize,
+}
+
+impl Default for Config {
+    fn default() -> Self {
+        Self {
+            rounds: 100,
+            num_nodes: 24,
+            initial_balance: 10000,
+            evolution_interval: 5,
+        }
+    }
+}
+
+impl Config {
+    fn load() -> Self {
+        // Try to load from TOML, fallback to defaults
+        if let Ok(content) = fs::read_to_string("evolution_config.toml") {
+            Self::parse_toml(&content)
+        } else {
+            Self::default()
+        }
+    }
+    
+    fn parse_toml(content: &str) -> Self {
+        let mut config = Self::default();
+        
+        for line in content.lines() {
+            if line.contains("rounds =") {
+                if let Some(val) = line.split('=').nth(1) {
+                    config.rounds = val.trim().parse().unwrap_or(100);
+                }
+            } else if line.contains("num_nodes =") {
+                if let Some(val) = line.split('=').nth(1) {
+                    config.num_nodes = val.trim().parse().unwrap_or(24);
+                }
+            } else if line.contains("initial_balance =") {
+                if let Some(val) = line.split('=').nth(1) {
+                    config.initial_balance = val.trim().parse().unwrap_or(10000);
+                }
+            } else if line.contains("evolution_interval =") {
+                if let Some(val) = line.split('=').nth(1) {
+                    config.evolution_interval = val.trim().parse().unwrap_or(5);
+                }
+            }
+        }
+        
+        config
+    }
+}
 
 fn main() {
     init_rand();
     
+    let config = Config::load();
+    
     println!("🔄 Self-Compilation Job Queue\n");
-    println!("System compiles itself, nodes buy snippets that reach new coverage\n");
+    println!("Configuration:");
+    println!("  Rounds: {}", config.rounds);
+    println!("  Nodes: {}", config.num_nodes);
+    println!("  Initial balance: {} coins", config.initial_balance);
+    println!("  Evolution interval: every {} rounds\n", config.evolution_interval);
     
     // Step 1: Load our own source
     let mut queue = SelfCompilationQueue::new();
@@ -29,18 +92,20 @@ fn main() {
     println!("  Compressed: {} bytes", compressed_size);
     println!("  Ratio: {:.2}x", total_size as f64 / compressed_size as f64);
     
-    // Step 3: Create 24 nodes with budgets
-    println!("\n👥 Creating 24 nodes...");
-    let mut nodes: Vec<NodeJob> = (0..24)
-        .map(|i| NodeJob::new(i, 10000))
+    // Step 3: Create nodes with budgets
+    println!("\n👥 Creating {} nodes...", config.num_nodes);
+    let mut nodes: Vec<NodeJob> = (0..config.num_nodes)
+        .map(|i| NodeJob::new(i, config.initial_balance))
         .collect();
     
     // Step 4: Nodes buy and process snippets
     println!("\n💼 Nodes buying, processing, and evolving snippets...\n");
     
-    let rounds = 20.min(queue.snippets.len());
+    let rounds = config.rounds.min(queue.snippets.len());
     for round in 0..rounds {
-        println!("📊 Round {}", round);
+        if round % 10 == 0 {
+            println!("📊 Round {}", round);
+        }
         
         // Each node tries to buy and evolve a snippet
         for node in &mut nodes {
@@ -62,13 +127,13 @@ fn main() {
                 // Process it
                 let score = node.process_snippet(&mut queue, snippet_id);
                 
-                if score > 0.0 {
+                if score > 0.0 && round % 10 == 0 {
                     println!("  Node {} processed snippet {} - score: {:.2}", 
                              node.node_id, snippet_id, score);
                 }
                 
-                // Evolve it every 5 rounds
-                if round % 5 == 0 {
+                // Evolve it every N rounds
+                if round % config.evolution_interval == 0 {
                     let evolved = node.evolve_snippet(&snippet);
                     let old_size = snippet.compressed_size;
                     let new_size = evolved.compressed_size;
@@ -86,7 +151,9 @@ fn main() {
             }
         }
         
-        println!("  Coverage: {} nodes", queue.processed_nodes.len());
+        if round % 10 == 0 {
+            println!("  Coverage: {} nodes", queue.processed_nodes.len());
+        }
     }
     
     // Final report

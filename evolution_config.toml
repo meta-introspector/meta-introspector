@@ -1,0 +1,21 @@
+# Self-Compilation Evolution Configuration
+
+[evolution]
+rounds = 100
+num_nodes = 24
+initial_balance = 10000
+
+[pricing]
+compression_multiplier = 10  # price = compressed_size * multiplier
+earnings_per_byte = 100      # coins earned per byte saved
+sale_markup = 2.0            # multiplier when selling evolved snippets
+
+[evolution_strategies]
+remove_whitespace = true
+add_inline = true
+use_const = true
+optimize_loops = true
+
+[coverage]
+evolution_interval = 5  # evolve every N rounds
+report_interval = 10    # report progress every N rounds
