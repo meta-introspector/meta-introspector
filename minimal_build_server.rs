@@ -54,7 +54,18 @@ fn bootstrap_libs() -> Result<(), String> {
 #[derive(Deserialize, Serialize)]
 struct BuildRequest {
     target: String,
+    #[serde(default)]
+    action: String, // "build" or "download"
 }
+
+#[derive(Deserialize, Serialize)]
+struct DeployRequest {
+    target: String,
+    #[serde(default = "default_port")]
+    port: u16,
+}
+
+fn default_port() -> u16 { 3001 }
 
 #[derive(Deserialize, Serialize)]
 struct FetchRequest {
@@ -108,8 +119,14 @@ fn store_path() -> String {
 }
 
 async fn build(Json(req): Json<BuildRequest>) -> Json<BuildResponse> {
+    // Handle download action
+    if req.action == "download" {
+        return download_binary(&req.target).await;
+    }
+    
+    // Handle build action
     let output = Command::new("cargo")
-        .args(["build", "--bin", &req.target])
+        .args(["build", "--release", "--bin", &req.target])
         .output()
         .unwrap();
 
@@ -121,6 +138,68 @@ async fn build(Json(req): Json<BuildRequest>) -> Json<BuildResponse> {
         output: stderr,
         errors,
     })
+}
+
+async fn download_binary(target: &str) -> Json<BuildResponse> {
+    let url = format!(
+        "https://github.com/meta-introspector/meta-introspector/releases/latest/download/{}-x86_64-unknown-linux-gnu.tar.gz",
+        target
+    );
+    
+    let output = Command::new("curl")
+        .args(["-L", &url, "-o", &format!("/tmp/{}.tar.gz", target)])
+        .output()
+        .unwrap();
+    
+    if output.status.success() {
+        Command::new("tar")
+            .args(["xzf", &format!("/tmp/{}.tar.gz", target), "-C", "target/release/"])
+            .output()
+            .unwrap();
+        
+        Json(BuildResponse {
+            success: true,
+            output: format!("Downloaded {} to target/release/", target),
+            errors: vec![],
+        })
+    } else {
+        Json(BuildResponse {
+            success: false,
+            output: String::from_utf8_lossy(&output.stderr).to_string(),
+            errors: vec![],
+        })
+    }
+}
+
+async fn deploy(Json(req): Json<DeployRequest>) -> Json<BuildResponse> {
+    let binary_path = format!("target/release/{}", req.target);
+    
+    // Check if binary exists
+    if !std::path::Path::new(&binary_path).exists() {
+        return Json(BuildResponse {
+            success: false,
+            output: format!("Binary not found: {}. Build or download it first.", binary_path),
+            errors: vec![],
+        });
+    }
+    
+    // Start the server in background
+    let output = Command::new(&binary_path)
+        .env("PORT", req.port.to_string())
+        .spawn();
+    
+    match output {
+        Ok(_) => Json(BuildResponse {
+            success: true,
+            output: format!("{} deployed on port {}", req.target, req.port),
+            errors: vec![],
+        }),
+        Err(e) => Json(BuildResponse {
+            success: false,
+            output: format!("Failed to deploy: {}", e),
+            errors: vec![],
+        })
+    }
 }
 
 async fn fetch(Json(req): Json<FetchRequest>) -> Json<FetchResponse> {
@@ -147,6 +226,43 @@ async fn git_clone(Json(req): Json<GitRequest>) -> Json<BuildResponse> {
             errors: vec![],
         })
     }
+}
+
+async fn help() -> Json<serde_json::Value> {
+    Json(serde_json::json!({
+        "server": "Meta-Introspector Dev Server",
+        "version": "1.0.0",
+        "endpoints": {
+            "/": "Server info",
+            "/health": "Health check",
+            "/help": "This help message",
+            "/binaries": "List available binaries",
+            "/build": "POST {target, action} - Build or download binary",
+            "/deploy": "POST {target, port} - Deploy a server",
+            "/compile": "POST {verb, params} - Compile code",
+            "/errors": "GET - View compilation errors",
+            "/upgrade": "POST - Upgrade this server"
+        },
+        "quickstart": {
+            "1": "Download QA server: POST /build {target: 'minimal-build-server', action: 'download'}",
+            "2": "Deploy QA server: POST /deploy {target: 'minimal-build-server', port: 3001}",
+            "3": "Build all binaries: POST /build {target: 'all-binaries', action: 'build'}"
+        }
+    }))
+}
+
+async fn list_binaries() -> Json<serde_json::Value> {
+    Json(serde_json::json!({
+        "available": [
+            "minimal-build-server",
+            "demo_shared_memory",
+            "demo_compression_study",
+            "nix_as_a_service",
+            "solana_as_a_service"
+        ],
+        "total": 220,
+        "note": "Use POST /build {target: 'binary-name', action: 'download'} to get any binary"
+    }))
 }
 
 async fn errors() -> Json<serde_json::Value> {
@@ -280,6 +396,12 @@ async fn main() {
     println!("🤝 Consensus state loaded");
     
     let app = Router::new()
+        .route("/", get(|| async { "Meta-Introspector Dev Server - Visit /help for commands" }))
+        .route("/health", get(|| async { Json(serde_json::json!({"status": "ok"})) }))
+        .route("/help", get(help))
+        .route("/binaries", get(list_binaries))
+        .route("/build", post(build))
+        .route("/deploy", post(deploy))
         .route("/compile", post(compile))
         .route("/errors", get(errors))
         .route("/restart", post(restart))
