@@ -59,10 +59,10 @@ fn main() {
     init_all_call_wrappers!();
     
     panic!("FIXME NOW");
-    run_nix_rebuild_of_rust();
+    // run_nix_rebuild_of_rust();
     
     // Show telemetry stats
-    show_call_statistics();
+    // show_call_statistics();
 }
 
 

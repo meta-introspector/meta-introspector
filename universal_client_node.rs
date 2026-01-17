@@ -32,7 +32,10 @@ impl UniversalClientNode {
     }
 
     pub fn register_blockchain_so(&mut self, emoji: &str, so_path: &str, zk_proof: ZKProof) -> String {
-        let ca = format!("ca_{}", sha256::digest(format!("{}{}", emoji, so_path)));
+        use sha2::{Sha256, Digest};
+        let mut hasher = Sha256::new();
+        hasher.update(format!("{}{}", emoji, so_path));
+        let ca = format!("ca_{:x}", hasher.finalize());
         
         let blockchain_so = BlockchainSO {
             content_address: ca.clone(),

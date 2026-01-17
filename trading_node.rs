@@ -8,12 +8,54 @@ use axum::{Router, routing::{get, post}, Json, extract::State};
 use serde::{Deserialize, Serialize};
 
 // Import from shared_memory_bus
-use crate::shared_memory_bus::{Portfolio, Meme};
+// use crate::shared_memory_bus::{Portfolio, Meme};
+// use shared_memory_bus::{Portfolio, Meme};
+
+// Stub types from shared_memory_bus
+#[derive(Clone, Debug)]
+struct Portfolio {
+    memes: Vec<Meme>,
+    balance: u64,
+    memory_used: usize,
+    memory_limit: usize,
+    score: f64,
+    trades: usize,
+}
+
+impl Portfolio {
+    fn new() -> Self {
+        Portfolio {
+            memes: Vec::new(),
+            balance: 0,
+            memory_used: 0,
+            memory_limit: 1000,
+            score: 0.0,
+            trades: 0,
+        }
+    }
+}
+
+#[derive(Clone, Debug)]
+struct Meme {
+    id: u64,
+    fitness: f64,
+    complexity: f64,
+    rarity: f64,
+    code: String,
+    emoji: String,
+    godel_number: u64,
+}
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 struct TradeOffer {
+    id: u64,
     meme_id: u64,
     price: u64,
+    from_node: String,
+    to_node: String,
+    offer_meme: u64,
+    want_meme: u64,
+    score_improvement: f64,
 }
 
 fn simulate_trade_score(_p1: &Portfolio, _p2: &Portfolio, _offer: &TradeOffer) -> f64 { 0.0 }

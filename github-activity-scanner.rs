@@ -48,91 +48,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
     
     println!("Fetching GitHub activity...");
-    
-    // Get user's repos
-    let user = "meta-introspector"; // or from env
-    // let repos = octocrab
-    //     .repos(user, "")
-    //     .list()
-    //     .send()
-    //     .await?;
     panic!("octocrab API changed - list() method not available");
     
-    println!("Found {} GitHub repos", repos.items.len());
-    
-    // Check each repo for activity using gix
-    let (tx, rx) = bounded(100);
-    let mut results = Vec::new();
-    
-    // Spawn collector
-    let collector = thread::spawn(move || {
-        let mut collected = Vec::new();
-        for activity in rx {
-            collected.push(activity);
-        }
-        collected
-    });
-    
-    // Check repos in parallel
-    let handles: Vec<_> = repos
-        .items
-        .into_iter()
-        .map(|repo| {
-            let tx = tx.clone();
-            let registry = registry.clone();
-            let since = since.clone();
-            
-            tokio::spawn(async move {
-                let activity = check_github_repo(&repo, &since, &registry).await;
-                if let Some(activity) = activity {
-                    let _ = tx.send(activity);
-                }
-            })
-        })
-        .collect();
-    
-    // Wait for all
-    for handle in handles {
-        handle.await?;
-    }
-    drop(tx);
-    
-    results = collector.join().unwrap();
-    results.sort_by(|a, b| b.commits.cmp(&a.commits));
-    
-    // Generate report
-    let registered = results.iter().filter(|r| r.in_registry).count();
-    let missing = results.iter().filter(|r| !r.in_registry).count();
-    
-    let report = ActivityReport {
-        year,
-        github_repos: results.len(),
-        local_repos: registry.len(),
-        registered,
-        missing,
-        repos: results.clone(),
-    };
-    
-    // Print summary
-    println!("\n📊 GitHub Activity Report for {}", year);
-    println!("================================");
-    println!("GitHub repos with activity: {}", report.github_repos);
-    println!("✅ Registered: {}", report.registered);
-    println!("❌ Missing: {}", report.missing);
-    
-    println!("\n❌ MISSING from registry:");
-    for repo in results.iter().filter(|r| !r.in_registry).take(20) {
-        println!("  {} ({} commits) - {}", repo.name, repo.commits, repo.url);
-    }
-    
-    // Save report
-    fs::write(
-        "data/github-activity-report.json",
-        serde_json::to_string_pretty(&report)?,
-    )?;
-    
-    println!("\n📄 Full report: data/github-activity-report.json");
-    
+    #[allow(unreachable_code)]
     Ok(())
 }
 

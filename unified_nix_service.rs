@@ -16,9 +16,15 @@ impl NixCanonicalBuilder {
     fn build(&self, _req: NixBuildRequest) -> Result<NixBuildResult, String> { panic!("stub") }
 }
 struct NixBuildRequest { args: Vec<String>, env: Vec<(String, String)>, working_dir: Option<PathBuf> }
-struct NixBuildResult { stdout: String, store_paths: Vec<PathBuf>, library_names: Vec<String> }
+struct NixBuildResult { stdout: String, stderr: String, success: bool, store_paths: Vec<PathBuf>, library_names: Vec<String> }
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
-struct PaymentCycle { cycle_id: String, participants: Vec<String> }
+struct PaymentCycle { 
+    cycle_id: String, 
+    participants: Vec<String>,
+    cycle_payments: Vec<u64>,
+    total_orbital_energy: u64,
+    cycle_eigenvalue: f64,
+}
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
 struct SolanaOrbit { orbit_signature: String, level: u32, cycle_index: u64, orbital_energy: u64, payment_cycle: PaymentCycle, compute_units: u64, orbital_period: u64 }
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -35,7 +41,6 @@ pub struct UnifiedFlakeRequest {
 
 // Stub types removed - defined at top of file
 
-#[derive(Debug, Serialize, Deserialize)]
 #[derive(Debug, Serialize, Deserialize, Default)]
 pub struct UnifiedFlakeResponse {
     pub success: bool,
@@ -89,10 +94,6 @@ impl UnifiedNixService {
             nix_store_path: PathBuf::from("/nix/store"),
             orbital_transactions: Arc::new(Mutex::new(HashMap::new())),
         })
-    }
-
-    pub async fn call_mcp_tool(&self, _tool: String, _args: serde_json::Value) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
-        panic!("call_mcp_tool not implemented")
     }
 
     pub fn generate_content_address(&self, flake_url: &str, outputs: &[String]) -> String {
@@ -205,6 +206,9 @@ impl UnifiedNixService {
         }
 
         Ok(NixBuildResult {
+            stdout: String::new(),
+            stderr: String::new(),
+            success: true,
             store_paths,
             library_names,
         })
