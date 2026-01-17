@@ -75,7 +75,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                                 commit_hash: commit.sha,
                                 author_name: author.name.clone(),
                                 author_email: author.email.clone(),
-                                author_date: author.date.to_string(),
+                                author_date: author.date.map(|d| d.to_string()).unwrap_or_default(),
                                 message: commit_data.message.clone(),
                                 repo_name: repo_name.clone(),
                                 repo_url: repo.html_url.map(|u| u.to_string()).unwrap_or_default(),
