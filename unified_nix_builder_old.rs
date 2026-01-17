@@ -26,8 +26,11 @@ impl Default for NixBuilder {
         Self::new()
     }
 }
-            init_all_call_wrappers!();
-        }
+
+fn main() {
+    // init_all_call_wrappers!();
+    panic!("unified_nix_builder_old stub");
+}
 
         // Get all shared libraries that nix uses
         let nix_libs = self.get_nix_dependencies()?;

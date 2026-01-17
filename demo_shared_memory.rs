@@ -82,7 +82,7 @@ fn main() {
                     
                     // Record profitable trade
                     if profit > 0 {
-                        trade_sequences.push(// meme_evolver::TradeSequence {
+                        // trade_sequences.push(TradeSequence {
                             node_id: node.node_id,
                             bought_meme_id: meme.id,
                             buy_price,
@@ -115,15 +115,15 @@ fn main() {
                         node.portfolio.memes.push(hybrid.clone());
                         
                         if profit > 0 {
-                            trade_sequences.push(// meme_evolver::TradeSequence {
-                                node_id: node.node_id,
-                                bought_meme_id: meme1.id,
-                                buy_price: cost,
-                                evolved_meme_id: hybrid.id,
-                                sell_price,
-                                profit,
-                                strategy: format!("combine {} + {}", meme1.id, meme2.id),
-                            });
+                            // trade_sequences.push(TradeSequence {
+                            //     node_id: node.node_id,
+                            //     bought_meme_id: meme1.id,
+                            //     buy_price: cost,
+                            //     evolved_meme_id: hybrid.id,
+                            //     sell_price,
+                            //     profit,
+                            //     strategy: format!("combine {} + {}", meme1.id, meme2.id),
+                            // });
                         }
                     }
                 }
