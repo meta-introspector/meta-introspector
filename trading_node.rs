@@ -282,8 +282,7 @@ async fn receive_trade_offer(
     
     // Evaluate offer
     let current_score = portfolio.score;
-    let new_score = simulate_trade_score(&portfolio.memes, offer.want_meme, 
-        &Meme { id: offer.offer_meme, ..Default::default() });
+    let new_score = simulate_trade_score(&portfolio, &portfolio, &offer);
     
     let accepted = new_score > current_score;
     
