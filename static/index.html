@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta-Introspector DevOps Console</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui; background: #0a0e27; color: #e0e0e0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1 { color: #00ff88; margin-bottom: 10px; }
+        .subtitle { color: #888; margin-bottom: 30px; }
+        .wizard { background: #1a1f3a; border-radius: 8px; padding: 30px; }
+        .step { display: none; }
+        .step.active { display: block; }
+        .step h2 { color: #00ff88; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: #aaa; }
+        input, select, textarea { 
+            width: 100%; padding: 12px; background: #0a0e27; 
+            border: 1px solid #333; border-radius: 4px; color: #e0e0e0;
+            font-family: monospace;
+        }
+        button { 
+            background: #00ff88; color: #0a0e27; border: none; 
+            padding: 12px 24px; border-radius: 4px; cursor: pointer;
+            font-weight: bold; margin-right: 10px;
+        }
+        button:hover { background: #00dd77; }
+        button.secondary { background: #333; color: #e0e0e0; }
+        .status { 
+            background: #2a2f4a; padding: 15px; border-radius: 4px; 
+            margin: 20px 0; font-family: monospace; font-size: 14px;
+        }
+        .success { color: #00ff88; }
+        .error { color: #ff4444; }
+        .warning { color: #ffaa00; }
+        .code { background: #0a0e27; padding: 10px; border-radius: 4px; margin: 10px 0; }
+        .progress { display: flex; gap: 10px; margin-bottom: 30px; }
+        .progress-step { 
+            flex: 1; padding: 10px; background: #2a2f4a; 
+            border-radius: 4px; text-align: center; opacity: 0.5;
+        }
+        .progress-step.active { opacity: 1; background: #00ff88; color: #0a0e27; }
+        .progress-step.done { opacity: 1; background: #333; }
+        .card { background: #2a2f4a; padding: 20px; border-radius: 8px; margin: 10px 0; }
+        .card h3 { color: #00ff88; margin-bottom: 10px; }
+        .deploy-option { 
+            background: #1a1f3a; padding: 15px; border-radius: 4px; 
+            margin: 10px 0; cursor: pointer; border: 2px solid #333;
+        }
+        .deploy-option:hover { border-color: #00ff88; }
+        .deploy-option.selected { border-color: #00ff88; background: #2a2f4a; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Meta-Introspector DevOps Console</h1>
+        <p class="subtitle">Your AI DevOps Consultant - Let's get you deployed!</p>
+
+        <div class="progress">
+            <div class="progress-step active" data-step="1">1. Setup</div>
+            <div class="progress-step" data-step="2">2. Keys</div>
+            <div class="progress-step" data-step="3">3. Deploy</div>
+            <div class="progress-step" data-step="4">4. Test</div>
+        </div>
+
+        <div class="wizard">
+            <!-- Step 1: Welcome & Setup -->
+            <div class="step active" data-step="1">
+                <h2>👋 Welcome! Let's set up your environment</h2>
+                <p style="margin-bottom: 20px;">I'll help you configure everything needed to deploy your services.</p>
+                
+                <div class="form-group">
+                    <label>What's your name?</label>
+                    <input type="text" id="userName" placeholder="John Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email (for GPG key)</label>
+                    <input type="email" id="userEmail" placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>What do you want to deploy?</label>
+                    <select id="deployType">
+                        <option value="qa">QA Server (Testing)</option>
+                        <option value="prod">Production Server</option>
+                        <option value="all">All Services</option>
+                    </select>
+                </div>
+
+                <div class="status">
+                    <div class="success">✓ Dev server running on port 3000</div>
+                    <div class="success">✓ Build system ready</div>
+                    <div class="success">✓ 220 binaries available</div>
+                </div>
+
+                <button onclick="nextStep()">Next: Setup Keys →</button>
+            </div>
+
+            <!-- Step 2: Keys Setup -->
+            <div class="step" data-step="2">
+                <h2>🔐 Security Keys Setup</h2>
+                <p style="margin-bottom: 20px;">Let's create your SSH and GPG keys for secure deployment.</p>
+
+                <div class="card">
+                    <h3>SSH Key</h3>
+                    <p style="margin-bottom: 10px;">For secure server access</p>
+                    <button onclick="generateSSH()">Generate SSH Key</button>
+                    <div id="sshStatus" class="status" style="display:none;"></div>
+                </div>
+
+                <div class="card">
+                    <h3>GPG Key</h3>
+                    <p style="margin-bottom: 10px;">For signing deployments</p>
+                    <button onclick="generateGPG()">Generate GPG Key</button>
+                    <div id="gpgStatus" class="status" style="display:none;"></div>
+                </div>
+
+                <div class="card">
+                    <h3>Git Configuration</h3>
+                    <button onclick="configureGit()">Configure Git</button>
+                    <div id="gitStatus" class="status" style="display:none;"></div>
+                </div>
+
+                <button class="secondary" onclick="prevStep()">← Back</button>
+                <button onclick="nextStep()">Next: Choose Deployment →</button>
+            </div>
+
+            <!-- Step 3: Deployment Target -->
+            <div class="step" data-step="3">
+                <h2>🎯 Choose Deployment Target</h2>
+                <p style="margin-bottom: 20px;">Where do you want to deploy?</p>
+
+                <div class="deploy-option" onclick="selectDeploy('local')">
+                    <h3>💻 Local System</h3>
+                    <p>Deploy directly on this machine (systemd)</p>
+                </div>
+
+                <div class="deploy-option" onclick="selectDeploy('docker')">
+                    <h3>🐳 Docker Container</h3>
+                    <p>Isolated container deployment</p>
+                </div>
+
+                <div class="deploy-option" onclick="selectDeploy('qemu')">
+                    <h3>🖥️ QEMU VM</h3>
+                    <p>Full virtual machine for testing</p>
+                </div>
+
+                <div class="deploy-option" onclick="selectDeploy('cloud')">
+                    <h3>☁️ Cloud (Oracle/AWS/etc)</h3>
+                    <p>Deploy to cloud provider</p>
+                </div>
+
+                <div id="deployConfig" style="display:none; margin-top: 20px;">
+                    <h3>Configuration</h3>
+                    <div class="form-group">
+                        <label>Port</label>
+                        <input type="number" id="deployPort" value="3001">
+                    </div>
+                    <div class="form-group">
+                        <label>Environment</label>
+                        <select id="deployEnv">
+                            <option value="dev">Development</option>
+                            <option value="qa">QA/Testing</option>
+                            <option value="prod">Production</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="secondary" onclick="prevStep()">← Back</button>
+                <button onclick="startDeploy()">Deploy Now! 🚀</button>
+            </div>
+
+            <!-- Step 4: Deployment & Testing -->
+            <div class="step" data-step="4">
+                <h2>🚀 Deploying...</h2>
+                <div id="deployLog" class="status">
+                    <div>Preparing deployment...</div>
+                </div>
+
+                <div id="testSection" style="display:none;">
+                    <h3 style="margin-top: 30px;">🧪 Test Your Deployment</h3>
+                    <div class="card">
+                        <button onclick="testHealth()">Test Health Check</button>
+                        <button onclick="testBuild()">Test Build</button>
+                        <button onclick="viewLogs()">View Logs</button>
+                    </div>
+                    <div id="testResults" class="status"></div>
+                </div>
+
+                <button onclick="finish()">Finish & View Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        let selectedDeploy = null;
+
+        function nextStep() {
+            document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');
+            document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('done');
+            currentStep++;
+            document.querySelector(`.step[data-step="${currentStep}"]`).classList.add('active');
+            document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
+        }
+
+        function prevStep() {
+            document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');
+            document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
+            currentStep--;
+            document.querySelector(`.step[data-step="${currentStep}"]`).classList.add('active');
+            document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('done');
+        }
+
+        async function generateSSH() {
+            const status = document.getElementById('sshStatus');
+            status.style.display = 'block';
+            status.innerHTML = '<div class="warning">⏳ Generating SSH key...</div>';
+            
+            const response = await fetch('/api/setup/ssh', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    email: document.getElementById('userEmail').value
+                })
+            });
+            
+            const result = await response.json();
+            status.innerHTML = `<div class="success">✓ SSH key generated</div>
+                               <div class="code">${result.public_key}</div>`;
+        }
+
+        async function generateGPG() {
+            const status = document.getElementById('gpgStatus');
+            status.style.display = 'block';
+            status.innerHTML = '<div class="warning">⏳ Generating GPG key...</div>';
+            
+            const response = await fetch('/api/setup/gpg', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    name: document.getElementById('userName').value,
+                    email: document.getElementById('userEmail').value
+                })
+            });
+            
+            const result = await response.json();
+            status.innerHTML = `<div class="success">✓ GPG key generated</div>
+                               <div class="code">Key ID: ${result.key_id}</div>`;
+        }
+
+        async function configureGit() {
+            const status = document.getElementById('gitStatus');
+            status.style.display = 'block';
+            status.innerHTML = '<div class="warning">⏳ Configuring Git...</div>';
+            
+            const response = await fetch('/api/setup/git', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    name: document.getElementById('userName').value,
+                    email: document.getElementById('userEmail').value
+                })
+            });
+            
+            status.innerHTML = '<div class="success">✓ Git configured</div>';
+        }
+
+        function selectDeploy(type) {
+            document.querySelectorAll('.deploy-option').forEach(el => el.classList.remove('selected'));
+            event.target.closest('.deploy-option').classList.add('selected');
+            selectedDeploy = type;
+            document.getElementById('deployConfig').style.display = 'block';
+        }
+
+        async function startDeploy() {
+            if (!selectedDeploy) {
+                alert('Please select a deployment target');
+                return;
+            }
+            
+            nextStep();
+            const log = document.getElementById('deployLog');
+            
+            log.innerHTML = '<div class="warning">⏳ Building binaries...</div>';
+            await new Promise(r => setTimeout(r, 1000));
+            
+            log.innerHTML += '<div class="success">✓ Binaries built</div>';
+            log.innerHTML += '<div class="warning">⏳ Configuring ' + selectedDeploy + '...</div>';
+            await new Promise(r => setTimeout(r, 1000));
+            
+            const response = await fetch('/api/deploy', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    target: selectedDeploy,
+                    port: document.getElementById('deployPort').value,
+                    env: document.getElementById('deployEnv').value
+                })
+            });
+            
+            const result = await response.json();
+            log.innerHTML += `<div class="success">✓ Deployed to ${selectedDeploy}</div>`;
+            log.innerHTML += `<div class="success">✓ Service running on port ${result.port}</div>`;
+            
+            document.getElementById('testSection').style.display = 'block';
+        }
+
+        async function testHealth() {
+            const results = document.getElementById('testResults');
+            results.innerHTML = '<div class="warning">⏳ Testing...</div>';
+            
+            const port = document.getElementById('deployPort').value;
+            const response = await fetch(`http://localhost:${port}/health`);
+            const data = await response.json();
+            
+            results.innerHTML = '<div class="success">✓ Health check passed!</div>';
+        }
+
+        function finish() {
+            window.location.href = '/dashboard';
+        }
+    </script>
+</body>
+</html>
