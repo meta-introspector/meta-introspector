@@ -1,0 +1,26 @@
+# Rust build artifacts
+target/
+Cargo.lock
+
+# Nix build results
+result
+result-*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+*.jsonl
+
+# Temporary files
+/tmp/
+*.tmp

@@ -42,6 +42,32 @@ nix build .#zos
 
 **Note**: `linuxPackages.perf` is disabled by default. To enable perf support, uncomment the line in `flake.nix`.
 
+### Building with Docker
+
+Multi-platform Docker images are available:
+
+```bash
+# Pull the latest image
+docker pull ghcr.io/meta-introspector/meta-introspector:latest
+
+# Run minimal-build-server
+docker run -p 8080:8080 ghcr.io/meta-introspector/meta-introspector:latest
+
+# Build locally
+docker build -t meta-introspector .
+
+# Multi-platform build
+docker buildx build --platform linux/amd64,linux/arm64 -t meta-introspector .
+```
+
+### Pre-built Binaries
+
+Download pre-built binaries from [GitHub Releases](https://github.com/meta-introspector/meta-introspector/releases):
+
+- Linux (x86_64, aarch64)
+- macOS (x86_64, aarch64)
+- Windows (x86_64)
+
 ## Documentation Status
 
 We are currently in the process of setting up a centralized documentation portal.

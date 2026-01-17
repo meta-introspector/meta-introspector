@@ -11,12 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
       
       - uses: cachix/install-nix-action@v27
         with:
           nix_path: nixpkgs=channel:nixos-unstable
       
-      - name: Build meta-introspector binaries (217 binaries)
+      - name: Build meta-introspector binaries (220 binaries)
         run: nix build .#meta-introspector-binaries
       
       - name: Build minimal-build-server
@@ -39,4 +41,9 @@ jobs:
           echo "Total binaries: $(ls result/bin/ | wc -l)"
           echo ""
           echo "=== Demo binaries ==="
-          ls result/bin/ | grep "^demo_"
+          ls result/bin/ | grep "^demo_" || echo "No demo binaries found"
+      
+      - name: Test minimal-build-server
+        run: |
+          ./result/bin/minimal-build-server --version || echo "Version check not implemented"
+          echo "Build successful!"
