@@ -3,9 +3,10 @@
 
 use std::process::Command;
 use std::fs;
+use telemetry_lib::telemetry_lib::*;
 
 // Include our complete telemetry system
-include!("telemetry_lib.rs");
+// include!("telemetry_lib.rs");  // Now a separate crate
 include!("latest_dev.rs");
 
 fn main() {

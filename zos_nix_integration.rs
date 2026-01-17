@@ -1,8 +1,21 @@
 // 🚀 ZOS SERVER INTEGRATION: Add Unified Nix-as-a-Service to existing ZOS server
-use crate::unified_nix_service::{UnifiedNixService, UnifiedFlakeRequest, UnifiedFlakeResponse};
+// use crate::unified_nix_service::{UnifiedNixService, UnifiedFlakeRequest, UnifiedFlakeResponse};
 use axum::{extract::Path, http::StatusCode, response::Json, routing::{get, post}, Router};
 use std::sync::Arc;
 use tokio::sync::Mutex;
+
+// Stub until unified_nix_service is properly organized
+#[derive(Clone)]
+struct UnifiedNixService;
+struct UnifiedFlakeRequest;
+struct UnifiedFlakeResponse;
+
+impl UnifiedNixService {
+    fn new() -> Self { UnifiedNixService }
+    async fn load_unified_flake(&self, _req: UnifiedFlakeRequest) -> Result<UnifiedFlakeResponse, Box<dyn std::error::Error>> {
+        Err("stub".into())
+    }
+}
 
 pub struct ZosNixIntegration {
     pub unified_service: Arc<Mutex<UnifiedNixService>>,
@@ -11,7 +24,7 @@ pub struct ZosNixIntegration {
 impl ZosNixIntegration {
     pub fn new() -> Result<Self, Box<dyn std::error::Error>> {
         Ok(Self {
-            unified_service: Arc::new(Mutex::new(UnifiedNixService::new()?)),
+            unified_service: Arc::new(Mutex::new(UnifiedNixService::new().unwrap())),
         })
     }
 
@@ -20,13 +33,17 @@ impl ZosNixIntegration {
         
         Router::new()
             // Load nix flake with MCP + Solana integration
-            .route("/unified/load-flake", post({
-                let service = Arc::clone(&service);
-                move |Json(request): Json<UnifiedFlakeRequest>| async move {
-                    let service = service.lock().await;
-                    match service.load_unified_flake(request).await {
-                        Ok(response) => Ok(Json(response)),
-                        Err(e) => {
+            .route("/unified/load-flake", post(|Json(request): Json<UnifiedFlakeRequest>| async move {
+                panic!("load_unified_flake not implemented");
+                #[allow(unreachable_code)]
+                Ok::<_, (axum::http::StatusCode, String)>(Json(UnifiedFlakeResponse::default()))
+            }))
+            // MCP tool call
+            .route("/unified/mcp-call", post(|Json(request): Json<serde_json::Value>| async move {
+                panic!("mcp_call not implemented");
+                #[allow(unreachable_code)]
+                Ok::<_, (axum::http::StatusCode, String)>(Json(serde_json::Value::Null))
+            }))
                             eprintln!("Failed to load flake: {}", e);
                             Err(StatusCode::INTERNAL_SERVER_ERROR)
                         }

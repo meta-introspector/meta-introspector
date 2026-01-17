@@ -236,6 +236,17 @@ impl NixAsAService {
             flakes.insert(content_address.clone(), loaded_flake);
         }
 
+        Ok(LoadFlakeResponse {
+            success: true,
+            content_address: content_address.clone(),
+            loaded_libraries,
+            mcp_endpoints: mcp_methods.keys().map(|k| format!("/mcp/{}/{}", content_address, k)).collect(),
+            cost_lamports: cost,
+            flake_info,
+        })
+            flakes.insert(content_address.clone(), loaded_flake);
+        }
+
         Ok(FlakeLoadResponse {
             success: true,
             content_address,

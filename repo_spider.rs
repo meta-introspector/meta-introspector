@@ -45,12 +45,14 @@ fn main() {
 
         // Use gix to analyze the repository
         if let Ok(repo) = gix::open(octocrab_path) {
-            println!("Repository: {}", repo.work_dir().unwrap_or_else(|| Path::new("unknown")).display());
+            if let Some(work_dir) = repo.work_dir() {
+                println!("Repository: {}", work_dir.display());
+            }
 
             // Get remotes
             if let Ok(remotes) = repo.remote_names() {
-                for remote_name in remotes {
-                    if let Ok(remote) = repo.find_remote(&remote_name) {
+                for remote_name in remotes.iter().flatten() {
+                    if let Ok(remote) = repo.find_remote(remote_name) {
                         if let Some(url) = remote.url(gix::remote::Direction::Fetch) {
                             println!("Remote {}: {}", remote_name, url);
 

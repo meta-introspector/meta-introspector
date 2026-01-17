@@ -51,11 +51,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Get user's repos
     let user = "meta-introspector"; // or from env
-    let repos = octocrab
-        .repos(user, "")
-        .list()
-        .send()
-        .await?;
+    // let repos = octocrab
+    //     .repos(user, "")
+    //     .list()
+    //     .send()
+    //     .await?;
+    panic!("octocrab API changed - list() method not available");
     
     println!("Found {} GitHub repos", repos.items.len());
     

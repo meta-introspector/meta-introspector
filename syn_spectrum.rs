@@ -20,9 +20,8 @@ impl SynSpectrum {
         let ast = parse_file(&source)
             .map_err(|e| format!("Parse error: {}", e))?;
         
-        // Use syn-serde to serialize syn::File to JSON
-        let ast_json = serde_json::to_string_pretty(&syn_serde::json::to_value(&ast))
-            .map_err(|e| format!("Serialize error: {}", e))?;
+        // Use quote to convert syn::File to string (syn-serde doesn't work directly)
+        let ast_json = quote::quote!(#ast).to_string();
         
         // Compress both
         let compressed_ast = Self::compress(&ast_json);

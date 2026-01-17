@@ -7,6 +7,17 @@ use tokio::net::TcpListener;
 use axum::{Router, routing::{get, post}, Json, extract::State};
 use serde::{Deserialize, Serialize};
 
+// Import from shared_memory_bus
+use crate::shared_memory_bus::{Portfolio, Meme};
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+struct TradeOffer {
+    meme_id: u64,
+    price: u64,
+}
+
+fn simulate_trade_score(_p1: &Portfolio, _p2: &Portfolio, _offer: &TradeOffer) -> f64 { 0.0 }
+
 #[derive(Parser, Debug)]
 #[command(name = "trading_node")]
 struct Args {

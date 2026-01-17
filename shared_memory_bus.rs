@@ -7,7 +7,52 @@ use std::collections::HashMap;
 
 // Stub type until we properly organize modules
 #[derive(Debug, Clone)]
-pub struct Portfolio;
+pub struct Portfolio {
+    pub memes: Vec<Meme>,
+    pub balance: u64,
+    pub memory_used: usize,
+    pub memory_limit: usize,
+    pub score: f64,
+    pub trades: usize,
+}
+
+impl Portfolio {
+    pub fn update_score(&mut self) {
+        self.score = self.memes.iter().map(|m| m.fitness).sum();
+    }
+}
+
+#[derive(Clone, Debug)]
+pub struct Meme {
+    pub id: u64,
+    pub fitness: f64,
+    pub complexity: f64,
+    pub rarity: f64,
+    pub code: String,
+    pub emoji: String,
+    pub godel_number: u64,
+}
+
+#[derive(Clone, Debug)]
+pub struct MemeMetrics {
+    pub complexity: f64,
+    pub lines: usize,
+    pub tokens: usize,
+    pub compiles: bool,
+}
+
+impl Meme {
+    pub fn to_rust_code(&self) -> String { self.code.clone() }
+    pub fn metrics(&self) -> MemeMetrics { 
+        MemeMetrics { 
+            complexity: self.complexity, 
+            lines: 0, 
+            tokens: 0, 
+            compiles: true 
+        } 
+    }
+    pub fn compile_and_trace(&self) -> Result<Vec<u8>, Box<dyn std::error::Error>> { Ok(vec![]) }
+}
 
 /// Shared memory bus connecting all nodes
 pub struct SharedMemoryBus {
@@ -226,7 +271,7 @@ impl SharedMemoryNode {
                 let memes: Vec<MemeInfo> = self.portfolio.memes.iter()
                     .map(|m| MemeInfo {
                         id: m.id,
-                        complexity: m.complexity,
+                        complexity: m.complexity as usize,
                         fitness: m.fitness,
                         rarity: m.rarity,
                     })

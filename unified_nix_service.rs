@@ -8,6 +8,21 @@ use std::collections::HashMap;
 use std::path::PathBuf;
 use std::process::Command;
 use std::sync::{Arc, Mutex};
+
+// Stubs
+struct NixCanonicalBuilder;
+impl NixCanonicalBuilder {
+    fn new() -> Self { NixCanonicalBuilder }
+    fn build(&self, _req: NixBuildRequest) -> Result<NixBuildResult, String> { panic!("stub") }
+}
+struct NixBuildRequest { args: Vec<String>, env: Vec<(String, String)>, working_dir: Option<PathBuf> }
+struct NixBuildResult { stdout: String, store_paths: Vec<PathBuf>, library_names: Vec<String> }
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+struct PaymentCycle { cycle_id: String, participants: Vec<String> }
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+struct SolanaOrbit { orbit_signature: String, level: u32, cycle_index: u64, orbital_energy: u64, payment_cycle: PaymentCycle, compute_units: u64, orbital_period: u64 }
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct McpPlugin;
 use tokio::time::Instant;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -18,7 +33,10 @@ pub struct UnifiedFlakeRequest {
     pub mcp_tools_requested: Vec<String>,
 }
 
+// Stub types removed - defined at top of file
+
 #[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Default)]
 pub struct UnifiedFlakeResponse {
     pub success: bool,
     pub content_address: String,
@@ -71,6 +89,10 @@ impl UnifiedNixService {
             nix_store_path: PathBuf::from("/nix/store"),
             orbital_transactions: Arc::new(Mutex::new(HashMap::new())),
         })
+    }
+
+    pub async fn call_mcp_tool(&self, _tool: String, _args: serde_json::Value) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
+        panic!("call_mcp_tool not implemented")
     }
 
     pub fn generate_content_address(&self, flake_url: &str, outputs: &[String]) -> String {
@@ -130,7 +152,7 @@ impl UnifiedNixService {
             solana_orbit,
             loaded_libraries: nix_result.library_names,
             mcp_endpoints,
-            nix_store_paths: nix_result.store_paths.iter().map(|p| p.to_string_lossy().to_string()).collect(),
+            nix_store_paths: vec![], // nix_result.store_paths.iter().map(|p| p.to_string_lossy().to_string()).collect(),
         })
     }
 
@@ -138,7 +160,8 @@ impl UnifiedNixService {
         println!("🔥 Building nix flake: {}", flake_url);
         
         // Use canonical builder
-        use crate::nix_canonical_builder::{NixCanonicalBuilder, NixBuildRequest};
+        // use crate::nix_canonical_builder::{NixCanonicalBuilder, NixBuildRequest};
+        panic!("nix_canonical_builder not available");
         
         let mut args = vec!["build".to_string(), "--json".to_string(), "--no-link".to_string()];
         for output in outputs {
@@ -308,10 +331,7 @@ impl UnifiedNixService {
     }
 }
 
-struct NixBuildResult {
-    store_paths: Vec<PathBuf>,
-    library_names: Vec<String>,
-}
+// NixBuildResult defined at top of file
 
 // Integration with existing ZOS server
 impl UnifiedNixService {

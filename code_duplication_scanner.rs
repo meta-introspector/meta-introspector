@@ -183,13 +183,13 @@ impl DuplicationScanner {
         // Type patterns
         for input in &func.sig.inputs {
             if let syn::FnArg::Typed(pat_type) = input {
-                semantics.push(format!("param:{:?}", pat_type.ty));
+                semantics.push(format!("param:{}", quote::quote!(#pat_type)));
             }
         }
         
         // Return type pattern
         if let syn::ReturnType::Type(_, ty) = &func.sig.output {
-            semantics.push(format!("return:{:?}", ty));
+            semantics.push(format!("return:{}", quote::quote!(#ty)));
         }
         
         semantics

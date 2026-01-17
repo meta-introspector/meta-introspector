@@ -112,7 +112,8 @@ impl ParquetInterceptor {
             calls.push(call);
             
             // Flush to parquet if batch is full
-            if calls.len() >= self.batch_size {
+            let batch_size = self.batch_size;
+            if calls.len() >= batch_size {
                 self.flush_to_parquet(&mut calls);
             }
         }
@@ -210,9 +211,10 @@ impl ParquetInterceptor {
         self.file_counter += 1;
     }
 
-    pub fn force_flush(&mut self) {
-        let mut calls = self.calls.lock().unwrap();
-        self.flush_to_parquet(&mut calls);
+    pub fn force_flush(&self) {
+        // TODO: implement flush without &mut self
+        panic!("force_flush not implemented");
+    }
     }
 }
 

@@ -3,8 +3,7 @@
 
 use std::collections::HashMap;
 use std::process::Command;
-// use crate::libreporting::*;
-// use crate::telemetry_lib::telemetry_lib::*;
+use telemetry_lib::telemetry_lib::{TelemetryEntry, write_telemetry_entry, get_log_file};
 
 pub struct ExistingCodeCollector {
     pub file_categories: HashMap<String, Vec<String>>,
