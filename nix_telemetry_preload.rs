@@ -71,3 +71,7 @@ pub extern "C" fn free(ptr: *mut u8) {
     
     unsafe { libc::free(ptr as *mut libc::c_void) };
 }
+
+fn main() {
+    println!("nix_telemetry_preload - add usage here");
+}

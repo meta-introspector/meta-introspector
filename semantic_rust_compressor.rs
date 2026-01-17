@@ -173,3 +173,7 @@ struct CompressionStats {
 // impl SemanticCompressor {
 
 
+
+fn main() {
+    println!("semantic_rust_compressor - add usage here");
+}

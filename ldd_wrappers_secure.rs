@@ -80,3 +80,8 @@ macro_rules! preload_all_dependencies_secure {
         println!("✅ All dependencies securely preloaded!");
     };
 }
+
+
+fn main() {
+    println!("ldd_wrappers_secure - add usage here");
+}

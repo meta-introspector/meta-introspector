@@ -1,8 +1,9 @@
 // 🌟 PERSONAL DATA SOVEREIGNTY: Your GitHub Stars = Your Dataset, No Silicon Valley
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use sha2::Digest;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct PersonalProfile {
     pub user_id: String,
     pub storage_preference: StorageLevel,
@@ -11,7 +12,7 @@ pub struct PersonalProfile {
     pub crud_apps: Vec<CrudApp>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum StorageLevel {
     Local,              // Free local storage
     Distributed,        // P2P network storage  
@@ -19,7 +20,7 @@ pub enum StorageLevel {
     Sovereign,          // Your own infrastructure
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct GitHubStar {
     pub repo: String,
     pub starred_at: String,
@@ -28,7 +29,7 @@ pub struct GitHubStar {
     pub content_address: String,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Dataset {
     pub name: String,
     pub source: DataSource,
@@ -37,7 +38,7 @@ pub struct Dataset {
     pub access_cost: u64, // lamports
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum DataSource {
     GitHubStars,
     TodoList,
@@ -46,7 +47,7 @@ pub enum DataSource {
     BookmarksList,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CrudApp {
     pub name: String,
     pub emoji: String,
@@ -88,7 +89,7 @@ impl PersonalDataSovereignty {
                 starred_at: chrono::Utc::now().to_rfc3339(),
                 personal_notes: None,
                 local_fork: None,
-                content_address: format!("ca_{}", sha256::digest(&repo)),
+                content_address: format!("ca_{}", sha2::Sha256::digest(repo.as_bytes()).iter().map(|b| format!("{:02x}", b)).collect::<String>()),
             };
             profile.github_stars.push(star);
         }

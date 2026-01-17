@@ -5,6 +5,10 @@ use std::sync::Arc;
 use crossbeam::queue::ArrayQueue;
 use std::collections::HashMap;
 
+// Stub type until we properly organize modules
+#[derive(Debug, Clone)]
+pub struct Portfolio;
+
 /// Shared memory bus connecting all nodes
 pub struct SharedMemoryBus {
     /// Queues: (from_node, to_node) -> Queue
@@ -285,8 +289,8 @@ impl SharedMemoryNode {
     }
 }
 
-use crate::distributed_trading::Portfolio;
-use crate::meme_marketplace::Meme;
+// use crate::distributed_trading::Portfolio;
+// use crate::meme_marketplace::Meme;
 
 #[cfg(test)]
 mod tests {

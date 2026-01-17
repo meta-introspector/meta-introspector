@@ -166,7 +166,7 @@ impl BinaryByteAttribution {
         authors.sort_by(|a, b| b.1.cmp(a.1));
         
         for (author, count) in authors.iter().take(10) {
-            let pct = (*count as f64 / self.total_bytes as f64) * 100.0;
+            let pct = (**count as f64 / self.total_bytes as f64) * 100.0;
             report.push_str(&format!("- {}: {} bytes ({:.1}%)\n", author, count, pct));
         }
         
@@ -181,7 +181,7 @@ impl BinaryByteAttribution {
         commits.sort_by(|a, b| b.1.cmp(a.1));
         
         for (commit, count) in commits.iter().take(10) {
-            let pct = (*count as f64 / self.total_bytes as f64) * 100.0;
+            let pct = (**count as f64 / self.total_bytes as f64) * 100.0;
             report.push_str(&format!("- {}: {} bytes ({:.1}%)\n", commit, count, pct));
         }
         

@@ -116,3 +116,7 @@ mod tests {
         assert!(!results.is_empty());
     }
 }
+
+fn main() {
+    println!("canonical_directory_walker - add usage here");
+}

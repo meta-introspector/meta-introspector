@@ -83,11 +83,11 @@ impl PerfCanonicalReader {
                     *symbol_counts.entry(symbol).or_insert(0) += 1;
                     
                     // Extract command if available
-                    if let Some(parsed) = &record.parsed_data {
-                        if let Some(comm) = parsed.common_data().comm {
-                            *command_counts.entry(comm.to_string()).or_insert(0) += 1;
-                        }
-                    }
+                    // if let Some(parsed) = &record.parsed_data {
+                    //     if let Some(comm) = parsed.common_data().comm {
+                    //         *command_counts.entry(comm.to_string()).or_insert(0) += 1;
+                    //     }
+                    // }
                 }
                 PerfFileRecord::UserRecord(record) => {
                     let symbol = format!("{:?}", record.record_type);

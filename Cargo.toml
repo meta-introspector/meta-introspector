@@ -269,14 +269,17 @@ tokio = { version = "1", features = ["full"] }
 crossbeam = "0.8"
 clap = { version = "4", features = ["derive"] }
 syn = { version = "2", features = ["full", "visit"] }
+syn-serde = "0.3"
 quote = "1"
 libloading = "0.8"
 axum = "0.7"
 petgraph = "0.6"
+perf_runtime_macros = { path = "perf_runtime_macros" }
 goblin = "0.8"
 anyhow = "1.0"
 libc = "0.2"
 glob = "0.3"
+hex = "0.4"
 rayon = "1.8"
 reqwest = { version = "0.11", features = ["json"] }
 tower-http = { version = "0.5", features = ["cors"] }
@@ -290,6 +293,8 @@ arrow = "57"
 tracing = "0.1"
 tar = "0.4"
 xz2 = "0.1"
+gix = "0.66"
+num_cpus = "1.16"
 sha2 = "0.10"
 paste = "1.0"
 wasmtime = "20"
@@ -547,9 +552,10 @@ path = "https_commit_fetcher.rs"
 name = "hypergraph_71_analysis"
 path = "hypergraph_71_analysis.rs"
 
-[[bin]]
-name = "latest_dev"
-path = "latest_dev.rs"
+# [[bin]]
+# name = "latest_dev"
+# path = "latest_dev.rs"
+# Note: latest_dev.rs is included by telemetry_hook_test_driver.rs
 
 [[bin]]
 name = "ldd2macro"
@@ -599,9 +605,10 @@ path = "markov_name_path_analyzer.rs"
 name = "massive_rustc_grammar_plan"
 path = "massive_rustc_grammar_plan.rs"
 
-[[bin]]
-name = "master_telemetry"
-path = "master_telemetry.rs"
+# Disabled - library file, not a binary
+# [[bin]]
+# name = "master_telemetry"
+# path = "master_telemetry.rs"
 
 # Disabled - incomplete
 # [[bin]]
@@ -877,9 +884,10 @@ path = "telemetry_client.rs"
 name = "telemetry_hook_test_driver"
 path = "telemetry_hook_test_driver.rs"
 
-[[bin]]
-name = "telemetry_lib"
-path = "telemetry_lib.rs"
+# [[bin]]
+# name = "telemetry_lib"
+# path = "telemetry_lib.rs"
+# Note: telemetry_lib.rs is included by telemetry_hook_test_driver.rs, not a standalone binary
 
 [[bin]]
 name = "telemetry_server"

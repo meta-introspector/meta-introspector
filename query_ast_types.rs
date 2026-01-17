@@ -17,11 +17,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let rows = row_group.get_row_iter(None)?;
         
         for row in rows {
-            if let Ok(row_str) = row.to_string() {
-                let lower = row_str.to_lowercase();
-                if patterns.iter().any(|p| lower.contains(&p.to_lowercase())) {
-                    println!("{}", row_str);
+            match row {
+                Ok(r) => {
+                    let row_str = format!("{:?}", r);
+                    let lower = row_str.to_lowercase();
+                    if patterns.iter().any(|p| lower.contains(&p.to_lowercase())) {
+                        println!("{}", row_str);
+                    }
                 }
+                Err(_) => continue,
             }
         }
     }

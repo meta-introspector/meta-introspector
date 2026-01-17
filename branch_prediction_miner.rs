@@ -4,7 +4,7 @@
 use std::collections::{HashMap, HashSet};
 use std::process::Command;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Serialize)]
 pub struct BranchPrediction {
     pub source_location: String,      // rustc source file:line
     pub branch_type: String,          // if/match/loop/etc
@@ -13,7 +13,7 @@ pub struct BranchPrediction {
     pub llm_confidence: f64,          // How confident the LLM is
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct BranchMiner {
     pub miner_id: usize,
     pub coins_earned: u64,

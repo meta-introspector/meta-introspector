@@ -1,7 +1,7 @@
 // Bits → Valid Rust: Force random bits into complexity orbits
 // All bit patterns are valid programs at some complexity level
 
-use crate::rand_shim::random_u64;
+use libnix::rand_shim::random_u64;
 
 /// Map N bits to valid Rust program at complexity Y
 pub struct BitsToRust {

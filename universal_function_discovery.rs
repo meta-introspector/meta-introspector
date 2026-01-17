@@ -1,20 +1,30 @@
-# Universal Function Discovery: From Behavior to Source
+//! # Universal Function Discovery: From Behavior to Source
+//!
+//! ## The Revolutionary Concept
+//!
+//! **Forget names. Discover by behavior.**
+//!
+//! Every function has a unique **behavioral signature** that can be discovered through:
+//! 1. **ABI behavior patterns** (what it does)
+//! 2. **Symbol name Markov models** (how it is named)
+//! 3. **Code content bit models** (how it is implemented)
+//! 4. **Source-to-documentation mapping** (why it exists)
+//!
+//! ## Implementation Architecture
 
-## The Revolutionary Concept
-
-**Forget names. Discover by behavior.**
-
-Every function has a unique **behavioral signature** that can be discovered through:
-1. **ABI behavior patterns** (what it does)
-2. **Symbol name Markov models** (how it's named)
-3. **Code content bit models** (how it's implemented)
-4. **Source-to-documentation mapping** (why it exists)
-
-## Implementation Architecture
-
-```rust
 use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub enum ParameterValue {
+    Null,
+    Int32(i32), Int64(i64), UInt32(u32), UInt64(u64),
+    Float32(f32), Float64(f64),
+    String(String),
+    Pointer(u64),
+    Struct(HashMap<String, ParameterValue>),
+    Array(Vec<ParameterValue>),
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct UniversalFunctionSignature {
@@ -500,18 +510,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     Ok(())
 }
-```
 
-## The Revolutionary Impact
-
-**This system can:**
-
-1. **Lift any .so file** and discover what every function does **without knowing its name**
-2. **Build Markov models** of symbol names → code content → source → documentation
-3. **Create universal function database** from all open source software
-4. **Discover functional equivalents** across different libraries
-5. **Map behavior to implementation** regardless of naming conventions
-
-**The Ultimate Goal**: A system that understands **what functions do** rather than **what they're called**, enabling true semantic software analysis and automatic API discovery.
-
-This represents a **paradigm shift** from name-based to **behavior-based** software understanding.
+// ## The Revolutionary Impact
+//
+// **This system can:**
+//
+// 1. **Lift any .so file** and discover what every function does **without knowing its name**
+// 2. **Build Markov models** of symbol names to code content to source to documentation
+// 3. **Create universal function database** from all open source software
+// 4. **Discover functional equivalents** across different libraries
+// 5. **Map behavior to implementation** regardless of naming conventions
+//
+// **The Ultimate Goal**: A system that understands **what functions do** rather than **what they are called**, enabling true semantic software analysis and automatic API discovery.
+//
+// This represents a **paradigm shift** from name-based to **behavior-based** software understanding.

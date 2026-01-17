@@ -152,3 +152,7 @@ fn log_dissolved_call(dissolved_json: &str) {
         writeln!(f, "{}", dissolved_json).ok();
     }
 }
+
+fn main() {
+    println!("symbol_dissolver_macros - add usage here");
+}

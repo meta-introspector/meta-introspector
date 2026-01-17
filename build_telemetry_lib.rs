@@ -99,3 +99,7 @@ pub mod telemetry_lib {
         }
     }
 }
+
+fn main() {
+    println!("build_telemetry_lib - add usage here");
+}

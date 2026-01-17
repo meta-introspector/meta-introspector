@@ -125,3 +125,8 @@ impl SolfunmemeCAService {
         witnesses
     }
 }
+
+
+fn main() {
+    println!("solfunmeme_ca_service - add usage here");
+}

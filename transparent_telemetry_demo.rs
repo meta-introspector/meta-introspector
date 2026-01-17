@@ -86,3 +86,6 @@
 //         assert_eq!(result, 8);
 //     }
 // }
+fn main() {
+    println!("transparent_telemetry_demo - add usage here");
+}

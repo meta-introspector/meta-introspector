@@ -97,3 +97,7 @@ mod tests {
         assert!(store.num_workers() > 0);
     }
 }
+
+fn main() {
+    println!("canonical_data_store - add usage here");
+}

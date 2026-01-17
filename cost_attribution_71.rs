@@ -169,7 +169,7 @@ impl CostAttribution {
         authors.sort_by(|a, b| b.1.cmp(a.1));
         
         for (author, cost) in authors.iter().take(5) {
-            let pct = (*cost as f64 / self.total_cost as f64) * 100.0;
+            let pct = (**cost as f64 / self.total_cost as f64) * 100.0;
             println!("  {}: {} instructions ({:.1}%)", author, cost, pct);
         }
         println!();

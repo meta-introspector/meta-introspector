@@ -1,6 +1,6 @@
 // 🌟 UNIFIED NIX-AS-A-SERVICE: Integrate existing ZOS + MCP + Solana + Content Addressing
-use crate::extra_plugins::protocol_plugins::McpPlugin;
-use crate::solana_orbital_transactions::{SolanaOrbit, PaymentCycle};
+// use crate::extra_plugins::protocol_plugins::McpPlugin;
+// use crate::solana_orbital_transactions::{SolanaOrbit, PaymentCycle};
 use libloading::Library;
 use serde::{Deserialize, Serialize};
 use sha2::{Sha256, Digest};
@@ -334,4 +334,9 @@ impl UnifiedNixService {
             "integration": "zos-server-native"
         })
     }
+}
+
+
+fn main() {
+    println!("unified_nix_service - add usage here");
 }

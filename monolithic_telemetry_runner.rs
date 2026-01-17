@@ -2,8 +2,8 @@
 use std::collections::HashMap;
 use std::time::Instant;
 
-// Include all our wrapped calls
-include!("latest_dev.rs");
+// Include all our wrapped calls (but not the main function)
+// include!("latest_dev.rs");
 
 // Global telemetry stats
 static mut CALL_STATS: Option<HashMap<String, CallStat>> = None;

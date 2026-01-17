@@ -5,7 +5,9 @@
 
 // Placeholder types for documentation compilation
 pub struct NixBuildRequest;
-pub struct NixBuildResult;
+pub struct NixBuildResult {
+    pub stdout: String,
+}
 pub struct NixCanonicalBuilder;
 
 impl NixCanonicalBuilder {
@@ -33,10 +35,19 @@ impl NixBuilder {
         // })
         Err("NixBuilder functionality disabled for docs".to_string())
     }
+    
+    pub fn build_rust_nightly(&self) -> Result<String, String> {
+        Err("build_rust_nightly not implemented in stub".to_string())
+    }
 }
 
 impl Default for NixBuilder {
     fn default() -> Self {
         Self::new()
     }
+}
+
+
+fn main() {
+    println!("unified_nix_builder - library, add usage here");
 }

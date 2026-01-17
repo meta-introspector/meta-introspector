@@ -480,3 +480,7 @@ async fn list_libraries(
 "#.to_string()
     }
 }
+
+fn main() {
+    println!("solana_as_a_service - add usage here");
+}

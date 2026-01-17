@@ -29,7 +29,7 @@ pub struct FlakeLoadResponse {
     pub flake_info: FlakeInfo,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FlakeInfo {
     pub name: String,
     pub version: String,

@@ -97,12 +97,12 @@ pub fn build_logistical_graph(
 
 /// Compute topological order (build order)
 pub fn compute_build_order(graph: &mut DiGraph<LogisticalNode, LogisticalEdge>) -> Vec<String> {
-    if is_cyclic_directed(graph) {
+    if is_cyclic_directed(&*graph) {
         eprintln!("⚠️  Warning: Cycle detected in dependency graph");
         return vec![];
     }
     
-    match toposort(graph, None) {
+    match toposort(&*graph, None) {
         Ok(order) => {
             // Update build_order in nodes
             for (build_order, &node_idx) in order.iter().enumerate() {
@@ -193,4 +193,9 @@ fn add_edge_for_nix(
             }
         }
     }
+}
+
+
+fn main() {
+    println!("logistical_graph - library, add usage here");
 }

@@ -3,8 +3,8 @@
 
 use std::collections::HashMap;
 use std::process::Command;
-use crate::libreporting::*;
-use crate::telemetry_lib::telemetry_lib::*;
+// use crate::libreporting::*;
+// use crate::telemetry_lib::telemetry_lib::*;
 
 pub struct ExistingCodeCollector {
     pub file_categories: HashMap<String, Vec<String>>,
@@ -233,3 +233,7 @@ impl ExistingCodeCollector {
 // Import telemetry_lib module
 #[path = "telemetry_lib.rs"]
 mod telemetry_lib;
+
+fn main() {
+    println!("existing_code_collector - add usage here");
+}

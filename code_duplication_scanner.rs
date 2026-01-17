@@ -85,9 +85,9 @@ impl DuplicationScanner {
         use std::collections::hash_map::DefaultHasher;
         use std::hash::{Hash, Hasher};
         
-        // AST hash - exact structure
+        // AST hash - use quote to convert to tokens
         let mut ast_hasher = DefaultHasher::new();
-        format!("{:?}", func).hash(&mut ast_hasher);
+        quote::quote!(#func).to_string().hash(&mut ast_hasher);
         let ast_hash = format!("{:x}", ast_hasher.finish());
         
         // Token hash - token sequence
@@ -128,7 +128,7 @@ impl DuplicationScanner {
         for input in &func.sig.inputs {
             match input {
                 syn::FnArg::Typed(pat_type) => {
-                    tokens.push(format!("{:?}", pat_type.ty));
+                    tokens.push(quote::quote!(#pat_type).to_string());
                 }
                 _ => {}
             }
@@ -136,7 +136,7 @@ impl DuplicationScanner {
         
         // Return type
         if let syn::ReturnType::Type(_, ty) = &func.sig.output {
-            tokens.push(format!("{:?}", ty));
+            tokens.push(quote::quote!(#ty).to_string());
         }
         
         tokens
@@ -308,4 +308,8 @@ pub fn scan_repos(repos: &[&str]) -> Result<DuplicationScanner, Box<dyn std::err
     scanner.find_duplicates();
     
     Ok(scanner)
+}
+
+fn main() {
+    println!("code_duplication_scanner - add usage here");
 }

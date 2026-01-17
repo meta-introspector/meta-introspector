@@ -19,3 +19,7 @@ macro_rules! telemetry_wrap {
 //   /nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66/lib64/ld-linux-x86-64.so.2
 
 // 🔍 SYMBOL WRAPPERS:
+
+fn main() {
+    println!("hello_telemetry_wrappers - add usage here");
+}

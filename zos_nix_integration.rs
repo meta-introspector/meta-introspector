@@ -142,3 +142,8 @@ mod tests {
         assert!(request.payment_lamports > 0);
     }
 }
+
+
+fn main() {
+    println!("zos_nix_integration - add usage here");
+}

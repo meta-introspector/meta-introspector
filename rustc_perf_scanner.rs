@@ -5,9 +5,7 @@ use std::collections::HashSet;
 use flate2::write::GzEncoder;
 use flate2::Compression;
 use std::io::Write;
-
-mod rand_shim;
-use rand_shim::random_u64;
+use libnix::rand_shim::random_u64;
 
 #[derive(Clone)]
 pub struct PerfFingerprint {
@@ -30,7 +28,7 @@ impl RustcPerfScanner {
         let source = std::fs::read_to_string(path).ok()?;
         
         // Write to temp file
-        let temp_path = format!("/tmp/rustc_perf_{}.rs", rand_shim::random_u64());
+        let temp_path = format!("/tmp/rustc_perf_{}.rs", libnix::rand_shim::random_u64());
         std::fs::write(&temp_path, &source).ok()?;
         
         // Compile with perf
@@ -111,4 +109,4 @@ impl RustcPerfScanner {
     }
 }
 
-mod rand_shim;
+// mod rand_shim; // Already declared at top of file

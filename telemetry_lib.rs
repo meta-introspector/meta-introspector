@@ -101,3 +101,5 @@ pub mod telemetry_lib {
         }
     }
 }
+
+// Note: main() provided by telemetry_hook_test_driver.rs when included

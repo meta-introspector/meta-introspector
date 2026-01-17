@@ -100,3 +100,8 @@ async fn reload_meme(State(_state): State<Arc<AppState>>) -> Result<Json<Value>,
         // }
     // }
 }
+
+
+fn main() {
+    println!("solfunmeme_routes - library, add usage here");
+}

@@ -136,6 +136,7 @@ fn load_cached_repos() -> Result<Vec<CachedRepo>, Box<dyn std::error::Error>> {
                             full_name: name.to_string(),
                             html_url: url.to_string(),
                             clone_url: url.to_string(),
+                            owner: None,
                             pushed_at: String::new(),
                             updated_at: String::new(),
                             fork: false,

@@ -87,7 +87,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     sorted_labels.sort_by(|a, b| b.1.cmp(a.1));
     
     for (label, count) in &sorted_labels {
-        println!("   {}: {} symbols ({:.1}%)", label, count, (*count as f64 / 50.0) * 100.0);
+        println!("   {}: {} symbols ({:.1}%)", label, count, (**count as f64 / 50.0) * 100.0);
     }
     
     // Save subgraph mapping
@@ -104,7 +104,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     output.push_str("\nLabel clusters in eigenvector:\n");
     for (label, count) in &sorted_labels {
-        output.push_str(&format!("{}: {} symbols ({:.1}%)\n", label, count, (*count as f64 / eigenvector_symbols.len() as f64) * 100.0));
+        output.push_str(&format!("{}: {} symbols ({:.1}%)\n", label, count, (**count as f64 / eigenvector_symbols.len() as f64) * 100.0));
     }
     
     output.push_str("\nSymbols by label:\n");

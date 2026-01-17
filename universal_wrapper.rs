@@ -38,7 +38,7 @@ pub struct UniversalContext {
 /// * `args` - Variadic arguments (up to 6)
 #[no_mangle]
 pub unsafe extern "C" fn __universal_wrapper(
-    original_fn: *const (),
+    original_fn: *mut std::ffi::c_void,
     name: *const u8,
     pattern: *const u8,
     conductor: u32,
@@ -169,3 +169,7 @@ wrap_any!(getuid, b"f3 0f 1e fa b8 66 00", 3500);
 
 // Build.rs can generate thousands of these automatically:
 // wrap_any!(function_12345, b"...", conductor);
+
+fn main() {
+    println!("universal_wrapper - add usage here");
+}

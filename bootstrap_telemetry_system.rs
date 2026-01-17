@@ -366,3 +366,7 @@ impl LayerCollector for RustcInternalCollector {
     fn collect(&mut self) -> Result<Vec<TelemetryEvent>, Box<dyn std::error::Error>> { Ok(vec![]) }
     fn stop(&mut self) -> Result<(), Box<dyn std::error::Error>> { Ok(()) }
 }
+
+fn main() {
+    println!("bootstrap_telemetry_system - add usage here");
+}

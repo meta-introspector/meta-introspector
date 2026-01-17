@@ -10,11 +10,11 @@ use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio, Child};
 use std::time::{SystemTime, UNIX_EPOCH};
 
-// Public API for library usage
-pub use PerfSession;
-pub use SessionType;
-pub use PerfReport;
-pub use SymbolSample;
+// Public API for library usage (types defined below)
+// pub use PerfSession;
+// pub use SessionType;
+// pub use PerfReport;
+// pub use SymbolSample;
 
 /// Record a perf session and return the report
 pub fn record_session(

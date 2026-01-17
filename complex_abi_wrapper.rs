@@ -15,7 +15,7 @@ pub enum AbiType {
     Void,
     Int32, Int64, UInt32, UInt64,
     Float32, Float64,
-    Pointer(*const AbiType),
+    Pointer(Box<AbiType>),
     
     // Complex types
     Struct { name: String, fields: Vec<(String, AbiType)> },
@@ -198,7 +198,8 @@ impl ComplexAbiWrapper {
             _ => return Err("First parameter must be 'this' pointer".to_string()),
         };
 
-        // Simplified C++ method call (thiscall convention)
+        // Simplified C++ method call (thiscall convention on Windows, C on others)
+        #[cfg(target_os = "windows")]
         match call.params.len() {
             1 => { // Just 'this' pointer
                 match call.return_type {
@@ -214,6 +215,32 @@ impl ComplexAbiWrapper {
                 match (&call.params[1], &call.return_type) {
                     (AbiValue::Int32(param), AbiType::Void) => {
                         let func: extern "thiscall" fn(*mut c_void, i32) = 
+                            unsafe { std::mem::transmute(func_ptr) };
+                        func(this_ptr, *param);
+                        Ok(AbiValue::Void)
+                    },
+                    _ => Err("Unsupported C++ method parameter combination".to_string()),
+                }
+            },
+            _ => Err("Too many parameters for C++ method".to_string()),
+        }
+        
+        #[cfg(not(target_os = "windows"))]
+        match call.params.len() {
+            1 => { // Just 'this' pointer
+                match call.return_type {
+                    AbiType::Int32 => {
+                        let func: extern "C" fn(*mut c_void) -> i32 = 
+                            unsafe { std::mem::transmute(func_ptr) };
+                        Ok(AbiValue::Int32(func(this_ptr)))
+                    },
+                    _ => Err("Unsupported C++ method return type".to_string()),
+                }
+            },
+            2 => { // 'this' + one parameter
+                match (&call.params[1], &call.return_type) {
+                    (AbiValue::Int32(param), AbiType::Void) => {
+                        let func: extern "C" fn(*mut c_void, i32) = 
                             unsafe { std::mem::transmute(func_ptr) };
                         func(this_ptr, *param);
                         Ok(AbiValue::Void)
@@ -244,9 +271,20 @@ impl ComplexAbiWrapper {
         let virtual_func = unsafe { *(vtable_ptr as *const *const c_void) };
 
         // Call virtual function (simplified)
+        #[cfg(target_os = "windows")]
         match call.return_type {
             AbiType::Int32 => {
                 let func: extern "thiscall" fn(*mut c_void) -> i32 = 
+                    unsafe { std::mem::transmute(virtual_func) };
+                Ok(AbiValue::Int32(func(this_ptr)))
+            },
+            _ => Err("Unsupported virtual method return type".to_string()),
+        }
+        
+        #[cfg(not(target_os = "windows"))]
+        match call.return_type {
+            AbiType::Int32 => {
+                let func: extern "C" fn(*mut c_void) -> i32 = 
                     unsafe { std::mem::transmute(virtual_func) };
                 Ok(AbiValue::Int32(func(this_ptr)))
             },

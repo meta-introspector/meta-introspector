@@ -155,3 +155,7 @@ macro_rules! dissolve_with_context {
         })
     }};
 }
+
+fn main() {
+    println!("nix_cargo_interceptor - add usage here");
+}

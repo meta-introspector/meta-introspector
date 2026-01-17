@@ -40,12 +40,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .send()
         .await?;
     
-    println!("Found {} repositories", repos.len());
+    println!("Found {} repositories", repos.items.len());
     
     let mut all_commits = Vec::new();
     
     // Check each repo for commits in the target month
-    for repo in repos {
+    for repo in repos.items {
         let repo_name = &repo.name;
         
         // Get commits for this month

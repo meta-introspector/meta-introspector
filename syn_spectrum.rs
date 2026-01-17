@@ -7,7 +7,6 @@ use serde_json;
 #[derive(Debug, Clone)]
 pub struct SynSpectrum {
     pub source_code: String,
-    pub ast: Option<File>,
     pub ast_json: String,
     pub compressed_ast: Vec<u8>,
     pub compressed_source: Vec<u8>,
@@ -21,8 +20,8 @@ impl SynSpectrum {
         let ast = parse_file(&source)
             .map_err(|e| format!("Parse error: {}", e))?;
         
-        // Serialize AST to JSON
-        let ast_json = serde_json::to_string_pretty(&ast)
+        // Use syn-serde to serialize syn::File to JSON
+        let ast_json = serde_json::to_string_pretty(&syn_serde::json::to_value(&ast))
             .map_err(|e| format!("Serialize error: {}", e))?;
         
         // Compress both
@@ -34,7 +33,6 @@ impl SynSpectrum {
         
         Ok(Self {
             source_code: source,
-            ast: Some(ast),
             ast_json,
             compressed_ast,
             compressed_source,

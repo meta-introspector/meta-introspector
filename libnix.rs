@@ -5,6 +5,10 @@ use libloading::{Library, Symbol};
 use std::collections::HashMap;
 use std::sync::Mutex;
 
+// Public modules for shims/wrappers
+pub mod rand_shim;
+pub mod perf_runtime;
+
 static LOADED_LIBS: Mutex<Option<HashMap<String, Library>>> = Mutex::new(None);
 
 #[macro_export]

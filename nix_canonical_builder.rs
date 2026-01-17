@@ -3,7 +3,7 @@
 // All nix builds go through here with full perf + telemetry instrumentation
 // Supports both shell command and .so library calls via trait
 
-use perf_macros::{perf_auto, perf_probe};
+use perf_runtime_macros::{perf_auto, perf_probe};
 use serde::{Deserialize, Serialize};
 use std::process::Command;
 use std::time::Instant;
@@ -238,4 +238,8 @@ mod tests {
         assert_eq!(paths[0], "/nix/store/abc123-hello-1.0");
         assert_eq!(paths[1], "/nix/store/def456-world-2.0");
     }
+}
+
+fn main() {
+    println!("nix_canonical_builder - add usage here");
 }

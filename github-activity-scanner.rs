@@ -44,7 +44,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             .personal_token(token)
             .build()?
     } else {
-        octocrab::instance()
+        (*octocrab::instance()).clone()
     };
     
     println!("Fetching GitHub activity...");

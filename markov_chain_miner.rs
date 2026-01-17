@@ -2,8 +2,9 @@
 // The Markov model of source code reveals the grammar, which maps to compiler branches
 
 use std::collections::HashMap;
+use serde::{Serialize, Deserialize};
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct MarkovTransition {
     pub from_state: String,      // Current character(s)
     pub to_state: String,        // Next character(s)
@@ -12,7 +13,7 @@ pub struct MarkovTransition {
     pub rustc_branch: String,    // Corresponding rustc branch location
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct MarkovMiner {
     pub miner_id: usize,
     pub coins_earned: u64,
