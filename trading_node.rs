@@ -94,7 +94,7 @@ impl NodeState {
     fn new(node_id: usize, parquet_path: String, peers: Vec<u16>) -> Self {
         // Load or create portfolio
         let portfolio = if std::path::Path::new(&parquet_path).exists() {
-            Portfolio::load_from_parquet(&parquet_path).unwrap()
+            Portfolio::load_from_parquet(std::path::Path::new(&parquet_path)).unwrap()
         } else {
             Portfolio::new() // stub
         };
@@ -134,10 +134,10 @@ async fn main() {
     
     // Build router
     let app = Router::new()
-        .route("/status", get(status))
-        .route("/portfolio", get(get_portfolio))
-        .route("/trade/offer", post(receive_trade_offer))
-        .route("/trade/accept", post(accept_trade))
+        .route("/status", get(|| async { "OK" }))
+        // .route("/portfolio", get(get_portfolio))
+        // .route("/trade/offer", post(receive_trade_offer))
+        // .route("/trade/accept", post(accept_trade))
         .with_state(state.clone());
     
     // Start trading loop in background
@@ -229,8 +229,13 @@ fn find_best_trade_local(my: &Portfolio, their: &Portfolio) -> Option<TradeOffer
     
     for my_meme in &my.memes {
         for their_meme in &their.memes {
-            let my_score_after = simulate_trade_score(&my.memes, my_meme.id, their_meme);
-            let their_score_after = simulate_trade_score(&their.memes, their_meme.id, my_meme);
+            let offer = TradeOffer { 
+                id: 0, meme_id: my_meme.id, price: 0, from_node: String::new(), 
+                to_node: String::new(), offer_meme: my_meme.id, want_meme: their_meme.id, 
+                score_improvement: 0.0 
+            };
+            let my_score_after = simulate_trade_score(&my, &their, &offer);
+            let their_score_after = simulate_trade_score(&their, &my, &offer);
             
             let my_improvement = my_score_after - my.score;
             let their_improvement = their_score_after - their.score;

@@ -78,7 +78,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                                 author_date: author.date.map(|d| d.to_string()).unwrap_or_default(),
                                 message: commit_data.message.clone(),
                                 repo_name: repo_name.clone(),
-                                repo_url: repo.html_url.map(|u| u.to_string()).unwrap_or_default(),
+                                repo_url: repo.html_url.as_ref().map(|u| u.to_string()).unwrap_or_default(),
                                 platform: "github".to_string(),
                             });
                         }
