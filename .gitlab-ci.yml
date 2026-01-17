@@ -1,0 +1,82 @@
+stages:
+  - build
+  - test
+  - release
+
+variables:
+  CARGO_HOME: $CI_PROJECT_DIR/.cargo
+  REGISTRY: registry.gitlab.com
+  IMAGE_NAME: $CI_PROJECT_PATH
+
+# Cache Rust dependencies
+.rust_cache:
+  cache:
+    key: rust-$CI_COMMIT_REF_SLUG
+    paths:
+      - .cargo/
+      - target/
+
+build:nix:
+  stage: build
+  image: nixos/nix:latest
+  before_script:
+    - nix-channel --update
+  script:
+    - nix build .#meta-introspector-binaries -L
+    - nix build .#minimal-build-server -L
+  artifacts:
+    paths:
+      - result/bin/
+    expire_in: 1 week
+
+build:cargo:
+  stage: build
+  image: rust:latest
+  extends: .rust_cache
+  before_script:
+    - apt-get update && apt-get install -y pkg-config libssl-dev
+  script:
+    - cargo build --release --bins
+  artifacts:
+    paths:
+      - target/release/minimal-build-server
+      - target/release/demo_*
+    expire_in: 1 week
+
+test:
+  stage: test
+  image: rust:latest
+  extends: .rust_cache
+  script:
+    - cargo test --workspace
+
+docker:build:
+  stage: release
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -t $REGISTRY/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA .
+    - docker build -t $REGISTRY/$IMAGE_NAME:latest .
+    - docker push $REGISTRY/$IMAGE_NAME:$CI_COMMIT_SHORT_SHA
+    - docker push $REGISTRY/$IMAGE_NAME:latest
+  only:
+    - main
+    - meme-marketplace
+
+release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  script:
+    - echo "Creating release"
+  release:
+    tag_name: $CI_COMMIT_TAG
+    description: 'Release $CI_COMMIT_TAG'
+    assets:
+      links:
+        - name: 'Binaries'
+          url: '$CI_PROJECT_URL/-/jobs/artifacts/$CI_COMMIT_TAG/download?job=build:cargo'
+  only:
+    - tags
