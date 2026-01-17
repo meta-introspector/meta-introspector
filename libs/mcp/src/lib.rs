@@ -1,6 +1,9 @@
 use serde::{Serialize, Deserialize};
 use std::collections::HashMap;
 
+pub mod meta_mcp;
+pub use meta_mcp::{MetaMCP, MCPToolSpec, MCPEvalRequest, MCPEvalResponse};
+
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct MCPTool {
     pub name: String,

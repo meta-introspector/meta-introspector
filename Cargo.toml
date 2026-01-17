@@ -987,3 +987,7 @@ all-libs = ["content-address", "mcp", "git-ops"]
 [[bin]]
 name = "demo_function_loader"
 path = "demo_function_loader.rs"
+
+[[bin]]
+name = "demo_meta_mcp"
+path = "demo_meta_mcp.rs"
