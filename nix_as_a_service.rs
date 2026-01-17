@@ -333,7 +333,6 @@ impl NixAsAService {
             execution_time_ms: start_time.elapsed().as_millis() as u64,
         })
     }
-}
 
 // REST API handlers
 pub async fn load_flake_endpoint(Json(request): Json<FlakeLoadRequest>) -> Result<Json<FlakeLoadResponse>, StatusCode> {

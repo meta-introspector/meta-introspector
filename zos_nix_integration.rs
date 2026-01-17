@@ -44,12 +44,6 @@ impl ZosNixIntegration {
                 #[allow(unreachable_code)]
                 Ok::<_, (axum::http::StatusCode, String)>(Json(serde_json::Value::Null))
             }))
-                            eprintln!("Failed to load flake: {}", e);
-                            Err(StatusCode::INTERNAL_SERVER_ERROR)
-                        }
-                    }
-                }
-            }));
             
             // Call MCP tool on loaded flake
             // .route("/unified/mcp/:content_address/:tool_name", post({
@@ -64,7 +58,7 @@ impl ZosNixIntegration {
                         }
                     }
                 }
-            }))
+            })
             
             // Get Solana orbital transaction info
             .route("/unified/orbit/:content_address", get({
@@ -107,8 +101,6 @@ impl ZosNixIntegration {
                     "status": "operational"
                 })))
             }))
-    }
-}
 
 // Add to existing ZOS server main.rs
 pub fn integrate_with_existing_zos() -> Router {

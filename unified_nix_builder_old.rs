@@ -77,7 +77,6 @@ fn main() {
             }
             Err(e) => Err(format!("Failed to run nix with strace: {}", e)),
         }
-    }
 
     fn get_nix_dependencies(&self) -> Result<Vec<String>, String> {
         let output = Command::new("ldd")
@@ -131,7 +130,6 @@ fn main() {
             Err(format!("Nix build failed: {}", result.stderr))
         }
     }
-}
 
 #[derive(Debug)]
 pub struct NixBuildResult {

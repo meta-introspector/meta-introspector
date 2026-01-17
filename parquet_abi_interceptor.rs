@@ -216,7 +216,6 @@ impl ParquetInterceptor {
         panic!("force_flush not implemented");
     }
     }
-}
 
 // Enhanced ABI wrapper with parquet interception
 // Enhanced ABI wrapper with parquet interception
@@ -315,5 +314,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("  Ready for big data analysis pipelines!");
 
     Ok(())
-}
 }

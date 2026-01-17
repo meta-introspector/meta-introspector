@@ -233,8 +233,6 @@ fn main() {
         let avg_score = total_score / num_nodes as f64;
         
         println!("  Average score: {:.2}\n", avg_score);
-    }
-    }
     
     println!("🏆 Final Results:");
     
@@ -329,4 +327,3 @@ fn main() {
     println!("  Total balance: {} coins", total_balance);
     println!("  Average balance: {} coins", avg_balance);
     println!("  Total memory used: {} bytes", total_memory);
-}

@@ -246,8 +246,6 @@ fn calculate_file_md5(file_path: &str) -> String {
         println!("  Wrapped: {}", self.libraries.iter().filter(|l| l.wrapped).count());
         println!("  Generated macros: {}", self.wrapped_libs.len());
     }
-}
-}
 
 fn main() {
     println!("🔍 LDD2MACRO: Auto-wrap .so dependencies");
