@@ -12,7 +12,7 @@ use serde::{Deserialize, Serialize};
 // use shared_memory_bus::{Portfolio, Meme};
 
 // Stub types from shared_memory_bus
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 struct Portfolio {
     node_id: u64,
     memes: Vec<Meme>,
@@ -38,9 +38,12 @@ impl Portfolio {
     fn load_from_parquet(_path: &std::path::Path) -> Result<Self, Box<dyn std::error::Error>> {
         Ok(Self::new())
     }
+    fn update_score(&mut self) {
+        self.score = self.memes.iter().map(|m| m.fitness).sum();
+    }
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
 struct Meme {
     id: u64,
     fitness: f64,
@@ -245,8 +248,11 @@ fn find_best_trade_local(my: &Portfolio, their: &Portfolio) -> Option<TradeOffer
                 if total > best_improvement {
                     best_improvement = total;
                     best_offer = Some(TradeOffer {
-                        from_node: my.node_id,
-                        to_node: their.node_id,
+                        id: 0,
+                        meme_id: my_meme.id,
+                        price: 0,
+                        from_node: my.node_id.to_string(),
+                        to_node: their.node_id.to_string(),
                         offer_meme: my_meme.id,
                         want_meme: their_meme.id,
                         score_improvement: total,
@@ -343,13 +349,10 @@ impl Default for Meme {
             id: 0,
             godel_number: 0,
             emoji: "🧬".to_string(),
-            code: Vec::new(),
-            complexity: 0,
+            code: String::new(),
+            complexity: 0.0,
             fitness: 0.0,
             rarity: 1.0,
-            generation: 0,
-            owner: String::new(),
-            price: None,
         }
     }
 }
