@@ -306,6 +306,7 @@ wat = "1.202"
 tracing-subscriber = "0.3"
 md5 = "0.7"
 flate2 = "1.0"
+rand = "0.8"
 [[bin]]
 name = "all_commits_collector"
 path = "all_commits_collector.rs"
