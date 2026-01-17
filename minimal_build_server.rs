@@ -235,14 +235,26 @@ async fn serve_index() -> axum::response::Html<String> {
 }
 
 async fn setup_ssh(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
+    // Check if running as root
+    let is_root = unsafe { libc::geteuid() == 0 };
+    if !is_root {
+        return Json(serde_json::json!({
+            "success": false,
+            "error": "Server needs sudo privileges"
+        }));
+    }
+    
     let email = req["email"].as_str().unwrap_or("user@localhost");
-    let output = Command::new("ssh-keygen")
-        .args(["-t", "ed25519", "-C", email, "-f", &format!("{}/.ssh/id_ed25519", std::env::var("HOME").unwrap()), "-N", ""])
+    let user = req["user"].as_str().unwrap_or("qa");
+    
+    let output = Command::new("sudo")
+        .args(["-u", user, "ssh-keygen", "-t", "ed25519", "-C", email, 
+               "-f", &format!("/home/{}/.ssh/id_ed25519", user), "-N", ""])
         .output();
     
     match output {
         Ok(out) if out.status.success() => {
-            let pubkey = std::fs::read_to_string(format!("{}/.ssh/id_ed25519.pub", std::env::var("HOME").unwrap()))
+            let pubkey = std::fs::read_to_string(format!("/home/{}/.ssh/id_ed25519.pub", user))
                 .unwrap_or_default();
             Json(serde_json::json!({"success": true, "public_key": pubkey}))
         },
@@ -282,18 +294,101 @@ async fn api_deploy(Json(req): Json<serde_json::Value>) -> Json<serde_json::Valu
     let port = req["port"].as_u64().unwrap_or(3001);
     let env = req["env"].as_str().unwrap_or("dev");
     
-    // Deploy based on target
+    // Check if running as root/sudo
+    let is_root = unsafe { libc::geteuid() == 0 };
+    
+    if !is_root {
+        return Json(serde_json::json!({
+            "success": false,
+            "error": "Server needs sudo privileges. Restart with: sudo ./minimal-build-server"
+        }));
+    }
+    
+    // Create QA user and setup everything
     match target {
         "local" => {
-            // Use systemd
-            Json(serde_json::json!({"success": true, "port": port, "method": "systemd"}))
+            // Generate PIN
+            let pin = format!("{:08x}", rand::random::<u32>());
+            
+            // Create user
+            Command::new("useradd")
+                .args(["-m", "-s", "/bin/bash", "qa"])
+                .output().ok();
+            
+            // Setup SSH key
+            Command::new("sudo")
+                .args(["-u", "qa", "ssh-keygen", "-t", "ed25519", 
+                       "-C", "qa@meta-introspector", 
+                       "-f", "/home/qa/.ssh/id_ed25519", "-N", ""])
+                .output().ok();
+            
+            // Setup GPG key (batch mode)
+            let gpg_batch = format!(
+                "Key-Type: RSA\nKey-Length: 4096\nName-Real: QA User\nName-Email: qa@meta-introspector\nExpire-Date: 0\n%no-protection\n%commit\n"
+            );
+            std::fs::write("/tmp/gpg-qa", gpg_batch).ok();
+            Command::new("sudo")
+                .args(["-u", "qa", "gpg", "--batch", "--generate-key", "/tmp/gpg-qa"])
+                .output().ok();
+            
+            // Create vault
+            Command::new("sudo")
+                .args(["-u", "qa", "mkdir", "-p", "/home/qa/.vault"])
+                .output().ok();
+            
+            let vault_data = serde_json::json!({
+                "user": "qa",
+                "pin": pin,
+                "created": chrono::Utc::now().to_rfc3339(),
+                "ssh_key": "/home/qa/.ssh/id_ed25519"
+            });
+            
+            std::fs::write("/tmp/vault.json", vault_data.to_string()).ok();
+            Command::new("sudo")
+                .args(["mv", "/tmp/vault.json", "/home/qa/.vault/credentials.json"])
+                .output().ok();
+            Command::new("sudo")
+                .args(["chown", "qa:qa", "/home/qa/.vault/credentials.json"])
+                .output().ok();
+            Command::new("sudo")
+                .args(["chmod", "600", "/home/qa/.vault/credentials.json"])
+                .output().ok();
+            
+            // Configure Git
+            Command::new("sudo")
+                .args(["-u", "qa", "git", "config", "--global", "user.name", "QA User"])
+                .output().ok();
+            Command::new("sudo")
+                .args(["-u", "qa", "git", "config", "--global", "user.email", "qa@meta-introspector"])
+                .output().ok();
+            
+            // Create systemd service
+            let service = format!(
+                "[Unit]\nDescription=QA Build Server\nAfter=network.target\n\n\
+                [Service]\nType=simple\nUser=qa\nWorkingDirectory=/home/qa\n\
+                ExecStart={}\nRestart=always\nEnvironment=\"PORT={}\"\nEnvironment=\"ENV=qa\"\n\n\
+                [Install]\nWantedBy=multi-user.target\n",
+                std::env::current_exe().unwrap().display(), port
+            );
+            
+            std::fs::write("/etc/systemd/system/qa-build-server.service", service).ok();
+            Command::new("systemctl").args(["daemon-reload"]).output().ok();
+            Command::new("systemctl").args(["enable", "qa-build-server"]).output().ok();
+            Command::new("systemctl").args(["start", "qa-build-server"]).output().ok();
+            
+            Json(serde_json::json!({
+                "success": true,
+                "port": port,
+                "method": "systemd",
+                "user": "qa",
+                "vault": "/home/qa/.vault/credentials.json",
+                "message": "QA user created with SSH/GPG keys. PIN stored in vault."
+            }))
         },
         "docker" => {
-            // Use docker
             Json(serde_json::json!({"success": true, "port": port, "method": "docker"}))
         },
         "qemu" => {
-            // Use qemu
             Json(serde_json::json!({"success": true, "port": port, "method": "qemu"}))
         },
         _ => Json(serde_json::json!({"success": false, "error": "Unknown target"}))
