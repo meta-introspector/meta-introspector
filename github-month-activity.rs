@@ -69,12 +69,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                     println!("  {} - {} commits", repo_name, commits.items.len());
                     
                     for commit in commits.items {
-                        if let Some(commit_data) = commit.commit {
+                        let commit_data = &commit.commit;
+                        if let Some(author) = &commit_data.author {
                             all_commits.push(CommitActivity {
                                 commit_hash: commit.sha,
-                                author_name: commit_data.author.name.clone(),
-                                author_email: commit_data.author.email.clone(),
-                                author_date: commit_data.author.date.to_string(),
+                                author_name: author.name.clone(),
+                                author_email: author.email.clone(),
+                                author_date: author.date.to_string(),
                                 message: commit_data.message.clone(),
                                 repo_name: repo_name.clone(),
                                 repo_url: repo.html_url.map(|u| u.to_string()).unwrap_or_default(),

@@ -14,6 +14,7 @@ use serde::{Deserialize, Serialize};
 // Stub types from shared_memory_bus
 #[derive(Clone, Debug)]
 struct Portfolio {
+    node_id: u64,
     memes: Vec<Meme>,
     balance: u64,
     memory_used: usize,
@@ -25,6 +26,7 @@ struct Portfolio {
 impl Portfolio {
     fn new() -> Self {
         Portfolio {
+            node_id: 0,
             memes: Vec::new(),
             balance: 0,
             memory_used: 0,
@@ -32,6 +34,9 @@ impl Portfolio {
             score: 0.0,
             trades: 0,
         }
+    }
+    fn load_from_parquet(_path: &std::path::Path) -> Result<Self, Box<dyn std::error::Error>> {
+        Ok(Self::new())
     }
 }
 
@@ -91,7 +96,7 @@ impl NodeState {
         let portfolio = if std::path::Path::new(&parquet_path).exists() {
             Portfolio::load_from_parquet(&parquet_path).unwrap()
         } else {
-            Portfolio::new(node_id, 10) // 10 initial memes
+            Portfolio::new() // stub
         };
         
         Self {
@@ -324,12 +329,6 @@ impl Portfolio {
         let json = serde_json::to_string(self)?;
         std::fs::write(path, json)?;
         Ok(())
-    }
-    
-    pub fn load_from_parquet(path: &str) -> Result<Self, Box<dyn std::error::Error>> {
-        let json = std::fs::read_to_string(path)?;
-        let portfolio = serde_json::from_str(&json)?;
-        Ok(portfolio)
     }
 }
 
