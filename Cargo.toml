@@ -966,3 +966,24 @@ base64 = "0.22"
 risc0-zkvm = "1.2"
 sha2 = "0.10"
 cpp_demangle = "0.4"
+
+# Shared function libraries
+[dependencies.content-address]
+path = "libs/content-address"
+optional = true
+
+[dependencies.mcp]
+path = "libs/mcp"
+optional = true
+
+[dependencies.git-ops]
+path = "libs/git-ops"
+optional = true
+
+[features]
+default = []
+all-libs = ["content-address", "mcp", "git-ops"]
+
+[[bin]]
+name = "demo_function_loader"
+path = "demo_function_loader.rs"
