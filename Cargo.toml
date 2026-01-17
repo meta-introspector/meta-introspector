@@ -275,6 +275,7 @@ libloading = "0.8"
 axum = "0.7"
 petgraph = "0.6"
 perf_runtime_macros = { path = "perf_runtime_macros" }
+telemetry_lib = { path = "telemetry_lib" }
 goblin = "0.8"
 anyhow = "1.0"
 libc = "0.2"
