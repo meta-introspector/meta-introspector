@@ -50,14 +50,14 @@ fn main() {
             }
 
             // Get remotes
-            if let Ok(remotes) = repo.remote_names() {
-                for remote_name in remotes.iter().flatten() {
-                    if let Ok(remote) = repo.find_remote(remote_name) {
-                        if let Some(url) = remote.url(gix::remote::Direction::Fetch) {
-                            println!("Remote {}: {}", remote_name, url);
+            let remotes = repo.remote_names();
+            for remote_name in remotes.iter() {
+                if let Ok(remote) = repo.find_remote(remote_name.as_ref()) {
+                    if let Some(url) = remote.url(gix::remote::Direction::Fetch) {
+                        println!("Remote {}: {}", remote_name, url);
 
-                            // Extract GitHub repo from URL
-                            if let Some(github_repo) = extract_github_repo(url.to_string()) {
+                        // Extract GitHub repo from URL
+                        if let Some(github_repo) = extract_github_repo(url.to_string()) {
                                 repo_graph.entry("octocrab".to_string())
                                     .or_default()
                                     .insert(github_repo);
@@ -65,7 +65,7 @@ fn main() {
                         }
                     }
                 }
-            }
+
         }
     }
 
