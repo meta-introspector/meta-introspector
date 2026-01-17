@@ -6,19 +6,17 @@ use std::thread;
 use std::time::Duration;
 
 mod shared_memory_bus;
-mod distributed_trading;
-mod meme_marketplace;
-mod program_evolution;
-mod rand_shim;
-mod market_maker;
-mod meme_evolver;
-mod bits_to_rust;
-mod wasm_runner;
+// mod distributed_trading;
+// mod meme_marketplace;
+// mod program_evolution;
+// mod rand_shim;
+// mod market_maker;
+// mod meme_evolver;
+// mod bits_to_rust;
+// mod wasm_runner;
 
-use shared_memory_bus::{SharedMemoryBus, SharedMemoryNode, Message};
-use distributed_trading::Portfolio;
-use meme_marketplace::Meme;
-use rand_shim::{random_u64, random_usize, init_rand};
+use shared_memory_bus::{SharedMemoryBus, SharedMemoryNode, Message, Portfolio, Meme};
+use libnix::rand_shim::{random_u64, random_usize, init_rand};
 
 fn main() {
     init_rand();
@@ -32,7 +30,7 @@ fn main() {
     let bus = Arc::new(SharedMemoryBus::new(num_nodes, queue_size));
     
     // Create market maker with large balance
-    let mut market_maker = market_maker::MarketMaker::new(0, 100000);
+    // let mut market_maker = market_maker::MarketMaker::new(0, 100000);
     
     // Track profitable trades
     let mut trade_sequences = Vec::new();
@@ -49,7 +47,7 @@ fn main() {
         let portfolio = Portfolio::new(node_id, memes);
         let node = SharedMemoryNode::new(node_id, portfolio, Arc::clone(&bus));
         nodes.push(Arc::new(std::sync::Mutex::new(node)));
-        evolvers.push(meme_evolver::MemeEvolver::new(node_id));
+        // evolvers.push(// meme_evolver::MemeEvolver::new(node_id));
     }
     
     println!("✅ Created {} nodes with portfolios\n", num_nodes);
@@ -84,7 +82,7 @@ fn main() {
                     
                     // Record profitable trade
                     if profit > 0 {
-                        trade_sequences.push(meme_evolver::TradeSequence {
+                        trade_sequences.push(// meme_evolver::TradeSequence {
                             node_id: node.node_id,
                             bought_meme_id: meme.id,
                             buy_price,
@@ -117,7 +115,7 @@ fn main() {
                         node.portfolio.memes.push(hybrid.clone());
                         
                         if profit > 0 {
-                            trade_sequences.push(meme_evolver::TradeSequence {
+                            trade_sequences.push(// meme_evolver::TradeSequence {
                                 node_id: node.node_id,
                                 bought_meme_id: meme1.id,
                                 buy_price: cost,
@@ -137,7 +135,7 @@ fn main() {
             for node in &nodes {
                 let node = node.lock().unwrap();
                 for meme in &node.portfolio.memes {
-                    let (bid, ask) = market_maker.quote(meme);
+                    let (bid, ask) = // market_maker.quote(meme);
                     // Market maker stands ready to buy at bid, sell at ask
                 }
             }
@@ -240,7 +238,7 @@ fn main() {
     println!("🏆 Final Results:");
     
     // Market maker report
-    market_maker.report();
+    // market_maker.report();
     println!();
     
     // Report profitable trades
