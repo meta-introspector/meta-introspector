@@ -263,8 +263,9 @@ impl UnifiedNixService {
                 
                 // Try to find the symbol
                 if unsafe { library.get::<fn()>(symbol_name.as_bytes()) }.is_ok() {
+                    let tool_name_str = format!("{}_{}", lib_name, tool_name);
                     let mcp_tool = MCPTool {
-                        name: format!("{}_{}", lib_name, tool_name),
+                        name: tool_name_str.clone(),
                         library_symbol: symbol_name,
                         input_schema: serde_json::json!({
                             "type": "object",
@@ -274,8 +275,8 @@ impl UnifiedNixService {
                         }),
                     };
                     
-                    mcp_tools.insert(mcp_tool.name.clone(), mcp_tool);
-                    println!("🔧 Discovered MCP tool: {}", mcp_tool.name);
+                    println!("🔧 Discovered MCP tool: {}", tool_name_str);
+                    mcp_tools.insert(tool_name_str, mcp_tool);
                 }
             }
         }
