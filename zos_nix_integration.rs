@@ -46,7 +46,9 @@ impl ZosNixIntegration {
             }))
             
             // Call MCP tool on loaded flake
-            // .route("/unified/mcp/:content_address/:tool_name", post({
+            // Commented out - incomplete implementation
+            /*
+            .route("/unified/mcp/:content_address/:tool_name", post({
                 let service = Arc::clone(&service);
                 move |Path((content_address, tool_name)): Path<(String, String)>, Json(args): Json<serde_json::Value>| async move {
                     let service = service.lock().await;
@@ -58,7 +60,8 @@ impl ZosNixIntegration {
                         }
                     }
                 }
-            })
+            }))
+            */
             
             // Get Solana orbital transaction info
             .route("/unified/orbit/:content_address", get({

@@ -59,15 +59,17 @@ fn main() {
         println!("📊 Round {}", round);
         
         // Evolution phase: buy, evolve, sell
+        /*
         if round % 7 == 0 && round > 0 {
             println!("  🧬 Evolution phase!");
             for i in 0..nodes.len() {
                 let mut node = nodes[i].lock().unwrap();
-                let evolver = &evolvers[i];
+                // let evolver = &evolvers[i];
                 
                 // Find a meme to evolve
                 if let Some(meme_idx) = (0..node.portfolio.memes.len())
-                    .max_by_key(|&idx| (node.portfolio.memes[idx].fitness * 100.0) as u64) {
+                    .max_by_key(|&idx| (node.portfolio.memes[idx].fitness * 100.0) as u64)
+                {
                     
                     let meme = node.portfolio.memes[meme_idx].clone();
                     let buy_price = (meme.fitness * 100.0) as u64;
@@ -129,6 +131,7 @@ fn main() {
                 }
             }
         }
+        */
         
         // Market maker quotes: provide liquidity
         if round % 5 == 0 {
