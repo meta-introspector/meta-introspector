@@ -2,6 +2,12 @@
 
 This repository contains the source code and documentation for the Meta-Introspector project. Our goal is to consolidate and provide comprehensive, easily accessible documentation for all aspects of the project.
 
+## 🚀 Quick Start
+
+**New users**: See [QUICKSTART.md](QUICKSTART.md) - Get running in 5 minutes!
+
+**Lost?** See [FILE_INDEX.md](FILE_INDEX.md) - Complete file guide
+
 ## Recent Compilation Fixes (2026-01-17)
 
 Successfully resolved all blocking compilation errors! The codebase now builds cleanly with `cargo build`.
@@ -67,6 +73,14 @@ Download pre-built binaries from [GitHub Releases](https://github.com/meta-intro
 - Linux (x86_64, aarch64)
 - macOS (x86_64, aarch64)
 - Windows (x86_64)
+
+## Quick Links
+
+- 📖 [QUICKSTART.md](QUICKSTART.md) - Get started in 5 minutes
+- 📚 [FILE_INDEX.md](FILE_INDEX.md) - Find any file
+- 🚀 [Deploy QA Server](deploy-qa.sh) - One-command deployment
+- 🔧 [Build Guide](docs/BUILD_FIXING_GUIDE.md) - Fix compilation errors
+- 📦 [Nix Builds](NIX_BUILD_READY.md) - Reproducible builds
 
 ## Documentation Status
 
