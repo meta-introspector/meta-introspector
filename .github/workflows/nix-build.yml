@@ -2,9 +2,9 @@ name: Build with Nix
 
 on:
   push:
-    branches: [main, master, meme-marketplace]
+    branches: [main, master, meme-marketplace, novel-code-analysis]
   pull_request:
-    branches: [main, master, meme-marketplace]
+    branches: [main, master, meme-marketplace, novel-code-analysis]
 
 jobs:
   build:
