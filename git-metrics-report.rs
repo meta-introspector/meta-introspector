@@ -62,7 +62,7 @@ fn main() {
                 let path = entry.path();
                 if path.is_dir() {
                     scan_dir(&path, report);
-                } else if path.extension().map_or(false, |ext| ext == "json") {
+                } else if path.extension().is_some_and(|ext| ext == "json") {
                     if let Ok(content) = fs::read_to_string(&path) {
                         if let Ok(activities) = serde_json::from_str::<Vec<Activity>>(&content) {
                             for activity in activities {
@@ -70,7 +70,7 @@ fn main() {
                                 
                                 let metrics = report.authors
                                     .entry(activity.author_name.clone())
-                                    .or_insert_with(AuthorMetrics::default);
+                                    .or_default();
                                 
                                 metrics.total_commits += 1;
                                 metrics.total_files += activity.files_changed.unwrap_or(0);

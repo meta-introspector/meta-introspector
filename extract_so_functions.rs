@@ -1,6 +1,4 @@
 use goblin::elf::Elf;
-use rustc_demangle;
-use cpp_demangle;
 use std::env;
 use std::fs;
 
@@ -77,7 +75,7 @@ fn process_symbol(mangled_name: &str) {
     }
 }
 
-fn generate_hook_macro(func_name: &str, original_name: &str, demangled: &str, lang: &str) {
+fn generate_hook_macro(func_name: &str, _original_name: &str, demangled: &str, lang: &str) {
     let safe_name = make_safe_identifier(func_name);
     
     println!("/// {}: {}", lang.to_uppercase(), demangled);

@@ -112,7 +112,7 @@ pub struct MarkovMarket {
 impl MarkovMarket {
     pub fn new(num_miners: usize) -> Self {
         Self {
-            miners: (0..num_miners).map(|i| MarkovMiner::new(i)).collect(),
+            miners: (0..num_miners).map(MarkovMiner::new).collect(),
             global_transitions: HashMap::new(),
             total_coins_paid: 0,
         }
@@ -136,7 +136,7 @@ impl MarkovMarket {
         
         // Aggregate unique transitions
         for miner in &self.miners {
-            for ((from, to), _) in &miner.transitions {
+            for (from, to) in miner.transitions.keys() {
                 if let Some(trans) = miner.export_transition(from, to) {
                     self.global_transitions.insert(
                         (from.clone(), to.clone()),

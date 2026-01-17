@@ -118,7 +118,7 @@ pub struct BranchMarket {
 impl BranchMarket {
     pub fn new(num_miners: usize) -> Self {
         let miners = (0..num_miners)
-            .map(|i| BranchMiner::new(i))
+            .map(BranchMiner::new)
             .collect();
         
         Self {

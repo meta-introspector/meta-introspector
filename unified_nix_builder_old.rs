@@ -63,7 +63,7 @@ impl NixBuilder {
         println!("🔍 Found {} shared libraries for nix", nix_libs.len());
         
         let mut cmd = Command::new("strace");
-        cmd.args(&["-f", "-e", "trace=execve,openat", "-o", "/tmp/nix_strace.log"]);
+        cmd.args(["-f", "-e", "trace=execve,openat", "-o", "/tmp/nix_strace.log"]);
         cmd.arg("nix");
         cmd.args(args);
 
@@ -162,6 +162,12 @@ impl NixBuilder {
 // Service wrapper for async usage
 pub struct NixService {
     builder: NixBuilder,
+}
+
+impl Default for NixService {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl NixService {

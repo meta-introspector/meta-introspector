@@ -273,9 +273,9 @@ fn generate_binary_wrapper(binary_path: &str, libraries: &[String], symbols: &[S
     for lib in libraries {
         content.push_str("//   ");
         content.push_str(lib);
-        content.push_str("\n");
+        content.push('\n');
     }
-    content.push_str("\n");
+    content.push('\n');
     
     // Generate actual redhook hooks for each symbol
     content.push_str("// 🔧 SYMBOL HOOKS:\n");
@@ -341,7 +341,7 @@ fn create_master_call_wrapper(dataset: &AllCallsDataset) {
             content.push_str("\");\n");
         }
     }
-    content.push_str("\n");
+    content.push('\n');
     
     // Master initialization with dynamic service registry
     content.push_str("macro_rules! init_all_call_wrappers {\n");

@@ -1,6 +1,4 @@
 use std::collections::HashMap;
-use std::fs;
-use std::path::Path;
 use serde::{Serialize, Deserialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -72,7 +70,7 @@ impl RustGrammar {
     fn build_grammar_from_tokens(&mut self, tokens: Vec<String>) -> u32 {
         // Sequitur algorithm: find repeated bigrams and create rules
         let mut sequence: Vec<Symbol> = tokens.into_iter()
-            .map(|t| Symbol::Terminal(t))
+            .map(Symbol::Terminal)
             .collect();
         
         loop {
@@ -225,7 +223,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     "#;
     
-    let start_rule = grammar.compress_rust_file(sample_rust);
+    let _start_rule = grammar.compress_rust_file(sample_rust);
     let stats = grammar.get_compression_stats();
     
     println!("\n📊 COMPRESSION RESULTS:");

@@ -1,7 +1,7 @@
 // Check which repos from activity dataset are in git-sources registry
 // Scans activity dataset and reports coverage
 
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::path::Path;

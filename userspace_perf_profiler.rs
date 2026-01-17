@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
-use std::time::{Duration, Instant};
+use std::time::Duration;
 use std::thread;
 use serde::{Deserialize, Serialize};
 
@@ -174,7 +174,7 @@ impl UserspaceProfiler {
 
         for sample in samples {
             // Resolve symbols
-            let (symbol, library) = self.symbol_resolver.resolve(sample.instruction_pointer);
+            let (symbol, _library) = self.symbol_resolver.resolve(sample.instruction_pointer);
             
             *symbol_counts.entry(symbol.clone()).or_insert(0) += 1;
             *symbol_cycles.entry(symbol.clone()).or_insert(0) += sample.cpu_cycles;

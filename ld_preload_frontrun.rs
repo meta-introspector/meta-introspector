@@ -210,7 +210,7 @@ void preload_destructor() {
     
     // Compile the shared library
     let compile_result = Command::new("gcc")
-        .args(&[
+        .args([
             "-shared", 
             "-fPIC", 
             "-o", "libpreload_interceptor.so",

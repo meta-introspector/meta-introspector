@@ -1,8 +1,7 @@
 // Syn Spectrum: AST structure defines code spectrum
 // Parse with syn, serialize with serde, compress, analyze
 
-use syn::{parse_file, File};
-use serde_json;
+use syn::parse_file;
 
 #[derive(Debug, Clone)]
 pub struct SynSpectrum {

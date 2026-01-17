@@ -55,7 +55,7 @@ fn main() {
     }
     
     // Save the actual compressed data
-    fs::write(&compressed_file, &all_compressed).unwrap();
+    fs::write(compressed_file, &all_compressed).unwrap();
     
     let actual_size = all_compressed.len();
     println!("\n✅ ACTUAL COMPRESSED FILE CREATED:");
@@ -66,7 +66,7 @@ fn main() {
     // Show the file
     let ls_output = Command::new("ls")
         .arg("-lh")
-        .arg(&compressed_file)
+        .arg(compressed_file)
         .output()
         .unwrap();
     

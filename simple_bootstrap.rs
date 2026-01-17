@@ -6,6 +6,12 @@ pub struct SimpleBootstrap {
     pub emojis: HashMap<String, String>,
 }
 
+impl Default for SimpleBootstrap {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl SimpleBootstrap {
     pub fn new() -> Self {
         let mut systems = HashMap::new();

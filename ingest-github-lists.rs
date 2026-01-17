@@ -1,7 +1,7 @@
 // Ingest GitHub stars/forks lists and compare with git-sources registry
 
 use serde::{Deserialize, Serialize};
-use std::collections::{HashMap, HashSet};
+use std::collections::HashSet;
 use std::fs;
 use std::path::PathBuf;
 
@@ -65,12 +65,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut registered = Vec::new();
     
     for repo in &starred_repos {
-        let url_variants = vec![
-            repo.clone_url.clone(),
+        let url_variants = [repo.clone_url.clone(),
             repo.html_url.clone(),
             repo.clone_url.replace("https://", "ssh://git@"),
-            format!("ssh://git@github.com/{}.git", repo.full_name),
-        ];
+            format!("ssh://git@github.com/{}.git", repo.full_name)];
         
         if url_variants.iter().any(|u| registered_urls.contains(u)) {
             registered.push(repo.full_name.clone());

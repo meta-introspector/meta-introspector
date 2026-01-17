@@ -82,9 +82,9 @@ impl SoExecutor {
 
 impl NixExecutor for SoExecutor {
     fn execute(&self, request: &NixBuildRequest) -> Result<NixBuildResult, String> {
-        use libloading::{Library, Symbol};
+        use libloading::Library;
         
-        let start = Instant::now();
+        let _start = Instant::now();
         
         // Load nix library
         let lib = unsafe {

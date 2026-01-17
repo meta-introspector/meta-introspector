@@ -66,7 +66,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Run the pipeline
         println!("🏃 Executing...");
         let mut cmd = Command::new("cargo");
-        cmd.args(&["run", "--bin", &pipeline.binary]);
+        cmd.args(["run", "--bin", &pipeline.binary]);
         
         let output = cmd.output()?;
         

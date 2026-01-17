@@ -92,7 +92,7 @@ impl BitsToRust {
             program.push_str("use std::collections::*;\n");
         }
         
-        program.push_str("\n");
+        program.push('\n');
         
         // Generate main function
         program.push_str("fn main() {\n");

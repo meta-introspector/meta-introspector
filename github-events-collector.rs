@@ -22,7 +22,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Try user events first, fall back to org events
     let mut output = Command::new("gh")
-        .args(&["api", &format!("/users/{}/events", user), "--paginate"])
+        .args(["api", &format!("/users/{}/events", user), "--paginate"])
         .output()?;
     
     // Check if empty array
@@ -30,7 +30,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     if !output.status.success() || stdout_str.trim() == "[]" {
         println!("   Trying org events API...");
         output = Command::new("gh")
-            .args(&["api", &format!("/orgs/{}/events", user), "--paginate"])
+            .args(["api", &format!("/orgs/{}/events", user), "--paginate"])
             .output()?;
     }
     

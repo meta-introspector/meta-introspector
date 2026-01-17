@@ -31,7 +31,7 @@ impl TypeCollector {
         }
     }
 
-    fn add_instance(&mut self, type_name: &str, value: &str, context: &str) {
+    fn add_instance(&mut self, type_name: &str, value: &str, _context: &str) {
         let model = self.models.entry(type_name.to_string()).or_insert_with(|| {
             MarkovModel {
                 data_type: type_name.to_string(),
@@ -84,23 +84,20 @@ impl TypeCollector {
 
 impl<'ast> Visit<'ast> for TypeCollector {
     fn visit_expr(&mut self, expr: &'ast Expr) {
-        match expr {
-            Expr::Lit(expr_lit) => {
-                let (type_name, value) = match &expr_lit.lit {
-                    Lit::Str(lit_str) => ("String", lit_str.value()),
-                    Lit::ByteStr(lit_byte_str) => ("&[u8]", format!("{:?}", lit_byte_str.value())),
-                    Lit::Byte(lit_byte) => ("u8", lit_byte.value().to_string()),
-                    Lit::Char(lit_char) => ("char", lit_char.value().to_string()),
-                    Lit::Int(lit_int) => ("integer", lit_int.base10_digits().to_string()),
-                    Lit::Float(lit_float) => ("float", lit_float.base10_digits().to_string()),
-                    Lit::Bool(lit_bool) => ("bool", lit_bool.value.to_string()),
-                    Lit::Verbatim(_) => ("verbatim", "complex".to_string()),
-                    _ => ("unknown", "unknown".to_string()),
-                };
-                
-                self.add_instance(type_name, &value, "literal");
-            }
-            _ => {}
+        if let Expr::Lit(expr_lit) = expr {
+            let (type_name, value) = match &expr_lit.lit {
+                Lit::Str(lit_str) => ("String", lit_str.value()),
+                Lit::ByteStr(lit_byte_str) => ("&[u8]", format!("{:?}", lit_byte_str.value())),
+                Lit::Byte(lit_byte) => ("u8", lit_byte.value().to_string()),
+                Lit::Char(lit_char) => ("char", lit_char.value().to_string()),
+                Lit::Int(lit_int) => ("integer", lit_int.base10_digits().to_string()),
+                Lit::Float(lit_float) => ("float", lit_float.base10_digits().to_string()),
+                Lit::Bool(lit_bool) => ("bool", lit_bool.value.to_string()),
+                Lit::Verbatim(_) => ("verbatim", "complex".to_string()),
+                _ => ("unknown", "unknown".to_string()),
+            };
+            
+            self.add_instance(type_name, &value, "literal");
         }
         
         syn::visit::visit_expr(self, expr);

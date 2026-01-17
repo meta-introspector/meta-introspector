@@ -1,7 +1,7 @@
 // 🔧 NIX BUILD TELEMETRY: Migrated to use canonical builder
 use std::env;
 mod nix_canonical_builder;
-use nix_canonical_builder::{nix_build, NixBuildRequest, NixCanonicalBuilder};
+use nix_canonical_builder::nix_build;
 
 fn main() {
     println!("🔧 NIX BUILD TELEMETRY WRAPPER");

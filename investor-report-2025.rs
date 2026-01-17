@@ -78,7 +78,7 @@ fn main() {
                                 // Track month/repo matrix
                                 let month_map = monthly_repo_matrix
                                     .entry(month.to_string())
-                                    .or_insert_with(HashMap::new);
+                                    .or_default();
                                 *month_map.entry(activity.repo_name.clone()).or_insert(0) += 1;
                                 
                                 // Track all repos

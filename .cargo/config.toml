@@ -1,11 +1,13 @@
-[target.x86_64-unknown-linux-gnu]
-linker = "gcc"
+[build]
+# Enable custom lints
+rustflags = [
+  "-W", "clippy::unwrap_used",
+  "-W", "clippy::expect_used",
+  "-D", "clippy::todo",
+  "-D", "clippy::unimplemented",
+]
 
-[target.x86_64-pc-windows-gnu]
-linker = "./mingw-wrapper.sh"
-
-[target.x86_64-apple-darwin]
-linker = "x86_64-apple-darwin-clang"
-
-[target.aarch64-apple-darwin]
-linker = "aarch64-apple-darwin-clang"
+[alias]
+# Convenience aliases
+lint = "clippy --all-targets --all-features -- -D warnings"
+demo-check = "rustc -- -L demo2code-lint/target/release -Z extra-plugins=demo2code_lint"

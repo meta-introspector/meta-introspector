@@ -31,7 +31,7 @@ impl WasmRunner {
     }
     
     pub fn eval_with_trace(&mut self, wasm_bytes: &[u8]) -> Result<WasmTrace, Box<dyn std::error::Error>> {
-        let module = Module::new(&self.engine, wasm_bytes)?;
+        let _module = Module::new(&self.engine, wasm_bytes)?;
         let mut trace = WasmTrace {
             instructions: vec![],
             godel_number: String::new(),

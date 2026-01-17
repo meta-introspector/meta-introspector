@@ -114,7 +114,7 @@ impl CrossbeamAnalyzer {
                     
                     if path.is_dir() {
                         dirs_to_process.push(path);
-                    } else if path.extension().map_or(false, |ext| ext == "rs") {
+                    } else if path.extension().is_some_and(|ext| ext == "rs") {
                         self.sender.send(path)?;
                         files_queued += 1;
                         
@@ -150,8 +150,8 @@ impl CrossbeamAnalyzer {
 
         // Calculate correlations
         let mut correlations = Vec::new();
-        for (filename_part, _) in &filename_patterns {
-            for (content_item, _) in &content_patterns {
+        for filename_part in filename_patterns.keys() {
+            for content_item in content_patterns.keys() {
                 let correlation = Self::calculate_correlation(&results, filename_part, content_item);
                 if correlation > 0.2 {
                     correlations.push((filename_part.clone(), content_item.clone(), correlation));

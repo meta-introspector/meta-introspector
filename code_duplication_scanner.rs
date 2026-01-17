@@ -1,7 +1,6 @@
 // Code Duplication Scanner: Mathematical fingerprints for Rust code
 use serde::{Deserialize, Serialize};
-use std::collections::{HashMap, HashSet};
-use std::path::PathBuf;
+use std::collections::HashMap;
 
 #[derive(Debug, Clone, Serialize, Deserialize, Hash, Eq, PartialEq)]
 pub struct CodeFingerprint {
@@ -31,6 +30,12 @@ pub struct CodeLocation {
 pub struct DuplicationScanner {
     pub fingerprints: HashMap<CodeFingerprint, Vec<CodeLocation>>,
     pub duplicates: Vec<DuplicateCode>,
+}
+
+impl Default for DuplicationScanner {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DuplicationScanner {
@@ -73,7 +78,7 @@ impl DuplicationScanner {
                 };
                 
                 self.fingerprints.entry(fingerprint)
-                    .or_insert_with(Vec::new)
+                    .or_default()
                     .push(location);
             }
         }
@@ -126,11 +131,8 @@ impl DuplicationScanner {
         
         // Parameter tokens
         for input in &func.sig.inputs {
-            match input {
-                syn::FnArg::Typed(pat_type) => {
-                    tokens.push(quote::quote!(#pat_type).to_string());
-                }
-                _ => {}
+            if let syn::FnArg::Typed(pat_type) = input {
+                tokens.push(quote::quote!(#pat_type).to_string());
             }
         }
         
@@ -225,12 +227,12 @@ impl DuplicationScanner {
         
         for (fp, locs) in &self.fingerprints {
             by_structure.entry(fp.structure_hash.clone())
-                .or_insert_with(Vec::new)
+                .or_default()
                 .push((fp.clone(), locs.clone()));
         }
         
         // Find groups with multiple different implementations
-        for (structure_hash, group) in by_structure {
+        for (_structure_hash, group) in by_structure {
             if group.len() > 1 {
                 // Near-duplicate: same structure, different names
                 let all_locations: Vec<CodeLocation> = group.iter()

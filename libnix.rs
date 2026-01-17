@@ -1,7 +1,7 @@
 // libnix - Nix wrapper that loads system libraries on demand
 // Usage: nix!("ssl", "git", "curl")
 
-use libloading::{Library, Symbol};
+use libloading::Library;
 use std::collections::HashMap;
 use std::sync::Mutex;
 

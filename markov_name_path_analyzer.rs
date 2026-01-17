@@ -18,7 +18,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let score = row.get_double(4)?;
         symbols.push((name, file, score));
         
-        if (symbols.len()) % 200000 == 0 {
+        if (symbols.len()).is_multiple_of(200000) {
             println!("   Loaded {} symbols", symbols.len());
         }
     }
@@ -166,9 +166,9 @@ fn tokenize_symbol(name: &str) -> Vec<String> {
 
 fn auto_label_symbols(
     symbols: &[(String, String, f64)],
-    name_bigrams: &HashMap<String, usize>,
-    name_trigrams: &HashMap<String, usize>,
-    path_components: &HashMap<String, usize>
+    _name_bigrams: &HashMap<String, usize>,
+    _name_trigrams: &HashMap<String, usize>,
+    _path_components: &HashMap<String, usize>
 ) -> Vec<String> {
     symbols.iter().map(|(name, file, _)| {
         // Label based on symbol name patterns

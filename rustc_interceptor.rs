@@ -6,7 +6,6 @@ use std::path::Path;
 use std::process::Command;
 use std::collections::HashMap;
 use std::io::Write;
-use serde_json;
 
 #[derive(Debug)]
 struct RustcInterceptor {
@@ -147,7 +146,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     
     // Only compress if we have actual .rs files
-    let has_rs_files = args.iter().any(|arg| arg.ends_with(".rs") && Path::new(arg).exists());
+    let _has_rs_files = args.iter().any(|arg| arg.ends_with(".rs") && Path::new(arg).exists());
     // Always pass through to real rustc - we're just logging the build order
     let real_rustc = env::var("REAL_RUSTC").unwrap_or_else(|_| "rustc".to_string());
     let mut cmd = Command::new(real_rustc);

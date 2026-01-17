@@ -1,14 +1,12 @@
 // 🔥 NIX-AS-A-SERVICE: Load any nix flake, wrap .so files, expose via MCP with Solana CA
-use axum::{extract::Query, http::StatusCode, response::Json, routing::{get, post}, Router};
-use libloading::{Library, Symbol};
+use axum::{http::StatusCode, response::Json, routing::{get, post}, Router};
+use libloading::Library;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use std::ffi::{CStr, CString};
-use std::os::raw::{c_char, c_int};
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 use std::process::Command;
 use std::sync::{Arc, Mutex};
-use tokio::time::{Duration, Instant};
+use tokio::time::Instant;
 use sha2::{Sha256, Digest};
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -159,7 +157,7 @@ impl NixAsAService {
         
         // Use nix build to build the flake
         let mut nix_cmd = Command::new("nix");
-        nix_cmd.args(&["build", "--json", "--no-link"]);
+        nix_cmd.args(["build", "--json", "--no-link"]);
         
         // Add specific outputs if requested
         for output in &request.outputs {
@@ -271,7 +269,7 @@ impl NixAsAService {
     async fn extract_flake_info(&self, flake_ref: &str) -> Result<FlakeInfo, Box<dyn std::error::Error>> {
         // Use nix flake show to get flake metadata
         let output = Command::new("nix")
-            .args(&["flake", "show", "--json", flake_ref])
+            .args(["flake", "show", "--json", flake_ref])
             .output()?;
 
         if output.status.success() {
@@ -303,7 +301,7 @@ impl NixAsAService {
             .ok_or("Flake not loaded")?;
 
         // Find the method in the loaded libraries
-        let method_symbol = flake.mcp_methods.get(&request.method)
+        let _method_symbol = flake.mcp_methods.get(&request.method)
             .ok_or("Method not found")?;
 
         // TODO: Implement actual MCP method calling via FFI

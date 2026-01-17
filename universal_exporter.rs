@@ -1,6 +1,5 @@
 // Universal Export System: GitHub Artifacts, Archive.org, Docker, HuggingFace
 use serde::{Deserialize, Serialize};
-use std::path::PathBuf;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum ExportTarget {
@@ -53,12 +52,12 @@ impl UniversalExporter {
         // Create tarball from nix store
         let tarball = format!("/tmp/artifact-{}.tar.gz", run_id);
         std::process::Command::new("tar")
-            .args(&["-czf", &tarball, "-C", nix_path, "."])
+            .args(["-czf", &tarball, "-C", nix_path, "."])
             .output()?;
         
         // Upload via gh CLI
         std::process::Command::new("gh")
-            .args(&["run", "upload", run_id, &tarball])
+            .args(["run", "upload", run_id, &tarball])
             .output()?;
         
         println!("  ✓ Uploaded to GitHub: {}/actions/runs/{}", repo, run_id);
@@ -80,7 +79,7 @@ description: Nix store export from meta-introspector mining operations
         
         // Upload via ia CLI
         std::process::Command::new("ia")
-            .args(&["upload", identifier, nix_path, "--metadata-file", "/tmp/metadata.txt"])
+            .args(["upload", identifier, nix_path, "--metadata-file", "/tmp/metadata.txt"])
             .output()?;
         
         println!("  ✓ Uploaded to Archive.org: https://archive.org/details/{}", identifier);
@@ -102,12 +101,12 @@ LABEL org.opencontainers.image.description="Nix store export"
         
         // Build image
         std::process::Command::new("docker")
-            .args(&["build", "-t", &format!("{}/{}:{}", registry, image, tag), "-f", "/tmp/Dockerfile", "."])
+            .args(["build", "-t", &format!("{}/{}:{}", registry, image, tag), "-f", "/tmp/Dockerfile", "."])
             .output()?;
         
         // Push image
         std::process::Command::new("docker")
-            .args(&["push", &format!("{}/{}:{}", registry, image, tag)])
+            .args(["push", &format!("{}/{}:{}", registry, image, tag)])
             .output()?;
         
         println!("  ✓ Pushed to Docker: {}/{}:{}", registry, image, tag);
@@ -119,7 +118,7 @@ LABEL org.opencontainers.image.description="Nix store export"
         
         // Upload via huggingface-cli
         std::process::Command::new("huggingface-cli")
-            .args(&["upload", dataset, nix_path, "--repo-type", repo_type])
+            .args(["upload", dataset, nix_path, "--repo-type", repo_type])
             .output()?;
         
         println!("  ✓ Uploaded to HuggingFace: https://huggingface.co/datasets/{}", dataset);

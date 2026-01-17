@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use std::ffi::{CStr, CString};
+use std::ffi::CString;
 use libc::{dlopen, dlsym, dlclose, RTLD_LAZY};
 use serde::{Deserialize, Serialize};
 
@@ -104,14 +104,14 @@ impl AbstractAbiWrapper {
         }
     }
 
-    pub fn call_with_analysis<T>(&mut self, symbol_name: &str, args: &[*const libc::c_void]) -> Result<T, String> {
+    pub fn call_with_analysis<T>(&mut self, symbol_name: &str, _args: &[*const libc::c_void]) -> Result<T, String> {
         // Increment call count
         if let Some(analysis) = self.symbol_analyses.get_mut(symbol_name) {
             analysis.call_count += 1;
         }
 
         // Get function pointer
-        let func_ptr = self.active_symbols.get(symbol_name)
+        let _func_ptr = self.active_symbols.get(symbol_name)
             .ok_or_else(|| format!("Symbol '{}' not loaded", symbol_name))?;
 
         // This is a simplified wrapper - in practice you'd need proper function signature handling

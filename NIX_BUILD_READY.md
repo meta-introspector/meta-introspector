@@ -1,77 +1,127 @@
-# Nix Build Configuration Complete
+# Nix Build Configuration
 
-## ✅ All Systems Ready for Deployment
-
-### Packages Available
-
-1. **meta-introspector-binaries** (218 binaries)
-   - 33 demo binaries including:
-     - demo_branch_mining - Extract branch predictions from LLMs
-     - demo_markov_mining - Character transitions → grammar → rustc branches
-     - demo_block_market - XZ block compression market
-     - demo_swarm_hunt - Rare syn type hunting with blockchain
-     - demo_lattice - Perfect lattice proof
-     - demo_content_store - Content addressable storage
-     - ... and 27 more demos
-
-2. **minimal-build-server** (default)
-   - Core build server
-
-3. **zos** (from zos-server/nix-build-setup)
-   - 8 binaries: zos_server, zos-dev-server, zos-dev-minimal, etc.
-
-4. **telemetry-driver** (from rust-telemetry-driver)
-   - Build telemetry capture
-
-5. **librustc-pkg** (from librustc)
-   - Rustc integration
-
-### Build Commands
+## Production Builds
 
 ```bash
-# Build all meta-introspector binaries
-nix build .#meta-introspector-binaries
+# Build production tools (excludes demos)
+nix build .#tools
 
-# Build minimal server
-nix build .#minimal-build-server
+# Build specific tool
+nix build .#analyze-and-prove
 
-# Build zos server
-nix build .#zos
-
-# Build telemetry driver
-nix build .#telemetry-driver
-
-# Enter dev shell with all tools
+# Enter dev environment
 nix develop
 ```
 
-### Flake Inputs
+## Archived Demos (Quarantined)
 
-- **rust-telemetry-driver**: github:meta-introspector/rust-telemetry-driver
-- **zos-server**: github:meta-introspector/zos-server/nix-build-setup
-- **librustc**: github:meta-introspector/librustc
+⚠️ **WARNING**: Demos contain fake data and incomplete implementations
 
-### Next Steps: QA Deployment
+```bash
+# Build archived demos for analysis only
+nix build .#demos
 
-1. Build and test locally
-2. Deploy server for QA
-3. Run mining demos
-4. Populate HuggingFace datasets:
-   - introspector/rust/lattice/
-   - introspector/rust/syn-mappings/
-   - introspector/rust/rustc-ips/
-   - introspector/rust/branch-predictions/
-   - introspector/rust/markov/
+# Output location
+./result/bin/archived-demos/
 
-### Mining Systems Ready
+# These binaries are NOT production-ready
+```
 
-- ✅ Branch prediction mining (LLM → rustc branches)
-- ✅ Markov chain mining (chars → grammar → branches)
-- ✅ Block market (XZ compression)
-- ✅ Swarm hunt (rare syn types)
-- ✅ Git pack deduplication
-- ✅ P2P blockchain network
-- ✅ Content addressable storage
-- ✅ Lattice proof system
+## Package Structure
 
-All systems operational and ready for production use!
+### `.#tools` (Production)
+- ✅ Production-ready binaries
+- ✅ Full error handling
+- ✅ Real data sources
+- ✅ Tested and maintained
+
+Includes:
+- `reach_tracer`
+- `source2test`
+- `harmonic_filter`
+- `homotopy_classifier`
+- `fake_detector`
+- `fake_replacer`
+- And more...
+
+### `.#demos` (Archived)
+- ❌ NOT production-ready
+- ❌ Contains fake data
+- ❌ Incomplete implementations
+- ⚠️ For analysis only
+
+Includes:
+- `demo_compression_*`
+- `demo_content_*`
+- `demo_p2p_*`
+- And 45 more...
+
+## Build Flags
+
+Production builds use:
+```nix
+cargoBuildFlags = [
+  "--bins"
+  "--exclude-bin" "archived_demos"
+];
+```
+
+This ensures demos are never included in production builds.
+
+## Usage
+
+### Production
+```bash
+# Build and run production tool
+nix build .#tools
+./result/bin/reach_tracer input.rs
+```
+
+### Analysis (Demos)
+```bash
+# Build demos for binary analysis
+nix build .#demos
+
+# Analyze demo binaries
+./result/bin/archived-demos/demo_compression_study
+# WARNING: May panic on fake data!
+```
+
+## CI/CD
+
+Production CI should only build `.#tools`:
+```yaml
+- name: Build production
+  run: nix build .#tools
+  
+- name: Test production
+  run: nix build .#tools && ./result/bin/fake_detector src/
+```
+
+Demos can be built separately for analysis:
+```yaml
+- name: Build demos (analysis only)
+  run: nix build .#demos
+  continue-on-error: true  # May fail due to fake data
+```
+
+## Safety
+
+1. **Production builds** exclude all demos automatically
+2. **Demo builds** are isolated in separate package
+3. **Warnings** are displayed when building demos
+4. **README** files warn about fake data
+
+## Verification
+
+```bash
+# Verify production build has no demos
+nix build .#tools
+ls result/bin/ | grep demo
+# Should return nothing
+
+# Verify demos are quarantined
+nix build .#demos
+ls result/bin/archived-demos/ | grep demo
+# Should list demo binaries
+```

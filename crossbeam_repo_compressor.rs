@@ -118,7 +118,7 @@ impl CrossbeamRepoCompressor {
         
         for rust_file in &rust_files {
             println!("    📄 Processing: {}", rust_file.display());
-            if let Ok(content) = fs::read_to_string(&rust_file) {
+            if let Ok(content) = fs::read_to_string(rust_file) {
                 let original_size = content.len() as u64;
                 
                 // Simple compression simulation (using our proven ratios)
@@ -166,7 +166,7 @@ impl CrossbeamRepoCompressor {
         if let Ok(entries) = fs::read_dir(dir) {
             for entry in entries.flatten() {
                 let path = entry.path();
-                if path.is_file() && path.extension().map_or(false, |ext| ext == "rs") {
+                if path.is_file() && path.extension().is_some_and(|ext| ext == "rs") {
                     files.push(path);
                 } else if path.is_dir() && 
                     !path.to_string_lossy().contains("target") &&

@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 use std::fs;
-use std::path::{Path, PathBuf};
+use std::path::Path;
 use serde::{Serialize, Deserialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -73,7 +73,7 @@ impl RustcTreeAnalyzer {
                         }
                     } else {
                         file_count += 1;
-                        if path.extension().map_or(false, |ext| ext == "rs") {
+                        if path.extension().is_some_and(|ext| ext == "rs") {
                             rust_files += 1;
                         }
                     }
@@ -98,7 +98,7 @@ impl RustcTreeAnalyzer {
                 self.model.total_dirs += 1;
                 self.model.total_files += file_count;
                 
-                if self.model.total_dirs % 100 == 0 {
+                if self.model.total_dirs.is_multiple_of(100) {
                     println!("Analyzed {} directories, depth {}", self.model.total_dirs, depth);
                 }
             }

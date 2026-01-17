@@ -47,7 +47,7 @@ fn main() {
                 iteration += 1;
                 
                 // Each core reports at different intervals (creates beat pattern)
-                if iteration % (prime_cycle as u64 * 10000) == 0 {
+                if iteration.is_multiple_of(prime_cycle as u64 * 10000) {
                     let elapsed = start.elapsed().as_millis();
                     println!("Core {} ({}Hz): {} iterations @ {}ms", 
                         core_id, prime_cycle, iteration, elapsed);

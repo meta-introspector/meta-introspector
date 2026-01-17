@@ -1,9 +1,7 @@
 use std::process::Command;
-use std::fs;
-use chrono::Utc;
 
 mod repo_queue_manager;
-use repo_queue_manager::{WorkQueue, JobStatus};
+use repo_queue_manager::WorkQueue;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🔨 REPOSITORY WORKER STARTED");
@@ -16,7 +14,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         // Run the fixed complete_indexer on this repository
         let result = Command::new("cargo")
-            .args(&["run", "--bin", "complete_indexer"])
+            .args(["run", "--bin", "complete_indexer"])
             .current_dir("/home/mdupont/zombie_driver2")
             .env("REPO_PATH", &job.path)
             .output();

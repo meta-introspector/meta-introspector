@@ -118,7 +118,7 @@ impl LanguageSpectrum {
         
         // Check if spectrum has nodes we support
         for node in &spectrum.node_counts {
-            if self.node_types.contains(&node.0) && *node.1 > 0 {
+            if self.node_types.contains(node.0) && *node.1 > 0 {
                 return true;
             }
         }

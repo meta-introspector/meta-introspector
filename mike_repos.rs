@@ -31,7 +31,7 @@ fn main() {
         println!("Repositories ({}):", mike.repositories.len());
         
         for (i, repo) in mike.repositories.iter().enumerate() {
-            let repo_commits = mike.commits.iter().filter(|c| c.message.contains(repo) || true).count();
+            let _repo_commits = mike.commits.iter().filter(|c| c.message.contains(repo) || true).count();
             println!("{}. {}", i + 1, repo);
         }
         

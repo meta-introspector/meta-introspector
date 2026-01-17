@@ -39,6 +39,12 @@ pub struct EvolutionStep {
     pub bootstrap_time_ms: u64,
 }
 
+impl Default for BootstrapEvolution {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl BootstrapEvolution {
     pub fn new() -> Self {
         Self {

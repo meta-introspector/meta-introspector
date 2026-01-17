@@ -70,8 +70,8 @@ impl BuildOrderAnalyzer {
 
     fn get_build_order(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         // Simulate cargo build --verbose to get compilation order
-        let output = Command::new("cargo")
-            .args(&["build", "--verbose", "--dry-run"])
+        let _output = Command::new("cargo")
+            .args(["build", "--verbose", "--dry-run"])
             .current_dir("/tmp") // Use temp dir to avoid conflicts
             .output();
 

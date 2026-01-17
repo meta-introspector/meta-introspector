@@ -5,7 +5,7 @@ fn main() {
     println!("🚀 Creating perfect hash symbol table for Rust");
     
     // Load our compression results to get symbol frequencies
-    let results = fs::read_to_string("crossbeam_repo_compression_results.json").unwrap();
+    let _results = fs::read_to_string("crossbeam_repo_compression_results.json").unwrap();
     
     // Extract all unique symbols from our compressed data
     let mut symbol_table = HashMap::new();
@@ -120,11 +120,11 @@ fn next_prime(n: usize) -> usize {
 fn is_prime(n: usize) -> bool {
     if n < 2 { return false; }
     if n == 2 { return true; }
-    if n % 2 == 0 { return false; }
+    if n.is_multiple_of(2) { return false; }
     
     let sqrt_n = (n as f64).sqrt() as usize;
     for i in (3..=sqrt_n).step_by(2) {
-        if n % i == 0 {
+        if n.is_multiple_of(i) {
             return false;
         }
     }

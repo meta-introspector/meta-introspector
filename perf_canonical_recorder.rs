@@ -4,10 +4,9 @@
 // Can be used as both binary and library
 
 use serde::{Deserialize, Serialize};
-use std::fs::{self, File};
-use std::io::Write;
-use std::path::{Path, PathBuf};
-use std::process::{Command, Stdio, Child};
+use std::fs::{self};
+use std::path::PathBuf;
+use std::process::Command;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 // Public API for library usage (types defined below)
@@ -278,14 +277,14 @@ fn main() {
     
     if args.len() < 3 {
         eprintln!("Usage: perf_canonical_recorder <session_type> <command...>");
-        eprintln!("");
+        eprintln!();
         eprintln!("Session types:");
         eprintln!("  nix       - Nix build");
         eprintln!("  rustc     - Rustc build");
         eprintln!("  cargo     - Cargo test/build");
         eprintln!("  binary    - Binary execution");
         eprintln!("  custom    - Custom command");
-        eprintln!("");
+        eprintln!();
         eprintln!("Examples:");
         eprintln!("  perf_canonical_recorder nix nix build .#hello");
         eprintln!("  perf_canonical_recorder rustc rustc --version");
@@ -318,14 +317,14 @@ fn main() {
     // Generate report
     match session.generate_report() {
         Ok(report) => {
-            println!("");
+            println!();
             println!("📊 Session Summary:");
             println!("   Session ID: {}", report.session_id);
             println!("   Total samples: {}", report.total_samples);
             println!("   Top symbols: {}", report.top_symbols.len());
             println!("   Binaries: {}", report.binaries.len());
             println!("   Libraries: {}", report.libraries.len());
-            println!("");
+            println!();
             println!("   Data: {}", session.perf_data_path.display());
             println!("   Report: {}", session.perf_report_path.display());
             println!("   JSON: {}", session.perf_json_path.display());

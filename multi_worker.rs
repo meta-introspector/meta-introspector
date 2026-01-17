@@ -107,7 +107,7 @@ fn process_repository(job: &RepoJob) -> Result<String, String> {
     
     // Get git status (ignore submodules as requested)
     let status_output = Command::new("git")
-        .args(&["-C", repo_path, "status", "--porcelain", "--ignore-submodules"])
+        .args(["-C", repo_path, "status", "--porcelain", "--ignore-submodules"])
         .output()
         .map_err(|e| format!("Git status failed: {}", e))?;
     
@@ -117,7 +117,7 @@ fn process_repository(job: &RepoJob) -> Result<String, String> {
     
     // Get current branch
     let branch_output = Command::new("git")
-        .args(&["-C", repo_path, "branch", "--show-current"])
+        .args(["-C", repo_path, "branch", "--show-current"])
         .output()
         .map_err(|e| format!("Git branch failed: {}", e))?;
     
@@ -125,7 +125,7 @@ fn process_repository(job: &RepoJob) -> Result<String, String> {
     
     // Get remote URLs
     let remote_output = Command::new("git")
-        .args(&["-C", repo_path, "remote", "-v"])
+        .args(["-C", repo_path, "remote", "-v"])
         .output()
         .map_err(|e| format!("Git remote failed: {}", e))?;
     
@@ -145,7 +145,7 @@ fn process_repository(job: &RepoJob) -> Result<String, String> {
     
     // Get last commit info
     let commit_output = Command::new("git")
-        .args(&["-C", repo_path, "log", "-1", "--format=%ci|%h|%s"])
+        .args(["-C", repo_path, "log", "-1", "--format=%ci|%h|%s"])
         .output()
         .map_err(|e| format!("Git log failed: {}", e))?;
     
@@ -165,7 +165,7 @@ fn process_repository(job: &RepoJob) -> Result<String, String> {
         "branch": current_branch,
         "remotes": remote_urls,
         "last_commit": {
-            "date": commit_parts.get(0).unwrap_or(&""),
+            "date": commit_parts.first().unwrap_or(&""),
             "hash": commit_parts.get(1).unwrap_or(&""),
             "message": commit_parts.get(2).unwrap_or(&"")
         },

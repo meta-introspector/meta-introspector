@@ -1,0 +1,13 @@
+[package]
+name = "qemu-reachability-plugin"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+libc = "0.2"
+parquet = { version = "57", features = ["arrow"] }
+arrow = "57"
+goblin = "0.8"

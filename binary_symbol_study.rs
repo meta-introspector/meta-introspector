@@ -5,9 +5,8 @@
 
 // use linux_perf_data::{PerfFileReader, PerfFileRecord};
 use goblin::elf::Elf;
-use std::collections::{HashMap, HashSet};
+use std::collections::HashMap;
 use std::fs::{self, File};
-use std::io::BufReader;
 use std::path::Path;
 use anyhow::Result;
 

@@ -36,7 +36,7 @@ fn main() {
     let activity_base = "data/activity";
     
     for platform_entry in fs::read_dir(activity_base).unwrap().flatten() {
-        let platform = platform_entry.file_name().to_string_lossy().to_string();
+        let _platform = platform_entry.file_name().to_string_lossy().to_string();
         let platform_path = platform_entry.path();
         
         if let Ok(user_entries) = fs::read_dir(&platform_path) {

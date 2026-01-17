@@ -40,7 +40,7 @@ fn main() {
 }
 
 fn build_symbol_table(codec: &mut DirectASTCodec) {
-    let symbols = vec!["main", "println", "std", "String", "Vec", "i32", "u32"];
+    let symbols = ["main", "println", "std", "String", "Vec", "i32", "u32"];
     for (i, symbol) in symbols.iter().enumerate() {
         codec.symbol_ids.insert(symbol.to_string(), i as u16);
     }
@@ -114,7 +114,7 @@ fn decode_ast_direct(encoded: &[u8], codec: &DirectASTCodec) -> Vec<Item> {
                 if i + 2 < encoded.len() {
                     let symbol_id = u16::from_le_bytes([encoded[i], encoded[i + 1]]);
                     i += 2;
-                    let stmt_count = encoded[i];
+                    let _stmt_count = encoded[i];
                     i += 1;
                     
                     let name = reverse_symbols.get(&symbol_id)
@@ -139,9 +139,9 @@ fn decode_ast_direct(encoded: &[u8], codec: &DirectASTCodec) -> Vec<Item> {
             2 => { // Struct
                 i += 1;
                 if i + 2 < encoded.len() {
-                    let symbol_id = u16::from_le_bytes([encoded[i], encoded[i + 1]]);
+                    let _symbol_id = u16::from_le_bytes([encoded[i], encoded[i + 1]]);
                     i += 2;
-                    let field_count = encoded[i];
+                    let _field_count = encoded[i];
                     i += 1;
                     
                     let struct_ast = syn::parse_quote! {

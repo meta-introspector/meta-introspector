@@ -2,7 +2,6 @@
 // Extracts symbols from real .so files, demangles them, and generates LD_PRELOAD hooks
 
 use goblin::elf::Elf;
-use serde_json;
 use std::fs;
 use std::collections::HashSet;
 
@@ -143,7 +142,7 @@ fn generate_preload_hooks(symbols: &[LibrarySymbol]) {
         let counter_name = format!("{}_COUNT", symbol.name.to_uppercase().replace("@", "_"));
         content.push_str(&format!("static {}: AtomicUsize = AtomicUsize::new(0);\n", counter_name));
     }
-    content.push_str("\n");
+    content.push('\n');
     
     // Generate hooks for common libc functions first
     generate_common_hooks(&mut content);
@@ -175,7 +174,7 @@ fn generate_preload_hooks(symbols: &[LibrarySymbol]) {
         .expect("Failed to write generated hooks");
 }
 
-fn generate_common_hooks(content: &mut String) {
+fn generate_common_hooks(_content: &mut String) {
     // No hardcoded hooks - only use real symbols from goblin
 }
 
@@ -184,7 +183,7 @@ fn generate_rust_hook(content: &mut String, symbol: &LibrarySymbol) {
     let counter_name = format!("{}_COUNT", symbol.name.to_uppercase().replace("@", "_"));
     
     // Generate a generic hook for Rust functions
-    content.push_str(&format!("#[no_mangle]\n"));
+    content.push_str(&"#[no_mangle]\n".to_string());
     content.push_str(&format!("pub extern \"C\" fn {} () {{\n", safe_name));
     content.push_str(&format!("    let count = {}.fetch_add(1, Ordering::SeqCst) + 1;\n", counter_name));
     

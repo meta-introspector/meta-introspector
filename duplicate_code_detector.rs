@@ -101,7 +101,7 @@ fn find_rust_files(dir: &str) -> Result<Vec<String>, Box<dyn std::error::Error>>
             if !dir_name.starts_with('.') && dir_name != "target" {
                 files.extend(find_rust_files(path.to_str().unwrap())?);
             }
-        } else if path.extension().map_or(false, |ext| ext == "rs") {
+        } else if path.extension().is_some_and(|ext| ext == "rs") {
             files.push(path.to_string_lossy().to_string());
         }
     }

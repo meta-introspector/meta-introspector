@@ -4,7 +4,6 @@
 use std::process::Command;
 use std::fs;
 use telemetry_macros::*;
-use telemetry_lib::telemetry_lib::*;
 
 // Include our complete telemetry system
 // include!("telemetry_lib.rs");  // Now a separate crate

@@ -30,7 +30,7 @@ impl Symbol2Macro {
         
         // Use nm to extract symbols
         let output = Command::new("nm")
-            .args(&["-D", &self.library_path]) // Dynamic symbols
+            .args(["-D", &self.library_path]) // Dynamic symbols
             .output()
             .map_err(|e| format!("Failed to run nm: {}", e))?;
 
@@ -144,7 +144,7 @@ fn log_symbol_call(symbol_name: &str, address: &str, args: &[&dyn std::fmt::Debu
         let mut symbol_calls = String::new();
         
         for symbol_name in self.wrapped_symbols.keys() {
-            let macro_name = &self.wrapped_symbols[symbol_name];
+            let _macro_name = &self.wrapped_symbols[symbol_name];
             symbol_calls.push_str(&format!("        println!(\"🔧 Symbol {} ready\", \"{}\");\n", symbol_name, symbol_name));
         }
 

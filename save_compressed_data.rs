@@ -11,7 +11,7 @@ fn main() {
     let tar_file = "/tmp/rust_build_compressed.tar";
     
     // Create compressed directory
-    fs::create_dir_all(&compressed_dir).unwrap();
+    fs::create_dir_all(compressed_dir).unwrap();
     
     // Find all .rs files
     let find_output = Command::new("find")
@@ -59,7 +59,7 @@ fn main() {
     println!("\n📦 Creating tar archive...");
     let tar_result = Command::new("tar")
         .arg("-cf")
-        .arg(&tar_file)
+        .arg(tar_file)
         .arg("-C")
         .arg("/tmp")
         .arg("compressed_rust_build")
@@ -67,11 +67,11 @@ fn main() {
         .unwrap();
     
     if tar_result.status.success() {
-        let tar_size = fs::metadata(&tar_file).unwrap().len();
+        let tar_size = fs::metadata(tar_file).unwrap().len();
         println!("✅ Tar created: {:.2}MB", tar_size as f64 / 1_000_000.0);
         
         // Test different compressions on the tar
-        test_compressions(&tar_file, tar_size);
+        test_compressions(tar_file, tar_size);
         
         // Compare to original rust-build size
         compare_to_original(rust_build_path, tar_size);

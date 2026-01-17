@@ -18,6 +18,12 @@ pub struct TelemetryBootstrap {
     pub preloaded_libs: Vec<String>,
 }
 
+impl Default for TelemetryBootstrap {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl TelemetryBootstrap {
     pub fn new() -> Self {
         let mut bootstrap = Self {

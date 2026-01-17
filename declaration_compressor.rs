@@ -2,7 +2,6 @@ use std::fs;
 use std::path::Path;
 use std::collections::HashMap;
 use serde::{Serialize, Deserialize};
-use serde_json;
 
 #[derive(Debug, Serialize, Deserialize)]
 struct CompressedDeclaration {

@@ -1,4 +1,4 @@
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 use std::fs;
 use std::path::Path;
 use std::process::Command;
@@ -149,7 +149,7 @@ fn try_nix_build_with_perf(name: &str, path: &str, session_id: &str) -> Option<P
     let start = std::time::Instant::now();
     
     let output = Command::new("perf")
-        .args(&["record", "-o", &perf_file, "--", 
+        .args(["record", "-o", &perf_file, "--", 
                 "nix", "build", "--no-link", "--max-jobs", "1"])
         .current_dir(path)
         .output();
@@ -175,7 +175,7 @@ fn try_cargo_build_with_perf(name: &str, path: &str, session_id: &str) -> Option
     let start = std::time::Instant::now();
     
     let output = Command::new("perf")
-        .args(&["record", "-o", &perf_file, "--", 
+        .args(["record", "-o", &perf_file, "--", 
                 "cargo", "check", "--quiet"])
         .current_dir(path)
         .output();
@@ -196,7 +196,7 @@ fn try_cargo_build_with_perf(name: &str, path: &str, session_id: &str) -> Option
     }
 }
 
-fn try_syn_parse_with_perf(name: &str, path: &str, session_id: &str, file_count: usize) -> Option<PerfData> {
+fn try_syn_parse_with_perf(name: &str, path: &str, session_id: &str, _file_count: usize) -> Option<PerfData> {
     let perf_file = format!("data/perf_sessions/{}/{}_syn.perf", session_id, name);
     let start = std::time::Instant::now();
     
@@ -209,10 +209,10 @@ done
 "#, path);
     
     fs::write("/tmp/syn_parse.sh", script).ok()?;
-    Command::new("chmod").args(&["+x", "/tmp/syn_parse.sh"]).output().ok()?;
+    Command::new("chmod").args(["+x", "/tmp/syn_parse.sh"]).output().ok()?;
     
     let output = Command::new("perf")
-        .args(&["record", "-o", &perf_file, "--", "/tmp/syn_parse.sh"])
+        .args(["record", "-o", &perf_file, "--", "/tmp/syn_parse.sh"])
         .output();
     
     if output.is_ok() {
@@ -236,7 +236,7 @@ fn markov_model_with_perf(name: &str, path: &str, session_id: &str) -> (PerfData
     let start = std::time::Instant::now();
     
     let output = Command::new("perf")
-        .args(&["record", "-o", &perf_file, "--", 
+        .args(["record", "-o", &perf_file, "--", 
                 "find", path, "-type", "f"])
         .output()
         .unwrap();
@@ -258,7 +258,7 @@ fn markov_model_with_perf(name: &str, path: &str, session_id: &str) -> (PerfData
 fn analyze_perf_file(perf_file: &str) -> (usize, usize, usize) {
     // Quick perf analysis using perf script
     let output = Command::new("perf")
-        .args(&["script", "-i", perf_file])
+        .args(["script", "-i", perf_file])
         .output();
     
     if let Ok(out) = output {
@@ -274,7 +274,7 @@ fn analyze_perf_file(perf_file: &str) -> (usize, usize, usize) {
 
 fn count_rust_files(path: &str) -> usize {
     Command::new("find")
-        .args(&[path, "-name", "*.rs", "-type", "f"])
+        .args([path, "-name", "*.rs", "-type", "f"])
         .output()
         .map(|o| String::from_utf8_lossy(&o.stdout).lines().count())
         .unwrap_or(0)

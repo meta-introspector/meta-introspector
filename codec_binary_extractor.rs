@@ -19,7 +19,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         } else if line.starts_with("  - ") {
             let pattern = line.trim_start_matches("  - ").to_string();
-            modulo_patterns.entry(current_modulo).or_insert_with(Vec::new).push(pattern);
+            modulo_patterns.entry(current_modulo).or_default().push(pattern);
         }
     }
     
@@ -39,7 +39,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         for &modulo in modulo_patterns.keys() {
             if modulo > 0 && cell % modulo == 0 {
                 *file_modulo_hits.entry(file_path.clone())
-                    .or_insert_with(HashMap::new)
+                    .or_default()
                     .entry(modulo)
                     .or_insert(0) += 1;
             }
@@ -54,7 +54,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     println!("🎯 Top 30 files with strongest modular signatures (likely codec code):");
     for (i, (file, hits)) in codec_candidates.iter().take(30).enumerate() {
-        let basename = file.split('/').last().unwrap_or(file);
+        let basename = file.split('/').next_back().unwrap_or(file);
         println!("   {}. {} ({} modular hits)", i + 1, basename, hits);
     }
     
@@ -144,7 +144,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     output.push_str("\nExtracted code segments:\n");
     for (i, extract) in codec_extracts.iter().take(100).enumerate() {
         output.push_str(&format!("\n{}. {} @ mod {} (pos {})\n", 
-            i + 1, extract.file.split('/').last().unwrap_or("?"), 
+            i + 1, extract.file.split('/').next_back().unwrap_or("?"), 
             extract.modulo, extract.position));
         output.push_str(&format!("   Patterns: {:?}\n", extract.patterns));
         output.push_str(&format!("   Bytes: {}\n", 

@@ -35,7 +35,7 @@ impl ParquetTelemetry {
         writeln!(file, "{},{},{},{},{}", 
             *count, timestamp, function, size, ptr).ok();
         
-        if *count % 1000 == 0 {
+        if (*count).is_multiple_of(1000) {
             eprintln!("📊 Telemetry: {} calls captured", *count);
         }
     }

@@ -67,8 +67,8 @@ impl CorrelationAnalyzer {
         }
 
         // Find correlations between filename parts and content
-        for (filename_part, _) in &filename_patterns {
-            for (content_item, _) in &content_patterns {
+        for filename_part in filename_patterns.keys() {
+            for content_item in content_patterns.keys() {
                 let correlation = self.calculate_correlation(filename_part, content_item);
                 if correlation > 0.3 { // Only significant correlations
                     correlations.push((filename_part.clone(), content_item.clone(), correlation));
@@ -149,7 +149,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Process only .rs files in target directory
     for entry in fs::read_dir(&target_dir)?.take(100) { // Limit for quick analysis
         let entry = entry?;
-        if entry.path().extension().map_or(false, |ext| ext == "rs") {
+        if entry.path().extension().is_some_and(|ext| ext == "rs") {
             analyzer.analyze_file(&entry.path())?;
             processed += 1;
         }

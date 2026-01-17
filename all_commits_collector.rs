@@ -36,6 +36,12 @@ pub struct CommitQueue {
     pub failed: Vec<String>,
 }
 
+impl Default for CommitQueue {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl CommitQueue {
     pub fn new() -> Self {
         Self {
@@ -52,21 +58,19 @@ impl CommitQueue {
         println!("📋 Loading repositories from results...");
         
         if let Ok(entries) = fs::read_dir(results_dir) {
-            for entry in entries {
-                if let Ok(entry) = entry {
-                    if let Some(name) = entry.file_name().to_str() {
-                        if name.ends_with(".json") {
-                            let repo_name = name.trim_end_matches(".json").to_string();
-                            
-                            if let Ok(content) = fs::read_to_string(entry.path()) {
-                                if let Ok(repo_data) = serde_json::from_str::<serde_json::Value>(&content) {
-                                    if let Some(repo_path) = repo_data["path"].as_str() {
-                                        queue.jobs.push_back(CommitCollectionJob {
-                                            repo_name,
-                                            repo_path: repo_path.to_string(),
-                                            status: "pending".to_string(),
-                                        });
-                                    }
+            for entry in entries.flatten() {
+                if let Some(name) = entry.file_name().to_str() {
+                    if name.ends_with(".json") {
+                        let repo_name = name.trim_end_matches(".json").to_string();
+                        
+                        if let Ok(content) = fs::read_to_string(entry.path()) {
+                            if let Ok(repo_data) = serde_json::from_str::<serde_json::Value>(&content) {
+                                if let Some(repo_path) = repo_data["path"].as_str() {
+                                    queue.jobs.push_back(CommitCollectionJob {
+                                        repo_name,
+                                        repo_path: repo_path.to_string(),
+                                        status: "pending".to_string(),
+                                    });
                                 }
                             }
                         }
@@ -163,7 +167,7 @@ fn collect_all_commits(
     let mut fetch_errors = Vec::new();
     
     let fetch_output = Command::new("git")
-        .args(&["-C", repo_path, "fetch", "--all", "--quiet"])
+        .args(["-C", repo_path, "fetch", "--all", "--quiet"])
         .output();
     
     match fetch_output {
@@ -181,7 +185,7 @@ fn collect_all_commits(
     
     // Get all commits from target author in past month
     let commits_output = Command::new("git")
-        .args(&[
+        .args([
             "-C", repo_path,
             "log",
             "--all",  // Include all branches

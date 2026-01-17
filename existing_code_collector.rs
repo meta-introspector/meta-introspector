@@ -12,6 +12,12 @@ pub struct ExistingCodeCollector {
     pub total_files_found: usize,
 }
 
+impl Default for ExistingCodeCollector {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ExistingCodeCollector {
     pub fn new() -> Self {
         Self {
@@ -185,18 +191,18 @@ impl ExistingCodeCollector {
                     ".".to_string()
                 };
                 
-                by_directory.entry(dir).or_insert_with(Vec::new).push(file.clone());
+                by_directory.entry(dir).or_default().push(file.clone());
             }
             
             for (dir, dir_files) in by_directory {
                 doc.push_str(&format!("### 📂 {}\n\n", dir));
                 
                 for file in dir_files {
-                    let filename = file.split('/').last().unwrap_or(&file);
+                    let filename = file.split('/').next_back().unwrap_or(&file);
                     doc.push_str(&format!("- `{}`\n", filename));
                 }
                 
-                doc.push_str("\n");
+                doc.push('\n');
             }
         }
         
@@ -217,7 +223,7 @@ impl ExistingCodeCollector {
             
             // Show top 3 files as examples
             for (i, file) in files.iter().take(3).enumerate() {
-                let filename = file.split('/').last().unwrap_or(file);
+                let filename = file.split('/').next_back().unwrap_or(file);
                 println!("  {}. {}", i+1, filename);
             }
             

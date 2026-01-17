@@ -1,5 +1,5 @@
 // 🔥 RUSTC SYSCALL CAPTURE: Prove transparent telemetry with structured dataset
-use std::process::{Command, Stdio};
+use std::process::Command;
 use std::fs;
 use std::time::SystemTime;
 use serde::{Deserialize, Serialize};
@@ -50,7 +50,7 @@ fn build_rustc() -> Option<String> {
     println!("🚀 Building rustc for syscall capture...");
     
     let output = Command::new("nix-build")
-        .args(&["-E", "with import <nixpkgs> {}; rustc"])
+        .args(["-E", "with import <nixpkgs> {}; rustc"])
         .output();
     
     match output {
@@ -90,7 +90,7 @@ fn main() {
     println!("🎯 Running: strace -f -tt -T -o syscalls.log {} {}", rustc_bin, test_file);
     
     let output = Command::new("strace")
-        .args(&[
+        .args([
             "-f",           // Follow forks
             "-tt",          // Timestamps with microseconds
             "-T",           // Show time spent in syscalls

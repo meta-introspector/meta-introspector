@@ -28,7 +28,7 @@ fn main() -> Result<()> {
     let mut name_contexts: HashMap<Vec<u8>, Vec<String>> = HashMap::new();
     
     for (i, path) in samples.iter().enumerate() {
-        if let Ok(patterns) = extract_patterns(&path) {
+        if let Ok(patterns) = extract_patterns(path) {
             println!("  {:3}. {} - {} patterns", 
                 i+1,
                 std::path::Path::new(&path).file_name().unwrap().to_str().unwrap(),
@@ -97,7 +97,7 @@ fn main() -> Result<()> {
     });
     
     let output_path = "data/perf_rankings/lmfdb_instruction_classification.json";
-    fs::write(&output_path, serde_json::to_string_pretty(&output)?)?;
+    fs::write(output_path, serde_json::to_string_pretty(&output)?)?;
     println!("\n💾 Saved to: {}", output_path);
     
     Ok(())
@@ -105,7 +105,7 @@ fn main() -> Result<()> {
 
 fn sample_nix_store(n: usize) -> Result<Vec<String>> {
     let output = std::process::Command::new("find")
-        .args(&["/nix/store", "-maxdepth", "3", "-type", "f", "-name", "*.so*"])
+        .args(["/nix/store", "-maxdepth", "3", "-type", "f", "-name", "*.so*"])
         .output()?;
     
     let paths: Vec<String> = String::from_utf8_lossy(&output.stdout)

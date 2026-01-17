@@ -37,7 +37,7 @@ impl Telemetry {
         let ts = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis();
         writeln!(self.file, "{},{},{},{},{}", ts, self.count, function, size, ptr).ok();
         
-        if self.count % 10000 == 0 {
+        if self.count.is_multiple_of(10000) {
             eprintln!("📊 Captured {} calls", self.count);
         }
     }

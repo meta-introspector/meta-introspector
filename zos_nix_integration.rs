@@ -1,6 +1,6 @@
 // 🚀 ZOS SERVER INTEGRATION: Add Unified Nix-as-a-Service to existing ZOS server
 // use crate::unified_nix_service::{UnifiedNixService, UnifiedFlakeRequest, UnifiedFlakeResponse};
-use axum::{extract::Path, http::StatusCode, response::Json, routing::{get, post}, Router};
+use axum::{extract::Path, response::Json, routing::get, Router};
 use std::sync::Arc;
 use tokio::sync::Mutex;
 
@@ -25,7 +25,7 @@ impl UnifiedNixService {
 }
 
 async fn load_flake_handler(axum::Json(_request): axum::Json<UnifiedFlakeRequest>) -> axum::Json<UnifiedFlakeResponse> {
-    axum::Json(UnifiedFlakeResponse::default())
+    axum::Json(UnifiedFlakeResponse)
 }
 
 async fn mcp_call_handler(axum::Json(_request): axum::Json<serde_json::Value>) -> axum::Json<serde_json::Value> {

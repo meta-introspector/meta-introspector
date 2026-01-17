@@ -8,7 +8,7 @@ fn main() {
     // Copy all HTML files
     for entry in fs::read_dir(".").unwrap().flatten() {
         let path = entry.path();
-        if path.extension().map_or(false, |ext| ext == "html") {
+        if path.extension().is_some_and(|ext| ext == "html") {
             let filename = path.file_name().unwrap();
             fs::copy(&path, output_dir.join(filename)).unwrap();
             println!("Copied: {:?}", filename);
@@ -26,7 +26,7 @@ fn main() {
 
     // Copy reports directory
     if Path::new("reports").exists() {
-        copy_dir_recursive("reports", &output_dir.join("reports")).unwrap();
+        copy_dir_recursive("reports", output_dir.join("reports")).unwrap();
         println!("Copied: reports/");
     }
 

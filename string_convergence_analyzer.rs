@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 use std::fs;
 use serde_json::Value;
 
@@ -20,7 +19,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             
             for entry in entries {
                 if let Ok(entry) = entry {
-                    if entry.path().extension().map_or(false, |ext| ext == "json") {
+                    if entry.path().extension().is_some_and(|ext| ext == "json") {
                         unique_values += 1;
                         
                         // Count usages

@@ -30,7 +30,7 @@ impl RustSpectrum {
         
         for ip in &ips {
             self.ip_to_patterns.entry(*ip)
-                .or_insert_with(Vec::new)
+                .or_default()
                 .push(pattern_idx);
             self.total_ips.insert(*ip);
         }

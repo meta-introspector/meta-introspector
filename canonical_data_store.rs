@@ -10,7 +10,6 @@ use arrow::datatypes::{DataType, Field, Schema};
 use parquet::arrow::ArrowWriter;
 use std::sync::Arc;
 use std::fs;
-use serde::{Serialize, Deserialize};
 
 /// Canonical data store with crossbeam workers and parquet output
 pub struct CanonicalDataStore<T: Clone + Send + 'static> {

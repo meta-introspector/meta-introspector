@@ -1,0 +1,27 @@
+# Demo2Code Clippy Configuration
+
+# NOTE: Custom lint names not supported by standard clippy
+# These would require custom clippy plugin (see demo2code-lint/)
+# demo-code = "deny"
+# trivial-function = "warn"
+# missing-error-handling = "warn"
+# excessive-constants = "warn"
+
+# Use standard clippy lints instead:
+
+# Disallow demo/mock/fake names
+disallowed-names = ["demo", "mock", "fake", "stub", "placeholder", "test_data"]
+
+# Cognitive complexity threshold
+cognitive-complexity-threshold = 15
+
+# Too many arguments
+too-many-arguments-threshold = 5
+
+# NOTE: Lint levels must be set via command line or Cargo.toml [lints] section
+# unwrap_used = "deny"
+# expect_used = "warn"
+# todo = "deny"
+# unimplemented = "deny"
+# panic = "warn"
+# indexing_slicing = "warn"

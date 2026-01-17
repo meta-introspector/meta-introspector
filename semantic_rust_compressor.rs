@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-use std::fs;
 use std::path::Path;
 use serde::{Serialize, Deserialize};
 
@@ -62,7 +61,7 @@ impl SemanticDictionary {
             } else if line.contains("RustElement") {
                 tokens.push(2); // RustElement pattern
             } else if line.len() == 117 {
-                tokens.push(self.literal_convergence.get("convergence_117").unwrap_or(&999).clone());
+                tokens.push(*self.literal_convergence.get("convergence_117").unwrap_or(&999));
             } else {
                 // Fallback: hash-based compression for unique 97.3% code
                 tokens.push((line.len() % 65535) as u16);
@@ -87,7 +86,7 @@ struct MassiveRustcCompressor {
 }
 
 impl MassiveRustcCompressor {
-    fn analyze_rustc_patterns(&mut self, rustc_root: &Path) -> Result<(), Box<dyn std::error::Error>> {
+    fn analyze_rustc_patterns(&mut self, _rustc_root: &Path) -> Result<(), Box<dyn std::error::Error>> {
         println!("🔍 Analyzing ENTIRE rustc codebase for compression patterns...");
         
         // Key insight: rustc has MASSIVE pattern repetition

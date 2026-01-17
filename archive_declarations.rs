@@ -1,7 +1,6 @@
 use std::fs;
 use std::path::Path;
 use std::process::Command;
-use serde_json;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("📦 CREATING COMPRESSED DECLARATIONS ARCHIVE");
@@ -66,7 +65,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         );
         
         // Copy original file to new name
-        let old_path = format!("{}/lib_{:03}_{}.json", declarations_dir, i, safe_name);
+        let _old_path = format!("{}/lib_{:03}_{}.json", declarations_dir, i, safe_name);
         let new_path = format!("{}/{}", temp_dir, nice_filename);
         
         // Find the actual old file (name might be different)
@@ -91,7 +90,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Create tar.gz archive
     let output = Command::new("tar")
-        .args(&["-czf", archive_name, "-C", temp_dir, "."])
+        .args(["-czf", archive_name, "-C", temp_dir, "."])
         .output()?;
     
     if output.status.success() {
@@ -104,11 +103,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Show contents
         println!("\n📋 Archive contents:");
         let list_output = Command::new("tar")
-            .args(&["-tzf", archive_name])
+            .args(["-tzf", archive_name])
             .output()?;
         
         let contents = String::from_utf8_lossy(&list_output.stdout);
-        for (i, line) in contents.lines().take(10).enumerate() {
+        for (_i, line) in contents.lines().take(10).enumerate() {
             println!("  {}", line);
         }
         

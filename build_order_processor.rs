@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::{BufReader, Read};
 use std::collections::HashMap;
-use syn::{parse_file, visit::Visit, Item};
+use syn::{parse_file, Item};
 use serde::{Serialize, Deserialize};
 
 #[derive(Debug, Serialize, Deserialize)]

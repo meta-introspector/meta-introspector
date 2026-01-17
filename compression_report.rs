@@ -179,7 +179,7 @@ fn test_compilation(content: &str, original_path: &str) {
     // Create a simple test file
     let test_content = format!(
         "// Decompressed from: {}\n// Original size: {} bytes\n\n{}\n\n// Test main function\nfn test_main() {{\n    println!(\"Decompressed code compiled successfully!\");\n}}",
-        original_path.split('/').last().unwrap_or("unknown"),
+        original_path.split('/').next_back().unwrap_or("unknown"),
         content.len(),
         &content[..std::cmp::min(200, content.len())] // First 200 chars
     );

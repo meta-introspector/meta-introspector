@@ -1,6 +1,5 @@
 // 🔥 MONOLITHIC TELEMETRY RUNNER: See all gcc/rustc calls in our stats
 use std::collections::HashMap;
-use std::time::Instant;
 use telemetry_macros::*;
 
 // Include all our wrapped calls (but not the main function)

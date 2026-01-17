@@ -1,7 +1,5 @@
 use std::fs;
-use std::collections::HashMap;
 use std::time::Instant;
-use serde_json;
 use syn::{self, Item};
 
 #[derive(serde::Serialize)]

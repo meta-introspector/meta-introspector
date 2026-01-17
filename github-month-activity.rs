@@ -96,7 +96,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     if !all_commits.is_empty() {
         // Save to file
-        let output_dir = format!("data/my-activity");
+        let output_dir = "data/my-activity".to_string();
         fs::create_dir_all(&output_dir)?;
         
         let output_file = format!("{}/github_{}_{:02}_activity.json", output_dir, year, month);

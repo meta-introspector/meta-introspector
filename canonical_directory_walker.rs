@@ -64,11 +64,10 @@ impl DirectoryWalker {
             
             results.push(path.clone());
             
-            if path.is_dir() {
-                if self.follow_symlinks || !path.is_symlink() {
+            if path.is_dir()
+                && (self.follow_symlinks || !path.is_symlink()) {
                     self.walk_recursive(&path, depth + 1, results)?;
                 }
-            }
         }
         
         Ok(())

@@ -4,7 +4,6 @@
 use goblin::elf::Elf;
 use std::collections::HashMap;
 use std::fs;
-use std::io::Write;
 
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
@@ -168,7 +167,7 @@ fn generate_wrapper(name: &str, pattern: &[u8], args: &[String]) -> String {
     wrapper.push_str("    }\n");
     
     // Cast and call
-    wrapper.push_str(&format!("    let real_fn: unsafe extern \"C\" fn("));
+    wrapper.push_str(&"    let real_fn: unsafe extern \"C\" fn(".to_string());
     for (i, (_, ptype)) in params.iter().enumerate() {
         if i > 0 { wrapper.push_str(", "); }
         wrapper.push_str(ptype);

@@ -1,8 +1,3 @@
-use std::path::Path;
-use std::collections::HashMap;
-use crossbeam::channel::{bounded, Receiver, Sender};
-use std::thread;
-use std::sync::{Arc, Mutex};
 
 struct MassiveRustcGrammarPlan {
     // Scale targets

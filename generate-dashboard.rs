@@ -1,4 +1,4 @@
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 use std::fs;
 
 #[derive(Debug, Deserialize)]
@@ -25,7 +25,7 @@ fn main() {
         None
     };
 
-    let investor = if let Ok(content) = fs::read_to_string("data/investor-report-2025.json") {
+    let _investor = if let Ok(content) = fs::read_to_string("data/investor-report-2025.json") {
         serde_json::from_str::<serde_json::Value>(&content).ok()
     } else {
         None

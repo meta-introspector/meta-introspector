@@ -1,5 +1,4 @@
 use std::fs;
-use std::path::Path;
 use std::time::Instant;
 use crossbeam::channel;
 use std::thread;

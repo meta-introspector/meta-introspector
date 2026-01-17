@@ -19,6 +19,12 @@ pub struct MonolithicBootstrap {
     pub running_services: Vec<String>,
 }
 
+impl Default for MonolithicBootstrap {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl MonolithicBootstrap {
     pub fn new() -> Self {
         Self {
@@ -157,7 +163,7 @@ impl MonolithicBootstrap {
                 break;
             }
             
-            let parts: Vec<&str> = input.trim().split_whitespace().collect();
+            let parts: Vec<&str> = input.split_whitespace().collect();
             if parts.is_empty() {
                 continue;
             }

@@ -60,6 +60,12 @@ pub struct PersonalDataSovereignty {
     profiles: HashMap<String, PersonalProfile>,
 }
 
+impl Default for PersonalDataSovereignty {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl PersonalDataSovereignty {
     pub fn new() -> Self {
         Self {
@@ -184,7 +190,7 @@ impl PersonalDataSovereignty {
     }
 
     fn render_datasets(&self, datasets: &HashMap<String, Dataset>) -> String {
-        datasets.iter().map(|(name, dataset)| {
+        datasets.iter().map(|(_name, dataset)| {
             format!(r#"
             <div class="app">
                 <h3>{}</h3>
@@ -218,7 +224,7 @@ pub fn demo_personal_sovereignty() {
     let mut sovereignty = PersonalDataSovereignty::new();
     
     // Create user profile
-    let profile = sovereignty.create_profile("alice", StorageLevel::Distributed);
+    let _profile = sovereignty.create_profile("alice", StorageLevel::Distributed);
     println!("👤 Created profile for alice with distributed storage");
     
     // Import GitHub stars
@@ -239,7 +245,7 @@ pub fn demo_personal_sovereignty() {
     println!("  {} {} - Data CA: {}", notes_app.emoji, notes_app.name, notes_app.data_ca);
     
     // Generate personal web app
-    let web_app = sovereignty.generate_personal_web_app("alice");
+    let _web_app = sovereignty.generate_personal_web_app("alice");
     println!("🌐 Generated personal web app (served from CA)");
     
     println!("\n🎯 RESULT: Complete data sovereignty!");

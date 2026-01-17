@@ -53,7 +53,7 @@ impl CostAttribution {
     /// Use git blame to find author of each line
     fn blame_line(&self, file: &str, line: usize) -> (String, String) {
         let output = Command::new("git")
-            .args(&["blame", "-L", &format!("{},{}", line, line), "--porcelain", file])
+            .args(["blame", "-L", &format!("{},{}", line, line), "--porcelain", file])
             .output()
             .ok();
         
@@ -81,11 +81,11 @@ impl CostAttribution {
     fn attribute_to_source(&mut self, binary: &str) {
         // Run perf record + perf annotate to map instructions to source
         let _ = Command::new("perf")
-            .args(&["record", "-o", "/tmp/perf.data", binary])
+            .args(["record", "-o", "/tmp/perf.data", binary])
             .output();
         
         let annotate = Command::new("perf")
-            .args(&["annotate", "-i", "/tmp/perf.data", "--stdio"])
+            .args(["annotate", "-i", "/tmp/perf.data", "--stdio"])
             .output()
             .ok();
         

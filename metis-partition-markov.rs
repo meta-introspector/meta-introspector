@@ -39,7 +39,7 @@ fn main() {
     println!("📦 Partitioning into {} semantic chunks...", n_partitions);
     
     let output = Command::new("gpmetis")
-        .args(&[metis_file, &n_partitions.to_string()])
+        .args([metis_file, &n_partitions.to_string()])
         .output();
     
     if output.is_err() {

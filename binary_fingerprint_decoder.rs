@@ -22,11 +22,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         if name.contains("_RNv") || name.starts_with("_ZN") && name.contains("rust") {
             // Rust mangled - extract pattern
             let pattern = extract_rust_pattern(&name);
-            rust_mangled.entry(pattern).or_insert_with(Vec::new).push((cell, score));
+            rust_mangled.entry(pattern).or_default().push((cell, score));
         } else if name.starts_with("_Z") {
             // C++ mangled - extract pattern
             let pattern = extract_cpp_pattern(&name);
-            cpp_mangled.entry(pattern).or_insert_with(Vec::new).push((cell, score));
+            cpp_mangled.entry(pattern).or_default().push((cell, score));
         }
     }
     

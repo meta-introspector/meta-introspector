@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use std::ffi::{CStr, CString, c_void};
+use std::ffi::{CString, c_void};
 use libc::{dlopen, dlsym, dlclose, RTLD_LAZY};
 
 // Complex ABI wrapper that handles multiple calling conventions

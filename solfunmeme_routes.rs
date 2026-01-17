@@ -7,7 +7,6 @@ use axum::{
 };
 use serde_json::{json, Value};
 use std::sync::Arc;
-use tokio::sync::Mutex;
 use tower_http::cors::CorsLayer;
 
 // use crate::solfunmeme_ca_service::SolfunmemeCAService;

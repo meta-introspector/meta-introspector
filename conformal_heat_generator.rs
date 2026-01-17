@@ -1,5 +1,4 @@
 use std::fs;
-use std::path::Path;
 use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::{Duration, Instant};
@@ -122,7 +121,7 @@ impl ConformalHeatGenerator {
                 {
                     let mut p = processed.lock().unwrap();
                     *p += 1;
-                    if *p % 1000 == 0 {
+                    if (*p).is_multiple_of(1000) {
                         println!("🔥 Worker {} processed {} files (conductor: {})", 
                                 worker_id, *p, conductor);
                     }

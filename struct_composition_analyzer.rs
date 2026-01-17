@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::fs;
 use serde::{Deserialize, Serialize};
-use syn::{parse_file, visit::Visit, Item, ItemStruct, ItemEnum, Fields, Type, PathSegment};
+use syn::{parse_file, visit::Visit, Item, ItemStruct, Fields, Type};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct StructComposition {

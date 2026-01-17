@@ -53,7 +53,7 @@ impl BinaryByteAttribution {
         
         // Use objdump to get disassembly with source lines
         let objdump = Command::new("objdump")
-            .args(&["-d", "-l", "-S", &self.binary_path])
+            .args(["-d", "-l", "-S", &self.binary_path])
             .output()?;
         
         let disasm = String::from_utf8_lossy(&objdump.stdout);
@@ -112,7 +112,7 @@ impl BinaryByteAttribution {
     /// Get git blame for a specific line
     fn get_git_blame(&self, file: &str, line: usize) -> (String, String, String, String) {
         let output = Command::new("git")
-            .args(&["blame", "-L", &format!("{},{}", line, line), "--porcelain", file])
+            .args(["blame", "-L", &format!("{},{}", line, line), "--porcelain", file])
             .output()
             .ok();
         

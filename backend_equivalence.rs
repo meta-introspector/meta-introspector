@@ -36,7 +36,7 @@ pub fn compile_with_llvm(source: &str) -> Option<(HashSet<u64>, String)> {
     
     // Compile with LLVM backend - emit LLVM IR
     let _ = Command::new("rustc")
-        .args(&[
+        .args([
             "--emit", "llvm-ir",
             "-C", "opt-level=2",
             "--crate-type", "lib",
@@ -50,7 +50,7 @@ pub fn compile_with_llvm(source: &str) -> Option<(HashSet<u64>, String)> {
     
     // Emit assembly
     let _ = Command::new("rustc")
-        .args(&[
+        .args([
             "--emit", "asm",
             "-C", "opt-level=2",
             "--crate-type", "lib",
@@ -87,7 +87,7 @@ pub fn compile_with_gcc_via_c(source: &str) -> Option<(HashSet<u64>, String)> {
     
     // First: rustc → LLVM IR
     let _ = Command::new("rustc")
-        .args(&[
+        .args([
             "--emit", "llvm-ir",
             "-C", "opt-level=2",
             "--crate-type", "lib",
@@ -113,7 +113,7 @@ pub fn compile_with_gcc_via_c(source: &str) -> Option<(HashSet<u64>, String)> {
     
     // Third: Compile C with GCC
     let _ = Command::new("gcc")
-        .args(&[
+        .args([
             "-S",
             "-O2",
             "-o", "/tmp/gcc_out.s",

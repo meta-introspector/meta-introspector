@@ -10,6 +10,12 @@ pub struct NixBuildResult {
 }
 pub struct NixCanonicalBuilder;
 
+impl Default for NixCanonicalBuilder {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl NixCanonicalBuilder {
     pub fn new() -> Self { NixCanonicalBuilder }
     pub fn build(&self, _request: NixBuildRequest) -> Result<NixBuildResult, String> { Err("NixCanonicalBuilder functionality disabled for docs".to_string()) }

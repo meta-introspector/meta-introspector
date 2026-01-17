@@ -23,14 +23,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     for (idx, line) in data.lines().enumerate() {
         if line.contains("\"name\"") {
             let name = extract_field(line, "name");
-            let file = extract_field(&data.lines().nth(idx + 1).unwrap_or(""), "file");
-            let cell = extract_number(&data.lines().nth(idx + 2).unwrap_or(""), "cell");
-            let score = extract_float(&data.lines().nth(idx + 4).unwrap_or(""), "score");
+            let file = extract_field(data.lines().nth(idx + 1).unwrap_or(""), "file");
+            let cell = extract_number(data.lines().nth(idx + 2).unwrap_or(""), "cell");
+            let score = extract_float(data.lines().nth(idx + 4).unwrap_or(""), "score");
             
             if !name.is_empty() {
                 let sym_idx = symbols.len();
                 symbols.push(Symbol { name: name.clone(), file, cell, score });
-                symbol_index.entry(name).or_insert_with(Vec::new).push(sym_idx);
+                symbol_index.entry(name).or_default().push(sym_idx);
             }
         }
         
@@ -97,7 +97,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     
     // Save results
-    let mut output = format!("Symbol Similarity Analysis\n");
+    let mut output = "Symbol Similarity Analysis\n".to_string();
     output.push_str(&format!("Total symbols: {}\n", symbols.len()));
     output.push_str(&format!("Unique names: {}\n\n", symbol_index.len()));
     

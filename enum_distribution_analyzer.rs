@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::fs;
 use serde::{Deserialize, Serialize};
-use syn::{parse_file, visit::Visit, Item, ItemEnum, Variant, Fields};
+use syn::{parse_file, visit::Visit, Item, ItemEnum, Fields};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct EnumDistribution {
@@ -149,10 +149,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let mut binary_patterns: HashMap<String, u32> = HashMap::new();
         for i in (0..binary_enums.variant_names.len()).step_by(2) {
             if i + 1 < binary_enums.variant_names.len() {
-                let mut pair = vec![
-                    binary_enums.variant_names[i].clone(),
-                    binary_enums.variant_names[i + 1].clone()
-                ];
+                let mut pair = [binary_enums.variant_names[i].clone(),
+                    binary_enums.variant_names[i + 1].clone()];
                 pair.sort();
                 let pattern = pair.join(" | ");
                 *binary_patterns.entry(pattern).or_default() += 1;

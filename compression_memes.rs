@@ -2,8 +2,7 @@
 // Compile → Compress → Mutate → Evolve
 
 use crate::meme_marketplace::Meme;
-use crate::compiler_as_compression::{CompilerAsCompression, CompilationResult};
-use crate::meme_evolver::MemeEvolver;
+use crate::compiler_as_compression::CompilerAsCompression;
 
 #[derive(Debug, Clone)]
 pub struct CompressionMeme {

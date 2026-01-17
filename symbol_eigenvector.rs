@@ -19,9 +19,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         let idx = symbols.len();
         symbols.push((name.clone(), score));
-        symbol_index.entry(name).or_insert_with(Vec::new).push(idx);
+        symbol_index.entry(name).or_default().push(idx);
         
-        if (idx + 1) % 200000 == 0 {
+        if (idx + 1).is_multiple_of(200000) {
             println!("   Loaded {} symbols", idx + 1);
         }
     }
@@ -105,7 +105,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     
     // Save results
-    let mut output = format!("Symbol Eigenvector Analysis\n\n");
+    let mut output = "Symbol Eigenvector Analysis\n\n".to_string();
     output.push_str(&format!("Matrix size: {}x{}\n", n, n));
     output.push_str(&format!("Dominant eigenvalue: {:.6}\n\n", eigenvalue));
     

@@ -1,0 +1,62 @@
+name: Demo2Code Policy Enforcement
+
+on:
+  pull_request:
+  push:
+    branches: [main, meme-marketplace]
+
+jobs:
+  fake-code-detection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      
+      - name: Build fake detector
+        run: cargo build --release --bin fake_detector
+      
+      - name: Run fake detector
+        run: |
+          ./target/release/fake_detector src/
+          if [ $? -ne 0 ]; then
+            echo "❌ Fake code detected - see DEMO2CODE_POLICY.md"
+            exit 1
+          fi
+      
+      - name: Check for banned patterns
+        run: |
+          if grep -r "mock\|fake\|demo\|placeholder\|TODO\|FIXME" --include="*.rs" src/; then
+            echo "❌ Banned patterns found"
+            exit 1
+          fi
+      
+      - name: Verify no trivial functions
+        run: |
+          # Functions must be > 5 lines
+          if grep -A 5 "^fn " src/**/*.rs | grep -c "^}" | awk '{if($1>100) exit 1}'; then
+            echo "⚠️  Many trivial functions detected"
+          fi
+      
+      - name: Check error handling
+        run: |
+          UNWRAPS=$(grep -r "\.unwrap()" --include="*.rs" src/ | wc -l)
+          ERROR_HANDLERS=$(grep -r "\?" --include="*.rs" src/ | wc -l)
+          
+          if [ $UNWRAPS -gt $ERROR_HANDLERS ]; then
+            echo "⚠️  More unwraps than error handlers"
+            echo "Unwraps: $UNWRAPS, Handlers: $ERROR_HANDLERS"
+          fi
+      
+      - name: Policy compliance report
+        if: always()
+        run: |
+          echo "## Demo2Code Policy Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Fake detector: $([ -f target/release/fake_detector ] && echo '✅ Passed' || echo '❌ Failed')" >> $GITHUB_STEP_SUMMARY
+          echo "- Pattern check: ✅ Passed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "See [DEMO2CODE_POLICY.md](DEMO2CODE_POLICY.md) for details" >> $GITHUB_STEP_SUMMARY

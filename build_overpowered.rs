@@ -5,7 +5,7 @@ use std::fs;
 use std::path::Path;
 use std::collections::HashSet;
 use goblin::elf::Elf;
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 
 #[derive(Deserialize)]
 struct BuildAnalysis {

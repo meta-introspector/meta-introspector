@@ -1,7 +1,7 @@
 use anyhow::Result;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use libloading::{Library, Symbol};
+use libloading::Library;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct SolanaAsAService {

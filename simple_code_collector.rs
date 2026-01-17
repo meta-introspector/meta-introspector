@@ -19,7 +19,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         // Show top 5 examples
         for (i, file) in files.iter().take(5).enumerate() {
-            let filename = file.split('/').last().unwrap_or(file);
+            let filename = file.split('/').next_back().unwrap_or(file);
             println!("  {}. {}", i+1, filename);
         }
         

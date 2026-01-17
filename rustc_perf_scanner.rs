@@ -5,7 +5,6 @@ use std::collections::HashSet;
 use flate2::write::GzEncoder;
 use flate2::Compression;
 use std::io::Write;
-use libnix::rand_shim::random_u64;
 
 #[derive(Clone)]
 pub struct PerfFingerprint {

@@ -3,7 +3,6 @@
 // Map words → code → binaries → perf data
 
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 
@@ -173,7 +172,7 @@ impl WordEigenvector {
         use std::process::Command;
         
         let output = Command::new("grep")
-            .args(&["-rn", &self.word, code_dir, "--include=*.rs"])
+            .args(["-rn", &self.word, code_dir, "--include=*.rs"])
             .output()?;
         
         let results = String::from_utf8_lossy(&output.stdout);
@@ -363,7 +362,7 @@ fn find_similar_programs() -> Result<Vec<String>, Box<dyn std::error::Error>> {
     use std::process::Command;
     
     let output = Command::new("find")
-        .args(&[".", "-name", "*.rs", "-type", "f"])
+        .args([".", "-name", "*.rs", "-type", "f"])
         .output()?;
     
     let files = String::from_utf8_lossy(&output.stdout);

@@ -123,7 +123,7 @@ pub fn export_dot(graph: &DiGraph<LogisticalNode, LogisticalEdge>) -> String {
 }
 
 /// Analyze critical path (longest dependency chain)
-pub fn find_critical_path(graph: &DiGraph<LogisticalNode, LogisticalEdge>) -> Vec<String> {
+pub fn find_critical_path(_graph: &DiGraph<LogisticalNode, LogisticalEdge>) -> Vec<String> {
     // TODO: Implement longest path algorithm
     vec![]
 }
@@ -137,7 +137,7 @@ pub fn cluster_by_conductor(
     for node in graph.node_weights() {
         let conductor_tier = (node.lmfdb_conductor / 1000) * 1000; // Round to nearest 1000
         clusters.entry(conductor_tier)
-            .or_insert_with(Vec::new)
+            .or_default()
             .push(node.symbol.clone());
     }
     
@@ -153,9 +153,9 @@ fn add_edge_between_crates(
     edge_type: LogisticalEdge,
 ) {
     // Find nodes in these crates and add edges
-    for (from_sym, &from_idx) in node_map.iter() {
+    for (_from_sym, &from_idx) in node_map.iter() {
         if graph[from_idx].crate_name == from_crate {
-            for (to_sym, &to_idx) in node_map.iter() {
+            for (_to_sym, &to_idx) in node_map.iter() {
                 if graph[to_idx].crate_name == to_crate {
                     graph.add_edge(from_idx, to_idx, edge_type.clone());
                 }
@@ -165,11 +165,11 @@ fn add_edge_between_crates(
 }
 
 fn add_edge_for_library(
-    graph: &mut DiGraph<LogisticalNode, LogisticalEdge>,
-    node_map: &HashMap<String, NodeIndex>,
-    binary: &str,
-    library: &str,
-    edge_type: LogisticalEdge,
+    _graph: &mut DiGraph<LogisticalNode, LogisticalEdge>,
+    _node_map: &HashMap<String, NodeIndex>,
+    _binary: &str,
+    _library: &str,
+    _edge_type: LogisticalEdge,
 ) {
     // Add edges from binary symbols to library symbols
     // TODO: Parse binary and library to find actual symbol dependencies
@@ -183,10 +183,10 @@ fn add_edge_for_nix(
     edge_type: LogisticalEdge,
 ) {
     // Add edges based on Nix derivation dependencies
-    for (sym, &idx) in node_map.iter() {
+    for (_sym, &idx) in node_map.iter() {
         if graph[idx].nix_derivation == derivation {
             // Find symbols from input derivation
-            for (input_sym, &input_idx) in node_map.iter() {
+            for (_input_sym, &input_idx) in node_map.iter() {
                 if graph[input_idx].nix_derivation.contains(input) {
                     graph.add_edge(input_idx, idx, edge_type.clone());
                 }

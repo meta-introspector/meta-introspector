@@ -1,8 +1,7 @@
 // Meme marketplace: Atomic swaps and auctions
 // Store world in parquet, trade programs as memes
 
-use std::collections::{HashMap, BTreeMap};
-use std::sync::{Arc, Mutex};
+use std::collections::HashMap;
 
 pub type MemeID = u64;
 pub type Address = String;
@@ -84,7 +83,7 @@ impl Marketplace {
     }
     
     pub fn buy(&mut self, meme_id: MemeID, buyer: Address) -> Result<(), String> {
-        let price = self.for_sale.get(&meme_id).ok_or("Not for sale")?.clone();
+        let _price = *self.for_sale.get(&meme_id).ok_or("Not for sale")?;
         let meme = self.memes.get_mut(&meme_id).ok_or("Meme not found")?;
         
         // Transfer ownership
@@ -258,11 +257,11 @@ pub fn compute_price(meme: &Meme) -> u64 {
 fn is_prime(n: u64) -> bool {
     if n < 2 { return false; }
     if n == 2 { return true; }
-    if n % 2 == 0 { return false; }
+    if n.is_multiple_of(2) { return false; }
     
     let sqrt = (n as f64).sqrt() as u64;
     for i in (3..=sqrt).step_by(2) {
-        if n % i == 0 { return false; }
+        if n.is_multiple_of(i) { return false; }
     }
     true
 }

@@ -35,7 +35,7 @@ impl XzToSynMapper {
         
         // List files in tar
         let output = Command::new("tar")
-            .args(&["tf", xz_path])
+            .args(["tf", xz_path])
             .output()
             .expect("Failed to list tar");
         
@@ -48,7 +48,7 @@ impl XzToSynMapper {
         for (i, file_path) in rs_files.iter().enumerate() {
             // Extract single file
             if let Ok(output) = Command::new("tar")
-                .args(&["xfO", xz_path, file_path])
+                .args(["xfO", xz_path, file_path])
                 .output() {
                 
                 if output.status.success() {

@@ -55,7 +55,7 @@ impl TraceCompressor {
         let idx = self.blocks.len();
         
         self.compression_map.entry(sig)
-            .or_insert_with(Vec::new)
+            .or_default()
             .push(idx);
         
         self.blocks.push(block);

@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 use std::process::Command;
-use serde_json::{json, Value};
+use serde_json::json;
 
 #[derive(Debug, Clone)]
 struct RepoInfo {
@@ -69,7 +69,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let local_count = repos.values().filter(|r| r.is_local).count();
     let fork_count = repos.values().filter(|r| r.is_fork).count();
     let github_count = repos.values().filter(|r| 
-        r.remote_url.as_ref().map_or(false, |url| url.contains("github.com"))
+        r.remote_url.as_ref().is_some_and(|url| url.contains("github.com"))
     ).count();
     
     println!("\n📈 SUMMARY:");
@@ -96,7 +96,7 @@ fn analyze_repository(repo_path: &str) -> Option<RepoInfo> {
     let is_fork = check_if_fork(repo_path, &remote_url);
     
     // Determine if local (no remote or local remote)
-    let is_local = remote_url.as_ref().map_or(true, |url| 
+    let is_local = remote_url.as_ref().is_none_or(|url| 
         url.starts_with("file://") || url.starts_with("/") || !url.contains("://")
     );
     
@@ -123,7 +123,7 @@ fn analyze_repository(repo_path: &str) -> Option<RepoInfo> {
 
 fn get_remote_url(repo_path: &str) -> Option<String> {
     let output = Command::new("git")
-        .args(&["-C", repo_path, "remote", "get-url", "origin"])
+        .args(["-C", repo_path, "remote", "get-url", "origin"])
         .output()
         .ok()?;
     
@@ -137,7 +137,7 @@ fn get_remote_url(repo_path: &str) -> Option<String> {
 fn check_if_fork(repo_path: &str, remote_url: &Option<String>) -> bool {
     // Check if it's a fork by looking for upstream remote
     let output = Command::new("git")
-        .args(&["-C", repo_path, "remote"])
+        .args(["-C", repo_path, "remote"])
         .output();
     
     if let Ok(output) = output {
@@ -157,7 +157,7 @@ fn check_if_fork(repo_path: &str, remote_url: &Option<String>) -> bool {
 
 fn get_git_status(repo_path: &str) -> String {
     let output = Command::new("git")
-        .args(&["-C", repo_path, "status", "--porcelain"])
+        .args(["-C", repo_path, "status", "--porcelain"])
         .output();
     
     match output {
@@ -175,7 +175,7 @@ fn get_git_status(repo_path: &str) -> String {
 
 fn get_current_branch(repo_path: &str) -> Option<String> {
     let output = Command::new("git")
-        .args(&["-C", repo_path, "branch", "--show-current"])
+        .args(["-C", repo_path, "branch", "--show-current"])
         .output()
         .ok()?;
     
@@ -188,7 +188,7 @@ fn get_current_branch(repo_path: &str) -> Option<String> {
 
 fn get_last_commit(repo_path: &str) -> Option<String> {
     let output = Command::new("git")
-        .args(&["-C", repo_path, "log", "-1", "--format=%ci [%h] %s"])
+        .args(["-C", repo_path, "log", "-1", "--format=%ci [%h] %s"])
         .output()
         .ok()?;
     

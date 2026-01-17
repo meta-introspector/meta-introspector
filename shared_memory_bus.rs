@@ -209,7 +209,7 @@ impl SharedMemoryNode {
             score_improvement: improvement,
         };
         
-        if let Err(_) = self.bus.send(self.node_id, to_node, msg) {
+        if self.bus.send(self.node_id, to_node, msg).is_err() {
             println!("  [Node {}] Queue full to node {}", self.node_id, to_node);
         }
     }
@@ -235,7 +235,7 @@ impl SharedMemoryNode {
     
     fn handle_message(&mut self, from_node: usize, msg: Message) {
         match msg {
-            Message::TradeOffer { offer_meme, want_meme, score_improvement } => {
+            Message::TradeOffer { offer_meme, want_meme, score_improvement: _ } => {
                 // Evaluate trade
                 if self.should_accept_trade(offer_meme, want_meme) {
                     // Accept trade
@@ -338,7 +338,7 @@ impl SharedMemoryNode {
         }
         
         // Accept if offered meme has higher fitness than what we're giving
-        let want_fitness = have_meme.unwrap().fitness;
+        let _want_fitness = have_meme.unwrap().fitness;
         // Assume offered meme has reasonable fitness (we'd need to query)
         // For now, accept 30% of trades randomly to create liquidity
         use libnix::rand_shim::random_f64;

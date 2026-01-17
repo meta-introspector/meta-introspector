@@ -23,6 +23,12 @@ pub struct UniversalClientNode {
     // pub emoji_registry: crate::emoji_universal_registry::EmojiRegistry,
 }
 
+impl Default for UniversalClientNode {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl UniversalClientNode {
     pub fn new() -> Self {
         Self {

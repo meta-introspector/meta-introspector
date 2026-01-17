@@ -100,7 +100,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let rust_files: Vec<PathBuf> = String::from_utf8_lossy(&output.stdout)
         .lines()
         .take(2000) // Limit to 2000 files for speed
-        .map(|line| PathBuf::from(line))
+        .map(PathBuf::from)
         .collect();
     
     println!("📁 Found {} rust-build files (limited to 5000)", rust_files.len());

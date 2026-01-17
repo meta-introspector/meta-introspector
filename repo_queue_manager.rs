@@ -1,6 +1,5 @@
 use std::collections::VecDeque;
 use std::fs;
-use std::time::{SystemTime, UNIX_EPOCH};
 use serde::{Deserialize, Serialize};
 use chrono::{DateTime, Utc};
 
@@ -148,7 +147,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("================================");
 
     // Try to load existing state, or create new queue
-    let mut queue = WorkQueue::load_state()
+    let queue = WorkQueue::load_state()
         .or_else(|_| WorkQueue::load_from_recent_repos())?;
 
     let (pending, processing, completed, failed) = queue.stats();

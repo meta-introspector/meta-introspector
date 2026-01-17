@@ -65,7 +65,7 @@ impl PerfCanonicalReader {
         
         // Count symbols and commands
         let mut symbol_counts: HashMap<String, u64> = HashMap::new();
-        let mut command_counts: HashMap<String, u64> = HashMap::new();
+        let command_counts: HashMap<String, u64> = HashMap::new();
         let mut total_samples = 0u64;
         let mut total_events = 0u64;
         

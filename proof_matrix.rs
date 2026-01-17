@@ -1,7 +1,7 @@
 // Proof matrix: syn source → rustc .so signature mapping
 // Each code feature creates eigenvectors through rustc
 
-use std::collections::{HashMap, HashSet};
+use std::collections::HashSet;
 
 #[derive(Clone)]
 pub struct SourceSignature {
@@ -56,7 +56,7 @@ impl ProofMatrix {
     pub fn find_diagonal(&self) -> Vec<f64> {
         // Extract diagonal: natural mapping
         let mut diagonal = Vec::new();
-        let size = self.matrix.len().min(self.matrix.get(0).map(|r| r.len()).unwrap_or(0));
+        let size = self.matrix.len().min(self.matrix.first().map(|r| r.len()).unwrap_or(0));
         
         for i in 0..size {
             diagonal.push(self.matrix[i][i]);
@@ -123,7 +123,7 @@ impl ProofMatrix {
     }
     
     pub fn save_to_parquet(&self, path: &str) -> Result<(), String> {
-        use arrow::array::{StringArray, UInt64Array, Float64Array};
+        use arrow::array::{StringArray, Float64Array};
         use arrow::record_batch::RecordBatch;
         use arrow::datatypes::{Schema, Field, DataType};
         use std::sync::Arc;
@@ -142,13 +142,12 @@ impl ProofMatrix {
         
         for (i, source) in self.rows.iter().enumerate() {
             for (j, so_sym) in self.cols.iter().enumerate() {
-                if i < self.matrix.len() && j < self.matrix[i].len() {
-                    if self.matrix[i][j] > 0.0 {
+                if i < self.matrix.len() && j < self.matrix[i].len()
+                    && self.matrix[i][j] > 0.0 {
                         source_hashes.push(source.source_hash.clone());
                         so_symbols.push(so_sym.symbol.clone());
                         strengths.push(self.matrix[i][j]);
                     }
-                }
             }
         }
         

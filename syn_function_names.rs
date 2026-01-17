@@ -1,6 +1,5 @@
 use std::fs;
 use syn::{parse_file, Item};
-use serde_json;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🔍 EXTRACTING REAL FUNCTION NAMES WITH SYN");

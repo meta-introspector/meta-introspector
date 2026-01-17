@@ -1,7 +1,7 @@
 // Meme Evolution: Buy, evolve, combine, sell for profit
 
 use crate::meme_marketplace::Meme;
-use crate::rand_shim::{random_u64, random_f64};
+use crate::rand_shim::random_u64;
 
 pub struct MemeEvolver {
     pub node_id: usize,

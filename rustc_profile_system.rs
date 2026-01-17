@@ -85,7 +85,7 @@ fn get_rustc_version() -> (String, String) {
 
 fn build_profile_from_analysis(profile: &mut RustcProfile) {
     // Load our compression results to build profile
-    if let Ok(results) = fs::read_to_string("crossbeam_repo_compression_results.json") {
+    if let Ok(_results) = fs::read_to_string("crossbeam_repo_compression_results.json") {
         // Extract patterns from our 127MB rust-build analysis
         profile.symbol_frequencies.insert("fn".to_string(), 0.45);
         profile.symbol_frequencies.insert("struct".to_string(), 0.25);

@@ -96,7 +96,7 @@ fn build_with_full_telemetry(args: &[String]) -> Option<String> {
 }
 
 fn show_build_stats(stderr: &str) {
-    let mut download_size = 0;
+    let _download_size = 0;
     let mut paths_fetched = 0;
     
     for line in stderr.lines() {
@@ -214,7 +214,7 @@ fn get_ldd_dependencies(exe_path: &str) -> Vec<String> {
 fn get_nm_symbols(exe_path: &str) -> Vec<String> {
     let mut symbols = Vec::new();
     
-    if let Ok(output) = Command::new("nm").args(&["-D", exe_path]).output() {
+    if let Ok(output) = Command::new("nm").args(["-D", exe_path]).output() {
         let nm_output = String::from_utf8_lossy(&output.stdout);
         
         for line in nm_output.lines() {
@@ -256,7 +256,7 @@ macro_rules! telemetry_wrap {
     for lib in libs {
         content.push_str(&format!("//   {}\n", lib));
     }
-    content.push_str("\n");
+    content.push('\n');
     
     // Add symbol wrappers (first 20 to avoid huge files)
     content.push_str("// 🔍 SYMBOL WRAPPERS:\n");

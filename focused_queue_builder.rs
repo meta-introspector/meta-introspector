@@ -40,21 +40,19 @@ impl FocusedQueue {
         let three_weeks_ago = Utc::now() - Duration::weeks(3);
         
         if let Ok(entries) = fs::read_dir(results_dir) {
-            for entry in entries {
-                if let Ok(entry) = entry {
-                    if let Some(name) = entry.file_name().to_str() {
-                        if name.ends_with(".json") {
-                            let repo_name = name.trim_end_matches(".json");
-                            if let Ok(content) = fs::read_to_string(entry.path()) {
-                                if let Ok(repo_data) = serde_json::from_str::<serde_json::Value>(&content) {
-                                    if let Some(repo_path) = repo_data["path"].as_str() {
-                                        jobs.extend(analyze_repository_for_focused_work(
-                                            repo_path, 
-                                            repo_name, 
-                                            &repo_data,
-                                            three_weeks_ago
-                                        )?);
-                                    }
+            for entry in entries.flatten() {
+                if let Some(name) = entry.file_name().to_str() {
+                    if name.ends_with(".json") {
+                        let repo_name = name.trim_end_matches(".json");
+                        if let Ok(content) = fs::read_to_string(entry.path()) {
+                            if let Ok(repo_data) = serde_json::from_str::<serde_json::Value>(&content) {
+                                if let Some(repo_path) = repo_data["path"].as_str() {
+                                    jobs.extend(analyze_repository_for_focused_work(
+                                        repo_path, 
+                                        repo_name, 
+                                        &repo_data,
+                                        three_weeks_ago
+                                    )?);
                                 }
                             }
                         }
@@ -163,7 +161,7 @@ fn get_user_changes_last_3_weeks(
     let since_str = since.format("%Y-%m-%d").to_string();
     
     let output = Command::new("git")
-        .args(&[
+        .args([
             "-C", repo_path,
             "log",
             "--author=mdupont",

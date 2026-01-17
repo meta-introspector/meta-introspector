@@ -76,7 +76,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             let mut entry = entry?;
             let path = entry.path()?;
             
-            if path.extension().map_or(false, |ext| ext == "rs") {
+            if path.extension().is_some_and(|ext| ext == "rs") {
                 let mut content = String::new();
                 entry.read_to_string(&mut content)?;
                 analyzer.analyze_content(&content);

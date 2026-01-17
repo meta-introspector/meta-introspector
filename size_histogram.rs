@@ -38,7 +38,7 @@ fn main() {
     println!("{}", "-".repeat(50));
     
     // Create size buckets
-    let mut buckets = vec![
+    let buckets = vec![
         (0..50, "Tiny (0-49)"),
         (50..100, "Small (50-99)"),
         (100..200, "Medium (100-199)"),

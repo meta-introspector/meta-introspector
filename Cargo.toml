@@ -9,6 +9,30 @@ path = "libnix.rs"
 crate-type = ["cdylib", "rlib"]
 
 [[bin]]
+name = "rustc_tracer"
+path = "rustc_tracer.rs"
+
+[[bin]]
+name = "qemu_rustc_tracer"
+path = "qemu_rustc_tracer.rs"
+
+[[bin]]
+name = "reach_tracer"
+path = "reach_tracer.rs"
+
+[[bin]]
+name = "source2test"
+path = "source2test.rs"
+
+[[bin]]
+name = "harmonic_filter"
+path = "harmonic_filter.rs"
+
+[[bin]]
+name = "intrinsic_complexity"
+path = "intrinsic_complexity.rs"
+
+[[bin]]
 name = "demo_shared_memory"
 path = "demo_shared_memory.rs"
 
@@ -992,3 +1016,13 @@ path = "demo_function_loader.rs"
 [[bin]]
 name = "demo_meta_mcp"
 path = "demo_meta_mcp.rs"
+
+[[bin]]
+name = "fake_replacer"
+path = "fake_replacer.rs"
+
+# Archived demos - build separately for analysis only
+[[bin]]
+name = "archived_demos"
+path = "demos/archived_demos_stub.rs"
+

@@ -1,7 +1,7 @@
 use axum::{routing::{get, post}, Json, Router};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use std::process::{Command, Stdio};
+use std::process::Command;
 use std::os::unix::process::CommandExt;
 use tokio::net::TcpListener;
 
@@ -30,11 +30,9 @@ fn bootstrap_libs() -> Result<(), String> {
                 .map_err(|e| format!("Failed to find libnix_load: {}", e))?;
             
             // Load ssl, git, curl via nix
-            let libs = vec![
-                std::ffi::CString::new("ssl").unwrap(),
+            let libs = [std::ffi::CString::new("ssl").unwrap(),
                 std::ffi::CString::new("git").unwrap(),
-                std::ffi::CString::new("curl").unwrap(),
-            ];
+                std::ffi::CString::new("curl").unwrap()];
             let ptrs: Vec<*const i8> = libs.iter().map(|s| s.as_ptr()).collect();
             
             let result = load_fn(ptrs.as_ptr(), ptrs.len());
@@ -272,7 +270,7 @@ async fn setup_gpg(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value
     );
     
     std::fs::write("/tmp/gpg-batch", batch).ok();
-    let output = Command::new("gpg")
+    let _output = Command::new("gpg")
         .args(["--batch", "--generate-key", "/tmp/gpg-batch"])
         .output();
     
@@ -292,7 +290,7 @@ async fn setup_git(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value
 async fn api_deploy(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
     let target = req["target"].as_str().unwrap_or("local");
     let port = req["port"].as_u64().unwrap_or(3001);
-    let env = req["env"].as_str().unwrap_or("dev");
+    let _env = req["env"].as_str().unwrap_or("dev");
     
     // Check if running as root/sudo
     let is_root = unsafe { libc::geteuid() == 0 };
@@ -323,9 +321,7 @@ async fn api_deploy(Json(req): Json<serde_json::Value>) -> Json<serde_json::Valu
                 .output().ok();
             
             // Setup GPG key (batch mode)
-            let gpg_batch = format!(
-                "Key-Type: RSA\nKey-Length: 4096\nName-Real: QA User\nName-Email: qa@meta-introspector\nExpire-Date: 0\n%no-protection\n%commit\n"
-            );
+            let gpg_batch = "Key-Type: RSA\nKey-Length: 4096\nName-Real: QA User\nName-Email: qa@meta-introspector\nExpire-Date: 0\n%no-protection\n%commit\n".to_string();
             std::fs::write("/tmp/gpg-qa", gpg_batch).ok();
             Command::new("sudo")
                 .args(["-u", "qa", "gpg", "--batch", "--generate-key", "/tmp/gpg-qa"])
@@ -529,13 +525,11 @@ fn parse_errors(stderr: &str) -> Vec<ErrorDetail> {
 async fn client_mode(args: Vec<String>) {
     let cmd = args.get(1).map(|s| s.as_str()).unwrap_or("help");
     
-    match cmd {
-        _ => {
-            println!("Client mode disabled - use curl:");
-            println!("  curl -X POST http://127.0.0.1:3000/compile -d '{{\"target\":\"foo\"}}'");
-            println!("  curl -X POST http://127.0.0.1:3000/restart");
-            println!("  curl -X POST http://127.0.0.1:3000/git -d '{{\"url\":\"...\"}}'");
-        }
+    {
+        println!("Client mode disabled - use curl:");
+        println!("  curl -X POST http://127.0.0.1:3000/compile -d '{{\"target\":\"foo\"}}'");
+        println!("  curl -X POST http://127.0.0.1:3000/restart");
+        println!("  curl -X POST http://127.0.0.1:3000/git -d '{{\"url\":\"...\"}}'");
     }
 }
 
@@ -559,7 +553,7 @@ async fn main() {
     
     // Load or create consensus state
     let consensus_path = format!("{}/consensus.json", store_path());
-    let consensus = load_consensus(&consensus_path);
+    let _consensus = load_consensus(&consensus_path);
     println!("🤝 Consensus state loaded");
     
     let app = Router::new()
@@ -656,7 +650,7 @@ async fn compile(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> 
     if fast {
         RUSTC_LOADED.get_or_init(|| {
             println!("🔥 Loading rustc (once)...");
-            ()
+            
         });
     }
     
@@ -879,28 +873,28 @@ async fn get_peer_info() -> Json<serde_json::Value> {
     }))
 }
 
-async fn propose_contract(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
+async fn propose_contract(Json(_req): Json<serde_json::Value>) -> Json<serde_json::Value> {
     Json(serde_json::json!({
         "success": false,
         "error": "Consensus moved to consensus.so"
     }))
 }
 
-async fn sign_contract(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
+async fn sign_contract(Json(_req): Json<serde_json::Value>) -> Json<serde_json::Value> {
     Json(serde_json::json!({
         "success": false,
         "error": "Consensus moved to consensus.so"
     }))
 }
 
-async fn exec_emoji(Json(req): Json<serde_json::Value>) -> Json<serde_json::Value> {
+async fn exec_emoji(Json(_req): Json<serde_json::Value>) -> Json<serde_json::Value> {
     Json(serde_json::json!({
         "success": false,
         "error": "Emoji execution moved to consensus.so"
     }))
 }
 
-async fn eval_wasm(body: axum::body::Bytes) -> Json<serde_json::Value> {
+async fn eval_wasm(_body: axum::body::Bytes) -> Json<serde_json::Value> {
     Json(serde_json::json!({
         "success": false,
         "error": "WASM support moved to wasm_runner.so"

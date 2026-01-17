@@ -86,13 +86,13 @@ impl RustcAnalyzer {
                     
                     if path.is_dir() {
                         dirs_to_process.push(path);
-                    } else if path.extension().map_or(false, |ext| ext == "rs") {
+                    } else if path.extension().is_some_and(|ext| ext == "rs") {
                         if let Ok(content) = fs::read_to_string(&path) {
                             if let Ok(syntax_tree) = parse_file(&content) {
                                 self.visit_file(&syntax_tree);
                                 self.processed_files += 1;
                                 
-                                if self.processed_files % 500 == 0 {
+                                if self.processed_files.is_multiple_of(500) {
                                     println!("Processed {} files, {} instances", self.processed_files, self.total_instances);
                                 }
                             }

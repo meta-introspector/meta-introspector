@@ -47,7 +47,7 @@ fn main() {
     
     // Try to compile a substantial portion
     println!("🔨 Attempting compilation of rust-build components...");
-    let compile_start = Instant::now();
+    let _compile_start = Instant::now();
     
     // Find Cargo.toml files for compilation
     let cargo_output = Command::new("find")

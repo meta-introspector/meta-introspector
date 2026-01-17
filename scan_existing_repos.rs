@@ -1,5 +1,4 @@
 use std::fs;
-use std::path::Path;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🔍 SCANNING EXISTING REPOSITORIES FOR COMPRESSION");
@@ -33,7 +32,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Create batch config for existing repos
     let mut jobs = Vec::new();
     
-    for (i, (name, path)) in rust_repos.iter().enumerate().take(10) {
+    for (_i, (name, path)) in rust_repos.iter().enumerate().take(10) {
         jobs.push(serde_json::json!({
             "name": format!("Compress {}", name),
             "binary": "syn_compressor",

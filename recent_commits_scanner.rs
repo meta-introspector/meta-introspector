@@ -4,7 +4,7 @@ use std::path::Path;
 use crossbeam::channel::{bounded, Receiver, Sender};
 use std::thread;
 use serde::{Deserialize, Serialize};
-use chrono::{DateTime, Utc, Duration};
+use chrono::{Utc, Duration};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CommitInfo {
@@ -27,7 +27,7 @@ fn get_commits_last_month(repo_path: &str) -> Vec<CommitInfo> {
     let since_date = one_month_ago.format("%Y-%m-%d").to_string();
     
     let output = Command::new("git")
-        .args(&["log", "--all", "--since", &since_date, "--pretty=format:%H|%ai|%s|%an"])
+        .args(["log", "--all", "--since", &since_date, "--pretty=format:%H|%ai|%s|%an"])
         .current_dir(repo_path)
         .output();
     

@@ -1,11 +1,8 @@
 // 🦀 RUST-AS-A-SERVICE: Load rustc_driver.so and charge for compilation
 use axum::{extract::Query, http::StatusCode, response::{Json, IntoResponse}, routing::post, Router};
-use libloading::{Library, Symbol};
+use libloading::Library;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use std::ffi::{CStr, CString};
-use std::os::raw::{c_char, c_int};
-use std::path::Path;
 use std::sync::{Arc, Mutex};
 use tokio::time::{Duration, Instant};
 
@@ -137,7 +134,7 @@ impl RustAsAService {
         
         // Add target if specified
         if let Some(target) = &request.target {
-            cmd.args(&["--target", target]);
+            cmd.args(["--target", target]);
         }
         
         // Add optimization level
@@ -147,7 +144,7 @@ impl RustAsAService {
         
         // Add features
         for feature in &request.features {
-            cmd.args(&["--cfg", &format!("feature=\"{}\"", feature)]);
+            cmd.args(["--cfg", &format!("feature=\"{}\"", feature)]);
         }
         
         // Execute compilation
@@ -201,7 +198,7 @@ impl RustAsAService {
 
 // REST API handlers
 pub async fn compile_endpoint(
-    Query(params): Query<HashMap<String, String>>,
+    Query(_params): Query<HashMap<String, String>>,
     Json(request): Json<CompileRequest>,
 ) -> Result<Json<CompileResponse>, StatusCode> {
     // Get zombie_driver2 path from environment or default

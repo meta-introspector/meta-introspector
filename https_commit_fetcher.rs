@@ -4,7 +4,7 @@ use std::path::Path;
 use crossbeam::channel::{bounded, Receiver, Sender};
 use std::thread;
 use serde::{Deserialize, Serialize};
-use chrono::{DateTime, Utc, Duration};
+use chrono::{Utc, Duration};
 use regex::Regex;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -27,7 +27,7 @@ pub struct RepoCommits {
 
 fn convert_ssh_to_https(repo_path: &str) -> bool {
     let output = Command::new("git")
-        .args(&["remote", "-v"])
+        .args(["remote", "-v"])
         .current_dir(repo_path)
         .output();
     
@@ -45,7 +45,7 @@ fn convert_ssh_to_https(repo_path: &str) -> bool {
                     let https_url = format!("https://github.com/{}/{}.git", user, repo);
                     
                     let _ = Command::new("git")
-                        .args(&["remote", "set-url", remote_name, &https_url])
+                        .args(["remote", "set-url", remote_name, &https_url])
                         .current_dir(repo_path)
                         .output();
                 }
@@ -59,7 +59,7 @@ fn convert_ssh_to_https(repo_path: &str) -> bool {
 
 fn fetch_all_remotes(repo_path: &str) -> bool {
     let output = Command::new("git")
-        .args(&["fetch", "--all"])
+        .args(["fetch", "--all"])
         .current_dir(repo_path)
         .output();
     
@@ -71,7 +71,7 @@ fn get_commits_last_month(repo_path: &str) -> Vec<CommitInfo> {
     let since_date = one_month_ago.format("%Y-%m-%d").to_string();
     
     let output = Command::new("git")
-        .args(&["log", "--all", "--since", &since_date, "--pretty=format:%H|%ai|%s|%an"])
+        .args(["log", "--all", "--since", &since_date, "--pretty=format:%H|%ai|%s|%an"])
         .current_dir(repo_path)
         .output();
     
@@ -126,7 +126,7 @@ fn main() {
     
     // Find all git repositories
     let output = Command::new("find")
-        .args(&[".", "-name", ".git", "-type", "d"])
+        .args([".", "-name", ".git", "-type", "d"])
         .output()
         .expect("Failed to find git repositories");
     
@@ -139,7 +139,7 @@ fn main() {
     println!("Found {} repositories", repo_paths.len());
     
     // Spawn worker threads
-    let num_workers = 8;
+    let _num_workers = 8;
     let mut handles = Vec::new();
     
     for repo_path in repo_paths {

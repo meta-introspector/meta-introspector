@@ -21,7 +21,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         if name.contains("_RNv") || name.starts_with("_Z") {
             let pattern = extract_mangling_pattern(&name);
-            pattern_to_cells.entry(pattern).or_insert_with(Vec::new)
+            pattern_to_cells.entry(pattern).or_default()
                 .push((cell, score, file_path));
         }
     }
@@ -76,7 +76,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     for (pattern, form) in &modular_forms {
         if form.moonshine_score > 0.5 {
             for &modulo in &form.modulos {
-                moonshine_map.entry(modulo).or_insert_with(Vec::new).push(pattern.clone());
+                moonshine_map.entry(modulo).or_default().push(pattern.clone());
             }
         }
     }
@@ -140,7 +140,7 @@ fn detect_modular_form(cells: &[(u64, f64, String)]) -> ModularForm {
     for modulo in [8, 16, 32, 64, 128, 256, 512, 1024] {
         for (cell, score) in cell_ids.iter().zip(&scores) {
             let mod_val = cell % modulo;
-            modulo_scores.entry(mod_val).or_insert_with(Vec::new).push(*score);
+            modulo_scores.entry(mod_val).or_default().push(*score);
         }
     }
     

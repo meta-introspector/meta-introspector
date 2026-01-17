@@ -1,13 +1,18 @@
 use std::process::Command;
 use std::collections::HashMap;
 use serde_json::json;
-use tokio;
-use tracing::{info, error};
-use sha2::{Sha256, Digest};
+use tracing::info;
+use sha2::Digest;
 
 /// SOLFUNMEME Content Addressable Meme Service
 pub struct SolfunmemeCAService {
     pub ca_memes: HashMap<String, serde_json::Value>,
+}
+
+impl Default for SolfunmemeCAService {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl SolfunmemeCAService {

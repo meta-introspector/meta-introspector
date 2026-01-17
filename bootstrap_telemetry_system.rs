@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::process::{Command, Stdio};
 use std::sync::{Arc, Mutex};
-use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 use tokio::time::interval;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -256,7 +256,7 @@ impl SyscallCollector {
 impl LayerCollector for SyscallCollector {
     fn start(&mut self) -> Result<(), Box<dyn std::error::Error>> {
         let child = Command::new("strace")
-            .args(&["-f", "-e", "trace=all", "-o", "/tmp/strace_output.log", "sleep", "1"])
+            .args(["-f", "-e", "trace=all", "-o", "/tmp/strace_output.log", "sleep", "1"])
             .stdout(Stdio::piped())
             .stderr(Stdio::piped())
             .spawn()?;

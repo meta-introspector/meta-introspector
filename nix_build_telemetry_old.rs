@@ -179,7 +179,7 @@ fn run_nm_analysis(exe_path: &str) {
     println!("🔍 Symbol analysis (nm):");
     
     let output = Command::new("nm")
-        .args(&["-D", exe_path])
+        .args(["-D", exe_path])
         .output();
     
     match output {

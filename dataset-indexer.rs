@@ -89,7 +89,7 @@ fn fetch_hf_datasets() -> Vec<HFDataset> {
 
     // h4 org datasets (check what exists)
     let h4_check = Command::new("gh")
-        .args(&["api", "/orgs/h4/repos", "--jq", ".[].name"])
+        .args(["api", "/orgs/h4/repos", "--jq", ".[].name"])
         .output();
     
     if let Ok(output) = h4_check {
@@ -123,7 +123,7 @@ fn scan_local_datasets() -> Vec<LocalDataset> {
     for (path, purpose, hf_candidate) in data_dirs {
         if let Ok(metadata) = get_dir_stats(path) {
             datasets.push(LocalDataset {
-                name: path.split('/').last().unwrap().to_string(),
+                name: path.split('/').next_back().unwrap().to_string(),
                 path: path.to_string(),
                 size_mb: metadata.0,
                 file_count: metadata.1,
@@ -141,18 +141,18 @@ fn find_untracked_datasets() -> Vec<UntrackedDataset> {
 
     // Check for data-* directories
     let output = Command::new("find")
-        .args(&["/mnt/data1/meta-introspector", "-maxdepth", "1", "-type", "d", "-name", "data-*"])
+        .args(["/mnt/data1/meta-introspector", "-maxdepth", "1", "-type", "d", "-name", "data-*"])
         .output();
 
     if let Ok(out) = output {
         let dirs = String::from_utf8_lossy(&out.stdout);
         for dir in dirs.lines() {
-            let name = dir.split('/').last().unwrap();
+            let name = dir.split('/').next_back().unwrap();
             if let Ok(metadata) = get_dir_stats(dir) {
                 let recommendation = if metadata.0 > 100 {
                     format!("Create HF dataset: introspector/{}", name)
                 } else if metadata.0 > 10 {
-                    format!("Add to git-activity dataset as subdirectory")
+                    "Add to git-activity dataset as subdirectory".to_string()
                 } else {
                     "Keep local or add to git repo".to_string()
                 };
@@ -178,7 +178,7 @@ fn find_untracked_datasets() -> Vec<UntrackedDataset> {
         if let Ok(metadata) = get_dir_stats(dir) {
             if metadata.0 > 1000 {
                 untracked.push(UntrackedDataset {
-                    name: dir.split('/').last().unwrap().to_string(),
+                    name: dir.split('/').next_back().unwrap().to_string(),
                     path: dir.to_string(),
                     size_mb: metadata.0,
                     description: format!("{} files", metadata.1),
@@ -193,7 +193,7 @@ fn find_untracked_datasets() -> Vec<UntrackedDataset> {
 
 fn get_dir_stats(path: &str) -> Result<(u64, usize), std::io::Error> {
     let size_output = Command::new("du")
-        .args(&["-sm", path])
+        .args(["-sm", path])
         .output()?;
     
     let size_str = String::from_utf8_lossy(&size_output.stdout);
@@ -202,7 +202,7 @@ fn get_dir_stats(path: &str) -> Result<(u64, usize), std::io::Error> {
         .unwrap_or(0);
 
     let count_output = Command::new("find")
-        .args(&[path, "-type", "f"])
+        .args([path, "-type", "f"])
         .output()?;
     
     let file_count = String::from_utf8_lossy(&count_output.stdout).lines().count();

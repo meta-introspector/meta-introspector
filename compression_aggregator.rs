@@ -1,6 +1,4 @@
 use std::fs;
-use std::collections::HashMap;
-use serde_json;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🔍 AGGREGATING COMPRESSION RESULTS");

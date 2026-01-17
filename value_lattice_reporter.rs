@@ -29,7 +29,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     if let Ok(json_entries) = fs::read_dir(&length_dir) {
                         for json_entry in json_entries {
                             if let Ok(json_entry) = json_entry {
-                                if json_entry.path().extension().map_or(false, |ext| ext == "json") {
+                                if json_entry.path().extension().is_some_and(|ext| ext == "json") {
                                     dir_files += 1;
                                     total_files += 1;
                                     

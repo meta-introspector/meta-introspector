@@ -5,7 +5,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("📊 Loading similarity matrix...");
     
     // Read metadata to get dimensions
-    let meta_str = fs::read_to_string("markov_similarity_matrix_meta.json")?;
+    let _meta_str = fs::read_to_string("markov_similarity_matrix_meta.json")?;
     let n = 26383; // From metadata
     
     println!("   Matrix size: {} × {}", n, n);

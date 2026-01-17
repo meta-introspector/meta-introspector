@@ -102,7 +102,7 @@ fn main() -> Result<()> {
     });
     
     let output_path = "data/perf_rankings/name_instruction_mappings.json";
-    fs::write(&output_path, serde_json::to_string_pretty(&output)?)?;
+    fs::write(output_path, serde_json::to_string_pretty(&output)?)?;
     println!("\n💾 Saved to: {}", output_path);
     
     Ok(())

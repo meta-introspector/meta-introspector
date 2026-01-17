@@ -63,7 +63,7 @@ fn main() -> Result<()> {
         let tx = tx.clone();
         
         let handle = thread::spawn(move || {
-            let chunk_size = (binaries.len() + num_workers - 1) / num_workers;
+            let chunk_size = binaries.len().div_ceil(num_workers);
             let start = worker_id * chunk_size;
             let end = (start + chunk_size).min(binaries.len());
             
@@ -193,14 +193,14 @@ fn main() -> Result<()> {
 
 fn find_all_elf_binaries() -> Result<Vec<String>> {
     let output = std::process::Command::new("find")
-        .args(&["/nix/store", "-maxdepth", "3", "-type", "f", "-executable"])
+        .args(["/nix/store", "-maxdepth", "3", "-type", "f", "-executable"])
         .output()?;
     
     let mut paths: Vec<String> = Vec::new();
     
     for line in String::from_utf8_lossy(&output.stdout).lines() {
         // Quick check if it's an ELF file
-        if let Ok(bytes) = fs::read(line).and_then(|b| Ok(b.get(0..4).unwrap_or(&[]).to_vec())) {
+        if let Ok(bytes) = fs::read(line).map(|b| b.get(0..4).unwrap_or(&[]).to_vec()) {
             if bytes.starts_with(&[0x7f, 0x45, 0x4c, 0x46]) { // ELF magic
                 paths.push(line.to_string());
             }

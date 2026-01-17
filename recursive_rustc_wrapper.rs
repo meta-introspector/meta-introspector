@@ -26,7 +26,7 @@ fn build_rustc_nightly() -> Option<String> {
     
     // Simple approach - just get rustc from nixpkgs
     let output = Command::new("nix-build")
-        .args(&["-E", "with import <nixpkgs> {}; rustc"])
+        .args(["-E", "with import <nixpkgs> {}; rustc"])
         .output();
     
     match output {
@@ -58,7 +58,7 @@ fn wrap_rustc_recursively(rustc_path: &str) {
         
         // Use our nix telemetry integration directly on the rustc binary
         let output = Command::new("cargo")
-            .args(&["run", "--bin", "nix_telemetry_integration", "--", "-E", 
+            .args(["run", "--bin", "nix_telemetry_integration", "--", "-E", 
                    &format!("\"{}\"", rustc_path)])
             .output();
         

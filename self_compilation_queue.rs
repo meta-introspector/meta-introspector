@@ -1,7 +1,6 @@
 // Self-Compilation Job Queue: Nodes buy source code snippets to process
 // Profile execution, extract minimal snippets that reach new nodes
 
-use std::path::PathBuf;
 use std::collections::HashSet;
 
 #[derive(Debug, Clone)]

@@ -59,7 +59,7 @@ fn main() -> Result<()> {
     // Show active probes
     println!("\n📋 Active probes:");
     Command::new("sudo")
-        .args(&["perf", "probe", "-l"])
+        .args(["perf", "probe", "-l"])
         .status()?;
     
     println!("\n🚀 Ready to record!");
@@ -73,7 +73,7 @@ fn add_perf_probe(binary: &str, function: &str, conductor: u32) -> bool {
     let path = format!("/nix/store/*/{}", binary);
     
     let result = Command::new("sudo")
-        .args(&["perf", "probe", "-x", &path, function])
+        .args(["perf", "probe", "-x", &path, function])
         .output();
     
     match result {

@@ -23,7 +23,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         if name.contains("_RNv") || name.starts_with("_Z") {
             let pattern = extract_pattern(&name);
             let point = compute_8d_point(&name, &file_path, cell, cell_offset, score);
-            orbits.entry(pattern).or_insert_with(Vec::new).push(point);
+            orbits.entry(pattern).or_default().push(point);
         }
     }
     
@@ -230,8 +230,8 @@ fn compute_orbit_resonance(inv1: &OrbitInvariants, inv2: &OrbitInvariants) -> f6
     let vol_ratio = (inv1.volume / inv2.volume.max(0.1)).min(inv2.volume / inv1.volume.max(0.1));
     let curv_ratio = (inv1.curvature / inv2.curvature.max(0.1)).min(inv2.curvature / inv1.curvature.max(0.1));
     
-    let resonance = (1.0 / (1.0 + dim_diff)) * vol_ratio * curv_ratio;
-    resonance
+    
+    (1.0 / (1.0 + dim_diff)) * vol_ratio * curv_ratio
 }
 
 fn extract_pattern(name: &str) -> String {

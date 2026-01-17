@@ -26,13 +26,13 @@ fn main() {
     if use_perf {
         println!("📊 Recording perf data");
     }
-    println!("");
+    println!();
     
     let start = Instant::now();
     
     // Start perf recording if requested
     let perf_file = format!("/tmp/build_{}_{}.perf", target, std::process::id());
-    let mut perf_child = if use_perf {
+    let perf_child = if use_perf {
         println!("🔍 Starting perf record...");
         Some(Command::new("perf")
             .args(["record", "-o", &perf_file, "-a", "-g"])
@@ -92,7 +92,7 @@ fn main() {
     }
     
     println!("⏱️  Build took: {:.2}s", duration.as_secs_f64());
-    println!("");
+    println!();
     
     let stderr = String::from_utf8_lossy(&output.stderr).to_string();
     
@@ -100,7 +100,7 @@ fn main() {
     let errors = parse_errors(&stderr);
     
     println!("📊 Found {} errors", errors.len());
-    println!("");
+    println!();
     
     // Store and suggest fixes
     for error in &errors {
@@ -137,13 +137,13 @@ fn main() {
                     let start = (line_num as usize).saturating_sub(2);
                     let end = ((line_num as usize) + 2).min(lines.len());
                     
-                    println!("");
+                    println!();
                     for (i, line) in lines[start..end].iter().enumerate() {
                         let line_no = start + i + 1;
                         let marker = if line_no == line_num as usize { "→" } else { " " };
                         println!("   {} {:4} | {}", marker, line_no, line);
                     }
-                    println!("");
+                    println!();
                 }
             }
         }
@@ -151,7 +151,7 @@ fn main() {
         if let Some(suggestion) = &build_error.suggestion {
             println!("   💡 {}", suggestion);
         }
-        println!("");
+        println!();
     }
     
     // Print report

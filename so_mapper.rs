@@ -85,7 +85,7 @@ impl SoMapper {
         
         // Extract symbols with nm
         let symbols = if let Ok(nm_output) = Command::new("nm")
-            .args(&["-D", path])
+            .args(["-D", path])
             .output() {
             
             let nm_result = String::from_utf8_lossy(&nm_output.stdout);
@@ -107,7 +107,7 @@ impl SoMapper {
         // Map symbols
         for symbol in &symbols {
             self.symbol_map.entry(symbol.clone())
-                .or_insert_with(Vec::new)
+                .or_default()
                 .push(path.to_string());
         }
         
@@ -152,7 +152,7 @@ impl SoMapper {
             println!("\n  LLVM shared objects:");
             for so in self.llvm_sos.iter().take(5) {
                 println!("    {} ({} symbols, {:.2} MB)", 
-                         so.path.split('/').last().unwrap_or(&so.path),
+                         so.path.split('/').next_back().unwrap_or(&so.path),
                          so.symbols.len(),
                          so.size as f64 / 1_000_000.0);
             }
@@ -162,7 +162,7 @@ impl SoMapper {
             println!("\n  GCC shared objects:");
             for so in self.gcc_sos.iter().take(5) {
                 println!("    {} ({} symbols, {:.2} MB)", 
-                         so.path.split('/').last().unwrap_or(&so.path),
+                         so.path.split('/').next_back().unwrap_or(&so.path),
                          so.symbols.len(),
                          so.size as f64 / 1_000_000.0);
             }

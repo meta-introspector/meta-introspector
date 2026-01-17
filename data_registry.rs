@@ -39,6 +39,12 @@ pub enum DataFormat {
     Archive,
 }
 
+impl Default for DataRegistry {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl DataRegistry {
     pub fn new() -> Self {
         Self {

@@ -1,149 +1,197 @@
 {
-  description = "Comprehensive Rust build telemetry with shell interception";
+  description = "Code Complexity Analysis with Formal Proofs";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
-    rust-telemetry-driver.url = "github:meta-introspector/rust-telemetry-driver";
-    rust-telemetry-driver.inputs.nixpkgs.follows = "nixpkgs";
-    zos-server.url = "github:meta-introspector/zos-server/nix-build-setup";
-    zos-server.inputs.nixpkgs.follows = "nixpkgs";
-    librustc.url = "github:meta-introspector/librustc";
-    librustc.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, rust-telemetry-driver, zos-server, librustc }:
+  outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        overlays = [ (import rust-overlay) ];
-        pkgs = import nixpkgs {
-          inherit system overlays;
+        pkgs = nixpkgs.legacyPackages.${system};
+        
+        # Build analysis tools (production only, excludes demos)
+        analysisTools = pkgs.rustPlatform.buildRustPackage {
+          pname = "complexity-analyzer";
+          version = "0.1.0";
+          src = ./.;
+          cargoLock.lockFile = ./Cargo.lock;
+          nativeBuildInputs = [ pkgs.pkg-config ];
+          buildInputs = [ pkgs.glib ];
+          
+          # Build only production binaries, exclude archived demos
+          cargoBuildFlags = [
+            "--bins"
+            "--exclude-bin" "archived_demos"
+          ];
         };
         
-        # Our telemetry shell that wraps everything
-        telemetry-shell = pkgs.writeShellScriptBin "telemetry-shell" ''
-          #!/usr/bin/env bash
-          TELEMETRY_DRIVER="${rust-telemetry-driver.packages.${system}.default}/bin/rust-telemetry-driver"
-          REAL_SHELL="''${REAL_SHELL:-${pkgs.bash}/bin/bash}"
+        # Archived demos - separate build for analysis only
+        # WARNING: These contain fake data and incomplete implementations
+        archivedDemos = pkgs.rustPlatform.buildRustPackage {
+          pname = "archived-demos";
+          version = "0.1.0";
+          src = ./.;
+          cargoLock.lockFile = ./Cargo.lock;
+          nativeBuildInputs = [ pkgs.pkg-config ];
+          buildInputs = [ pkgs.glib ];
           
-          export TELEMETRY_SESSION_ID="''${TELEMETRY_SESSION_ID:-$(date +%s)_$$}"
-          export TELEMETRY_LOG="''${TELEMETRY_LOG:-/tmp/build_telemetry_''${TELEMETRY_SESSION_ID}.jsonl}"
+          # Build only demo binaries from demos/archived/
+          # These are NOT production-ready
+          buildPhase = ''
+            echo "Building archived demos for analysis only..."
+            for demo in demos/archived/demo_*.rs; do
+              name=$(basename "$demo" .rs)
+              echo "Building $name..."
+              cargo build --release --bin "$name" || echo "Failed: $name"
+            done
+          '';
           
-          echo "🔍 Telemetry Shell Active - Session: $TELEMETRY_SESSION_ID" >&2
-          echo "📊 Logging to: $TELEMETRY_LOG" >&2
+          installPhase = ''
+            mkdir -p $out/bin/archived-demos
+            cp -r target/release/demo_* $out/bin/archived-demos/ 2>/dev/null || true
+            echo "WARNING: These are archived demos with fake data" > $out/bin/archived-demos/README
+          '';
+        };
+        
+        # QEMU reachability plugin
+        qemuPlugin = pkgs.rustPlatform.buildRustPackage {
+          pname = "qemu-reachability-plugin";
+          version = "0.1.0";
+          src = ./qemu-plugin;
+          cargoLock.lockFile = ./qemu-plugin/Cargo.lock;
           
-          if [ $# -gt 0 ]; then
-            if [ "$1" = "-c" ] && [ $# -eq 2 ]; then
-              exec "$TELEMETRY_DRIVER" "$REAL_SHELL" "$@"
-            else
-              exec "$TELEMETRY_DRIVER" "$@"
-            fi
+          buildPhase = ''
+            cargo build --release --lib
+          '';
+          
+          installPhase = ''
+            mkdir -p $out/lib
+            cp target/release/libqemu_reachability_plugin.so $out/lib/
+          '';
+        };
+        
+        # Lean4 proof template generator
+        proofGenerator = pkgs.writeScriptBin "generate-proof" ''
+          #!${pkgs.bash}/bin/bash
+          ENUM_GENUS=$1
+          ENUM_CONDUCTOR=$2
+          STRUCT_GENUS=$3
+          STRUCT_CONDUCTOR=$4
+          
+          cat > complexity_proof.lean <<EOF
+          import Mathlib.Data.Nat.Basic
+          import Mathlib.Tactic
+          
+          def complexity (genus : ℕ) (conductor : ℕ) : ℕ :=
+            2 * genus + conductor
+          
+          def enum_complexity : ℕ := complexity $ENUM_GENUS $ENUM_CONDUCTOR
+          def struct_complexity : ℕ := complexity $STRUCT_GENUS $STRUCT_CONDUCTOR
+          
+          theorem enum_more_complex : enum_complexity > struct_complexity := by
+            unfold enum_complexity struct_complexity complexity
+            norm_num
+          
+          #check enum_more_complex
+          EOF
+          
+          echo "Generated proof: complexity_proof.lean"
+        '';
+        
+        # Complete analysis pipeline
+        analyzeAndProve = pkgs.writeScriptBin "analyze-and-prove" ''
+          #!${pkgs.bash}/bin/bash
+          set -e
+          
+          ENUM_FILE=$1
+          STRUCT_FILE=$2
+          OUTPUT_DIR=''${3:-./proof_output}
+          
+          mkdir -p $OUTPUT_DIR
+          
+          echo "=== Analyzing Enum ==="
+          ${analysisTools}/bin/reach_tracer $ENUM_FILE > $OUTPUT_DIR/enum_reach.txt
+          ${analysisTools}/bin/source2test < $OUTPUT_DIR/enum_reach.txt > $OUTPUT_DIR/enum_clusters.json
+          ${analysisTools}/bin/homotopy_classifier < $OUTPUT_DIR/enum_clusters.json > $OUTPUT_DIR/enum_class.json
+          
+          ENUM_GENUS=$(${pkgs.jq}/bin/jq -r '.[0].mathematical_classification.modular_form.genus' $OUTPUT_DIR/enum_class.json)
+          ENUM_CONDUCTOR=$(${pkgs.jq}/bin/jq -r '.[0].mathematical_classification.modular_form.conductor' $OUTPUT_DIR/enum_class.json)
+          
+          echo "Enum: genus=$ENUM_GENUS, conductor=$ENUM_CONDUCTOR"
+          
+          echo "=== Analyzing Struct ==="
+          ${analysisTools}/bin/reach_tracer $STRUCT_FILE > $OUTPUT_DIR/struct_reach.txt
+          ${analysisTools}/bin/source2test < $OUTPUT_DIR/struct_reach.txt > $OUTPUT_DIR/struct_clusters.json
+          ${analysisTools}/bin/homotopy_classifier < $OUTPUT_DIR/struct_clusters.json > $OUTPUT_DIR/struct_class.json
+          
+          STRUCT_GENUS=$(${pkgs.jq}/bin/jq -r '.[0].mathematical_classification.modular_form.genus' $OUTPUT_DIR/struct_class.json)
+          STRUCT_CONDUCTOR=$(${pkgs.jq}/bin/jq -r '.[0].mathematical_classification.modular_form.conductor' $OUTPUT_DIR/struct_class.json)
+          
+          echo "Struct: genus=$STRUCT_GENUS, conductor=$STRUCT_CONDUCTOR"
+          
+          echo "=== Generating Proof ==="
+          cd $OUTPUT_DIR
+          ${proofGenerator}/bin/generate-proof $ENUM_GENUS $ENUM_CONDUCTOR $STRUCT_GENUS $STRUCT_CONDUCTOR
+          
+          echo "=== Verifying Proof ==="
+          ${pkgs.lean4}/bin/lean --make complexity_proof.lean
+          
+          if [ $? -eq 0 ]; then
+            echo "✅ PROOF VERIFIED: complexity(enum) > complexity(struct)"
+            echo "VERIFIED" > $OUTPUT_DIR/proof_status.txt
           else
-            echo "🚀 Starting interactive telemetry shell..." >&2
-            exec "$TELEMETRY_DRIVER" "$REAL_SHELL"
+            echo "❌ PROOF FAILED"
+            echo "FAILED" > $OUTPUT_DIR/proof_status.txt
           fi
         '';
         
-        # Remove local rust-telemetry-driver build - now using flake input
-        
-        # Custom environment with telemetry shell as default
-        telemetry-env = pkgs.buildEnv {
-          name = "telemetry-build-env";
-          paths = with pkgs; [
-            (rust-bin.stable.latest.default.override {
-              extensions = [ "rust-src" "rust-analyzer" ];
-            })
-            git
-            jq
-            strace
-            # linuxPackages.perf  # Optional: uncomment for perf support
-            rust-telemetry-driver.packages.${system}.default
-            telemetry-shell
-          ];
+      in {
+        packages = {
+          default = analysisTools;
+          tools = analysisTools;
+          demos = archivedDemos;  # Quarantined demos for analysis
+          qemu-plugin = qemuPlugin;  # QEMU reachability plugin
+          proof-generator = proofGenerator;
+          analyze-and-prove = analyzeAndProve;
         };
         
-      in
-      rec {
-        packages = rec {
-          default = minimal-build-server;
-          
-          # Minimal build server - the core
-          minimal-build-server = pkgs.rustPlatform.buildRustPackage {
-            pname = "minimal-build-server";
-            version = "0.1.0";
-            src = ./.;
-            cargoLock.lockFile = ./Cargo.lock;
-            nativeBuildInputs = [ pkgs.pkg-config ];
-            buildInputs = [ pkgs.openssl pkgs.openssl.dev ];
-            PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+        apps = {
+          default = flake-utils.lib.mkApp {
+            drv = analyzeAndProve;
           };
-          
-          # All meta-introspector binaries (220 total)
-          meta-introspector-binaries = pkgs.rustPlatform.buildRustPackage {
-            pname = "meta-introspector";
-            version = "0.1.0";
-            src = ./.;
-            cargoLock.lockFile = ./Cargo.lock;
-            nativeBuildInputs = [ pkgs.pkg-config ];
-            buildInputs = [ pkgs.openssl ];
-            
-            # Build all 220 binaries
-            cargoBuildFlags = [ "--bins" ];
-            
-            meta = {
-              description = "Meta-introspector: Comprehensive Rust build telemetry and analysis tools";
-              longDescription = ''
-                Collection of 220+ binaries for:
-                - Build telemetry and instrumentation
-                - Code analysis and compression
-                - Repository mining and metrics
-                - Nix integration and services
-                - Blockchain and smart contract analysis
-                - Demo applications and experiments
-              '';
-            };
+          analyze = flake-utils.lib.mkApp {
+            drv = analyzeAndProve;
           };
-          
-          # Individual packages from flake inputs
-          telemetry-driver = rust-telemetry-driver.packages.${system}.default;
-          zos = zos-server.packages.${system}.default;
-          librustc-pkg = librustc.packages.${system}.default;
-          shell = telemetry-shell;
-          env = telemetry-env;
         };
         
         devShells.default = pkgs.mkShell {
-          buildInputs = [ 
-            telemetry-env 
-            pkgs.openssl
-            pkgs.openssl.dev
+          buildInputs = [
+            pkgs.rustc
+            pkgs.cargo
             pkgs.pkg-config
-            pkgs.curl
-            pkgs.curl.dev
-            pkgs.libgit2
-            pkgs.libgit2.dev
+            pkgs.glib
+            pkgs.qemu
+            pkgs.lean4
+            pkgs.jq
+            analysisTools
+            proofGenerator
+            analyzeAndProve
           ];
           
-          PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig:${pkgs.curl.dev}/lib/pkgconfig:${pkgs.libgit2.dev}/lib/pkgconfig";
-          
-          # Override shell in dev environment
-          SHELL = "${telemetry-shell}/bin/telemetry-shell";
-          CONFIG_SHELL = "${telemetry-shell}/bin/telemetry-shell";
-          
           shellHook = ''
-            echo "🚀 Telemetry Build Environment"
-            echo "=============================="
-            echo "Shell: ${telemetry-shell}/bin/telemetry-shell"
-            echo "Driver: ${rust-telemetry-driver}/bin/rust-telemetry-driver"
+            echo "🔬 Code Complexity Analysis Environment"
             echo ""
-            echo "All commands will be captured with full telemetry!"
+            echo "Commands:"
+            echo "  analyze-and-prove enum.rs struct.rs [output_dir]"
+            echo "  generate-proof <enum_g> <enum_c> <struct_g> <struct_c>"
             echo ""
-            echo "Try:"
-            echo "  cargo build    # Captured build"
-            echo "  nix build      # Captured nix build"
-            echo "  ./x.py build   # Captured bootstrap"
+            echo "Example:"
+            echo "  analyze-and-prove test_enum.rs test_struct.rs ./proofs"
+            echo ""
           '';
         };
-      });
+      }
+    );
 }

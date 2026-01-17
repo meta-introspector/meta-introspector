@@ -47,7 +47,7 @@ impl ActivityDataset {
         
         // Get commits with full info
         let output = Command::new("git")
-            .args(&[
+            .args([
                 "-C", repo_path,
                 "log",
                 "--all",
@@ -156,7 +156,7 @@ impl ActivityDataset {
                 let month = parts[1];
                 
                 let key = format!("{}/{}/{}/{}", commit.platform, user, year, month);
-                grouped.entry(key).or_insert_with(Vec::new).push(commit.clone());
+                grouped.entry(key).or_default().push(commit.clone());
             }
         }
         

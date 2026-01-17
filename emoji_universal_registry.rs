@@ -21,6 +21,12 @@ pub struct EmojiRegistry {
     pub lmfdb_index: HashMap<String, String>,    // LMFDB -> Emoji
 }
 
+impl Default for EmojiRegistry {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl EmojiRegistry {
     pub fn new() -> Self {
         Self {
@@ -111,7 +117,7 @@ impl EmojiRegistry {
 // Integration with existing systems
 impl EmojiRegistry {
     pub fn load_from_nix_flake(&mut self, flake_url: &str, libraries: &HashMap<String, String>) {
-        for (lib_name, lib_path) in libraries {
+        for (_lib_name, lib_path) in libraries {
             // Auto-discover functions and assign emojis
             if let Ok(functions) = self.discover_functions(lib_path) {
                 for (func_name, abi_sig) in functions {
@@ -123,7 +129,7 @@ impl EmojiRegistry {
         }
     }
 
-    fn discover_functions(&self, lib_path: &str) -> Result<Vec<(String, String)>, String> {
+    fn discover_functions(&self, _lib_path: &str) -> Result<Vec<(String, String)>, String> {
         // Use objdump or similar to extract function signatures
         Ok(vec![
             ("main".to_string(), "fn() -> i32".to_string()),

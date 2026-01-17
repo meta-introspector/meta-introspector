@@ -22,7 +22,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             
             for entry in entries {
                 if let Ok(entry) = entry {
-                    if entry.path().extension().map_or(false, |ext| ext == "json") {
+                    if entry.path().extension().is_some_and(|ext| ext == "json") {
                         category_files += 1;
                         
                         // Read usage count from JSON
@@ -58,16 +58,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 if let Ok(length) = length_str.parse::<usize>() {
                     if length > 100 {
                         if let Ok(json_entries) = fs::read_dir(entry.path()) {
-                            for json_entry in json_entries {
-                                if let Ok(json_entry) = json_entry {
-                                    if json_entry.path().extension().map_or(false, |ext| ext == "json") {
-                                        long_files += 1;
-                                        
-                                        if let Ok(content) = fs::read_to_string(json_entry.path()) {
-                                            if let Ok(json) = serde_json::from_str::<Value>(&content) {
-                                                if let Some(usages) = json.get("total_usages").and_then(|v| v.as_u64()) {
-                                                    long_usages += usages;
-                                                }
+                            for json_entry in json_entries.flatten() {
+                                if json_entry.path().extension().is_some_and(|ext| ext == "json") {
+                                    long_files += 1;
+                                    
+                                    if let Ok(content) = fs::read_to_string(json_entry.path()) {
+                                        if let Ok(json) = serde_json::from_str::<Value>(&content) {
+                                            if let Some(usages) = json.get("total_usages").and_then(|v| v.as_u64()) {
+                                                long_usages += usages;
                                             }
                                         }
                                     }

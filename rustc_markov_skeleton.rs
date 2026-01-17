@@ -149,7 +149,7 @@ fn decompress_with_skeleton(skeleton: &RustcMarkovSkeleton, compressed: &[u8]) -
     
     while i < compressed.len() {
         match compressed[i] {
-            1 | 2 | 3 => {
+            1..=3 => {
                 if let Some(token) = prob_to_token.get(&compressed[i]) {
                     tokens.push(token.clone());
                 }
@@ -180,7 +180,7 @@ fn estimate_skeleton_compression(skeleton: &RustcMarkovSkeleton) -> f64 {
     let mut weighted_compression = 0.0;
     let mut total_weight = 0.0;
     
-    for (_token, &prob) in &skeleton.structure_probabilities {
+    for &prob in skeleton.structure_probabilities.values() {
         let compression_ratio = if prob > 0.3 { 0.95 } else if prob > 0.1 { 0.90 } else { 0.80 };
         weighted_compression += prob * compression_ratio;
         total_weight += prob;

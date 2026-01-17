@@ -121,6 +121,12 @@ pub struct UniversalFunctionDiscovery {
     source_index: HashMap<String, Vec<u64>>, // source patterns -> signature_ids
 }
 
+impl Default for UniversalFunctionDiscovery {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl UniversalFunctionDiscovery {
     pub fn new() -> Self {
         UniversalFunctionDiscovery {
@@ -157,7 +163,7 @@ impl UniversalFunctionDiscovery {
         let markov_model = self.build_symbol_markov_model(symbol);
         let mut matches = Vec::new();
         
-        for (_, signature) in &self.signatures {
+        for signature in self.signatures.values() {
             let similarity = self.calculate_markov_similarity(&markov_model, &signature.symbol_markov_model);
             if similarity > 0.8 {
                 matches.push(FunctionMatch {
@@ -178,7 +184,7 @@ impl UniversalFunctionDiscovery {
         let bit_model = self.build_bit_model(code_bytes);
         let mut matches = Vec::new();
         
-        for (_, signature) in &self.signatures {
+        for signature in self.signatures.values() {
             let similarity = self.calculate_bit_similarity(&bit_model, &signature.code_bit_model);
             if similarity > 0.7 {
                 matches.push(FunctionMatch {
@@ -287,7 +293,7 @@ impl UniversalFunctionDiscovery {
     }
 
     // Helper methods (simplified implementations)
-    fn calculate_behavior_hash(&self, params: &[ParameterValue], effects: &SideEffectSignature) -> u64 {
+    fn calculate_behavior_hash(&self, params: &[ParameterValue], _effects: &SideEffectSignature) -> u64 {
         // Hash based on parameter types and side effects
         use std::collections::hash_map::DefaultHasher;
         use std::hash::{Hash, Hasher};
@@ -399,7 +405,7 @@ impl UniversalFunctionDiscovery {
     fn calculate_name_entropy(&self, _name: &str) -> f64 { 0.5 }
     fn detect_naming_convention(&self, _name: &str) -> NamingConvention { NamingConvention::CamelCase }
     fn extract_instruction_patterns(&self, _bytes: &[u8]) -> Vec<InstructionPattern> { vec![] }
-    fn calculate_complexity(&self, _bytes: &[u8]) -> ComplexitySignature { ComplexitySignature::default() }
+    fn calculate_complexity(&self, _bytes: &[u8]) -> ComplexitySignature { ComplexitySignature }
     fn find_source_location(&self, _repo: &str, _symbol: &str) -> Option<SourceLocation> { None }
     fn find_documentation_hash(&self, _repo: &str, _symbol: &str) -> Option<u64> { None }
     fn calculate_lmfdb_conductor(&self, _symbol: &str) -> u64 { 5000 }
@@ -459,7 +465,7 @@ impl Default for SideEffectSignature {
             file_operations: vec![],
             network_operations: vec![],
             system_calls: vec![],
-            cpu_usage_pattern: CpuPattern::default(),
+            cpu_usage_pattern: CpuPattern,
         }
     }
 }
@@ -478,7 +484,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ParameterValue::UInt64(1024), // size parameter
     ];
     let malloc_effects = SideEffectSignature {
-        memory_allocations: vec![AllocationPattern::default()],
+        memory_allocations: vec![AllocationPattern],
         ..Default::default()
     };
     

@@ -53,7 +53,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut results = Vec::new();
     
     for (i, v1) in views.iter().enumerate() {
-        for (j, v2) in views.iter().enumerate().skip(i + 1) {
+        for (_j, v2) in views.iter().enumerate().skip(i + 1) {
             let result = find_automorphisms(v1, v2)?;
             println!("{} ↔ {}: {} automorphisms, spectral_sim={:.3}", 
                      result.view1, result.view2, result.automorphisms, result.spectral_similarity);
@@ -104,9 +104,9 @@ fn find_automorphisms(v1: &CompilerView, v2: &CompilerView) -> Result<Automorphi
     })
 }
 
-fn extract_dir_structure(pattern: &str) -> Result<CompilerView, Box<dyn std::error::Error>> {
+fn extract_dir_structure(_pattern: &str) -> Result<CompilerView, Box<dyn std::error::Error>> {
     let mut nodes = Vec::new();
-    let mut edges = Vec::new();
+    let edges = Vec::new();
     
     // Use our actual zombie_driver2 structure
     let base_path = "/home/mdupont/zombie_driver2";
@@ -139,7 +139,7 @@ fn extract_dir_structure(pattern: &str) -> Result<CompilerView, Box<dyn std::err
 
 fn extract_source_asts(pattern: &str) -> Result<CompilerView, Box<dyn std::error::Error>> {
     let mut nodes = Vec::new();
-    let mut edges = Vec::new();
+    let edges = Vec::new();
     
     // Parse all Rust files and extract module dependencies
     for entry in glob(pattern)? {
@@ -155,7 +155,7 @@ fn extract_source_asts(pattern: &str) -> Result<CompilerView, Box<dyn std::error
                 
                 // Extract use statements for edges
                 for item in file.items {
-                    if let syn::Item::Use(use_item) = item {
+                    if let syn::Item::Use(_use_item) = item {
                         // Parse use paths to find dependencies
                         // This is simplified - real implementation would be more complex
                     }
@@ -178,7 +178,7 @@ fn extract_source_asts(pattern: &str) -> Result<CompilerView, Box<dyn std::error
 
 fn extract_elf_symbols(binary_path: &str) -> Result<CompilerView, Box<dyn std::error::Error>> {
     let mut nodes = Vec::new();
-    let mut edges = Vec::new();
+    let edges = Vec::new();
     
     // Use goblin to parse ELF symbols
     let buffer = std::fs::read(binary_path)?;

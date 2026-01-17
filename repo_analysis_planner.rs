@@ -3,7 +3,6 @@ use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::path::{Path, PathBuf};
-use gix;
 use gix::bstr::ByteSlice; // Add this line
 use std::process::Command; // For calling external commands
 
@@ -92,7 +91,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut seen_rust_blob_ids: HashSet<String> = HashSet::new(); // Initialize seen set
 
     // Convert Vec<String> to a single regex pattern for git log --author
-    let user_authors_git_log_pattern = args.user_authors.join("|");
+    let _user_authors_git_log_pattern = args.user_authors.join("|");
 
     for (repo_key, repo_entry) in registry.sources {
         if !repo_entry.checkout_path.exists() || !repo_entry.checkout_path.is_dir() {

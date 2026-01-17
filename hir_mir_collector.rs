@@ -36,7 +36,7 @@ impl HirMirCollector {
         
         // Compile with HIR dump
         let hir_output = Command::new("rustc")
-            .args(&[
+            .args([
                 "-Z", "unpretty=hir",
                 "--crate-type", "lib",
                 &temp_path
@@ -48,7 +48,7 @@ impl HirMirCollector {
         
         // Compile with MIR dump
         let mir_output = Command::new("rustc")
-            .args(&[
+            .args([
                 "-Z", "dump-mir=all",
                 "--crate-type", "lib",
                 &temp_path
@@ -72,11 +72,11 @@ impl HirMirCollector {
         
         // Map syn type to HIR/MIR
         self.syn_to_hir.entry(syn_type.to_string())
-            .or_insert_with(Vec::new)
+            .or_default()
             .push(hash.clone());
         
         self.syn_to_mir.entry(syn_type.to_string())
-            .or_insert_with(Vec::new)
+            .or_default()
             .push(hash.clone());
         
         self.dumps.push(dump.clone());

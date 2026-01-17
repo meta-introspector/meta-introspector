@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::fs;
 use serde::{Deserialize, Serialize};
-use syn::{parse_file, visit::Visit, Expr, Lit, LitInt, LitBool};
+use syn::{parse_file, visit::Visit, Expr, Lit};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct DataTypeMarkov {

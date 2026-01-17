@@ -1,11 +1,9 @@
 // Fast GitHub activity scanner using gix and octocrab
 // Finds all repos with activity in 2025 and compares with git-sources registry
 
-use crossbeam::channel::bounded;
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 use std::fs;
-use std::thread;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct RepoActivity {
@@ -29,7 +27,7 @@ struct ActivityReport {
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let year = 2025;
-    let since = format!("{}-01-01T00:00:00Z", year);
+    let _since = format!("{}-01-01T00:00:00Z", year);
     
     println!("🔍 Finding GitHub activity for {}", year);
     
@@ -39,7 +37,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Get GitHub activity using octocrab
     let github_token = std::env::var("GITHUB_TOKEN").ok();
-    let octocrab = if let Some(token) = github_token {
+    let _octocrab = if let Some(token) = github_token {
         octocrab::OctocrabBuilder::new()
             .personal_token(token)
             .build()?
@@ -79,7 +77,7 @@ fn normalize_url(url: &str) -> String {
 
 async fn check_github_repo(
     repo: &octocrab::models::Repository,
-    since: &str,
+    _since: &str,
     registry: &HashSet<String>,
 ) -> Option<RepoActivity> {
     // Check if repo has commits since date

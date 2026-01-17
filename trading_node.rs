@@ -4,7 +4,7 @@
 use clap::Parser;
 use std::sync::{Arc, Mutex};
 use tokio::net::TcpListener;
-use axum::{Router, routing::{get, post}, Json, extract::State};
+use axum::{Router, routing::get, Json, extract::State};
 use serde::{Deserialize, Serialize};
 
 // Import from shared_memory_bus
@@ -174,7 +174,7 @@ async fn trading_loop(state: NodeState) {
             }
             
             // Try to trade with peer
-            if let Err(e) = try_trade_with_peer(&state, peer_port).await {
+            if let Err(_e) = try_trade_with_peer(&state, peer_port).await {
                 // Peer might not be ready yet
             }
         }
@@ -188,7 +188,7 @@ async fn trading_loop(state: NodeState) {
     }
 }
 
-async fn try_trade_with_peer(state: &NodeState, peer_port: u16) -> Result<(), Box<dyn std::error::Error>> {
+async fn try_trade_with_peer(_state: &NodeState, peer_port: u16) -> Result<(), Box<dyn std::error::Error>> {
     // TODO: Enable when reqwest is in main Cargo.toml
     // Preserved for future implementation
     
@@ -237,8 +237,8 @@ fn find_best_trade_local(my: &Portfolio, their: &Portfolio) -> Option<TradeOffer
                 to_node: String::new(), offer_meme: my_meme.id, want_meme: their_meme.id, 
                 score_improvement: 0.0 
             };
-            let my_score_after = simulate_trade_score(&my, &their, &offer);
-            let their_score_after = simulate_trade_score(&their, &my, &offer);
+            let my_score_after = simulate_trade_score(my, their, &offer);
+            let their_score_after = simulate_trade_score(their, my, &offer);
             
             let my_improvement = my_score_after - my.score;
             let their_improvement = their_score_after - their.score;

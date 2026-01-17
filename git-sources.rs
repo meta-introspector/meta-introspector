@@ -141,21 +141,21 @@ impl GitRegistry {
 
     fn get_remote_url(repo_path: &Path) -> Result<String, Box<dyn std::error::Error>> {
         let output = Command::new("git")
-            .args(&["-C", repo_path.to_str().unwrap(), "remote", "get-url", "origin"])
+            .args(["-C", repo_path.to_str().unwrap(), "remote", "get-url", "origin"])
             .output()?;
         Ok(String::from_utf8(output.stdout)?.trim().to_string())
     }
 
     fn get_current_branch(repo_path: &Path) -> Result<String, Box<dyn std::error::Error>> {
         let output = Command::new("git")
-            .args(&["-C", repo_path.to_str().unwrap(), "branch", "--show-current"])
+            .args(["-C", repo_path.to_str().unwrap(), "branch", "--show-current"])
             .output()?;
         Ok(String::from_utf8(output.stdout)?.trim().to_string())
     }
 
     fn get_last_commit(repo_path: &Path) -> Result<String, Box<dyn std::error::Error>> {
         let output = Command::new("git")
-            .args(&["-C", repo_path.to_str().unwrap(), "rev-parse", "HEAD"])
+            .args(["-C", repo_path.to_str().unwrap(), "rev-parse", "HEAD"])
             .output()?;
         Ok(String::from_utf8(output.stdout)?.trim().to_string())
     }
@@ -186,7 +186,7 @@ impl GitRegistry {
         for (canonical_name, source) in &self.sources {
             println!("=== {} ===", canonical_name);
             let output = Command::new("git")
-                .args(&["-C", source.checkout_path.to_str().unwrap(), "status", "--short"])
+                .args(["-C", source.checkout_path.to_str().unwrap(), "status", "--short"])
                 .output();
             
             match output {
@@ -222,7 +222,7 @@ impl GitRegistry {
         for (canonical_name, source) in &self.sources {
             println!("=== {} ===", canonical_name);
             let output = Command::new("sh")
-                .args(&["-c", shell_cmd])
+                .args(["-c", shell_cmd])
                 .current_dir(&source.checkout_path)
                 .output()?;
             

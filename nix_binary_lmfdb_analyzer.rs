@@ -68,7 +68,7 @@ impl LmfdbSymbolAnalysis {
         }
     }
     
-    fn calculate_conductor(name: &str, length: usize, density: f64, transitions: &HashMap<u8, HashMap<u8, u32>>) -> (u64, u8) {
+    fn calculate_conductor(_name: &str, length: usize, density: f64, transitions: &HashMap<u8, HashMap<u8, u32>>) -> (u64, u8) {
         let transition_count = transitions.values().map(|m| m.len()).sum::<usize>();
         let complexity_score = (length as f64 * density * transition_count as f64) as u64;
         
@@ -243,7 +243,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     // Save detailed analysis
     let output_file = format!("{}_lmfdb_analysis.json", 
-        binary_path.replace('/', "_").replace(' ', "_"));
+        binary_path.replace(['/', ' '], "_"));
     let json = serde_json::to_string_pretty(&analysis)?;
     fs::write(&output_file, json)?;
     

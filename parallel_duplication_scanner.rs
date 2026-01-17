@@ -144,7 +144,7 @@ impl ParallelScanner {
             let next = chars[i+3];
             
             *transitions.entry(state)
-                .or_insert_with(HashMap::new)
+                .or_default()
                 .entry(next)
                 .or_insert(0) += 1;
         }
@@ -225,7 +225,7 @@ impl ParallelScanner {
         
         for record in results.drain(..) {
             by_fingerprint.entry(record.fingerprint_ast.clone())
-                .or_insert_with(Vec::new)
+                .or_default()
                 .push(record);
         }
         
@@ -270,7 +270,7 @@ impl ParallelScanner {
         
         for record in results.iter() {
             by_structure.entry(record.fingerprint_structure.clone())
-                .or_insert_with(Vec::new)
+                .or_default()
                 .push(record);
         }
         

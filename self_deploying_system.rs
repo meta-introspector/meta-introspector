@@ -149,7 +149,7 @@ WantedBy=multi-user.target
         
         // Check systemd status
         let status = Command::new("systemctl")
-            .args(&["is-active", &format!("{}-qa", name)])
+            .args(["is-active", &format!("{}-qa", name)])
             .output()?;
         
         if !status.status.success() {
@@ -171,7 +171,7 @@ WantedBy=multi-user.target
         println!("  🔍 Running Prod health checks...");
         
         let status = Command::new("systemctl")
-            .args(&["is-active", &format!("{}-prod", name)])
+            .args(["is-active", &format!("{}-prod", name)])
             .output()?;
         
         if !status.status.success() {
@@ -184,7 +184,7 @@ WantedBy=multi-user.target
     
     fn get_systemd_nix_path(&self, unit: &str) -> Result<String, Box<dyn std::error::Error>> {
         let output = Command::new("systemctl")
-            .args(&["show", "-p", "Environment", unit])
+            .args(["show", "-p", "Environment", unit])
             .output()?;
         
         let env = String::from_utf8_lossy(&output.stdout);
@@ -202,7 +202,7 @@ WantedBy=multi-user.target
         let tarball = format!("/tmp/{}-oci.tar.gz", name);
         
         Command::new("tar")
-            .args(&["-czf", &tarball, "-C", nix_path, "."])
+            .args(["-czf", &tarball, "-C", nix_path, "."])
             .output()?;
         
         // Create cloud-init script

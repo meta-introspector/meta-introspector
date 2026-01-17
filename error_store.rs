@@ -38,12 +38,12 @@ pub fn add_error(error: BuildError) {
     
     report.by_type
         .entry(error.error_type.clone())
-        .or_insert_with(Vec::new)
+        .or_default()
         .push(error.clone());
     
     report.by_bin
         .entry(error.bin.clone())
-        .or_insert_with(Vec::new)
+        .or_default()
         .push(error);
 }
 

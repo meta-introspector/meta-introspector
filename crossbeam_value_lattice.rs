@@ -62,19 +62,16 @@ impl ConstantVisitor {
 
 impl<'ast> Visit<'ast> for ConstantVisitor {
     fn visit_expr(&mut self, expr: &'ast Expr) {
-        match expr {
-            Expr::Lit(lit_expr) => {
-                let (value, usage_type) = match &lit_expr.lit {
-                    Lit::Int(int_lit) => (int_lit.base10_digits().to_string(), "integer_literal".to_string()),
-                    Lit::Float(float_lit) => (float_lit.base10_digits().to_string(), "float_literal".to_string()),
-                    Lit::Str(str_lit) => (str_lit.value(), "string_literal".to_string()),
-                    Lit::Bool(bool_lit) => (bool_lit.value.to_string(), "boolean_literal".to_string()),
-                    _ => return,
-                };
-                
-                self.constants.push((value, "literal_usage".to_string(), usage_type));
-            }
-            _ => {}
+        if let Expr::Lit(lit_expr) = expr {
+            let (value, usage_type) = match &lit_expr.lit {
+                Lit::Int(int_lit) => (int_lit.base10_digits().to_string(), "integer_literal".to_string()),
+                Lit::Float(float_lit) => (float_lit.base10_digits().to_string(), "float_literal".to_string()),
+                Lit::Str(str_lit) => (str_lit.value(), "string_literal".to_string()),
+                Lit::Bool(bool_lit) => (bool_lit.value.to_string(), "boolean_literal".to_string()),
+                _ => return,
+            };
+            
+            self.constants.push((value, "literal_usage".to_string(), usage_type));
         }
         syn::visit::visit_expr(self, expr);
     }
@@ -121,7 +118,7 @@ fn collect_rust_files(dir: &Path, files: &mut Vec<String>) {
                         collect_rust_files(&path, files);
                     }
                 }
-            } else if path.extension().map_or(false, |ext| ext == "rs") {
+            } else if path.extension().is_some_and(|ext| ext == "rs") {
                 files.push(path.to_string_lossy().to_string());
             }
         }
@@ -187,7 +184,7 @@ fn main() {
     
     // Spawn 20 worker threads
     let mut handles = Vec::new();
-    let chunk_size = (remaining_files.len() + 19) / 20;
+    let chunk_size = remaining_files.len().div_ceil(20);
     
     for chunk in remaining_files.chunks(chunk_size) {
         let files_chunk = chunk.to_vec();
@@ -211,7 +208,7 @@ fn main() {
         progress.processed_files.push(file_path_for_progress);
         progress.current_count += 1;
         
-        if progress.current_count % 100 == 0 {
+        if progress.current_count.is_multiple_of(100) {
             println!("📊 Processed {}/{} files ({:.1}%)", 
                      progress.current_count, 
                      progress.total_files,
@@ -251,7 +248,7 @@ fn main() {
     fs::create_dir_all(&value_lattice_output_dir).unwrap();
     
     let entries: Vec<_> = value_map.into_iter().collect();
-    let save_chunk_size = (entries.len() + 19) / 20;
+    let save_chunk_size = entries.len().div_ceil(20);
     let mut save_handles = Vec::new();
     
     for chunk in entries.chunks(save_chunk_size) {

@@ -1,6 +1,5 @@
 // 🔧 AUTO-GENERATED TELEMETRY WRAPPERS FOR HELLO
 
-use std::time::Instant;
 
 
 macro_rules! telemetry_wrap {

@@ -20,7 +20,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         
         let idx = symbols.len();
         symbols.push((name.clone(), file, score));
-        symbol_index.entry(name).or_insert_with(Vec::new).push(idx);
+        symbol_index.entry(name).or_default().push(idx);
     }
     
     println!("✅ Loaded {} symbols\n", symbols.len());
@@ -42,7 +42,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let indices = &symbol_index[sym];
         let (name, file, _) = &symbols[indices[0]];
         let label = auto_label(name, file);
-        label_to_symbols.entry(label).or_insert_with(Vec::new).push((sym.clone(), indices.len()));
+        label_to_symbols.entry(label).or_default().push((sym.clone(), indices.len()));
     }
     
     // Load eigenvector results

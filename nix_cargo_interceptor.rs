@@ -3,7 +3,6 @@
 
 use std::fs::OpenOptions;
 use std::io::Write;
-use serde_json::json;
 
 /// Intercept rustc callback - captures source, crate info, compilation flags
 #[macro_export]
@@ -121,7 +120,7 @@ macro_rules! intercept_all {
     }};
 }
 
-fn log_callback(callback_type: &str, data: &serde_json::Value) {
+fn log_callback(_callback_type: &str, data: &serde_json::Value) {
     if let Ok(mut f) = OpenOptions::new()
         .create(true)
         .append(true)

@@ -92,7 +92,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         println!("   Std dev: {:.3}", eigenvector.std_dev);
         println!("   Dominant cell: {}", eigenvector.dominant_cell);
         println!("   Energy: {:.3}", eigenvector.energy);
-        println!("   Top file: {}", eigenvector.top_file.split('/').last().unwrap_or("?"));
+        println!("   Top file: {}", eigenvector.top_file.split('/').next_back().unwrap_or("?"));
         println!();
         
         term_eigenvectors.push((term.to_string(), eigenvector));
@@ -101,7 +101,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Find most resonant code for each term
     println!("🔬 Most Resonant Code Patterns:\n");
     
-    for (term, eigenvec) in &term_eigenvectors {
+    for (term, _eigenvec) in &term_eigenvectors {
         let symbols = &term_symbols[term];
         
         // Find top 5 symbols by score
@@ -165,7 +165,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 output.push_str(&format!("       Keywords: {}\n", strings));
             }
         }
-        output.push_str("\n");
+        output.push('\n');
     }
     
     fs::write("term_eigenvectors.txt", output)?;

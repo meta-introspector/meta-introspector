@@ -1,0 +1,19 @@
+[package]
+name = "demo2code-lint"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "demo2code_lint"
+path = "src/lib.rs"
+
+[dependencies]
+clippy_utils = "0.1"
+rustc_ast = "0.0.0"
+rustc_hir = "0.0.0"
+rustc_lint = "0.0.0"
+rustc_session = "0.0.0"
+rustc_span = "0.0.0"
+
+[package.metadata.rust-analyzer]
+rustc_private = true
