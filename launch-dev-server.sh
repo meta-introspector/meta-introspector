@@ -6,15 +6,23 @@ echo "🚀 Launching Meta-Introspector Dev Server"
 echo "=========================================="
 echo ""
 
-# Kill old server if running
-OLD_PID=$(lsof -ti:3000 -sTCP:LISTEN 2>/dev/null)
+# Kill old server if running on port 3000
+echo "Checking for existing server on port 3000..."
+OLD_PID=$(sudo lsof -ti:3000 -sTCP:LISTEN 2>/dev/null)
 if [ -n "$OLD_PID" ]; then
     OLD_NAME=$(ps -p $OLD_PID -o comm= 2>/dev/null)
-    if [[ "$OLD_NAME" == *"minimal-build-server"* ]]; then
-        echo "Stopping old server (PID: $OLD_PID)..."
-        sudo kill $OLD_PID 2>/dev/null || kill $OLD_PID 2>/dev/null
-        sleep 1
+    if [[ "$OLD_NAME" == *"minimal-build"* ]] || [[ "$OLD_NAME" == *"minimal_build"* ]]; then
+        echo "Killing old minimal-build-server (PID: $OLD_PID)..."
+        sudo kill -9 $OLD_PID 2>/dev/null
+        sleep 2
+        echo "✓ Old server stopped"
+    else
+        echo "⚠ Port 3000 in use by: $OLD_NAME (PID: $OLD_PID)"
+        echo "Kill it manually or use a different port"
+        exit 1
     fi
+else
+    echo "✓ Port 3000 is free"
 fi
 
 # Build if needed
