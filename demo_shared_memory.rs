@@ -234,6 +234,7 @@ fn main() {
         
         println!("  Average score: {:.2}\n", avg_score);
     }
+    }
     
     println!("🏆 Final Results:");
     

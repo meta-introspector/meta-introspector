@@ -49,10 +49,10 @@ impl ZosNixIntegration {
                         }
                     }
                 }
-            }))
+            }));
             
             // Call MCP tool on loaded flake
-            .route("/unified/mcp/:content_address/:tool_name", post({
+            // .route("/unified/mcp/:content_address/:tool_name", post({
                 let service = Arc::clone(&service);
                 move |Path((content_address, tool_name)): Path<(String, String)>, Json(args): Json<serde_json::Value>| async move {
                     let service = service.lock().await;
