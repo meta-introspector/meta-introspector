@@ -33,11 +33,11 @@ fn main() {
     // let mut market_maker = market_maker::MarketMaker::new(0, 100000);
     
     // Track profitable trades
-    let mut trade_sequences = Vec::new();
+    let mut trade_sequences: Vec<()> = Vec::new();
     
     // Create nodes with portfolios and evolvers
     let mut nodes = Vec::new();
-    let mut evolvers = Vec::new();
+    let mut evolvers: Vec<()> = Vec::new();  // Placeholder type since evolvers are commented out
     for node_id in 0..num_nodes {
         let mut memes = Vec::new();
         for _ in 0..10 {
@@ -138,7 +138,7 @@ fn main() {
             for node in &nodes {
                 let node = node.lock().unwrap();
                 for meme in &node.portfolio.memes {
-                    let (bid, ask) = // market_maker.quote(meme);
+                    // let (bid, ask) = market_maker.quote(meme);
                     // Market maker stands ready to buy at bid, sell at ask
                 }
             }
@@ -243,14 +243,14 @@ fn main() {
     // market_maker.report();
     println!();
     
-    // Report profitable trades
-    if !trade_sequences.is_empty() {
-        println!("\n💎 Top 5 Profitable Trades:");
-        trade_sequences.sort_by_key(|t| -t.profit);
-        for trade in trade_sequences.iter().take(5) {
-            trade.report();
-        }
-    }
+    // Report profitable trades (disabled - TradeSequence not implemented)
+    // if !trade_sequences.is_empty() {
+    //     println!("\n💎 Top 5 Profitable Trades:");
+    //     trade_sequences.sort_by_key(|t| -(t.profit as i64));
+    //     for trade in trade_sequences.iter().take(5) {
+    //         trade.report();
+    //     }
+    // }
     
     let mut results: Vec<_> = nodes.iter()
         .map(|n| {
@@ -310,14 +310,10 @@ fn main() {
             println!("        Compiles: {}", if metrics.compiles { "✅" } else { "❌" });
             
             // Try WASM compilation and trace
-            if let Some((wasm, trace)) = meme.compile_and_trace() {
+            if let Ok(wasm) = meme.compile_and_trace() {
                 println!("\n     🔍 WASM Execution Trace:");
                 println!("        WASM size: {} bytes", wasm.len());
-                println!("        Instructions: {}", trace.instructions.len());
-                println!("        Gödel number: {}", trace.godel_number);
-                if !trace.instructions.is_empty() {
-                    println!("        First instruction: {}", trace.instructions[0].opcode);
-                }
+            }
             }
         }
     }
@@ -330,3 +326,4 @@ fn main() {
     println!("  Total balance: {} coins", total_balance);
     println!("  Average balance: {} coins", avg_balance);
     println!("  Total memory used: {} bytes", total_memory);
+}

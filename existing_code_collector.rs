@@ -4,6 +4,7 @@
 use std::collections::HashMap;
 use std::process::Command;
 use telemetry_lib::telemetry_lib::{TelemetryEntry, write_telemetry_entry, get_log_file};
+use telemetry_macros::*;
 
 pub struct ExistingCodeCollector {
     pub file_categories: HashMap<String, Vec<String>>,

@@ -8,6 +8,7 @@ use std::collections::HashMap;
 // Stub type until we properly organize modules
 #[derive(Debug, Clone)]
 pub struct Portfolio {
+    pub node_id: usize,
     pub memes: Vec<Meme>,
     pub balance: u64,
     pub memory_used: usize,
@@ -17,6 +18,18 @@ pub struct Portfolio {
 }
 
 impl Portfolio {
+    pub fn new(node_id: usize, memes: Vec<Meme>) -> Self {
+        let score = memes.iter().map(|m| m.fitness).sum();
+        Self { 
+            node_id, 
+            memes, 
+            score,
+            balance: 1000,
+            memory_used: 0,
+            memory_limit: 1024,
+            trades: 0,
+        }
+    }
     pub fn update_score(&mut self) {
         self.score = self.memes.iter().map(|m| m.fitness).sum();
     }
@@ -42,6 +55,18 @@ pub struct MemeMetrics {
 }
 
 impl Meme {
+    pub fn random() -> Self {
+        use libnix::rand_shim::random_u64;
+        Self {
+            id: random_u64(),
+            code: "fn main() {}".to_string(),
+            fitness: 0.5,
+            complexity: 1.0,
+            rarity: 0.5,
+            emoji: "🦀".to_string(),
+            godel_number: random_u64(),
+        }
+    }
     pub fn to_rust_code(&self) -> String { self.code.clone() }
     pub fn metrics(&self) -> MemeMetrics { 
         MemeMetrics { 
@@ -316,7 +341,7 @@ impl SharedMemoryNode {
         let want_fitness = have_meme.unwrap().fitness;
         // Assume offered meme has reasonable fitness (we'd need to query)
         // For now, accept 30% of trades randomly to create liquidity
-        use crate::rand_shim::random_f64;
+        use libnix::rand_shim::random_f64;
         random_f64() < 0.3
     }
     

@@ -1,19 +1,43 @@
 // 🔥 UNIFIED NIX BUILDER - Uses canonical builder
-use crate::nix_canonical_builder::{NixCanonicalBuilder, NixBuildRequest, NixBuildResult};
+use std::process::Command;
+
+#[derive(Clone)]
+struct NixCanonicalBuilder;
+struct NixBuildRequest {
+    args: Vec<String>,
+    env: Vec<(String, String)>,
+    working_dir: Option<String>,
+}
+#[derive(Debug)]
+pub struct NixBuildResult {
+    pub success: bool,
+    pub exit_code: i32,
+    pub stdout: String,
+    pub stderr: String,
+}
+
+impl NixCanonicalBuilder {
+    fn new() -> Self { Self }
+    fn build(&self, _req: &NixBuildRequest) -> Result<NixBuildResult, String> {
+        Err("stub".into())
+    }
+}
 
 pub struct NixBuilder {
     canonical: NixCanonicalBuilder,
+    telemetry_enabled: bool,
 }
 
 impl NixBuilder {
     pub fn new() -> Self {
         Self {
             canonical: NixCanonicalBuilder::new(),
+            telemetry_enabled: false,
         }
     }
 
     pub fn build(&self, args: &[&str]) -> Result<NixBuildResult, String> {
-        self.canonical.build(NixBuildRequest {
+        self.canonical.build(&NixBuildRequest {
             args: args.iter().map(|s| s.to_string()).collect(),
             env: vec![],
             working_dir: None,
@@ -32,6 +56,8 @@ fn main() {
     panic!("unified_nix_builder_old stub");
 }
 
+impl NixBuilder {
+    fn build_with_full_preload(&self, args: &[&str]) -> Result<NixBuildResult, String> {
         // Get all shared libraries that nix uses
         let nix_libs = self.get_nix_dependencies()?;
         println!("🔍 Found {} shared libraries for nix", nix_libs.len());
@@ -77,6 +103,7 @@ fn main() {
             }
             Err(e) => Err(format!("Failed to run nix with strace: {}", e)),
         }
+    }
 
     fn get_nix_dependencies(&self) -> Result<Vec<String>, String> {
         let output = Command::new("ldd")
@@ -130,13 +157,6 @@ fn main() {
             Err(format!("Nix build failed: {}", result.stderr))
         }
     }
-
-#[derive(Debug)]
-pub struct NixBuildResult {
-    pub success: bool,
-    pub exit_code: i32,
-    pub stdout: String,
-    pub stderr: String,
 }
 
 // Service wrapper for async usage

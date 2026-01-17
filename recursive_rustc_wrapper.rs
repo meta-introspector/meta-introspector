@@ -1,6 +1,7 @@
 // 🔥 RECURSIVE RUSTC NIGHTLY WRAPPER: Build rustc with telemetry, then wrap it
 use std::process::Command;
 use std::env;
+use telemetry_macros::*;
 
 // Include transparent telemetry
 include!(concat!(env!("OUT_DIR"), "/telemetry_macros.rs"));

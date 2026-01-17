@@ -170,7 +170,7 @@ impl Ldd2Macro {
             lib_name, lib_path, lib_name, lib_path, 
             md5_hash, md5_hash,
             lib_path, md5_hash, lib_name, md5_hash, lib_name,
-            lib_name, lib_name
+            lib_name, lib_name, lib_name
         )
     }
 
@@ -210,6 +210,8 @@ fn calculate_file_md5(file_path: &str) -> String {
 
 "#.to_string()
     }
+
+    fn generate_preload_macro(&self) -> String {
         let mut preload_calls = String::new();
         
         for lib_name in self.wrapped_libs.keys() {

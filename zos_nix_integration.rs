@@ -5,9 +5,16 @@ use std::sync::Arc;
 use tokio::sync::Mutex;
 
 // Stub until unified_nix_service is properly organized
-#[derive(Clone)]
+#[derive(Clone, Default)]
 struct UnifiedNixService;
-struct UnifiedFlakeRequest;
+#[derive(Default)]
+struct UnifiedFlakeRequest {
+    flake_url: String,
+    outputs: Vec<String>,
+    payment_lamports: u64,
+    mcp_tools_requested: Vec<String>,
+}
+#[derive(Default)]
 struct UnifiedFlakeResponse;
 
 impl UnifiedNixService {
@@ -17,6 +24,14 @@ impl UnifiedNixService {
     }
 }
 
+async fn load_flake_handler(axum::Json(_request): axum::Json<UnifiedFlakeRequest>) -> axum::Json<UnifiedFlakeResponse> {
+    axum::Json(UnifiedFlakeResponse::default())
+}
+
+async fn mcp_call_handler(axum::Json(_request): axum::Json<serde_json::Value>) -> axum::Json<serde_json::Value> {
+    axum::Json(serde_json::Value::Null)
+}
+
 pub struct ZosNixIntegration {
     pub unified_service: Arc<Mutex<UnifiedNixService>>,
 }
@@ -24,26 +39,16 @@ pub struct ZosNixIntegration {
 impl ZosNixIntegration {
     pub fn new() -> Result<Self, Box<dyn std::error::Error>> {
         Ok(Self {
-            unified_service: Arc::new(Mutex::new(UnifiedNixService::new().unwrap())),
+            unified_service: Arc::new(Mutex::new(UnifiedNixService::new())),
         })
     }
 
     pub fn create_routes(&self) -> Router {
-        let service = Arc::clone(&self.unified_service);
-        
         Router::new()
-            // Load nix flake with MCP + Solana integration
-            .route("/unified/load-flake", post(|Json(request): Json<UnifiedFlakeRequest>| async move {
-                panic!("load_unified_flake not implemented");
-                #[allow(unreachable_code)]
-                Ok::<_, (axum::http::StatusCode, String)>(Json(UnifiedFlakeResponse::default()))
-            }))
-            // MCP tool call
-            .route("/unified/mcp-call", post(|Json(request): Json<serde_json::Value>| async move {
-                panic!("mcp_call not implemented");
-                #[allow(unreachable_code)]
-                Ok::<_, (axum::http::StatusCode, String)>(Json(serde_json::Value::Null))
-            }))
+            // Load nix flake with MCP + Solana integration - stub for now
+            // .route("/unified/load-flake", post(load_flake_handler))
+            // MCP tool call - stub for now
+            // .route("/unified/mcp-call", post(mcp_call_handler))
             
             // Call MCP tool on loaded flake
             // Commented out - incomplete implementation
@@ -65,32 +70,29 @@ impl ZosNixIntegration {
             
             // Get Solana orbital transaction info
             .route("/unified/orbit/:content_address", get({
-                let service = Arc::clone(&service);
                 move |Path(content_address): Path<String>| async move {
-                    // Return orbital transaction info
-                    Ok(Json(serde_json::json!({
+                    Json(serde_json::json!({
                         "content_address": content_address,
                         "orbital_status": "active",
                         "service": "unified-nix-as-a-service"
-                    })))
+                    }))
                 }
             }))
             
             // List loaded libraries for a flake
             .route("/unified/libraries/:content_address", get({
-                let service = Arc::clone(&service);
                 move |Path(content_address): Path<String>| async move {
-                    Ok(Json(serde_json::json!({
+                    Json(serde_json::json!({
                         "content_address": content_address,
                         "libraries": "loaded_libraries_info",
                         "status": "available"
-                    })))
+                    }))
                 }
             }))
             
             // Service capabilities and status
             .route("/unified/status", get(|| async {
-                Ok(Json(serde_json::json!({
+                Json(serde_json::json!({
                     "service": "ZOS Unified Nix-as-a-Service",
                     "version": "1.0.0",
                     "capabilities": [
@@ -102,8 +104,10 @@ impl ZosNixIntegration {
                     ],
                     "integration": "native-zos-server",
                     "status": "operational"
-                })))
+                }))
             }))
+    }
+}
 
 // Add to existing ZOS server main.rs
 pub fn integrate_with_existing_zos() -> Router {

@@ -114,6 +114,7 @@ fn generate_symbol_wrappers() -> String {
     
     wrappers.push_str(r#"
 // Master preload macro
+#[macro_export]
 macro_rules! preload_telemetry {
     () => {{
         println!("🔧 Telemetry layer active - all calls wrapped!");

@@ -5,6 +5,7 @@ use std::process::{Command, Stdio};
 use std::env;
 use std::fs;
 use std::path::Path;
+use telemetry_macros::*;
 
 // Include our transparent telemetry macros
 // Include our transparent telemetry macros

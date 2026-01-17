@@ -117,6 +117,7 @@ impl ReportSection {
 
 // Convenience macros for easy reporting
 #[macro_export]
+#[macro_export]
 macro_rules! report_start {
     ($title:expr, $project:expr) => {{
         println!("🔥 {}", $title.to_uppercase());

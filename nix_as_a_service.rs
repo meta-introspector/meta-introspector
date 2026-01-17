@@ -1,5 +1,5 @@
 // 🔥 NIX-AS-A-SERVICE: Load any nix flake, wrap .so files, expose via MCP with Solana CA
-use axum::{extract::Query, http::StatusCode, response::Json, routing::post, Router};
+use axum::{extract::Query, http::StatusCode, response::Json, routing::{get, post}, Router};
 use libloading::{Library, Symbol};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -236,17 +236,12 @@ impl NixAsAService {
             flakes.insert(content_address.clone(), loaded_flake);
         }
 
-        Ok(LoadFlakeResponse {
+        Ok(FlakeLoadResponse {
             success: true,
             content_address: content_address.clone(),
             loaded_libraries,
             mcp_endpoints: mcp_methods.keys().map(|k| format!("/mcp/{}/{}", content_address, k)).collect(),
             cost_lamports: cost,
-            flake_info,
-        })
-    }
-
-    pub async fn call_mcp_method(&self, request: MCPRequest) -> Result<MCPResponse, Box<dyn std::error::Error>> {
             flake_info,
         })
     }
@@ -327,6 +322,7 @@ impl NixAsAService {
             execution_time_ms: start_time.elapsed().as_millis() as u64,
         })
     }
+}
 
 // REST API handlers
 pub async fn load_flake_endpoint(Json(request): Json<FlakeLoadRequest>) -> Result<Json<FlakeLoadResponse>, StatusCode> {
@@ -368,8 +364,8 @@ pub fn create_nix_service_router() -> Router {
     Router::new()
         .route("/load", post(load_flake_endpoint))
         .route("/mcp", post(mcp_call_endpoint))
-        .route("/flakes", axum::routing::get(list_flakes_endpoint))
-        .route("/pricing", axum::routing::get(pricing_endpoint))
+        .route("/flakes", get(list_flakes_endpoint))
+        .route("/pricing", get(list_flakes_endpoint))  // Temporarily use list_flakes_endpoint
 }
 
 #[tokio::main]

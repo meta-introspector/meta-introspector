@@ -4,8 +4,8 @@
 use std::collections::HashMap;
 use std::fs;
 use std::time::{SystemTime, UNIX_EPOCH};
-use meta_introspector::{report_start, report_section, report_count, report_item, report_summary, report_end};
 use crate::telemetry_lib::telemetry_lib::*;
+use telemetry_macros::{report_start, report_section, report_count, report_item, report_summary, report_end};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let project = std::env::var("PROJECT_NAME").unwrap_or_else(|_| "duplicate_detector".to_string());
@@ -128,5 +128,5 @@ fn normalize_line(line: &str) -> String {
 }
 
 // Import telemetry_lib module
-#[path = "../telemetry_lib.rs"]
+#[path = "telemetry_lib.rs"]
 mod telemetry_lib;
