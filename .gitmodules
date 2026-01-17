@@ -25,3 +25,21 @@
 [submodule "hf-build-telemetry-upload"]
 	path = hf-build-telemetry-upload
 	url = git@hf.co:datasets/introspector/build-telemetry
+[submodule "data-blockchain"]
+	path = data-blockchain
+	url = https://huggingface.co/datasets/introspector/data-blockchain
+[submodule "data-markov-analysis"]
+	path = data-markov-analysis
+	url = https://huggingface.co/datasets/introspector/rust-markov
+[submodule "data-moonshine"]
+	path = data-moonshine
+	url = https://huggingface.co/datasets/introspector/data-moonshine
+[submodule "data-eigenvectors"]
+	path = data-eigenvectors
+	url = https://huggingface.co/datasets/introspector/data-eigenvectors
+[submodule "data-const71"]
+	path = data-const71
+	url = https://huggingface.co/datasets/introspector/data-const71
+[submodule "data-telemetry"]
+	path = data-telemetry
+	url = https://huggingface.co/datasets/introspector/build-telemetry
