@@ -1,0 +1,13 @@
+name: Test Workflow
+
+on:
+  push:
+    branches: [meme-marketplace]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Echo test
+        run: echo "Workflow is working"
