@@ -244,15 +244,9 @@ impl NixAsAService {
             cost_lamports: cost,
             flake_info,
         })
-            flakes.insert(content_address.clone(), loaded_flake);
-        }
+    }
 
-        Ok(FlakeLoadResponse {
-            success: true,
-            content_address,
-            loaded_libraries,
-            mcp_endpoints: mcp_methods.keys().map(|k| format!("/mcp/{}/{}", content_address, k)).collect(),
-            cost_lamports: cost,
+    pub async fn call_mcp_method(&self, request: MCPRequest) -> Result<MCPResponse, Box<dyn std::error::Error>> {
             flake_info,
         })
     }

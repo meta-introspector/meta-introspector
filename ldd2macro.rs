@@ -132,9 +132,13 @@ impl Ldd2Macro {
 
         // Generate master preload macro with MD5 helper
         macros.push_str(&self.generate_md5_helper());
-        macros.push_str(&self.generate_preload_all_macro());
+        // macros.push_str(&self.generate_preload_all_macro());
         
         macros
+    }
+
+    fn generate_preload_all_macro(&self) -> String {
+        String::from("// preload_all_macro stub\n")
     }
 
     fn lib_name_to_macro(&self, lib_name: &str) -> String {
@@ -246,6 +250,7 @@ fn calculate_file_md5(file_path: &str) -> String {
         println!("  Wrapped: {}", self.libraries.iter().filter(|l| l.wrapped).count());
         println!("  Generated macros: {}", self.wrapped_libs.len());
     }
+}
 
 fn main() {
     println!("🔍 LDD2MACRO: Auto-wrap .so dependencies");

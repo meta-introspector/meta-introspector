@@ -114,7 +114,8 @@ impl ParquetInterceptor {
             // Flush to parquet if batch is full
             let batch_size = self.batch_size;
             if calls.len() >= batch_size {
-                self.flush_to_parquet(&mut calls);
+                drop(calls);
+                // self.flush_to_parquet(&mut calls);
             }
         }
 
