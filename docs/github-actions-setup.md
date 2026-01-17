@@ -1,35 +1,66 @@
 # GitHub Actions Setup Status
 
-## Current Issue
+## Root Cause Identified ✅
 
-All GitHub Actions workflows are failing with `startup_failure` status, including a minimal test workflow. This indicates a repository-level configuration issue rather than workflow file problems.
+**Issue**: Organization policy restricts actions to `local_only`
 
-## Possible Causes
+```json
+{
+  "enabled": true,
+  "allowed_actions": "local_only"
+}
+```
 
-1. **GitHub Actions Disabled**: Actions may be disabled for the repository
-2. **Branch Protection**: The `meme-marketplace` branch may have restrictions
-3. **Workflow Permissions**: Repository settings may restrict workflow execution
-4. **Organization Policies**: If this is an organization repo, there may be org-level restrictions
+This means the repository can only use actions defined within the repository itself, not external actions from the GitHub Marketplace (like `actions/checkout@v4`, `cachix/install-nix-action@v27`, etc.).
 
-## Required Actions
+**Error**: All workflows fail with `startup_failure` because they reference external actions.
 
-### Check Repository Settings
+## Solutions
 
-1. Go to: `https://github.com/meta-introspector/meta-introspector/settings/actions`
-2. Verify "Actions permissions" is set to "Allow all actions and reusable workflows"
-3. Check "Workflow permissions" - should be "Read and write permissions"
-4. Ensure "Allow GitHub Actions to create and approve pull requests" is checked if needed
+### Option 1: Change Organization Policy (Requires Org Admin)
 
-### Check Branch Protection
+An organization administrator needs to:
 
-1. Go to: `https://github.com/meta-introspector/meta-introspector/settings/branches`
-2. Check if `meme-marketplace` branch has protection rules that block workflows
+1. Go to: `https://github.com/organizations/meta-introspector/settings/actions`
+2. Under "Policies" → "Actions permissions"
+3. Change from "Allow local actions only" to "Allow all actions and reusable workflows"
+4. Save changes
 
-### Enable Actions
+**Command** (requires org admin):
+```bash
+gh auth refresh -h github.com -s admin:org
+gh api --method PUT orgs/meta-introspector/actions/permissions \
+  -F enabled=true -f allowed_actions=all
+```
 
-If Actions are disabled:
-1. Repository Settings → Actions → General
-2. Enable "Allow all actions and reusable workflows"
+### Option 2: Use Alternative CI/CD (Recommended for Now)
+
+Since we can't use GitHub Actions with external actions, use alternative CI/CD:
+
+#### A. GitLab CI (Free, no restrictions)
+#### B. CircleCI
+#### C. Travis CI  
+#### D. Self-hosted runners with local actions
+
+### Option 3: Manual Builds and Releases
+
+Use the provided scripts for manual builds:
+
+```bash
+# Build with Nix
+nix build .#meta-introspector-binaries
+tar czf meta-introspector-linux.tar.gz -C result/bin .
+
+# Build with Docker
+docker buildx build --platform linux/amd64,linux/arm64 \
+  -t ghcr.io/meta-introspector/meta-introspector:latest \
+  --push .
+
+# Create GitHub release
+gh release create v0.1.0 meta-introspector-linux.tar.gz \
+  --title "Release v0.1.0" \
+  --notes "All 220 binaries"
+```
 
 ## What We've Implemented
 
