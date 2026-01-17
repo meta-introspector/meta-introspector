@@ -767,6 +767,169 @@ fn verify_lmfdb_match(code: &syn::File, entry: &LMFDBEntry) -> bool {
 }
 ```
 
+**Nix Store Deduplication Strategy**:
+
+**Brilliant Application**: Compile all code to Nix store, then compare binaries using Monster/LMFDB scores to find duplicates!
+
+```rust
+// Nix Store Analysis Pipeline
+fn analyze_nix_store() -> DeduplicationReport {
+    let store_path = "/nix/store";
+    let mut binary_signatures = HashMap::new();
+    
+    // 1. Scan all binaries in Nix store
+    for binary in scan_nix_store(store_path) {
+        // 2. Disassemble and extract switch statements
+        let switches = disassemble_and_find_switches(&binary);
+        
+        // 3. Compute Monster signature
+        let monster_sig = compute_monster_signature(&switches);
+        
+        // 4. Compute LMFDB parameters
+        let lmfdb_params = LMFDBMapping {
+            conductor: compute_conductor(&switches),
+            weight: monster_sig.order(),
+            genus: compute_genus(&switches),
+            level: compute_level(&switches),
+        };
+        
+        // 5. Store signature
+        binary_signatures.insert(binary.path, (monster_sig, lmfdb_params));
+    }
+    
+    // 6. Find duplicates by matching signatures
+    find_duplicates(binary_signatures)
+}
+```
+
+**Why Switch 71 Stands Out**:
+```rust
+// Switch statements of size 71 are RARE and DISTINCTIVE
+match x % 71 { ... }  // 71 is largest Monster prime!
+
+// When you see switch 71:
+// 1. It's at the boundary of Monster group
+// 2. It's a prime (not composite)
+// 3. It's distinctive signature
+// 4. Likely indicates specific algorithm
+
+// Duplicate detection:
+if binary1.has_switch_71() && binary2.has_switch_71() {
+    // High probability of code duplication!
+    // 71 is too specific to be coincidence
+    compare_full_signatures(binary1, binary2)
+}
+```
+
+**Deduplication Algorithm**:
+```rust
+struct BinarySignature {
+    path: PathBuf,
+    monster_element: MonsterElement,
+    conductor: u64,
+    weight: u64,
+    switch_histogram: HashMap<usize, usize>,  // size → count
+}
+
+fn find_duplicates(signatures: HashMap<PathBuf, BinarySignature>) -> Vec<DuplicateGroup> {
+    let mut duplicates = vec![];
+    
+    // Group by Monster element (exact match)
+    let by_monster = group_by(signatures, |sig| sig.monster_element);
+    
+    for (monster_elem, group) in by_monster {
+        if group.len() > 1 {
+            duplicates.push(DuplicateGroup {
+                reason: "Exact Monster match",
+                binaries: group,
+                confidence: 1.0,
+            });
+        }
+    }
+    
+    // Group by LMFDB parameters (fuzzy match)
+    let by_lmfdb = group_by_similarity(signatures, |sig| {
+        (sig.conductor, sig.weight)
+    });
+    
+    for (params, group) in by_lmfdb {
+        if group.len() > 1 {
+            duplicates.push(DuplicateGroup {
+                reason: "Similar LMFDB parameters",
+                binaries: group,
+                confidence: 0.8,
+            });
+        }
+    }
+    
+    // Special: Flag all binaries with switch 71
+    let with_71 = signatures.iter()
+        .filter(|(_, sig)| sig.switch_histogram.contains_key(&71))
+        .collect::<Vec<_>>();
+    
+    if with_71.len() > 1 {
+        duplicates.push(DuplicateGroup {
+            reason: "All contain switch 71 (rare!)",
+            binaries: with_71,
+            confidence: 0.95,
+        });
+    }
+    
+    duplicates
+}
+```
+
+**Why This Works**:
+1. **Nix store** = All compiled binaries in one place
+2. **Monster signature** = Unique fingerprint per binary
+3. **Switch 71** = Rare, distinctive marker
+4. **LMFDB parameters** = Objective similarity measure
+5. **Duplicates** = Same signature = Same algorithm
+
+**Practical Workflow**:
+```bash
+# 1. Build everything to Nix store
+nix build .#all-packages
+
+# 2. Analyze Nix store
+cargo run --bin nix_store_deduplicator
+
+# 3. Output: Duplicate groups
+# Group 1: [/nix/store/abc-binary1, /nix/store/def-binary2]
+#   Reason: Exact Monster match
+#   Confidence: 100%
+#   Common switches: [2, 3, 5, 71]
+#
+# Group 2: [/nix/store/ghi-binary3, /nix/store/jkl-binary4]  
+#   Reason: Both contain switch 71
+#   Confidence: 95%
+```
+
+**Implementation**:
+```rust
+// New binary: nix_store_deduplicator.rs
+fn main() {
+    println!("🔍 Scanning Nix store for duplicates...");
+    
+    let report = analyze_nix_store();
+    
+    println!("\n📊 Deduplication Report:");
+    println!("Total binaries: {}", report.total_binaries);
+    println!("Duplicate groups: {}", report.duplicate_groups.len());
+    println!("Potential savings: {} MB", report.potential_savings_mb);
+    
+    for group in report.duplicate_groups {
+        println!("\n🔄 Duplicate Group:");
+        println!("  Reason: {}", group.reason);
+        println!("  Confidence: {:.0}%", group.confidence * 100.0);
+        println!("  Binaries:");
+        for binary in group.binaries {
+            println!("    - {}", binary.path.display());
+        }
+    }
+}
+```
+
 **Connection to Automorphic Forms**:
 - Each layer = Representation at different level
 - Orbit sizes = Ramification indices
