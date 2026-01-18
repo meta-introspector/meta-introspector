@@ -1,0 +1,210 @@
+name: Meta-Introspector Analysis
+# Reusable workflow for comprehensive code analysis
+# Inject this into any Rust/Nix project to contribute to the collective
+
+on:
+  workflow_call:
+    inputs:
+      project_name:
+        required: true
+        type: string
+      upload_to_hf:
+        required: false
+        type: boolean
+        default: true
+      upload_to_archive_org:
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      HF_TOKEN:
+        required: false
+
+jobs:
+  meta-introspector-analysis:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for git analysis
+      
+      - name: Install Nix
+        uses: cachix/install-nix-action@v24
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v12
+        with:
+          name: meta-introspector
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      
+      - name: Checkout meta-introspector toolchain
+        uses: actions/checkout@v4
+        with:
+          repository: meta-introspector/meta-introspector
+          path: .meta-introspector
+          ref: novel-code-analysis-clean
+      
+      - name: Build with Nix + Telemetry
+        run: |
+          # Build project with telemetry collection
+          cd .meta-introspector
+          nix build .#nix-telemetry
+          
+          # Inject telemetry into build
+          export LD_PRELOAD=$(pwd)/result/lib/libnix_telemetry.so
+          export TELEMETRY_OUTPUT=${{ github.workspace }}/telemetry-data
+          mkdir -p $TELEMETRY_OUTPUT
+          
+          cd ${{ github.workspace }}
+          if [ -f "flake.nix" ]; then
+            nix build --print-build-logs 2>&1 | tee build.log
+          elif [ -f "Cargo.toml" ]; then
+            nix develop .meta-introspector -c cargo build --release 2>&1 | tee build.log
+          fi
+      
+      - name: Collect Source Analysis
+        run: |
+          cd .meta-introspector
+          
+          # Markov analysis
+          find ${{ github.workspace }} -name "*.rs" > rust_files.txt
+          nix run .#markov_chain_miner -- rust_files.txt
+          
+          # AST extraction
+          nix run .#ast_extractor -- rust_files.txt
+          
+          # Eigenvector analysis
+          nix run .#eigenvector_analysis
+      
+      - name: Collect Compiler Artifacts
+        run: |
+          cd .meta-introspector
+          
+          # HIR dumps
+          nix run .#hir_collector -- ${{ github.workspace }}
+          
+          # MIR dumps  
+          nix run .#mir_collector -- ${{ github.workspace }}
+          
+          # Binary analysis
+          find ${{ github.workspace }}/target/release -type f -executable \
+            -exec nix run .#moonshine_analysis -- {} \;
+      
+      - name: Generate Analysis Archive
+        run: |
+          cd .meta-introspector
+          
+          # Create unified archive
+          mkdir -p archives/${{ inputs.project_name }}
+          
+          # Copy all collected data
+          cp -r data/markov-analysis archives/${{ inputs.project_name }}/
+          cp -r data/syn-asts archives/${{ inputs.project_name }}/
+          cp -r data/hir archives/${{ inputs.project_name }}/
+          cp -r data/mir archives/${{ inputs.project_name }}/
+          cp -r data/telemetry archives/${{ inputs.project_name }}/
+          cp -r data/binaries archives/${{ inputs.project_name }}/
+          
+          # Add metadata
+          cat > archives/${{ inputs.project_name }}/metadata.json << EOF
+          {
+            "project": "${{ inputs.project_name }}",
+            "repository": "${{ github.repository }}",
+            "commit": "${{ github.sha }}",
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "workflow_run": "${{ github.run_id }}",
+            "contributor": "${{ github.actor }}"
+          }
+          EOF
+          
+          # Create tarball
+          tar czf ${{ inputs.project_name }}-analysis.tar.gz \
+            archives/${{ inputs.project_name }}/
+      
+      - name: Upload to GitHub Artifacts
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: ${{ inputs.project_name }}-meta-introspector-analysis
+          path: .meta-introspector/${{ inputs.project_name }}-analysis.tar.gz
+          retention-days: 90
+      
+      - name: Upload to HuggingFace
+        if: inputs.upload_to_hf
+        run: |
+          cd .meta-introspector
+          
+          # Install HF CLI
+          nix develop -c pip install huggingface_hub
+          
+          # Upload to collective dataset
+          nix run .#push_to_hf -- \
+            --dataset introspector/meta-introspector-collective \
+            --file ${{ inputs.project_name }}-analysis.tar.gz \
+            --path "projects/${{ inputs.project_name }}/" \
+            --token ${{ secrets.HF_TOKEN }}
+      
+      - name: Upload to Archive.org
+        if: inputs.upload_to_archive_org
+        run: |
+          # Upload to Internet Archive
+          curl --location --header "authorization: LOW ${{ secrets.ARCHIVE_ORG_ACCESS }}:${{ secrets.ARCHIVE_ORG_SECRET }}" \
+            --upload-file .meta-introspector/${{ inputs.project_name }}-analysis.tar.gz \
+            https://s3.us.archive.org/meta-introspector-collective/${{ inputs.project_name }}-analysis.tar.gz
+      
+      - name: Generate Contribution Report
+        run: |
+          cd .meta-introspector
+          
+          cat > CONTRIBUTION_REPORT.md << EOF
+          # Meta-Introspector Analysis Report
+          
+          **Project**: ${{ inputs.project_name }}
+          **Repository**: ${{ github.repository }}
+          **Commit**: ${{ github.sha }}
+          **Contributor**: ${{ github.actor }}
+          **Date**: $(date -u +%Y-%m-%d)
+          
+          ## Data Collected
+          
+          - Markov symbol analysis
+          - Syn AST dumps
+          - HIR/MIR compiler artifacts
+          - Binary analysis
+          - Telemetry traces
+          
+          ## Archive Locations
+          
+          - **GitHub**: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          - **HuggingFace**: https://huggingface.co/datasets/introspector/meta-introspector-collective/tree/main/projects/${{ inputs.project_name }}
+          - **Archive.org**: https://archive.org/details/meta-introspector-collective
+          
+          ## Contribution Value
+          
+          Your contribution helps build the collective knowledge base for:
+          - Code pattern analysis
+          - Duplicate detection
+          - Novel algorithm identification
+          - Compilation flow understanding
+          
+          Thank you for contributing to the meta-introspector collective! 🎉
+          EOF
+          
+          cat CONTRIBUTION_REPORT.md
+      
+      - name: Comment on PR (if applicable)
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('.meta-introspector/CONTRIBUTION_REPORT.md', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: report
+            });
