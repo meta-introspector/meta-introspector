@@ -8,14 +8,19 @@ use std::sync::{Arc, Mutex};
 use std::sync::atomic::{AtomicUsize, Ordering};
 
 fn find_git_root(file_path: &str) -> Option<String> {
-    let mut path = Path::new(file_path);
-    for _ in 0..10 {  // Limit depth
-        if let Some(parent) = path.parent() {
-            if parent.join(".git").exists() {
-                return Some(parent.to_str()?.to_string());
-            }
-            path = parent;
-        } else {
+    let path = Path::new(file_path);
+    let mut current = if path.is_absolute() {
+        path.to_path_buf()
+    } else {
+        std::env::current_dir().ok()?.join(path)
+    };
+    
+    // Traverse up to find .git directory
+    loop {
+        if current.join(".git").exists() {
+            return current.to_str().map(|s| s.to_string());
+        }
+        if !current.pop() {
             break;
         }
     }
