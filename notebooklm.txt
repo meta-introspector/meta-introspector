@@ -1,0 +1,1065 @@
+# Meta-Introspector for NotebookLM
+
+This repository contains comprehensive code analysis tools that map Rust code to mathematical structures.
+
+## Core Concepts
+
+### 1. LMFDB Mapping
+
+# LMFDB Rust Mapping Library
+
+Unified library for mapping Rust binaries, symbols, and performance data to LMFDB mathematical structures.
+
+## 🎯 What We Learned
+
+### Self-Analysis Results
+
+We successfully used the LMFDB mapping library to analyze itself! 
+
+**Analyzed**: `libserde_derive.so` (8174 symbols)
+
+**Key Findings**:
+- **Conductor**: 618
+- **Orbit Distribution**:
+  - Genesis (11): 3715 symbols (45%)
+  - Trinity (23): 3826 symbols (47%)
+  - Completeness (47): 633 symbols (8%)
+  - Return (71): 0 symbols (0%)
+
+**Insight**: Most Rust symbols fall into Genesis/Trinity orbits, indicating foundational/stable complexity. Only 8% reach Completeness level.
+
+## 📦 Structure
+
+```
+lmfdb-rust-mapping/
+├── lmfdb-types/        # Core data types (LMFDBLabel, OrbitLevel, etc.)
+├── lmfdb-traits/       # Trait definitions (LMFDBClient, LMFDBMapper, etc.)
+└── src/lib.rs          # Main implementation
+```
+
+## 🚀 Usage
+
+```rust
+use lmfdb_rust_mapping::*;
+
+let mut mapper = LMFDBMapper::new();
+let analysis = mapper.analyze_binary("path/to/binary.so")?;
+
+println!("Total symbols: {}", analysis.total_symbols);
+println!("Conductor: {}", analysis.conductor);
+
+for (orbit, count) in &analysis.orbit_distribution {
+    println!("{:?}: {} symbols", orbit, count);
+}
+```
+
+## 🔬 Self-Analysis
+
+Run the self-analyzer:
+
+```bash
+cargo run --bin analyze
+```
+
+Output: `lmfdb_self_analysis.json`
+
+## 🎯 The 71 Pattern
+
+Orbit levels based on mathematical progression:
+- **11 (Genesis)**: Foundation/Core
+- **23 (Trinity)**: Stability/Structure  
+- **47 (Completeness)**: Advanced/Complete
+- **71 (Return)**: Mastery/Transcendence
+
+## 📊 Integration
+
+- **Binary Analysis**: Map ELF symbols to LMFDB labels
+- **Perf Data**: Classify performance samples by orbit
+- **71 Flakes**: Analyze all 71 language implementations
+- **Duplicate Detection**: Find similar functions via LMFDB signatures
+
+## 🔗 Next Steps
+
+1. Analyze all 71 flakes with LMFDB mapping
+2. Find duplicate code via modular signatures
+3. Build LMFDB server for storing mappings
+4. Integrate with perf canonical reader
+
+### 2. Code Flow Analysis
+# Code Flow Analysis Workflow
+
+## Objective
+Trace code from source → compiler → runtime → binary, model as vectors, find duplicates
+
+## Pipeline Stages
+
+### 1. Source Code Analysis
+**Input**: Rust source files (`.rs`)
+**Tools**: 
+- `markov_chain_miner.rs` - Character-level Markov modeling
+- `code_grammar_analyzer.rs` - Grammar pattern extraction
+
+**Output**:
+- `markov_symbol_scores.parquet` - Symbol transition probabilities
+- Character n-gram frequencies
+- Code pattern signatures
+
+**Vector representation**: Character transition matrices
+
+---
+
+### 2. Syn AST Collection
+**Input**: Rust source files
+**Tools**:
+- `syn` crate - Parse to AST
+- `ast_extractor.rs` - Extract AST nodes
+- `syn_visitor.rs` - Visit all nodes
+
+**Output**:
+- `data/syn_asts/*.json` - Serialized ASTs
+- Function signatures
+- Type definitions
+- Macro expansions
+
+**Vector representation**: AST node type frequencies, depth, branching factor
+
+---
+
+### 3. HIR (High-level IR) Collection
+**Input**: Rust source + rustc
+**Tools**:
+- `rustc -Z unpretty=hir` - Dump HIR
+- `hir_collector.rs` - Parse HIR output
+- `nix_cargo_interceptor.rs` - Intercept rustc calls
+
+**Output**:
+- `data/hir/*.hir` - HIR dumps
+- Type resolution info
+- Trait bounds
+- Lifetime annotations
+
+**Vector representation**: Type graph embeddings, trait usage patterns
+
+---
+
+### 4. MIR (Mid-level IR) Collection
+**Input**: Rust source + rustc
+**Tools**:
+- `rustc -Z unpretty=mir` - Dump MIR
+- `mir_collector.rs` - Parse MIR output
+- Control flow graph extraction
+
+**Output**:
+- `data/mir/*.mir` - MIR dumps
+- Basic blocks
+- Control flow graphs
+- Borrow checker info
+
+**Vector representation**: CFG topology, basic block sizes, branch patterns
+
+---
+
+### 5. Compiler Trace Collection
+**Input**: Build process
+**Tools**:
+- `nix-telemetry` - LD_PRELOAD hook
+- `rust_preload_interceptor` - Intercept syscalls
+- `telemetry_hook_test_driver.rs` - Test harness
+- `full_rustc_compressor.rs` - Compress traces
+
+**Output**:
+- `data/telemetry/rustc_trace.parquet` - Syscall traces
+- Compilation time per file
+- Memory usage
+- File I/O patterns
+
+**Vector representation**: Syscall sequence embeddings, resource usage vectors
+
+---
+
+### 6. Binary Analysis
+**Input**: Compiled binaries
+**Tools**:
+- `moonshine_analysis.rs` - ELF analysis
+- `elf_moonshine_map.txt` - Symbol mapping
+- `real_compile_proof.rs` - Verify compilation
+
+**Output**:
+- `data/binaries/elf_analysis.json` - Binary metadata
+- Symbol tables
+- Section sizes
+- Dependencies
+
+**Vector representation**: Symbol frequency, section size ratios, dependency graphs
+
+---
+
+### 7. Runtime Tracing
+**Input**: Running binaries
+**Tools**:
+- `strace` wrapper
+- `perf` integration
+- `telemetry_lib.rs` - Runtime hooks
+
+**Output**:
+- `data/runtime/syscall_traces.parquet` - Runtime syscalls
+- Performance counters
+- Memory allocations
+- I/O operations
+
+**Vector representation**: Execution path embeddings, resource consumption patterns
+
+---
+
+### 8. Vector Modeling
+**Input**: All collected data
+**Tools**:
+- `eigenvector_analysis.rs` - Compute eigenvectors
+- `markov_similarity.rs` - Compare Markov models
+- `code_similarity_detector.rs` - Semantic similarity
+
+**Process**:
+1. **Character-level**: Markov transition matrices → eigenvectors
+2. **AST-level**: Node type frequencies → TF-IDF vectors
+3. **IR-level**: CFG topology → graph embeddings
+4. **Binary-level**: Symbol distributions → frequency vectors
+5. **Runtime-level**: Syscall sequences → sequence embeddings
+
+**Output**:
+- `data/vectors/code_embeddings.parquet` - Unified vector space
+- Similarity matrices
+- Cluster assignments
+
+---
+
+### 9. Duplicate Detection
+**Input**: Vector embeddings
+**Tools**:
+- `duplicate_finder.rs` - Hash-based detection
+- `parallel_duplication_scanner.rs` - Parallel scanning
+- `code_duplication_scanner.rs` - Semantic duplicates
+
+**Methods**:
+1. **Exact duplicates**: SHA256 hashing
+2. **Near duplicates**: Cosine similarity > 0.95
+3. **Semantic duplicates**: Edit distance on AST
+4. **Functional duplicates**: Same MIR/binary output
+
+**Output**:
+- `DUPLICATE_CODE_REPORT.md` - Duplicate clusters
+- `data/duplicates/clusters.json` - Grouped duplicates
+- Uniqueness scores per file
+
+---
+
+### 10. Uniqueness Analysis
+**Input**: Duplicate detection results
+**Tools**:
+- `untracked_report.rs` - Report by repo
+- `novel_code_detector.rs` - Find unique patterns
+
+**Metrics**:
+- **Unique code %**: Lines not duplicated elsewhere
+- **Novel patterns**: AST patterns not in other repos
+- **Unique algorithms**: MIR patterns unique to Mike's repos
+- **Original implementations**: No similar code in 3.66M file index
+
+**Output**:
+- `MIKE_UNIQUE_CODE_REPORT.md` - Uniqueness analysis
+- `data/unique/novel_patterns.json` - Novel code patterns
+- Comparison vs all indexed repos
+
+---
+
+## Data Flow Diagram
+
+```
+Source Code (.rs)
+    ↓
+[Markov Model] → Character vectors
+    ↓
+[Syn Parser] → AST vectors
+    ↓
+[rustc -Z unpretty=hir] → HIR vectors
+    ↓
+[rustc -Z unpretty=mir] → MIR vectors
+    ↓
+[Compiler Trace] → Build vectors
+    ↓
+[Binary Analysis] → Symbol vectors
+    ↓
+[Runtime Trace] → Execution vectors
+    ↓
+[Vector Space] → Unified embeddings
+    ↓
+[Similarity Search] → Duplicate detection
+    ↓
+[Uniqueness Score] → Novel code identification
+```
+
+---
+
+## Canonical Data Store
+
+All outputs stored in Parquet format:
+
+```
+data/
+├── indexes/
+│   └── files.parquet              # 3.66M files with git provenance
+├── markov-analysis/
+│   └── markov_symbol_scores.parquet
+├── syn-asts/
+│   └── ast_nodes.parquet
+├── hir/
+│   └── hir_dumps.parquet
+├── mir/
+│   └── mir_dumps.parquet
+├── telemetry/
+│   └── rustc_trace.parquet
+├── binaries/
+│   └── elf_analysis.parquet
+├── runtime/
+│   └── syscall_traces.parquet
+├── vectors/
+│   └── code_embeddings.parquet
+└── duplicates/
+    └── clusters.parquet
+```
+
+---
+
+## Execution Plan
+
+### Phase 1: Collection (Parallel)
+```bash
+# Run all collectors in parallel
+cargo run --release --bin markov_chain_miner -- mike_repos_rust_files.txt &
+cargo run --release --bin ast_extractor -- mike_repos_rust_files.txt &
+cargo run --release --bin hir_collector -- mike_repos_rust_files.txt &
+cargo run --release --bin mir_collector -- mike_repos_rust_files.txt &
+```
+
+### Phase 2: Compilation Tracing
+```bash
+# Intercept rustc during build
+LD_PRELOAD=./target/release/libnix_telemetry.so cargo build --release
+```
+
+### Phase 3: Binary Analysis
+```bash
+cargo run --release --bin moonshine_analysis -- /opt/zos-production/target/release/*
+```
+
+### Phase 4: Vector Modeling
+```bash
+cargo run --release --bin eigenvector_analysis
+cargo run --release --bin markov_similarity
+```
+
+### Phase 5: Duplicate Detection
+```bash
+cargo run --release --bin parallel_duplication_scanner -- mike_repos_rust_files.txt
+```
+
+### Phase 6: Uniqueness Report
+```bash
+cargo run --release --bin novel_code_detector -- mike_repos_rust_files.txt
+```
+
+---
+
+## GitHub Actions Integration
+
+Workflow: `.github/workflows/code-flow-analysis.yml`
+
+```yaml
+- name: Collect all stages
+  run: |
+    cargo run --release --bin markov_chain_miner
+    cargo run --release --bin ast_extractor
+    cargo run --release --bin eigenvector_analysis
+    
+- name: Upload artifacts
+  uses: meta-introspector/upload-artifact@v4
+  with:
+    name: code-flow-analysis
+    path: data/**/*.parquet
+```
+
+---
+
+## Mathematical Representation
+
+Each code file becomes a vector in high-dimensional space:
+
+```
+v(file) = [
+    markov_eigenvalues[0..100],      # Character patterns
+    ast_node_frequencies[0..50],      # Syntax patterns
+    hir_type_embeddings[0..100],      # Type patterns
+    mir_cfg_features[0..50],          # Control flow
+    binary_symbol_dist[0..100],       # Binary patterns
+    runtime_syscall_seq[0..100]       # Execution patterns
+]
+```
+
+**Similarity**: `sim(v1, v2) = cosine(v1, v2)`
+
+**Uniqueness**: `unique(v) = 1 - max(sim(v, all_other_vectors))`
+
+---
+
+## Expected Outputs
+
+1. **Mike's Code Fingerprint**: Unique vector signature
+2. **Duplicate Report**: What code is shared/unique
+3. **Novel Patterns**: Algorithms/patterns not found elsewhere
+4. **Compilation Flow**: Source → Binary trace
+5. **Uniqueness Score**: % of truly original code
+
+---
+
+## Tools Status
+
+✅ Built and working:
+- markov_chain_miner
+- eigenvector_analysis
+- moonshine_analysis
+- telemetry collectors
+- duplicate_finder
+
+🚧 Need to build:
+- ast_extractor (use syn)
+- hir_collector (rustc wrapper)
+- mir_collector (rustc wrapper)
+- novel_code_detector
+
+---
+
+**Next Step**: Run Phase 1 collectors on Mike's 496 Rust files
+
+### 3. Concept Map
+# Concept Map Report
+
+**Files analyzed**: 264
+**Total words**: 136612
+**Unique words**: 8739
+
+## N-Char Lattice
+
+- **3-char words**: 421
+- **4-char words**: 567
+- **5-char words**: 549
+- **6-char words**: 603
+- **7-char words**: 636
+- **8-char words**: 716
+- **9-char words**: 735
+- **10-char words**: 699
+- **11-char words**: 606
+- **12-char words**: 557
+- **13-char words**: 453
+- **14-char words**: 389
+- **15-char words**: 304
+- **16-char words**: 265
+- **17-char words**: 263
+- **18-char words**: 199
+- **19-char words**: 150
+- **20-char words**: 137
+- **21-char words**: 106
+- **22-char words**: 83
+- **23-char words**: 66
+- **24-char words**: 48
+- **25-char words**: 47
+- **26-char words**: 38
+- **27-char words**: 30
+- **28-char words**: 17
+- **29-char words**: 7
+- **30-char words**: 11
+- **31-char words**: 7
+- **32-char words**: 12
+- **33-char words**: 8
+- **34-char words**: 1
+- **35-char words**: 1
+- **36-char words**: 4
+- **37-char words**: 2
+- **38-char words**: 1
+- **46-char words**: 1
+
+## Top 20 Words by Frequency
+
+| Word | Count | Frequency |
+|------|-------|----------|
+| let | 5571 | 0.0408 |
+| self | 3119 | 0.0228 |
+| println | 2854 | 0.0209 |
+| string | 2222 | 0.0163 |
+| pub | 2219 | 0.0162 |
+| vec | 2017 | 0.0148 |
+| new | 1954 | 0.0143 |
+| to_string | 1753 | 0.0128 |
+| mut | 1620 | 0.0119 |
+| for | 1528 | 0.0112 |
+| std | 1502 | 0.0110 |
+| use | 1265 | 0.0093 |
+| len | 1166 | 0.0085 |
+| path | 1164 | 0.0085 |
+| name | 983 | 0.0072 |
+| output | 913 | 0.0067 |
+| f64 | 850 | 0.0062 |
+| result | 800 | 0.0059 |
+| hashmap | 785 | 0.0057 |
+| format | 762 | 0.0056 |
+
+## Markov Transition Examples
+
+
+**4200** →
+  - wrap_any (1.000)
+
+**a000108** →
+  - catalan (1.000)
+
+**avg_bit_density** →
+  - self (0.250)
+  - total_markov_states (0.250)
+  - f64 (0.250)
+  - total_density (0.250)
+
+**behavior** →
+  - alone (0.182)
+  - based (0.182)
+  - every (0.091)
+  - different (0.091)
+  - let (0.091)
+
+**central** →
+  - data (1.000)
+
+**compute_term_eigenvector** →
+  - symbols (1.000)
+
+**content_addressing** →
+
+### 4. File Inventory
+# File I/O Operations Inventory
+
+**Generated**: 2026-01-17  
+**Purpose**: Central documentation of all file read/write operations across the codebase
+
+## Overview
+
+This document catalogs all file I/O operations to:
+- Track data dependencies
+- Identify temporary files
+- Document configuration files
+- Map input/output flows
+- Support reproducibility audits
+
+## File I/O by Module
+
+### 1. minimal_build_server.rs (14 operations)
+
+**Reads:**
+- `static/index.html` - HTML template
+- `/home/{user}/.ssh/id_ed25519.pub` - SSH public key
+- Error files for diagnostics
+
+**Writes:**
+- `/tmp/gpg-batch` - GPG batch configuration
+- `/tmp/gpg-qa` - QA GPG configuration
+- `/tmp/vault.json` - Vault data
+- `/etc/systemd/system/qa-build-server.service` - Systemd service file
+
+**Operations:**
+- File copying for deployment
+- In-place file modifications
+
+### 2. markov_resonance_analyzer/src/main.rs (13 operations)
+
+**Reads:**
+- Cached file lists
+- `failed_files_exclude.txt` - Exclusion list
+- Source files for analysis
+
+**Writes:**
+- `markov_symbol_scores_partial.json` - Partial results
+- `markov_symbol_scores.json` - Final scores
+- `markov_file_index_mapping.json` - File index mapping
+- `markov_similarity_matrix.bin` - Binary matrix data
+- `markov_similarity_matrix_meta.json` - Matrix metadata
+- `failed_files_exclude.txt` - Failed file list
+
+### 3. nixso2wrap/src/main.rs (12 operations)
+
+**Reads:**
+- ABI JSON files
+
+**Writes:**
+- JSON output files (various)
+- Analysis files
+- ABI files for libraries
+- MCP directory files
+
+**Operations:**
+- `create_dir_all` for output directories
+
+### 4. ldd2wrap_all_calls.rs (10 operations)
+
+**Reads:**
+- Build data files
+- Directory scanning
+- Script files
+- Binary files
+
+**Writes:**
+- Wrapper files
+- Master files
+- JSON files
+- Telemetry configuration
+
+**Operations:**
+- Dynamic wrapper generation
+- Binary analysis
+
+### 5. generate-monthly-reports.rs (9 operations)
+
+**Reads:**
+- Activity directories (platform/user/year/month structure)
+- Activity JSON files
+
+**Writes:**
+- `output_file` - Monthly reports (JSON)
+
+**Operations:**
+- Recursive directory traversal
+- Activity aggregation
+
+### 6. backend_equivalence.rs (8 operations)
+
+**Reads:**
+- `/tmp/llvm_out.ll` - LLVM IR
+- `/tmp/llvm_out.s` - LLVM assembly
+- `/tmp/gcc_out.s` - GCC assembly
+
+**Writes:**
+- Temporary source files
+- `/tmp/gcc_input.c` - GCC input
+
+**Operations:**
+- Temporary file cleanup
+- Compiler output comparison
+
+### 7. eigenvector_word_model.rs (7 operations)
+
+**Reads:**
+- Binary directory scanning
+- Binary files
+- `perf_json` - Performance data
+- Source files
+
+**Writes:**
+- `data/eigenvectors/word_eigenvectors.json` - Eigenvector data
+- `bott8-layout-solver/word_eigenvectors.dzn` - MiniZinc format
+
+### 8. source2test.rs (7 operations)
+
+**Reads:**
+- Trace files
+- Sample files
+
+**Writes:**
+- Split data files
+- Test code files
+- JSON output files
+- Sample test files
+
+### 9. conformal_structure_analyzer.rs (6 operations)
+
+**Reads:**
+- Directory scanning
+- Source files
+- Binary files
+
+**Writes:**
+- `automorphism_analysis.json`
+- `conformal_boundary.json`
+- `rustjunk_eigenvector.json`
+
+### 10. bits_to_rust.rs (6 operations)
+
+**Reads:**
+- WASM files
+
+**Writes:**
+- Temporary source files
+- WASM output files
+
+**Operations:**
+- Temporary file cleanup
+
+### 11. report_generator.rs (5 operations)
+
+**Reads:**
+- `UNIFIED_MASTER_TABLE.md`
+- `NOVELTY_REPORT.md`
+- `MULTI_PROJECT_FUNCTION_TABLE.md`
+
+**Writes:**
+- `CODE_ANALYSIS.parquet` - Parquet format
+- `CODE_ANALYSIS.html` - HTML report
+
+### 12. full_rustc_compressor.rs (5 operations)
+
+**Reads:**
+- Source files
+- `/mnt/data1/files.txt` - File list
+- Directory scanning
+
+**Writes:**
+- Decompressed content files
+- `rust_build_full_compressed.json` - Compressed data
+
+### 13. metis-partition-markov.rs (5 operations)
+
+**Reads:**
+- Matrix files
+- Partition files
+
+**Writes:**
+- METIS format files
+- `hf-markov-analysis-upload/partition_{:04}.json` - Partition data
+
+### 14. rustc_perf_scanner.rs (5 operations)
+
+**Reads:**
+- Source files
+- Directory scanning
+
+**Writes:**
+- Temporary source files
+
+**Operations:**
+- Temporary file cleanup (`/tmp/perf.data`)
+
+
+### 5. Key Source Files
+
+#### concept_map_builder.rs
+```rust
+// N-Char Value Lattice Concept Map Builder
+// Extract all words from our 263 tools → n-char lattice → n-grams → Markov → harmonics
+
+use std::collections::HashMap;
+use std::fs;
+use serde::{Serialize, Deserialize};
+use rayon::prelude::*;
+
+#[derive(Debug, Serialize, Deserialize)]
+struct ConceptMap {
+    total_files: usize,
+    total_words: usize,
+    unique_words: usize,
+    word_frequencies: HashMap<String, usize>,
+    nchar_lattice: HashMap<usize, Vec<String>>,  // n -> words of length n
+    ngrams: HashMap<String, usize>,  // n-gram -> frequency
+    markov_transitions: HashMap<String, HashMap<String, f64>>,  // word -> next_word -> prob
+    harmonic_frequencies: Vec<(String, f64)>,  // word -> frequency ratio
+}
+
+fn extract_words(content: &str) -> Vec<String> {
+    content
+        .split(|c: char| !c.is_alphanumeric() && c != '_')
+        .filter(|s| !s.is_empty() && s.len() > 2)
+        .map(|s| s.to_lowercase())
+        .collect()
+}
+
+fn build_nchar_lattice(words: &[String]) -> HashMap<usize, Vec<String>> {
+    let mut lattice: HashMap<usize, Vec<String>> = HashMap::new();
+    
+    for word in words {
+        let len = word.len();
+        lattice.entry(len).or_insert_with(Vec::new).push(word.clone());
+    }
+    
+    // Sort and deduplicate each level
+    for words in lattice.values_mut() {
+        words.sort();
+        words.dedup();
+    }
+    
+    lattice
+}
+
+fn build_ngrams(words: &[String], n: usize) -> HashMap<String, usize> {
+    let mut ngrams = HashMap::new();
+    
+    for window in words.windows(n) {
+        let ngram = window.join(" ");
+        *ngrams.entry(ngram).or_insert(0) += 1;
+    }
+    
+    ngrams
+}
+
+fn build_markov_transitions(words: &[String]) -> HashMap<String, HashMap<String, f64>> {
+    let mut transitions: HashMap<String, HashMap<String, usize>> = HashMap::new();
+    
+    for window in words.windows(2) {
+        let from = &window[0];
+        let to = &window[1];
+        *transitions.entry(from.clone()).or_insert_with(HashMap::new).entry(to.clone()).or_insert(0) += 1;
+    }
+    
+    // Convert counts to probabilities
+    let mut probs = HashMap::new();
+    for (from, nexts) in transitions {
+        let total: usize = nexts.values().sum();
+        let mut next_probs = HashMap::new();
+        for (to, count) in nexts {
+            next_probs.insert(to, count as f64 / total as f64);
+        }
+        probs.insert(from, next_probs);
+    }
+    
+    probs
+}
+
+fn compute_harmonic_frequencies(word_freq: &HashMap<String, usize>) -> Vec<(String, f64)> {
+    let total: usize = word_freq.values().sum();
+    let mut harmonics: Vec<(String, f64)> = word_freq
+        .iter()
+        .map(|(word, count)| (word.clone(), *count as f64 / total as f64))
+        .collect();
+    
+    harmonics.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap());
+    harmonics
+}
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    println!("🗺️  N-CHAR VALUE LATTICE CONCEPT MAP BUILDER\n");
+    
+    // Collect all our Rust files
+    let files: Vec<_> = fs::read_dir(".")?
+        .filter_map(|e| e.ok())
+        .filter(|e| e.path().extension().and_then(|s| s.to_str()) == Some("rs"))
+        .map(|e| e.path())
+        .collect();
+    
+```
+
+#### numerical_codebreaker.rs
+```rust
+// Numerical Codebreaker: Attack concept map with LMFDB, OEIS, Wikidata
+// Find mathematical patterns in our code frequencies
+
+use std::fs;
+use std::collections::HashMap;
+use serde::{Serialize, Deserialize};
+use serde_json::Value;
+
+#[derive(Debug, Serialize, Deserialize)]
+struct ConceptMap {
+    word_frequencies: HashMap<String, usize>,
+    harmonic_frequencies: Vec<(String, f64)>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct NumericalPattern {
+    sequence: Vec<usize>,
+    oeis_matches: Vec<OEISMatch>,
+    lmfdb_matches: Vec<LMFDBMatch>,
+    wikidata_matches: Vec<WikidataMatch>,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct OEISMatch {
+    sequence_id: String,
+    name: String,
+    formula: String,
+    similarity: f64,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct LMFDBMatch {
+    object_type: String,  // elliptic curve, modular form, etc
+    label: String,
+    coefficients: Vec<i64>,
+    similarity: f64,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct WikidataMatch {
+    entity_id: String,
+    label: String,
+    property: String,
+    value: String,
+}
+
+fn extract_frequency_sequence(harmonics: &[(String, f64)]) -> Vec<usize> {
+    // Convert frequencies to integer sequence for OEIS matching
+    harmonics.iter()
+        .map(|(_, freq)| (freq * 10000.0) as usize)
+        .collect()
+}
+
+fn extract_length_sequence(word_freq: &HashMap<String, usize>) -> Vec<usize> {
+    // Word lengths weighted by frequency
+    let mut length_counts: HashMap<usize, usize> = HashMap::new();
+    for (word, count) in word_freq {
+        *length_counts.entry(word.len()).or_insert(0) += count;
+    }
+    
+    let mut seq: Vec<_> = length_counts.into_iter().collect();
+    seq.sort_by_key(|(len, _)| *len);
+    seq.into_iter().map(|(_, count)| count).collect()
+}
+
+fn check_oeis_patterns(sequence: &[usize]) -> Vec<OEISMatch> {
+    let mut matches = Vec::new();
+    
+    // Check against known OEIS sequences
+    // A000045: Fibonacci
+    if is_fibonacci_like(sequence) {
+        matches.push(OEISMatch {
+            sequence_id: "A000045".to_string(),
+            name: "Fibonacci numbers".to_string(),
+            formula: "F(n) = F(n-1) + F(n-2)".to_string(),
+            similarity: compute_similarity(sequence, &fibonacci_sequence(sequence.len())),
+        });
+    }
+    
+    // A000040: Primes
+    if is_prime_like(sequence) {
+        matches.push(OEISMatch {
+            sequence_id: "A000040".to_string(),
+            name: "Prime numbers".to_string(),
+            formula: "p(n) = nth prime".to_string(),
+            similarity: compute_similarity(sequence, &prime_sequence(sequence.len())),
+        });
+    }
+    
+    // A000079: Powers of 2
+    if is_power_of_two_like(sequence) {
+        matches.push(OEISMatch {
+            sequence_id: "A000079".to_string(),
+            name: "Powers of 2".to_string(),
+            formula: "2^n".to_string(),
+            similarity: compute_similarity(sequence, &power_of_two_sequence(sequence.len())),
+        });
+    }
+    
+    // A000142: Factorials
+```
+
+#### nix_binary_lmfdb_analyzer.rs
+```rust
+use std::collections::HashMap;
+use std::fs;
+use goblin::elf::Elf;
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LmfdbSymbolAnalysis {
+    pub symbol_name: String,
+    pub length: usize,
+    pub bit_density: f64,
+    pub markov_transitions: HashMap<u8, HashMap<u8, u32>>,
+    pub lmfdb_conductor: u64,
+    pub lmfdb_label: String,
+    pub complexity_tier: u8,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct NixBinaryLmfdbMapping {
+    pub binary_path: String,
+    pub total_symbols: usize,
+    pub symbol_analyses: Vec<LmfdbSymbolAnalysis>,
+    pub conductor_distribution: HashMap<u8, u32>,
+    pub complexity_summary: ComplexitySummary,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ComplexitySummary {
+    pub tier_1_ultra_high: u32,  // 11000+ conductors
+    pub tier_2_high: u32,        // 8000-10999
+    pub tier_3_advanced: u32,    // 7000-7999
+    pub tier_4_moderate_high: u32, // 6000-6999
+    pub tier_5_moderate: u32,    // 5000-5999
+    pub tier_6_low_moderate: u32, // 4000-4999
+    pub tier_7_low: u32,         // 3000-3999
+    pub avg_bit_density: f64,
+    pub total_markov_states: usize,
+}
+
+impl LmfdbSymbolAnalysis {
+    pub fn analyze_symbol(symbol_name: &str) -> Self {
+        let bytes = symbol_name.as_bytes();
+        let length = bytes.len();
+        
+        // Calculate bit density
+        let bit_count: u32 = bytes.iter().map(|&b| b.count_ones()).sum();
+        let bit_density = bit_count as f64 / (length * 8) as f64;
+        
+        // Build Markov transitions
+        let mut transitions = HashMap::new();
+        for window in bytes.windows(2) {
+            let from = window[0];
+            let to = window[1];
+            *transitions.entry(from).or_insert_with(HashMap::new).entry(to).or_insert(0) += 1;
+        }
+        
+        // Map to LMFDB conductor based on complexity
+        let (conductor, tier) = Self::calculate_conductor(symbol_name, length, bit_density, &transitions);
+        let label = Self::generate_lmfdb_label(conductor, tier);
+        
+        LmfdbSymbolAnalysis {
+            symbol_name: symbol_name.to_string(),
+            length,
+            bit_density,
+            markov_transitions: transitions,
+            lmfdb_conductor: conductor,
+            lmfdb_label: label,
+            complexity_tier: tier,
+        }
+    }
+    
+    fn calculate_conductor(_name: &str, length: usize, density: f64, transitions: &HashMap<u8, HashMap<u8, u32>>) -> (u64, u8) {
+        let transition_count = transitions.values().map(|m| m.len()).sum::<usize>();
+        let complexity_score = (length as f64 * density * transition_count as f64) as u64;
+        
+        // Map complexity to LMFDB tiers (based on our analysis)
+        match complexity_score {
+            11000.. => (11000 + (complexity_score % 1000), 1), // Ultra-high (floating-point level)
+            8000..=10999 => (8000 + (complexity_score % 1000), 2), // High (HIR level)
+            7000..=7999 => (7000 + (complexity_score % 1000), 3), // Advanced (THIR level)
+            6000..=6999 => (6000 + (complexity_score % 1000), 4), // Moderate-high (type system)
+            5000..=5999 => (5000 + (complexity_score % 1000), 5), // Moderate (AST level)
+            4000..=4999 => (4000 + (complexity_score % 1000), 6), // Low-moderate (patterns)
+            3000..=3999 => (3000 + (complexity_score % 1000), 7), // Low (errors/system)
+            _ => (3000 + (complexity_score % 1000), 7), // Default to low
+        }
+    }
+    
+    fn generate_lmfdb_label(conductor: u64, tier: u8) -> String {
+        let degree = match tier {
+            1 => 5, // Quintic (highest complexity)
+            2 => 4, // Quartic
+            3..=4 => 3, // Cubic
+            5..=6 => 2, // Quadratic
+            _ => 2, // Default quadratic
+        };
+        
+        let orbit_letter = match tier {
+            1 => 'a', // Ultra-high
+            2 => 'b', // High
+            3 => 'c', // Advanced
+```
+
+## Repository Statistics
+
+- Rust files: 433
+- Total lines: 76683
+- Documentation files: 208
+- Data files: 51

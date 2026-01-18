@@ -5,7 +5,7 @@ Unified code analysis with LMFDB mathematical mapping, Markov modeling, and dupl
 
 ## Key Components
 
-### Analysis Tools (267 Rust files)
+### Analysis Tools (263 Rust files)
 - all_commits_collector.rs
 - archive_declarations.rs
 - automorphic_orbit_71.rs
@@ -15,19 +15,44 @@ Unified code analysis with LMFDB mathematical mapping, Markov modeling, and dupl
 - binary_byte_attribution.rs
 - binary_fingerprint_decoder.rs
 - binary_symbol_study.rs
-- bits_to_rust_old.rs
 - bits_to_rust.rs
+- bits_to_rust_old.rs
 - bootstrap_evolution.rs
 - bootstrap_macro.rs
 - bootstrap_telemetry_system.rs
 - bootstrap_test.rs
 - branch_prediction_miner.rs
 - build-activity-dataset.rs
+- build.rs
 - build_instrumented.rs
 - build_order_pipeline.rs
-- build_order_processor.rs
+
+### Documentation
+- docs/SIMPLE_PARQUET_SPLICE.md
+- docs/SIDECHAIN_CREDITS.md
+- docs/QA_DEPLOYMENT_REVIEW.md
+- docs/PERF_USAGE_AUDIT.md
+- docs/RUSTC_INTEGRATION_PLAN.md
+- docs/LMFDB_JSON_CLUSTERED_ANALYSIS.md
+- docs/code-analysis-ideas.md
+- docs/COMPLETE_71_DISCOVERY.md
+- docs/LMFDB_TELEMETRY.md
+- docs/CONST_EQUIVALENCE_SUMMARY.md
+
+### Data Outputs
+- data/github-activity/by-month/2025-12.json
+- data/github-activity/by-month/2026-01.json
+- data/github-activity/raw/jmikedupont2_all_events.json
+- data/github-activity/raw/meta-introspector_all_events.json
+- data/github-activity/raw/meta-introspector_org_events.json
+- data/github-stars-analysis.json
+- data/git-sources-registry.json
+- data/activity-coverage-report.json
+- data/github-repo-status.json
+- data/activity/github/jmikedupont2/2024/08/activity.json
 
 ## Recent Activity
+b4738f69 Add llm.txt for LLM context
 4d26e75b Add NotebookLM generator and background Nix CI
 5dba0ec2 Add minimal Nix-based CI/CD with LMFDB analysis
 7624696f add bach demo
@@ -37,4 +62,3 @@ Unified code analysis with LMFDB mathematical mapping, Markov modeling, and dupl
 6574201f Add code flow analysis workflow documentation
 d7eb02b3 Add bach and nix-telemetry to build system
 9153b086 Add bach and nix-telemetry projects
-974d4b94 Fix git_file_mapper to properly detect git repositories
