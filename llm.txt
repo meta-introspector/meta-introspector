@@ -1,0 +1,40 @@
+# Meta-Introspector LLM Context
+
+## Project Overview
+Unified code analysis with LMFDB mathematical mapping, Markov modeling, and duplicate detection.
+
+## Key Components
+
+### Analysis Tools (267 Rust files)
+- all_commits_collector.rs
+- archive_declarations.rs
+- automorphic_orbit_71.rs
+- automorphic_orbit_lmfdb.rs
+- backend_equivalence.rs
+- batch_runner.rs
+- binary_byte_attribution.rs
+- binary_fingerprint_decoder.rs
+- binary_symbol_study.rs
+- bits_to_rust_old.rs
+- bits_to_rust.rs
+- bootstrap_evolution.rs
+- bootstrap_macro.rs
+- bootstrap_telemetry_system.rs
+- bootstrap_test.rs
+- branch_prediction_miner.rs
+- build-activity-dataset.rs
+- build_instrumented.rs
+- build_order_pipeline.rs
+- build_order_processor.rs
+
+## Recent Activity
+4d26e75b Add NotebookLM generator and background Nix CI
+5dba0ec2 Add minimal Nix-based CI/CD with LMFDB analysis
+7624696f add bach demo
+8cfc3b61 Add numerical codebreaker with OEIS/LMFDB/Wikidata
+4f6ff3fc Add n-char value lattice concept map builder
+1a8f72bb Add reusable meta-introspector GitHub Action
+6574201f Add code flow analysis workflow documentation
+d7eb02b3 Add bach and nix-telemetry to build system
+9153b086 Add bach and nix-telemetry projects
+974d4b94 Fix git_file_mapper to properly detect git repositories
