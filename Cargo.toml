@@ -1031,3 +1031,7 @@ path = "demos/archived_demos_stub.rs"
 [[bin]]
 name = "push_to_hf"
 path = "push_to_hf.rs"
+
+[[bin]]
+name = "untracked_report"
+path = "untracked_report.rs"
