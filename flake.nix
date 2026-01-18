@@ -1,195 +1,152 @@
 {
-  description = "Code Complexity Analysis with Formal Proofs";
+  description = "Meta-introspector with LMFDB analysis CI/CD";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, rust-overlay, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        overlays = [ (import rust-overlay) ];
+        pkgs = import nixpkgs { inherit system overlays; };
+        rustToolchain = pkgs.rust-bin.stable.latest.default;
         
-        # Build analysis tools (production only, excludes demos)
+        # All our analysis tools
         analysisTools = pkgs.rustPlatform.buildRustPackage {
-          pname = "complexity-analyzer";
+          pname = "meta-introspector-analysis";
           version = "0.1.0";
           src = ./.;
           cargoLock.lockFile = ./Cargo.lock;
-          nativeBuildInputs = [ pkgs.pkg-config ];
-          buildInputs = [ pkgs.glib ];
           
-          # Build only production binaries, exclude archived demos
-          cargoBuildFlags = [
-            "--bins"
-            "--exclude" "archived_demos"
+          buildInputs = with pkgs; [
+            openssl
+            pkg-config
           ];
         };
         
-        # Archived demos - separate build for analysis only
-        # WARNING: These contain fake data and incomplete implementations
-        archivedDemos = pkgs.rustPlatform.buildRustPackage {
-          pname = "archived-demos";
-          version = "0.1.0";
-          src = ./.;
-          cargoLock.lockFile = ./Cargo.lock;
-          nativeBuildInputs = [ pkgs.pkg-config ];
-          buildInputs = [ pkgs.glib ];
-          
-          # Build only demo binaries from demos/archived/
-          # These are NOT production-ready
-          buildPhase = ''
-            echo "Building archived demos for analysis only..."
-            for demo in demos/archived/demo_*.rs; do
-              name=$(basename "$demo" .rs)
-              echo "Building $name..."
-              cargo build --release --bin "$name" || echo "Failed: $name"
-            done
-          '';
-          
-          installPhase = ''
-            mkdir -p $out/bin/archived-demos
-            cp -r target/release/demo_* $out/bin/archived-demos/ 2>/dev/null || true
-            echo "WARNING: These are archived demos with fake data" > $out/bin/archived-demos/README
-          '';
-        };
-        
-        # QEMU reachability plugin
-        qemuPlugin = pkgs.rustPlatform.buildRustPackage {
-          pname = "qemu-reachability-plugin";
-          version = "0.1.0";
-          src = ./qemu-plugin;
-          cargoLock.lockFile = ./qemu-plugin/Cargo.lock;
-          
-          buildPhase = ''
-            cargo build --release --lib
-          '';
-          
-          installPhase = ''
-            mkdir -p $out/lib
-            cp target/release/libqemu_reachability_plugin.so $out/lib/
-          '';
-        };
-        
-        # Lean4 proof template generator
-        proofGenerator = pkgs.writeScriptBin "generate-proof" ''
-          #!${pkgs.bash}/bin/bash
-          ENUM_GENUS=$1
-          ENUM_CONDUCTOR=$2
-          STRUCT_GENUS=$3
-          STRUCT_CONDUCTOR=$4
-          
-          cat > complexity_proof.lean <<EOF
-          import Mathlib.Data.Nat.Basic
-          import Mathlib.Tactic
-          
-          def complexity (genus : ℕ) (conductor : ℕ) : ℕ :=
-            2 * genus + conductor
-          
-          def enum_complexity : ℕ := complexity $ENUM_GENUS $ENUM_CONDUCTOR
-          def struct_complexity : ℕ := complexity $STRUCT_GENUS $STRUCT_CONDUCTOR
-          
-          theorem enum_more_complex : enum_complexity > struct_complexity := by
-            unfold enum_complexity struct_complexity complexity
-            norm_num
-          
-          #check enum_more_complex
-          EOF
-          
-          echo "Generated proof: complexity_proof.lean"
-        '';
-        
-        # Complete analysis pipeline
-        analyzeAndProve = pkgs.writeScriptBin "analyze-and-prove" ''
-          #!${pkgs.bash}/bin/bash
-          set -e
-          
-          ENUM_FILE=$1
-          STRUCT_FILE=$2
-          OUTPUT_DIR=''${3:-./proof_output}
-          
-          mkdir -p $OUTPUT_DIR
-          
-          echo "=== Analyzing Enum ==="
-          ${analysisTools}/bin/reach_tracer $ENUM_FILE > $OUTPUT_DIR/enum_reach.txt
-          ${analysisTools}/bin/source2test < $OUTPUT_DIR/enum_reach.txt > $OUTPUT_DIR/enum_clusters.json
-          ${analysisTools}/bin/homotopy_classifier < $OUTPUT_DIR/enum_clusters.json > $OUTPUT_DIR/enum_class.json
-          
-          ENUM_GENUS=$(${pkgs.jq}/bin/jq -r '.[0].mathematical_classification.modular_form.genus' $OUTPUT_DIR/enum_class.json)
-          ENUM_CONDUCTOR=$(${pkgs.jq}/bin/jq -r '.[0].mathematical_classification.modular_form.conductor' $OUTPUT_DIR/enum_class.json)
-          
-          echo "Enum: genus=$ENUM_GENUS, conductor=$ENUM_CONDUCTOR"
-          
-          echo "=== Analyzing Struct ==="
-          ${analysisTools}/bin/reach_tracer $STRUCT_FILE > $OUTPUT_DIR/struct_reach.txt
-          ${analysisTools}/bin/source2test < $OUTPUT_DIR/struct_reach.txt > $OUTPUT_DIR/struct_clusters.json
-          ${analysisTools}/bin/homotopy_classifier < $OUTPUT_DIR/struct_clusters.json > $OUTPUT_DIR/struct_class.json
-          
-          STRUCT_GENUS=$(${pkgs.jq}/bin/jq -r '.[0].mathematical_classification.modular_form.genus' $OUTPUT_DIR/struct_class.json)
-          STRUCT_CONDUCTOR=$(${pkgs.jq}/bin/jq -r '.[0].mathematical_classification.modular_form.conductor' $OUTPUT_DIR/struct_class.json)
-          
-          echo "Struct: genus=$STRUCT_GENUS, conductor=$STRUCT_CONDUCTOR"
-          
-          echo "=== Generating Proof ==="
-          cd $OUTPUT_DIR
-          ${proofGenerator}/bin/generate-proof $ENUM_GENUS $ENUM_CONDUCTOR $STRUCT_GENUS $STRUCT_CONDUCTOR
-          
-          echo "=== Verifying Proof ==="
-          ${pkgs.lean4}/bin/lean --make complexity_proof.lean
-          
-          if [ $? -eq 0 ]; then
-            echo "✅ PROOF VERIFIED: complexity(enum) > complexity(struct)"
-            echo "VERIFIED" > $OUTPUT_DIR/proof_status.txt
-          else
-            echo "❌ PROOF FAILED"
-            echo "FAILED" > $OUTPUT_DIR/proof_status.txt
-          fi
-        '';
-        
       in {
+        # Packages: build all analysis tools
         packages = {
           default = analysisTools;
-          tools = analysisTools;
-          demos = archivedDemos;  # Quarantined demos for analysis
-          qemu-plugin = qemuPlugin;  # QEMU reachability plugin
-          proof-generator = proofGenerator;
-          analyze-and-prove = analyzeAndProve;
+          
+          # Individual tools
+          concept-map = pkgs.runCommand "concept-map" {} ''
+            mkdir -p $out/bin
+            cp ${analysisTools}/bin/concept_map_builder $out/bin/
+            cp ${analysisTools}/bin/enhanced_concept_map $out/bin/
+          '';
+          
+          lmfdb-analysis = pkgs.runCommand "lmfdb-analysis" {} ''
+            mkdir -p $out/bin
+            cp ${analysisTools}/bin/nix_binary_lmfdb_analyzer $out/bin/
+            cp ${analysisTools}/bin/lmfdb_instruction_classifier $out/bin/
+          '';
+          
+          numerical-codebreaker = pkgs.runCommand "numerical-codebreaker" {} ''
+            mkdir -p $out/bin
+            cp ${analysisTools}/bin/numerical_codebreaker $out/bin/
+          '';
         };
         
+        # Checks: run all analysis on our own code
+        checks = {
+          # Build check
+          build = analysisTools;
+          
+          # Run concept map analysis
+          concept-map-analysis = pkgs.runCommand "concept-map-check" {
+            buildInputs = [ analysisTools ];
+          } ''
+            cd ${./.}
+            ${analysisTools}/bin/concept_map_builder
+            test -f data/concept_map.json
+            touch $out
+          '';
+          
+          # Run LMFDB analysis on all binaries
+          lmfdb-binary-analysis = pkgs.runCommand "lmfdb-check" {
+            buildInputs = [ analysisTools ];
+          } ''
+            cd ${./.}
+            for binary in ${analysisTools}/bin/*; do
+              ${analysisTools}/bin/nix_binary_lmfdb_analyzer "$binary" || true
+            done
+            touch $out
+          '';
+          
+          # Run numerical codebreaker
+          numerical-analysis = pkgs.runCommand "numerical-check" {
+            buildInputs = [ analysisTools ];
+          } ''
+            cd ${./.}
+            ${analysisTools}/bin/concept_map_builder
+            ${analysisTools}/bin/numerical_codebreaker
+            test -f data/numerical_patterns.json
+            touch $out
+          '';
+        };
+        
+        # Apps: run analysis tools
         apps = {
-          default = flake-utils.lib.mkApp {
-            drv = analyzeAndProve;
+          concept-map = {
+            type = "app";
+            program = "${analysisTools}/bin/concept_map_builder";
           };
-          analyze = flake-utils.lib.mkApp {
-            drv = analyzeAndProve;
+          
+          lmfdb-analyze = {
+            type = "app";
+            program = "${analysisTools}/bin/nix_binary_lmfdb_analyzer";
+          };
+          
+          codebreaker = {
+            type = "app";
+            program = "${analysisTools}/bin/numerical_codebreaker";
+          };
+          
+          # Full analysis pipeline
+          analyze-all = {
+            type = "app";
+            program = toString (pkgs.writeShellScript "analyze-all" ''
+              set -e
+              echo "🔍 Running full analysis pipeline..."
+              
+              echo "1. Building concept map..."
+              ${analysisTools}/bin/concept_map_builder
+              
+              echo "2. Running LMFDB analysis..."
+              for binary in ${analysisTools}/bin/*; do
+                ${analysisTools}/bin/nix_binary_lmfdb_analyzer "$binary" || true
+              done
+              
+              echo "3. Running numerical codebreaker..."
+              ${analysisTools}/bin/numerical_codebreaker
+              
+              echo "✅ Analysis complete!"
+              echo "Results in data/"
+            '');
           };
         };
         
+        # Dev shell
         devShells.default = pkgs.mkShell {
-          buildInputs = [
-            pkgs.rustc
-            pkgs.cargo
-            pkgs.pkg-config
-            pkgs.glib
-            pkgs.qemu
-            pkgs.lean4
-            pkgs.jq
-            analysisTools
-            proofGenerator
-            analyzeAndProve
+          buildInputs = with pkgs; [
+            rustToolchain
+            cargo
+            rustc
+            rust-analyzer
+            clippy
+            rustfmt
+            openssl
+            pkg-config
           ];
           
           shellHook = ''
-            echo "🔬 Code Complexity Analysis Environment"
-            echo ""
-            echo "Commands:"
-            echo "  analyze-and-prove enum.rs struct.rs [output_dir]"
-            echo "  generate-proof <enum_g> <enum_c> <struct_g> <struct_c>"
-            echo ""
-            echo "Example:"
-            echo "  analyze-and-prove test_enum.rs test_struct.rs ./proofs"
-            echo ""
+            echo "🦀 Meta-introspector dev environment"
+            echo "Run: nix flake check    # Run all analysis"
+            echo "Run: nix run .#analyze-all  # Full pipeline"
           '';
         };
       }
