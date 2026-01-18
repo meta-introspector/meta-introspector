@@ -34,147 +34,147 @@ path = "intrinsic_complexity.rs"
 
 [[bin]]
 name = "demo_shared_memory"
-path = "demo_shared_memory.rs"
+path = "demos/archived/demo_shared_memory.rs"
 
 [[bin]]
 name = "demo_compression_study"
-path = "demo_compression_study.rs"
+path = "demos/archived/demo_compression_study.rs"
 
 [[bin]]
 name = "demo_compression_evolution"
-path = "demo_compression_evolution.rs"
+path = "demos/archived/demo_compression_evolution.rs"
 
 [[bin]]
 name = "demo_self_compilation"
-path = "demo_self_compilation.rs"
+path = "demos/archived/demo_self_compilation.rs"
 
 [[bin]]
 name = "demo_syn_spectrum"
-path = "demo_syn_spectrum.rs"
+path = "demos/archived/demo_syn_spectrum.rs"
 
 [[bin]]
 name = "demo_language_markets"
-path = "demo_language_markets.rs"
+path = "demos/archived/demo_language_markets.rs"
 
 [[bin]]
 name = "demo_universal_quine"
-path = "demo_universal_quine.rs"
+path = "demos/archived/demo_universal_quine.rs"
 
 [[bin]]
 name = "demo_rustc_fuzzer"
-path = "demo_rustc_fuzzer.rs"
+path = "demos/archived/demo_rustc_fuzzer.rs"
 
 [[bin]]
 name = "demo_rustc_labeler"
-path = "demo_rustc_labeler.rs"
+path = "demos/archived/demo_rustc_labeler.rs"
 
 [[bin]]
 name = "demo_proof_table"
-path = "demo_proof_table.rs"
+path = "demos/archived/demo_proof_table.rs"
 
 [[bin]]
 name = "demo_novelty_predictor"
-path = "demo_novelty_predictor.rs"
+path = "demos/archived/demo_novelty_predictor.rs"
 
 [[bin]]
 name = "demo_scan_rust_src"
-path = "demo_scan_rust_src.rs"
+path = "demos/archived/demo_scan_rust_src.rs"
 
 [[bin]]
 name = "demo_xz_to_syn"
-path = "demo_xz_to_syn.rs"
+path = "demos/archived/demo_xz_to_syn.rs"
 
 [[bin]]
 name = "demo_block_market"
-path = "demo_block_market.rs"
+path = "demos/archived/demo_block_market.rs"
 
 [[bin]]
 name = "demo_spectrum_comprehension"
-path = "demo_spectrum_comprehension.rs"
+path = "demos/archived/demo_spectrum_comprehension.rs"
 
 [[bin]]
 name = "demo_perf_scanner"
-path = "demo_perf_scanner.rs"
+path = "demos/archived/demo_perf_scanner.rs"
 
 [[bin]]
 name = "demo_content_store"
-path = "demo_content_store.rs"
+path = "demos/archived/demo_content_store.rs"
 
 [[bin]]
 name = "demo_ingest_rustc"
-path = "demo_ingest_rustc.rs"
+path = "demos/archived/demo_ingest_rustc.rs"
 
 [[bin]]
 name = "demo_nix_build_analyze"
-path = "demo_nix_build_analyze.rs"
+path = "demos/archived/demo_nix_build_analyze.rs"
 
 [[bin]]
 name = "demo_scan_git_packs"
-path = "demo_scan_git_packs.rs"
+path = "demos/archived/demo_scan_git_packs.rs"
 
 [[bin]]
 name = "demo_git_pack_market"
-path = "demo_git_pack_market.rs"
+path = "demos/archived/demo_git_pack_market.rs"
 
 [[bin]]
 name = "demo_p2p_network"
-path = "demo_p2p_network.rs"
+path = "demos/archived/demo_p2p_network.rs"
 
 [[bin]]
 name = "demo_proof_matrix"
-path = "demo_proof_matrix.rs"
+path = "demos/archived/demo_proof_matrix.rs"
 
 [[bin]]
 name = "demo_trace_expansion"
-path = "demo_trace_expansion.rs"
+path = "demos/archived/demo_trace_expansion.rs"
 
 [[bin]]
 name = "demo_ast_proof"
-path = "demo_proof_table.rs"
+path = "demos/archived/demo_proof_table.rs"
 
 [[bin]]
 name = "demo_swarm_hunt"
-path = "demo_swarm_hunt.rs"
+path = "demos/archived/demo_swarm_hunt.rs"
 
 [[bin]]
 name = "demo_hir_mir"
-path = "demo_hir_mir.rs"
+path = "demos/archived/demo_hir_mir.rs"
 
 [[bin]]
 name = "demo_lattice"
-path = "demo_lattice.rs"
+path = "demos/archived/demo_lattice.rs"
 
 [[bin]]
 name = "demo_branch_mining"
-path = "demo_branch_mining.rs"
+path = "demos/archived/demo_branch_mining.rs"
 
 [[bin]]
 name = "demo_markov_mining"
-path = "demo_markov_mining.rs"
+path = "demos/archived/demo_markov_mining.rs"
 
 [[bin]]
 name = "demo_universal_llm_proxy"
-path = "demo_universal_llm_proxy.rs"
+path = "demos/archived/demo_universal_llm_proxy.rs"
 
 [[bin]]
 name = "demo_nix_workflow"
-path = "demo_nix_workflow.rs"
+path = "demos/archived/demo_nix_workflow.rs"
 
 [[bin]]
 name = "demo_universal_exporter"
-path = "demo_universal_exporter.rs"
+path = "demos/archived/demo_universal_exporter.rs"
 
 [[bin]]
 name = "demo_self_deploy"
-path = "demo_self_deploy.rs"
+path = "demos/archived/demo_self_deploy.rs"
 
 [[bin]]
 name = "demo_duplication_scanner"
-path = "demo_duplication_scanner.rs"
+path = "demos/archived/demo_duplication_scanner.rs"
 
 [[bin]]
 name = "demo_parallel_scanner"
-path = "demo_parallel_scanner.rs"
+path = "demos/archived/demo_parallel_scanner.rs"
 
 [[bin]]
 name = "code_duplication_scanner"
@@ -182,19 +182,19 @@ path = "code_duplication_scanner.rs"
 
 [[bin]]
 name = "demo_backend_equivalence"
-path = "demo_backend_equivalence.rs"
+path = "demos/archived/demo_backend_equivalence.rs"
 
 [[bin]]
 name = "demo_so_mapper"
-path = "demo_so_mapper.rs"
+path = "demos/archived/demo_so_mapper.rs"
 
 [[bin]]
 name = "demo_nix_recorder"
-path = "demo_nix_recorder.rs"
+path = "demos/archived/demo_nix_recorder.rs"
 
 [[bin]]
 name = "demo_gemini_nodes"
-path = "demo_gemini_nodes.rs"
+path = "demos/archived/demo_gemini_nodes.rs"
 
 [[bin]]
 name = "trading_node"
@@ -1011,11 +1011,11 @@ all-libs = ["content-address", "mcp", "git-ops"]
 
 [[bin]]
 name = "demo_function_loader"
-path = "demo_function_loader.rs"
+path = "demos/archived/demo_function_loader.rs"
 
 [[bin]]
 name = "demo_meta_mcp"
-path = "demo_meta_mcp.rs"
+path = "demos/archived/demo_meta_mcp.rs"
 
 [[bin]]
 name = "fake_replacer"
