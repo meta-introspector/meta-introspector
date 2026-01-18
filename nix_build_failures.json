@@ -1,0 +1,1727 @@
+{
+  "total": 396,
+  "success": 252,
+  "failed": 144,
+  "by_category": {
+    "other": 129,
+    "missing-attr": 5,
+    "missing-default": 10
+  },
+  "projects": {
+    "solflake": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solflake_20260118_062626.log"
+    },
+    "rungemini": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rungemini_20260118_024252.log"
+    },
+    "Marinade_Finance": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Marinade_Finance_20260118_020926.log"
+    },
+    "P2PKH": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2PKH_20260118_015736.log"
+    },
+    "12": {
+      "category": "other",
+      "reason": "flake 'git+file:///mnt/data1/nix/source/github/meta-introspector/streamofrandom/2025?dir=10/12' lack",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/12_20260118_025202.log"
+    },
+    "llm-result-purifier-flake": {
+      "category": "other",
+      "reason": "cannot find flake 'flake:impureLlmResult' in the flake registries",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-result-purifier-flake_20260118_024939.log"
+    },
+    "consumer": {
+      "category": "other",
+      "reason": "cannot find flake 'flake:hackathon-status-raw' in the flake registries",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/consumer_20260118_025109.log"
+    },
+    "avalanchego": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/avalanchego_20260118_064310.log"
+    },
+    "composite-2-3-5-7-11-13-nix-base-home-oauth-telemetry-llm-output-makefile-input": {
+      "category": "other",
+      "reason": "Path 'flakes/feature-3-home-dir-creds/default.nix' does not exist in Git repository \"/mnt/data1/nix/",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-11-13-nix-base-home-oauth-telemetry-llm-output-makefile-input_20260118_024739.log"
+    },
+    "crq-search-lattice": {
+      "category": "other",
+      "reason": "dynamic attribute 'aarch64-linux' already defined at /mnt/data1/nix/source/github/meta-introspector/",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/crq-search-lattice_20260118_024642.log"
+    },
+    "llm-data-extractor-flake": {
+      "category": "other",
+      "reason": "undefined variable 'prompt'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-data-extractor-flake_20260118_025110.log"
+    },
+    "ruby": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ruby_20260118_022953.log"
+    },
+    "asm_wasm": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_wasm_20260118_022513.log"
+    },
+    "rustc-from-source": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rustc-from-source_20260118_011529.log"
+    },
+    "typecheck": {
+      "category": "other",
+      "reason": "Path '10/15/zos/ooda/tasks/act/flake.nix' does not exist in Git repository \"/mnt/data1/nix/source/gi",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/typecheck_20260118_024846.log"
+    },
+    "spore-cultivation-lab-flake": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/spore-cultivation-lab-flake_20260118_025057.log"
+    },
+    "source-config": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/source-config_20260118_024847.log"
+    },
+    "003_sanitize_extracted_data": {
+      "category": "other",
+      "reason": "Could not open file /nix/store/b1ayn0ln6n8bm2spz441csqc2ss66az3-hello-2.12.2/extracted-data.json: No",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/003_sanitize_extracted_data_20260118_025131.log"
+    },
+    "block_825003": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825003_20260118_012903.log"
+    },
+    "mongodb": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mongodb_20260118_022442.log"
+    },
+    "keyword-searcher": {
+      "category": "other",
+      "reason": "undefined variable 'searchScript'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/keyword-searcher_20260118_024917.log"
+    },
+    "composite-2-3-5-7-11-nix-base-home-oauth-telemetry-llm-output": {
+      "category": "other",
+      "reason": "Path 'flakes/feature-3-home-dir-creds/default.nix' does not exist in Git repository \"/mnt/data1/nix/",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-11-nix-base-home-oauth-telemetry-llm-output_20260118_024643.log"
+    },
+    "Aave_V3_Pool": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Aave_V3_Pool_20260118_014500.log"
+    },
+    "tcl": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/tcl_20260118_021207.log"
+    },
+    "solana-nix": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solana-nix_20260118_025106.log"
+    },
+    "feature-19-self-source-input": {
+      "category": "other",
+      "reason": "undefined variable 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-19-self-source-input_20260118_024643.log"
+    },
+    "log-analysis-pipeline": {
+      "category": "other",
+      "reason": "undefined variable 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/log-analysis-pipeline_20260118_024024.log"
+    },
+    "feature-5-oauth-creds": {
+      "category": "other",
+      "reason": "undefined variable 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-5-oauth-creds_20260118_024651.log"
+    },
+    "P2WPKH": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2WPKH_20260118_015459.log"
+    },
+    "github-api-wrapper": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-api-wrapper_20260118_025056.log"
+    },
+    "go": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/go_20260118_064319.log"
+    },
+    "composite-2-3-5-7-nix-base-home-oauth-telemetry": {
+      "category": "other",
+      "reason": "Path 'flakes/feature-3-home-dir-creds/default.nix' does not exist in Git repository \"/mnt/data1/nix/",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-nix-base-home-oauth-telemetry_20260118_024700.log"
+    },
+    "Curve_3pool": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Curve_3pool_20260118_062034.log"
+    },
+    "meta-introspector": {
+      "category": "other",
+      "reason": "failed to run custom build command for `openssl-sys v0.9.111`",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/meta-introspector_20260118_013943.log"
+    },
+    "graph_partition": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/graph_partition_20260118_021753.log"
+    },
+    "scheme": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/scheme_20260118_022413.log"
+    },
+    "bridge-pattern": {
+      "category": "other",
+      "reason": "cannot find flake 'flake:consumer' in the flake registries",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bridge-pattern_20260118_025109.log"
+    },
+    "Compound_cETH": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Compound_cETH_20260118_062022.log"
+    },
+    "flake_auditor": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/flake_auditor_20260118_025806.log"
+    },
+    "github-grep-flake": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-grep-flake_20260118_025057.log"
+    },
+    "Timelock": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Timelock_20260118_015919.log"
+    },
+    "verilog": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/verilog_20260118_021345.log"
+    },
+    "Orca_Whirlpool": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Orca_Whirlpool_20260118_062135.log"
+    },
+    "nar-loader": {
+      "category": "other",
+      "reason": "undefined variable 'narFile'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-loader_20260118_024927.log"
+    },
+    "rust-libc-interceptor": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-libc-interceptor_20260118_013836.log"
+    },
+    "nix-ngram-indexer": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-ngram-indexer_20260118_024929.log"
+    },
+    "rust": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust_20260118_021417.log"
+    },
+    "nix-llm-context": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-llm-context_20260118_024459.log"
+    },
+    "rust-overlay-test": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-overlay-test_20260118_010336.log"
+    },
+    "slot_250000002": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000002_20260118_013203.log"
+    },
+    "full-graph": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/full-graph_20260118_024621.log"
+    },
+    "2025-01-27-minimal-qa-test": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/2025-01-27-minimal-qa-test_20260118_024451.log"
+    },
+    "rust-telemetry-driver": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-telemetry-driver_20260118_014423.log"
+    },
+    "zos": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'flake' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos_20260118_024847.log"
+    },
+    "search-utils": {
+      "category": "other",
+      "reason": "undefined variable 'searchUtils'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/search-utils_20260118_024927.log"
+    },
+    "002a_grep_references": {
+      "category": "other",
+      "reason": "Path '10/12/audit-flakes/002_extract_data/flake.nix' does not exist in Git repository \"/mnt/data1/ni",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002a_grep_references_20260118_025120.log"
+    },
+    "metacoq": {
+      "category": "missing-attr",
+      "reason": "Missing attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/metacoq_20260118_021222.log"
+    },
+    "file-indexer": {
+      "category": "other",
+      "reason": "undefined variable 'searchPath'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/file-indexer_20260118_024926.log"
+    },
+    "datalog": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/datalog_20260118_022052.log"
+    },
+    "workflow-tasks": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/workflow-tasks_20260118_024756.log"
+    },
+    "nix-llm-task": {
+      "category": "other",
+      "reason": "path '\u00abgithub:meta-introspector/time-2025/ef1039f2bbbd62cb802eab667078b4566d9f9b5c\u00bb/09/22/crq-binsto",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-llm-task_20260118_024459.log"
+    },
+    "grep-nar-flake": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/grep-nar-flake_20260118_025905.log"
+    },
+    "self-ngram-analyzer": {
+      "category": "missing-attr",
+      "reason": "Missing attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/self-ngram-analyzer_20260118_024651.log"
+    },
+    "eval-context": {
+      "category": "missing-default",
+      "reason": "No packages.default attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/eval-context_20260118_024925.log"
+    },
+    "crq-document-check": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/crq-document-check_20260118_024543.log"
+    },
+    "Balancer_Vault": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Balancer_Vault_20260118_061959.log"
+    },
+    "test_nix_project": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test_nix_project_20260118_023942.log"
+    },
+    "node": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/node_20260118_021401.log"
+    },
+    "004_fold_to_matrix": {
+      "category": "other",
+      "reason": "\u001b[0mAssertion 'path.empty() || path.front().empty()' failed in std::string nix::ParsedURL::renderAut",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/004_fold_to_matrix_20260118_025115.log"
+    },
+    "xml": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/xml_20260118_021144.log"
+    },
+    "search-results": {
+      "category": "other",
+      "reason": "access to absolute path '/nix/store/10/11/nar-locator/flake.nix' is forbidden in pure evaluation mod",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/search-results_20260118_023943.log"
+    },
+    "jobs": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/jobs_20260118_023942.log"
+    },
+    "lean4": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lean4_20260118_031207.log"
+    },
+    "MakerDAO_DAI": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/MakerDAO_DAI_20260118_015057.log"
+    },
+    "composite-2-3-nix-base-home-creds": {
+      "category": "other",
+      "reason": "Path 'flakes/feature-3-home-dir-creds/default.nix' does not exist in Git repository \"/mnt/data1/nix/",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-nix-base-home-creds_20260118_024742.log"
+    },
+    "composite-2-3-5-7-11-13-17-nix-base-home-oauth-telemetry-llm-output-makefile-input-yolo": {
+      "category": "other",
+      "reason": "Path 'flakes/feature-3-home-dir-creds/default.nix' does not exist in Git repository \"/mnt/data1/nix/",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-11-13-17-nix-base-home-oauth-telemetry-llm-output-makefile-input-yolo_20260118_024701.log"
+    },
+    "run-zos-tasks": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/run-zos-tasks_20260118_024847.log"
+    },
+    "sql": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/sql_20260118_023023.log"
+    },
+    "block_825004": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825004_20260118_012811.log"
+    },
+    "nix": {
+      "category": "missing-default",
+      "reason": "No packages.default attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix_20260118_011707.log"
+    },
+    "nix2": {
+      "category": "other",
+      "reason": "unable to download 'https://api.github.com/repos/meta-introspector/get-nix-file-list/commits/feature",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix2_20260118_025911.log"
+    },
+    "dry-run-flake-evaluator": {
+      "category": "other",
+      "reason": "expected flake output attribute 'packages.x86_64-linux.default' to be a derivation or path but found",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/dry-run-flake-evaluator_20260118_024710.log"
+    },
+    "asm_mips": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_mips_20260118_022133.log"
+    },
+    "zos-bootstrap": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-bootstrap_20260118_012103.log"
+    },
+    "c4-use-cases": {
+      "category": "other",
+      "reason": "unable to download 'https://api.github.com/repos/meta-introspector/default/commits/feature/CRQ-016-n",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/c4-use-cases_20260118_024917.log"
+    },
+    "nix_expr": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix_expr_20260118_022802.log"
+    },
+    "chisel": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/chisel_20260118_023017.log"
+    },
+    "colosseum-mirror": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/colosseum-mirror_20260118_024929.log"
+    },
+    "meta-orchestrator": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/meta-orchestrator_20260118_024802.log"
+    },
+    "zos-spore-vial-flake": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-spore-vial-flake_20260118_025102.log"
+    },
+    "isabelle": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/isabelle_20260118_021909.log"
+    },
+    "binstore-prime-md-indexes": {
+      "category": "other",
+      "reason": "unable to download 'https://api.github.com/repos/meta-introspector/default/commits/feature/CRQ-016-n",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/binstore-prime-md-indexes_20260118_024928.log"
+    },
+    "malbolge": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/malbolge_20260118_022816.log"
+    },
+    "mini-zkp-verifier": {
+      "category": "other",
+      "reason": "input 'flake-utils/systems' follows a non-existent input 'nixpkgs/lib/systems/flakeExposed'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mini-zkp-verifier_20260118_024919.log"
+    },
+    "nix-to-poem-vial": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-to-poem-vial_20260118_024739.log"
+    },
+    "solfunmeme-profile": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solfunmeme-profile_20260118_025058.log"
+    },
+    "main": {
+      "category": "missing-default",
+      "reason": "No packages.default attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/main_20260118_024654.log"
+    },
+    "plugin-solana": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/plugin-solana_20260118_064103.log"
+    },
+    "parser": {
+      "category": "other",
+      "reason": "follow cycle detected: [base -> base]",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/parser_20260118_024640.log"
+    },
+    "graphql": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/graphql_20260118_022122.log"
+    },
+    "bag-of-words-generator": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bag-of-words-generator_20260118_024652.log"
+    },
+    "number-searches": {
+      "category": "other",
+      "reason": "undefined variable 'searchScript'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/number-searches_20260118_025939.log"
+    },
+    "bench": {
+      "category": "missing-attr",
+      "reason": "Missing attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bench_20260118_030620.log"
+    },
+    "Raydium_AMM": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Raydium_AMM_20260118_062203.log"
+    },
+    "09": {
+      "category": "other",
+      "reason": "path '\u00abgithub:meta-introspector/time-2025/d670d37ce328808bfc0a8e8c6c7d49a61c11d843\u00bb/theory/nix-to-po",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/09_20260118_023944.log"
+    },
+    "orchestration-flake": {
+      "category": "other",
+      "reason": "path '\u00abgithub:meta-introspector/time-2025/d670d37ce328808bfc0a8e8c6c7d49a61c11d843\u00bb/theory/nix-to-po",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/orchestration-flake_20260118_025100.log"
+    },
+    "composite-2-3-5-7-11-13-17-19-nix-base-home-oauth-telemetry-llm-output-makefile-input-yolo-self-source": {
+      "category": "other",
+      "reason": "Path 'flakes/feature-3-home-dir-creds/default.nix' does not exist in Git repository \"/mnt/data1/nix/",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-11-13-17-19-nix-base-home-oauth-telemetry-llm-output-makefile-input-yolo-self-source_20260118_024649.log"
+    },
+    "Saber_StableSwap": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Saber_StableSwap_20260118_062146.log"
+    },
+    "Serum_DEX": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Serum_DEX_20260118_062152.log"
+    },
+    "libgit": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/libgit_20260118_011437.log"
+    },
+    "14": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/14_20260118_025753.log"
+    },
+    "feature-2-nix-base": {
+      "category": "other",
+      "reason": "undefined variable 'nix'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-2-nix-base_20260118_024549.log"
+    },
+    "move": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/move_20260118_022127.log"
+    },
+    "nar-binstore-builder": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-binstore-builder_20260118_024929.log"
+    },
+    "llvm": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llvm_20260118_022924.log"
+    },
+    "solana": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solana_20260118_013805.log"
+    },
+    "mina-zkp-integration-task": {
+      "category": "other",
+      "reason": "input 'flake-utils/systems' follows a non-existent input 'nixpkgs/lib/systems/flakeExposed'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mina-zkp-integration-task_20260118_024925.log"
+    },
+    "meta-introspector-fetchers": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/meta-introspector-fetchers_20260118_024933.log"
+    },
+    "ini": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ini_20260118_022324.log"
+    },
+    "feature-11-llm-output-capture": {
+      "category": "other",
+      "reason": "undefined variable 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-11-llm-output-capture_20260118_024701.log"
+    },
+    "piet": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/piet_20260118_022833.log"
+    },
+    "nix_derivation": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix_derivation_20260118_022339.log"
+    },
+    "gemini-integration": {
+      "category": "other",
+      "reason": "attribute 'buildInputs' already defined at /mnt/data1/nix/source/github/meta-introspector/streamofra",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/gemini-integration_20260118_024345.log"
+    },
+    "yaml": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/yaml_20260118_023034.log"
+    },
+    "json": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/json_20260118_021409.log"
+    },
+    "zos-production": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-production_20260118_005655.log"
+    },
+    "001_nar_exporter": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/001_nar_exporter_20260118_025533.log"
+    },
+    "slot_250000001": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000001_20260118_013401.log"
+    },
+    "test-secrets-sops": {
+      "category": "missing-default",
+      "reason": "No packages.default attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-secrets-sops_20260118_024438.log"
+    },
+    "sorter-suggester": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/sorter-suggester_20260118_024656.log"
+    },
+    "toml": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/toml_20260118_022839.log"
+    },
+    "llm-nix-simulator-flake": {
+      "category": "other",
+      "reason": "cannot find flake 'flake:llmApiWrapper' in the flake registries",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-nix-simulator-flake_20260118_025102.log"
+    },
+    "fish": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/fish_20260118_021248.log"
+    },
+    "nar-bridge-flake": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-bridge-flake_20260118_025109.log"
+    },
+    "zsh": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zsh_20260118_022435.log"
+    },
+    "Lightning_HTLC": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Lightning_HTLC_20260118_015648.log"
+    },
+    "block_825000": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825000_20260118_012631.log"
+    },
+    "snowbridge": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/snowbridge_20260118_064746.log"
+    },
+    "Jupiter_Aggregator": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Jupiter_Aggregator_20260118_062129.log"
+    },
+    "fetch-github-data": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/fetch-github-data_20260118_025911.log"
+    },
+    "context": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/context_20260118_024621.log"
+    },
+    "P2WSH": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2WSH_20260118_062047.log"
+    },
+    "bootstrap-mycology-schedule-flake": {
+      "category": "other",
+      "reason": "cannot find flake 'flake:bridgeInstanceFlake' in the flake registries",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bootstrap-mycology-schedule-flake_20260118_025056.log"
+    },
+    "2025": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/2025_20260118_024745.log"
+    },
+    "feature-7-telemetry-capture": {
+      "category": "other",
+      "reason": "undefined variable 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-7-telemetry-capture_20260118_024505.log"
+    },
+    "coq": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/coq_20260118_022844.log"
+    },
+    "cargo-watch": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/cargo-watch_20260118_031925.log"
+    },
+    "base": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/base_20260118_024642.log"
+    },
+    "10": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/10_20260118_025901.log"
+    },
+    "feature-17-yolo-approval": {
+      "category": "other",
+      "reason": "undefined variable 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-17-yolo-approval_20260118_024710.log"
+    },
+    "seed-graph": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/seed-graph_20260118_024622.log"
+    },
+    "feature-13-makefile-input": {
+      "category": "other",
+      "reason": "undefined variable 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-13-makefile-input_20260118_024535.log"
+    },
+    "zos-spore-vial": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-spore-vial_20260118_024650.log"
+    },
+    "1inch_Router": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/1inch_Router_20260118_014745.log"
+    },
+    "13": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/13_20260118_024900.log"
+    },
+    "github-code-search": {
+      "category": "other",
+      "reason": "unable to download 'https://api.github.com/repos/meta-introspector/default/commits/feature/CRQ-016-n",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-code-search_20260118_024927.log"
+    },
+    "P2SH": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2SH_20260118_015550.log"
+    },
+    "zos-qa": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-qa_20260118_032141.log"
+    },
+    "nar-similarity-search": {
+      "category": "other",
+      "reason": "undefined variable 'keywords_json'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-similarity-search_20260118_024929.log"
+    },
+    "ssh": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ssh_20260118_011707.log"
+    },
+    "read-rs-vial": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/read-rs-vial_20260118_024640.log"
+    },
+    "minizinc-nix": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/minizinc-nix_20260118_025027.log"
+    },
+    "seed-data": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/seed-data_20260118_024554.log"
+    },
+    "slot_250000003": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000003_20260118_013058.log"
+    },
+    "z3": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/z3_20260118_021215.log"
+    },
+    "nar": {
+      "category": "other",
+      "reason": "\u001b[0mAssertion 'path.empty() || path.front().empty()' failed in std::string nix::ParsedURL::renderAut",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar_20260118_025902.log"
+    },
+    "read-md-vial": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/read-md-vial_20260118_024740.log"
+    },
+    "data-header": {
+      "category": "other",
+      "reason": "undefined variable 'packages'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/data-header_20260118_025618.log"
+    },
+    "gcc": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/gcc_20260118_022901.log"
+    },
+    "ethereum": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ethereum_20260118_013631.log"
+    },
+    "nixpacks": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nixpacks_20260118_011721.log"
+    },
+    "ipfs-store": {
+      "category": "other",
+      "reason": "input 'flake-utils/systems' follows a non-existent input 'nixpkgs/lib/systems/flakeExposed'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ipfs-store_20260118_024927.log"
+    },
+    "idris2": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/idris2_20260118_021433.log"
+    },
+    "repo-analyzer": {
+      "category": "other",
+      "reason": "attempt to call something which is not a function but a set: { lastModified = 1760126801; lastModifi",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/repo-analyzer_20260118_024629.log"
+    },
+    "Mango_Markets": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Mango_Markets_20260118_062215.log"
+    },
+    "log_analyzer": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/log_analyzer_20260118_024100.log"
+    },
+    "22": {
+      "category": "other",
+      "reason": "Path '09/10/12/binstore/rnix-flake-ast.nar' does not exist in Git repository \"/mnt/data1/nix/source/",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/22_20260118_024500.log"
+    },
+    "brainfuck": {
+      "category": "missing-attr",
+      "reason": "Missing attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/brainfuck_20260118_021452.log"
+    },
+    "whitespace": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/whitespace_20260118_021200.log"
+    },
+    "locktoinput": {
+      "category": "other",
+      "reason": "path '//data' is a symlink",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/locktoinput_20260118_024859.log"
+    },
+    "unlambda": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/unlambda_20260118_021727.log"
+    },
+    "wrap-gemini-secrets": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/wrap-gemini-secrets_20260118_024932.log"
+    },
+    "list-files": {
+      "category": "other",
+      "reason": "expected flake output attribute 'packages.x86_64-linux.default' to be a derivation or path but found",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/list-files_20260118_025909.log"
+    },
+    "ai-workflow": {
+      "category": "other",
+      "reason": "undefined variable 'archiveDerivation'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ai-workflow_20260118_024458.log"
+    },
+    "github-to-foaf": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-to-foaf_20260118_025938.log"
+    },
+    "asm_x86_64": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_x86_64_20260118_021741.log"
+    },
+    "vial-placeholder": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/vial-placeholder_20260118_024446.log"
+    },
+    "chainlink-solana": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/chainlink-solana_20260118_064129.log"
+    },
+    "bott8-layout-solver": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bott8-layout-solver_20260118_010558.log"
+    },
+    "002c_collected_locks_derivation": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002c_collected_locks_derivation_20260118_025142.log"
+    },
+    "P2TR": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2TR_20260118_020010.log"
+    },
+    "Uniswap_V2_Router": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Uniswap_V2_Router_20260118_014849.log"
+    },
+    "layer1": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/layer1_20260118_024641.log"
+    },
+    "005_final_report": {
+      "category": "other",
+      "reason": "\u001b[0mAssertion 'path.empty() || path.front().empty()' failed in std::string nix::ParsedURL::renderAut",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/005_final_report_20260118_025117.log"
+    },
+    "gemini-prompt-flake": {
+      "category": "missing-default",
+      "reason": "No packages.default attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/gemini-prompt-flake_20260118_025859.log"
+    },
+    "redis": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/redis_20260118_021439.log"
+    },
+    "03": {
+      "category": "missing-default",
+      "reason": "No packages.default attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/03_20260118_024931.log"
+    },
+    "get-nix-file-list": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/get-nix-file-list_20260118_025910.log"
+    },
+    "agda": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/agda_20260118_021534.log"
+    },
+    "genetic": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/genetic_20260118_021425.log"
+    },
+    "bash": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bash_20260118_022106.log"
+    },
+    "orient": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/orient_20260118_024847.log"
+    },
+    "polkadot-ethereum": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/polkadot-ethereum_20260118_064731.log"
+    },
+    "intercal": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/intercal_20260118_021828.log"
+    },
+    "python": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/python_20260118_021457.log"
+    },
+    "libhttp": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/libhttp_20260118_010100.log"
+    },
+    "nix-duplication-detector": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-duplication-detector_20260118_024928.log"
+    },
+    "jax_gpu": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/jax_gpu_20260118_021229.log"
+    },
+    "file-splitter": {
+      "category": "other",
+      "reason": "undefined variable 'files'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/file-splitter_20260118_024917.log"
+    },
+    "sparql": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/sparql_20260118_022636.log"
+    },
+    "rockstar": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rockstar_20260118_022419.log"
+    },
+    "preconditions": {
+      "category": "other",
+      "reason": "unable to download 'https://api.github.com/repos/meta-introspector/streamofrandom/commits/feature/ai",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/preconditions_20260118_025805.log"
+    },
+    "prolog": {
+      "category": "other",
+      "reason": "'swiProlog' has been renamed to/replaced by 'swi-prolog'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/prolog_20260118_021150.log"
+    },
+    "Solend_Protocol": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Solend_Protocol_20260118_020722.log"
+    },
+    "003_generate_bow_histogram": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/003_generate_bow_histogram_20260118_025120.log"
+    },
+    "asm": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_20260118_022735.log"
+    },
+    "1-build-system": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/1-build-system_20260118_024457.log"
+    },
+    "rustc-only-build": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rustc-only-build_20260118_012232.log"
+    },
+    "002_process_locks": {
+      "category": "other",
+      "reason": "cannot coerce a set to a string: { generateBagOfWords = \u00abthunk\u00bb; }",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002_process_locks_20260118_025126.log"
+    },
+    "mcts-nix": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mcts-nix_20260118_025111.log"
+    },
+    "source": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/source_20260118_011721.log"
+    },
+    "feature-3-home-dir-creds": {
+      "category": "other",
+      "reason": "undefined variable 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-3-home-dir-creds_20260118_024638.log"
+    },
+    "lean4-verifier": {
+      "category": "other",
+      "reason": "unable to download 'https://api.github.com/repos/meta-introspector/lean4/commits/feature/CRQ-016-nix",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lean4-verifier_20260118_024929.log"
+    },
+    "SushiSwap_Router": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/SushiSwap_Router_20260118_014442.log"
+    },
+    "response-007-cli-nar-output": {
+      "category": "other",
+      "reason": "cargoHash, cargoVendorDir, cargoDeps, or cargoLock must be set",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/response-007-cli-nar-output_20260118_024342.log"
+    },
+    "qa-all-new-flakes": {
+      "category": "other",
+      "reason": "undefined variable 'archiveDerivation'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/qa-all-new-flakes_20260118_024902.log"
+    },
+    "impure-wrapper": {
+      "category": "other",
+      "reason": "undefined variable 'spec'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/impure-wrapper_20260118_024836.log"
+    },
+    "librustc": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/librustc_20260118_012104.log"
+    },
+    "Uniswap_V3_Router": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Uniswap_V3_Router_20260118_062005.log"
+    },
+    "ocaml": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ocaml_20260118_022348.log"
+    },
+    "cirq": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/cirq_20260118_022117.log"
+    },
+    "Drift_Protocol": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Drift_Protocol_20260118_020538.log"
+    },
+    "number-searcher": {
+      "category": "other",
+      "reason": "undefined variable 'searchScript'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/number-searcher_20260118_024927.log"
+    },
+    "time": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/time_20260118_011906.log"
+    },
+    "test-urls": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-urls_20260118_024808.log"
+    },
+    "002d_processed_lock_files": {
+      "category": "other",
+      "reason": "Could not open file flake: No such file or directory",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002d_processed_lock_files_20260118_025123.log"
+    },
+    "Multisig_2of3": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Multisig_2of3_20260118_062113.log"
+    },
+    "audit-flakes": {
+      "category": "other",
+      "reason": "\u001b[0mAssertion 'path.empty() || path.front().empty()' failed in std::string nix::ParsedURL::renderAut",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/audit-flakes_20260118_025129.log"
+    },
+    "monster-knot-calculator": {
+      "category": "other",
+      "reason": "unable to download 'https://api.github.com/repos/meta-introspector/nar-similarity-search/commits/fea",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/monster-knot-calculator_20260118_024650.log"
+    },
+    "lmfdb2nix-implementation-task": {
+      "category": "other",
+      "reason": "unable to download 'https://api.github.com/repos/meta-introspector/lean4/commits/feature/CRQ-016-nix",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lmfdb2nix-implementation-task_20260118_024919.log"
+    },
+    "nar-locator": {
+      "category": "other",
+      "reason": "undefined variable 'archiveDerivation'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-locator_20260118_024927.log"
+    },
+    "solana-integration": {
+      "category": "other",
+      "reason": "input 'flake-utils/systems' follows a non-existent input 'nixpkgs/lib/systems/flakeExposed'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solana-integration_20260118_024919.log"
+    },
+    "block_18900004": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900004_20260118_012242.log"
+    },
+    "001_collect_locks": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/001_collect_locks_20260118_025122.log"
+    },
+    "hf-dataset-validator-rust": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/hf-dataset-validator-rust_20260118_025956.log"
+    },
+    "befunge": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/befunge_20260118_022810.log"
+    },
+    "Lido_stETH": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Lido_stETH_20260118_062041.log"
+    },
+    "nix-log-consumer-flake": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-log-consumer-flake_20260118_025159.log"
+    },
+    "tensorflow": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/tensorflow_20260118_022533.log"
+    },
+    "002_binstore_locator": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002_binstore_locator_20260118_025239.log"
+    },
+    "dwim": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/dwim_20260118_024857.log"
+    },
+    "000_rnix_dump": {
+      "category": "other",
+      "reason": "expect test failed",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/000_rnix_dump_20260118_025548.log"
+    },
+    "smt2": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/smt2_20260118_021844.log"
+    },
+    "data-sources": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/data-sources_20260118_024548.log"
+    },
+    "pytorch": {
+      "category": "other",
+      "reason": "'pytorch' has been renamed to/replaced by 'torch'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/pytorch_20260118_021242.log"
+    },
+    "act": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/act_20260118_024847.log"
+    },
+    "rust_knowledge_extractor": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust_knowledge_extractor_20260118_023239.log"
+    },
+    "filter": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/filter_20260118_024653.log"
+    },
+    "perl": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/perl_20260118_022059.log"
+    },
+    "neo4j": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/neo4j_20260118_021259.log"
+    },
+    "block_18900000": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900000_20260118_012345.log"
+    },
+    "micro": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/micro_20260118_024900.log"
+    },
+    "2025-01-27-gemini-hello-world": {
+      "category": "other",
+      "reason": "Cannot build '/nix/store/d6kqpry1pl9mlk665g46l3154pg1lmz2-gemini-hello-world-test-2025-01-27.drv'.",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/2025-01-27-gemini-hello-world_20260118_024447.log"
+    },
+    "data-lattice-builder": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/data-lattice-builder_20260118_024927.log"
+    },
+    "002a_inputs_only": {
+      "category": "other",
+      "reason": "flake attribute 'checks.x86_64-linux.healthcheck' is not a derivation",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002a_inputs_only_20260118_025153.log"
+    },
+    "003_generate_virtual_packages": {
+      "category": "other",
+      "reason": "\u001b[0mAssertion 'path.empty() || path.front().empty()' failed in std::string nix::ParsedURL::renderAut",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/003_generate_virtual_packages_20260118_025113.log"
+    },
+    "002b_inputs_and_description": {
+      "category": "other",
+      "reason": "flake attribute 'checks.x86_64-linux.healthcheck' is not a derivation",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002b_inputs_and_description_20260118_025148.log"
+    },
+    "typenum-1.18.0": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/typenum-1.18.0_20260118_023047.log"
+    },
+    "mycology-workflow": {
+      "category": "other",
+      "reason": "undefined variable 'geminiPrompt'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mycology-workflow_20260118_024738.log"
+    },
+    "github-data": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-data_20260118_024627.log"
+    },
+    "orient-test": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/orient-test_20260118_024847.log"
+    },
+    "bitcoin": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bitcoin_20260118_013647.log"
+    },
+    "meta-indexer": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/meta-indexer_20260118_024929.log"
+    },
+    "union": {
+      "category": "other",
+      "reason": "flake attribute 'packages.x86_64-linux.voyager-modules-plugins-names' is not a derivation",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/union_20260118_064747.log"
+    },
+    "psyche": {
+      "category": "missing-default",
+      "reason": "No packages.default attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/psyche_20260118_064327.log"
+    },
+    "solana-sdk": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solana-sdk_20260118_064137.log"
+    },
+    "c4-mycology-diagram": {
+      "category": "other",
+      "reason": "expected a string but got a thunk at /mnt/data1/nix/source/github/meta-introspector/streamofrandom/2",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/c4-mycology-diagram_20260118_024929.log"
+    },
+    "zos-spore-flake": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-spore-flake_20260118_025054.log"
+    },
+    "php": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/php_20260118_021356.log"
+    },
+    "test-env-var": {
+      "category": "missing-default",
+      "reason": "No packages.default attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-env-var_20260118_025152.log"
+    },
+    "slot_250000000": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000000_20260118_013309.log"
+    },
+    "observe": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/observe_20260118_024847.log"
+    },
+    "aggregator": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/aggregator_20260118_024623.log"
+    },
+    "block_18900001": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900001_20260118_012302.log"
+    },
+    "nix-log-sample-extractor-flake": {
+      "category": "other",
+      "reason": "undefined variable 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-log-sample-extractor-flake_20260118_025200.log"
+    },
+    "002_extract_raw_data": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002_extract_raw_data_20260118_025155.log"
+    },
+    "test": {
+      "category": "other",
+      "reason": "Path 'test/flake.nix' in the repository \"/mnt/data1/nix\" is not tracked by Git.",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test_20260118_011632.log"
+    },
+    "killerjoke": {
+      "category": "other",
+      "reason": "follow cycle detected: [base -> base]",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/killerjoke_20260118_025835.log"
+    },
+    "colosseum": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/colosseum_20260118_025107.log"
+    },
+    "consolidated-impure-gemini-telemetry": {
+      "category": "other",
+      "reason": "undefined variable 'geminiPrompt'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/consolidated-impure-gemini-telemetry_20260118_024445.log"
+    },
+    "composite-2-3-5-nix-base-home-oauth": {
+      "category": "other",
+      "reason": "Path 'flakes/feature-3-home-dir-creds/default.nix' does not exist in Git repository \"/mnt/data1/nix/",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-nix-base-home-oauth_20260118_024535.log"
+    },
+    "flake-reconstruction-lattice": {
+      "category": "other",
+      "reason": "path '\u00abgithub:meta-introspector/time-2025/ef1039f2bbbd62cb802eab667078b4566d9f9b5c\u00bb/tools/template_g",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/flake-reconstruction-lattice_20260118_024500.log"
+    },
+    "src": {
+      "category": "other",
+      "reason": "Path 'src/Cargo.toml' does not exist in Git repository \"/mnt/data1/nix\".",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/src_20260118_011641.log"
+    },
+    "vhdl": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/vhdl_20260118_021155.log"
+    },
+    "minizinc": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/minizinc_20260118_022520.log"
+    },
+    "rust-audit": {
+      "category": "other",
+      "reason": "expected a set but found a path: \u00abgithub:meta-introspector/time-2025/24eff6126a77093d6c16c5952d535b4",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-audit_20260118_024808.log"
+    },
+    "zos-server": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-server_20260118_031234.log"
+    },
+    "loop2": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/loop2_20260118_024846.log"
+    },
+    "llm-task-template": {
+      "category": "other",
+      "reason": "path '\u00abgithub:meta-introspector/time-2025/ef1039f2bbbd62cb802eab667078b4566d9f9b5c\u00bb/09/22/crq-binsto",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-task-template_20260118_024458.log"
+    },
+    "decide": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/decide_20260118_024847.log"
+    },
+    "reader": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/reader_20260118_024657.log"
+    },
+    "solidity": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solidity_20260118_022317.log"
+    },
+    "audit-with-rust": {
+      "category": "other",
+      "reason": "Path '10/14/audit-flakes/001_collect_locks/flake.nix' does not exist in Git repository \"/mnt/data1/n",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/audit-with-rust_20260118_025640.log"
+    },
+    "asm_aarch64": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_aarch64_20260118_021816.log"
+    },
+    "001_dump_nix": {
+      "category": "missing-default",
+      "reason": "No packages.default attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/001_dump_nix_20260118_025224.log"
+    },
+    "2025-01-27-build-time-gemini-capture": {
+      "category": "other",
+      "reason": "cannot find flake 'flake:geminiCredsDir' in the flake registries",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/2025-01-27-build-time-gemini-capture_20260118_024446.log"
+    },
+    "github-data-fetcher-flake": {
+      "category": "other",
+      "reason": "undefined variable 'githubRepo'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-data-fetcher-flake_20260118_024939.log"
+    },
+    "r": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/r_20260118_022428.log"
+    },
+    "asm_riscv": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_riscv_20260118_021351.log"
+    },
+    "mcts": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mcts_20260118_022224.log"
+    },
+    "llm-api-wrapper": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-api-wrapper_20260118_025106.log"
+    },
+    "project-index-nar": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'flake' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/project-index-nar_20260118_024917.log"
+    },
+    "with-rust": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/with-rust_20260118_024741.log"
+    },
+    "document-single-flake-pipeline": {
+      "category": "other",
+      "reason": "syntax error, unexpected invalid token, expecting ';'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/document-single-flake-pipeline_20260118_024755.log"
+    },
+    "slot_250000004": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000004_20260118_013002.log"
+    },
+    "block_825002": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825002_20260118_012536.log"
+    },
+    "block_825001": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825001_20260118_012722.log"
+    },
+    "oeis-indexer": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/oeis-indexer_20260118_024920.log"
+    },
+    "lmfdb2nix": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lmfdb2nix_20260118_024904.log"
+    },
+    "test-package-bag-of-words": {
+      "category": "other",
+      "reason": "\u001b[0mAssertion 'path.empty() || path.front().empty()' failed in std::string nix::ParsedURL::renderAut",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-package-bag-of-words_20260118_023141.log"
+    },
+    "repro-issue": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/repro-issue_20260118_025158.log"
+    },
+    "examples": {
+      "category": "other",
+      "reason": "\u001b[0mAssertion 'path.empty() || path.front().empty()' failed in std::string nix::ParsedURL::renderAut",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/examples_20260118_025906.log"
+    },
+    "block_18900003": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900003_20260118_012437.log"
+    },
+    "article-wrapper": {
+      "category": "other",
+      "reason": "expected flake output attribute 'packages.x86_64-linux.default' to be a derivation or path but found",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/article-wrapper_20260118_024545.log"
+    },
+    "Phoenix_DEX": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Phoenix_DEX_20260118_020300.log"
+    },
+    "mcts-solana-flake": {
+      "category": "other",
+      "reason": "undefined variable 'promptTemplate'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mcts-solana-flake_20260118_025059.log"
+    },
+    "qa-nar-similarity-pipeline": {
+      "category": "other",
+      "reason": "invalid flake input attribute path element 'narSimilaritySearch.narLocatorFlake'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/qa-nar-similarity-pipeline_20260118_024928.log"
+    },
+    "proof": {
+      "category": "missing-attr",
+      "reason": "Missing attribute",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/proof_20260118_025615.log"
+    },
+    "julia": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/julia_20260118_021704.log"
+    },
+    "haskell": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/haskell_20260118_022826.log"
+    },
+    "block_18900002": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900002_20260118_012234.log"
+    },
+    "vyper": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/vyper_20260118_023028.log"
+    },
+    "hackathon-mycology-workflow-puml": {
+      "category": "other",
+      "reason": "undefined variable 'monster_genome_data'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/hackathon-mycology-workflow-puml_20260118_024746.log"
+    },
+    "project-scheduler-flake": {
+      "category": "other",
+      "reason": "undefined variable 'promptTemplate'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/project-scheduler-flake_20260118_025112.log"
+    },
+    "predicate-analyzer": {
+      "category": "other",
+      "reason": "undefined variable 'allFiles'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/predicate-analyzer_20260118_024554.log"
+    },
+    "004_nix_to_solana_translator": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/004_nix_to_solana_translator_20260118_025530.log"
+    },
+    "consolidated-impure-gemini-telemetry-modules": {
+      "category": "other",
+      "reason": "Path '10/08/09/27/7-concepts/6-qa-testing/tests/consolidated-impure-gemini-telemetry/flake.nix' does",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/consolidated-impure-gemini-telemetry-modules_20260118_024935.log"
+    },
+    "ook": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ook_20260118_022111.log"
+    },
+    "telemetry-wrapper": {
+      "category": "other",
+      "reason": "undefined variable 'geminiPrompt'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/telemetry-wrapper_20260118_024740.log"
+    },
+    "qiskit": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/qiskit_20260118_021340.log"
+    },
+    "lua": {
+      "category": "success",
+      "reason": null,
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lua_20260118_022332.log"
+    },
+    "test-bug-repro-nix-2gram-indexer": {
+      "category": "other",
+      "reason": "flake 'self' attribute 'url' is not supported",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-bug-repro-nix-2gram-indexer_20260118_023237.log"
+    },
+    "nix_concepts_and_facts": {
+      "category": "other",
+      "reason": "function 'anonymous lambda' called without required argument 'lib'",
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix_concepts_and_facts_20260118_023940.log"
+    }
+  }
+}
