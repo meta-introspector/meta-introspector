@@ -81,18 +81,26 @@
         in
         pkgs.runCommand "${projectName}-with-logs" {
           inherit logDrv;
+          nativeBuildInputs = [ pkgs.linuxPackages.perf pkgs.strace ];
         } ''
-          mkdir -p $out
+          mkdir -p $out/perf-data
           
-          # Try to build project (run binary if it exists)
+          # Try to build project with perf collection
           set +e
           if [ -d ${project} ]; then
             echo "Project is a directory: ${project}" > build.log
             if [ -f ${project}/bin/* ]; then
-              ${project}/bin/* --version 2>&1 | tee -a build.log
+              # Collect perf data
+              perf record -o $out/perf-data/perf.data -e cycles,instructions,cache-misses,branch-misses \
+                ${project}/bin/* --version 2>&1 | tee -a build.log
+              
+              # Collect strace
+              strace -o $out/perf-data/strace.log -c ${project}/bin/* --version 2>&1 | tee -a build.log
             fi
           elif [ -f ${project} ]; then
-            ${project} --version 2>&1 | tee build.log
+            perf record -o $out/perf-data/perf.data -e cycles,instructions,cache-misses,branch-misses \
+              ${project} --version 2>&1 | tee build.log
+            strace -o $out/perf-data/strace.log -c ${project} --version 2>&1 | tee -a build.log
           else
             echo "Unknown project type" > build.log
           fi
