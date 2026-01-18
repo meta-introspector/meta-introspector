@@ -63,7 +63,7 @@ fn main() -> Result<()> {
     // Create Parquet writer
     let file = File::create(&output_path)?;
     let props = WriterProperties::builder()
-        .set_compression(parquet::basic::Compression::ZSTD)
+        .set_compression(parquet::basic::Compression::SNAPPY)
         .build();
     
     let mut writer = ArrowWriter::try_new(file, schema.clone(), Some(props))?;
