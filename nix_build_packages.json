@@ -1,0 +1,4213 @@
+{
+  "000_rnix_dump": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/i01ifp9p50sclgsg0amh0idyw8isbiqy-rnix-parser-0.12.0",
+        "/nix/store/wkmdjpsczga3m9q8xn164zra4r9i9pzk-rnix-parser-0.12.0-doc",
+        "/nix/store/lwgay7ynfk3f54rl3kj4g027g24n96x7-rnix-ast-json",
+        "/nix/store/vhripdl5hi9ymm9yqw9aqxc6a52z8grq-rnix-ast-json.drv",
+        "/nix/store/zc1846bac3i7ml8yg50099xjmdq47fka-source",
+        "/nix/store/2hx0n1mqd9xdfzlg31qcvk8g5jdwbgf8-rnix-parser-0.12.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/000_rnix_dump_20260118_025548.log",
+      "has_derivation": true
+    }
+  ],
+  "001_collect_locks": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/w4q0gwlr79bmkmv6cqh1ssd5840psmwj-lock-file-19.drv",
+        "/nix/store/w25fwg2mnfgkz6ssv9vlysnw89ng8pwh-lock-file-1.drv",
+        "/nix/store/ws00h975w7kmvbsxxwx426karf8lj86q-lock-file-17.drv",
+        "/nix/store/wrqhdxmmzjzbakkbc4g3swgdp0i3mf1y-lock-file-20.drv",
+        "/nix/store/5a98y9724wjijmcmbfyr0bmr7mn2hhyq-lock-file-12.drv",
+        "/nix/store/qnncsrsvb6payd67png1xiqfmczdbhq2-lock-file-3.drv",
+        "/nix/store/gqvs5j5lds9n71l71sg8xjijjznmj863-lock-file-23.drv",
+        "/nix/store/qhjbicm173w6zbz717lrdzc69nkq1x7b-lock-file-25.drv",
+        "/nix/store/lmmv4ylk6ajv5f0aicq9qkmsh1zjhfj4-lock-file-9.drv",
+        "/nix/store/f1lzfbdb4vcmn0987jw78bmvz91fblzk-lock-file-15.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/001_collect_locks_20260118_025122.log",
+      "has_derivation": true
+    }
+  ],
+  "001_dump_nix": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/001_dump_nix_20260118_025224.log",
+      "has_derivation": false
+    }
+  ],
+  "001_nar_exporter": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/yfzs179lccd1i5b1b386mwd6vzj3wvgg-ast-nar-file.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/001_nar_exporter_20260118_025533.log",
+      "has_derivation": true
+    }
+  ],
+  "002_binstore_locator": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/5wk1g172y28x05lv8di2zqalscxjirf0-download",
+        "/nix/store/5vgc9nc02qmfxfq04v4f45sipm0imqrg-plotters-backend-0.3.4.drv",
+        "/nix/store/nxi3bpqgjyn07dfki4vjqnwmnb7a9slb-web-sys-0.3.58.drv",
+        "/nix/store/217gfanrv877n6akdm1n88m4mp8bx92k-download",
+        "/nix/store/3kxag9rdzpmc3vpzmvb2ma8sn5adrvfw-download",
+        "/nix/store/azqr3hgkk3aa3xl45q867ijcg1gyfbwk-itoa-0.4.8.drv",
+        "/nix/store/pyy8wfcnkwafk8wps2h8wxf3fb0sjka6-download.drv",
+        "/nix/store/asi16nwm8pim496aay305xri0kyc2qs5-aws-c-sdkutils-0.2.4",
+        "/nix/store/3g8fy0qfsszrxkql62sv4flw00zxidq3-winapi-util-0.1.5.drv",
+        "/nix/store/i6rckxfxqxkp4nhqz8kcb0mvizwvs1f8-download"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002_binstore_locator_20260118_025239.log",
+      "has_derivation": true
+    }
+  ],
+  "002_extract_raw_data": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/rl5m4zxd24mkysmpbp4j9ak6q7ia6vj8-hello-2.12.2.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002_extract_raw_data_20260118_025155.log",
+      "has_derivation": true
+    }
+  ],
+  "002_process_locks": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002_process_locks_20260118_025126.log",
+      "has_derivation": false
+    }
+  ],
+  "002a_grep_references": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002a_grep_references_20260118_025120.log",
+      "has_derivation": false
+    }
+  ],
+  "002a_inputs_only": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/mb1k333mbx6kljnb00882hg0p7zjqx5a-inputs-info.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002a_inputs_only_20260118_025153.log",
+      "has_derivation": true
+    }
+  ],
+  "002b_inputs_and_description": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/0c1w2lqh6ll6cwjdmvpc8d9fb7aqzyhi-inputs-and-description-info.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002b_inputs_and_description_20260118_025148.log",
+      "has_derivation": true
+    }
+  ],
+  "002c_collected_locks_derivation": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/sdky2j7csvdz2xjyx85l9z1mxn76m67k-processed-lock-file-13.drv",
+        "/nix/store/hsawlrhbic0xs2vnyihf41zwqsrsqdch-lock-file-5.drv",
+        "/nix/store/fllbn38gna122l4hayjh7k5h7jwj86ql-lock-file-17.drv",
+        "/nix/store/b0vs8kcv40fdj4g72s9j1pilbqqkxn60-lock-file-6.drv",
+        "/nix/store/mmly82rvaczjlhm1wzrqcs1zazj0kwyd-processed-lock-file-17.drv",
+        "/nix/store/p9ppr5gglwi9ia3b96qrpqd07cxkhd8m-all-processed-package-names.drv",
+        "/nix/store/1m8874z62w5nbkciqa3w7gfmdq4mzxkb-processed-lock-file-12",
+        "/nix/store/3x5ahhnd3k7x3ddk2fng6v6xzd84vcx6-lock-file-12.drv",
+        "/nix/store/b7hrzvhjnfxh29ky589lkxp8yxfqwqfg-processed-lock-file-4.drv",
+        "/nix/store/qg5njsg10ni3yysa53qm115chmvlpbbb-lock-file-19.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002c_collected_locks_derivation_20260118_025142.log",
+      "has_derivation": true
+    }
+  ],
+  "002d_processed_lock_files": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/sykhdphyg52hlcfh75i3zzlw1ygn7b1d-processed-lock-file-25.drv",
+        "/nix/store/vldbrnzb8dyv524dfrn98n384la27q91-lock-file-16.drv",
+        "/nix/store/i83p5yml4f6kznymby57mqzwy2qk8cfd-processed-lock-file-1.drv",
+        "/nix/store/nksb7pbr0qfxly2qy2jwsazay3dmnkcl-processed-lock-file-7",
+        "/nix/store/9f6jnxrchcn1264jmv224qck019hwjz6-processed-lock-file-3.drv",
+        "/nix/store/27y63qlb02xhsm5fhm9bk5bpf3h8zibr-lock-file-6",
+        "/nix/store/sp9nz56i687j911k7pr17nx0qkrvhfr1-lock-file-8.drv",
+        "/nix/store/nwyvimc3z38kqqyi4vs7rhrxyb0l14az-processed-lock-file-2",
+        "/nix/store/giskrr9ry9wbr4rha2l7bmm1l42fxqsc-lock-file-26.drv",
+        "/nix/store/8108n9x7q43m90rnkr0szpaq6ibghbpz-lock-file-23.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/002d_processed_lock_files_20260118_025123.log",
+      "has_derivation": true
+    }
+  ],
+  "003_generate_bow_histogram": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/7jvwwz45qap70i6asxzcnbshhz88a5sv-jq-1.8.1-bin",
+        "/nix/store/h30ycigfv1xgjpj5v0wgb4iigfdvpkyp-source/10/12/audit-flakes/001_collect_locks/all-lock-file-summaries.json:",
+        "/nix/store/a8y66yn0xb9y3abm0gjw2a5l7hv9lyw2-bow-histogram",
+        "/nix/store/byi56qh6h63rdhfjh4plnyndfcpqx13p-jq-1.8.1",
+        "/nix/store/5rp4imr3xn3qwwxpgmss2q9pj8bak9wy-jq-1.8.1-dev",
+        "/nix/store/z6fss9k317dzj5mm8zccs8xlr870zswi-oniguruma-6.9.10-lib",
+        "/nix/store/1wdp5n8vihn6f1cmzplgdrj0zq7jacma-bow-histogram.drv",
+        "/nix/store/6ivcrm1kj9r3wlhj23gvbg6hmcr6wjmj-bow-histogram.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/003_generate_bow_histogram_20260118_025120.log",
+      "has_derivation": true
+    }
+  ],
+  "003_generate_virtual_packages": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/iz5hpccn8j487f9wyrh6vj9di1yfyi45-nix-main-2.33.0/lib/libnixmain.so.2.33.0",
+        "/nix/store/x91z7i65kr7pkjsmnw6jzmynxb0s0mv3-nix-fetchers-2.33.0/lib/libnixfetchers.so.2.33.0",
+        "/nix/store/6bgcvfyxfd8zf2sfnbr6y8w3bbvdqdn4-nix-flake-2.33.0/lib/libnixflake.so.2.33.0",
+        "/nix/store/bwa598sxvhpyyj75gqlpb2nwwzh9h3k1-nix-cmd-2.33.0/lib/libnixcmd.so.2.33.0",
+        "/nix/store/6kmcd1m0y7q47ifmr2a69q6bk2hx5zw3-nix-util-2.33.0/lib/libnixutil.so.2.33.0",
+        "/nix/store/cf1a53iqg6ncnygl698c4v0l8qam5a2q-gcc-14.3.0-lib/lib/libstdc++.so.6",
+        "/nix/store/i3ibgfskl99qd8rslafbpaa1dmxdzh1z-glibc-2.40-66/lib/libc.so.6"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/003_generate_virtual_packages_20260118_025113.log",
+      "has_derivation": false
+    }
+  ],
+  "003_sanitize_extracted_data": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/fmmrbgfwrcpgv37p7xg644hba245m7ny-sanitized-extracted-data.drv",
+        "/nix/store/bip0ff1spr1mklz1rq3bdzq980wvxxhw-sanitized-extracted-data",
+        "/nix/store/yr26rm7wrjkhcykpfc75kil3zs85z355-debug-ls-source.drv",
+        "/nix/store/b1ayn0ln6n8bm2spz441csqc2ss66az3-hello-2.12.2/extracted-data.json:",
+        "/nix/store/fmmrbgfwrcpgv37p7xg644hba245m7ny-sanitized-extracted-data.drv^*",
+        "/nix/store/mf460rmqmrkx31wvfvl8cnkgd1hxc8qi-sanitized-extracted-data",
+        "/nix/store/yr26rm7wrjkhcykpfc75kil3zs85z355-debug-ls-source.drv^*",
+        "/nix/store/qimrzs6zkcp6qf9nvvwvqy1wxvlyssnj-debug-ls-source",
+        "/nix/store/b1ayn0ln6n8bm2spz441csqc2ss66az3-hello-2.12.2",
+        "/nix/store/807mbr9mi8shx1vfnhb7lmpj2l4g2n3a-sanitized-extracted-data.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/003_sanitize_extracted_data_20260118_025131.log",
+      "has_derivation": true
+    }
+  ],
+  "004_fold_to_matrix": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/iz5hpccn8j487f9wyrh6vj9di1yfyi45-nix-main-2.33.0/lib/libnixmain.so.2.33.0",
+        "/nix/store/x91z7i65kr7pkjsmnw6jzmynxb0s0mv3-nix-fetchers-2.33.0/lib/libnixfetchers.so.2.33.0",
+        "/nix/store/6bgcvfyxfd8zf2sfnbr6y8w3bbvdqdn4-nix-flake-2.33.0/lib/libnixflake.so.2.33.0",
+        "/nix/store/bwa598sxvhpyyj75gqlpb2nwwzh9h3k1-nix-cmd-2.33.0/lib/libnixcmd.so.2.33.0",
+        "/nix/store/6kmcd1m0y7q47ifmr2a69q6bk2hx5zw3-nix-util-2.33.0/lib/libnixutil.so.2.33.0",
+        "/nix/store/cf1a53iqg6ncnygl698c4v0l8qam5a2q-gcc-14.3.0-lib/lib/libstdc++.so.6",
+        "/nix/store/i3ibgfskl99qd8rslafbpaa1dmxdzh1z-glibc-2.40-66/lib/libc.so.6"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/004_fold_to_matrix_20260118_025115.log",
+      "has_derivation": false
+    }
+  ],
+  "004_nix_to_solana_translator": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/vdgn67qqrqrrr34h846p045sb8mn0gzi-nix-to-solana-translator",
+        "/nix/store/xzjllmnqyvsq2lxjf0c3vv53abs4dcn8-nix-to-solana-translator.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/004_nix_to_solana_translator_20260118_025530.log",
+      "has_derivation": true
+    }
+  ],
+  "005_final_report": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/iz5hpccn8j487f9wyrh6vj9di1yfyi45-nix-main-2.33.0/lib/libnixmain.so.2.33.0",
+        "/nix/store/x91z7i65kr7pkjsmnw6jzmynxb0s0mv3-nix-fetchers-2.33.0/lib/libnixfetchers.so.2.33.0",
+        "/nix/store/6bgcvfyxfd8zf2sfnbr6y8w3bbvdqdn4-nix-flake-2.33.0/lib/libnixflake.so.2.33.0",
+        "/nix/store/bwa598sxvhpyyj75gqlpb2nwwzh9h3k1-nix-cmd-2.33.0/lib/libnixcmd.so.2.33.0",
+        "/nix/store/6kmcd1m0y7q47ifmr2a69q6bk2hx5zw3-nix-util-2.33.0/lib/libnixutil.so.2.33.0",
+        "/nix/store/cf1a53iqg6ncnygl698c4v0l8qam5a2q-gcc-14.3.0-lib/lib/libstdc++.so.6",
+        "/nix/store/i3ibgfskl99qd8rslafbpaa1dmxdzh1z-glibc-2.40-66/lib/libc.so.6"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/005_final_report_20260118_025117.log",
+      "has_derivation": false
+    }
+  ],
+  "03": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/0fiam50cyrl58ggg5pz3mn5zpqcxkri1-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/03_20260118_024931.log",
+      "has_derivation": true
+    }
+  ],
+  "09": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/09_20260118_023944.log",
+      "has_derivation": false
+    }
+  ],
+  "1-build-system": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/1-build-system_20260118_024457.log",
+      "has_derivation": false
+    }
+  ],
+  "10": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/10_20260118_025901.log",
+      "has_derivation": false
+    },
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/10_20260118_025904.log",
+      "has_derivation": false
+    }
+  ],
+  "12": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/12_20260118_025202.log",
+      "has_derivation": false
+    }
+  ],
+  "13": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/srvdypzcz8igq33fglx0wrvxfl7g1mdl-today-flake-output.drv",
+        "/nix/store/7r0kf26j2ar81xx9k9093cwncicz9szx-nix-shell.drv",
+        "/nix/store/fzfx9wf4zv5aq0gj3ynmp3gzg8bik76f-today-flake-output"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/13_20260118_024900.log",
+      "has_derivation": true
+    }
+  ],
+  "14": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/14_20260118_025753.log",
+      "has_derivation": false
+    }
+  ],
+  "1inch_Router": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/w9chabjh2f4pkjb15gvw2vfak76ws25j-contract.sol.drv",
+        "/nix/store/4wdpv7fmzy5yfz0hw63hdqq12hmfpvyp-1inch_Router.drv",
+        "/nix/store/108nmjvd2hhsramr93yrpi524wkmwdjm-contract.sol",
+        "/nix/store/gysqi78l7c7h45n2mvph820j8vkw8hwi-1inch_Router"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/1inch_Router_20260118_014745.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/clri8334n91ziv8ydg7mq14j9hxaxkfs-1inch_Router",
+        "/nix/store/108nmjvd2hhsramr93yrpi524wkmwdjm-contract.sol",
+        "/nix/store/rspmq2z1r9iv88flv9xwnps5vp382ijh-1inch_Router.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/1inch_Router_20260118_062010.log",
+      "has_derivation": true
+    }
+  ],
+  "2025-01-27-build-time-gemini-capture": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/2025-01-27-build-time-gemini-capture_20260118_024446.log",
+      "has_derivation": false
+    }
+  ],
+  "2025-01-27-gemini-hello-world": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/zl00z4lvy90wb6la3498ani60cars13w-source",
+        "/nix/store/y37930mcmqjbs87ww60j4rv8bg0v8chh-nix-shell.drv",
+        "/nix/store/d6kqpry1pl9mlk665g46l3154pg1lmz2-gemini-hello-world-test-2025-01-27.drv",
+        "/nix/store/rxzl0wdikgxygf65h5mpryi7p98cb5ni-gemini-hello-world-test-2025-01-27",
+        "/nix/store/rxzl0wdikgxygf65h5mpryi7p98cb5ni-gemini-hello-world-test-2025-01-27/bin/gemini.js"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/2025-01-27-gemini-hello-world_20260118_024447.log",
+      "has_derivation": true
+    }
+  ],
+  "2025-01-27-minimal-qa-test": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/qnvsd38mjy8vj4rs4zv1hdj7dhhqy7kq-gemini-cli-minimal-qa-2025-01-27/gemini.js:",
+        "/nix/store/qnvsd38mjy8vj4rs4zv1hdj7dhhqy7kq-gemini-cli-minimal-qa-2025-01-27/diagnostics/execution_test.txt",
+        "/nix/store/qnvsd38mjy8vj4rs4zv1hdj7dhhqy7kq-gemini-cli-minimal-qa-2025-01-27/analysis/summary.txt",
+        "/nix/store/qnvsd38mjy8vj4rs4zv1hdj7dhhqy7kq-gemini-cli-minimal-qa-2025-01-27...",
+        "/nix/store/qnvsd38mjy8vj4rs4zv1hdj7dhhqy7kq-gemini-cli-minimal-qa-2025-01-27/diagnostics/source_analysis.txt",
+        "/nix/store/qnvsd38mjy8vj4rs4zv1hdj7dhhqy7kq-gemini-cli-minimal-qa-2025-01-27",
+        "/nix/store/r4557ald6zn4dzmvgh8na9vwnwzgrjgc-nodejs-22.19.0/bin/node",
+        "/nix/store/qnvsd38mjy8vj4rs4zv1hdj7dhhqy7kq-gemini-cli-minimal-qa-2025-01-27/bin/qa-report:",
+        "/nix/store/qnvsd38mjy8vj4rs4zv1hdj7dhhqy7kq-gemini-cli-minimal-qa-2025-01-27/logs/help_test.log",
+        "/nix/store/qnvsd38mjy8vj4rs4zv1hdj7dhhqy7kq-gemini-cli-minimal-qa-2025-01-27/logs/version_test.log"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/2025-01-27-minimal-qa-test_20260118_024451.log",
+      "has_derivation": true
+    }
+  ],
+  "2025": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/2025_20260118_024745.log",
+      "has_derivation": false
+    }
+  ],
+  "22": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/7yfhsfv48ayac9lc0ybv13kvkrmk25k9-Steiner_system-wikidata.drv",
+        "/nix/store/np88xm047424gwgmcigx7wm6q42y6zm7-B_C3_A9zout_27s_identity-wikidata.drv",
+        "/nix/store/j07yj48licgkjkrpis5f379irplllwg7-Mathieu_group_M12-wikidata.drv",
+        "/nix/store/c9b129vb63ss8hvv4fhy1xa05kif6lb3-Ontology-wikidata.drv",
+        "/nix/store/62l7vscgyw31pyx4f459jh8f1zi26wn9-nix-shell.drv",
+        "/nix/store/6yhmbqyadhdnxcmjik5d1skhn5ggb56s-Eigenvalues_and_eigenvectors-wikidata.drv",
+        "/nix/store/i8wrx03pvkfbaxkcrwn1rnas4lsalnpl-hello-nix.drv",
+        "/nix/store/ha0bvygrifqlbxd5wcjgf70qmqmc2c0w-Keith_number-wikidata.drv",
+        "/nix/store/6hk6kj13hvnr9wq09ihh1lpwxqd33qyx-Fermat_prime-wikidata.drv",
+        "/nix/store/kp931kiqlc5r39msbdjpg59ybxv14r2v-Monstrous_moonshine-wikidata.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/22_20260118_024500.log",
+      "has_derivation": true
+    }
+  ],
+  "Aave_V3_Pool": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/w8npmfng1r4df7sq3m4vgam5ks72fqf6-contract.sol",
+        "/nix/store/mhywblpn27ja6h6849qdkrlrc1l8cy9k-Aave_V3_Pool.drv",
+        "/nix/store/i8g9vk2b3fcih0xl5ksgrrqlfagqy0ia-Aave_V3_Pool",
+        "/nix/store/8bc50ixb6am3a0pqp68smvp202lxj30r-contract.sol.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Aave_V3_Pool_20260118_014500.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/w8npmfng1r4df7sq3m4vgam5ks72fqf6-contract.sol",
+        "/nix/store/5vgxczhk38rn90p5w56r89zx1v3d0mb9-Aave_V3_Pool.drv",
+        "/nix/store/mc295prgvccn28p2qmlydnxg8s99nxaj-Aave_V3_Pool"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Aave_V3_Pool_20260118_061952.log",
+      "has_derivation": true
+    }
+  ],
+  "Balancer_Vault": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/ryhj2vkx28lacmflww72fp834k1mhf7w-Balancer_Vault",
+        "/nix/store/gsm57yny4vfzhklxjfv6754ij1ghxn0v-contract.sol",
+        "/nix/store/1034iq84fsby2sg3jawap0j47l73wskw-Balancer_Vault.drv",
+        "/nix/store/gmczhnwmccnm9gn7d6shq89xshhdas11-contract.sol.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Balancer_Vault_20260118_014531.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/jlidrmr797x313l7j9mmdr353y6sqi14-Balancer_Vault.drv",
+        "/nix/store/g063r17rxm61cfcafw3ziw3mz0dfngc8-Balancer_Vault",
+        "/nix/store/gsm57yny4vfzhklxjfv6754ij1ghxn0v-contract.sol"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Balancer_Vault_20260118_061959.log",
+      "has_derivation": true
+    }
+  ],
+  "Compound_cETH": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/62lwlvjn7qb00n32v0dp70qb3dyz8p22-Compound_cETH",
+        "/nix/store/hkddpzanxflc3a1cdb5jmqz9l0jqmd2n-contract.sol.drv",
+        "/nix/store/19m6694zxrl77qwxcbdpjz0axk7vwqcz-Compound_cETH.drv",
+        "/nix/store/6rbzdjs7nl78mbnvaj1xz5wd64jqlvbd-contract.sol"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Compound_cETH_20260118_014950.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4l63xc9cdmdk7pj6rxqaymmdzmd148h5-Compound_cETH.drv",
+        "/nix/store/44niamghbxs7i5q9dranzm3rdd2r5gl4-Compound_cETH",
+        "/nix/store/6rbzdjs7nl78mbnvaj1xz5wd64jqlvbd-contract.sol"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Compound_cETH_20260118_062022.log",
+      "has_derivation": true
+    }
+  ],
+  "Curve_3pool": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/8z72v2y6hs6ima9k4q6ibzwi7drpraa9-Curve_3pool",
+        "/nix/store/0pqdgbikgrxfm570za25l7jygh6qdk42-Curve_3pool.drv",
+        "/nix/store/njwq66bbnvbrnb1ycl1v9g11wvaddjjz-contract.sol",
+        "/nix/store/n1101mmfl78akn2g3awd0174wbr2k49r-contract.sol.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Curve_3pool_20260118_015201.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/15mgbvhdvgpa0615wvq1rafxq62b2cyy-Curve_3pool",
+        "/nix/store/njwq66bbnvbrnb1ycl1v9g11wvaddjjz-contract.sol",
+        "/nix/store/rbg4rk3bfqzbl6zly3dxcnq5kw5rywhd-Curve_3pool.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Curve_3pool_20260118_062034.log",
+      "has_derivation": true
+    }
+  ],
+  "Drift_Protocol": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/n6haia96vypk03jcs68pazx1y6f58y9q-Drift_Protocol",
+        "/nix/store/n6haia96vypk03jcs68pazx1y6f58y9q-Drift_Protocol...",
+        "/nix/store/72926zqphd96br2rrgqlxagzwq8sj5fx-Drift_Protocol.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Drift_Protocol_20260118_020538.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/72926zqphd96br2rrgqlxagzwq8sj5fx-Drift_Protocol.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Drift_Protocol_20260118_062158.log",
+      "has_derivation": true
+    }
+  ],
+  "Jupiter_Aggregator": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/wfxzhxb50q6prc1xz5ywggnwvr3q9dsk-Jupiter_Aggregator.drv",
+        "/nix/store/2r33g21615zb76cgmsfhb9wmx3ba5zby-Jupiter_Aggregator...",
+        "/nix/store/2r33g21615zb76cgmsfhb9wmx3ba5zby-Jupiter_Aggregator"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Jupiter_Aggregator_20260118_020103.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/wfxzhxb50q6prc1xz5ywggnwvr3q9dsk-Jupiter_Aggregator.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Jupiter_Aggregator_20260118_062129.log",
+      "has_derivation": true
+    }
+  ],
+  "Lido_stETH": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/i2rb6hba47vw7dhwhaqcny996619z073-contract.sol",
+        "/nix/store/zjnmf2cph5pciyjd3cpr8lzzvjv72ij0-Lido_stETH.drv",
+        "/nix/store/h80ysf12fgyms6z1wwpb5yg5h005cisv-Lido_stETH",
+        "/nix/store/ydc9kmrdi5qmp2yli18ri6lk4j41dlvn-contract.sol.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Lido_stETH_20260118_015308.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/h4hp3p18wfzwc7rdbacig69ibfivq3n4-Lido_stETH.drv",
+        "/nix/store/bf73avj7m6a3ywlwalmr2in77iwp6ir1-Lido_stETH",
+        "/nix/store/i2rb6hba47vw7dhwhaqcny996619z073-contract.sol"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Lido_stETH_20260118_062041.log",
+      "has_derivation": true
+    }
+  ],
+  "Lightning_HTLC": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/g5f98mqq0bxsz83b3m2b7pxi78rgxl59-Lightning_HTLC.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Lightning_HTLC_20260118_015648.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/g5f98mqq0bxsz83b3m2b7pxi78rgxl59-Lightning_HTLC.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Lightning_HTLC_20260118_062103.log",
+      "has_derivation": true
+    }
+  ],
+  "MakerDAO_DAI": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/7xvb7wbn2qnzvfjm5y68shgclydykhql-contract.sol.drv",
+        "/nix/store/k2xvqh8wcq35b6w1jx06rd7vi9n9j0cm-contract.sol",
+        "/nix/store/pm86bj1x8jfgg501aa4whk40z2gwa0lb-MakerDAO_DAI.drv",
+        "/nix/store/f6086rnb9v73jb7dl0w9qi7f94mhi09l-MakerDAO_DAI"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/MakerDAO_DAI_20260118_015057.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/k2xvqh8wcq35b6w1jx06rd7vi9n9j0cm-contract.sol",
+        "/nix/store/wlm3fw01vlv1g14s0xcifymyjw6r9qs7-MakerDAO_DAI",
+        "/nix/store/6shlx7pkzrv6mjz99i9ysa5zsbci4bmr-MakerDAO_DAI.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/MakerDAO_DAI_20260118_062028.log",
+      "has_derivation": true
+    }
+  ],
+  "Mango_Markets": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/pyjqv1kxshvivpbaihgxs4cwmzwa38d3-Mango_Markets",
+        "/nix/store/pyjqv1kxshvivpbaihgxs4cwmzwa38d3-Mango_Markets...",
+        "/nix/store/m28421z39a05bjc9ivvq40338k1jhgyz-Mango_Markets.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Mango_Markets_20260118_020827.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/m28421z39a05bjc9ivvq40338k1jhgyz-Mango_Markets.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Mango_Markets_20260118_062215.log",
+      "has_derivation": true
+    }
+  ],
+  "Marinade_Finance": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/4cq4xfy6byl4pj99g64a88d05sjw249j-Marinade_Finance.drv",
+        "/nix/store/wsaw0as8z9bilccyh574ymgysc3zzmgv-Marinade_Finance...",
+        "/nix/store/wsaw0as8z9bilccyh574ymgysc3zzmgv-Marinade_Finance"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Marinade_Finance_20260118_020926.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/4cq4xfy6byl4pj99g64a88d05sjw249j-Marinade_Finance.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Marinade_Finance_20260118_062221.log",
+      "has_derivation": true
+    }
+  ],
+  "Multisig_2of3": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/8gdkci3yj3wbfnpg56m70ajmqfrwpc04-Multisig_2of3.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Multisig_2of3_20260118_015831.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/8gdkci3yj3wbfnpg56m70ajmqfrwpc04-Multisig_2of3.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Multisig_2of3_20260118_062113.log",
+      "has_derivation": true
+    }
+  ],
+  "Orca_Whirlpool": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/cqrny769v7fqykzwivfahcfyay83z1ka-Orca_Whirlpool",
+        "/nix/store/cqrny769v7fqykzwivfahcfyay83z1ka-Orca_Whirlpool...",
+        "/nix/store/hr8bx44i5m7kqx563drnsb2ayql6jv70-Orca_Whirlpool.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Orca_Whirlpool_20260118_020205.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/hr8bx44i5m7kqx563drnsb2ayql6jv70-Orca_Whirlpool.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Orca_Whirlpool_20260118_062135.log",
+      "has_derivation": true
+    }
+  ],
+  "P2PKH": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/l50vf1rlg97hq1nwxz4shr760firrrmz-P2PKH.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2PKH_20260118_015736.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/l50vf1rlg97hq1nwxz4shr760firrrmz-P2PKH.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2PKH_20260118_062108.log",
+      "has_derivation": true
+    }
+  ],
+  "P2SH": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/6z03s3hmlz5wpyiaxcw4spkm97w63cdj-P2SH.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2SH_20260118_015550.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/6z03s3hmlz5wpyiaxcw4spkm97w63cdj-P2SH.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2SH_20260118_062057.log",
+      "has_derivation": true
+    }
+  ],
+  "P2TR": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/s3d0i3axhnja075qykvwc357w3npvsrb-P2TR.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2TR_20260118_020010.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/s3d0i3axhnja075qykvwc357w3npvsrb-P2TR.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2TR_20260118_062124.log",
+      "has_derivation": true
+    }
+  ],
+  "P2WPKH": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/n5lzjh3apbp5j7a05hzs796wl3x1y8x0-P2WPKH.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2WPKH_20260118_015459.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/n5lzjh3apbp5j7a05hzs796wl3x1y8x0-P2WPKH.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2WPKH_20260118_062052.log",
+      "has_derivation": true
+    }
+  ],
+  "P2WSH": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/143pa8jxm9ifb0hqab8dddhkl1z9sdjd-P2WSH.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2WSH_20260118_015401.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/143pa8jxm9ifb0hqab8dddhkl1z9sdjd-P2WSH.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/P2WSH_20260118_062047.log",
+      "has_derivation": true
+    }
+  ],
+  "Phoenix_DEX": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/2k4sn31yxmsqcilcqbdcmfi3jg80p0gz-Phoenix_DEX...",
+        "/nix/store/2k4sn31yxmsqcilcqbdcmfi3jg80p0gz-Phoenix_DEX",
+        "/nix/store/fyx16ndhnvnsadb9immm7lycfmsvijk2-Phoenix_DEX.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Phoenix_DEX_20260118_020300.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/fyx16ndhnvnsadb9immm7lycfmsvijk2-Phoenix_DEX.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Phoenix_DEX_20260118_062141.log",
+      "has_derivation": true
+    }
+  ],
+  "Raydium_AMM": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/9xfxpf8cmscwml168iz2sdhbcckznk4f-Raydium_AMM",
+        "/nix/store/pilz8qsx2hmg57jhg160yamzpnn8g2m6-Raydium_AMM.drv",
+        "/nix/store/9xfxpf8cmscwml168iz2sdhbcckznk4f-Raydium_AMM..."
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Raydium_AMM_20260118_020628.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/pilz8qsx2hmg57jhg160yamzpnn8g2m6-Raydium_AMM.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Raydium_AMM_20260118_062203.log",
+      "has_derivation": true
+    }
+  ],
+  "Saber_StableSwap": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/v7bxw2mvr9ws1n04k8qf10n0p9nwghnx-Saber_StableSwap...",
+        "/nix/store/v7bxw2mvr9ws1n04k8qf10n0p9nwghnx-Saber_StableSwap",
+        "/nix/store/r32cjr47asx2bxxac431zj43f442mks7-Saber_StableSwap.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Saber_StableSwap_20260118_020356.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/r32cjr47asx2bxxac431zj43f442mks7-Saber_StableSwap.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Saber_StableSwap_20260118_062146.log",
+      "has_derivation": true
+    }
+  ],
+  "Serum_DEX": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/9q27zq1k86pk856r2ngmg2x6d3nyjy1j-Serum_DEX...",
+        "/nix/store/4q0lizb6n4yq01jngxlm0in2xad2s7mc-Serum_DEX.drv",
+        "/nix/store/9q27zq1k86pk856r2ngmg2x6d3nyjy1j-Serum_DEX"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Serum_DEX_20260118_020450.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/4q0lizb6n4yq01jngxlm0in2xad2s7mc-Serum_DEX.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Serum_DEX_20260118_062152.log",
+      "has_derivation": true
+    }
+  ],
+  "Solend_Protocol": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/wjjvgkx6ksavg60kb2g63libbn3xs716-Solend_Protocol",
+        "/nix/store/zfi4vpdqsdxbfyc395665kmn2fsf3rzn-Solend_Protocol.drv",
+        "/nix/store/wjjvgkx6ksavg60kb2g63libbn3xs716-Solend_Protocol..."
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Solend_Protocol_20260118_020722.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/zfi4vpdqsdxbfyc395665kmn2fsf3rzn-Solend_Protocol.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Solend_Protocol_20260118_062209.log",
+      "has_derivation": true
+    }
+  ],
+  "SushiSwap_Router": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/65l8n5j028gfzrmj84mif4fbk0z5ixpn-solc-0.8.33",
+        "/nix/store/cw05cxzp5hwhnyl5lsmydv9011cr9ffj-foundry-1.5.1",
+        "/nix/store/sjjc14j47yxrs6k7q4s79p46bq2bxz7j-SushiSwap_Router.drv",
+        "/nix/store/njrljyplcxwhj1kw4x3ymm4x4qzvc6xx-contract.sol.drv",
+        "/nix/store/mmakc093i7h3b9i3gl45anxiixgrwz5m-SushiSwap_Router",
+        "/nix/store/p2wldq3fdg04idr5gb217cc44jh93pkw-boost-1.87.0",
+        "/nix/store/x5imy6i6jzacdnwjycymb7wkvvja6yk3-contract.sol"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/SushiSwap_Router_20260118_014442.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/x5imy6i6jzacdnwjycymb7wkvvja6yk3-contract.sol",
+        "/nix/store/wrjn110rpxwcag4sraw7nj6cww0vkczs-SushiSwap_Router",
+        "/nix/store/vrp7dphn1m568f4p5vlxfyvqxrm4wyiv-SushiSwap_Router.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/SushiSwap_Router_20260118_061946.log",
+      "has_derivation": true
+    }
+  ],
+  "Timelock": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/i2nsj6gm4pkvgal61qn6dya9z85faphw-Timelock.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Timelock_20260118_015919.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/i2nsj6gm4pkvgal61qn6dya9z85faphw-Timelock.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Timelock_20260118_062119.log",
+      "has_derivation": true
+    }
+  ],
+  "Uniswap_V2_Router": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/hc0pd7bxx5avmn8vs8kcxzsbiya5sf8q-contract.sol.drv",
+        "/nix/store/c7wi0wand512mgb6wy9la6lsjwfs0azc-contract.sol",
+        "/nix/store/6rg6lg8x9x10188gfig8vms33928gdb1-Uniswap_V2_Router",
+        "/nix/store/5mj8wfjc5k5wknvhcdnqq15dyg2gyc49-Uniswap_V2_Router.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Uniswap_V2_Router_20260118_014849.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/5hnshm2aqr2p7678dnr7b4cb58p2jnjf-Uniswap_V2_Router",
+        "/nix/store/cmsmklwssxziydbf1skv17qvk3qi81sr-Uniswap_V2_Router.drv",
+        "/nix/store/c7wi0wand512mgb6wy9la6lsjwfs0azc-contract.sol"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Uniswap_V2_Router_20260118_062016.log",
+      "has_derivation": true
+    }
+  ],
+  "Uniswap_V3_Router": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4qydy3r7xwyri1xa2m70d860l64pvp0x-contract.sol",
+        "/nix/store/2amigzvbh429zaainxp011701zlvrdya-Uniswap_V3_Router.drv",
+        "/nix/store/f2r783avrc43xa5awwvmp40zp1w7hiww-contract.sol.drv",
+        "/nix/store/am70iqxxyjgszqwfabyx5k9ci0gf8h9w-Uniswap_V3_Router"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Uniswap_V3_Router_20260118_014638.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/s7l0hrisayrxqm7glkhwjfds396a8cpy-contract-info.json.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/Uniswap_V3_Router_20260118_062005.log",
+      "has_derivation": true
+    }
+  ],
+  "act": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/act_20260118_024847.log",
+      "has_derivation": false
+    }
+  ],
+  "agda": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/ql8h5ifakw787x60bq8h8pphhp14dgff-Agda-2.8.0-data",
+        "/nix/store/p6ydbf45wf4bpn5ln708c304djzpvhwx-ieee754-0.8.0-doc",
+        "/nix/store/x65ckn9l1nlgpqkq6ribgyjlkxbwd1mg-gmp-with-cxx-6.3.0-dev",
+        "/nix/store/3c0bxkv8c5srl3vr3np6ff9q0iyl7573-setup-debug-info-dirs-hook",
+        "/nix/store/vvx3gd6f6wp9fjfbrl96zhr62f5kp66x-elfutils-0.194-dev",
+        "/nix/store/czrak0dwrnhnbam7vfxza4h2dv7j0swl-ghc-9.10.3-with-packages",
+        "/nix/store/habrj6p7xrknp2p6pw9wg0i5rdk8pk1r-numactl-2.0.18-dev",
+        "/nix/store/yvf3yq4vli33a913ihv5wr2k37xgf7jb-Const71.agda",
+        "/nix/store/lrx5q7fas4bldb5m342liwyy693sas0g-ncurses-6.5-dev",
+        "/nix/store/misdwir0xg75pkpnl971hm5v9dyhb8da-Const71.agda.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/agda_20260118_021534.log",
+      "has_derivation": true
+    }
+  ],
+  "aggregator": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/aggregator_20260118_024623.log",
+      "has_derivation": false
+    }
+  ],
+  "ai-workflow": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ai-workflow_20260118_024458.log",
+      "has_derivation": false
+    }
+  ],
+  "article-wrapper": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/article-wrapper_20260118_024545.log",
+      "has_derivation": false
+    }
+  ],
+  "asm": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/21q11zbpwwsl5vds1xcrp7a7mmxml8as-const-71-asm...",
+        "/nix/store/21q11zbpwwsl5vds1xcrp7a7mmxml8as-const-71-asm/bin",
+        "/nix/store/21q11zbpwwsl5vds1xcrp7a7mmxml8as-const-71-asm",
+        "/nix/store/21q11zbpwwsl5vds1xcrp7a7mmxml8as-const-71-asm/bin/const-71-asm",
+        "/nix/store/lywj07fkb4grpp6g7xmq49hg1d2nfsa0-nasm-3.01",
+        "/nix/store/z1scjcf50h8wj9d6f47difpjf27jb2vm-const-71-asm.drv",
+        "/nix/store/rp0p621w6qy64lqdh2xh2ay5svrzrp14-main.asm.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_20260118_022735.log",
+      "has_derivation": true
+    }
+  ],
+  "asm_aarch64": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/q0dqgxp0vlhfc5y6i675pvam1a15jwqg-asm-aarch64-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_aarch64_20260118_021816.log",
+      "has_derivation": true
+    }
+  ],
+  "asm_mips": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/mk2m12adwnbp3ffpzsiiw9skvqw4y04q-asm-mips-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_mips_20260118_022133.log",
+      "has_derivation": true
+    }
+  ],
+  "asm_riscv": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/bqvdvhz1p7nx7y7hc88v2qamsnkrclcp-asm-riscv-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_riscv_20260118_021351.log",
+      "has_derivation": true
+    }
+  ],
+  "asm_wasm": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/cmvajshwcjww8wyrfh30pr7p7fghw9ba-asm-wasm-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_wasm_20260118_022513.log",
+      "has_derivation": true
+    }
+  ],
+  "asm_x86_64": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/qwmmklbbcwyxjpf19xyk21hl53cw33rw-asm-x86_64-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/asm_x86_64_20260118_021741.log",
+      "has_derivation": true
+    }
+  ],
+  "audit-flakes": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/iz5hpccn8j487f9wyrh6vj9di1yfyi45-nix-main-2.33.0/lib/libnixmain.so.2.33.0",
+        "/nix/store/x91z7i65kr7pkjsmnw6jzmynxb0s0mv3-nix-fetchers-2.33.0/lib/libnixfetchers.so.2.33.0",
+        "/nix/store/6bgcvfyxfd8zf2sfnbr6y8w3bbvdqdn4-nix-flake-2.33.0/lib/libnixflake.so.2.33.0",
+        "/nix/store/bwa598sxvhpyyj75gqlpb2nwwzh9h3k1-nix-cmd-2.33.0/lib/libnixcmd.so.2.33.0",
+        "/nix/store/6kmcd1m0y7q47ifmr2a69q6bk2hx5zw3-nix-util-2.33.0/lib/libnixutil.so.2.33.0",
+        "/nix/store/cf1a53iqg6ncnygl698c4v0l8qam5a2q-gcc-14.3.0-lib/lib/libstdc++.so.6",
+        "/nix/store/i3ibgfskl99qd8rslafbpaa1dmxdzh1z-glibc-2.40-66/lib/libc.so.6"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/audit-flakes_20260118_025129.log",
+      "has_derivation": false
+    }
+  ],
+  "audit-with-rust": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/audit-with-rust_20260118_025640.log",
+      "has_derivation": false
+    }
+  ],
+  "avalanchego": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/skh8fxjal8v6z7wqawclrffcv37f6q51-nix-shell.drv",
+        "/nix/store/h804a5w2y4cqmzkrcgp37m8804ialqi4-source"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/avalanchego_20260118_064310.log",
+      "has_derivation": true
+    }
+  ],
+  "bag-of-words-generator": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bag-of-words-generator_20260118_024652.log",
+      "has_derivation": false
+    }
+  ],
+  "base": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/base_20260118_024642.log",
+      "has_derivation": false
+    }
+  ],
+  "bash": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/nly4lj9qfm3wdla1qngzwk22nbkkqr8w-bash-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bash_20260118_022106.log",
+      "has_derivation": true
+    }
+  ],
+  "befunge": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/wz1l351lhgcfklgm958283df23zw208g-befunge-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/befunge_20260118_022810.log",
+      "has_derivation": true
+    }
+  ],
+  "bench": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/a8r4za0cgyg8b0c2zh1hffigrbb6f7hq-libxcb-1.14-dev",
+        "/nix/store/nrv11g6pcpywhqc9cbbhd1d07vrhljlc-setuptools-setup-hook",
+        "/nix/store/4jk5im6w25jqxwhczxrawxmywjrwnsg9-python3.9-kiwisolver-1.4.2",
+        "/nix/store/d1gzs0dk0y7wyvy8ymzis1hq9x3w2zv0-libidn2-2.3.2",
+        "/nix/store/24x5sl9rwrny74awfkb438h6wjlcq6lv-hook",
+        "/nix/store/qalpwiwbrqfn9nynp7qm8sif2rqzcpxd-bzip2-1.0.8",
+        "/nix/store/c34zmy26gc58bn7qbf4md2yh8vp133n6-perl-5.34.1",
+        "/nix/store/y2hqp42dr7c0269vx23f3pxlpkfj56cp-python3.9-python-dateutil-2.8.2",
+        "/nix/store/aw9sfhxan3p1kzxrm5m413i9xrqh4885-findutils-4.9.0",
+        "/nix/store/fg13wh9r14l5in9pddbln4r3wfiv6a2s-libunwind-1.6.2"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bench_20260118_030620.log",
+      "has_derivation": true
+    }
+  ],
+  "binstore-prime-md-indexes": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/binstore-prime-md-indexes_20260118_024928.log",
+      "has_derivation": false
+    }
+  ],
+  "bitcoin": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/2nl1fq0pqk1x5shyjbgg4x1asknxkh3v-md4c-0.5.2-lib",
+        "/nix/store/9qpnp7q1jjwmxdj9ncb4kshpcbsi3j54-qtdeclarative-6.10.1",
+        "/nix/store/59h4nhpmifmrmn8rr98aq1559rsx3r04-expat-2.7.3-dev",
+        "/nix/store/r7g00a4m8qm6rsrbml0s2bv8fnslfixm-libproxy-0.5.11",
+        "/nix/store/8kf2hhh1m2c0fy3r4yb8364696psirj5-nix-shell.drv",
+        "/nix/store/jq8mka96cq81mfzm4svzmbalna8asqfn-qtbase-6.10.1",
+        "/nix/store/biag9071pf8wzxzipygrqn51x2s37fhh-qttranslations-6.10.1",
+        "/nix/store/ird0gml23rkk7wybqyh4xdi3b8clwv28-qtbase-6.10.1-only-plugins-qml",
+        "/nix/store/ycvg6lbj1vy6zy7ph9b1k3ia7spggmm2-bitcoin-30.2.drv",
+        "/nix/store/6b92wbixhx7dxmia7i3b3gh8kvhygr2v-dbus-1.14.10"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bitcoin_20260118_013647.log",
+      "has_derivation": true
+    }
+  ],
+  "block_18900000": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/qrbabrsszwhhvyp4iml6p14ywlpi0a3a-ethereum-block-18900000",
+        "/nix/store/qrbabrsszwhhvyp4iml6p14ywlpi0a3a-ethereum-block-18900000...",
+        "/nix/store/h20dcxfg76dil75fs6cij0gvzwpngcxb-block.json.drv",
+        "/nix/store/6dfa7vzbz6pxw6l62krr6904fxnxrp5j-ethereum-block-18900000.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900000_20260118_012345.log",
+      "has_derivation": true
+    }
+  ],
+  "block_18900001": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/v78cbfdx0vavd70jzbjl8dihcz7yn5s0-ethereum-block-18900001...",
+        "/nix/store/gq17l39ikbgsd6rg6rggyyq30jnm708f-ethereum-block-18900001.drv",
+        "/nix/store/xrzgy70lq4jyx1p6bpya7mhn265ax4ql-block.json.drv",
+        "/nix/store/v78cbfdx0vavd70jzbjl8dihcz7yn5s0-ethereum-block-18900001"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900001_20260118_012302.log",
+      "has_derivation": true
+    }
+  ],
+  "block_18900002": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/s2xk72m4v8b1gbmi03mixjask5x5gpy2-block.json.drv",
+        "/nix/store/dr03hq1mlpxqpwhk6v8115pd74bf72bg-ethereum-block-18900002.drv",
+        "/nix/store/jf0l30vi0261b0g2bdvrfqigjqazrd9p-ethereum-block-18900002",
+        "/nix/store/jf0l30vi0261b0g2bdvrfqigjqazrd9p-ethereum-block-18900002..."
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900002_20260118_012234.log",
+      "has_derivation": true
+    }
+  ],
+  "block_18900003": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/81al7bhfx8bmwchzq819mlc5m3kl8myh-ethereum-block-18900003.drv",
+        "/nix/store/vn87r2n8qkgm36ps1a824ppqgz09g959-ethereum-block-18900003...",
+        "/nix/store/vn87r2n8qkgm36ps1a824ppqgz09g959-ethereum-block-18900003",
+        "/nix/store/y4rn8w80d0f88bv53fifk0gxzfw6y9vw-block.json.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900003_20260118_012437.log",
+      "has_derivation": true
+    }
+  ],
+  "block_18900004": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/8nyz9ixyvgjf7zl11cnxlwa1dfkb917i-ethereum-block-18900004",
+        "/nix/store/rhj1zkhljsp7245wgsrp7lwv4m0xvz8y-block.json.drv",
+        "/nix/store/8nyz9ixyvgjf7zl11cnxlwa1dfkb917i-ethereum-block-18900004...",
+        "/nix/store/cgiirrsvbhi32zrs8i3zvlk62r8rpd3v-ethereum-block-18900004.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_18900004_20260118_012242.log",
+      "has_derivation": true
+    }
+  ],
+  "block_825000": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/7bi3cfsg7c51hwwvxrall99d4mj86da9-bitcoin-block-825000.drv",
+        "/nix/store/z8wq3p2pzf55mchjbl6wymjmph2ayf8j-bitcoin-block-825000",
+        "/nix/store/cslqx81jqvqr13ir9dckf888fwddzipz-block.json.drv",
+        "/nix/store/z8wq3p2pzf55mchjbl6wymjmph2ayf8j-bitcoin-block-825000..."
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825000_20260118_012631.log",
+      "has_derivation": true
+    }
+  ],
+  "block_825001": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/gvir52xlj47gzvb5ymbgsa62ja5a75pc-bitcoin-block-825001.drv",
+        "/nix/store/q4lxv1x9h6mkxrzqd82ilxadk1j9m5wd-block.json.drv",
+        "/nix/store/ir093wqpa7hyjqrp80gcv48674glid5p-bitcoin-block-825001",
+        "/nix/store/ir093wqpa7hyjqrp80gcv48674glid5p-bitcoin-block-825001..."
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825001_20260118_012722.log",
+      "has_derivation": true
+    }
+  ],
+  "block_825002": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/l31i1f91xswzyhscfpwmksw9q0div9hp-bitcoin-block-825002.drv",
+        "/nix/store/62zkmdgsfsh3q0wp9xgziaxyzjhwcia5-bitcoin-block-825002...",
+        "/nix/store/hxdcwckj538icn0x0h537p132q2j81fp-block.json.drv",
+        "/nix/store/62zkmdgsfsh3q0wp9xgziaxyzjhwcia5-bitcoin-block-825002"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825002_20260118_012536.log",
+      "has_derivation": true
+    }
+  ],
+  "block_825003": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/7bxxi5grskj415m7hh2cdj00mxc6cjgz-block.json.drv",
+        "/nix/store/y0x2zy8yvfa6gv0zwfm1v6lr4zl63z8x-bitcoin-block-825003...",
+        "/nix/store/y0x2zy8yvfa6gv0zwfm1v6lr4zl63z8x-bitcoin-block-825003",
+        "/nix/store/7m83ha7q26n6hp44qz3djry372vx9nj4-bitcoin-block-825003.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825003_20260118_012903.log",
+      "has_derivation": true
+    }
+  ],
+  "block_825004": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/izw888190ryzfh6hw1mcn6jqbqdnnlri-bitcoin-block-825004...",
+        "/nix/store/izw888190ryzfh6hw1mcn6jqbqdnnlri-bitcoin-block-825004",
+        "/nix/store/vvvvwlvgslynf57izsm24h5i57b6cawp-bitcoin-block-825004.drv",
+        "/nix/store/w3h6al742lykdzqynnbzvm2gng2vpsyl-block.json.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/block_825004_20260118_012811.log",
+      "has_derivation": true
+    }
+  ],
+  "bootstrap-mycology-schedule-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bootstrap-mycology-schedule-flake_20260118_025056.log",
+      "has_derivation": false
+    }
+  ],
+  "bott8-layout-solver": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/b3693k7cw35h9an8jachj46ik9fgz5r0-osi-0.108.11",
+        "/nix/store/bjzpfv72avnshzshbx7bhz8q3pfn66ly-libxcb-keysyms-0.4.1",
+        "/nix/store/bmkd5w3clqr5ik0k5z8c3lx00k801dqw-bott8-layout-solution.drv",
+        "/nix/store/wd9ixc72ad4bjnj66yx21gznx93yscr0-mariadb-connector-c-3.3.5",
+        "/nix/store/d5hiyvgn7kxq7i9v2mr2qic6c01d69mm-cgl-0.60.9",
+        "/nix/store/n2qw9h719snbmmjrdsd6i0hnx0yp5iza-bott8-layout-solution",
+        "/nix/store/n2qw9h719snbmmjrdsd6i0hnx0yp5iza-bott8-layout-solution/solution.txt",
+        "/nix/store/f0zx5nrhdyik0gjz7vjaggzqkb5smw20-libxcb-image-0.4.1",
+        "/nix/store/jy79h71094g365709rax5pqg6cvd3nlw-libxcb-wm-0.4.2",
+        "/nix/store/85zzb8dci9rvw2kdwb6pf1xcfj1nh7x1-qtbase-5.15.18"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bott8-layout-solver_20260118_010558.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/bmkd5w3clqr5ik0k5z8c3lx00k801dqw-bott8-layout-solution.drv",
+        "/nix/store/vna9q1gjhn7cmmqbdcbh3a8z4k04fil2-nix-shell.drv",
+        "/nix/store/5blmkvafafzf0ad8gk9h5d7jj12sgjnc-map-perf-to-8d.drv",
+        "/nix/store/yxq9n1481pccj973zpyj25gsfi8v957p-run-with-perf.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bott8-layout-solver_20260118_013454.log",
+      "has_derivation": true
+    }
+  ],
+  "brainfuck": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/brainfuck_20260118_021452.log",
+      "has_derivation": false
+    }
+  ],
+  "bridge-pattern": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/bridge-pattern_20260118_025109.log",
+      "has_derivation": false
+    }
+  ],
+  "c4-mycology-diagram": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/c4-mycology-diagram_20260118_024929.log",
+      "has_derivation": false
+    }
+  ],
+  "c4-use-cases": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/c4-use-cases_20260118_024917.log",
+      "has_derivation": false
+    }
+  ],
+  "cargo-watch": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/g68y6gv3yw32m3b2nq2fp6d4v664kv9n-fastrand-2.1.1",
+        "/nix/store/88pks68kssdh0zll3b5qc5yf8wdr53m6-chrono-0.4.38",
+        "/nix/store/fsxz0sfa6c485fcp2vwb30z9qz679yyi-enumflags2-0.7.10.drv",
+        "/nix/store/hl45qhc1zqj2nvxw2iipaycaq26q286q-crate-windows-core-0.56.0.tar.gz",
+        "/nix/store/qjlvpvl4iw2mpvqxhlq4v68n27kspff5-polling-3.7.3",
+        "/nix/store/f95si602r6vyfsr35i3y2s19yrm84s9s-tauri-winrt-notification-0.2.1.drv",
+        "/nix/store/h37c8zsh9kz3s6wf54c7c7c6wkpwk7xm-console-0.15.8",
+        "/nix/store/wzj265dxsfhzgcwz1ckj1zpq6mlnpyk6-predicates-3.1.2.drv",
+        "/nix/store/zbxcq3xjmxgy46h6x29jp79cfx9x8677-indexmap-2.6.0",
+        "/nix/store/4vm9pxkjsbcrzmh4zxq3n6zbcpb8g59r-zbus_macros-4.4.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/cargo-watch_20260118_031925.log",
+      "has_derivation": true
+    }
+  ],
+  "chainlink-solana": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/rang8v71fk0bihnz8gyhb9qjyaal4r45-solana-cli-env.drv",
+        "/nix/store/8pvrmm65ynl30m6k4n9lbk8sc90j9mpr-nix-shell.drv",
+        "/nix/store/g4ppspdl4fy7hnp4jgjl4ll03v7i08w3-source",
+        "/nix/store/ky4h3fmq849m0gh2dpf5158ivhcxkidz-nix-shell.drv",
+        "/nix/store/41vkpyy5bwi0zk0jfzpsy7cbg9w8idws-solana-test-validator.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/chainlink-solana_20260118_064129.log",
+      "has_derivation": true
+    }
+  ],
+  "chisel": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/0kl3m055wsvn6ap7d6d9sphy07wfd15g-chisel-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/chisel_20260118_023017.log",
+      "has_derivation": true
+    }
+  ],
+  "cirq": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/0w8hmf3plgsh28sy9ls1m26250azh38r-cirq-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/cirq_20260118_022117.log",
+      "has_derivation": true
+    }
+  ],
+  "colosseum-mirror": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/brqzh9xd9v8qsxysshbgss8r114981dq-colosseum-mirror-0.1.0.drv",
+        "/nix/store/1lkrfr66psyp7da8gk42b6br16zlc2if-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/colosseum-mirror_20260118_024929.log",
+      "has_derivation": true
+    }
+  ],
+  "colosseum": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/v2yb7pq1hz1sy51hbwm9dd8c3miyvn6w-colosseum-raw-pages.drv",
+        "/nix/store/fh9p05cx965y9i20al8d5ya6kc6hip8m-colosseum-raw-pages.drv",
+        "/nix/store/qcxrf6hi3afinicfhfi73n3c8y3zlyk0-util-linux-minimal-2.41.1-lib",
+        "/nix/store/94ypzwhgg9y4vagg92zrjwrznih6vb2j-wget-1.25.0",
+        "/nix/store/9inrdjrj5c5c24dpb2fdnkjnc1qnbwmb-source",
+        "/nix/store/p125min33dv68h020qpgy90hl35g36im-colosseum-raw-pages"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/colosseum_20260118_025107.log",
+      "has_derivation": true
+    }
+  ],
+  "composite-2-3-5-7-11-13-17-19-nix-base-home-oauth-telemetry-llm-output-makefile-input-yolo-self-source": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-11-13-17-19-nix-base-home-oauth-telemetry-llm-output-makefile-input-yolo-self-source_20260118_024649.log",
+      "has_derivation": false
+    }
+  ],
+  "composite-2-3-5-7-11-13-17-nix-base-home-oauth-telemetry-llm-output-makefile-input-yolo": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-11-13-17-nix-base-home-oauth-telemetry-llm-output-makefile-input-yolo_20260118_024701.log",
+      "has_derivation": false
+    }
+  ],
+  "composite-2-3-5-7-11-13-nix-base-home-oauth-telemetry-llm-output-makefile-input": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-11-13-nix-base-home-oauth-telemetry-llm-output-makefile-input_20260118_024739.log",
+      "has_derivation": false
+    }
+  ],
+  "composite-2-3-5-7-11-nix-base-home-oauth-telemetry-llm-output": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-11-nix-base-home-oauth-telemetry-llm-output_20260118_024643.log",
+      "has_derivation": false
+    }
+  ],
+  "composite-2-3-5-7-nix-base-home-oauth-telemetry": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-7-nix-base-home-oauth-telemetry_20260118_024700.log",
+      "has_derivation": false
+    }
+  ],
+  "composite-2-3-5-nix-base-home-oauth": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-5-nix-base-home-oauth_20260118_024535.log",
+      "has_derivation": false
+    }
+  ],
+  "composite-2-3-nix-base-home-creds": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/composite-2-3-nix-base-home-creds_20260118_024742.log",
+      "has_derivation": false
+    }
+  ],
+  "consolidated-impure-gemini-telemetry-modules": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/consolidated-impure-gemini-telemetry-modules_20260118_024935.log",
+      "has_derivation": false
+    }
+  ],
+  "consolidated-impure-gemini-telemetry": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/consolidated-impure-gemini-telemetry_20260118_024445.log",
+      "has_derivation": false
+    }
+  ],
+  "consumer": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/consumer_20260118_025109.log",
+      "has_derivation": false
+    }
+  ],
+  "context": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/context_20260118_024621.log",
+      "has_derivation": false
+    },
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/context_20260118_024626.log",
+      "has_derivation": false
+    }
+  ],
+  "coq": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/w61p1ax5hvhnaryhqag3h5zs9zhyr569-const71.v",
+        "/nix/store/vp191i2jscqk3k7fyk1v3lzmihig37kf-ocaml4.14.2-zarith-1.14",
+        "/nix/store/0zl7a74jls8axr19l2x5c06m90vz4j9m-const71-coq",
+        "/nix/store/6ma4436rprxf9qjgmnwasrwqwrynisrg-ocaml4.14.2-findlib-1.9.8",
+        "/nix/store/kxfwa70djjmhsnpb4qskk595r2y8snbs-const71-coq.drv",
+        "/nix/store/g61h8qg3l9mksqx9d3h9wlf34lnc7wa4-coq-9.0.1",
+        "/nix/store/2k8yqsgy23xvb648mj8k4jb86bsbv1v9-ocaml-4.14.2",
+        "/nix/store/cmxvzf2dhdq2qr15ys67dgd9wp8039a2-const71.v.drv",
+        "/nix/store/4dz6a0v0dkdgypa5c0589bcj4b6k9nzy-csdp-6.1.1",
+        "/nix/store/kr4f1v04q6frjwim2wa41w215ghbgmaj-rocq-9.0.1"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/coq_20260118_022844.log",
+      "has_derivation": true
+    }
+  ],
+  "crq-document-check": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/crq-document-check_20260118_024543.log",
+      "has_derivation": false
+    }
+  ],
+  "crq-search-lattice": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/crq-search-lattice_20260118_024642.log",
+      "has_derivation": false
+    }
+  ],
+  "data-header": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/data-header_20260118_025618.log",
+      "has_derivation": false
+    }
+  ],
+  "data-lattice-builder": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/data-lattice-builder_20260118_024927.log",
+      "has_derivation": false
+    }
+  ],
+  "data-sources": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/data-sources_20260118_024548.log",
+      "has_derivation": false
+    }
+  ],
+  "datalog": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4rmj4l7dpr0b4bgyn5swcjaaj1rw6318-const71-datalog",
+        "/nix/store/2qs7ygqfpjm9x9m895p7b4rk0kkxyfpy-souffle-2.5",
+        "/nix/store/qb8mincqjnrxbzhbjwik12v8dxs8xinz-const71-datalog.drv",
+        "/nix/store/vq54a8gazbszf9mnkbphnw0vw6a10dhh-const71.dl",
+        "/nix/store/jywz6bp3cwz2szrf24bqk3qnsw55fj6j-const71.dl.drv",
+        "/nix/store/8n66c7pxw4k7ma14xsw7rb9z64fr00fd-mcpp-2.7.2.3"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/datalog_20260118_022052.log",
+      "has_derivation": true
+    }
+  ],
+  "decide": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/decide_20260118_024847.log",
+      "has_derivation": false
+    }
+  ],
+  "document-single-flake-pipeline": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/document-single-flake-pipeline_20260118_024755.log",
+      "has_derivation": false
+    }
+  ],
+  "dry-run-flake-evaluator": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/dry-run-flake-evaluator_20260118_024710.log",
+      "has_derivation": false
+    }
+  ],
+  "dwim": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/dwim_20260118_024857.log",
+      "has_derivation": false
+    }
+  ],
+  "ethereum": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/zma651rv7qsp99ni4pkc41j73g64sm0z-iana-etc-20250505",
+        "/nix/store/6pcaaswkw9j6prx3lwpp397hc8y0idfr-go-ethereum-1.16.5-clef",
+        "/nix/store/w4dpgd6v4bm12gb9cjfqp7j07x9lvnrj-go-ethereum-1.16.5-geth",
+        "/nix/store/wlny6wzrvh5b833bsz3zyhrhcjdhq20w-nix-shell.drv",
+        "/nix/store/q3dk40xcvfa2dwcqcd6b417w3gy5y9y8-go-ethereum-1.16.5",
+        "/nix/store/9gr2b9vab7yd8imr2pahhl0apwxa106s-go-ethereum-1.16.5.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ethereum_20260118_013631.log",
+      "has_derivation": true
+    }
+  ],
+  "eval-context": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/eval-context_20260118_024925.log",
+      "has_derivation": false
+    }
+  ],
+  "examples": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/iz5hpccn8j487f9wyrh6vj9di1yfyi45-nix-main-2.33.0/lib/libnixmain.so.2.33.0",
+        "/nix/store/x91z7i65kr7pkjsmnw6jzmynxb0s0mv3-nix-fetchers-2.33.0/lib/libnixfetchers.so.2.33.0",
+        "/nix/store/6bgcvfyxfd8zf2sfnbr6y8w3bbvdqdn4-nix-flake-2.33.0/lib/libnixflake.so.2.33.0",
+        "/nix/store/bwa598sxvhpyyj75gqlpb2nwwzh9h3k1-nix-cmd-2.33.0/lib/libnixcmd.so.2.33.0",
+        "/nix/store/6kmcd1m0y7q47ifmr2a69q6bk2hx5zw3-nix-util-2.33.0/lib/libnixutil.so.2.33.0",
+        "/nix/store/cf1a53iqg6ncnygl698c4v0l8qam5a2q-gcc-14.3.0-lib/lib/libstdc++.so.6",
+        "/nix/store/i3ibgfskl99qd8rslafbpaa1dmxdzh1z-glibc-2.40-66/lib/libc.so.6"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/examples_20260118_025906.log",
+      "has_derivation": false
+    }
+  ],
+  "feature-11-llm-output-capture": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-11-llm-output-capture_20260118_024701.log",
+      "has_derivation": false
+    }
+  ],
+  "feature-13-makefile-input": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-13-makefile-input_20260118_024535.log",
+      "has_derivation": false
+    }
+  ],
+  "feature-17-yolo-approval": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-17-yolo-approval_20260118_024710.log",
+      "has_derivation": false
+    }
+  ],
+  "feature-19-self-source-input": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-19-self-source-input_20260118_024643.log",
+      "has_derivation": false
+    }
+  ],
+  "feature-2-nix-base": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-2-nix-base_20260118_024549.log",
+      "has_derivation": false
+    }
+  ],
+  "feature-3-home-dir-creds": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-3-home-dir-creds_20260118_024638.log",
+      "has_derivation": false
+    }
+  ],
+  "feature-5-oauth-creds": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-5-oauth-creds_20260118_024651.log",
+      "has_derivation": false
+    }
+  ],
+  "feature-7-telemetry-capture": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/feature-7-telemetry-capture_20260118_024505.log",
+      "has_derivation": false
+    }
+  ],
+  "fetch-github-data": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/fetch-github-data_20260118_025911.log",
+      "has_derivation": false
+    }
+  ],
+  "file-indexer": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/file-indexer_20260118_024926.log",
+      "has_derivation": false
+    }
+  ],
+  "file-splitter": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/file-splitter_20260118_024917.log",
+      "has_derivation": false
+    }
+  ],
+  "filter": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/filter_20260118_024653.log",
+      "has_derivation": false
+    }
+  ],
+  "fish": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/8fh4pamg7878ffgm4i10biz8myan9kkj-fish-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/fish_20260118_021248.log",
+      "has_derivation": true
+    }
+  ],
+  "flake-reconstruction-lattice": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/flake-reconstruction-lattice_20260118_024500.log",
+      "has_derivation": false
+    }
+  ],
+  "flake_auditor": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/3998ba1hwswz8id3187dlfjqjzhxbrb2-download-windows_x86_64_gnu-0.53.1.drv",
+        "/nix/store/fmn3n3c708qll8zc5vy2dri9imh0b4yz-download-windows_i686_msvc-0.53.1.drv",
+        "/nix/store/yz02hdaqjlplsqg94pfy03k5d3d646hm-unpack-syn-2.0.106.drv",
+        "/nix/store/829wb290i87wngxlh404klwxql5v18p4-python3-3.13.7",
+        "/nix/store/pgdac5wva6ffaqfdpdqhixyg30kma1p9-download-utf8parse-0.2.2",
+        "/nix/store/9rcb1rznx2l2k6d9c50c7lasy0k7y3mv-unpack-windows-sys-0.60.2.drv",
+        "/nix/store/qi4fbj3l92pf8w3az6bmg9nl5fw4nabb-download-is_terminal_polyfill-1.70.1",
+        "/nix/store/yfnh1avy7nsi7153ykk9szs4235sn16j-download-countme-3.0.1.drv",
+        "/nix/store/pz2z2jlrj5a5shrv5spnl4mn21ndajv0-unpack-itoa-1.0.15.drv",
+        "/nix/store/5vlbhv87pip2bnr6dlgn6jkbagwl9hp6-nix_auditor_rust-0.1.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/flake_auditor_20260118_025642.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/45xy8nsgjfxhq5gcvv9nd118fw61qlhb-flake_auditor-0.1.0.drv",
+        "/nix/store/wij1s92vidr5ysw799xv7fc3naxf46pv-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/flake_auditor_20260118_025806.log",
+      "has_derivation": true
+    }
+  ],
+  "full-graph": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/full-graph_20260118_024621.log",
+      "has_derivation": false
+    }
+  ],
+  "gcc": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/0vgly9hqaxkg2shl4ccs4xd3p5ygf51w-const-71-gcc...",
+        "/nix/store/1wqkc4j7i5mxhx2cqfp8zqk45pw6pkxy-main.c.drv",
+        "/nix/store/0vgly9hqaxkg2shl4ccs4xd3p5ygf51w-const-71-gcc",
+        "/nix/store/dj43clc5ff7jjnfmhbaj6q4q0h8kpfpm-glibc-2.40-66-dev/include/features.h:422:4:",
+        "/nix/store/kv02ldn4z5bj2z6h2p8sh8p6v39m2jq1-const-71-gcc.drv",
+        "/nix/store/0vgly9hqaxkg2shl4ccs4xd3p5ygf51w-const-71-gcc/bin/const-71-gcc",
+        "/nix/store/0vgly9hqaxkg2shl4ccs4xd3p5ygf51w-const-71-gcc/bin",
+        "/nix/store/k424b0k4hb71fism45vqdcy1rhf8lp9a-main.c:1:",
+        "/nix/store/dj43clc5ff7jjnfmhbaj6q4q0h8kpfpm-glibc-2.40-66-dev/include/bits/libc-header-start.h:33,",
+        "/nix/store/dj43clc5ff7jjnfmhbaj6q4q0h8kpfpm-glibc-2.40-66-dev/include/stdio.h:28,"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/gcc_20260118_022901.log",
+      "has_derivation": true
+    }
+  ],
+  "gemini-integration": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/rp3fhpnfczz0ias7374ba8pn33y90ncb-nix-shell.drv",
+        "/nix/store/wqjhclnkqa5zgamhiji4y85imb42aq68-gemini-cli-0.8.0-nightly.20250925.b1da8c21.drv",
+        "/nix/store/mkzmvhjblrscmj9mjvsj3drrc2nppdy4-pyrmnd96110m04wfgnkfq0ydf2s5g2v5-source",
+        "/nix/store/bf45nflf0wylnscwwa2xgliib91x226l-nodejs-22.22.0",
+        "/nix/store/rrjbpm3rwc75bh6k1gaxx2c0ikpf3war-gemini-cli-0.8.0-nightly.20250925.b1da8c21",
+        "/nix/store/7mmihld0lbixr6rflgxnbcihhnw5mqi3-nodejs-22.22.0-dev"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/gemini-integration_20260118_011402.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/gemini-integration_20260118_024345.log",
+      "has_derivation": false
+    }
+  ],
+  "gemini-prompt-flake": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/xi4cq99cg2anl5bipgbia6zv0nwyxaqg-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/gemini-prompt-flake_20260118_025859.log",
+      "has_derivation": true
+    }
+  ],
+  "genetic": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/clygvrpbxjy70bninq77kdwmbc01f4zm-python3.13-contourpy-1.3.3",
+        "/nix/store/ccg8pzzn25anak9fxsr46v1l3zrk1rb0-python3.13-fonttools-4.60.1",
+        "/nix/store/gzpd6wpyy53gj5s26hsg81nf7b0g99yq-python3.13-matplotlib-3.10.5",
+        "/nix/store/whq3xp7p8237f7img0knkxxpw5hgiscv-tk-8.6.16",
+        "/nix/store/sv2bkbbbm19nijd6f5m9k10wmfg38hkf-python3.13-pyparsing-3.2.3",
+        "/nix/store/mc1wzvr5f2h3g49wmb6pjvcnngxvx9kp-tcl-8.6.16",
+        "/nix/store/77rdhz8wja5jgv65l3mr0ks7jc1ari93-libimagequant-4.4.1",
+        "/nix/store/dwmkkwhddl6xvxv5czkzbw88fbfy4ww1-genetic-71.drv",
+        "/nix/store/ajbw7ivmwg0njza3zb7k3vr0b43mjrfx-python3.13-python-dateutil-2.9.0.post0",
+        "/nix/store/3bwzbn6c5a99x956v8labkp0v43nb7vx-python3.13-pillow-12.0.0"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/genetic_20260118_021425.log",
+      "has_derivation": true
+    }
+  ],
+  "get-nix-file-list": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/get-nix-file-list_20260118_025910.log",
+      "has_derivation": false
+    }
+  ],
+  "github-api-wrapper": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-api-wrapper_20260118_025056.log",
+      "has_derivation": false
+    }
+  ],
+  "github-code-search": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-code-search_20260118_024927.log",
+      "has_derivation": false
+    }
+  ],
+  "github-data-fetcher-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-data-fetcher-flake_20260118_024939.log",
+      "has_derivation": false
+    }
+  ],
+  "github-data": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-data_20260118_024627.log",
+      "has_derivation": false
+    }
+  ],
+  "github-grep-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-grep-flake_20260118_025057.log",
+      "has_derivation": false
+    }
+  ],
+  "github-to-foaf": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/github-to-foaf_20260118_025938.log",
+      "has_derivation": false
+    }
+  ],
+  "go": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/x3zjxxz8m4ki88axp0gn8q8m6bldybba-gnugrep-3.12",
+        "/nix/store/xbxv3324s83rklvywq8pngvlbk62y3lk-openssl-3.6.0-bin",
+        "/nix/store/i6cpq9h8hbqvj202hpj74ql4hj28k95j-go-1.24.12/src/run.bash:",
+        "/nix/store/i6cpq9h8hbqvj202hpj74ql4hj28k95j-go-1.24.12/src/debug/elf/testdata/compressed-32.obj",
+        "/nix/store/i6cpq9h8hbqvj202hpj74ql4hj28k95j-go-1.24.12/src/debug/elf/testdata/go-relocation-test-gcc492-mips64.obj",
+        "/nix/store/i6cpq9h8hbqvj202hpj74ql4hj28k95j-go-1.24.12/src/runtime/race/race_linux_arm64.syso",
+        "/nix/store/s3w5m3spa1g71hx0yb82lvk6394j3w5j-stdenv-linux",
+        "/nix/store/i6cpq9h8hbqvj202hpj74ql4hj28k95j-go-1.24.12/pkg/tool/linux_amd64/link",
+        "/nix/store/i6cpq9h8hbqvj202hpj74ql4hj28k95j-go-1.24.12/pkg/tool/linux_amd64/vet",
+        "/nix/store/i6cpq9h8hbqvj202hpj74ql4hj28k95j-go-1.24.12/src/debug/elf/testdata/libtiffxx.so_"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/go_20260118_064319.log",
+      "has_derivation": true
+    }
+  ],
+  "graph_partition": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/8kf4yxig3ycnm45xivkjfqg3xvda2vh7-python3.13-networkx-3.5",
+        "/nix/store/1lykv231mxk7ik32wbkwcx99zq7q6fp4-partition-71.drv",
+        "/nix/store/vg9ipp5sm79j3j0g15rilmm6q0i5z525-python3-3.13.11-env.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/graph_partition_20260118_021753.log",
+      "has_derivation": true
+    }
+  ],
+  "graphql": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/z6yzgpm5w9cb98srmapsvav26iyf18r5-graphql-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/graphql_20260118_022122.log",
+      "has_derivation": true
+    }
+  ],
+  "grep-nar-flake": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4fycj56s4wn8mn1hwl813ahb02ln4fcc-nar-grep-results.drv",
+        "/nix/store/nb8nq7627kxn7gk324a2j5g2cdcg3ykv-nar-grep-results"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/grep-nar-flake_20260118_025905.log",
+      "has_derivation": true
+    }
+  ],
+  "hackathon-mycology-workflow-puml": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/hackathon-mycology-workflow-puml_20260118_024746.log",
+      "has_derivation": false
+    }
+  ],
+  "haskell": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/giagbrn0381sq5ngzqyxmlshjh824vgm-const-71-haskell.drv",
+        "/nix/store/gp8h74bgxcwgjsx8glyks8l9jri2n9q7-const-71-haskell",
+        "/nix/store/ymrp3m2z7y9hk3w8pzkmaifk0h5wj5nx-Main.hs,",
+        "/nix/store/7pqh66i7bzfv2cdry3m8ljs9dzgxrhw5-Main.hs.drv",
+        "/nix/store/gp8h74bgxcwgjsx8glyks8l9jri2n9q7-const-71-haskell/bin/const-71-haskell",
+        "/nix/store/ymrp3m2z7y9hk3w8pzkmaifk0h5wj5nx-Main.o",
+        "/nix/store/gp8h74bgxcwgjsx8glyks8l9jri2n9q7-const-71-haskell...",
+        "/nix/store/gp8h74bgxcwgjsx8glyks8l9jri2n9q7-const-71-haskell/bin"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/haskell_20260118_022826.log",
+      "has_derivation": true
+    }
+  ],
+  "hf-dataset-validator-rust": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/nk9jmz90n972wpbxszf0v3lkvjjxkmgf-arrow-schema-53.4.1.drv",
+        "/nix/store/704n0znfghkqw7w54sw03bbn1m77kx5f-datafusion-physical-plan-43.0.0.drv",
+        "/nix/store/9nfzzzr7h5ppccmw0l7j2iya4myynxaz-parquet-53.4.1.drv",
+        "/nix/store/j5f4ximc8gblypfy865fvsp452ngzabh-lwcnbknkb8s6s1ks5837f9q7qa8dchn1-source",
+        "/nix/store/7n18aykhh7vzczvq8zfbwshhvsl8zxg9-winnow-0.7.12",
+        "/nix/store/a99k3jwv8gyw18p4yplpv2lgprr610mb-datafusion-functions-aggregate-43.0.0.drv",
+        "/nix/store/n5svw0qysv9gx009n1m0xpcrgrdb787z-blake3-1.8.3.drv",
+        "/nix/store/pj9rllxhyglg3s16xaaa2k9g0z3iq02n-arrow-array-53.4.1.drv",
+        "/nix/store/5ckm77nmdzvas1532k1znyb38ci5lxxh-crate-datafusion-functions-window-43.0.0.tar.gz.drv",
+        "/nix/store/kvb3j2w54vr4b2wysa3rql0ymglc9152-crate-arrow-csv-53.4.1.tar.gz.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/hf-dataset-validator-rust_20260118_025956.log",
+      "has_derivation": true
+    }
+  ],
+  "idris2": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/w2kixnzdgpf94y13n9vqfg4ygx8cbg3i-base",
+        "/nix/store/d9h406ri92mafdj08sj9y489w4nyda62-prelude",
+        "/nix/store/2s248dzqqq72p900lng3rbs4fzpmp7wl-const71-idris2",
+        "/nix/store/9lrncjb8n2wp4np2ns6rxxr5w9yllcvd-const71-idris2.drv",
+        "/nix/store/k3sj2lzqrbqrf14p778fwzxchipn83y2-contrib",
+        "/nix/store/ljwcdgnjz6rffg78r0klpb5pn8xm91q7-libidris2_support-0.8.0",
+        "/nix/store/jafa8k7hkfr1ffc716ydpay7z5krfdff-network",
+        "/nix/store/4fymz6by301gclk0kx54j0hva8hn1gnv-const71.idr.drv",
+        "/nix/store/xgqikk3fx1pwcas07d307jdancc0irwd-test",
+        "/nix/store/8cvhkcpqp6r704mcp0apbk14nac58rfl-const71.idr"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/idris2_20260118_021433.log",
+      "has_derivation": true
+    }
+  ],
+  "impure-wrapper": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/impure-wrapper_20260118_024836.log",
+      "has_derivation": false
+    }
+  ],
+  "ini": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/zmzqv0qhjk93czmbipcglgv5cpwmhfry-ini-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ini_20260118_022324.log",
+      "has_derivation": true
+    }
+  ],
+  "intercal": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/vwy61sg64qqhg82xm3yl7izx1j2qzxp8-intercal-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/intercal_20260118_021828.log",
+      "has_derivation": true
+    }
+  ],
+  "ipfs-store": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ipfs-store_20260118_024927.log",
+      "has_derivation": false
+    }
+  ],
+  "isabelle": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/r9wbjib6xxjkyb9yvjvrkl4sq61i2lyn-gcc-wrapper-15.2.0/bin/strip",
+        "/nix/store/hb64kzb41hi050jwk9dfii86n36jrcr4-z3-4.14.0-dev/lib/cmake",
+        "/nix/store/vlmx8av7w5aznx13cfssypgn8bl0kpd1-Isabelle2025_linux.tar.gz",
+        "/nix/store/k97xp2n0bwh1vbin9yybygn2lpdy9dvs-const71-isabelle.drv",
+        "/nix/store/nz4id4lsklzs6ffzxhl6w4rs17gp0aqn-veriT-2021.06.2",
+        "/nix/store/nx92k2m1361fi249f4aszfks7gk4slhs-vampire-5.0.0/lib",
+        "/nix/store/p6vslhvfhppy020r92vlmlxby0ggzcy0-isabelle.desktop/share/applications/isabelle.desktop:",
+        "/nix/store/3cza2kjwagazgj7qrspjsayvyzdqqqfg-Const71.thy.drv",
+        "/nix/store/iws559bknzpgf5jmlvjj4f5a8vvylm58-z3-4.14.0",
+        "/nix/store/92qks2ynf9n24i6iyf0aslllxpr8b648-source"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/isabelle_20260118_021909.log",
+      "has_derivation": true
+    }
+  ],
+  "jax_gpu": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/cb4kg08gc8kwa81rxclkn6qqc6hxwwp5-gfortran-15.2.0-lib",
+        "/nix/store/1yvbdnys10qw6y0339vaki40wfc3vw4j-bin",
+        "/nix/store/j1qbpis0lin0fs88l8z7hdsk6xmfmysi-python3.13-opt-einsum-3.4.0",
+        "/nix/store/szlfxyykpp3a62xxydlzap5x21cxmj4j-python3.13-absl-py-2.3.1",
+        "/nix/store/qx6wwf71kyzs5w14ryryfz619n3il5ra-qhull-2020.2",
+        "/nix/store/9rp469cmiys6a4ncgc6nhwvj8kb9a2q7-blas-3",
+        "/nix/store/4iih3ibsjcrp7hs4cnsxxb6zs46svxj2-python3.13-jaxlib-0.8.2",
+        "/nix/store/74lsy15mvdbsnn40jjr9w95y17mm8b0v-python3.13-numpy-2.3.5",
+        "/nix/store/wy205ik03yp1vl55il5i332nbc285n0i-gfortran-15.2.0-libgcc",
+        "/nix/store/6z2a9bqvz3y605lw30baw4h2r5jrx39p-lapack-3-dev"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/jax_gpu_20260118_021229.log",
+      "has_derivation": true
+    }
+  ],
+  "jobs": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/gvyi59kx6ms4xqckm63rprcpgcf9icjx-my-network-test-package-0.1.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/jobs_20260118_023942.log",
+      "has_derivation": true
+    }
+  ],
+  "json": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/4z6j4x7ff1kn8fcncyk60d72f4s7fcbv-json-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/json_20260118_021409.log",
+      "has_derivation": true
+    }
+  ],
+  "julia": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/3ib4xfarzj88pq97iiryxz147lfci86b-julia-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/julia_20260118_021704.log",
+      "has_derivation": true
+    }
+  ],
+  "keyword-searcher": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/keyword-searcher_20260118_024917.log",
+      "has_derivation": false
+    }
+  ],
+  "killerjoke": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/killerjoke_20260118_025835.log",
+      "has_derivation": false
+    }
+  ],
+  "layer1": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/layer1_20260118_024641.log",
+      "has_derivation": false
+    }
+  ],
+  "lean4-verifier": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lean4-verifier_20260118_024929.log",
+      "has_derivation": false
+    }
+  ],
+  "lean4": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/hgrr6brn6gxwrzz2z8yca82r0mhhm08r-lean4-4.26.0",
+        "/nix/store/hmv6n6qzmv1b2by1sprf2s0qdgnh3zjb-const-71-lean4",
+        "/nix/store/h59j9plykazyia2vpbab3rwklwicn9h5-Main.lean.drv",
+        "/nix/store/pd8i22r7cp2csk3bmnyivlqrbd1hgnaz-const-71-lean4.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lean4_20260118_022141.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/vrza8waccy4rp4baiv6zmf7yghpdid4x-nix-shell.drv",
+        "/nix/store/cnhj90hpbjzbw2kznzfmh414ijbcr4fq-nix-shell.drv",
+        "/nix/store/1hvsndpfp71xq84acxazvd1kha7slman-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lean4_20260118_031207.log",
+      "has_derivation": true
+    }
+  ],
+  "libgit": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/87m47yw59ssx4awxfz96faqshal2j116-libgit-0.1.0/lib/liblibgit.so",
+        "/nix/store/cnsy74b2j9ngq8m8vh326a5ibd5j2c3k-libgit-0.1.0.drv",
+        "/nix/store/87m47yw59ssx4awxfz96faqshal2j116-libgit-0.1.0",
+        "/nix/store/gfv0v4widxml4475dy7c0xw74ff1wn0v-libgit",
+        "/nix/store/87m47yw59ssx4awxfz96faqshal2j116-libgit-0.1.0/lib",
+        "/nix/store/87m47yw59ssx4awxfz96faqshal2j116-libgit-0.1.0..."
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/libgit_20260118_011437.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/cnsy74b2j9ngq8m8vh326a5ibd5j2c3k-libgit-0.1.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/libgit_20260118_014435.log",
+      "has_derivation": true
+    }
+  ],
+  "libhttp": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/c6c1hbl7fg083mymzyhclb5y7w3bww21-libhttp-0.1.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/libhttp_20260118_010100.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/9c4n6d3990m7451ak3aryj4y623hiwhm-cargo-vendor-dir.drv",
+        "/nix/store/k5c3rr79nmml9sbi9lbbjcfmwz8625v8-libhttp-0.1.0/lib",
+        "/nix/store/k5c3rr79nmml9sbi9lbbjcfmwz8625v8-libhttp-0.1.0/lib/liblibhttp.so",
+        "/nix/store/k5c3rr79nmml9sbi9lbbjcfmwz8625v8-libhttp-0.1.0...",
+        "/nix/store/c6c1hbl7fg083mymzyhclb5y7w3bww21-libhttp-0.1.0.drv",
+        "/nix/store/k5c3rr79nmml9sbi9lbbjcfmwz8625v8-libhttp-0.1.0",
+        "/nix/store/h55g25a5l4rdj1s8d0h6wdfsh4rxd1r7-libhttp"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/libhttp_20260118_012119.log",
+      "has_derivation": true
+    }
+  ],
+  "librustc": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/kgcnjbb5391gipqp9x566rd0n558zk5c-3z88vi3bs3aba7ggi65zz0w78xw7c9m9-source",
+        "/nix/store/5y2i8chx1612w3c1jxg79s8lgi5h9jpz-goblin-0.9.3",
+        "/nix/store/7ycaf0aljxz23d8lfbzqx7gj52mcf0ib-nix-shell.drv",
+        "/nix/store/4l6xas54zbavcrgls5zi5y30ksbg9hr1-librustc-0.1.0.drv",
+        "/nix/store/w50vvby5p0nivjk4psizpmwpcsg426rq-librustc-0.1.0/lib/liblibrustc.so",
+        "/nix/store/w50vvby5p0nivjk4psizpmwpcsg426rq-librustc-0.1.0...",
+        "/nix/store/cnbb26vka86vjqsnk47vamh3q7bk9jm9-cargo-vendor-dir.drv",
+        "/nix/store/w50vvby5p0nivjk4psizpmwpcsg426rq-librustc-0.1.0/lib",
+        "/nix/store/w50vvby5p0nivjk4psizpmwpcsg426rq-librustc-0.1.0"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/librustc_20260118_012104.log",
+      "has_derivation": true
+    }
+  ],
+  "list-files": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/list-files_20260118_025909.log",
+      "has_derivation": false
+    }
+  ],
+  "llm-api-wrapper": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-api-wrapper_20260118_025106.log",
+      "has_derivation": false
+    }
+  ],
+  "llm-data-extractor-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-data-extractor-flake_20260118_025110.log",
+      "has_derivation": false
+    }
+  ],
+  "llm-nix-simulator-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-nix-simulator-flake_20260118_025102.log",
+      "has_derivation": false
+    }
+  ],
+  "llm-result-purifier-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-result-purifier-flake_20260118_024939.log",
+      "has_derivation": false
+    }
+  ],
+  "llm-task-template": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llm-task-template_20260118_024458.log",
+      "has_derivation": false
+    }
+  ],
+  "llvm": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/qarrb8yfby1yyypm32vabzgxgq3w41ma-gcc-15.2.0/include/c++/15.2.0/x86_64-unknown-linux-gnu/bits/c++config.h:727:",
+        "/nix/store/dj43clc5ff7jjnfmhbaj6q4q0h8kpfpm-glibc-2.40-66-dev/include/features.h:422:4:",
+        "/nix/store/3mdkalklfdwfdwdi19x1zzlzl017y5xl-compiler-rt-libc-21.1.7",
+        "/nix/store/w7rpcgzwhqdcrsxzj3ml4njjwv0bar82-compiler-rt-libc-21.1.7-dev",
+        "/nix/store/qarrb8yfby1yyypm32vabzgxgq3w41ma-gcc-15.2.0/include/c++/15.2.0/iostream:40:",
+        "/nix/store/k290h983ji7firr45fiw7984vnmnpxqi-const-71-llvm/bin",
+        "/nix/store/qarrb8yfby1yyypm32vabzgxgq3w41ma-gcc-15.2.0/include/c++/15.2.0/bits/requires_hosted.h:31:",
+        "/nix/store/k290h983ji7firr45fiw7984vnmnpxqi-const-71-llvm",
+        "/nix/store/1p6yp7hcrbkvfr4jqpzv51zyd1vxmi4f-main.cpp:1:",
+        "/nix/store/1yn4fqnhyj80lmlkz97lzncmrkwfrg1j-const-71-llvm.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/llvm_20260118_022924.log",
+      "has_derivation": true
+    }
+  ],
+  "lmfdb2nix-implementation-task": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lmfdb2nix-implementation-task_20260118_024919.log",
+      "has_derivation": false
+    }
+  ],
+  "lmfdb2nix": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lmfdb2nix_20260118_024904.log",
+      "has_derivation": false
+    }
+  ],
+  "locktoinput": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/locktoinput_20260118_024859.log",
+      "has_derivation": false
+    }
+  ],
+  "log-analysis-pipeline": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/log-analysis-pipeline_20260118_024024.log",
+      "has_derivation": false
+    }
+  ],
+  "log_analyzer": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/l03ff0d3r5k94pp5jwv9bchyaay0drgn-hyper-0.14.32",
+        "/nix/store/qpxwx4njhr3dh53qkghkzxdiwx951ff8-adler2-2.0.1",
+        "/nix/store/sc1914n1kddizlbl71gm1w2sq41myrf3-yoke-0.8.0",
+        "/nix/store/y2blq04mrwbl80lmlgzwbsbxgjaygq5g-anstream-0.6.20",
+        "/nix/store/qskixlhqixh775lsjvfp6gz87900zlcg-rustls-pemfile-1.0.4",
+        "/nix/store/j09xkbypljdhxwspfiqd8sf64zgxhp52-openssl-3.5.1",
+        "/nix/store/jw5y6agi1c0fqbkq3x4hba8kq7xdcywk-linux-raw-sys-0.11.0",
+        "/nix/store/1rhqgwq1zayjmsv0rrhgmjphx3qfkn0s-stable_deref_trait-1.2.0",
+        "/nix/store/na9bxjq8s4j5z634vb37mnd8xwcqqnyj-http-0.2.12",
+        "/nix/store/1vw3n1caad61rdg020qgsil21db98x7j-keyutils-1.6.3-lib"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/log_analyzer_20260118_024100.log",
+      "has_derivation": true
+    }
+  ],
+  "loop2": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/loop2_20260118_024846.log",
+      "has_derivation": false
+    }
+  ],
+  "lua": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/bnqzmvd3vs3bqh6gyizvdbrbdz51nq65-lua-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/lua_20260118_022332.log",
+      "has_derivation": true
+    }
+  ],
+  "main": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/main_20260118_024654.log",
+      "has_derivation": false
+    }
+  ],
+  "malbolge": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/ja1b6k3fg210n39ianxhg0aqjqw7qn02-malbolge-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/malbolge_20260118_022816.log",
+      "has_derivation": true
+    }
+  ],
+  "mcts-nix": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mcts-nix_20260118_025111.log",
+      "has_derivation": false
+    }
+  ],
+  "mcts-solana-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mcts-solana-flake_20260118_025059.log",
+      "has_derivation": false
+    }
+  ],
+  "mcts": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/wn4gsf46n6aic5yb45x8i9qy0q8swwan-mcts-71.drv",
+        "/nix/store/p79bx0qpmr12y6jg2glhfj8kdfhzcri9-python3-3.13.11-env.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mcts_20260118_022224.log",
+      "has_derivation": true
+    }
+  ],
+  "meta-indexer": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/meta-indexer_20260118_024929.log",
+      "has_derivation": false
+    }
+  ],
+  "meta-introspector-fetchers": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/l68ns4b1mndc51l9895k9xg9l98q4fmv-meta-introspector-fetchers-placeholder.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/meta-introspector-fetchers_20260118_024933.log",
+      "has_derivation": true
+    }
+  ],
+  "meta-introspector": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/f3svsz084wib05lajw4c78xwy3faxv9a-numerical-codebreaker.drv",
+        "/nix/store/z7slz4sww015a0glxkf6vf8pvxqbmca0-numerical-check.drv",
+        "/nix/store/bvk6zmwvk94sclym8l92rgjkihyk98vw-concept-map.drv",
+        "/nix/store/5gy80z7d20j6rz8rdnba0nb41sy4vvqp-concept-map-check",
+        "/nix/store/zcnf3scbi71csmjqq7fd07d2336kplnn-numerical-check",
+        "/nix/store/8k6dzfyqgsg1p05rr76hx17m98qygr1y-s3j94l237hl5p6gr1zqarszaaq546z4r-source",
+        "/nix/store/jxjiyqmq7g9p1xy32djp4rzg0rbizdb3-concept-map-check.drv",
+        "/nix/store/00mjdc227vja09kwnq5z89gynhh5v30z-lmfdb-check.drv^*",
+        "/nix/store/6grgvdzhs7pfnc089l6ik85psvd2vy5n-lmfdb-check",
+        "/nix/store/hgyqig196s48z5fvjnnlw3pdwqp5qfg2-meta-introspector-analysis-0.1.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/meta-introspector_20260118_010823.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/865sqyzasmas2zhq5vhxp9mnrq0wh05g-numerical-check.drv",
+        "/nix/store/yn1njhrn0pf5fi9iq35ldayncbdnp4hb-meta-introspector-analysis-0.1.0.drv^*",
+        "/nix/store/m3276683wmnz4jcmjjallk6ngfy21m6j-ki4jgppvvp4i17vcjvzyrsrw7l4sa74v-source",
+        "/nix/store/yn1njhrn0pf5fi9iq35ldayncbdnp4hb-meta-introspector-analysis-0.1.0.drv",
+        "/nix/store/na9y60fg86vcbcbjvnfk4hqq4ips6bwi-numerical-check",
+        "/nix/store/c9fg377dcqya1illrlylacy0qq8wyvhf-concept-map-check",
+        "/nix/store/4a288l29p8m5nhc6mhxx2nfzipnb3vl2-concept-map-check.drv",
+        "/nix/store/865sqyzasmas2zhq5vhxp9mnrq0wh05g-numerical-check.drv^*",
+        "/nix/store/pj7knxm2b2hg5sy4rn0dq1134yhcwiry-lmfdb-check.drv",
+        "/nix/store/pj7knxm2b2hg5sy4rn0dq1134yhcwiry-lmfdb-check.drv^*"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/meta-introspector_20260118_013943.log",
+      "has_derivation": true
+    }
+  ],
+  "meta-orchestrator": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/meta-orchestrator_20260118_024802.log",
+      "has_derivation": false
+    }
+  ],
+  "metacoq": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/metacoq_20260118_021222.log",
+      "has_derivation": false
+    }
+  ],
+  "micro": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/micro_20260118_024900.log",
+      "has_derivation": false
+    }
+  ],
+  "mina-zkp-integration-task": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mina-zkp-integration-task_20260118_024925.log",
+      "has_derivation": false
+    }
+  ],
+  "mini-zkp-verifier": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mini-zkp-verifier_20260118_024919.log",
+      "has_derivation": false
+    }
+  ],
+  "minizinc-nix": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/minizinc-nix_20260118_025027.log",
+      "has_derivation": false
+    }
+  ],
+  "minizinc": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/wfkslvvr55qd1nw2c6ia0gzns7m6q26w-const71.mzn.drv",
+        "/nix/store/msv7hamrkgvi0f4kcb5qabaclffdsflp-const71.mzn",
+        "/nix/store/mly4ib4r70l3bcwkv1mnzzh3s7axqbcf-const71-minizinc.drv",
+        "/nix/store/zql8x7gybknfph7zxk9iyfnsik52pid6-const71-minizinc"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/minizinc_20260118_022520.log",
+      "has_derivation": true
+    }
+  ],
+  "mongodb": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/233jjrwqxw0gq0lr7scicscklbd2aa7q-python3-3.13.11-env.drv",
+        "/nix/store/jm91js0mxxjc7x58mjcxfjkrwl2y55vq-python3.13-pymongo-4.13.2",
+        "/nix/store/4paz1cs11jb4z5sphv8apibjiay13kfa-mongodb-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mongodb_20260118_022442.log",
+      "has_derivation": true
+    }
+  ],
+  "monster-knot-calculator": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/monster-knot-calculator_20260118_024650.log",
+      "has_derivation": false
+    }
+  ],
+  "move": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/mn30ns409kgmgzn611qbpf64daysdi2p-move-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/move_20260118_022127.log",
+      "has_derivation": true
+    }
+  ],
+  "mycology-workflow": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/mycology-workflow_20260118_024738.log",
+      "has_derivation": false
+    }
+  ],
+  "nar-binstore-builder": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-binstore-builder_20260118_024929.log",
+      "has_derivation": false
+    }
+  ],
+  "nar-bridge-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-bridge-flake_20260118_025109.log",
+      "has_derivation": false
+    }
+  ],
+  "nar-loader": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-loader_20260118_024927.log",
+      "has_derivation": false
+    }
+  ],
+  "nar-locator": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-locator_20260118_024927.log",
+      "has_derivation": false
+    }
+  ],
+  "nar-similarity-search": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar-similarity-search_20260118_024929.log",
+      "has_derivation": false
+    }
+  ],
+  "nar": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/iz5hpccn8j487f9wyrh6vj9di1yfyi45-nix-main-2.33.0/lib/libnixmain.so.2.33.0",
+        "/nix/store/x91z7i65kr7pkjsmnw6jzmynxb0s0mv3-nix-fetchers-2.33.0/lib/libnixfetchers.so.2.33.0",
+        "/nix/store/6bgcvfyxfd8zf2sfnbr6y8w3bbvdqdn4-nix-flake-2.33.0/lib/libnixflake.so.2.33.0",
+        "/nix/store/bwa598sxvhpyyj75gqlpb2nwwzh9h3k1-nix-cmd-2.33.0/lib/libnixcmd.so.2.33.0",
+        "/nix/store/6kmcd1m0y7q47ifmr2a69q6bk2hx5zw3-nix-util-2.33.0/lib/libnixutil.so.2.33.0",
+        "/nix/store/cf1a53iqg6ncnygl698c4v0l8qam5a2q-gcc-14.3.0-lib/lib/libstdc++.so.6",
+        "/nix/store/i3ibgfskl99qd8rslafbpaa1dmxdzh1z-glibc-2.40-66/lib/libc.so.6"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nar_20260118_025902.log",
+      "has_derivation": false
+    }
+  ],
+  "neo4j": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/fcmgf1nz5di0r9jpnarv5rmcfczf7v4q-neo4j-71.drv",
+        "/nix/store/2fyiivmj5qvjwbfdch6vj1cvgm371fjn-python3.13-neo4j-6.0.3",
+        "/nix/store/2sl6r3h34shk38imp5icx8cg5604nxi0-python3-3.13.11-env.drv",
+        "/nix/store/rrxym5q8gbykgx66xvv57fm8zdi93d5g-python3.13-pytz-2025.2"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/neo4j_20260118_021259.log",
+      "has_derivation": true
+    }
+  ],
+  "nix-duplication-detector": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-duplication-detector_20260118_024928.log",
+      "has_derivation": false
+    }
+  ],
+  "nix-llm-context": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-llm-context_20260118_024459.log",
+      "has_derivation": false
+    }
+  ],
+  "nix-llm-task": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-llm-task_20260118_024459.log",
+      "has_derivation": false
+    }
+  ],
+  "nix-log-consumer-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-log-consumer-flake_20260118_025159.log",
+      "has_derivation": false
+    }
+  ],
+  "nix-log-sample-extractor-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-log-sample-extractor-flake_20260118_025200.log",
+      "has_derivation": false
+    }
+  ],
+  "nix-ngram-indexer": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-ngram-indexer_20260118_024929.log",
+      "has_derivation": false
+    }
+  ],
+  "nix-to-poem-vial": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix-to-poem-vial_20260118_024739.log",
+      "has_derivation": false
+    }
+  ],
+  "nix2": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix2_20260118_025911.log",
+      "has_derivation": false
+    }
+  ],
+  "nix": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix_20260118_011707.log",
+      "has_derivation": false
+    }
+  ],
+  "nix_concepts_and_facts": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix_concepts_and_facts_20260118_023940.log",
+      "has_derivation": false
+    }
+  ],
+  "nix_derivation": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/nvh84y0fcbiizghsq7100z653bb4g36v-const-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix_derivation_20260118_022339.log",
+      "has_derivation": true
+    }
+  ],
+  "nix_expr": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/g9ld6k9d8l1pln80cb7sxw82qxnxr5cd-nix-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nix_expr_20260118_022802.log",
+      "has_derivation": true
+    }
+  ],
+  "nixpacks": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/y00ddwmyw798gmjzwnqfxbp1f9iaap26-crate-thread_local-1.1.4.tar.gz",
+        "/nix/store/wwicm5w77khvapfkak816s5l1gh73dr3-ignore-0.4.18.drv",
+        "/nix/store/z4ah2bxvbyl0bcv27j99fnpsdfippnih-rustc_version-0.4.0",
+        "/nix/store/9i475mf59zif5w86nm1wnxlgyvbhskrx-brotli-1.0.9-lib",
+        "/nix/store/1s8gayb6bpp6ij9yjfnnw3c6brxwjyks-wait-timeout-0.2.0.drv",
+        "/nix/store/b1wwkl1g6v0askg29zws650njnp0ds0q-mio-0.8.5.drv",
+        "/nix/store/l1yvbjn13jaz2pwmj82pn9qrgc5nhxdl-futures-sink-0.3.25.drv",
+        "/nix/store/8v92mlrpxfa32ydyi7iqm1rwm374s8j6-tracing-core-0.1.30.drv",
+        "/nix/store/wxiip3mbrcf5igqwzwnrmnwvs46gr32y-nixpacks-1.21.2/bin",
+        "/nix/store/azzx8wvr3m9a0wlix18lyfgklnzrfvr2-httpdate-1.0.2"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/nixpacks_20260118_011721.log",
+      "has_derivation": true
+    }
+  ],
+  "node": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/cf085izr8xqspvkym7iwsw2z61lfznf7-const-71-node",
+        "/nix/store/cikdc61gfwvdma6y0p9b5d5d448aqcv6-nodejs-24.12.0/bin/node",
+        "/nix/store/y4a1pyqcjhp281krkg0zf3d5bga1pbfy-nodejs-24.12.0-dev",
+        "/nix/store/cf085izr8xqspvkym7iwsw2z61lfznf7-const-71-node/bin/const-71-node:",
+        "/nix/store/hhrgihzyzdgsqxbf2a3z2i1qqwdxfj61-main.js.drv",
+        "/nix/store/cf085izr8xqspvkym7iwsw2z61lfznf7-const-71-node...",
+        "/nix/store/cikdc61gfwvdma6y0p9b5d5d448aqcv6-nodejs-24.12.0",
+        "/nix/store/cf085izr8xqspvkym7iwsw2z61lfznf7-const-71-node/bin",
+        "/nix/store/hd1f5fhwlnylharsg4ksxws95wh8fvj6-const-71-node.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/node_20260118_021401.log",
+      "has_derivation": true
+    }
+  ],
+  "number-searcher": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/number-searcher_20260118_024927.log",
+      "has_derivation": false
+    }
+  ],
+  "number-searches": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/number-searches_20260118_025939.log",
+      "has_derivation": false
+    }
+  ],
+  "observe": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/observe_20260118_024847.log",
+      "has_derivation": false
+    }
+  ],
+  "ocaml": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/q209dyb85kvz1rlqdw2pqpc6fjh8rw2d-ocaml-5.3.0",
+        "/nix/store/myb8g3fp1i5l7xkcvs0b94kk3yhbph7y-main.ml",
+        "/nix/store/igkz7a7m7v0fxy2fbzydiz6s5gh94448-const-71-ocaml/bin/const-71-ocaml",
+        "/nix/store/ya1k4zg8xhhdz1agvpw53kjx2p3w0n6h-const-71-ocaml.drv",
+        "/nix/store/igkz7a7m7v0fxy2fbzydiz6s5gh94448-const-71-ocaml",
+        "/nix/store/igkz7a7m7v0fxy2fbzydiz6s5gh94448-const-71-ocaml...",
+        "/nix/store/7sxmh5llalpcjrm3i8a03h4hdkv46hl0-main.ml.drv",
+        "/nix/store/igkz7a7m7v0fxy2fbzydiz6s5gh94448-const-71-ocaml/bin"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ocaml_20260118_022348.log",
+      "has_derivation": true
+    }
+  ],
+  "oeis-indexer": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/oeis-indexer_20260118_024920.log",
+      "has_derivation": false
+    }
+  ],
+  "ook": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/952z67f2jvkyggx7cad6x4nlxp3mw0wn-ook-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ook_20260118_022111.log",
+      "has_derivation": true
+    }
+  ],
+  "orchestration-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/orchestration-flake_20260118_025100.log",
+      "has_derivation": false
+    }
+  ],
+  "orient-test": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/orient-test_20260118_024847.log",
+      "has_derivation": false
+    }
+  ],
+  "orient": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/orient_20260118_024847.log",
+      "has_derivation": false
+    }
+  ],
+  "parser": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/parser_20260118_024640.log",
+      "has_derivation": false
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/q6qyj1gbisi2zrmsbzs6lm42qv8s4wsi-crq-parser-success.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/parser_20260118_024653.log",
+      "has_derivation": true
+    }
+  ],
+  "perl": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/4y7dflqaynahj6a4pxmcgjy96gyk8kwm-perl-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/perl_20260118_022059.log",
+      "has_derivation": true
+    }
+  ],
+  "php": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/4lnp2iqmi5lj309kpwrxqnnrc2ax94w2-php-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/php_20260118_021356.log",
+      "has_derivation": true
+    }
+  ],
+  "piet": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/9m4b9vsxf7fc0akv7vspf55p42brh28m-piet-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/piet_20260118_022833.log",
+      "has_derivation": true
+    }
+  ],
+  "plugin-solana": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/xkiywl4nkcfs632zb9i377424sf5wgqz-solana-cli-env.drv",
+        "/nix/store/r7kvgzg14bkhpp53n9zc233kvp0rh9j6-nix-shell.drv",
+        "/nix/store/852s20k2ghw9r9iaizdmzm39vz8r570d-nix-shell.drv",
+        "/nix/store/p2hby44a0qzrnd1vxcpcgfav6160rmcv-source",
+        "/nix/store/ya9w2wqpylc20zm0lfi4zpzax65xqa3j-solana-test-validator.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/plugin-solana_20260118_064103.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/xkiywl4nkcfs632zb9i377424sf5wgqz-solana-cli-env.drv",
+        "/nix/store/r7kvgzg14bkhpp53n9zc233kvp0rh9j6-nix-shell.drv",
+        "/nix/store/852s20k2ghw9r9iaizdmzm39vz8r570d-nix-shell.drv",
+        "/nix/store/ya9w2wqpylc20zm0lfi4zpzax65xqa3j-solana-test-validator.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/plugin-solana_20260118_064745.log",
+      "has_derivation": true
+    }
+  ],
+  "polkadot-ethereum": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/i68w6r5f1lkx2ya7y632amzpcvd50319-nix-shell.drv",
+        "/nix/store/d9gbq853jvbccrz5g3y0irbwgc57w137-source"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/polkadot-ethereum_20260118_064731.log",
+      "has_derivation": true
+    }
+  ],
+  "preconditions": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/preconditions_20260118_025805.log",
+      "has_derivation": false
+    }
+  ],
+  "predicate-analyzer": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/predicate-analyzer_20260118_024554.log",
+      "has_derivation": false
+    }
+  ],
+  "project-index-nar": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/project-index-nar_20260118_024917.log",
+      "has_derivation": false
+    }
+  ],
+  "project-scheduler-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/project-scheduler-flake_20260118_025112.log",
+      "has_derivation": false
+    }
+  ],
+  "prolog": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/prolog_20260118_021150.log",
+      "has_derivation": false
+    }
+  ],
+  "proof": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/xzjllmnqyvsq2lxjf0c3vv53abs4dcn8-nix-to-solana-translator.drv",
+        "/nix/store/xzjllmnqyvsq2lxjf0c3vv53abs4dcn8-nix-to-solana-translator.drv^*",
+        "/nix/store/fhklk9ly8pq6npqn0xa5xs5fxzysx4bi-binstore-nar-locator.drv^*",
+        "/nix/store/fhklk9ly8pq6npqn0xa5xs5fxzysx4bi-binstore-nar-locator.drv",
+        "/nix/store/i7i2b82vs1vzvkq9q0s59w0wrsycg8fm-source/nix/base-job?lastModified=1&narHash=sha256-vhR2Gec1XG4D7aUzDkNmj9WhnS0p9LG577jikSDduXM%3D",
+        "/nix/store/yfzs179lccd1i5b1b386mwd6vzj3wvgg-ast-nar-file.drv",
+        "/nix/store/vdgn67qqrqrrr34h846p045sb8mn0gzi-nix-to-solana-translator",
+        "/nix/store/li0m9a688h3ghj4n21ky7rgjlrzgcqnq-source/10/12/binstore/ast.nar",
+        "/nix/store/00xbh5szq3m0w0a284wzq4lmw5yr4csk-binstore-nar-locator"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/proof_20260118_025615.log",
+      "has_derivation": true
+    }
+  ],
+  "psyche": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/6w1vcxyd847higmrk79fg11rhdja1l91-krb5-1.22.1-lib",
+        "/nix/store/3wmqifpgx1p6y26jkhjicv489vxsbhij-cargo-package-percent-encoding-2.3.2",
+        "/nix/store/lbfg38p9kgm2dadwjqa7fgv0sjjh3ban-update-autotools-gnu-config-scripts-hook",
+        "/nix/store/1pi99mlqimxmqm1jvllbcaj8v16w2nbv-diffutils-3.12",
+        "/nix/store/fhp7q14vfjp3x8gm5mmsygyxgcaqz3sa-tk-8.6.16",
+        "/nix/store/lafijc1pfhxf1k129lac4jif1pilf844-python3.12-execnet-2.1.1",
+        "/nix/store/aipgszvbg5q28wf961q4vpql89kgmsqf-cargo-package-system-configuration-0.6.1",
+        "/nix/store/qmhailwnhm07cac86v385kxzj49aks3m-perl5.40.0-Authen-SASL-2.1900",
+        "/nix/store/s0fd7inxlia0is68x5grgniidjss3xn0-python3.12-pyasn1-modules-0.4.2",
+        "/nix/store/cf1igmhra5p798azjwv4dxnga3w13k02-mark-for-cudatoolkit-root-hook"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/psyche_20260118_063034.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/5c6amzv53xr6zcvzl7ryhr8iqwl14c82-crypto-common-0.2.0-rc.4.drv",
+        "/nix/store/qnjmj6qbj3rknsk073lz95qq6izqs2av-cargo-package-winnow-0.6.20.drv",
+        "/nix/store/9d2lcjng7aishj9m4bp66miyng7sqr51-cargo-package-windows_i686_msvc-0.42.2.drv",
+        "/nix/store/b1ah7g4n0glcifff5gxh1n5nf3zsvkxs-cargo-package-lock_api-0.4.14.drv",
+        "/nix/store/m13967h5y1hnzadmabh135wnddrv3rvq-cuda_gdb-linux-x86_64-12.8.90-archive.tar.xz.drv",
+        "/nix/store/nb09q55w9gccpf9c28sib6hnnpx2hnfj-cpufeatures-0.2.16.drv",
+        "/nix/store/zibjfmaaidyy9x24qv40cxhpna4hdssp-cargo-package-chrono-humanize-0.2.3.drv",
+        "/nix/store/6wrw8bcpd26pirwp33l4jrrlycv76mff-validate-psyche-http-devnet-caddyfile.drv",
+        "/nix/store/3ngv7m166zk7xllb70xhq0ydzp89p4c7-cargo-package-system-configuration-sys-0.5.0.drv",
+        "/nix/store/b47fm35ib90s8hr0n0g22vjyvablr55i-cargo-package-ctr-0.9.2.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/psyche_20260118_064327.log",
+      "has_derivation": true
+    }
+  ],
+  "python": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/098ld9gqagvr83nbir2wdma4v42fv32m-main.py.drv",
+        "/nix/store/k8irdv8h6fc9qrqirrlm1qqqim6zxr0c-const-71-python/bin/const-71-python:",
+        "/nix/store/qzc04a3npl70cyyy6flnnrb2ig3kayxm-python3-3.13.11/bin/python3",
+        "/nix/store/k8irdv8h6fc9qrqirrlm1qqqim6zxr0c-const-71-python",
+        "/nix/store/lqscnrfwbnmj60qvd1mh3gks6piyihxd-const-71-python.drv",
+        "/nix/store/k8irdv8h6fc9qrqirrlm1qqqim6zxr0c-const-71-python/bin",
+        "/nix/store/k8irdv8h6fc9qrqirrlm1qqqim6zxr0c-const-71-python..."
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/python_20260118_021457.log",
+      "has_derivation": true
+    }
+  ],
+  "pytorch": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/pytorch_20260118_021242.log",
+      "has_derivation": false
+    }
+  ],
+  "qa-all-new-flakes": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/qa-all-new-flakes_20260118_024902.log",
+      "has_derivation": false
+    }
+  ],
+  "qa-nar-similarity-pipeline": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/qa-nar-similarity-pipeline_20260118_024928.log",
+      "has_derivation": false
+    }
+  ],
+  "qiskit": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/cq5z9a8znf58kbv1s0qbf9bb08l7206h-qiskit-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/qiskit_20260118_021340.log",
+      "has_derivation": true
+    }
+  ],
+  "r": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/63cbbcwl5ln6nw3bp897xp5hz8ffn191-r-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/r_20260118_022428.log",
+      "has_derivation": true
+    }
+  ],
+  "read-md-vial": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/read-md-vial_20260118_024740.log",
+      "has_derivation": false
+    }
+  ],
+  "read-rs-vial": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/read-rs-vial_20260118_024640.log",
+      "has_derivation": false
+    }
+  ],
+  "reader": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/reader_20260118_024657.log",
+      "has_derivation": false
+    }
+  ],
+  "redis": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/njh4qfsdviiafy57yvg5rlb7pa4k6r5q-python3.13-deprecated-1.2.18",
+        "/nix/store/j7m1m27aswbb59qpg7msjz1k24sj2idf-python3.13-typing-extensions-4.15.0",
+        "/nix/store/b9d83zwhgpjl0vbvq0insja7s8nnv342-python3-3.13.11-env.drv",
+        "/nix/store/q0xkwf7k7hzb2jpc62jaqpwl55nqcdyp-python3.13-async-timeout-5.0.1",
+        "/nix/store/k2hcjgzylkpr42zaxpar6vk48vm5w5zs-python3.13-redis-6.2.0",
+        "/nix/store/dx3zaqp9md0msn4cx4b5138h4vb1cvn3-python3.13-wrapt-1.17.2",
+        "/nix/store/q0d2ix3gvvkx9kd8x45ywxphb6k6dla4-redis-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/redis_20260118_021439.log",
+      "has_derivation": true
+    }
+  ],
+  "repo-analyzer": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/93a7ikyb208nh3p1kwqvn1hj2w11ikb6-source",
+        "/nix/store/xha9dkk6mj8aim22czakhcvdcgh5fws6-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/repo-analyzer_20260118_024629.log",
+      "has_derivation": true
+    }
+  ],
+  "repro-issue": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/17r738ilmjkwdvjpyib2xivnbmka3ym3-simple-repro-check.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/repro-issue_20260118_025158.log",
+      "has_derivation": true
+    }
+  ],
+  "response-007-cli-nar-output": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/a7fi954rbwvx76xi1aq3r1vi35l81lvf-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/response-007-cli-nar-output_20260118_024342.log",
+      "has_derivation": true
+    }
+  ],
+  "rockstar": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/scx1p1kp7dhalfaqg7hgcajvzf6hmj4m-rockstar-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rockstar_20260118_022419.log",
+      "has_derivation": true
+    }
+  ],
+  "ruby": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/g3pylsd1zx363g622m3vr13p3fq8902c-ruby-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ruby_20260118_022953.log",
+      "has_derivation": true
+    }
+  ],
+  "run-zos-tasks": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/run-zos-tasks_20260118_024847.log",
+      "has_derivation": false
+    }
+  ],
+  "rungemini": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/zi9f6ba8jah0hsgvv03hlzfvnndn4m02-gemini-cli-0.8.0-nightly.20250925.b1da8c21/share/gemini-cli/bundle/gemini.js:",
+        "/nix/store/zi9f6ba8jah0hsgvv03hlzfvnndn4m02-gemini-cli-0.8.0-nightly.20250925.b1da8c21/bin",
+        "/nix/store/qqakpn0xa2890hl51kxnjn7kd4zyf4mv-nix-shell.drv",
+        "/nix/store/r4557ald6zn4dzmvgh8na9vwnwzgrjgc-nodejs-22.19.0/bin/node",
+        "/nix/store/zi9f6ba8jah0hsgvv03hlzfvnndn4m02-gemini-cli-0.8.0-nightly.20250925.b1da8c21/bin/gemini.js",
+        "/nix/store/q7sqwn7i6w2b67adw0bmix29pxg85x3w-bash-5.3p3/bin/bash",
+        "/nix/store/k1ygiwdxj5m3lhkjyd7kfbh7ajclpd8j-zl00z4lvy90wb6la3498ani60cars13w-source",
+        "/nix/store/zi9f6ba8jah0hsgvv03hlzfvnndn4m02-gemini-cli-0.8.0-nightly.20250925.b1da8c21...",
+        "/nix/store/zi9f6ba8jah0hsgvv03hlzfvnndn4m02-gemini-cli-0.8.0-nightly.20250925.b1da8c21",
+        "/nix/store/6a45yk7xbs6vwbzjslkvf4wyqd99fslk-gemini-cli-0.8.0-nightly.20250925.b1da8c21.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rungemini_20260118_024252.log",
+      "has_derivation": true
+    }
+  ],
+  "rust-audit": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-audit_20260118_024808.log",
+      "has_derivation": false
+    }
+  ],
+  "rust-libc-interceptor": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/s5c0y1s7kbqg258q4fh9asgv65ixif70-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-libc-interceptor_20260118_010758.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/s5c0y1s7kbqg258q4fh9asgv65ixif70-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-libc-interceptor_20260118_013836.log",
+      "has_derivation": true
+    }
+  ],
+  "rust-overlay-test": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/3vs2fr2mazafcdwyza15bfhpmccx1k7z-patchelf-0.15.2/lib",
+        "/nix/store/1hs7db2zibfq0xhmqc68513xm5cf5mii-llvm-tools-beta-x86_64-unknown-linux-gnu.tar.xz",
+        "/nix/store/7l0qsr242f97f7zjk6ff5n8q2sxl33aq-rust-src-1.93.0-beta.6-2026-01-10-x86_64-unknown-linux-gnu",
+        "/nix/store/vg11nfpxbcsk25hsxs3wvw4b9kckhr2j-llvm-tools-preview-1.93.0-beta.6-2026-01-10-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin/llvm-nm",
+        "/nix/store/3hslrgkwc77s9p30dc4rm5xvjg56hbf7-rust-std-beta-x86_64-unknown-linux-gnu.tar.xz.drv",
+        "/nix/store/kjwcp8r5463bn1akyxnc5gmrnyf5bki6-rust-std-beta-x86_64-unknown-linux-gnu.tar.xz",
+        "/nix/store/cmzya9irvxzlkh7lfy6i82gbp0saxqj3-multiple-outputs.sh/lib",
+        "/nix/store/vg11nfpxbcsk25hsxs3wvw4b9kckhr2j-llvm-tools-preview-1.93.0-beta.6-2026-01-10-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin/llvm-objdump",
+        "/nix/store/y5356728hn6qnckbpq3317wbpc8fd021-rust-analyzer-preview-1.93.0-beta.6-2026-01-10-x86_64-unknown-linux-gnu",
+        "/nix/store/09szz8lg9pp9d9zd7784hlmi0vv7yk8g-cargo-1.93.0-beta.6-2026-01-10-x86_64-unknown-linux-gnu/share/man/"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-overlay-test_20260118_010336.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/4by8zdzq3327lmnbcys0iyfy25zvcjh1-rust-default-1.93.0-beta.6-2026-01-10.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-overlay-test_20260118_012232.log",
+      "has_derivation": true
+    }
+  ],
+  "rust-telemetry-driver": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/iyrpk4db14977ar9rm6v5726qnrk8ly6-nix-shell.drv",
+        "/nix/store/40ms5idgkljfs54cgkln5zsj1i7qsw74-rust-telemetry-driver-0.1.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-telemetry-driver_20260118_011337.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/fvckamyqf23whx3sfri42wz80l4mby62-rust-telemetry-driver-0.1.0...",
+        "/nix/store/fvckamyqf23whx3sfri42wz80l4mby62-rust-telemetry-driver-0.1.0/bin/rust-telemetry-driver",
+        "/nix/store/fvckamyqf23whx3sfri42wz80l4mby62-rust-telemetry-driver-0.1.0",
+        "/nix/store/m06qggn9vzyxgkw6f8xm4y79c81zgrfy-xb1dhx7gzpxg0sdfzp7vimizigcjql5s-source",
+        "/nix/store/iyrpk4db14977ar9rm6v5726qnrk8ly6-nix-shell.drv",
+        "/nix/store/40ms5idgkljfs54cgkln5zsj1i7qsw74-rust-telemetry-driver-0.1.0.drv",
+        "/nix/store/fvckamyqf23whx3sfri42wz80l4mby62-rust-telemetry-driver-0.1.0/bin"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust-telemetry-driver_20260118_014423.log",
+      "has_derivation": true
+    }
+  ],
+  "rust": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/i2dmih5cx5rh9nzji3aq0xxb3lx7kkj0-const-71-rust-src.drv",
+        "/nix/store/lwfs3ldxbkkjabh4lvbl7550shgd87zs-const-71-rust-0.1.0/bin",
+        "/nix/store/lwfs3ldxbkkjabh4lvbl7550shgd87zs-const-71-rust-0.1.0/bin/const-71-rust",
+        "/nix/store/g2s1n16dax17xb23xf2n4a0nm5b06li3-const-71-rust-src",
+        "/nix/store/nbyq09m1vcrqpilr9i7hd7j94rcsr4kj-cargo-vendor-dir.drv",
+        "/nix/store/xf3c495hirwd4qyq4mx4rbyazs7fx7sj-const-71-rust-0.1.0.drv",
+        "/nix/store/lwfs3ldxbkkjabh4lvbl7550shgd87zs-const-71-rust-0.1.0...",
+        "/nix/store/lwfs3ldxbkkjabh4lvbl7550shgd87zs-const-71-rust-0.1.0"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust_20260118_021417.log",
+      "has_derivation": true
+    }
+  ],
+  "rust_knowledge_extractor": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/izqbxvpsxw8b4r4arhlbkm48s3ghbddg-libxml2-2.14.3",
+        "/nix/store/zhjldhn609rxi019pjszdsyjws6jsd47-download-tower-service-0.3.3",
+        "/nix/store/7jm4q4n7mhkapwfllc5y7gvsc5iczfcz-download-scraper-0.13.0.drv",
+        "/nix/store/hdbhz5g9qa3k5yl9jvgai134b6hhn0zf-unpack-quote-1.0.41.drv",
+        "/nix/store/jicivz871j7l1l67bdhjfh86piydiin5-nghttp2-1.65.0-dev",
+        "/nix/store/4akk7rh59k1k6g3nmaf5k2n7a4dvf7v4-unpack-convert_case-0.4.0.drv",
+        "/nix/store/lp82dcnrzljyix6yigwzrlpr1smvpmb0-gnutar-1.35",
+        "/nix/store/q5q09kr3r88whq570gxc66sfkpjsxhch-download-unicode-ident-1.0.19.drv",
+        "/nix/store/m7cdwx9af5wdf2kv4fj2a9kg63zidffg-unpack-form_urlencoded-1.2.2.drv",
+        "/nix/store/njdxxk0iycklx0q16mr494wchy65f312-python3.13-u-msgpack-python-2.8.0"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rust_knowledge_extractor_20260118_023239.log",
+      "has_derivation": true
+    }
+  ],
+  "rustc-from-source": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/sgd96r998n2b5yqvvbw09nf3hpzdy92j-fcac501a73cdde54de46a0683567f1a890730555.tar.gz.drv",
+        "/nix/store/fl5b0s74ryxagkkzvslgd4dr1ipbphff-rust-default-1.92.0.drv",
+        "/nix/store/mbbaw6cli1mzs3n8x2pzkp8fd3fgd8is-rustc-from-source",
+        "/nix/store/adhl2wjnb85s6c8n668zffkrc2lv82zw-fcac501a73cdde54de46a0683567f1a890730555.tar.gz",
+        "/nix/store/wmb16s8hw1vd25vvidwnncpzq126lcz3-cmake-4.1.2",
+        "/nix/store/4vxdgiak2ab3s853wz18wj11rmzw8bv6-ninja-1.13.2",
+        "/nix/store/zx25fxh8aqa8s8p8bbs33gwbzvjfhm4z-rhash-1.4.4",
+        "/nix/store/f6ms8bbgw19a1i45pl5mdgnxyy87nril-curl-8.17.0",
+        "/nix/store/qss39y7s48fljs9id191ljp7kqc4n8ax-rustc-from-source.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rustc-from-source_20260118_011529.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/mbbaw6cli1mzs3n8x2pzkp8fd3fgd8is-rustc-from-source",
+        "/nix/store/qss39y7s48fljs9id191ljp7kqc4n8ax-rustc-from-source.drv",
+        "/nix/store/adhl2wjnb85s6c8n668zffkrc2lv82zw-fcac501a73cdde54de46a0683567f1a890730555.tar.gz"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rustc-from-source_20260118_021010.log",
+      "has_derivation": true
+    }
+  ],
+  "rustc-only-build": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/3vs2fr2mazafcdwyza15bfhpmccx1k7z-patchelf-0.15.2/lib",
+        "/nix/store/xc0ga87wdclrx54qjaryahkkmkmqi9qz-gcc-15.2.0-lib/lib",
+        "/nix/store/3hgackxpbkjachs6qncykjbl0n9a2yla-rustc-1.94.0-nightly-2026-01-12-x86_64-unknown-linux-gnu/lib:/nix/store/b7kx9bkjsma9wslr1cg0316m5jy450l8-gcc-15.2.0-libgcc/lib",
+        "/nix/store/3hgackxpbkjachs6qncykjbl0n9a2yla-rustc-1.94.0-nightly-2026-01-12-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin/wasm-component-ld",
+        "/nix/store/cv1d7p48379km6a85h4zp6kr86brh32q-audit-tmpdir.sh/lib",
+        "/nix/store/3hgackxpbkjachs6qncykjbl0n9a2yla-rustc-1.94.0-nightly-2026-01-12-x86_64-unknown-linux-gnu/lib/librustc_driver-2c99914875f5522e.so",
+        "/nix/store/3hgackxpbkjachs6qncykjbl0n9a2yla-rustc-1.94.0-nightly-2026-01-12-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin/gcc-ld-unwrapped/ld.lld",
+        "/nix/store/3hgackxpbkjachs6qncykjbl0n9a2yla-rustc-1.94.0-nightly-2026-01-12-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/bin/gcc-ld/ld.lld",
+        "/nix/store/k1lcfin159706lihwx5hhvl80dbij4jw-gnutar-1.35/lib",
+        "/nix/store/iblzqnqm712rm600czliwq3x6g5fn82f-auto-patchelf-0-unstable-2024-08-14/lib"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rustc-only-build_20260118_010238.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/7h70pnwi29qkyhrlx8czdn2i8rlp5dpw-rustc-1.94.0-nightly-2026-01-12-x86_64-unknown-linux-gnu.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/rustc-only-build_20260118_012232.log",
+      "has_derivation": true
+    }
+  ],
+  "scheme": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/471s2ydlxqc9rd9y85cyzrm8spxjblai-scheme-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/scheme_20260118_022413.log",
+      "has_derivation": true
+    }
+  ],
+  "search-results": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/search-results_20260118_023943.log",
+      "has_derivation": false
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/fbffgpzgbl4665yhbnhy46jbxdmp35pk-search-results.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/search-results_20260118_024544.log",
+      "has_derivation": true
+    }
+  ],
+  "search-utils": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/search-utils_20260118_024927.log",
+      "has_derivation": false
+    }
+  ],
+  "seed-data": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/seed-data_20260118_024554.log",
+      "has_derivation": false
+    }
+  ],
+  "seed-graph": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/seed-graph_20260118_024622.log",
+      "has_derivation": false
+    }
+  ],
+  "self-ngram-analyzer": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/self-ngram-analyzer_20260118_024651.log",
+      "has_derivation": false
+    }
+  ],
+  "slot_250000000": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/wz10i31yii8znqzhq64nv2zkya9glm3b-solana-slot-250000000...",
+        "/nix/store/wz10i31yii8znqzhq64nv2zkya9glm3b-solana-slot-250000000",
+        "/nix/store/gnd46xyr1bg3md45sk53m7ck2gpvbx0s-solana-slot-250000000.drv",
+        "/nix/store/5y91g1kvam399llb9zsixzikhbxq9fp1-slot.json.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000000_20260118_013309.log",
+      "has_derivation": true
+    }
+  ],
+  "slot_250000001": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/hlnd3v6zr2kj1zg5hxp85i5dlq4llbz9-solana-slot-250000001",
+        "/nix/store/vndd3qwmnr05b8j2wlf83q5mqzn665jr-slot.json.drv",
+        "/nix/store/srrgpjqwgjs1724i6apdv4m3yphgzbrm-solana-slot-250000001.drv",
+        "/nix/store/hlnd3v6zr2kj1zg5hxp85i5dlq4llbz9-solana-slot-250000001..."
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000001_20260118_013401.log",
+      "has_derivation": true
+    }
+  ],
+  "slot_250000002": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/8z4bzlibjlj68f9zixa0whb5pqfdzzsl-solana-slot-250000002.drv",
+        "/nix/store/3n9s7vmm2jgz5c0wyjzjc6801rbpfzf4-slot.json.drv",
+        "/nix/store/wjgqbkx3rgc2z9q8abpi89dwy20h5lni-solana-slot-250000002",
+        "/nix/store/wjgqbkx3rgc2z9q8abpi89dwy20h5lni-solana-slot-250000002..."
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000002_20260118_013203.log",
+      "has_derivation": true
+    }
+  ],
+  "slot_250000003": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/x0x0lss8ppxd86fh34i73kl343zbqb9s-solana-slot-250000003",
+        "/nix/store/x0x0lss8ppxd86fh34i73kl343zbqb9s-solana-slot-250000003...",
+        "/nix/store/jbqs30imga5jd1jrq2q474m9w55fhyn5-solana-slot-250000003.drv",
+        "/nix/store/fjfw90scw7xb1bxsdlw8kra3mmqk1bw0-slot.json.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000003_20260118_013058.log",
+      "has_derivation": true
+    }
+  ],
+  "slot_250000004": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/q2xgl4pm8fdx7g36xlliwjqdfjliwj1b-slot.json.drv",
+        "/nix/store/kkgry9wh6b9lxfvyygkd0xjipypl9kc0-solana-slot-250000004...",
+        "/nix/store/kkgry9wh6b9lxfvyygkd0xjipypl9kc0-solana-slot-250000004",
+        "/nix/store/fzd1hf44gyyyzmbhayjv8jm7a7dbf0yk-solana-slot-250000004.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/slot_250000004_20260118_013002.log",
+      "has_derivation": true
+    }
+  ],
+  "smt2": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/8rali6j04h6bm5n3rs9a2q4kkfv19wph-const71.smt2",
+        "/nix/store/bcpbpyi8ixpy11kpi1qbhzwmvynf34jh-const71-smt2",
+        "/nix/store/k7576w6ppayy9jyha1m2dc4gz6rkinjb-cvc5-1.3.2",
+        "/nix/store/wpd51njcpj3gs82nlpvzq9xrbjipc3nv-const71.smt2.drv",
+        "/nix/store/hcpb2pfvm97d8v4ajpsnjxw6crcz5gng-const71-smt2.drv",
+        "/nix/store/mn8hmgasipiaqd0l2cpcwfq5v8kymmkv-libpoly-0.2.0"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/smt2_20260118_021844.log",
+      "has_derivation": true
+    }
+  ],
+  "snowbridge": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/i68w6r5f1lkx2ya7y632amzpcvd50319-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/snowbridge_20260118_064746.log",
+      "has_derivation": true
+    }
+  ],
+  "solana-integration": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solana-integration_20260118_024919.log",
+      "has_derivation": false
+    }
+  ],
+  "solana-nix": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solana-nix_20260118_025106.log",
+      "has_derivation": false
+    }
+  ],
+  "solana-sdk": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/r50awlm53nmjz1majnm9fim0c38ply24-rust-default-1.92.0.drv",
+        "/nix/store/72lmnrxcshx9r0l765c5mrm8qcxvnqk9-solana-program-template.drv",
+        "/nix/store/w8wk5ygi1z3q3y3ydr47c85fkmxcbs40-solana-sdk.drv",
+        "/nix/store/kmvy5gx5dlan4gkgg47wqiyz5d33c6wc-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solana-sdk_20260118_064137.log",
+      "has_derivation": true
+    }
+  ],
+  "solana": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/f7jfpva5p7m1qy5qdbkcc1vmfpz6yrfs-rocksdb-10.9.1",
+        "/nix/store/13psa16gjln549df1plnsrxz60irqda1-nix-shell.drv",
+        "/nix/store/c828rss7q5rra33phplrb12ayv2p9vgw-bzip2-1.0.8-dev",
+        "/nix/store/msrkiab0p98rk4yk9qp0ii133v5d5gvm-solana-cli-3.0.12.drv",
+        "/nix/store/a93wlh7qj4fqmj64k3w1pkxjjh2k5bsm-lz4-1.10.0",
+        "/nix/store/2iyjxni6lh78rgxfvdyirvmwars1jjgp-snappy-1.2.2-dev",
+        "/nix/store/z7wmw6j0hhl1lv8mhj49z92sdp7jjxjw-solana-cli-3.0.12",
+        "/nix/store/sl10j863s32x7dv5vw6wfx1nh22f3xh2-lz4-1.10.0-dev",
+        "/nix/store/563njzzmv2424h5dnl5h8wic2l7nagw8-snappy-1.2.2"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solana_20260118_013805.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solana_20260118_025532.log",
+      "has_derivation": false
+    }
+  ],
+  "solflake": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/hf2gy3km07d5m0p1lwmja0rg9wlnmyr7-gcc-12.3.0",
+        "/nix/store/whixlm0qcz9fbx81s83rfizm74p83fn4-solana-cli/bin/sdk/sbf/scripts/dump.sh:",
+        "/nix/store/whixlm0qcz9fbx81s83rfizm74p83fn4-solana-cli/bin/solana-net-shaper",
+        "/nix/store/whixlm0qcz9fbx81s83rfizm74p83fn4-solana-cli/bin/rbpf-cli",
+        "/nix/store/nn6s67d3vps88a8mg41d36k55gsfkfbi-openssl-3.0.12",
+        "/nix/store/9c5qm297qnvwcf7j0gm01qrslbiqz8rs-gnused-4.9",
+        "/nix/store/ppy5gm6r676chda5ig5xgbhr8sb3rfap-stdenv-linux",
+        "/nix/store/mmy4fc1arb2ig642chgprgms27vk9hgn-acl-2.3.1",
+        "/nix/store/mkz7r7isyrjvzlpmfw4x0x0ggvs612dd-solana-rust/rust/lib/libstd-6fcf4d73823f8a3e.so",
+        "/nix/store/3ysf58a4zshpi654ya4hsfbhvmnnjrqf-libmpc-1.3.1"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solflake_20260118_062626.log",
+      "has_derivation": true
+    },
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/0wzy8gv2f802nyf3f0lfsvj600dxp0z1-nix-shell.drv",
+        "/nix/store/g8jiw66w55phcdnwfp3hjvg248i3qiky-solana-cli.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solflake_20260118_064306.log",
+      "has_derivation": true
+    }
+  ],
+  "solfunmeme-profile": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/bs0ihlwik0hg659r5x15m2g8s8l1aszl-solfunmeme-profile-0.1.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solfunmeme-profile_20260118_025058.log",
+      "has_derivation": true
+    }
+  ],
+  "solidity": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/s8bf8p6dvf16n4pcn2lz4yq57zclmq2n-solidity-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/solidity_20260118_022317.log",
+      "has_derivation": true
+    }
+  ],
+  "sorter-suggester": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/sorter-suggester_20260118_024656.log",
+      "has_derivation": false
+    }
+  ],
+  "source-config": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4d025gg28hsllf4ayibi2mhp43ljyf68-source-config-check.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/source-config_20260118_024847.log",
+      "has_derivation": true
+    }
+  ],
+  "source": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/source_20260118_011721.log",
+      "has_derivation": false
+    }
+  ],
+  "sparql": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/8l3skb3hd0fjd1xapp0nhqnid2shfqna-python3.13-rdflib-7.5.0",
+        "/nix/store/asp68z480lqdy3ddq5066x8m3yfwmdv6-python3-3.13.11-env.drv",
+        "/nix/store/mv7w248w2n3bq8b58f8fsznnv46yj5r6-sparql-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/sparql_20260118_022636.log",
+      "has_derivation": true
+    }
+  ],
+  "spore-cultivation-lab-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/spore-cultivation-lab-flake_20260118_025057.log",
+      "has_derivation": false
+    }
+  ],
+  "sql": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/wkgxcz73rnxkw4gdrr21168cjyb7g9f5-sql-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/sql_20260118_023023.log",
+      "has_derivation": true
+    }
+  ],
+  "src": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/bpbid9rqqdwz7cj3sw6cgj42zjpbzh1y-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/src_20260118_011641.log",
+      "has_derivation": true
+    }
+  ],
+  "ssh": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/ssh_20260118_011707.log",
+      "has_derivation": false
+    }
+  ],
+  "tcl": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/kq538052w33p6iqvc5rg1cyybziz51mf-tcl-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/tcl_20260118_021207.log",
+      "has_derivation": true
+    }
+  ],
+  "telemetry-wrapper": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/telemetry-wrapper_20260118_024740.log",
+      "has_derivation": false
+    }
+  ],
+  "tensorflow": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/f3x49hr10hiygdi41z2nfmd7f5rx4w9h-python3.13-h5py-3.14.0",
+        "/nix/store/53zp3z2ik1lgrcnncxacyc4ay0kgiryi-python3.13-tensorflow-2.20.0",
+        "/nix/store/y13dky7kb8yf2vy9n5sfhxf0n4clvkzb-nss-cacert-3.117",
+        "/nix/store/p4dbxxmhwbzsf7g0i795mjli79pqxmsh-python3.13-libclang-21.1.7",
+        "/nix/store/gqx4q6d7fp952zlh13gas2f484k024lj-c-ares-1.34.5",
+        "/nix/store/ip71anq0iybvic2d1skxk44p3vhz1zk5-protobuf-32.1",
+        "/nix/store/7xmsxziqmc4niml8f2dbywpghm81psgx-tensorflow-71.drv",
+        "/nix/store/kdxxqhb2vrk7wniy3x8h1sdpc3ipw59a-python3.13-termcolor-3.1.0",
+        "/nix/store/y1qpfbqq52f5m41jx1agilclyp0zvwdp-python3.13-astunparse-1.6.3",
+        "/nix/store/1aw825j5mrakfbdgbzhnakr90ihix9nj-python3.13-tensorboard-2.20.0"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/tensorflow_20260118_022533.log",
+      "has_derivation": true
+    }
+  ],
+  "test-bug-repro-nix-2gram-indexer": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-bug-repro-nix-2gram-indexer_20260118_023237.log",
+      "has_derivation": false
+    }
+  ],
+  "test-env-var": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-env-var_20260118_025152.log",
+      "has_derivation": false
+    }
+  ],
+  "test-package-bag-of-words": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/iz5hpccn8j487f9wyrh6vj9di1yfyi45-nix-main-2.33.0/lib/libnixmain.so.2.33.0",
+        "/nix/store/x91z7i65kr7pkjsmnw6jzmynxb0s0mv3-nix-fetchers-2.33.0/lib/libnixfetchers.so.2.33.0",
+        "/nix/store/6bgcvfyxfd8zf2sfnbr6y8w3bbvdqdn4-nix-flake-2.33.0/lib/libnixflake.so.2.33.0",
+        "/nix/store/bwa598sxvhpyyj75gqlpb2nwwzh9h3k1-nix-cmd-2.33.0/lib/libnixcmd.so.2.33.0",
+        "/nix/store/6kmcd1m0y7q47ifmr2a69q6bk2hx5zw3-nix-util-2.33.0/lib/libnixutil.so.2.33.0",
+        "/nix/store/cf1a53iqg6ncnygl698c4v0l8qam5a2q-gcc-14.3.0-lib/lib/libstdc++.so.6",
+        "/nix/store/i3ibgfskl99qd8rslafbpaa1dmxdzh1z-glibc-2.40-66/lib/libc.so.6"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-package-bag-of-words_20260118_023141.log",
+      "has_derivation": false
+    }
+  ],
+  "test-secrets-sops": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-secrets-sops_20260118_024438.log",
+      "has_derivation": false
+    }
+  ],
+  "test-urls": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test-urls_20260118_024808.log",
+      "has_derivation": false
+    }
+  ],
+  "test": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test_20260118_011632.log",
+      "has_derivation": false
+    }
+  ],
+  "test_nix_project": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/hb2040r46kqmbnff58pnka77vyfrppbd-my-network-test-package-0.1.0.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/test_nix_project_20260118_023942.log",
+      "has_derivation": true
+    }
+  ],
+  "time": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/icaa9a3bbqrmgyfs0gzb22p761rnh1db-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/time_20260118_011906.log",
+      "has_derivation": true
+    }
+  ],
+  "toml": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/1kdmchgcqn8zm2lwdw6jx5pz4vbv09gn-toml-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/toml_20260118_022839.log",
+      "has_derivation": true
+    }
+  ],
+  "typecheck": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/typecheck_20260118_024846.log",
+      "has_derivation": false
+    }
+  ],
+  "typenum-1.18.0": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/s1fbk6a410xn8vcaj54iqv22agyn0ria-source",
+        "/nix/store/75d42r6whgahf24x2fbpvzzgwxygjw5j-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/typenum-1.18.0_20260118_023047.log",
+      "has_derivation": true
+    }
+  ],
+  "union": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/vc7psj67pf2gasn9v7lf0wh62s4bcdqj-cargo-src-wasmprinter-0.227.1.drv",
+        "/nix/store/f7j8zcss4ri1w6jpmpan7l8kb2fyaa57-Cargo.toml.drv",
+        "/nix/store/8qq1rqrj9mxy3llh7gl7ia3qgd7nw4s8-cmdargs-0.10.22",
+        "/nix/store/0rfr01ch9jby6hdvpz4z197askz8xvxw-cargo-package-winreg-0.50.0.drv",
+        "/nix/store/v3lihbsxaw7wyh7h8az46yzxkp3hiw8j-cargo-package-serde-name-0.2.1.drv",
+        "/nix/store/rw5ay76rgrvbq9j0cx1vgjzzl0rsxik1-Cargo.toml.drv",
+        "/nix/store/bamsh5b12m6n3gg565gpjbv0sj34kriq-unit-sysinit-reactivation.target.drv",
+        "/nix/store/bk86r0jbsyjp4qf8gisyvgvbazj1d5iz-sc-verifier-extended-customisation-layer.drv",
+        "/nix/store/ki2833p1qz8mgfzw6ssp2vr72dn6zq9x-cargo-package-toml_writer-1.0.6+spec-1.1.0.drv",
+        "/nix/store/ivjpamh0m26z4jq49xg4n5k9xsa5ckrs-Cargo.toml.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/union_20260118_064747.log",
+      "has_derivation": true
+    }
+  ],
+  "unlambda": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/nca071qbkjyyyxnnmrllm2d3s857n9ss-unlambda-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/unlambda_20260118_021727.log",
+      "has_derivation": true
+    }
+  ],
+  "verilog": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/l4d761hzzsccmr8qwc7qclhky6bdldrb-verilog-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/verilog_20260118_021345.log",
+      "has_derivation": true
+    }
+  ],
+  "vhdl": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/xqf6nj1j5s4y3frx95rx9i3j7w0njz6f-vhdl-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/vhdl_20260118_021155.log",
+      "has_derivation": true
+    }
+  ],
+  "vial-placeholder": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/vial-placeholder_20260118_024446.log",
+      "has_derivation": false
+    }
+  ],
+  "vyper": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/v5mf1cmbav86mb6fayc5g5c775rni291-vyper-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/vyper_20260118_023028.log",
+      "has_derivation": true
+    }
+  ],
+  "whitespace": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/c84h4q1f734h0cczlkhdj6ldh2qisgnc-whitespace-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/whitespace_20260118_021200.log",
+      "has_derivation": true
+    }
+  ],
+  "with-rust": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/wxib4c37668gd19blnzxkr0cvpvx7fyf-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/with-rust_20260118_024741.log",
+      "has_derivation": true
+    }
+  ],
+  "workflow-tasks": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/workflow-tasks_20260118_024756.log",
+      "has_derivation": false
+    }
+  ],
+  "wrap-gemini-secrets": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/2j1paa01ih4b6bwapjz8q2mh64x8n2ss-gemini-cli-with-secrets.drv",
+        "/nix/store/bav0kkyn13xj2hdiccxdc96qpadvbz6f-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/wrap-gemini-secrets_20260118_024932.log",
+      "has_derivation": true
+    }
+  ],
+  "xml": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/4kqhm7jxm5rsg6qs4ajsn4qfyhsnz77i-xml-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/xml_20260118_021144.log",
+      "has_derivation": true
+    }
+  ],
+  "yaml": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/7sb7iiqwnipadb1m57wqmnpzmfxikx8b-yaml-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/yaml_20260118_023034.log",
+      "has_derivation": true
+    }
+  ],
+  "z3": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/3hkwf1ryksi76kjvr69kp9krbafx1xv5-const71.smt2.drv",
+        "/nix/store/mim32zddm23hcz8wzf6pw5lvij2pwjz0-const71-z3",
+        "/nix/store/6vmy4npdin25gciqirkh8ccs4l4fz6z5-z3-4.15.4",
+        "/nix/store/9sh1sb47hpwlybf9dkqgr75p11nq8kxw-z3-4.15.4-dev",
+        "/nix/store/zgfnxcq1yhiy815823ibikqwxvyc1i8b-z3-4.15.4-lib",
+        "/nix/store/qfdyga7lwswpr35p8qk2q37n8b9sgp9m-const71.smt2",
+        "/nix/store/02cqjh695li0gz3hgjwxyy7cys7ldpzz-const71-z3.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/z3_20260118_021215.log",
+      "has_derivation": true
+    }
+  ],
+  "zos-bootstrap": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4dyfmh1c84s743wxvskjj243l9plj6xv-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-bootstrap_20260118_005657.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4dyfmh1c84s743wxvskjj243l9plj6xv-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-bootstrap_20260118_012103.log",
+      "has_derivation": true
+    }
+  ],
+  "zos-production": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4dyfmh1c84s743wxvskjj243l9plj6xv-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-production_20260118_005655.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4dyfmh1c84s743wxvskjj243l9plj6xv-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-production_20260118_005656.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4dyfmh1c84s743wxvskjj243l9plj6xv-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-production_20260118_012102.log",
+      "has_derivation": true
+    }
+  ],
+  "zos-qa": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4dyfmh1c84s743wxvskjj243l9plj6xv-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-qa_20260118_005658.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4dyfmh1c84s743wxvskjj243l9plj6xv-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-qa_20260118_012101.log",
+      "has_derivation": true
+    },
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/4dyfmh1c84s743wxvskjj243l9plj6xv-nix-shell.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-qa_20260118_032141.log",
+      "has_derivation": true
+    }
+  ],
+  "zos-server": [
+    {
+      "status": "failed",
+      "store_paths": [
+        "/nix/store/64xxmiylk4a1qfik4b3lksqbm1c9f7wb-zos-server-1.0.0/bin/zos-dev-server",
+        "/nix/store/64xxmiylk4a1qfik4b3lksqbm1c9f7wb-zos-server-1.0.0/bin/markov_1_4m_analyzer",
+        "/nix/store/ai1xrxhd52wfwx8vvagksckcvhlsybwv-cargo-vendor-dir.drv",
+        "/nix/store/64xxmiylk4a1qfik4b3lksqbm1c9f7wb-zos-server-1.0.0/bin/p2p_rustc_test",
+        "/nix/store/64xxmiylk4a1qfik4b3lksqbm1c9f7wb-zos-server-1.0.0/bin",
+        "/nix/store/64xxmiylk4a1qfik4b3lksqbm1c9f7wb-zos-server-1.0.0/bin/zos-dev-minimal",
+        "/nix/store/5d9cdmkm8vcyjlv990b59c9mwn5ljwyw-nix-shell.drv",
+        "/nix/store/8cnb7d136q7y7jk61nd7i4m0al9sgjvi-8qkmgjc7g19mqa03724k6zh8wl7njcfh-source",
+        "/nix/store/xs0mnbjv8a5z92v8m30d7dd6nbi44gwh-zos-server-1.0.0.drv",
+        "/nix/store/64xxmiylk4a1qfik4b3lksqbm1c9f7wb-zos-server-1.0.0/bin/p2p_rustc_loader"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-server_20260118_031234.log",
+      "has_derivation": true
+    }
+  ],
+  "zos-spore-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-spore-flake_20260118_025054.log",
+      "has_derivation": false
+    }
+  ],
+  "zos-spore-vial-flake": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-spore-vial-flake_20260118_025102.log",
+      "has_derivation": false
+    }
+  ],
+  "zos-spore-vial": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos-spore-vial_20260118_024650.log",
+      "has_derivation": false
+    }
+  ],
+  "zos": [
+    {
+      "status": "failed",
+      "store_paths": [],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zos_20260118_024847.log",
+      "has_derivation": false
+    }
+  ],
+  "zsh": [
+    {
+      "status": "success",
+      "store_paths": [
+        "/nix/store/0aw0pg32d1dl4bj9pbzmfbsfg34maz7m-zsh-71.drv"
+      ],
+      "log": "/home/mdupont/.local/share/nix-builder/logs/zsh_20260118_022435.log",
+      "has_derivation": true
+    }
+  ]
+}
