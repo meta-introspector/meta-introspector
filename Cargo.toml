@@ -1064,3 +1064,11 @@ path = "bach/multi_signal_monitor.rs"
 name = "wifi_noise_recorder"
 path = "bach/wifi_noise_recorder.rs"
 
+
+[[bin]]
+name = "mike_repos_indexer"
+path = "mike_repos_indexer.rs"
+
+[[bin]]
+name = "concept_map_builder"
+path = "concept_map_builder.rs"
