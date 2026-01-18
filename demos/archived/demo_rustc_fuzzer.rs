@@ -1,7 +1,7 @@
 // Demo: Fuzz rustc with syn-guided mutations
 
-mod rustc_fuzzer;
-mod rand_shim;
+#[path = "../../rustc_fuzzer.rs"] mod rustc_fuzzer;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use rustc_fuzzer::RustcFuzzer;
 use rand_shim::init_rand;

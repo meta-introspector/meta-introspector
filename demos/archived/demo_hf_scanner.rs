@@ -1,7 +1,7 @@
 // Demo: Scan HuggingFace for small Rust coding models
 
 mod hf_model_scanner;
-mod rand_shim;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use hf_model_scanner::{HfModelScanner, get_gpu_memory};
 use rand_shim::init_rand;

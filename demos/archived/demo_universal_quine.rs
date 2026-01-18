@@ -1,7 +1,7 @@
 // Demo: 71-language quine evolves across all languages
 
-mod universal_quine;
-mod rand_shim;
+#[path = "../../universal_quine.rs"] mod universal_quine;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use universal_quine::UniversalQuine;
 use rand_shim::init_rand;

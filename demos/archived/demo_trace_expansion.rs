@@ -1,7 +1,7 @@
 // Demo: Analyze 4MB xz → 30GB trace expansion
 
 mod trace_expansion;
-mod rand_shim;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use trace_expansion::{TraceExpansion, TraceCompressor, TraceBlock, estimate_trace_size};
 use rand_shim::init_rand;

@@ -1,8 +1,8 @@
 // Demo: Predict novelty from compressed code patterns
 
 mod novelty_predictor;
-mod rustc_fuzzer;
-mod rand_shim;
+#[path = "../../rustc_fuzzer.rs"] mod rustc_fuzzer;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use novelty_predictor::{CompressedBlock, NoveltyPredictor};
 use rustc_fuzzer::RustcFuzzer;

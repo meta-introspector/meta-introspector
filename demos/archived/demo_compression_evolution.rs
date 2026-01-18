@@ -1,10 +1,10 @@
 // Demo: Evolve compression algorithms as memes
 
-mod compression_memes;
-mod compiler_as_compression;
-mod meme_marketplace;
-mod rand_shim;
-mod meme_evolver;
+#[path = "../../compression_memes.rs"] mod compression_memes;
+#[path = "../../compiler_as_compression.rs"] mod compiler_as_compression;
+#[path = "../../meme_marketplace.rs"] mod meme_marketplace;
+#[path = "../../rand_shim.rs"] mod rand_shim;
+#[path = "../../meme_evolver.rs"] mod meme_evolver;
 
 use compression_memes::CompressionMemePool;
 use rand_shim::init_rand;

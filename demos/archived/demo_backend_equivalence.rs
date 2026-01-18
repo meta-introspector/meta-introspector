@@ -1,7 +1,7 @@
 // Demo: Prove equivalence between syn → LLVM and syn → GCC
 
 mod backend_equivalence;
-mod rand_shim;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use backend_equivalence::compare_backends;
 use rand_shim::init_rand;

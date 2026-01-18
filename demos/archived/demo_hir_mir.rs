@@ -1,8 +1,8 @@
 // Demo: Collect HIR/MIR dumps from pokemon samples and map to syn
 
-mod hir_mir_collector;
-mod content_addressable_store;
-mod rand_shim;
+#[path = "../../hir_mir_collector.rs"] mod hir_mir_collector;
+#[path = "../../content_addressable_store.rs"] mod content_addressable_store;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use hir_mir_collector::HirMirCollector;
 use content_addressable_store::ContentStore;

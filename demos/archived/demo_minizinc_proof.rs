@@ -1,7 +1,7 @@
 // Demo: Use MiniZinc to prove all mappings
 
 mod minizinc_prover;
-mod rand_shim;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use minizinc_prover::MiniZincProver;
 use rand_shim::init_rand;

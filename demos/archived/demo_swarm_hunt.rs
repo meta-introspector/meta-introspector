@@ -1,7 +1,7 @@
 // Release swarm on 800 repos to find rare syn types (rare pokemon)
 
-mod content_addressable_store;
-mod rand_shim;
+#[path = "../../content_addressable_store.rs"] mod content_addressable_store;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use content_addressable_store::ContentStore;
 use rand_shim::init_rand;

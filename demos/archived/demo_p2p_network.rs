@@ -1,8 +1,8 @@
 // Demo: P2P network sharing findings to HuggingFace
 
-mod p2p_network;
-mod content_addressable_store;
-mod rand_shim;
+#[path = "../../p2p_network.rs"] mod p2p_network;
+#[path = "../../content_addressable_store.rs"] mod content_addressable_store;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use p2p_network::{P2PNetwork, Finding};
 use content_addressable_store::ContentStore;

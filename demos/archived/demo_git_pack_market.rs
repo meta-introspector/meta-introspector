@@ -1,7 +1,7 @@
 // Market for git packs: 24 nodes bid and buy packs to analyze
 
-mod content_addressable_store;
-mod rand_shim;
+#[path = "../../content_addressable_store.rs"] mod content_addressable_store;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use content_addressable_store::ContentStore;
 use rand_shim::{init_rand, random_u64};

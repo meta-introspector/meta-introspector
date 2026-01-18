@@ -1,9 +1,9 @@
 // Lattice of Rust: Each syn type → unique IP group in rustc_driver
 
-mod hir_mir_collector;
-mod rustc_fuzzer;
-mod content_addressable_store;
-mod rand_shim;
+#[path = "../../hir_mir_collector.rs"] mod hir_mir_collector;
+#[path = "../../rustc_fuzzer.rs"] mod rustc_fuzzer;
+#[path = "../../content_addressable_store.rs"] mod content_addressable_store;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use rustc_fuzzer::SynToRustcSpectrum;
 use content_addressable_store::ContentStore;

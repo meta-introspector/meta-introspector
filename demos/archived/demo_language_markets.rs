@@ -1,7 +1,7 @@
 // Demo: Languages as market makers buying different spectrums
 
 mod language_market_makers;
-mod rand_shim;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use language_market_makers::SpectrumMarketplace;
 use rand_shim::init_rand;

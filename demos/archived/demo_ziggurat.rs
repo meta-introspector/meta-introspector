@@ -1,7 +1,7 @@
 // Demo: Build the Ziggurat of Rust
 
 mod rust_ziggurat;
-mod rand_shim;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use rust_ziggurat::RustZiggurat;
 use rand_shim::init_rand;

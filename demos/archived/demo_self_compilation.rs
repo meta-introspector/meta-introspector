@@ -1,7 +1,7 @@
 // Demo: 24 nodes buy and process source code snippets
 
-mod self_compilation_queue;
-mod rand_shim;
+#[path = "../../self_compilation_queue.rs"] mod self_compilation_queue;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use self_compilation_queue::{SelfCompilationQueue, NodeJob};
 use rand_shim::{init_rand, random_usize};

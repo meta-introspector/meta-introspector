@@ -1,8 +1,8 @@
 // Demo: Auto-label rustc code and save to parquet
 
-mod rustc_fuzzer;
-mod rustc_auto_labeler;
-mod rand_shim;
+#[path = "../../rustc_fuzzer.rs"] mod rustc_fuzzer;
+#[path = "../../rustc_auto_labeler.rs"] mod rustc_auto_labeler;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use rustc_fuzzer::RustcFuzzer;
 use rustc_auto_labeler::RustcAutoLabeler;

@@ -1,8 +1,8 @@
 // Prove it: Generate actual matrix, AST histogram, IP coverage table
 
-mod xz_to_syn_mapper;
-mod rustc_fuzzer;
-mod rand_shim;
+#[path = "../../xz_to_syn_mapper.rs"] mod xz_to_syn_mapper;
+#[path = "../../rustc_fuzzer.rs"] mod rustc_fuzzer;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use xz_to_syn_mapper::XzToSynMapper;
 use rustc_fuzzer::SynToRustcSpectrum;

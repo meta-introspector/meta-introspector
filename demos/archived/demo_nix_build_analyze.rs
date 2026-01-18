@@ -1,8 +1,8 @@
 // Build all binaries with nix and analyze our source + zos-server
 
-mod content_addressable_store;
-mod rust_spectrum_comprehension;
-mod rand_shim;
+#[path = "../../content_addressable_store.rs"] mod content_addressable_store;
+#[path = "../../rust_spectrum_comprehension.rs"] mod rust_spectrum_comprehension;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use content_addressable_store::ContentStore;
 use rand_shim::init_rand;

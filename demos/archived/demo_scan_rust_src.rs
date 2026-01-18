@@ -5,7 +5,7 @@ use std::process::Command;
 use std::io::Read;
 
 mod novelty_predictor;
-mod rand_shim;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use novelty_predictor::{CompressedBlock, NoveltyPredictor};
 use rand_shim::init_rand;

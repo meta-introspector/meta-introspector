@@ -1,8 +1,8 @@
 // Ingest rustc xz blocks into content addressable store
 
-mod content_addressable_store;
-mod xz_to_syn_mapper;
-mod rand_shim;
+#[path = "../../content_addressable_store.rs"] mod content_addressable_store;
+#[path = "../../xz_to_syn_mapper.rs"] mod xz_to_syn_mapper;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use content_addressable_store::ContentStore;
 use xz_to_syn_mapper::XzToSynMapper;

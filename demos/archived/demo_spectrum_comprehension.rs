@@ -1,8 +1,8 @@
 // Demo: Use Rust stdlib spectrum to comprehend our own code
 
-mod rust_spectrum_comprehension;
-mod rustc_fuzzer;
-mod rand_shim;
+#[path = "../../rust_spectrum_comprehension.rs"] mod rust_spectrum_comprehension;
+#[path = "../../rustc_fuzzer.rs"] mod rustc_fuzzer;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use rust_spectrum_comprehension::RustSpectrum;
 use rustc_fuzzer::SynToRustcSpectrum;

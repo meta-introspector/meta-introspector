@@ -1,8 +1,8 @@
 // Demo: Fast perf scan of our Rust code to build comprehension
 
 mod rustc_perf_scanner;
-mod rust_spectrum_comprehension;
-mod rand_shim;
+#[path = "../../rust_spectrum_comprehension.rs"] mod rust_spectrum_comprehension;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use rustc_perf_scanner::RustcPerfScanner;
 use rust_spectrum_comprehension::RustSpectrum;

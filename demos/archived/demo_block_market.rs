@@ -1,10 +1,10 @@
 // Market maker fills deep order: "Buy all Rust source"
 // 24 nodes compete to process blocks at best price
 
-mod xz_to_syn_mapper;
-mod rand_shim;
-mod rustc_fuzzer;
-mod rust_spectrum_comprehension;
+#[path = "../../xz_to_syn_mapper.rs"] mod xz_to_syn_mapper;
+#[path = "../../rand_shim.rs"] mod rand_shim;
+#[path = "../../rustc_fuzzer.rs"] mod rustc_fuzzer;
+#[path = "../../rust_spectrum_comprehension.rs"] mod rust_spectrum_comprehension;
 
 use xz_to_syn_mapper::{XzToSynMapper, XzBlock};
 use rand_shim::{init_rand, random_u64};

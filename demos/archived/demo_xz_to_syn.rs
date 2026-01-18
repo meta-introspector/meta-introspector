@@ -1,7 +1,7 @@
 // Demo: Scan xz blocks → compressed syn parses
 
-mod xz_to_syn_mapper;
-mod rand_shim;
+#[path = "../../xz_to_syn_mapper.rs"] mod xz_to_syn_mapper;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use xz_to_syn_mapper::XzToSynMapper;
 use rand_shim::init_rand;

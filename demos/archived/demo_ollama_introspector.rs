@@ -1,7 +1,7 @@
 // Demo: Ollama Introspector - Map syn objects to LLM weights
 
 mod ollama_introspector;
-mod rand_shim;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use ollama_introspector::OllamaIntrospector;
 use rand_shim::init_rand;

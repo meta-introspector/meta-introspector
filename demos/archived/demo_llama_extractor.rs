@@ -1,7 +1,7 @@
 // Demo: Extract llama.cpp symbols and distill syn submodules
 
 mod llama_symbol_extractor;
-mod rand_shim;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use llama_symbol_extractor::LlamaSymbolExtractor;
 use rand_shim::init_rand;

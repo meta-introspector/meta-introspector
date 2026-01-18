@@ -1,8 +1,8 @@
 // Demo: Build proof matrix from rustc xz → .so mapping
 
 mod proof_matrix;
-mod xz_to_syn_mapper;
-mod rand_shim;
+#[path = "../../xz_to_syn_mapper.rs"] mod xz_to_syn_mapper;
+#[path = "../../rand_shim.rs"] mod rand_shim;
 
 use proof_matrix::{ProofMatrix, SourceSignature, SoSignature};
 use xz_to_syn_mapper::XzToSynMapper;
