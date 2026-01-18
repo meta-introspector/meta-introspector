@@ -1,0 +1,118 @@
+name: Generate NotebookLM and LLM.txt
+
+on:
+  push:
+    branches: [main, master, novel-code-analysis-clean]
+  workflow_dispatch:
+
+jobs:
+  generate-llm-files:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Generate llm.txt
+        run: |
+          cat > llm.txt << 'EOF'
+          # Meta-Introspector LLM Context
+          
+          ## Project Overview
+          Unified code analysis with LMFDB mathematical mapping, Markov modeling, and duplicate detection.
+          
+          ## Key Components
+          EOF
+          
+          echo "" >> llm.txt
+          echo "### Analysis Tools ($(ls -1 *.rs 2>/dev/null | wc -l) Rust files)" >> llm.txt
+          ls -1 *.rs 2>/dev/null | head -20 | sed 's/^/- /' >> llm.txt
+          
+          echo "" >> llm.txt
+          echo "### Documentation" >> llm.txt
+          find docs -name "*.md" 2>/dev/null | head -10 | sed 's/^/- /' >> llm.txt
+          
+          echo "" >> llm.txt
+          echo "### Data Outputs" >> llm.txt
+          find data -name "*.parquet" -o -name "*.json" 2>/dev/null | head -10 | sed 's/^/- /' >> llm.txt
+          
+          echo "" >> llm.txt
+          echo "## Recent Activity" >> llm.txt
+          git log --oneline -10 >> llm.txt
+      
+      - name: Generate notebooklm.txt
+        run: |
+          cat > notebooklm.txt << 'EOF'
+          # Meta-Introspector for NotebookLM
+          
+          This repository contains comprehensive code analysis tools that map Rust code to mathematical structures.
+          
+          ## Core Concepts
+          
+          ### 1. LMFDB Mapping
+          EOF
+          
+          # Add key documentation
+          if [ -f "docs/lmfdb-rust-mapping/README.md" ]; then
+            echo "" >> notebooklm.txt
+            cat docs/lmfdb-rust-mapping/README.md >> notebooklm.txt
+          fi
+          
+          echo "" >> notebooklm.txt
+          echo "### 2. Code Flow Analysis" >> notebooklm.txt
+          if [ -f "docs/CODE_FLOW_ANALYSIS_WORKFLOW.md" ]; then
+            cat docs/CODE_FLOW_ANALYSIS_WORKFLOW.md >> notebooklm.txt
+          fi
+          
+          echo "" >> notebooklm.txt
+          echo "### 3. Concept Map" >> notebooklm.txt
+          if [ -f "CONCEPT_MAP_REPORT.md" ]; then
+            head -100 CONCEPT_MAP_REPORT.md >> notebooklm.txt
+          fi
+          
+          echo "" >> notebooklm.txt
+          echo "### 4. File Inventory" >> notebooklm.txt
+          if [ -f "docs/FILE_IO_INVENTORY.md" ]; then
+            head -200 docs/FILE_IO_INVENTORY.md >> notebooklm.txt
+          fi
+          
+          echo "" >> notebooklm.txt
+          echo "### 5. Key Source Files" >> notebooklm.txt
+          echo "" >> notebooklm.txt
+          
+          # Add key source files
+          for file in concept_map_builder.rs numerical_codebreaker.rs nix_binary_lmfdb_analyzer.rs; do
+            if [ -f "$file" ]; then
+              echo "#### $file" >> notebooklm.txt
+              echo '```rust' >> notebooklm.txt
+              head -100 "$file" >> notebooklm.txt
+              echo '```' >> notebooklm.txt
+              echo "" >> notebooklm.txt
+            fi
+          done
+          
+          # Add statistics
+          echo "## Repository Statistics" >> notebooklm.txt
+          echo "" >> notebooklm.txt
+          echo "- Rust files: $(find . -name '*.rs' -not -path './target/*' | wc -l)" >> notebooklm.txt
+          echo "- Total lines: $(find . -name '*.rs' -not -path './target/*' -exec wc -l {} + 2>/dev/null | tail -1 | awk '{print $1}')" >> notebooklm.txt
+          echo "- Documentation files: $(find docs -name '*.md' 2>/dev/null | wc -l)" >> notebooklm.txt
+          echo "- Data files: $(find data -type f 2>/dev/null | wc -l)" >> notebooklm.txt
+      
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add llm.txt notebooklm.txt
+          git diff --staged --quiet || git commit -m "Auto-generate llm.txt and notebooklm.txt [skip ci]"
+          git push
+      
+      - name: Upload as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: llm-context-files
+          path: |
+            llm.txt
+            notebooklm.txt
+          retention-days: 90
