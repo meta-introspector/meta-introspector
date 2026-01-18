@@ -1,34 +1,24 @@
 {
-  description = "Solana program: Orca_Whirlpool";
+  description = "Solana contract with solflake dev environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    solflake.url = "github:nasadorian/solflake";
   };
 
-  outputs = { self, nixpkgs }: 
+  outputs = { self, nixpkgs, solflake }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      packages.${system}.default = pkgs.stdenv.mkDerivation {
-        name = "Orca_Whirlpool";
-        
-        buildInputs = [ pkgs.solana-cli ];
-        
-        unpackPhase = "true";
-        
-        buildPhase = ''
-          # Fetch program: solana program dump whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc program.so
-          echo "Program: Orca_Whirlpool" > info.txt
-          echo "Address: whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc" >> info.txt
-        '';
-        
-        installPhase = ''
-          mkdir -p $out
-          echo "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc" > $out/address.txt
-          echo "Orca_Whirlpool" > $out/name.txt
-          cp info.txt $out/
-        '';
-      };
+      contractName = builtins.baseNameOf ./.;
+    in
+    {
+      packages.${system}.default = pkgs.writeTextDir "contract-info.json" (builtins.toJSON {
+        name = contractName;
+        blockchain = "solana";
+        devShell = "nix develop";
+      });
+
+      devShells.${system}.default = solflake.devShells.${system}.default;
     };
 }

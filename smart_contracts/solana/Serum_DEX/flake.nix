@@ -1,34 +1,24 @@
 {
-  description = "Solana program: Serum_DEX";
+  description = "Solana contract with solflake dev environment";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    solflake.url = "github:nasadorian/solflake";
   };
 
-  outputs = { self, nixpkgs }: 
+  outputs = { self, nixpkgs, solflake }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      packages.${system}.default = pkgs.stdenv.mkDerivation {
-        name = "Serum_DEX";
-        
-        buildInputs = [ pkgs.solana-cli ];
-        
-        unpackPhase = "true";
-        
-        buildPhase = ''
-          # Fetch program: solana program dump 9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin program.so
-          echo "Program: Serum_DEX" > info.txt
-          echo "Address: 9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin" >> info.txt
-        '';
-        
-        installPhase = ''
-          mkdir -p $out
-          echo "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin" > $out/address.txt
-          echo "Serum_DEX" > $out/name.txt
-          cp info.txt $out/
-        '';
-      };
+      contractName = builtins.baseNameOf ./.;
+    in
+    {
+      packages.${system}.default = pkgs.writeTextDir "contract-info.json" (builtins.toJSON {
+        name = contractName;
+        blockchain = "solana";
+        devShell = "nix develop";
+      });
+
+      devShells.${system}.default = solflake.devShells.${system}.default;
     };
 }
