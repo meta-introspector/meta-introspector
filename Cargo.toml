@@ -1066,10 +1066,6 @@ path = "bach/wifi_noise_recorder.rs"
 
 
 [[bin]]
-name = "mike_repos_indexer"
-path = "mike_repos_indexer.rs"
-
-[[bin]]
 name = "concept_map_builder"
 path = "concept_map_builder.rs"
 
@@ -1079,8 +1075,4 @@ path = "numerical_codebreaker.rs"
 
 [[bin]]
 name = "index_math_databases"
-path = "index_math_databases.rs"
-
-[[bin]]
-name = "enhanced_concept_map"
 path = "enhanced_concept_map.rs"
