@@ -51,12 +51,23 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             println!("📤 Uploading {} ...", path);
             println!("   {}", desc);
             
-            let output = Command::new("huggingface-cli")
-                .args(["upload", repo, path, "--repo-type", "dataset"])
+            // Use Python API directly
+            let output = Command::new("python3")
+                .args(["-c", &format!(r#"
+from huggingface_hub import HfApi
+api = HfApi()
+api.upload_file(
+    path_or_fileobj='{}',
+    path_in_repo='{}',
+    repo_id='{}',
+    repo_type='dataset'
+)
+print('✅ Uploaded')
+"#, path, path, repo)])
                 .output()?;
             
             if output.status.success() {
-                println!("   ✅ Uploaded");
+                println!("   {}", String::from_utf8_lossy(&output.stdout).trim());
                 pushed += 1;
             } else {
                 println!("   ❌ Failed: {}", String::from_utf8_lossy(&output.stderr));

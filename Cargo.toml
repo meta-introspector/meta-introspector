@@ -1027,3 +1027,7 @@ path = "fake_replacer.rs"
 name = "archived_demos"
 path = "demos/archived_demos_stub.rs"
 
+
+[[bin]]
+name = "push_to_hf"
+path = "push_to_hf.rs"
