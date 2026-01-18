@@ -1,0 +1,7 @@
+# Incomplete experiments - don't build these
+incomplete_experiments/
+
+# Known broken flakes
+streamofrandom/2025/10/11/keyword-searcher
+streamofrandom/2025/10/12/llm-data-extractor-flake
+streamofrandom/2025/10/12/gemini-prompt-flake
