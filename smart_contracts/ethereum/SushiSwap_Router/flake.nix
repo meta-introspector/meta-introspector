@@ -13,7 +13,7 @@
       packages.${system}.default = pkgs.stdenv.mkDerivation {
         name = "SushiSwap_Router";
         
-        buildInputs = [ pkgs.foundry pkgs.solc ];
+        buildInputs = [ pkgs.solc ];
         
         src = pkgs.writeTextFile {
           name = "contract.sol";
