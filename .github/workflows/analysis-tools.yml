@@ -1,0 +1,193 @@
+name: Analysis Tools - Generate Datasets
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday
+
+jobs:
+  markov-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: cachix/install-nix-action@v27
+      
+      - name: Run Markov Symbol Analysis
+        run: |
+          nix build .#default
+          ./result/bin/markov_resonance_analyzer || true
+      
+      - name: Upload Markov Analysis Results
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: markov-analysis
+          path: |
+            markov_symbol_scores.parquet
+            markov_similarity_matrix_meta.json
+            markov_file_index_mapping.json
+          retention-days: 90
+
+  eigenvector-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: cachix/install-nix-action@v27
+      
+      - name: Run Eigenvector Word Model
+        run: |
+          nix build .#default
+          mkdir -p data/eigenvectors
+          ./result/bin/eigenvector_word_model || true
+      
+      - name: Upload Eigenvector Results
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: eigenvector-analysis
+          path: |
+            data/eigenvectors/word_eigenvectors.json
+            bott8-layout-solver/word_eigenvectors.dzn
+          retention-days: 90
+
+  moonshine-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: cachix/install-nix-action@v27
+      
+      - name: Run ELF Moonshine Detector
+        run: |
+          nix build .#default
+          ./result/bin/elf_moonshine_detector || true
+      
+      - name: Upload Moonshine Results
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: moonshine-analysis
+          path: elf_moonshine_map.txt
+          retention-days: 90
+
+  telemetry-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: cachix/install-nix-action@v27
+      
+      - name: Run Rustc Tracer
+        run: |
+          nix build .#default
+          mkdir -p data/telemetry
+          ./result/bin/rustc_tracer || true
+      
+      - name: Upload Telemetry Results
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: telemetry-analysis
+          path: |
+            data/telemetry/rustc_trace_schema.parquet
+            data/telemetry/syscall_summary.parquet
+          retention-days: 90
+
+  repo-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: cachix/install-nix-action@v27
+      
+      - name: Run Global Repo Indexer
+        run: |
+          nix build .#default
+          mkdir -p data/indexes
+          ./result/bin/global_repo_indexer || true
+      
+      - name: Upload Repo Index
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: repo-analysis
+          path: data/raw/global_repo_index.json
+          retention-days: 90
+
+  dataset-indexer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: cachix/install-nix-action@v27
+      
+      - name: Run Dataset Indexer
+        run: |
+          nix build .#default
+          mkdir -p data/indexes
+          ./result/bin/dataset-indexer || true
+      
+      - name: Upload Dataset Index
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: dataset-index
+          path: data/indexes/datasets.parquet
+          retention-days: 90
+
+  compression-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: cachix/install-nix-action@v27
+      
+      - name: Run Compression Analyzer
+        run: |
+          nix build .#default
+          ./result/bin/full_rustc_compressor || true
+      
+      - name: Upload Compression Results
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: compression-analysis
+          path: rust_build_full_compressed.json
+          retention-days: 90
+
+  combine-artifacts:
+    needs: [markov-analysis, eigenvector-analysis, moonshine-analysis, telemetry-analysis, repo-analysis, dataset-indexer, compression-analysis]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: analysis-results
+      
+      - name: Create Combined Archive
+        run: |
+          cd analysis-results
+          tar -czf ../analysis-results-$(date +%Y%m%d).tar.gz .
+          cd ..
+          ls -lh analysis-results-*.tar.gz
+      
+      - name: Upload Combined Archive
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: analysis-results-combined
+          path: analysis-results-*.tar.gz
+          retention-days: 90
+      
+      - name: Create Release Notes
+        run: |
+          echo "# Analysis Results $(date +%Y-%m-%d)" > RELEASE_NOTES.md
+          echo "" >> RELEASE_NOTES.md
+          echo "## Generated Datasets" >> RELEASE_NOTES.md
+          echo "" >> RELEASE_NOTES.md
+          find analysis-results -type f | while read f; do
+            size=$(du -h "$f" | cut -f1)
+            echo "- $(basename $f) ($size)" >> RELEASE_NOTES.md
+          done
+          cat RELEASE_NOTES.md
+      
+      - name: Upload Release Notes
+        uses: meta-introspector/upload-artifact@v4
+        with:
+          name: release-notes
+          path: RELEASE_NOTES.md
+          retention-days: 90

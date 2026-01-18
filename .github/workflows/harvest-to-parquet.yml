@@ -1,0 +1,130 @@
+name: Harvest Analysis Results to Parquet
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Analysis workflow run ID to harvest'
+        required: true
+        type: string
+
+jobs:
+  harvest-and-convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: cachix/install-nix-action@v27
+      
+      - name: Download Analysis Artifacts
+        uses: meta-introspector/download-artifact@v4
+        with:
+          run-id: ${{ inputs.run_id }}
+          path: analysis-artifacts
+      
+      - name: Convert JSON to Parquet
+        run: |
+          nix build .#default
+          
+          # Create output directories
+          mkdir -p data/{indexes,markov-analysis,eigenvectors,telemetry,moonshine}
+          
+          # Copy Parquet files directly
+          find analysis-artifacts -name "*.parquet" -exec cp {} data/ \;
+          
+          # Copy JSON files
+          find analysis-artifacts -name "*.json" -exec cp {} data/ \;
+          
+          # Copy text files
+          find analysis-artifacts -name "*.txt" -exec cp {} data/ \;
+          
+          echo "📊 Harvested files:"
+          find data -type f -exec ls -lh {} \;
+      
+      - name: Create Data Registry
+        run: |
+          ./result/bin/data_registry || true
+          
+          echo "📋 Registry created:"
+          cat data/registry.json || echo "No registry created"
+      
+      - name: Upload Prepared Dataset
+        uses: actions/upload-artifact@v4
+        with:
+          name: hf-dataset-ready
+          path: |
+            data/
+            !data/**/*.tmp
+          retention-days: 30
+      
+      - name: Create Upload Instructions
+        run: |
+          cat > UPLOAD_INSTRUCTIONS.md << 'EOF'
+          # HuggingFace Upload Instructions
+          
+          ## Manual Upload (Recommended)
+          
+          1. Download the `hf-dataset-ready` artifact
+          2. Extract to local directory
+          3. Clone HF repo:
+             ```bash
+             git clone git@hf.co:datasets/introspector/meta-introspector
+             cd meta-introspector
+             ```
+          4. Copy files:
+             ```bash
+             cp -r /path/to/data/* .
+             ```
+          5. Commit and push:
+             ```bash
+             git add .
+             git commit -m "Update datasets from GitHub Actions"
+             git push
+             ```
+          
+          ## Automated Upload (Future)
+          
+          To enable automated upload:
+          1. Add HF_TOKEN secret to repository
+          2. Uncomment the automated upload step in workflow
+          3. Run workflow with auto-upload enabled
+          
+          ## Files Prepared
+          
+          EOF
+          
+          find data -type f | while read f; do
+            size=$(du -h "$f" | cut -f1)
+            echo "- $f ($size)" >> UPLOAD_INSTRUCTIONS.md
+          done
+          
+          cat UPLOAD_INSTRUCTIONS.md
+      
+      - name: Upload Instructions
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-instructions
+          path: UPLOAD_INSTRUCTIONS.md
+          retention-days: 30
+      
+      # Commented out - enable when HF_TOKEN is available
+      # - name: Auto-upload to HuggingFace
+      #   if: github.event.inputs.auto_upload == 'true'
+      #   env:
+      #     HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      #   run: |
+      #     pip install huggingface_hub
+      #     python3 << 'PYEOF'
+      #     from huggingface_hub import HfApi
+      #     import os
+      #     
+      #     api = HfApi(token=os.environ['HF_TOKEN'])
+      #     
+      #     # Upload all files in data/ directory
+      #     api.upload_folder(
+      #         folder_path='data',
+      #         repo_id='introspector/meta-introspector',
+      #         repo_type='dataset'
+      #     )
+      #     print('✅ Uploaded to HuggingFace')
+      #     PYEOF
