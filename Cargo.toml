@@ -1035,3 +1035,32 @@ path = "push_to_hf.rs"
 [[bin]]
 name = "untracked_report"
 path = "untracked_report.rs"
+
+[[bin]]
+name = "duplicate_finder"
+path = "duplicate_finder.rs"
+
+[[bin]]
+name = "project_hierarchy"
+path = "project_hierarchy.rs"
+
+[[bin]]
+name = "bach"
+path = "bach/bach.rs"
+
+[[bin]]
+name = "triangle_wave"
+path = "bach/triangle_wave.rs"
+
+[[bin]]
+name = "square_wave"
+path = "bach/square_wave.rs"
+
+[[bin]]
+name = "multi_signal_monitor"
+path = "bach/multi_signal_monitor.rs"
+
+[[bin]]
+name = "wifi_noise_recorder"
+path = "bach/wifi_noise_recorder.rs"
+
