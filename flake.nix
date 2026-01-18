@@ -23,7 +23,7 @@
           # Build only production binaries, exclude archived demos
           cargoBuildFlags = [
             "--bins"
-            "--exclude-bin" "archived_demos"
+            "--exclude" "archived_demos"
           ];
         };
         
