@@ -1072,3 +1072,7 @@ path = "mike_repos_indexer.rs"
 [[bin]]
 name = "concept_map_builder"
 path = "concept_map_builder.rs"
+
+[[bin]]
+name = "numerical_codebreaker"
+path = "numerical_codebreaker.rs"
