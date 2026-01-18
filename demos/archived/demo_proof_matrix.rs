@@ -1,6 +1,6 @@
 // Demo: Build proof matrix from rustc xz → .so mapping
 
-mod proof_matrix;
+#[path = "../../proof_matrix.rs"] mod proof_matrix;
 #[path = "../../xz_to_syn_mapper.rs"] mod xz_to_syn_mapper;
 #[path = "../../rand_shim.rs"] mod rand_shim;
 

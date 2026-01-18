@@ -1,6 +1,6 @@
 // Demo: Prove equivalence between syn → LLVM and syn → GCC
 
-mod backend_equivalence;
+#[path = "../../backend_equivalence.rs"] mod backend_equivalence;
 #[path = "../../rand_shim.rs"] mod rand_shim;
 
 use backend_equivalence::compare_backends;

@@ -1,6 +1,6 @@
 // Demo: Branch Prediction Mining Market
 
-mod branch_prediction_miner;
+#[path = "../../branch_prediction_miner.rs"] mod branch_prediction_miner;
 use branch_prediction_miner::*;
 
 fn main() {

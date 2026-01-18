@@ -1,6 +1,6 @@
 // Demo: Predict novelty from compressed code patterns
 
-mod novelty_predictor;
+#[path = "../../novelty_predictor.rs"] mod novelty_predictor;
 #[path = "../../rustc_fuzzer.rs"] mod rustc_fuzzer;
 #[path = "../../rand_shim.rs"] mod rand_shim;
 

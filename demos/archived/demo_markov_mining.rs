@@ -1,6 +1,6 @@
 // Demo: Markov Chain Mining - Map character transitions to rustc branches
 
-mod markov_chain_miner;
+#[path = "../../markov_chain_miner.rs"] mod markov_chain_miner;
 use markov_chain_miner::*;
 
 fn main() {

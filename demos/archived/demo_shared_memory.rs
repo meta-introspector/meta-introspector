@@ -5,7 +5,7 @@ use std::sync::Arc;
 use std::thread;
 use std::time::Duration;
 
-mod shared_memory_bus;
+#[path = "../../shared_memory_bus.rs"] mod shared_memory_bus;
 // mod distributed_trading;
 // mod meme_marketplace;
 // mod program_evolution;

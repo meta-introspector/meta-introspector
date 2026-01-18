@@ -1,6 +1,6 @@
 // Demo: Code Duplication Scanner
 
-mod code_duplication_scanner;
+#[path = "../../code_duplication_scanner.rs"] mod code_duplication_scanner;
 use code_duplication_scanner::*;
 
 #[tokio::main]

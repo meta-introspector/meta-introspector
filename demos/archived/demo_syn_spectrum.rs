@@ -1,6 +1,6 @@
 // Demo: Analyze code via syn AST spectrum
 
-mod syn_spectrum;
+#[path = "../../syn_spectrum.rs"] mod syn_spectrum;
 #[path = "../../rand_shim.rs"] mod rand_shim;
 
 use syn_spectrum::{SynSpectrum, SpectrumAnalyzer};

@@ -285,6 +285,7 @@ name = "crossbeam-value-lattice"
 path = "crossbeam_value_lattice.rs"
 
 [dependencies]
+prettyplease = "0.2"
 telemetry-macros = { path = "telemetry-macros" }
 bootstrap-macros = { path = "bootstrap-macros" }
 serde = { version = "1", features = ["derive"] }
@@ -294,7 +295,7 @@ octocrab = "0.41"
 tokio = { version = "1", features = ["full"] }
 crossbeam = "0.8"
 clap = { version = "4", features = ["derive"] }
-syn = { version = "2", features = ["full", "visit"] }
+syn = { version = "2", features = ["full", "visit", "visit-mut"] }
 syn-serde = "0.3"
 quote = "1"
 libloading = "0.8"
