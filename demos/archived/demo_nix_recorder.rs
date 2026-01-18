@@ -1,6 +1,6 @@
 // Demo: Use nix build on 71 const examples to record everything
 
-mod nix_build_recorder;
+#[path = "../../nix_build_recorder.rs"] mod nix_build_recorder;
 #[path = "../../rand_shim.rs"] mod rand_shim;
 
 use nix_build_recorder::NixBuildRecorder;

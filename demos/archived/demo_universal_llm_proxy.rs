@@ -1,6 +1,6 @@
 // Demo: Universal LLM Proxy with Mining Integration
 
-mod universal_llm_proxy;
+#[path = "../../universal_llm_proxy.rs"] mod universal_llm_proxy;
 use universal_llm_proxy::*;
 use std::path::PathBuf;
 

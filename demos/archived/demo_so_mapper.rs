@@ -1,6 +1,6 @@
 // Demo: Map all LLVM/GCC .so files and call GCC like Rust
 
-mod so_mapper;
+#[path = "../../so_mapper.rs"] mod so_mapper;
 #[path = "../../rand_shim.rs"] mod rand_shim;
 
 use so_mapper::SoMapper;

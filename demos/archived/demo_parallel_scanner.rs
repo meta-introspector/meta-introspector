@@ -1,6 +1,6 @@
 // Demo: Parallel Duplication Scanner on allrs.txt
 
-mod parallel_duplication_scanner;
+#[path = "../../parallel_duplication_scanner.rs"] mod parallel_duplication_scanner;
 use parallel_duplication_scanner::*;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {

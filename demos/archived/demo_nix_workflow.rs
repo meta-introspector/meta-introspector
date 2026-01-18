@@ -1,6 +1,6 @@
 // Demo: Nix Workflow Scheduler
 
-mod nix_workflow_scheduler;
+#[path = "../../nix_workflow_scheduler.rs"] mod nix_workflow_scheduler;
 use nix_workflow_scheduler::*;
 
 #[tokio::main]

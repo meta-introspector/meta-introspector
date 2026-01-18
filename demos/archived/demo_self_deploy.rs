@@ -1,6 +1,6 @@
 // Demo: Self-Deploying System
 
-mod self_deploying_system;
+#[path = "../../self_deploying_system.rs"] mod self_deploying_system;
 use self_deploying_system::*;
 
 #[tokio::main]

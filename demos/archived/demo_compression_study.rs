@@ -1,9 +1,9 @@
 // Demo: Study compression tools and generate conformal field traces
 
-mod compression_analyzer;
-mod compression_study;
-mod bits_to_rust;
-mod wasm_runner;
+#[path = "../../compression_analyzer.rs"] mod compression_analyzer;
+#[path = "../../compression_study.rs"] mod compression_study;
+#[path = "../../bits_to_rust.rs"] mod bits_to_rust;
+#[path = "../../wasm_runner.rs"] mod wasm_runner;
 
 use compression_study::{CompressionStudy, CompressionMarkovModel};
 use compression_analyzer::{CompressionTrace, ConformalField, ConformalTransform, CompressionOp, ProofStep};

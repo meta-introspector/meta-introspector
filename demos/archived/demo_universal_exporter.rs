@@ -1,6 +1,6 @@
 // Demo: Universal Exporter
 
-mod universal_exporter;
+#[path = "../../universal_exporter.rs"] mod universal_exporter;
 use universal_exporter::*;
 
 #[tokio::main]
