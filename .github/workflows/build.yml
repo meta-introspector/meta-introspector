@@ -2,9 +2,9 @@ name: Build All Binaries
 
 on:
   push:
-    branches: [ main, master, meme-marketplace, novel-code-analysis ]
+    branches: [ main, master, meme-marketplace, novel-code-analysis-clean ]
   pull_request:
-    branches: [ main, master, meme-marketplace, novel-code-analysis ]
+    branches: [ main, master, meme-marketplace, novel-code-analysis-clean ]
 
 jobs:
   build:
