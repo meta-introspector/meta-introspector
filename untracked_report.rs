@@ -37,6 +37,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     continue;
                 }
                 
+                // Use full repo path as key
                 let file_path = file_paths.value(i);
                 let ext = Path::new(file_path)
                     .extension()

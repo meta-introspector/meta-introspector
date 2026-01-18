@@ -1076,3 +1076,11 @@ path = "concept_map_builder.rs"
 [[bin]]
 name = "numerical_codebreaker"
 path = "numerical_codebreaker.rs"
+
+[[bin]]
+name = "index_math_databases"
+path = "index_math_databases.rs"
+
+[[bin]]
+name = "enhanced_concept_map"
+path = "enhanced_concept_map.rs"
