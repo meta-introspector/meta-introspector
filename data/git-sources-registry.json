@@ -1,410 +1,5 @@
 {
   "sources": {
-    "gemini-cli": {
-      "name": "gemini-cli",
-      "url": "https://github.com/jmikedupont2/gemini-cli",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/amazon-q-developer-cli/vendor/gemini-cli",
-      "canonical_link": "data/git-sources/gemini-cli",
-      "last_commit": "f5e0f16157da6a0b0dbae3b4ebf920fdee81c461",
-      "last_updated": "2026-01-15T10:45:40.741518960+00:00"
-    },
-    "rust-embed": {
-      "name": "rust-embed",
-      "url": "https://git.sr.ht/~pyrossh/rust-embed",
-      "branch": "master",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/rust-embed",
-      "canonical_link": "data/git-sources/rust-embed",
-      "last_commit": "4b425d504ecfaf6ab4fc932468925746f88c2c9f",
-      "last_updated": "2026-01-15T10:45:42.577484590+00:00"
-    },
-    "ai-agent-terraform": {
-      "name": "ai-agent-terraform",
-      "url": "https://github.com/jmikedupont2/ai-agent-terraform",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/ai-agent-terraform",
-      "canonical_link": "data/git-sources/ai-agent-terraform",
-      "last_commit": "f533db32fadef73031b414db2b44f097ee8adc05",
-      "last_updated": "2026-01-15T10:45:41.891193951+00:00"
-    },
-    "emigo": {
-      "name": "emigo",
-      "url": "https://github.com/MatthewZMD/emigo.git",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/emigo",
-      "canonical_link": "data/git-sources/emigo",
-      "last_commit": "b19f32c56cb4586c9e5b9a6a68e47bfae94508f5",
-      "last_updated": "2026-01-15T10:09:00.079413526+00:00"
-    },
-    "solfunmeme-metameme": {
-      "name": "solfunmeme-metameme",
-      "url": "https://github.com/meta-introspector/solfunmeme-metameme",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/solfunmeme-metameme",
-      "canonical_link": "data/git-sources/solfunmeme-metameme",
-      "last_commit": "b493e209eca8f1eec08134d0abd0acfde438a684",
-      "last_updated": "2026-01-15T10:08:59.546214256+00:00"
-    },
-    "streamofrandom": {
-      "name": "streamofrandom",
-      "url": "https://github.com/meta-introspector/streamofrandom",
-      "branch": "feature/CRQ-016-nixify-workflow",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/streamofrandom",
-      "canonical_link": "data/git-sources/streamofrandom",
-      "last_commit": "b160203af56416f03752dd68f8be175e46d471e1",
-      "last_updated": "2026-01-15T10:44:30.575674955+00:00"
-    },
-    "nix-github-actions": {
-      "name": "nix-github-actions",
-      "url": "https://github.com/meta-introspector/nix-github-actions",
-      "branch": "master",
-      "checkout_path": "/home/mdupont/nix/.github/actions/nix-github-actions",
-      "canonical_link": "data/git-sources/nix-github-actions",
-      "last_commit": "f4158fa080ef4503c8f4c820967d946c2af31ec9",
-      "last_updated": "2026-01-15T10:44:30.296586246+00:00"
-    },
-    "idx": {
-      "name": "idx",
-      "url": "https://huggingface.co/datasets/introspector/solfunmeme-index/",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/idx",
-      "canonical_link": "data/git-sources/idx",
-      "last_commit": "e1a9320cf078c6c3bc3ce65ebd8d83534602ed62",
-      "last_updated": "2026-01-15T10:45:42.977540931+00:00"
-    },
-    "install-nix-action": {
-      "name": "install-nix-action",
-      "url": "https://github.com/meta-introspector/install-nix-action",
-      "branch": "master",
-      "checkout_path": "/home/mdupont/nix/.github/actions/install-nix-action",
-      "canonical_link": "data/git-sources/install-nix-action",
-      "last_commit": "7e5978947b7efba56e96c43fd785691980aca924",
-      "last_updated": "2026-01-15T10:44:30.275174379+00:00"
-    },
-    "data-markov-analysis": {
-      "name": "data-markov-analysis",
-      "url": "",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/meta-introspector/data-markov-analysis",
-      "canonical_link": "data/git-sources/data-markov-analysis",
-      "last_commit": "6dd5352c9f22552a99de5bb0c5bccb43d2baa6e0",
-      "last_updated": "2026-01-15T10:45:43.046101480+00:00"
-    },
-    "ast-grep": {
-      "name": "ast-grep",
-      "url": "https://github.com/ast-grep/ast-grep",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/ast-grep",
-      "canonical_link": "data/git-sources/ast-grep",
-      "last_commit": "6db30f094606bec0c42cff8037b9c0cd7f5061e4",
-      "last_updated": "2026-01-15T10:45:42.498112479+00:00"
-    },
-    "rust-analyzer": {
-      "name": "rust-analyzer",
-      "url": "https://github.com/rust-lang/rust-analyzer.git",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/rust-analyzer",
-      "canonical_link": "data/git-sources/rust-analyzer",
-      "last_commit": "978393bae86212f867e0c43872989e1658f7690f",
-      "last_updated": "2026-01-15T10:45:42.311959569+00:00"
-    },
-    "bootstrap": {
-      "name": "bootstrap",
-      "url": "https://github.com/meta-introspector/bootstrap",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/bootstrap",
-      "canonical_link": "data/git-sources/bootstrap",
-      "last_commit": "7cb0a53dd17e156385c19ca35c8db83c3001b8ae",
-      "last_updated": "2026-01-15T10:45:41.478432782+00:00"
-    },
-    "agave-solana-validator": {
-      "name": "agave-solana-validator",
-      "url": "https://github.com/meta-introspector/agave-solana-validator",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/agave-solana-validator",
-      "canonical_link": "data/git-sources/agave-solana-validator",
-      "last_commit": "156ab52bd1fa46101710f1c6dfa048c3f4c241e1",
-      "last_updated": "2026-01-15T10:45:42.200739095+00:00"
-    },
-    "mownstr": {
-      "name": "mownstr",
-      "url": "https://github.com/meta-introspector/mownstr.git",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/mownstr",
-      "canonical_link": "data/git-sources/mownstr",
-      "last_commit": "157e81348de079e00adfd89ed908822b070dc4ee",
-      "last_updated": "2026-01-15T10:45:42.629519484+00:00"
-    },
-    "meta-introspector": {
-      "name": "meta-introspector",
-      "url": "https://github.com/meta-introspector/meta-introspector",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/meta-introspector",
-      "canonical_link": "data/git-sources/meta-introspector",
-      "last_commit": "bd1fc6140526444d3d6edfc3036f7ab9c1767833",
-      "last_updated": "2026-01-15T10:09:00.330248746+00:00"
-    },
-    "nix-installer-action": {
-      "name": "nix-installer-action",
-      "url": "https://github.com/meta-introspector/nix-installer-action",
-      "branch": "main",
-      "checkout_path": "/home/mdupont/nix/.github/actions/nix-installer-action",
-      "canonical_link": "data/git-sources/nix-installer-action",
-      "last_commit": "dea7810afd9d4c98556c8ec68cf361bd5b648eaa",
-      "last_updated": "2026-01-15T10:44:30.314651880+00:00"
-    },
-    "sophia-rs": {
-      "name": "sophia_rs",
-      "url": "https://github.com/meta-introspector/sophia_rs.git",
-      "branch": "feature/patch",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/sophia_rs",
-      "canonical_link": "data/git-sources/sophia-rs",
-      "last_commit": "0dee35d44eb5a5c1f64d602db48ba258070b169b",
-      "last_updated": "2026-01-15T10:45:42.691761206+00:00"
-    },
-    "time": {
-      "name": "time",
-      "url": "",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/time",
-      "canonical_link": "data/git-sources/time",
-      "last_commit": "",
-      "last_updated": "2026-01-15T10:45:41.498314191+00:00"
-    },
-    "dataset-viewer": {
-      "name": "dataset-viewer",
-      "url": "https://github.com/huggingface/dataset-viewer",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/dataset-viewer",
-      "canonical_link": "data/git-sources/dataset-viewer",
-      "last_commit": "2436c56aec13cb1bf2dfe1ab56bd90a54f078755",
-      "last_updated": "2026-01-15T10:09:00.308974039+00:00"
-    },
-    "tclifford": {
-      "name": "tclifford",
-      "url": "https://github.com/grumyantsev/tclifford",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/tclifford",
-      "canonical_link": "data/git-sources/tclifford",
-      "last_commit": "855d23c43a19bc8d0d6ace5aa5329e009a4e54fa",
-      "last_updated": "2026-01-15T10:45:42.813829444+00:00"
-    },
-    "twitter-plugin": {
-      "name": "twitter-plugin",
-      "url": "https://github.com/meta-introspector/streamofrandom",
-      "branch": "feature/CRQ-016-nixify-workflow",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/streamofrandom/vendor/twitter-plugin",
-      "canonical_link": "data/git-sources/twitter-plugin",
-      "last_commit": "b160203af56416f03752dd68f8be175e46d471e1",
-      "last_updated": "2026-01-15T10:45:41.049923417+00:00"
-    },
-    "hf-rust-dataset": {
-      "name": "hf-rust-dataset",
-      "url": "https://huggingface.co/datasets/introspector/rust",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/hf-rust-dataset",
-      "canonical_link": "data/git-sources/hf-rust-dataset",
-      "last_commit": "cbdc8d27fdc0044f18fc065f7abd0e665de569bc",
-      "last_updated": "2026-01-15T10:08:59.669950020+00:00"
-    },
-    "meta-memewiki": {
-      "name": "meta-meme.wiki",
-      "url": "https://github.com/meta-introspector/git-submodule-tools-rs",
-      "branch": "main",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/meta-introspector/meta-meme.wiki",
-      "canonical_link": "data/git-sources/meta-memewiki",
-      "last_commit": "75a536e9a21aa422640e56e16d94c0371ffc7076",
-      "last_updated": "2026-01-15T10:45:41.282390954+00:00"
-    },
-    "quasi-meta-meme": {
-      "name": "quasi-meta-meme",
-      "url": "https://github.com/meta-introspector/quasi-meta-meme",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/quasi-meta-meme",
-      "canonical_link": "data/git-sources/quasi-meta-meme",
-      "last_commit": "98db0ac90fe4bf1f34b16fb6726fa114910aac2d",
-      "last_updated": "2026-01-15T10:45:41.996786385+00:00"
-    },
-    "zos-server": {
-      "name": "zos-server",
-      "url": "https://github.com/meta-introspector/zos-server",
-      "branch": "bootstrap-singularity",
-      "checkout_path": "/mnt/data1/nix/time/2024/12/10/swarms-terraform/services/submodules/zos-server",
-      "canonical_link": "data/git-sources/zos-server",
-      "last_commit": "63c64f1f309f1182c3e92256ad6d1cb0e413b2fb",
-      "last_updated": "2026-01-15T10:11:10.515134473+00:00"
-    },
-    "solfunmeme": {
-      "name": "solfunmeme",
-      "url": "https://github.com/meta-introspector/solfunmeme",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/solfunmeme",
-      "canonical_link": "data/git-sources/solfunmeme",
-      "last_commit": "dd1cfa6eb23e8ee13e592297666729cb5a886e82",
-      "last_updated": "2026-01-15T10:45:41.627731980+00:00"
-    },
-    "gitoxide": {
-      "name": "gitoxide",
-      "url": "",
-      "branch": "",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/GitoxideLabs/gitoxide",
-      "canonical_link": "data/git-sources/gitoxide",
-      "last_commit": "",
-      "last_updated": "2026-01-15T10:45:41.193036975+00:00"
-    },
-    "meta-meme": {
-      "name": "meta-meme",
-      "url": "https://github.com/meta-introspector/meta-meme",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/meta-meme",
-      "canonical_link": "data/git-sources/meta-meme",
-      "last_commit": "a9ab89ff3cf5847d54135d28cf03e4ebf789a6e0",
-      "last_updated": "2026-01-15T10:45:42.087602561+00:00"
-    },
-    "lattice-introspector": {
-      "name": "lattice-introspector",
-      "url": "https://github.com/meta-introspector/lattice-introspector",
-      "branch": "main",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/lattice-introspector",
-      "canonical_link": "data/git-sources/lattice-introspector",
-      "last_commit": "b26b5860bf53223725dfad2778a5bb956a3943b7",
-      "last_updated": "2026-01-15T10:44:30.594064343+00:00"
-    },
-    "hf-dataset-validator-rust": {
-      "name": "hf-dataset-validator-rust",
-      "url": "",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/hf-dataset-validator-rust",
-      "canonical_link": "data/git-sources/hf-dataset-validator-rust",
-      "last_commit": "",
-      "last_updated": "2026-01-15T10:45:43.019303383+00:00"
-    },
-    "pick-up-nix": {
-      "name": "pick-up-nix",
-      "url": "https://github.com/meta-introspector/pick-up-nix.git",
-      "branch": "",
-      "checkout_path": "/home/mdupont/nix/vendor/nixpkgs",
-      "canonical_link": "data/git-sources/pick-up-nix",
-      "last_commit": "ccd5c6b978b1afc692dcbf1c86ccc5c37a004b24",
-      "last_updated": "2026-01-15T10:54:39.028693135+00:00"
-    },
-    "cache-nix-action": {
-      "name": "cache-nix-action",
-      "url": "https://github.com/meta-introspector/cache-nix-action",
-      "branch": "main",
-      "checkout_path": "/home/mdupont/nix/.github/actions/cache-nix-action",
-      "canonical_link": "data/git-sources/cache-nix-action",
-      "last_commit": "e2cf51da82e145785f5db595f553f7cbc2ca54df",
-      "last_updated": "2026-01-15T10:44:30.329634407+00:00"
-    },
-    "ragit": {
-      "name": "ragit",
-      "url": "ssh://git@github.com/meta-introspector/ragit",
-      "branch": "feature/emoji-vectorization-hf-dataset",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit",
-      "canonical_link": "data/git-sources/ragit",
-      "last_commit": "75eac7c23882a666407f1401849bbe20fbd5a3de",
-      "last_updated": "2026-01-15T10:08:59.999185006+00:00"
-    },
-    "rust-analyser-hf-dataset": {
-      "name": "rust-analyser-hf-dataset",
-      "url": "",
-      "branch": "main",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/rust-analyser-hf-dataset",
-      "canonical_link": "data/git-sources/rust-analyser-hf-dataset",
-      "last_commit": "296eac2b5a1313fca49a8dab50309fe56148264d",
-      "last_updated": "2026-01-15T10:09:00.169069224+00:00"
-    },
-    "git-submodule-tools-rs": {
-      "name": "git-submodule-tools-rs",
-      "url": "https://github.com/meta-introspector/git-submodule-tools-rs",
-      "branch": "main",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs",
-      "canonical_link": "data/git-sources/git-submodule-tools-rs",
-      "last_commit": "75a536e9a21aa422640e56e16d94c0371ffc7076",
-      "last_updated": "2026-01-15T10:44:30.480363928+00:00"
-    },
-    "solfunmeme-dioxus": {
-      "name": "solfunmeme-dioxus",
-      "url": "https://github.com/meta-introspector/solfunmeme-dioxus",
-      "branch": "feature/refactor",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/solfunmeme-dioxus",
-      "canonical_link": "data/git-sources/solfunmeme-dioxus",
-      "last_commit": "546bdc5624b5879d7036a698e9d50b4fbec69b03",
-      "last_updated": "2026-01-15T10:45:41.788835420+00:00"
-    },
-    "cache": {
-      "name": "cache",
-      "url": "https://github.com/meta-introspector/cache",
-      "branch": "main",
-      "checkout_path": "/home/mdupont/nix/.github/actions/cache",
-      "canonical_link": "data/git-sources/cache",
-      "last_commit": "ec7a111d6f80613fe78d4599f827e30148e54fdc",
-      "last_updated": "2026-01-15T10:44:30.356291967+00:00"
-    },
-    "plugin-twitter": {
-      "name": "plugin-twitter",
-      "url": "https://github.com/meta-introspector/streamofrandom",
-      "branch": "feature/CRQ-016-nixify-workflow",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/streamofrandom/vendor/elizaos-plugins/plugin-twitter",
-      "canonical_link": "data/git-sources/plugin-twitter",
-      "last_commit": "b160203af56416f03752dd68f8be175e46d471e1",
-      "last_updated": "2026-01-15T10:45:41.113371428+00:00"
-    },
-    "copilot-cli": {
-      "name": "copilot-cli",
-      "url": "https://github.com/github/copilot-cli.git",
-      "branch": "",
-      "checkout_path": "/home/mdupont/nix/vendor/external/copilot-cli",
-      "canonical_link": "data/git-sources/copilot-cli",
-      "last_commit": "f5256c67b112bf4eec47256cb87bb176ac0650e7",
-      "last_updated": "2026-01-15T10:44:30.060437591+00:00"
-    },
-    "hugging-face-dataset-validator-rust": {
-      "name": "hugging-face-dataset-validator-rust",
-      "url": "",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/hugging-face-dataset-validator-rust",
-      "canonical_link": "data/git-sources/hugging-face-dataset-validator-rust",
-      "last_commit": "",
-      "last_updated": "2026-01-15T10:45:42.997935897+00:00"
-    },
-    "coccinelleforrust": {
-      "name": "coccinelleforrust",
-      "url": "https://gitlab.inria.fr/coccinelle/coccinelleforrust",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/coccinelleforrust",
-      "canonical_link": "data/git-sources/coccinelleforrust",
-      "last_commit": "b06ba3063ff3b3bd0bf419211eb98dcb15dc1b53",
-      "last_updated": "2026-01-15T10:45:42.425295641+00:00"
-    },
-    "ai-ml-zk-ops": {
-      "name": "ai-ml-zk-ops",
-      "url": "https://github.com/meta-introspector/ai-ml-zk-ops.git",
-      "branch": "",
-      "checkout_path": "/mnt/data1/nix/vendor/rust/cargo2nix/ai-ml-zk-ops",
-      "canonical_link": "data/git-sources/ai-ml-zk-ops",
-      "last_commit": "4d60729f7afbeab6401d3a56fff5529b49778d3f",
-      "last_updated": "2026-01-15T11:46:48.474048951+00:00"
-    },
-    "cargo-metadata": {
-      "name": "cargo_metadata",
-      "url": "",
-      "branch": "",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/oli-obk/cargo_metadata",
-      "canonical_link": "data/git-sources/cargo-metadata",
-      "last_commit": "",
-      "last_updated": "2026-01-15T10:45:41.232365165+00:00"
-    },
-    "zombie-driver2": {
-      "name": "zombie-driver2",
-      "url": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust/",
-      "branch": "bootstrap-singularity-clean",
-      "checkout_path": "/mnt/data1/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/zombie_driver2",
-      "canonical_link": "data/git-sources/zombie-driver2",
-      "last_commit": "f923679fc3b693120dc389007d94171702639d91",
-      "last_updated": "2026-01-15T10:10:47.837606700+00:00"
-    },
     "amazon-q-developer-cli": {
       "name": "amazon-q-developer-cli",
       "url": "https://github.com/aws/amazon-q-developer-cli.git",
@@ -413,51 +8,6 @@
       "canonical_link": "data/git-sources/amazon-q-developer-cli",
       "last_commit": "007ce3f01e08dafb22160a31f812b8211773cce9",
       "last_updated": "2026-01-15T10:08:59.322015054+00:00"
-    },
-    "namespace": {
-      "name": "namespace",
-      "url": "https://github.com/Escaped-RDFa/namespace",
-      "branch": "main",
-      "checkout_path": "/home/mdupont/nix/source/github/jmikedupont2/orgs/Escaped-RDFa/namespace",
-      "canonical_link": "data/git-sources/namespace",
-      "last_commit": "b62c6ee99db91cd7c659b3fcf30da17c4a19c21b",
-      "last_updated": "2026-01-15T10:44:30.464732409+00:00"
-    },
-    "octocrab": {
-      "name": "octocrab",
-      "url": "",
-      "branch": "",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/XAMPPRocky/octocrab",
-      "canonical_link": "data/git-sources/octocrab",
-      "last_commit": "",
-      "last_updated": "2026-01-15T10:45:41.207523633+00:00"
-    },
-    "checkout": {
-      "name": "checkout",
-      "url": "https://github.com/meta-introspector/checkout",
-      "branch": "main",
-      "checkout_path": "/home/mdupont/nix/.github/actions/checkout",
-      "canonical_link": "data/git-sources/checkout",
-      "last_commit": "d433b0213a153a857933be0a2a8c13723a4d7995",
-      "last_updated": "2026-01-15T10:44:30.372432426+00:00"
-    },
-    "zola": {
-      "name": "zola",
-      "url": "https://github.com/meta-introspector/git-submodule-tools-rs",
-      "branch": "main",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/zola",
-      "canonical_link": "data/git-sources/zola",
-      "last_commit": "75a536e9a21aa422640e56e16d94c0371ffc7076",
-      "last_updated": "2026-01-15T10:45:41.297404868+00:00"
-    },
-    "2025": {
-      "name": "2025",
-      "url": "https://github.com/meta-introspector/time-2025",
-      "branch": "feature/monster",
-      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/streamofrandom/2025",
-      "canonical_link": "data/git-sources/2025",
-      "last_commit": "9c029c5ae289915d397766268a5ed1b661a6b622",
-      "last_updated": "2026-01-15T10:45:40.965356089+00:00"
     },
     "livestream-tiktok-plugin": {
       "name": "livestream-tiktok-plugin",
@@ -468,6 +18,231 @@
       "last_commit": "b160203af56416f03752dd68f8be175e46d471e1",
       "last_updated": "2026-01-15T10:45:41.011444220+00:00"
     },
+    "freetype2": {
+      "name": "freetype2",
+      "url": "",
+      "branch": "",
+      "checkout_path": "/home/mdupont/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/freetype-sys-0.20.1/freetype2",
+      "canonical_link": "data/git-sources/freetype2",
+      "last_commit": "",
+      "last_updated": "2026-01-19T01:19:03.241850097+00:00"
+    },
+    "sophia-rs": {
+      "name": "sophia_rs",
+      "url": "https://github.com/meta-introspector/sophia_rs.git",
+      "branch": "feature/patch",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/sophia_rs",
+      "canonical_link": "data/git-sources/sophia-rs",
+      "last_commit": "0dee35d44eb5a5c1f64d602db48ba258070b169b",
+      "last_updated": "2026-01-15T10:45:42.691761206+00:00"
+    },
+    "zola": {
+      "name": "zola",
+      "url": "https://github.com/meta-introspector/git-submodule-tools-rs",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/zola",
+      "canonical_link": "data/git-sources/zola",
+      "last_commit": "75a536e9a21aa422640e56e16d94c0371ffc7076",
+      "last_updated": "2026-01-15T10:45:41.297404868+00:00"
+    },
+    "coccinelleforrust": {
+      "name": "coccinelleforrust",
+      "url": "https://gitlab.inria.fr/coccinelle/coccinelleforrust",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/coccinelleforrust",
+      "canonical_link": "data/git-sources/coccinelleforrust",
+      "last_commit": "b06ba3063ff3b3bd0bf419211eb98dcb15dc1b53",
+      "last_updated": "2026-01-15T10:45:42.425295641+00:00"
+    },
+    "e32073e": {
+      "name": "e32073e",
+      "url": "file:///home/mdupont/.cargo/git/db/utest-8072f7d24bb7f05c",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/utest-8072f7d24bb7f05c/e32073e",
+      "canonical_link": "data/git-sources/e32073e",
+      "last_commit": "e32073e2b078e3bee46001c13ae4c1acf368d762",
+      "last_updated": "2026-01-19T01:19:03.192158694+00:00"
+    },
+    "hf-rust-dataset": {
+      "name": "hf-rust-dataset",
+      "url": "https://huggingface.co/datasets/introspector/rust",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/hf-rust-dataset",
+      "canonical_link": "data/git-sources/hf-rust-dataset",
+      "last_commit": "cbdc8d27fdc0044f18fc065f7abd0e665de569bc",
+      "last_updated": "2026-01-15T10:08:59.669950020+00:00"
+    },
+    "45d62be": {
+      "name": "45d62be",
+      "url": "file:///home/mdupont/.cargo/git/db/trapframe-rs-9610af1c3f6e289a",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/trapframe-rs-9610af1c3f6e289a/45d62be",
+      "canonical_link": "data/git-sources/45d62be",
+      "last_commit": "45d62be444cbf86df8f15dee1e5ed4e63bcd2046",
+      "last_updated": "2026-01-19T01:19:03.175911007+00:00"
+    },
+    "dataset-viewer": {
+      "name": "dataset-viewer",
+      "url": "https://github.com/huggingface/dataset-viewer",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/dataset-viewer",
+      "canonical_link": "data/git-sources/dataset-viewer",
+      "last_commit": "2436c56aec13cb1bf2dfe1ab56bd90a54f078755",
+      "last_updated": "2026-01-15T10:09:00.308974039+00:00"
+    },
+    "ai-agent-terraform": {
+      "name": "ai-agent-terraform",
+      "url": "https://github.com/jmikedupont2/ai-agent-terraform",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/ai-agent-terraform",
+      "canonical_link": "data/git-sources/ai-agent-terraform",
+      "last_commit": "f533db32fadef73031b414db2b44f097ee8adc05",
+      "last_updated": "2026-01-15T10:45:41.891193951+00:00"
+    },
+    "time": {
+      "name": "time",
+      "url": "",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/time",
+      "canonical_link": "data/git-sources/time",
+      "last_commit": "",
+      "last_updated": "2026-01-15T10:45:41.498314191+00:00"
+    },
+    "data-markov-analysis": {
+      "name": "data-markov-analysis",
+      "url": "",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/meta-introspector/data-markov-analysis",
+      "canonical_link": "data/git-sources/data-markov-analysis",
+      "last_commit": "6dd5352c9f22552a99de5bb0c5bccb43d2baa6e0",
+      "last_updated": "2026-01-15T10:45:43.046101480+00:00"
+    },
+    "quasi-meta-meme": {
+      "name": "quasi-meta-meme",
+      "url": "https://github.com/meta-introspector/quasi-meta-meme",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/quasi-meta-meme",
+      "canonical_link": "data/git-sources/quasi-meta-meme",
+      "last_commit": "98db0ac90fe4bf1f34b16fb6726fa114910aac2d",
+      "last_updated": "2026-01-15T10:45:41.996786385+00:00"
+    },
+    "cross-toolchains": {
+      "name": "cross-toolchains",
+      "url": "",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/cross-f0189a1dc141e2d9/849b606/docker/cross-toolchains",
+      "canonical_link": "data/git-sources/cross-toolchains",
+      "last_commit": "5504d9293334744cf2555286707d9907b89afbfb",
+      "last_updated": "2026-01-19T01:19:02.974729892+00:00"
+    },
+    "streamofrandom": {
+      "name": "streamofrandom",
+      "url": "https://github.com/meta-introspector/streamofrandom",
+      "branch": "feature/CRQ-016-nixify-workflow",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/streamofrandom",
+      "canonical_link": "data/git-sources/streamofrandom",
+      "last_commit": "b160203af56416f03752dd68f8be175e46d471e1",
+      "last_updated": "2026-01-15T10:44:30.575674955+00:00"
+    },
+    "checkout": {
+      "name": "checkout",
+      "url": "https://github.com/meta-introspector/checkout",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/nix/.github/actions/checkout",
+      "canonical_link": "data/git-sources/checkout",
+      "last_commit": "d433b0213a153a857933be0a2a8c13723a4d7995",
+      "last_updated": "2026-01-15T10:44:30.372432426+00:00"
+    },
+    "rust-embed": {
+      "name": "rust-embed",
+      "url": "https://git.sr.ht/~pyrossh/rust-embed",
+      "branch": "master",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/rust-embed",
+      "canonical_link": "data/git-sources/rust-embed",
+      "last_commit": "4b425d504ecfaf6ab4fc932468925746f88c2c9f",
+      "last_updated": "2026-01-15T10:45:42.577484590+00:00"
+    },
+    "gitoxide": {
+      "name": "gitoxide",
+      "url": "",
+      "branch": "",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/GitoxideLabs/gitoxide",
+      "canonical_link": "data/git-sources/gitoxide",
+      "last_commit": "",
+      "last_updated": "2026-01-15T10:45:41.193036975+00:00"
+    },
+    "rust-analyzer": {
+      "name": "rust-analyzer",
+      "url": "https://github.com/rust-lang/rust-analyzer.git",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/rust-analyzer",
+      "canonical_link": "data/git-sources/rust-analyzer",
+      "last_commit": "978393bae86212f867e0c43872989e1658f7690f",
+      "last_updated": "2026-01-15T10:45:42.311959569+00:00"
+    },
+    "repoglor3wq3": {
+      "name": "repoglor3wq3",
+      "url": "https://github.com/koalaman/shellcheck-precommit",
+      "branch": "",
+      "checkout_path": "/home/mdupont/.cache/pre-commit/repoglor3wq3",
+      "canonical_link": "data/git-sources/repoglor3wq3",
+      "last_commit": "3f77b826548d8dc2d26675f077361c92773b50a7",
+      "last_updated": "2026-01-19T01:19:02.791654638+00:00"
+    },
+    "35ce7d7": {
+      "name": "35ce7d7",
+      "url": "file:///home/mdupont/.cargo/git/db/libfuzzer-sys-2a22126b2abe19d7",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/libfuzzer-sys-2a22126b2abe19d7/35ce7d7",
+      "canonical_link": "data/git-sources/35ce7d7",
+      "last_commit": "35ce7d7177c254b9c798aec171dfe76877d1a20f",
+      "last_updated": "2026-01-19T01:19:02.992217430+00:00"
+    },
+    "fd55fa6": {
+      "name": "fd55fa6",
+      "url": "file:///home/mdupont/.cargo/git/db/x86_64-380b825b01a45fff",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/x86_64-380b825b01a45fff/fd55fa6",
+      "canonical_link": "data/git-sources/fd55fa6",
+      "last_commit": "fd55fa6d508ab0cd0fb269baab98219b80ffdbae",
+      "last_updated": "2026-01-19T01:19:03.226073918+00:00"
+    },
+    "twitter-plugin": {
+      "name": "twitter-plugin",
+      "url": "https://github.com/meta-introspector/streamofrandom",
+      "branch": "feature/CRQ-016-nixify-workflow",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/streamofrandom/vendor/twitter-plugin",
+      "canonical_link": "data/git-sources/twitter-plugin",
+      "last_commit": "b160203af56416f03752dd68f8be175e46d471e1",
+      "last_updated": "2026-01-15T10:45:41.049923417+00:00"
+    },
+    "mownstr": {
+      "name": "mownstr",
+      "url": "https://github.com/meta-introspector/mownstr.git",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/mownstr",
+      "canonical_link": "data/git-sources/mownstr",
+      "last_commit": "157e81348de079e00adfd89ed908822b070dc4ee",
+      "last_updated": "2026-01-15T10:45:42.629519484+00:00"
+    },
+    "agave-solana-validator": {
+      "name": "agave-solana-validator",
+      "url": "https://github.com/meta-introspector/agave-solana-validator",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/agave-solana-validator",
+      "canonical_link": "data/git-sources/agave-solana-validator",
+      "last_commit": "156ab52bd1fa46101710f1c6dfa048c3f4c241e1",
+      "last_updated": "2026-01-15T10:45:42.200739095+00:00"
+    },
+    "d703026": {
+      "name": "d703026",
+      "url": "file:///home/mdupont/.cargo/git/db/async-executor-b0002e1524f76207",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/async-executor-b0002e1524f76207/d703026",
+      "canonical_link": "data/git-sources/d703026",
+      "last_commit": "d703026ada41be60c55eb79d0b29a1fbf18b7a0b",
+      "last_updated": "2026-01-19T01:19:02.932315069+00:00"
+    },
     "solfunmeme-index": {
       "name": "solfunmeme-index",
       "url": "https://huggingface.co/datasets/introspector/solfunmeme-index",
@@ -477,6 +252,60 @@
       "last_commit": "cf2328652e583b156e70f22a4d04010c3794b30e",
       "last_updated": "2026-01-15T10:45:42.881434631+00:00"
     },
+    "ai-ml-zk-ops": {
+      "name": "ai-ml-zk-ops",
+      "url": "https://github.com/meta-introspector/ai-ml-zk-ops.git",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/vendor/rust/cargo2nix/ai-ml-zk-ops",
+      "canonical_link": "data/git-sources/ai-ml-zk-ops",
+      "last_commit": "4d60729f7afbeab6401d3a56fff5529b49778d3f",
+      "last_updated": "2026-01-15T11:46:48.474048951+00:00"
+    },
+    "octocrab": {
+      "name": "octocrab",
+      "url": "",
+      "branch": "",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/XAMPPRocky/octocrab",
+      "canonical_link": "data/git-sources/octocrab",
+      "last_commit": "",
+      "last_updated": "2026-01-15T10:45:41.207523633+00:00"
+    },
+    "install-nix-action": {
+      "name": "install-nix-action",
+      "url": "https://github.com/meta-introspector/install-nix-action",
+      "branch": "master",
+      "checkout_path": "/home/mdupont/nix/.github/actions/install-nix-action",
+      "canonical_link": "data/git-sources/install-nix-action",
+      "last_commit": "7e5978947b7efba56e96c43fd785691980aca924",
+      "last_updated": "2026-01-15T10:44:30.275174379+00:00"
+    },
+    "repo5qs2mm6x": {
+      "name": "repo5qs2mm6x",
+      "url": "https://github.com/doublify/pre-commit-rust",
+      "branch": "",
+      "checkout_path": "/home/mdupont/.cache/pre-commit/repo5qs2mm6x",
+      "canonical_link": "data/git-sources/repo5qs2mm6x",
+      "last_commit": "eeee35a89e69d5772bdee97db1a6a898467b686e",
+      "last_updated": "2026-01-19T01:19:02.749499937+00:00"
+    },
+    "f77e22f": {
+      "name": "f77e22f",
+      "url": "file:///home/mdupont/.cargo/git/db/rand-c73a030ff08a9620",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/rand-c73a030ff08a9620/f77e22f",
+      "canonical_link": "data/git-sources/f77e22f",
+      "last_commit": "f77e22f24a7de0cd22b3af6c3b6285688e60b2e7",
+      "last_updated": "2026-01-19T01:19:03.055976912+00:00"
+    },
+    "ac40e00": {
+      "name": "ac40e00",
+      "url": "file:///home/mdupont/.cargo/git/db/rust-sdk-773cd6d57c4837f3",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/rust-sdk-773cd6d57c4837f3/ac40e00",
+      "canonical_link": "data/git-sources/ac40e00",
+      "last_commit": "ac40e00490748fac76b5d9533dd01fa86522f4c5",
+      "last_updated": "2026-01-19T01:19:03.073174589+00:00"
+    },
     "upload-artifact": {
       "name": "upload-artifact",
       "url": "https://github.com/meta-introspector/upload-artifact",
@@ -485,6 +314,402 @@
       "canonical_link": "data/git-sources/upload-artifact",
       "last_commit": "9de00bc0fd84f64e7a6d20f0dd0246b91a3b2288",
       "last_updated": "2026-01-15T10:44:30.422020733+00:00"
+    },
+    "repopgdaj98z": {
+      "name": "repopgdaj98z",
+      "url": "https://github.com/Yelp/detect-secrets",
+      "branch": "",
+      "checkout_path": "/home/mdupont/.cache/pre-commit/repopgdaj98z",
+      "canonical_link": "data/git-sources/repopgdaj98z",
+      "last_commit": "001e16323a2f0162336345f4ceb6d72c204980b5",
+      "last_updated": "2026-01-19T01:19:02.856246012+00:00"
+    },
+    "ragit": {
+      "name": "ragit",
+      "url": "ssh://git@github.com/meta-introspector/ragit",
+      "branch": "feature/emoji-vectorization-hf-dataset",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit",
+      "canonical_link": "data/git-sources/ragit",
+      "last_commit": "75eac7c23882a666407f1401849bbe20fbd5a3de",
+      "last_updated": "2026-01-15T10:08:59.999185006+00:00"
+    },
+    "lattice-introspector": {
+      "name": "lattice-introspector",
+      "url": "https://github.com/meta-introspector/lattice-introspector",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/lattice-introspector",
+      "canonical_link": "data/git-sources/lattice-introspector",
+      "last_commit": "b26b5860bf53223725dfad2778a5bb956a3943b7",
+      "last_updated": "2026-01-15T10:44:30.594064343+00:00"
+    },
+    "plugin-twitter": {
+      "name": "plugin-twitter",
+      "url": "https://github.com/meta-introspector/streamofrandom",
+      "branch": "feature/CRQ-016-nixify-workflow",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/streamofrandom/vendor/elizaos-plugins/plugin-twitter",
+      "canonical_link": "data/git-sources/plugin-twitter",
+      "last_commit": "b160203af56416f03752dd68f8be175e46d471e1",
+      "last_updated": "2026-01-15T10:45:41.113371428+00:00"
+    },
+    "ast-grep": {
+      "name": "ast-grep",
+      "url": "https://github.com/ast-grep/ast-grep",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/ast-grep",
+      "canonical_link": "data/git-sources/ast-grep",
+      "last_commit": "6db30f094606bec0c42cff8037b9c0cd7f5061e4",
+      "last_updated": "2026-01-15T10:45:42.498112479+00:00"
+    },
+    "f22ca36": {
+      "name": "f22ca36",
+      "url": "file:///home/mdupont/.cargo/git/db/semihosting-e958da0309bf7545",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/semihosting-e958da0309bf7545/f22ca36",
+      "canonical_link": "data/git-sources/f22ca36",
+      "last_commit": "f22ca367b9a19bd17741c0ab937e974fae663034",
+      "last_updated": "2026-01-19T01:19:03.125113685+00:00"
+    },
+    "cargo-metadata": {
+      "name": "cargo_metadata",
+      "url": "",
+      "branch": "",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/oli-obk/cargo_metadata",
+      "canonical_link": "data/git-sources/cargo-metadata",
+      "last_commit": "",
+      "last_updated": "2026-01-15T10:45:41.232365165+00:00"
+    },
+    "solfunmeme-metameme": {
+      "name": "solfunmeme-metameme",
+      "url": "https://github.com/meta-introspector/solfunmeme-metameme",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/solfunmeme-metameme",
+      "canonical_link": "data/git-sources/solfunmeme-metameme",
+      "last_commit": "b493e209eca8f1eec08134d0abd0acfde438a684",
+      "last_updated": "2026-01-15T10:08:59.546214256+00:00"
+    },
+    "pjmkglp4t7znuugeurpurzikxq3tnlaywmisyr27shj7apsnalwq": {
+      "name": "pjmkglp4t7znuugeurpurzikxq3tnlaywmisyr27shj7apsnalwq",
+      "url": "https://git.savannah.gnu.org/git/guix.git",
+      "branch": "master",
+      "checkout_path": "/home/mdupont/.cache/guix/checkouts/pjmkglp4t7znuugeurpurzikxq3tnlaywmisyr27shj7apsnalwq",
+      "canonical_link": "data/git-sources/pjmkglp4t7znuugeurpurzikxq3tnlaywmisyr27shj7apsnalwq",
+      "last_commit": "0e753223afaccdd6fd1d9ce053c2b76df129f104",
+      "last_updated": "2026-01-19T01:19:02.681886648+00:00"
+    },
+    "git-submodule-tools-rs": {
+      "name": "git-submodule-tools-rs",
+      "url": "https://github.com/meta-introspector/git-submodule-tools-rs",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs",
+      "canonical_link": "data/git-sources/git-submodule-tools-rs",
+      "last_commit": "75a536e9a21aa422640e56e16d94c0371ffc7076",
+      "last_updated": "2026-01-15T10:44:30.480363928+00:00"
+    },
+    "f3116d9": {
+      "name": "f3116d9",
+      "url": "file:///home/mdupont/.cargo/git/db/wirefilter-8ac103f10f7f5011",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/wirefilter-8ac103f10f7f5011/f3116d9",
+      "canonical_link": "data/git-sources/f3116d9",
+      "last_commit": "f3116d9f244d10a2d9a37d036cfa7129c5e50d3b",
+      "last_updated": "2026-01-19T01:19:03.208924247+00:00"
+    },
+    "9b4be43": {
+      "name": "9b4be43",
+      "url": "file:///home/mdupont/.cargo/git/db/test-helper-8c83a5fe98c14c7c",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/test-helper-8c83a5fe98c14c7c/9b4be43",
+      "canonical_link": "data/git-sources/9b4be43",
+      "last_commit": "9b4be43179b56491514c0b482dd8c39b22ecabb2",
+      "last_updated": "2026-01-19T01:19:03.158882494+00:00"
+    },
+    "zombie-driver2": {
+      "name": "zombie-driver2",
+      "url": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust/",
+      "branch": "bootstrap-singularity-clean",
+      "checkout_path": "/mnt/data1/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/zombie_driver2",
+      "canonical_link": "data/git-sources/zombie-driver2",
+      "last_commit": "f923679fc3b693120dc389007d94171702639d91",
+      "last_updated": "2026-01-15T10:10:47.837606700+00:00"
+    },
+    "solfunmeme-dioxus": {
+      "name": "solfunmeme-dioxus",
+      "url": "https://github.com/meta-introspector/solfunmeme-dioxus",
+      "branch": "feature/refactor",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/solfunmeme-dioxus",
+      "canonical_link": "data/git-sources/solfunmeme-dioxus",
+      "last_commit": "546bdc5624b5879d7036a698e9d50b4fbec69b03",
+      "last_updated": "2026-01-15T10:45:41.788835420+00:00"
+    },
+    "cache-nix-action": {
+      "name": "cache-nix-action",
+      "url": "https://github.com/meta-introspector/cache-nix-action",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/nix/.github/actions/cache-nix-action",
+      "canonical_link": "data/git-sources/cache-nix-action",
+      "last_commit": "e2cf51da82e145785f5db595f553f7cbc2ca54df",
+      "last_updated": "2026-01-15T10:44:30.329634407+00:00"
+    },
+    "rust-analyser-hf-dataset": {
+      "name": "rust-analyser-hf-dataset",
+      "url": "",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/rust-analyser-hf-dataset",
+      "canonical_link": "data/git-sources/rust-analyser-hf-dataset",
+      "last_commit": "296eac2b5a1313fca49a8dab50309fe56148264d",
+      "last_updated": "2026-01-15T10:09:00.169069224+00:00"
+    },
+    "nix-installer-action": {
+      "name": "nix-installer-action",
+      "url": "https://github.com/meta-introspector/nix-installer-action",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/nix/.github/actions/nix-installer-action",
+      "canonical_link": "data/git-sources/nix-installer-action",
+      "last_commit": "dea7810afd9d4c98556c8ec68cf361bd5b648eaa",
+      "last_updated": "2026-01-15T10:44:30.314651880+00:00"
+    },
+    "repo--1araww": {
+      "name": "repo__1araww",
+      "url": "https://github.com/pre-commit/pre-commit-hooks",
+      "branch": "",
+      "checkout_path": "/home/mdupont/.cache/pre-commit/repo__1araww",
+      "canonical_link": "data/git-sources/repo--1araww",
+      "last_commit": "cef0300fd0fc4d2a87a85fa2093c6b283ea36f4b",
+      "last_updated": "2026-01-19T01:19:02.772059853+00:00"
+    },
+    "gemini-cli": {
+      "name": "gemini-cli",
+      "url": "https://github.com/jmikedupont2/gemini-cli",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/amazon-q-developer-cli/vendor/gemini-cli",
+      "canonical_link": "data/git-sources/gemini-cli",
+      "last_commit": "f5e0f16157da6a0b0dbae3b4ebf920fdee81c461",
+      "last_updated": "2026-01-15T10:45:40.741518960+00:00"
+    },
+    "repou3edf6il": {
+      "name": "repou3edf6il",
+      "url": "https://github.com/astral-sh/ruff-pre-commit",
+      "branch": "",
+      "checkout_path": "/home/mdupont/.cache/pre-commit/repou3edf6il",
+      "canonical_link": "data/git-sources/repou3edf6il",
+      "last_commit": "6a19e69c83fd6e3a3ffdd5e32a40e35c37b02218",
+      "last_updated": "2026-01-19T01:19:02.873536287+00:00"
+    },
+    "849b606": {
+      "name": "849b606",
+      "url": "file:///home/mdupont/.cargo/git/db/cross-f0189a1dc141e2d9",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/cross-f0189a1dc141e2d9/849b606",
+      "canonical_link": "data/git-sources/849b606",
+      "last_commit": "849b606f4a9accd48ebcfc318862b73b33c661b7",
+      "last_updated": "2026-01-19T01:19:02.956567548+00:00"
+    },
+    "cache": {
+      "name": "cache",
+      "url": "https://github.com/meta-introspector/cache",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/nix/.github/actions/cache",
+      "canonical_link": "data/git-sources/cache",
+      "last_commit": "ec7a111d6f80613fe78d4599f827e30148e54fdc",
+      "last_updated": "2026-01-15T10:44:30.356291967+00:00"
+    },
+    "namespace": {
+      "name": "namespace",
+      "url": "https://github.com/Escaped-RDFa/namespace",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/nix/source/github/jmikedupont2/orgs/Escaped-RDFa/namespace",
+      "canonical_link": "data/git-sources/namespace",
+      "last_commit": "b62c6ee99db91cd7c659b3fcf30da17c4a19c21b",
+      "last_updated": "2026-01-15T10:44:30.464732409+00:00"
+    },
+    "repovbc2wkvj": {
+      "name": "repovbc2wkvj",
+      "url": "https://github.com/Yelp/detect-secrets",
+      "branch": "",
+      "checkout_path": "/home/mdupont/.cache/pre-commit/repovbc2wkvj",
+      "canonical_link": "data/git-sources/repovbc2wkvj",
+      "last_commit": "001e16323a2f0162336345f4ceb6d72c204980b5",
+      "last_updated": "2026-01-19T01:19:02.891717470+00:00"
+    },
+    "2025": {
+      "name": "2025",
+      "url": "https://github.com/meta-introspector/time-2025",
+      "branch": "feature/monster",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/streamofrandom/2025",
+      "canonical_link": "data/git-sources/2025",
+      "last_commit": "9c029c5ae289915d397766268a5ed1b661a6b622",
+      "last_updated": "2026-01-15T10:45:40.965356089+00:00"
+    },
+    "bootstrap": {
+      "name": "bootstrap",
+      "url": "https://github.com/meta-introspector/bootstrap",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/bootstrap",
+      "canonical_link": "data/git-sources/bootstrap",
+      "last_commit": "7cb0a53dd17e156385c19ca35c8db83c3001b8ae",
+      "last_updated": "2026-01-15T10:45:41.478432782+00:00"
+    },
+    "hf-dataset-validator-rust": {
+      "name": "hf-dataset-validator-rust",
+      "url": "",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/hf-dataset-validator-rust",
+      "canonical_link": "data/git-sources/hf-dataset-validator-rust",
+      "last_commit": "",
+      "last_updated": "2026-01-15T10:45:43.019303383+00:00"
+    },
+    "reponip1kgkk": {
+      "name": "reponip1kgkk",
+      "url": "https://github.com/pre-commit/pre-commit-hooks",
+      "branch": "",
+      "checkout_path": "/home/mdupont/.cache/pre-commit/reponip1kgkk",
+      "canonical_link": "data/git-sources/reponip1kgkk",
+      "last_commit": "c4a0b883114b00d8d76b479c820ce7950211c99b",
+      "last_updated": "2026-01-19T01:19:02.821612084+00:00"
+    },
+    "83b1d59": {
+      "name": "83b1d59",
+      "url": "file:///home/mdupont/.cargo/git/db/quickcheck-9be5b49a690ab88a",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/quickcheck-9be5b49a690ab88a/83b1d59",
+      "canonical_link": "data/git-sources/83b1d59",
+      "last_commit": "83b1d5955557fc9dacc52d4a78098d8e6d7eda3b",
+      "last_updated": "2026-01-19T01:19:03.031569054+00:00"
+    },
+    "df513c5": {
+      "name": "df513c5",
+      "url": "file:///home/mdupont/.cargo/git/db/serde_test-7db5678c1dc994d8",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/serde_test-7db5678c1dc994d8/df513c5",
+      "canonical_link": "data/git-sources/df513c5",
+      "last_commit": "df513c55a97f0a72fa67bad5396ed09123e5676c",
+      "last_updated": "2026-01-19T01:19:03.142345158+00:00"
+    },
+    "meta-introspector": {
+      "name": "meta-introspector",
+      "url": "https://github.com/meta-introspector/meta-introspector",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/meta-introspector",
+      "canonical_link": "data/git-sources/meta-introspector",
+      "last_commit": "bd1fc6140526444d3d6edfc3036f7ab9c1767833",
+      "last_updated": "2026-01-15T10:09:00.330248746+00:00"
+    },
+    "hugging-face-dataset-validator-rust": {
+      "name": "hugging-face-dataset-validator-rust",
+      "url": "",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/hugging-face-dataset-validator-rust",
+      "canonical_link": "data/git-sources/hugging-face-dataset-validator-rust",
+      "last_commit": "",
+      "last_updated": "2026-01-15T10:45:42.997935897+00:00"
+    },
+    "emigo": {
+      "name": "emigo",
+      "url": "https://github.com/MatthewZMD/emigo.git",
+      "branch": "main",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/emigo",
+      "canonical_link": "data/git-sources/emigo",
+      "last_commit": "b19f32c56cb4586c9e5b9a6a68e47bfae94508f5",
+      "last_updated": "2026-01-15T10:09:00.079413526+00:00"
+    },
+    "pick-up-nix": {
+      "name": "pick-up-nix",
+      "url": "https://github.com/meta-introspector/pick-up-nix.git",
+      "branch": "",
+      "checkout_path": "/home/mdupont/nix/vendor/nixpkgs",
+      "canonical_link": "data/git-sources/pick-up-nix",
+      "last_commit": "ccd5c6b978b1afc692dcbf1c86ccc5c37a004b24",
+      "last_updated": "2026-01-15T10:54:39.028693135+00:00"
+    },
+    "nix-github-actions": {
+      "name": "nix-github-actions",
+      "url": "https://github.com/meta-introspector/nix-github-actions",
+      "branch": "master",
+      "checkout_path": "/home/mdupont/nix/.github/actions/nix-github-actions",
+      "canonical_link": "data/git-sources/nix-github-actions",
+      "last_commit": "f4158fa080ef4503c8f4c820967d946c2af31ec9",
+      "last_updated": "2026-01-15T10:44:30.296586246+00:00"
+    },
+    "505cff1": {
+      "name": "505cff1",
+      "url": "file:///home/mdupont/.cargo/git/db/rust-zmq-81bb731ff3059622",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/rust-zmq-81bb731ff3059622/505cff1",
+      "canonical_link": "data/git-sources/505cff1",
+      "last_commit": "505cff1fb50eecf98a9bd9bddf89a785f67e80fd",
+      "last_updated": "2026-01-19T01:19:03.090321632+00:00"
+    },
+    "solfunmeme": {
+      "name": "solfunmeme",
+      "url": "https://github.com/meta-introspector/solfunmeme",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/solfunmeme",
+      "canonical_link": "data/git-sources/solfunmeme",
+      "last_commit": "dd1cfa6eb23e8ee13e592297666729cb5a886e82",
+      "last_updated": "2026-01-15T10:45:41.627731980+00:00"
+    },
+    "meta-meme": {
+      "name": "meta-meme",
+      "url": "https://github.com/meta-introspector/meta-meme",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/meta-introspector/meta-meme",
+      "canonical_link": "data/git-sources/meta-meme",
+      "last_commit": "a9ab89ff3cf5847d54135d28cf03e4ebf789a6e0",
+      "last_updated": "2026-01-15T10:45:42.087602561+00:00"
+    },
+    "meta-memewiki": {
+      "name": "meta-meme.wiki",
+      "url": "https://github.com/meta-introspector/git-submodule-tools-rs",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/nix/source/github/meta-introspector/git-submodule-tools-rs/vendor/meta-introspector/meta-meme.wiki",
+      "canonical_link": "data/git-sources/meta-memewiki",
+      "last_commit": "75a536e9a21aa422640e56e16d94c0371ffc7076",
+      "last_updated": "2026-01-15T10:45:41.282390954+00:00"
+    },
+    "9ba84bf": {
+      "name": "9ba84bf",
+      "url": "file:///home/mdupont/.cargo/git/db/safe-mmio-d79dc67f215423a9",
+      "branch": "main",
+      "checkout_path": "/home/mdupont/.cargo/git/checkouts/safe-mmio-d79dc67f215423a9/9ba84bf",
+      "canonical_link": "data/git-sources/9ba84bf",
+      "last_commit": "9ba84bf7af075d81769f142f2ea74e4a2b5a621f",
+      "last_updated": "2026-01-19T01:19:03.107558375+00:00"
+    },
+    "copilot-cli": {
+      "name": "copilot-cli",
+      "url": "https://github.com/github/copilot-cli.git",
+      "branch": "",
+      "checkout_path": "/home/mdupont/nix/vendor/external/copilot-cli",
+      "canonical_link": "data/git-sources/copilot-cli",
+      "last_commit": "f5256c67b112bf4eec47256cb87bb176ac0650e7",
+      "last_updated": "2026-01-15T10:44:30.060437591+00:00"
+    },
+    "zos-server": {
+      "name": "zos-server",
+      "url": "https://github.com/meta-introspector/zos-server",
+      "branch": "bootstrap-singularity",
+      "checkout_path": "/mnt/data1/nix/time/2024/12/10/swarms-terraform/services/submodules/zos-server",
+      "canonical_link": "data/git-sources/zos-server",
+      "last_commit": "63c64f1f309f1182c3e92256ad6d1cb0e413b2fb",
+      "last_updated": "2026-01-15T10:11:10.515134473+00:00"
+    },
+    "tclifford": {
+      "name": "tclifford",
+      "url": "https://github.com/grumyantsev/tclifford",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/vendor/tclifford",
+      "canonical_link": "data/git-sources/tclifford",
+      "last_commit": "855d23c43a19bc8d0d6ace5aa5329e009a4e54fa",
+      "last_updated": "2026-01-15T10:45:42.813829444+00:00"
+    },
+    "idx": {
+      "name": "idx",
+      "url": "https://huggingface.co/datasets/introspector/solfunmeme-index/",
+      "branch": "",
+      "checkout_path": "/mnt/data1/nix/time/2025/08/07/ragit/idx",
+      "canonical_link": "data/git-sources/idx",
+      "last_commit": "e1a9320cf078c6c3bc3ce65ebd8d83534602ed62",
+      "last_updated": "2026-01-15T10:45:42.977540931+00:00"
     }
   },
   "base_checkout_dir": "/mnt/data1/nix/time/2025/08/07",

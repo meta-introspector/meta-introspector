@@ -1,0 +1,16 @@
+commit 71da80fc5326f25fa581bbb24cc5a05eb097654a
+Author: mike dupont <mike.dupont@introspector.local>
+Date:   Sun Jan 18 14:52:05 2026 -0500
+
+    Add P2P Git Mirror with complete implementations
+    
+    - Anti-Python policy: Convert all Python to Rust
+    - zos_server.rs: Converted from Python (actix-web)
+    - github_mirror_service.rs: Git server implementation
+    - p2p_git_mirror.rs: Octocrab API with rate limit tracking
+    - project_hierarchy.rs: Parse commits ahead from git status
+    - Complete P2P architecture with temporal morphisms
+    - Byte provenance tracking rooted in MES
+    - Bootstrap arrow chain (MES → Solfunmeme)
+    - Binary similarity search against nix store
+    - Smart pre-commit hook with context-aware filtering

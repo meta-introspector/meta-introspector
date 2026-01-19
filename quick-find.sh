@@ -1,6 +1,10 @@
 #!/bin/bash
 # Quick project search helper
 
+# Load centralized search utilities
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/lib/search_utils.sh"
+
 PROJECTS=(
     "/home/mdupont/zos-qa"
     "/home/mdupont/zombie_driver2"
@@ -13,28 +17,28 @@ case "$1" in
         echo "🔍 Searching for Oracle/OCI code..."
         for proj in "${PROJECTS[@]}"; do
             echo "📁 $proj:"
-            find "$proj" -name "*.rs" -exec grep -l "OciClient\|oracle\|oci_core" {} \; 2>/dev/null | head -3
+            find_grep "$proj" "OciClient\|oracle\|oci_core" rs | head -3
         done
         ;;
     "axum"|"server")
         echo "🔍 Searching for Axum servers..."
         for proj in "${PROJECTS[@]}"; do
             echo "📁 $proj:"
-            find "$proj" -name "*.rs" -exec grep -l "axum::Router\|#\[tokio::main\]" {} \; 2>/dev/null | head -3
+            find_grep "$proj" "axum::Router\|#\[tokio::main\]" rs | head -3
         done
         ;;
     "deploy")
         echo "🔍 Searching for deployment scripts..."
         for proj in "${PROJECTS[@]}"; do
             echo "📁 $proj:"
-            find "$proj" -name "*deploy*.sh" -o -name "*deploy*.rs" 2>/dev/null | head -3
+            find_multi_ext "$proj" "deploy.sh" "deploy.rs" | head -3
         done
         ;;
     "terraform"|"tf")
         echo "🔍 Searching for Terraform configs..."
         for proj in "${PROJECTS[@]}"; do
             echo "📁 $proj:"
-            find "$proj" -name "*.tf" -o -name "terraform.tfvars" 2>/dev/null | head -3
+            find_multi_ext "$proj" tf tfvars | head -3
         done
         ;;
     "creds"|"keys")
@@ -54,7 +58,7 @@ case "$1" in
             if [ -f "$proj/Cargo.toml" ]; then
                 if grep -q "\[workspace\]" "$proj/Cargo.toml" 2>/dev/null; then
                     echo "✅ $proj (workspace)"
-                    grep "members = " "$proj/Cargo.toml" -A 20 | grep "\"" | head -10
+                    grep_context "members = " "$proj/Cargo.toml" 20 | grep "\"" | head -10
                 fi
             fi
         done

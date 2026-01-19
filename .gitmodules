@@ -43,3 +43,6 @@
 [submodule "data-telemetry"]
 	path = data-telemetry
 	url = https://huggingface.co/datasets/introspector/build-telemetry
+[submodule "cargo2nix-fresh"]
+	path = cargo2nix-fresh
+	url = https://github.com/cargo2nix/cargo2nix.git

@@ -1,0 +1,19 @@
+{
+  "all_git_repos": [],
+  "package": {
+    "dependencies": [],
+    "git_repos": [],
+    "name": "nixpkgs#hello",
+    "pname": null,
+    "src_url": null,
+    "version": null
+  },
+  "runtime_deps": [
+    "/nix/store/yy1bpiw7j0nsygs1iyrz465bplp948ck-version-check-hook.drv.drv",
+    "/nix/store/00kr1572g79ra9m29vxxnrfxm38nb82m-hello-2.12.2.tar.gz.drv.drv",
+    "/nix/store/qyk0syp0q2znsv9dpva6krckkcgnxbi1-stdenv-linux.drv.drv",
+    "/nix/store/shkw4qm9qcw5sc5n1k5jznc83ny02r39-default-builder.sh",
+    "/nix/store/i0lswaixfnfr6j3qr9xrij8nq93rp9b5-bash-5.3p3.drv.drv",
+    "/nix/store/l622p70vy8k5sh7y5wizi5f2mic6ynpg-source-stdenv.sh"
+  ]
+}

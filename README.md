@@ -1,8 +1,13 @@
 # meta-introspector: Unified Code Analysis Dataset
 
+[![Meta Meme](https://img.shields.io/badge/meta--meme-pythonista-blue?style=for-the-badge&logo=python)](https://huggingface.co/datasets/introspector/meta-meme)
+[![Bootstrap Dataset](https://img.shields.io/badge/bootstrap-3556%20repos-green?style=for-the-badge&logo=git)](https://huggingface.co/datasets/introspector/meta-meme)
+
 **Organization**: [introspector](https://huggingface.co/introspector)  
 **Dataset**: [meta-introspector](https://huggingface.co/datasets/introspector/meta-introspector)  
 **License**: AGPL-3.0
+
+> 🎭 **What's your meta meme?** Are you a js d00d or pythonista? [Find out!](META_MEME_GUIDE.md)
 
 ## 🎯 What is this?
 
@@ -14,6 +19,78 @@ The **meta-introspector** dataset contains unified indexes and analysis results 
 - **Eigenvector analysis** of code patterns
 - **Telemetry data** from Rust compilation
 - **Moonshine analysis** of ELF binaries
+
+## 🚀 Quick Start: Build with Telemetry
+
+### 1. Queue Projects for Building
+
+```bash
+# Queue main project
+cd /mnt/data1/meta-introspector
+./nix_builder.sh queue /mnt/data1/meta-introspector
+
+# Queue sub-projects (e.g., zos-server)
+./nix_builder.sh queue ~/zos-server
+
+# Check queue
+cat ~/.local/share/nix-builder/queue.txt
+```
+
+### 2. Start Build Queue with Telemetry
+
+```bash
+# Start builder in background
+nohup ./nix_builder.sh watch > nix_builder.log 2>&1 &
+
+# Monitor progress
+tail -f nix_builder.log
+
+# Check running builds
+ps aux | grep nix_builder
+```
+
+### 3. Inspect Telemetry Data
+
+```bash
+# View parquet files
+ls -lh *.parquet
+
+# Query build logs (requires query-parquet binary)
+cargo run --release --bin query-parquet -- \
+  nix_build_logs.parquet \
+  "SELECT * FROM nix_build_logs LIMIT 5"
+
+# Check build logs
+ls -lh ~/.local/share/nix-builder/logs/
+```
+
+### 4. Git Mirror System
+
+```bash
+# Check discovered URLs
+wc -l data/master_url_list.txt  # 13,757 unique URLs
+
+# Check clone progress
+tail -f slow_clone.log
+du -sh /mnt/data1/git  # Current mirror size
+
+# Check queue status
+wc -l data/queue_all.txt  # Remaining to clone
+```
+
+## 📊 Telemetry Outputs
+
+All builds create parquet files in the project root:
+
+- `nix_build_logs.parquet` - Build success/failure logs
+- `nix_store_grammars.parquet` - Grammar extraction (49,655 rows)
+- `markov_symbol_scores.parquet` - Symbol analysis (106MB)
+- `string_usage.parquet` - String usage patterns
+
+Build metadata stored in:
+- `~/.local/share/nix-builder/cache/` - Build cache
+- `~/.local/share/nix-builder/logs/` - Detailed logs
+- `/nix/store/*-reproducible/metadata.json` - Reproducibility data
 
 ## 📊 Dataset Structure
 

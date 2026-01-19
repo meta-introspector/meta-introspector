@@ -1,0 +1,25 @@
+{
+  "build_deps": [
+    "meson",
+    "ninja-build",
+    "libzstd-dev",
+    "systemd",
+    "debhelper-compat",
+    "pkg-config",
+    "liburing-dev"
+  ],
+  "git_repos": [
+    "https://git.launchpad.net/~ubuntu-core-dev/ubuntu/+source/systemd",
+    "https://salsa.debian.org/debian/ninja-build.git",
+    "https://salsa.debian.org/med-team/libzstd.git",
+    "https://git.hadrons.org/git/debian/pkgs/liburing.git"
+  ],
+  "package": {
+    "git_upstream": null,
+    "name": "plocate",
+    "source_url": null,
+    "vcs_browser": null,
+    "vcs_git": null,
+    "version": "1.1.15-1ubuntu2"
+  }
+}

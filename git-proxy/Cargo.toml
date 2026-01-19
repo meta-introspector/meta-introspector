@@ -1,0 +1,16 @@
+[package]
+name = "git-proxy"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "git-http-proxy"
+path = "git_http_proxy.rs"
+
+[[bin]]
+name = "git-intercept-proxy"
+path = "git_intercept_proxy.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+hyper = { version = "0.14", features = ["full"] }

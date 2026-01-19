@@ -2,6 +2,7 @@
 // Centralized macros for telemetry, symbol wrapping, and build-time code generation
 
 pub mod libreporting;
+pub mod search_utils;
 
 /// Autodiscover build from collected data
 #[macro_export]

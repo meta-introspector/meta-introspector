@@ -1,0 +1,1542 @@
+[
+  {
+    "ngram": "emojis",
+    "frequency": 160,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      5
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.2
+    ],
+    "resonance": 2.7,
+    "orbit": "722.a3"
+  },
+  {
+    "ngram": "is a",
+    "frequency": 144,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      2,
+      3,
+      3
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "resonance": 2.666666666666667,
+    "orbit": "699.a3"
+  },
+  {
+    "ngram": "with",
+    "frequency": 608,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      19
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.05263157894736842
+    ],
+    "resonance": 2.5526315789473686,
+    "orbit": "902.a3"
+  },
+  {
+    "ngram": "new",
+    "frequency": 360,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      3,
+      3,
+      5
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.2
+    ],
+    "resonance": 2.3666666666666667,
+    "orbit": "226.a3"
+  },
+  {
+    "ngram": "solfunmeme",
+    "frequency": 112,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      2,
+      7
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.14285714285714285
+    ],
+    "resonance": 2.142857142857143,
+    "orbit": "976.a3"
+  },
+  {
+    "ngram": "which",
+    "frequency": 112,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      2,
+      7
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.14285714285714285
+    ],
+    "resonance": 2.142857142857143,
+    "orbit": "41.a3"
+  },
+  {
+    "ngram": "creating",
+    "frequency": 108,
+    "prime_factorization": [
+      2,
+      2,
+      3,
+      3,
+      3
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "resonance": 1.9999999999999998,
+    "orbit": "667.a3"
+  },
+  {
+    "ngram": "the meta-meme",
+    "frequency": 180,
+    "prime_factorization": [
+      2,
+      2,
+      3,
+      3,
+      5
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.2
+    ],
+    "resonance": 1.8666666666666665,
+    "orbit": "15.a3"
+  },
+  {
+    "ngram": "its",
+    "frequency": 270,
+    "prime_factorization": [
+      2,
+      3,
+      3,
+      3,
+      5
+    ],
+    "harmonic_series": [
+      0.5,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.2
+    ],
+    "resonance": 1.6999999999999997,
+    "orbit": "224.a3"
+  },
+  {
+    "ngram": "gödel",
+    "frequency": 104,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      13
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.07692307692307693
+    ],
+    "resonance": 1.5769230769230769,
+    "orbit": "734.a3"
+  },
+  {
+    "ngram": "ecosystem",
+    "frequency": 104,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      13
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.07692307692307693
+    ],
+    "resonance": 1.5769230769230769,
+    "orbit": "625.a3"
+  },
+  {
+    "ngram": "would",
+    "frequency": 136,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      17
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.058823529411764705
+    ],
+    "resonance": 1.5588235294117647,
+    "orbit": "666.a3"
+  },
+  {
+    "ngram": "use",
+    "frequency": 136,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      17
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.058823529411764705
+    ],
+    "resonance": 1.5588235294117647,
+    "orbit": "751.a3"
+  },
+  {
+    "ngram": "emoji",
+    "frequency": 136,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      17
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.058823529411764705
+    ],
+    "resonance": 1.5588235294117647,
+    "orbit": "329.a3"
+  },
+  {
+    "ngram": "will",
+    "frequency": 248,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      31
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.03225806451612903
+    ],
+    "resonance": 1.532258064516129,
+    "orbit": "809.a3"
+  },
+  {
+    "ngram": "source",
+    "frequency": 248,
+    "prime_factorization": [
+      2,
+      2,
+      2,
+      31
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.5,
+      0.03225806451612903
+    ],
+    "resonance": 1.532258064516129,
+    "orbit": "181.a3"
+  },
+  {
+    "ngram": "could",
+    "frequency": 198,
+    "prime_factorization": [
+      2,
+      3,
+      3,
+      11
+    ],
+    "harmonic_series": [
+      0.5,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.09090909090909091
+    ],
+    "resonance": 1.2575757575757573,
+    "orbit": "982.a3"
+  },
+  {
+    "ngram": "knowledge",
+    "frequency": 135,
+    "prime_factorization": [
+      3,
+      3,
+      3,
+      5
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.2
+    ],
+    "resonance": 1.2,
+    "orbit": "142.a3"
+  },
+  {
+    "ngram": "into",
+    "frequency": 330,
+    "prime_factorization": [
+      2,
+      3,
+      5,
+      11
+    ],
+    "harmonic_series": [
+      0.5,
+      0.3333333333333333,
+      0.2,
+      0.09090909090909091
+    ],
+    "resonance": 1.124242424242424,
+    "orbit": "489.a3"
+  },
+  {
+    "ngram": "where",
+    "frequency": 297,
+    "prime_factorization": [
+      3,
+      3,
+      3,
+      11
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.09090909090909091
+    ],
+    "resonance": 1.0909090909090908,
+    "orbit": "682.a3"
+  },
+  {
+    "ngram": "structures",
+    "frequency": 116,
+    "prime_factorization": [
+      2,
+      2,
+      29
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.034482758620689655
+    ],
+    "resonance": 1.0344827586206897,
+    "orbit": "124.a3"
+  },
+  {
+    "ngram": "true",
+    "frequency": 116,
+    "prime_factorization": [
+      2,
+      2,
+      29
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.034482758620689655
+    ],
+    "resonance": 1.0344827586206897,
+    "orbit": "586.a3"
+  },
+  {
+    "ngram": "using",
+    "frequency": 124,
+    "prime_factorization": [
+      2,
+      2,
+      31
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.03225806451612903
+    ],
+    "resonance": 1.032258064516129,
+    "orbit": "564.a3"
+  },
+  {
+    "ngram": "complex",
+    "frequency": 124,
+    "prime_factorization": [
+      2,
+      2,
+      31
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.03225806451612903
+    ],
+    "resonance": 1.032258064516129,
+    "orbit": "605.a3"
+  },
+  {
+    "ngram": "to the",
+    "frequency": 212,
+    "prime_factorization": [
+      2,
+      2,
+      53
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.018867924528301886
+    ],
+    "resonance": 1.0188679245283019,
+    "orbit": "48.a3"
+  },
+  {
+    "ngram": "our",
+    "frequency": 268,
+    "prime_factorization": [
+      2,
+      2,
+      67
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.014925373134328358
+    ],
+    "resonance": 1.0149253731343284,
+    "orbit": "772.a3"
+  },
+  {
+    "ngram": "how",
+    "frequency": 268,
+    "prime_factorization": [
+      2,
+      2,
+      67
+    ],
+    "harmonic_series": [
+      0.5,
+      0.5,
+      0.014925373134328358
+    ],
+    "resonance": 1.0149253731343284,
+    "orbit": "734.a3"
+  },
+  {
+    "ngram": "zos",
+    "frequency": 114,
+    "prime_factorization": [
+      2,
+      3,
+      19
+    ],
+    "harmonic_series": [
+      0.5,
+      0.3333333333333333,
+      0.05263157894736842
+    ],
+    "resonance": 0.8859649122807016,
+    "orbit": "96.a3"
+  },
+  {
+    "ngram": "as the",
+    "frequency": 114,
+    "prime_factorization": [
+      2,
+      3,
+      19
+    ],
+    "harmonic_series": [
+      0.5,
+      0.3333333333333333,
+      0.05263157894736842
+    ],
+    "resonance": 0.8859649122807016,
+    "orbit": "718.a3"
+  },
+  {
+    "ngram": "not",
+    "frequency": 138,
+    "prime_factorization": [
+      2,
+      3,
+      23
+    ],
+    "harmonic_series": [
+      0.5,
+      0.3333333333333333,
+      0.043478260869565216
+    ],
+    "resonance": 0.8768115942028984,
+    "orbit": "908.a3"
+  },
+  {
+    "ngram": "have",
+    "frequency": 138,
+    "prime_factorization": [
+      2,
+      3,
+      23
+    ],
+    "harmonic_series": [
+      0.5,
+      0.3333333333333333,
+      0.043478260869565216
+    ],
+    "resonance": 0.8768115942028984,
+    "orbit": "517.a3"
+  },
+  {
+    "ngram": "itself",
+    "frequency": 138,
+    "prime_factorization": [
+      2,
+      3,
+      23
+    ],
+    "harmonic_series": [
+      0.5,
+      0.3333333333333333,
+      0.043478260869565216
+    ],
+    "resonance": 0.8768115942028984,
+    "orbit": "603.a3"
+  },
+  {
+    "ngram": "more",
+    "frequency": 174,
+    "prime_factorization": [
+      2,
+      3,
+      29
+    ],
+    "harmonic_series": [
+      0.5,
+      0.3333333333333333,
+      0.034482758620689655
+    ],
+    "resonance": 0.8678160919540229,
+    "orbit": "824.a3"
+  },
+  {
+    "ngram": "idea",
+    "frequency": 110,
+    "prime_factorization": [
+      2,
+      5,
+      11
+    ],
+    "harmonic_series": [
+      0.5,
+      0.2,
+      0.09090909090909091
+    ],
+    "resonance": 0.7909090909090909,
+    "orbit": "600.a3"
+  },
+  {
+    "ngram": "with the",
+    "frequency": 130,
+    "prime_factorization": [
+      2,
+      5,
+      13
+    ],
+    "harmonic_series": [
+      0.5,
+      0.2,
+      0.07692307692307693
+    ],
+    "resonance": 0.7769230769230768,
+    "orbit": "252.a3"
+  },
+  {
+    "ngram": "your",
+    "frequency": 190,
+    "prime_factorization": [
+      2,
+      5,
+      19
+    ],
+    "harmonic_series": [
+      0.5,
+      0.2,
+      0.05263157894736842
+    ],
+    "resonance": 0.7526315789473683,
+    "orbit": "817.a3"
+  },
+  {
+    "ngram": "understanding",
+    "frequency": 117,
+    "prime_factorization": [
+      3,
+      3,
+      13
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.07692307692307693
+    ],
+    "resonance": 0.7435897435897436,
+    "orbit": "578.a3"
+  },
+  {
+    "ngram": "can be",
+    "frequency": 117,
+    "prime_factorization": [
+      3,
+      3,
+      13
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.07692307692307693
+    ],
+    "resonance": 0.7435897435897436,
+    "orbit": "824.a3"
+  },
+  {
+    "ngram": "within the",
+    "frequency": 117,
+    "prime_factorization": [
+      3,
+      3,
+      13
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.07692307692307693
+    ],
+    "resonance": 0.7435897435897436,
+    "orbit": "168.a3"
+  },
+  {
+    "ngram": "structure",
+    "frequency": 242,
+    "prime_factorization": [
+      2,
+      11,
+      11
+    ],
+    "harmonic_series": [
+      0.5,
+      0.09090909090909091,
+      0.09090909090909091
+    ],
+    "resonance": 0.6818181818181819,
+    "orbit": "759.a3"
+  },
+  {
+    "ngram": "meta-meme",
+    "frequency": 242,
+    "prime_factorization": [
+      2,
+      11,
+      11
+    ],
+    "harmonic_series": [
+      0.5,
+      0.09090909090909091,
+      0.09090909090909091
+    ],
+    "resonance": 0.6818181818181819,
+    "orbit": "934.a3"
+  },
+  {
+    "ngram": "evolution",
+    "frequency": 105,
+    "prime_factorization": [
+      3,
+      5,
+      7
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.2,
+      0.14285714285714285
+    ],
+    "resonance": 0.6761904761904762,
+    "orbit": "821.a3"
+  },
+  {
+    "ngram": "infinite",
+    "frequency": 105,
+    "prime_factorization": [
+      3,
+      5,
+      7
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.2,
+      0.14285714285714285
+    ],
+    "resonance": 0.6761904761904762,
+    "orbit": "95.a3"
+  },
+  {
+    "ngram": "this",
+    "frequency": 981,
+    "prime_factorization": [
+      3,
+      3,
+      109
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.009174311926605505
+    ],
+    "resonance": 0.6758409785932722,
+    "orbit": "1.a3"
+  },
+  {
+    "ngram": "represents",
+    "frequency": 147,
+    "prime_factorization": [
+      3,
+      7,
+      7
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.14285714285714285,
+      0.14285714285714285
+    ],
+    "resonance": 0.6190476190476191,
+    "orbit": "65.a3"
+  },
+  {
+    "ngram": "of the",
+    "frequency": 646,
+    "prime_factorization": [
+      2,
+      17,
+      19
+    ],
+    "harmonic_series": [
+      0.5,
+      0.058823529411764705,
+      0.05263157894736842
+    ],
+    "resonance": 0.6114551083591331,
+    "orbit": "137.a3"
+  },
+  {
+    "ngram": "create",
+    "frequency": 195,
+    "prime_factorization": [
+      3,
+      5,
+      13
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.2,
+      0.07692307692307693
+    ],
+    "resonance": 0.6102564102564103,
+    "orbit": "189.a3"
+  },
+  {
+    "ngram": "meme",
+    "frequency": 195,
+    "prime_factorization": [
+      3,
+      5,
+      13
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.2,
+      0.07692307692307693
+    ],
+    "resonance": 0.6102564102564103,
+    "orbit": "26.a3"
+  },
+  {
+    "ngram": "within",
+    "frequency": 195,
+    "prime_factorization": [
+      3,
+      5,
+      13
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.2,
+      0.07692307692307693
+    ],
+    "resonance": 0.6102564102564103,
+    "orbit": "755.a3"
+  },
+  {
+    "ngram": "growth",
+    "frequency": 125,
+    "prime_factorization": [
+      5,
+      5,
+      5
+    ],
+    "harmonic_series": [
+      0.2,
+      0.2,
+      0.2
+    ],
+    "resonance": 0.6000000000000001,
+    "orbit": "142.a3"
+  },
+  {
+    "ngram": "has",
+    "frequency": 175,
+    "prime_factorization": [
+      5,
+      5,
+      7
+    ],
+    "harmonic_series": [
+      0.2,
+      0.2,
+      0.14285714285714285
+    ],
+    "resonance": 0.5428571428571429,
+    "orbit": "459.a3"
+  },
+  {
+    "ngram": "in a",
+    "frequency": 158,
+    "prime_factorization": [
+      2,
+      79
+    ],
+    "harmonic_series": [
+      0.5,
+      0.012658227848101266
+    ],
+    "resonance": 0.5126582278481012,
+    "orbit": "428.a3"
+  },
+  {
+    "ngram": "own",
+    "frequency": 166,
+    "prime_factorization": [
+      2,
+      83
+    ],
+    "harmonic_series": [
+      0.5,
+      0.012048192771084338
+    ],
+    "resonance": 0.5120481927710844,
+    "orbit": "21.a3"
+  },
+  {
+    "ngram": "through",
+    "frequency": 178,
+    "prime_factorization": [
+      2,
+      89
+    ],
+    "harmonic_series": [
+      0.5,
+      0.011235955056179775
+    ],
+    "resonance": 0.5112359550561798,
+    "orbit": "220.a3"
+  },
+  {
+    "ngram": "**created at:**",
+    "frequency": 194,
+    "prime_factorization": [
+      2,
+      97
+    ],
+    "harmonic_series": [
+      0.5,
+      0.010309278350515464
+    ],
+    "resonance": 0.5103092783505154,
+    "orbit": "802.a3"
+  },
+  {
+    "ngram": "these",
+    "frequency": 226,
+    "prime_factorization": [
+      2,
+      113
+    ],
+    "harmonic_series": [
+      0.5,
+      0.008849557522123894
+    ],
+    "resonance": 0.5088495575221239,
+    "orbit": "837.a3"
+  },
+  {
+    "ngram": "recursive",
+    "frequency": 274,
+    "prime_factorization": [
+      2,
+      137
+    ],
+    "harmonic_series": [
+      0.5,
+      0.0072992700729927005
+    ],
+    "resonance": 0.5072992700729927,
+    "orbit": "815.a3"
+  },
+  {
+    "ngram": "each",
+    "frequency": 278,
+    "prime_factorization": [
+      2,
+      139
+    ],
+    "harmonic_series": [
+      0.5,
+      0.007194244604316547
+    ],
+    "resonance": 0.5071942446043165,
+    "orbit": "370.a3"
+  },
+  {
+    "ngram": "from",
+    "frequency": 298,
+    "prime_factorization": [
+      2,
+      149
+    ],
+    "harmonic_series": [
+      0.5,
+      0.006711409395973154
+    ],
+    "resonance": 0.5067114093959731,
+    "orbit": "433.a3"
+  },
+  {
+    "ngram": "system",
+    "frequency": 502,
+    "prime_factorization": [
+      2,
+      251
+    ],
+    "harmonic_series": [
+      0.5,
+      0.00398406374501992
+    ],
+    "resonance": 0.5039840637450199,
+    "orbit": "856.a3"
+  },
+  {
+    "ngram": "systems",
+    "frequency": 245,
+    "prime_factorization": [
+      5,
+      7,
+      7
+    ],
+    "harmonic_series": [
+      0.2,
+      0.14285714285714285,
+      0.14285714285714285
+    ],
+    "resonance": 0.4857142857142857,
+    "orbit": "767.a3"
+  },
+  {
+    "ngram": "and",
+    "frequency": 3175,
+    "prime_factorization": [
+      5,
+      5,
+      127
+    ],
+    "harmonic_series": [
+      0.2,
+      0.2,
+      0.007874015748031496
+    ],
+    "resonance": 0.4078740157480315,
+    "orbit": "856.a4"
+  },
+  {
+    "ngram": "complexity",
+    "frequency": 123,
+    "prime_factorization": [
+      3,
+      41
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.024390243902439025
+    ],
+    "resonance": 0.35772357723577236,
+    "orbit": "19.a3"
+  },
+  {
+    "ngram": "level",
+    "frequency": 123,
+    "prime_factorization": [
+      3,
+      41
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.024390243902439025
+    ],
+    "resonance": 0.35772357723577236,
+    "orbit": "336.a3"
+  },
+  {
+    "ngram": "on the",
+    "frequency": 123,
+    "prime_factorization": [
+      3,
+      41
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.024390243902439025
+    ],
+    "resonance": 0.35772357723577236,
+    "orbit": "384.a3"
+  },
+  {
+    "ngram": "athena",
+    "frequency": 129,
+    "prime_factorization": [
+      3,
+      43
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.023255813953488372
+    ],
+    "resonance": 0.3565891472868217,
+    "orbit": "975.a3"
+  },
+  {
+    "ngram": "chatgpt",
+    "frequency": 141,
+    "prime_factorization": [
+      3,
+      47
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.02127659574468085
+    ],
+    "resonance": 0.35460992907801414,
+    "orbit": "847.a3"
+  },
+  {
+    "ngram": "but",
+    "frequency": 141,
+    "prime_factorization": [
+      3,
+      47
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.02127659574468085
+    ],
+    "resonance": 0.35460992907801414,
+    "orbit": "36.a3"
+  },
+  {
+    "ngram": "and the",
+    "frequency": 177,
+    "prime_factorization": [
+      3,
+      59
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.01694915254237288
+    ],
+    "resonance": 0.3502824858757062,
+    "orbit": "774.a3"
+  },
+  {
+    "ngram": "like",
+    "frequency": 201,
+    "prime_factorization": [
+      3,
+      67
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.014925373134328358
+    ],
+    "resonance": 0.34825870646766166,
+    "orbit": "777.a3"
+  },
+  {
+    "ngram": "in the",
+    "frequency": 321,
+    "prime_factorization": [
+      3,
+      107
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.009345794392523364
+    ],
+    "resonance": 0.3426791277258567,
+    "orbit": "965.a3"
+  },
+  {
+    "ngram": "can",
+    "frequency": 633,
+    "prime_factorization": [
+      3,
+      211
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.004739336492890996
+    ],
+    "resonance": 0.3380726698262243,
+    "orbit": "419.a3"
+  },
+  {
+    "ngram": "the",
+    "frequency": 5631,
+    "prime_factorization": [
+      3,
+      1877
+    ],
+    "harmonic_series": [
+      0.3333333333333333,
+      0.0005327650506126798
+    ],
+    "resonance": 0.333866098383946,
+    "orbit": "379.a4"
+  },
+  {
+    "ngram": "mathematical",
+    "frequency": 115,
+    "prime_factorization": [
+      5,
+      23
+    ],
+    "harmonic_series": [
+      0.2,
+      0.043478260869565216
+    ],
+    "resonance": 0.24347826086956523,
+    "orbit": "26.a3"
+  },
+  {
+    "ngram": "numbers",
+    "frequency": 115,
+    "prime_factorization": [
+      5,
+      23
+    ],
+    "harmonic_series": [
+      0.2,
+      0.043478260869565216
+    ],
+    "resonance": 0.24347826086956523,
+    "orbit": "245.a3"
+  },
+  {
+    "ngram": "point",
+    "frequency": 115,
+    "prime_factorization": [
+      5,
+      23
+    ],
+    "harmonic_series": [
+      0.2,
+      0.043478260869565216
+    ],
+    "resonance": 0.24347826086956523,
+    "orbit": "33.a3"
+  },
+  {
+    "ngram": "we can",
+    "frequency": 145,
+    "prime_factorization": [
+      5,
+      29
+    ],
+    "harmonic_series": [
+      0.2,
+      0.034482758620689655
+    ],
+    "resonance": 0.23448275862068968,
+    "orbit": "359.a3"
+  },
+  {
+    "ngram": "about",
+    "frequency": 119,
+    "prime_factorization": [
+      7,
+      17
+    ],
+    "harmonic_series": [
+      0.14285714285714285,
+      0.058823529411764705
+    ],
+    "resonance": 0.20168067226890757,
+    "orbit": "387.a3"
+  },
+  {
+    "ngram": "their",
+    "frequency": 133,
+    "prime_factorization": [
+      7,
+      19
+    ],
+    "harmonic_series": [
+      0.14285714285714285,
+      0.05263157894736842
+    ],
+    "resonance": 0.19548872180451127,
+    "orbit": "486.a3"
+  },
+  {
+    "ngram": "the system",
+    "frequency": 133,
+    "prime_factorization": [
+      7,
+      19
+    ],
+    "harmonic_series": [
+      0.14285714285714285,
+      0.05263157894736842
+    ],
+    "resonance": 0.19548872180451127,
+    "orbit": "348.a3"
+  },
+  {
+    "ngram": "universe",
+    "frequency": 121,
+    "prime_factorization": [
+      11,
+      11
+    ],
+    "harmonic_series": [
+      0.09090909090909091,
+      0.09090909090909091
+    ],
+    "resonance": 0.18181818181818182,
+    "orbit": "459.a3"
+  },
+  {
+    "ngram": "token",
+    "frequency": 203,
+    "prime_factorization": [
+      7,
+      29
+    ],
+    "harmonic_series": [
+      0.14285714285714285,
+      0.034482758620689655
+    ],
+    "resonance": 0.17733990147783252,
+    "orbit": "164.a3"
+  },
+  {
+    "ngram": "as a",
+    "frequency": 221,
+    "prime_factorization": [
+      13,
+      17
+    ],
+    "harmonic_series": [
+      0.07692307692307693,
+      0.058823529411764705
+    ],
+    "resonance": 0.13574660633484165,
+    "orbit": "180.a3"
+  },
+  {
+    "ngram": "that",
+    "frequency": 949,
+    "prime_factorization": [
+      13,
+      73
+    ],
+    "harmonic_series": [
+      0.07692307692307693,
+      0.0136986301369863
+    ],
+    "resonance": 0.09062170706006323,
+    "orbit": "634.a3"
+  },
+  {
+    "ngram": "they",
+    "frequency": 107,
+    "prime_factorization": [
+      107
+    ],
+    "harmonic_series": [
+      0.009345794392523364
+    ],
+    "resonance": 0.009345794392523364,
+    "orbit": "501.a3"
+  },
+  {
+    "ngram": "what",
+    "frequency": 109,
+    "prime_factorization": [
+      109
+    ],
+    "harmonic_series": [
+      0.009174311926605505
+    ],
+    "resonance": 0.009174311926605505,
+    "orbit": "366.a3"
+  },
+  {
+    "ngram": "for the",
+    "frequency": 113,
+    "prime_factorization": [
+      113
+    ],
+    "harmonic_series": [
+      0.008849557522123894
+    ],
+    "resonance": 0.008849557522123894,
+    "orbit": "834.a3"
+  },
+  {
+    "ngram": "code",
+    "frequency": 127,
+    "prime_factorization": [
+      127
+    ],
+    "harmonic_series": [
+      0.007874015748031496
+    ],
+    "resonance": 0.007874015748031496,
+    "orbit": "477.a3"
+  },
+  {
+    "ngram": "meaning",
+    "frequency": 127,
+    "prime_factorization": [
+      127
+    ],
+    "harmonic_series": [
+      0.007874015748031496
+    ],
+    "resonance": 0.007874015748031496,
+    "orbit": "224.a3"
+  },
+  {
+    "ngram": "cosmic",
+    "frequency": 127,
+    "prime_factorization": [
+      127
+    ],
+    "harmonic_series": [
+      0.007874015748031496
+    ],
+    "resonance": 0.007874015748031496,
+    "orbit": "627.a3"
+  },
+  {
+    "ngram": "said",
+    "frequency": 131,
+    "prime_factorization": [
+      131
+    ],
+    "harmonic_series": [
+      0.007633587786259542
+    ],
+    "resonance": 0.007633587786259542,
+    "orbit": "256.a3"
+  },
+  {
+    "ngram": "between",
+    "frequency": 137,
+    "prime_factorization": [
+      137
+    ],
+    "harmonic_series": [
+      0.0072992700729927005
+    ],
+    "resonance": 0.0072992700729927005,
+    "orbit": "869.a3"
+  },
+  {
+    "ngram": "process",
+    "frequency": 139,
+    "prime_factorization": [
+      139
+    ],
+    "harmonic_series": [
+      0.007194244604316547
+    ],
+    "resonance": 0.007194244604316547,
+    "orbit": "423.a3"
+  },
+  {
+    "ngram": "all",
+    "frequency": 151,
+    "prime_factorization": [
+      151
+    ],
+    "harmonic_series": [
+      0.006622516556291391
+    ],
+    "resonance": 0.006622516556291391,
+    "orbit": "645.a3"
+  },
+  {
+    "ngram": "number",
+    "frequency": 167,
+    "prime_factorization": [
+      167
+    ],
+    "harmonic_series": [
+      0.005988023952095809
+    ],
+    "resonance": 0.005988023952095809,
+    "orbit": "147.a3"
+  },
+  {
+    "ngram": "data",
+    "frequency": 181,
+    "prime_factorization": [
+      181
+    ],
+    "harmonic_series": [
+      0.0055248618784530384
+    ],
+    "resonance": 0.0055248618784530384,
+    "orbit": "614.a3"
+  },
+  {
+    "ngram": "created",
+    "frequency": 223,
+    "prime_factorization": [
+      223
+    ],
+    "harmonic_series": [
+      0.004484304932735426
+    ],
+    "resonance": 0.004484304932735426,
+    "orbit": "926.a3"
+  },
+  {
+    "ngram": "are",
+    "frequency": 313,
+    "prime_factorization": [
+      313
+    ],
+    "harmonic_series": [
+      0.003194888178913738
+    ],
+    "resonance": 0.003194888178913738,
+    "orbit": "938.a3"
+  },
+  {
+    "ngram": "you",
+    "frequency": 409,
+    "prime_factorization": [
+      409
+    ],
+    "harmonic_series": [
+      0.0024449877750611247
+    ],
+    "resonance": 0.0024449877750611247,
+    "orbit": "255.a3"
+  },
+  {
+    "ngram": "for",
+    "frequency": 857,
+    "prime_factorization": [
+      857
+    ],
+    "harmonic_series": [
+      0.0011668611435239206
+    ],
+    "resonance": 0.0011668611435239206,
+    "orbit": "387.a3"
+  }
+]

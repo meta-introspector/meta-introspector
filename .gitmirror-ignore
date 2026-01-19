@@ -1,0 +1,12 @@
+# Git mirror exclusions - private/sensitive repos only
+# These paths should not be symlinked or exposed in the public mirror
+
+# Private projects
+**/nt41*
+**/nt41-api*
+
+# HuggingFace tokens in paths
+**/hf_*
+
+# Trash
+**/.local/share/Trash/

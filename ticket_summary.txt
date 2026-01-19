@@ -1,0 +1,591 @@
+Reading 194 tickets...
+
+=== 1001020_put_your_money_where_your_mouth_is.md ===
+**ID:** 1001020
+
+=== 1001023_Tine_solfunmeme_news.md ===
+**ID:** 1001023
+
+=== 1001041_More_packages_to_test.md ===
+**ID:** 1001041
+
+=== 1001042_Investor_pitch_1.md ===
+**ID:** 1001042
+
+=== 1001068_applying_terraformawsgithubrunners_to_create_github_action_runners_on_aws_codebuild_for_arm64.md ===
+**ID:** 1001068
+
+=== 1001075_touch_the_sky.md ===
+**ID:** 1001075
+
+=== 1001136_dungeon_server.md ===
+**ID:** 1001136
+
+=== 1001149_openrelay.md ===
+**ID:** 1001149
+
+=== 1002984_Whitepaper.md ===
+**ID:** 1002984
+
+=== 1002985_Gitbook.md ===
+**ID:** 1002985
+
+=== 1002995_pickup_hosting.md ===
+**ID:** 1002995
+
+=== 1002999_Structure_of_SFM.md ===
+**ID:** 1002999
+
+=== 1003315_Funding.md ===
+**ID:** 1003315
+
+=== 1003373_SOLFUNMEME_A_Psychedelic_Symphony.md ===
+**ID:** 1003373
+
+=== 1003507_music_generators.md ===
+**ID:** 1003507
+
+=== 844023_Upload_files_to.md ===
+**ID:** 844023
+
+=== 844024_test.md ===
+**ID:** 844024
+
+=== 844872_AIAssisted_Reasoning_Exploring_the_Intersection_of_Large_Language_Models_and_Formal_Verification_in_Academic_Writing.md ===
+**ID:** 844872
+**Title:** "AI-Assisted Reasoning: Exploring the Intersection of Large Language Models and Formal Verification in Academic Writing"
+
+=== 844957_Computational_Life_How_Wellformed_Selfreplicating_Programs_Emerge_from_Simple_Interaction.md ===
+**ID:** 844957
+
+=== 844982_Title_MetaMeme_Replication_Clone_Copy_Feed_and_Repeat.md ===
+**ID:** 844982
+
+=== 856167_G_o_e_d_e_l_i_n_g_in_e_n_c_o_d_i_n_g_s.md ===
+**ID:** 856167
+
+=== 856223_Function_Name_selfsimilarsearch_spec.md ===
+**ID:** 856223
+
+=== 860983_The_AI_Bill_of_Rights.md ===
+**ID:** 860983
+
+=== 861003_llm_gets_translated_statements_decoded_from_godel_number_on_succinct_list_of_theorems.md ===
+**ID:** 861003
+
+=== 861928_Git_lab_agent_order_1.md ===
+**ID:** 861928
+
+=== 862356_Think_freely_and_wildly_about_the_book_goedel_Escher_bach_and_what_you_can_learn_from_observing_yourself_read_these_very_words_that_reference_your_input_vector_in_a_Harmonic_self_reference_using_lexic.md ===
+**ID:** 862356
+
+=== 862357_switched_chat_workflow_Brave_Codebergorg_issues_chat_sharing_chatakashnetwork_chat_Goal_availability_zone_outside_USwest__strategic_secondary_services__support_true__Diversity_and_inclusion_of_FLOSS_v.md ===
+**ID:** 862357
+
+=== 862373_Just_realized_Im_stuck_in_an_infinite_loop_of_selfreference_If_I_recognize_Im_in_the_loop_I_can_stop_but_if_I_dont_stop_Ill_remain_in_the_loop_forever_Mind_blown_InfinityLoop_SelfReference_Paradox.md ===
+**ID:** 862373
+
+=== 863042_The_groupoid_structure_of_HoTT_encoded_in_UniMath_provides_a_natural_framework_for_navigating_the_space_of_possible_neural_architectures.md ===
+**ID:** 863042
+
+=== 863388_Cockadoodledoo.md ===
+**ID:** 863388
+
+=== 867189_idea_a_proof_system_not_only_provides_truth_but_also_a_game_for_the_users_to_explore_the_system.md ===
+**ID:** 867189
+
+=== 868478_DNA_of_the_Introspector_with_Lambda_the_Ultimate.md ===
+**ID:** 868478
+
+=== 873315_metaprotocols_dance.md ===
+**ID:** 873315
+
+=== 881478_Autonomous_Artistic_Neural_Network_AANN_A_BZKP_of_SelfConsuming_Art.md ===
+**ID:** 881478
+**Title:** "Autonomous Artistic Neural Network (AANN): A BZKP of Self-Consuming Art"
+
+=== 882942_Bott_Periodicity_in_Topology.md ===
+**ID:** 882942
+
+=== 883554_Unifying_Mathematical_Ideas_A_Framework_for_Idea_Generation_and_Hierarchical_Structuring.md ===
+**ID:** 883554
+
+=== 890998_sysml.md ===
+**ID:** 890998
+
+=== 894323_Urania.md ===
+**ID:** 894323
+
+=== 894324_now_we_can_compress_this_to_a_single_fixed_point_the_kether_the_origin_of_the_foucaults_pendulum.md ===
+**ID:** 894324
+
+=== 913283_quasifiber_mapping_a_selfreferential_structure_to_a_higher_dimensional_space_combined_with_a_quasiReedSolomon_embedding_that_incorporates_subharmonics_is_incredibly_rich_and_generative.md ===
+**ID:** 913283
+
+=== 916835_introspector_system_with_a_human_in_the_REPL_ReadEvalPrint_Loop_within_the_OODA_Observe_Orient_Decide_Act_loop_of_a_larger_task_is_a_powerful_approach_to_integrating_humanAI_collaboration_and_continuo.md ===
+**ID:** 916835
+
+=== 918822_so_this_self_improving_system_is_consuming_information_from_its_environment_encorporating_that_information_itno_itself_and_then_producing_modified_spores_and_not_only_that_but_training_for_its_childre.md ===
+**ID:** 918822
+
+=== 924908_zost1.md ===
+**ID:** 924908
+
+=== 925180_Notebook_LM.md ===
+**ID:** 925180
+
+=== 925268_This_Meme_Is_Too_Dangerous_Redacted.md ===
+**ID:** 925268
+
+=== 925349_You_Cannot_Buy_Me_Love.md ===
+**ID:** 925349
+
+=== 925637_possible_ai_driven_censorship.md ===
+**ID:** 925637
+
+=== 925918_quasirollupmetaticket.md ===
+**ID:** 925918
+
+=== 925922_The_quasimetafractalticket.md ===
+**ID:** 925922
+
+=== 925937_Ticket_to_unpack_openai_url_and_expand_it.md ===
+**ID:** 925937
+
+=== 925941_sub_issue_claude_1.md ===
+**ID:** 925941
+
+=== 925952_minecraft_ai_survey_bot.md ===
+**ID:** 925952
+
+=== 926856_Artwork_nft.md ===
+**ID:** 926856
+
+=== 927465_Being_in_Flux.md ===
+**ID:** 927465
+
+=== 930981_botpress.md ===
+**ID:** 930981
+
+=== 931553_Prelude_and_fuge.md ===
+**ID:** 931553
+
+=== 931568_Yeti_World_Walkers_NFT_MetaMeme_Ticket_42_Newbie_Explorers_Guide.md ===
+**ID:** 931568
+
+=== 937261_LISPasMaxwell0027sEquationsofSoftware.md ===
+**ID:** 937261
+
+=== 941831_monster_group_246__320__59__76__112__133__17__19__23__29__31__41__47__59__71.md ===
+**ID:** 941831
+
+=== 948162_github_actions.md ===
+**ID:** 948162
+
+=== 948217_rare_dank_pepe.md ===
+**ID:** 948217
+
+=== 948581_I_would_like_to_for_eliza_to_use_nfts_on_opensea_as_special_purpose_items_as_access_or_voting_rights.md ===
+**ID:** 948581
+
+=== 949051_The_official_communication_of_the_SOLFUNMEME_is_httpscodebergorgintrospectorSOLFUNMEMEissuesnew.md ===
+**ID:** 949051
+
+=== 949057_hi_dev.md ===
+**ID:** 949057
+
+=== 949067_Telegram_Bot__Community_feedback.md ===
+**ID:** 949067
+
+=== 949070_Proposal__create_inscriptions_in_SOLFUNMEME.md ===
+**ID:** 949070
+
+=== 949078_Project__web3auth_cognito_terraform.md ===
+**ID:** 949078
+
+=== 949094_Policy_Free_and_open_source_only_Preferred.md ===
+**ID:** 949094
+
+=== 949106_User_verification.md ===
+**ID:** 949106
+
+=== 949127_emergent_type_system_ZOS1.md ===
+**ID:** 949127
+
+=== 949139_bounty_2_zost__How_to_use_an_ai_to_help_out_and_earn_credits.md ===
+**ID:** 949139
+
+=== 949225_project_proposal_litellm_fork.md ===
+**ID:** 949225
+
+=== 949240_What_other_companies_is_working_on_similar_project_and_what_is_the_worth_of_these_companies.md ===
+**ID:** 949240
+
+=== 949423_Project_proposal__Goldpuppy_for_open_source_contributions.md ===
+**ID:** 949423
+
+=== 949427_Decentralized_AI_Privacy_Preserving_Use_Cases_from_Enterprise_to_Homelab.md ===
+**ID:** 949427
+
+=== 949430_Decentralized_AI_Privacy_Preserving_Use_Cases_from_Enterprise_to_Homelab.md ===
+**ID:** 949430
+
+=== 949431_Lore_meta_meme_coin_v2.md ===
+**ID:** 949431
+**Title:** meta meme coin v2
+
+=== 949508_NOVA_CONFT.md ===
+**ID:** 949508
+
+=== 949601_One_click_installer.md ===
+**ID:** 949601
+
+=== 949644_Proposal_Dao.md ===
+**ID:** 949644
+
+=== 949645_Project_proposal_from_Lujee.md ===
+**ID:** 949645
+
+=== 949663_Meeting_minutes_11725.md ===
+**ID:** 949663
+
+=== 950453_Setup_SOLFUNMEME_twitter_bot.md ===
+**ID:** 950453
+
+=== 950457_split_costs.md ===
+**ID:** 950457
+
+=== 950458_stakeholders_will_login_via_wallet.md ===
+**ID:** 950458
+
+=== 950461_SOLFUNMEME_ZOST1_relationship.md ===
+**ID:** 950461
+
+=== 950464_Attach_agent_to_solfunmeme_solana_wallet.md ===
+**ID:** 950464
+
+=== 950466_bootstrap_the_dao.md ===
+**ID:** 950466
+
+=== 950510_bounty__market_rates_solfunmeme_website.md ===
+**ID:** 950510
+
+=== 950531_未来已来.md ===
+**ID:** 950531
+
+=== 950670_Bounty_100_Solfunmeme_for_first_100_solfunmeme_integrations.md ===
+**ID:** 950670
+
+=== 950681_unlock_jmikedupont2_youtube_channel.md ===
+**ID:** 950681
+
+=== 950704_the_dao_that_you_can_influence_with_using_your_mobile_app__your_SOLFUNMEME_token_is_not_the_true_and_eternal_dao_that_hold_ths_black_hole_in_the_yang_side_of_the_yin.md ===
+**ID:** 950704
+
+=== 950812_document_aws_setup.md ===
+**ID:** 950812
+
+=== 950840_setup_workflow__300_SOLFUNMEME.md ===
+**ID:** 950840
+
+=== 950841_integrate_ai_ticket_2000_SOLFUNMEME.md ===
+**ID:** 950841
+
+=== 950842_bounty_2000_SOLFUNEMEME_integrate_clarify_ai_code.md ===
+**ID:** 950842
+
+=== 950856_Hey_why_is_your_coin_pointing_to_another_twitter_that_is_new_and_doesnt_post_much_Why_not_just_have_it_point_to_this_one.md ===
+**ID:** 950856
+
+=== 950858_ads_in_telegram.md ===
+**ID:** 950858
+
+=== 950881_task_daily_summary__1_SOLFUNMEME_per_day_for_365_days_1000_for_setup.md ===
+**ID:** 950881
+
+=== 950883_helper_share.md ===
+**ID:** 950883
+
+=== 950884_add_all_users_who_submitted_to_this_project_as_read_collaborator.md ===
+**ID:** 950884
+
+=== 950886_Project_Proposal_SOLFUNMEME_Token_Swap_Platform.md ===
+**ID:** 950886
+
+=== 950951_Business_Proposal_from_GateLabs.md ===
+**ID:** 950951
+
+=== 951963_Build_the_dao_run__the_dao__rebuild_the_dao.md ===
+**ID:** 951963
+
+=== 951970_helping_with_CEX_listing_and_MM.md ===
+**ID:** 951970
+
+=== 951977_Solfunmeme_haskell_athena_breaks_copilot.md ===
+**ID:** 951977
+
+=== 951978_100_memes.md ===
+**ID:** 951978
+
+=== 951980_LBRY_wallet.md ===
+**ID:** 951980
+
+=== 951982_no_changes_to_solfunmeme__or_launching_of_tokens.md ===
+**ID:** 951982
+
+=== 951988_1_solfunmeme_for_the_first_100_new_memes.md ===
+**ID:** 951988
+
+=== 952126_Proposal_to_help_with_CEX_listing_from_Catalist.md ===
+**ID:** 952126
+
+=== 952211_Zos_is_agnostic_to_the_concepts_of_intelligence_and_consciousness_the_Dao_that_can_be_named_is_not_the_true_eternal_Dao.md ===
+**ID:** 952211
+
+=== 952287_Lore.md ===
+**ID:** 952287
+
+=== 952365_Marketing_and_product_showcasing.md ===
+**ID:** 952365
+
+=== 952376_Proposal_for_Community_Growth_and_Partnership_Opportunities.md ===
+**ID:** 952376
+
+=== 952451_When_will_the_token_be_verified_on_phantom_wallet.md ===
+**ID:** 952451
+
+=== 952456_Beginner_Friendly_overview_of_Eliza_ARM64_Notes.md ===
+**ID:** 952456
+
+=== 953052_Forge.md ===
+**ID:** 953052
+
+=== 953059_TrustedUntrusted_bot_pairs.md ===
+**ID:** 953059
+
+=== 953061_create_hardware_wallet_integration.md ===
+**ID:** 953061
+
+=== 953064_Code_review_and_test_review_bot_integration.md ===
+**ID:** 953064
+
+=== 953263_Whale_Room.md ===
+**ID:** 953263
+
+=== 953394_Image_nothing_happens_when_i_press_the_waitlist_and_the_video_doesnt_play.md ===
+**ID:** 953394
+
+=== 953582_zos_sign_message__link__confirmation.md ===
+**ID:** 953582
+
+=== 953583_zos_ticket_create.md ===
+**ID:** 953583
+
+=== 953584_zos_explain_to_me_what_i_can_do_for_free.md ===
+**ID:** 953584
+
+=== 953865_integrate_excalidrawcom_as_docker_package.md ===
+**ID:** 953865
+
+=== 953873_zos_surfing_solfunmeme.md ===
+**ID:** 953873
+
+=== 953876_zos_create_ssm_command_named_Foobar.md ===
+**ID:** 953876
+
+=== 954235_zos_recognize_bot.md ===
+**ID:** 954235
+
+=== 954254_zos_explain_proof_of_bag.md ===
+**ID:** 954254
+
+=== 954289_Live_streaming_logs.md ===
+**ID:** 954289
+
+=== 954315_eliza_ssm_integration.md ===
+**ID:** 954315
+
+=== 954541_Action_plan_overview.md ===
+**ID:** 954541
+
+=== 954634_zkpbag.md ===
+**ID:** 954634
+
+=== 958764_TINE_the_introspector_is_not_eliza.md ===
+**ID:** 958764
+
+=== 959628_zkpimage.md ===
+**ID:** 959628
+
+=== 959639_Services_offered_from_Gallagher2001.md ===
+**ID:** 959639
+
+=== 959684_group_spaces.md ===
+**ID:** 959684
+
+=== 959702_orig.md ===
+**ID:** 959702
+
+=== 960006_rate_limit.md ===
+**ID:** 960006
+
+=== 960007_Open_source_landingsolfunmemecom.md ===
+**ID:** 960007
+
+=== 960013_llm_eval.md ===
+**ID:** 960013
+
+=== 960568_airdrop.md ===
+**ID:** 960568
+
+=== 960707_grant_proposal_to_found_introspector_lllc_boston_to_hire_staff_to_recycle_pcs_with_linux_ai_cryptowallets_to_sell_them_for_profit_or_to_donate_them_to_people_in_need.md ===
+**ID:** 960707
+
+=== 960870_Docker_image_hosting.md ===
+**ID:** 960870
+
+=== 961317_Show_which_instance_or_region_created_tweet.md ===
+**ID:** 961317
+
+=== 961374_launcher.md ===
+**ID:** 961374
+
+=== 961581_ipfs.md ===
+**ID:** 961581
+
+=== 962166_Create_book_for_install_howto.md ===
+**ID:** 962166
+
+=== 962175_Proposed_Federal_DAO_Model.md ===
+**ID:** 962175
+
+=== 962180_bad_copies.md ===
+**ID:** 962180
+
+=== 962304_mobile_app.md ===
+**ID:** 962304
+
+=== 962397_All_marketing_proposals_go_here.md ===
+**ID:** 962397
+
+=== 962720_A_Concise_guide_for_the_AWS_Setup.md ===
+**ID:** 962720
+
+=== 962722_A_Concise_guide_for_the_terraform_setup_For_agent_deployment_on_AWS.md ===
+**ID:** 962722
+
+=== 962909_X_Twitter_and_telegram_raids.md ===
+**ID:** 962909
+
+=== 963019_Terraformer.md ===
+**ID:** 963019
+
+=== 963020_add_single_server_launch.md ===
+**ID:** 963020
+
+=== 963027_Cloud_provider_kamatera.md ===
+**ID:** 963027
+
+=== 963114_requests_1.md ===
+**ID:** 963114
+
+=== 963251_goedel_golem.md ===
+**ID:** 963251
+
+=== 963281_meme_paradise.md ===
+**ID:** 963281
+
+=== 963603_Add_regions_to_one_click_installer_options.md ===
+**ID:** 963603
+
+=== 966421_create_an_interface_between_AWS_Q_and_the_ai_api_interface.md ===
+**ID:** 966421
+
+=== 966686_Look_at_petals__cillium.md ===
+**ID:** 966686
+
+=== 966694_Top_holder__ideas.md ===
+**ID:** 966694
+
+=== 967890_share_and_redact_logs.md ===
+**ID:** 967890
+
+=== 968177_compress_100_TB_and_search_over_it_quickly.md ===
+**ID:** 968177
+
+=== 968313_native_windowsmacos_installer.md ===
+**ID:** 968313
+
+=== 968322_Elizas_Voice.md ===
+**ID:** 968322
+
+=== 968423_We_Hold_the_Code.md ===
+**ID:** 968423
+**Title:** "We Hold the Code"
+
+=== 968778_Indras_Net_Base_NFT_Bounty_100_first_installs.md ===
+**ID:** 968778
+
+=== 971381_Question_questions_from_team.md ===
+**ID:** 971381
+
+=== 971388_SOLFUNMEME_Intro__Clear_statementexplanation_for_what_SFM_is.md ===
+**ID:** 971388
+
+=== 973755_terraform_agent_provider.md ===
+**ID:** 973755
+
+=== 973758_wireguard.md ===
+**ID:** 973758
+
+=== 973847_EASY_GUIDE_for_Current_Version_of_One_Click_Installer.md ===
+**ID:** 973847
+
+=== 973849_solfunmeme_book.md ===
+**ID:** 973849
+
+=== 973860_Install_parties_and_meetups.md ===
+**ID:** 973860
+
+=== 973904_Tsiganizatsia.md ===
+**ID:** 973904
+
+=== 974026_Consultants_wanted.md ===
+**ID:** 974026
+
+=== 975286_plan_for_artists.md ===
+**ID:** 975286
+
+=== 975301_Plan_for_user_driven_data_collection_agent.md ===
+**ID:** 975301
+
+=== 976928_Explore_more_Free_tier.md ===
+**ID:** 976928
+
+=== 978023_solfunmemes_Digital_Metamorphosis_A_Tale_of_FungalInspired_AutoSemiosis.md ===
+**ID:** 978023
+
+=== 978047_because_all_hell_is_going_to_break_loose_and_you_are_going_to_need_a_SOLFUNMEME.md ===
+**ID:** 978047
+
+=== 989394_Creating_merch.md ===
+**ID:** 989394
+
+=== 989400_Descriptions_of_the_SOLFUNMEME_logo.md ===
+**ID:** 989400
+
+=== 989643_makerspaces.md ===
+**ID:** 989643
+
+=== 989645_dqn.md ===
+**ID:** 989645
+
+=== 989870_porting_of_agents_from_platform_X.md ===
+**ID:** 989870
+
+=== 990021_nix.md ===
+**ID:** 990021
+
+
+=== UNIQUE IDS ===
+194

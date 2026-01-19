@@ -1,0 +1,41 @@
+{
+  "description": "Complete git repository bootstrap dataset for system reproduction",
+  "files": [
+    {
+      "description": "All git repos from Nix store",
+      "format": "text/plain",
+      "name": "nix_store_git_repos.txt"
+    },
+    {
+      "description": "All git repos from apt packages",
+      "format": "text/plain",
+      "name": "apt_git_repos.txt"
+    },
+    {
+      "description": "Usage patterns and meme scores",
+      "format": "application/json",
+      "name": "usage_memes.json"
+    }
+  ],
+  "generated": "2026-01-19T15:38:19.115021272+00:00",
+  "name": "meta-introspector-bootstrap-dataset",
+  "p2p": {
+    "huggingface": "https://huggingface.co/datasets/introspector/meta-meme",
+    "ipfs": "Run: ipfs add -r . to generate CID",
+    "magnet": "Generated after torrent creation",
+    "torrent": "Run: transmission-create to generate torrent"
+  },
+  "stats": {
+    "top_domains": {
+      "build": 26,
+      "compiler": 38,
+      "kernel": 74,
+      "other": 2436,
+      "python": 144,
+      "rust": 33,
+      "system": 21
+    },
+    "total_repos": 2769
+  },
+  "version": "1.0"
+}

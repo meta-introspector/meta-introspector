@@ -26,3 +26,17 @@ data/
 target/
 result*
 markov_symbol_scores.parquet
+
+# Generated analysis files
+cargo_deps_groups.json
+dep_graph.json
+workspaces.json
+
+# Local tracking
+local_repos/
+locate-recent
+
+# Git proxy
+git-proxy/target/
+git-proxy/*.log
+FILE_GIT_MAPPING.csv

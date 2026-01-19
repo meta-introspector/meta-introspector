@@ -8,6 +8,11 @@ name = "libnix"
 path = "libnix.rs"
 crate-type = ["cdylib", "rlib"]
 
+[lib.meta_introspector]
+name = "meta_introspector"  
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
 [[bin]]
 name = "rustc_tracer"
 path = "rustc_tracer.rs"
@@ -29,6 +34,54 @@ name = "harmonic_filter"
 path = "harmonic_filter.rs"
 
 [[bin]]
+name = "github_mirror_service"
+path = "github_mirror_service.rs"
+
+[[bin]]
+name = "p2p_git_mirror"
+path = "p2p_git_mirror.rs"
+
+[[bin]]
+name = "canonicalize_repos"
+path = "canonicalize_repos.rs"
+
+[[bin]]
+name = "git_tree_arrows"
+path = "git_tree_arrows.rs"
+
+[[bin]]
+name = "git_temporal_morphisms"
+path = "git_temporal_morphisms.rs"
+
+[[bin]]
+name = "byte_provenance_tracker"
+path = "byte_provenance_tracker.rs"
+
+[[bin]]
+name = "nix_git_builder"
+path = "nix_git_builder.rs"
+
+[[bin]]
+name = "bootstrap_arrow_chain"
+path = "bootstrap_arrow_chain.rs"
+
+[[bin]]
+name = "binary_similarity_search"
+path = "binary_similarity_search.rs"
+
+[[bin]]
+name = "zos_server"
+path = "zos_server.rs"
+
+[[bin]]
+name = "extract_urls_from_packs"
+path = "extract_urls_from_packs.rs"
+
+[[bin]]
+name = "auto_label_repos"
+path = "auto_label_repos.rs"
+
+[[bin]]
 name = "intrinsic_complexity"
 path = "intrinsic_complexity.rs"
 
@@ -47,6 +100,14 @@ path = "demos/archived/demo_compression_evolution.rs"
 [[bin]]
 name = "demo_self_compilation"
 path = "demos/archived/demo_self_compilation.rs"
+
+[[bin]]
+name = "file-index-server"
+path = "file_index_server.rs"
+
+[[bin]]
+name = "file-index"
+path = "file_index_cli.rs"
 
 [[bin]]
 name = "demo_syn_spectrum"
@@ -290,9 +351,9 @@ telemetry-macros = { path = "telemetry-macros" }
 bootstrap-macros = { path = "bootstrap-macros" }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-chrono = "0.4.31"
 octocrab = "0.41"
 tokio = { version = "1", features = ["full"] }
+chrono = "0.4.31"
 crossbeam = "0.8"
 clap = { version = "4", features = ["derive"] }
 syn = { version = "2", features = ["full", "visit", "visit-mut"] }
@@ -1076,3 +1137,10 @@ path = "numerical_codebreaker.rs"
 [[bin]]
 name = "index_math_databases"
 path = "enhanced_concept_map.rs"
+
+[[bin]]
+name = "singularity"
+path = "singularity_example.rs"
+
+[dependencies.mksingularity]
+path = "mksingularity"

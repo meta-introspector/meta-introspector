@@ -1,0 +1,12 @@
+{
+  "all_git_repos": [],
+  "package": {
+    "dependencies": [],
+    "git_repos": [],
+    "name": "nixpkgs#rustc",
+    "pname": null,
+    "src_url": null,
+    "version": null
+  },
+  "runtime_deps": []
+}

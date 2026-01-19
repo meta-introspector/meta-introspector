@@ -1332,6 +1332,7 @@ dependencies = [
  "linux-perf-data",
  "mcp",
  "md5",
+ "mksingularity",
  "num_cpus",
  "octocrab",
  "parquet",
@@ -3091,6 +3092,15 @@ dependencies = [
  "libc",
  "wasi",
  "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "mksingularity"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
