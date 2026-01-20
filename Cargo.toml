@@ -378,6 +378,7 @@ quote = "1"
 libloading = "0.8"
 axum = "0.7"
 actix-web = "4"
+libp2p = "0.54"
 sha2 = "0.10"
 petgraph = "0.6"
 perf_runtime_macros = { path = "perf_runtime_macros" }
