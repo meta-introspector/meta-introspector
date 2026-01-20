@@ -2,9 +2,13 @@
 
 ## Reference
 
-Based on: `/mnt/data1/nix/source/github/meta-introspector/streamofrandom/2025/10/10/docs/sop/nix_path_purity.md`
+Based on:
+- `/mnt/data1/nix/source/github/meta-introspector/streamofrandom/2025/10/10/docs/sop/nix_path_purity.md`
+- `/mnt/data1/nix/source/github/meta-introspector/streamofrandom/2025/10/11/docs/code-duplication-indexing-guide.md`
 
-See also: https://github.com/meta-introspector/crq-binstore
+See also:
+- https://github.com/meta-introspector/crq-binstore
+- https://github.com/meta-introspector/time-2025
 
 ## The Problem
 
@@ -14,11 +18,9 @@ find /nix/store -name "build.perf.data"
 PERF_FILES=$(find /nix/store -name "*.perf.data" | wc -l)
 ```
 
-This violates Nix path purity:
-- Impure (non-deterministic results)
-- Breaks reproducibility
-- Bypasses dependency tracking
-- Violates external dependency policy
+This violates:
+1. **Nix path purity** - bypasses dependency tracking
+2. **Centralized indexing policy** - we have a formal indexing system
 
 ## The Right Way: Flake Inputs
 
