@@ -154,7 +154,7 @@ fn topological_sort_with_priority(graph: &HashMap<String, Vec<String>>) -> Vec<S
         in_degree.entry(node.clone()).or_insert(0);
         for dep in deps {
             *in_degree.entry(dep.clone()).or_insert(0) += 1;
-            adj_list.entry(node.clone()).or_insert_vec![]).push(dep.clone());
+            adj_list.entry(node.clone()).or_insert(Vec::new()).push(dep.clone());
         }
     }
     

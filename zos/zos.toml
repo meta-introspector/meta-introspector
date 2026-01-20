@@ -1,0 +1,24 @@
+[repo]
+remote = "https://github.com/meta-introspector/meta-introspector"
+branch = "singularity-clean"
+commit = "b9d5b4ac2b6994f10a7fdb3e413322e414016ef6"
+commit_count = 470
+
+[stats]
+total_files = 19102
+rust_files = 499
+nix_files = 147
+toml_files = 57
+primary_language = "rust"
+contributors = 4
+
+[timeline]
+first_commit = "2026-01-11 17:39:26 -0500
+unknown"
+last_commit = "2026-01-20 10:09:05 -0500"
+
+[classification]
+# Mathematical description of repo
+file_entropy = 0.0  # To be computed
+symbol_count = 0    # To be computed
+markov_signature = ""  # To be computed
