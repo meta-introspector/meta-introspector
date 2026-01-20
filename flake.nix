@@ -27,6 +27,21 @@
           binaryen
           nodejs
         ];
+        
+        # Orbit extraction tool
+        extract-orbits = pkgs.rustPlatform.buildRustPackage {
+          pname = "extract-orbits";
+          version = "0.1.0";
+          src = pkgs.writeTextDir "extract_orbits.rs" (builtins.readFile ./extract_orbits.rs);
+          cargoLock = null;
+          buildPhase = ''
+            rustc extract_orbits.rs -O -o extract_orbits
+          '';
+          installPhase = ''
+            mkdir -p $out/bin
+            cp extract_orbits $out/bin/
+          '';
+        };
 
         buildWasmPackage = { name, src, cargoToml ? "${src}/Cargo.toml" }:
           pkgs.stdenv.mkDerivation {
@@ -478,6 +493,9 @@
 
         # Default package
         defaultPackage = self.packages.${system}.all-wasm;
+        
+        # Orbit analysis package
+        packages.extract-orbits = extract-orbits;
       }
     );
 }
