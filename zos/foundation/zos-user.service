@@ -1,0 +1,21 @@
+[Unit]
+Description=ZOS Foundation - User Layer (L2)
+After=zos-root.service
+Requires=zos-root.service
+
+[Service]
+Type=simple
+ExecStart=/nix/store/.../bin/zos_server --layer user
+User=zos
+Group=zos
+SELinuxContext=system_u:system_r:zos_level2_t:s0
+Restart=always
+
+# User layer restrictions
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

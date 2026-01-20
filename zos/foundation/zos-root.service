@@ -1,0 +1,17 @@
+[Unit]
+Description=ZOS Foundation - Root Layer (L1)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/nix/store/.../bin/zos_server --layer root
+User=root
+SELinuxContext=system_u:system_r:zos_level1_t:s0
+Restart=always
+
+# Root layer capabilities
+AmbientCapabilities=CAP_NET_BIND_SERVICE CAP_NET_ADMIN
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE CAP_NET_ADMIN
+
+[Install]
+WantedBy=multi-user.target
