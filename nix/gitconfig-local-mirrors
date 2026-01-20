@@ -1,0 +1,12 @@
+# Git config for Nix builds - use local mirrors to avoid rate limiting
+[url "file:///mnt/data1/git/github.com/"]
+	insteadOf = https://github.com/
+
+[url "file:///mnt/data1/git/gitlab.com/"]
+	insteadOf = https://gitlab.com/
+
+[url "file:///mnt/data1/git/codeberg.org/"]
+	insteadOf = https://codeberg.org/
+
+[url "file:///mnt/data1/git/bitbucket.org/"]
+	insteadOf = https://bitbucket.org/

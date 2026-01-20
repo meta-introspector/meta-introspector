@@ -1,0 +1,10 @@
+[package]
+name = "p2p-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+p2p-shared = { path = "../shared" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
