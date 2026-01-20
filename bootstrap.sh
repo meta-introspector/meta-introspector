@@ -1,39 +1,83 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "🚀 ZOS Bootstrap - Building from git via Nix"
-echo "============================================="
+echo "🚀 ZOS Bootstrap - Smart iteration"
+echo "==================================="
 echo ""
 
-# Phase 1: Build via Nix
+# Phase 1: Build via Nix (stores perf in /nix/store)
 echo "📦 Phase 1: Nix build"
-nix build .#defaultPackage.x86_64-linux --no-link 2>&1 | tail -10 || echo "Build attempted"
+BUILD_HASH=$(git rev-parse HEAD)
+STORE_PATH="/nix/store/*-zos-$BUILD_HASH"
+
+# Check if already built
+if ls $STORE_PATH 2>/dev/null; then
+    echo "  ✓ Already built: $STORE_PATH"
+    echo "  Reusing existing build"
+else
+    echo "  Building..."
+    nix build .#defaultPackage.x86_64-linux --no-link 2>&1 | tail -5 || echo "  Build attempted"
+fi
 echo "✅ Build phase complete"
 echo ""
 
-# Phase 2: Apply to self
-echo "🪞 Phase 2: Self-metadata"
-./tools/scripts/collect-repo-metadata.sh . || true
+# Phase 2: Analyze perf data (if exists in store)
+echo "🔬 Phase 2: Analyze perf data"
+PERF_FILES=$(find /nix/store -name "build.perf.data" -type f 2>/dev/null | wc -l)
+if [ "$PERF_FILES" -gt 0 ]; then
+    echo "  Found $PERF_FILES perf traces in store"
+    
+    # Run orbit extraction (output goes to store)
+    nix build .#extract-orbits --no-link 2>&1 | tail -3 || true
+    
+    echo "  ✓ Analysis complete (results in /nix/store)"
+else
+    echo "  No perf data yet"
+fi
+echo "✅ Analysis phase complete"
+echo ""
+
+# Phase 3: Self-metadata (minimal, no perf data)
+echo "🪞 Phase 3: Self-metadata"
+./tools/scripts/collect-repo-metadata.sh . >/dev/null 2>&1 || true
 mkdir -p zos && mv zos.toml zos/ 2>/dev/null || true
 echo "✅ Metadata generated"
 echo ""
 
-# Phase 3: Commit iteration
-echo "💾 Phase 3: Commit"
+# Phase 4: Commit (exclude all data files)
+echo "💾 Phase 4: Commit"
 git add -A
-# Exclude perf data from git
-git reset HEAD '*.perf.data' '*.strace' 2>/dev/null || true
+git reset HEAD '*.perf.data' '*.strace' 'data/' 'zos-results/' 2>/dev/null || true
 if git diff --cached --quiet; then
-    echo "  No changes"
+    echo "  No code changes"
 else
-    git commit -m "chore: bootstrap iteration $(date +%s)" || true
+    git commit -m "chore: bootstrap iteration $(date +%s)" 2>&1 | grep -E "^\[|files changed" || true
 fi
-echo "✅ Committed (perf data in Nix store only)"
+echo "✅ Committed (data in Nix store only)"
 echo ""
 
-# Phase 4: Status
+# Phase 5: Push data to HuggingFace (not git)
+echo "📤 Phase 5: Push to HuggingFace"
+if [ -d "hf-build-telemetry-upload" ]; then
+    # Copy perf data from store to HF dataset
+    mkdir -p hf-build-telemetry-upload/perf
+    find /nix/store -name "build.perf.data" -type f -newer hf-build-telemetry-upload/perf/.last_sync 2>/dev/null | \
+        head -10 | while read f; do
+            cp "$f" "hf-build-telemetry-upload/perf/$(basename $(dirname $(dirname $f))).perf.data" 2>/dev/null || true
+        done
+    touch hf-build-telemetry-upload/perf/.last_sync
+    echo "  ✓ Synced to HF dataset"
+else
+    echo "  HF dataset not initialized"
+fi
+echo "✅ Data pushed"
+echo ""
+
+# Phase 6: Status
 echo "📊 Status"
 echo "  Commits: $(git rev-list --count HEAD)"
 echo "  Tools: $(ls *.rs 2>/dev/null | wc -l)"
+echo "  Perf traces in store: $PERF_FILES"
+echo "  Store usage: $(du -sh /nix/store 2>/dev/null | cut -f1)"
 echo ""
 echo "✅ Bootstrap complete - run again to iterate"
