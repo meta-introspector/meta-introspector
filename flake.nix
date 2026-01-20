@@ -32,14 +32,14 @@
         extract-orbits = pkgs.rustPlatform.buildRustPackage {
           pname = "extract-orbits";
           version = "0.1.0";
-          src = pkgs.writeTextDir "extract_orbits.rs" (builtins.readFile ./extract_orbits.rs);
-          cargoLock = null;
+          src = ./.;
+          cargoLock.lockFile = ./Cargo.lock;
           buildPhase = ''
-            rustc extract_orbits.rs -O -o extract_orbits
+            cargo build --release --bin extract_orbits
           '';
           installPhase = ''
             mkdir -p $out/bin
-            cp extract_orbits $out/bin/
+            cp target/release/extract_orbits $out/bin/
           '';
         };
 

@@ -50,6 +50,14 @@ name = "git_tree_arrows"
 path = "git_tree_arrows.rs"
 
 [[bin]]
+name = "extract_orbits"
+path = "extract_orbits.rs"
+
+[[bin]]
+name = "conformity_test"
+path = "conformity_test.rs"
+
+[[bin]]
 name = "git_temporal_morphisms"
 path = "git_temporal_morphisms.rs"
 
