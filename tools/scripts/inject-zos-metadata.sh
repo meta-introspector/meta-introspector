@@ -21,11 +21,14 @@ mkdir -p zos
 bash "$(dirname "$0")/collect-repo-metadata.sh" "$REPO_PATH"
 mv zos.toml zos/
 
+# Generate self/flake.nix
+bash "$(dirname "$0")/generate-self-flake.sh" "$REPO_PATH"
+
 # Copy template infrastructure
 bash "$(dirname "$0")/inject-template.sh" "$REPO_PATH"
 
 # Commit
-git add zos/
-git commit -m "feat: add zos metadata and classification" || echo "Nothing to commit"
+git add zos/ self/
+git commit -m "feat: add zos metadata and self-building flake" || echo "Nothing to commit"
 
 echo "✅ Branch $BRANCH_NAME created with zos metadata"
