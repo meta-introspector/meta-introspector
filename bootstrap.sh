@@ -26,6 +26,13 @@ echo ""
 
 # Phase 2: Analyze perf data (if exists in store)
 echo "🔬 Phase 2: Analyze perf data"
+
+# First, record cargo2nix if Cargo.lock changed
+if [ ! -f Cargo.nix ] || [ Cargo.lock -nt Cargo.nix ]; then
+    echo "  Recording cargo2nix generation..."
+    ./tools/scripts/record-cargo2nix.sh 2>&1 | tail -5 || true
+fi
+
 PERF_FILES=$(find /nix/store -name "build.perf.data" -type f 2>/dev/null | wc -l)
 if [ "$PERF_FILES" -gt 0 ]; then
     echo "  Found $PERF_FILES perf traces in store"
@@ -62,14 +69,23 @@ echo ""
 # Phase 5: Push data to HuggingFace (not git)
 echo "📤 Phase 5: Push to HuggingFace"
 if [ -d "hf-build-telemetry-upload" ]; then
-    # Copy perf data from store to HF dataset
-    mkdir -p hf-build-telemetry-upload/perf
-    find /nix/store -name "build.perf.data" -type f -newer hf-build-telemetry-upload/perf/.last_sync 2>/dev/null | \
-        head -10 | while read f; do
-            cp "$f" "hf-build-telemetry-upload/perf/$(basename $(dirname $(dirname $f))).perf.data" 2>/dev/null || true
-        done
-    touch hf-build-telemetry-upload/perf/.last_sync
-    echo "  ✓ Synced to HF dataset"
+    # Store perf data references (not the data itself)
+    mkdir -p hf-build-telemetry-upload/perf-refs
+    
+    # Create reference file with IPFS/HF URLs
+    cat > hf-build-telemetry-upload/perf-refs/latest.json <<EOF
+{
+  "timestamp": "$(date -Iseconds)",
+  "commit": "$(git rev-parse HEAD)",
+  "perf_data": {
+    "hf_dataset": "hf://datasets/introspector/build-telemetry",
+    "ipfs_cid": "TODO: upload to IPFS",
+    "description": "Bootstrap perf data"
+  }
+}
+EOF
+    
+    echo "  ✓ Reference stored (data in HF/IPFS, not git)"
 else
     echo "  HF dataset not initialized"
 fi
