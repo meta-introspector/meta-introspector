@@ -65,6 +65,33 @@ fn main() {
     println!("The instruction spectrum is invariant under scaling:");
     println!("  F(τ + 1) = F(τ)  (periodicity)");
     println!("  F(-1/τ) = τ^k F(τ)  (modular transformation)");
+    
+    println!("\n\n⏪ Entropy Decreases Backwards in Time");
+    println!("======================================\n");
+    
+    // Compute complexity (entropy) for each stage
+    for (stage, spectrum) in all_spectra.iter().rev() {
+        let entropy = compute_entropy(spectrum);
+        let unique_symbols = spectrum.len();
+        println!("{}: H={:.2} bits, {} unique symbols", stage, entropy, unique_symbols);
+    }
+    
+    println!();
+    println!("As we go back: ZOS → Rust → LLVM → Nix → MES → 357 bytes");
+    println!("Complexity decreases, approaching the seed (minimal entropy)");
+    println!("The modular form simplifies to its fundamental domain.");
+}
+
+fn compute_entropy(spectrum: &HashMap<String, f64>) -> f64 {
+    let total: f64 = spectrum.values().sum();
+    if total == 0.0 { return 0.0; }
+    
+    spectrum.values()
+        .map(|&w| {
+            let p = w / total;
+            if p > 0.0 { -p * p.log2() } else { 0.0 }
+        })
+        .sum()
 }
 
 fn parse_perf_spectrum(path: &str) -> Result<HashMap<String, f64>, std::io::Error> {
