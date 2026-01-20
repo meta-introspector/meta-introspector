@@ -261,8 +261,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     node.run().await
 }
-```
 
+/*
 ## 🌐 Browser Integration (WASM)
 
 ```rust
@@ -389,8 +389,9 @@ pub fn P2PShare(cx: Scope) -> Element {
         }
     })
 }
-```
+*/
 
+/*
 ---
 
 **Status**: 🌐 P2P meme sharing ready  
@@ -398,3 +399,4 @@ pub fn P2PShare(cx: Scope) -> Element {
 **Discovery**: mDNS  
 **Browser**: WebRTC support  
 **Features**: Wallet login, CA lookup, meme sharing
+*/
