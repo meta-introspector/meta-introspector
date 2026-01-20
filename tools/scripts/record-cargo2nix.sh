@@ -4,16 +4,26 @@ set -euo pipefail
 echo "🔬 Recording cargo2nix generation with perf"
 echo "============================================"
 
-OUT="zos-results/cargo2nix-perf"
-mkdir -p "$OUT"
+# Generate Cargo.nix with perf recording
+perf record -g -o cargo2nix.perf.data -- \
+  nix run github:cargo2nix/cargo2nix -- -f 2>&1 | tee cargo2nix.log
 
-# Record cargo2nix generating Cargo.nix
-perf record -g -o "$OUT/cargo2nix.perf.data" -- \
-  nix run github:cargo2nix/cargo2nix -- -f 2>&1 | tee "$OUT/cargo2nix.log"
+# Build a derivation that stores the perf data
+nix build --impure --expr '
+  with import <nixpkgs> {};
+  stdenv.mkDerivation {
+    name = "cargo2nix-perf-data";
+    src = ./.;
+    installPhase = ''
+      mkdir -p $out/perf
+      cp ${./cargo2nix.perf.data} $out/perf/build.perf.data || true
+      cp ${./cargo2nix.log} $out/perf/build.log || true
+    '';
+  }
+' -o result-cargo2nix-perf
 
 echo ""
-echo "✅ Recorded to: $OUT/cargo2nix.perf.data"
+echo "✅ Perf data stored in: $(readlink result-cargo2nix-perf)"
 echo ""
 echo "Analyze with:"
-echo "  perf report -i $OUT/cargo2nix.perf.data"
-echo "  ./target/release/extract_orbits $OUT/cargo2nix.perf.data"
+echo "  nix build .#analyze-orbits $(readlink result-cargo2nix-perf)"
