@@ -20,6 +20,22 @@ The **meta-introspector** dataset contains unified indexes and analysis results 
 - **Telemetry data** from Rust compilation
 - **Moonshine analysis** of ELF binaries
 
+## 🚀 Quick Start: Bootstrap
+
+### Single Command
+
+```bash
+./bootstrap.sh
+```
+
+Run repeatedly to iterate. Each run:
+1. Builds via Nix (with perf recording)
+2. Generates self-metadata
+3. Commits changes
+4. Stores perf data in `/nix/store/`
+
+See [BOOTSTRAP.md](BOOTSTRAP.md) for details.
+
 ## 🚀 Quick Start: Build with Telemetry
 
 ### 1. Queue Projects for Building
