@@ -16,8 +16,8 @@ nix build --impure --expr '
     src = ./.;
     installPhase = ''
       mkdir -p $out/perf
-      cp ${./cargo2nix.perf.data} $out/perf/build.perf.data || true
-      cp ${./cargo2nix.log} $out/perf/build.log || true
+      cp cargo2nix.perf.data $out/perf/build.perf.data || true
+      cp cargo2nix.log $out/perf/build.log || true
     '';
   }
 ' -o result-cargo2nix-perf

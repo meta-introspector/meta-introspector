@@ -33,18 +33,12 @@ echo ""
 # Phase 1: Build via Nix (stores perf in /nix/store)
 echo "📦 Phase 1: Nix build"
 BUILD_HASH=$(git rev-parse HEAD)
-STORE_PATH="/nix/store/*-zos-$BUILD_HASH"
 
-# Check if already built
-if ls $STORE_PATH 2>/dev/null; then
-    echo "  ✓ Already built: $STORE_PATH"
-    echo "  Reusing existing build"
-else
-    echo "  Building..."
-    if ! nix build .#defaultPackage.x86_64-linux --no-link 2>&1 | tail -5; then
-        echo "❌ Build failed - stopping"
-        exit 1
-    fi
+# Build Rust tools only (skip WASM for now)
+echo "  Building Rust tools..."
+if ! cargo build --release 2>&1 | tail -5; then
+    echo "❌ Build failed - stopping"
+    exit 1
 fi
 echo "✅ Build phase complete"
 echo ""
