@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Enable perf recording if requested
+if [ "${PERF_RECORD:-0}" = "1" ]; then
+    exec perf record -g -o bootstrap.perf.data -- "$0" "$@"
+fi
+
 echo "🚀 ZOS Bootstrap - Building the complete system"
 echo "================================================"
 echo ""
