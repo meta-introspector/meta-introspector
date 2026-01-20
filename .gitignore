@@ -40,3 +40,9 @@ locate-recent
 git-proxy/target/
 git-proxy/*.log
 FILE_GIT_MAPPING.csv
+
+# Perf data and traces (stored in Nix store)
+*.perf.data
+*.strace
+zos-results/*/performance.*
+zos-results/*/reception.*

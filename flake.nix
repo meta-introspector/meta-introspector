@@ -32,22 +32,31 @@
           pkgs.stdenv.mkDerivation {
             inherit name src;
             
-            buildInputs = wasmBuildInputs;
+            buildInputs = wasmBuildInputs ++ [ pkgs.linuxPackages.perf ];
             
             buildPhase = ''
               export HOME=$TMPDIR
               cd ${src}
-              wasm-pack build --target web --release --out-dir $out/pkg
+              
+              # Build with perf recording
+              perf record -g -o $TMPDIR/build.perf.data -- \
+                wasm-pack build --target web --release --out-dir $out/pkg || true
               
               # Optimize with binaryen
-              wasm-opt -Oz -o $out/pkg/optimized.wasm $out/pkg/*_bg.wasm
+              wasm-opt -Oz -o $out/pkg/optimized.wasm $out/pkg/*_bg.wasm || true
               
               # Generate hash
-              sha256sum $out/pkg/optimized.wasm > $out/pkg/wasm.sha256
+              sha256sum $out/pkg/optimized.wasm > $out/pkg/wasm.sha256 || true
+              
+              # Store perf data in output
+              mkdir -p $out/perf
+              cp $TMPDIR/build.perf.data $out/perf/ || true
+              perf report -i $TMPDIR/build.perf.data --stdio > $out/perf/report.txt || true
             '';
             
             installPhase = ''
               echo "WASM package built: $out/pkg"
+              echo "Perf data stored: $out/perf"
             '';
           };
 

@@ -21,12 +21,14 @@ echo ""
 # Phase 3: Commit iteration
 echo "💾 Phase 3: Commit"
 git add -A
+# Exclude perf data from git
+git reset HEAD '*.perf.data' '*.strace' 2>/dev/null || true
 if git diff --cached --quiet; then
     echo "  No changes"
 else
     git commit -m "chore: bootstrap iteration $(date +%s)" || true
 fi
-echo "✅ Committed"
+echo "✅ Committed (perf data in Nix store only)"
 echo ""
 
 # Phase 4: Status
