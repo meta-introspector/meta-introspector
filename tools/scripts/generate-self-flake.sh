@@ -29,7 +29,9 @@ cat > self/flake.nix <<EOF
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    rust-overlay.url = "github:oxalica/rust-overlay";
+    
+    # Unity: Central control system
+    unity.url = "github:meta-introspector/meta-introspector/v1?dir=zos/unity";
     
     self-src = {
       url = "github:$OWNER/$REPO/$BRANCH";
@@ -37,38 +39,29 @@ cat > self/flake.nix <<EOF
     };
   };
 
-  outputs = { self, nixpkgs, rust-overlay, self-src }:
+  outputs = { self, nixpkgs, unity, self-src }:
     let
       system = "x86_64-linux";
-      overlays = [ (import rust-overlay) ];
-      pkgs = import nixpkgs { inherit system overlays; };
+      pkgs = import nixpkgs { inherit system; };
       
       metadata = if builtins.pathExists "\${self-src}/zos/zos.toml"
         then builtins.fromTOML (builtins.readFile "\${self-src}/zos/zos.toml")
         else {};
       
-      isRust = builtins.pathExists "\${self-src}/Cargo.toml";
-      
     in {
-      packages.\${system}.default = if isRust then
-        pkgs.rustPlatform.buildRustPackage {
-          pname = "$REPO";
-          version = "git-\${builtins.substring 0 7 metadata.repo.commit or "unknown"}";
-          src = self-src;
-          cargoLock.lockFile = "\${self-src}/Cargo.lock";
-        }
-      else
-        pkgs.stdenv.mkDerivation {
-          name = "$REPO";
-          src = self-src;
-          installPhase = "mkdir -p \$out && cp -r . \$out/";
-        };
+      packages.\${system}.default = unity.lib.mkPackage {
+        pname = "$REPO";
+        src = self-src;
+      };
       
       packages.\${system}.metadata = pkgs.writeTextFile {
         name = "$REPO-metadata";
         text = builtins.toJSON metadata;
         destination = "/metadata.json";
       };
+      
+      # Inherit unity dev shell
+      devShells.\${system}.default = unity.devShells.\${system}.default;
     };
 }
 EOF
