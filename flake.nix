@@ -28,18 +28,58 @@
           nodejs
         ];
         
-        # Orbit extraction tool
+        # Orbit analysis - takes perf data as input
+        analyze-orbits = perfData: pkgs.stdenv.mkDerivation {
+          name = "orbit-analysis";
+          src = ./.;
+          buildInputs = [ pkgs.linuxPackages.perf rustToolchain ];
+          
+          buildPhase = ''
+            cargo build --release --bin extract_orbits
+            
+            # Run analysis on input perf data
+            if [ -f "${perfData}/perf/build.perf.data" ]; then
+              ./target/release/extract_orbits "${perfData}/perf/build.perf.data" > orbits.txt
+            else
+              echo "No perf data in input" > orbits.txt
+            fi
+          '';
+          
+          installPhase = ''
+            mkdir -p $out
+            cp orbits.txt $out/
+          '';
+        };
+        
+        # Orbit extraction tool (standalone)
         extract-orbits = pkgs.rustPlatform.buildRustPackage {
           pname = "extract-orbits";
           version = "0.1.0";
           src = ./.;
           cargoLock.lockFile = ./Cargo.lock;
+          
+          # Find latest perf data from store
+          buildInputs = [ pkgs.linuxPackages.perf ];
+          
           buildPhase = ''
             cargo build --release --bin extract_orbits
+            
+            # Find perf data in store
+            PERF_DATA=$(find /nix/store -name "build.perf.data" -type f 2>/dev/null | head -1)
+            
+            if [ -n "$PERF_DATA" ]; then
+              echo "Found perf data: $PERF_DATA"
+              ./target/release/extract_orbits "$PERF_DATA" > orbits.txt
+            else
+              echo "No perf data found in store"
+              echo "Run bootstrap first to generate perf data"
+            fi
           '';
+          
           installPhase = ''
-            mkdir -p $out/bin
+            mkdir -p $out/bin $out/results
             cp target/release/extract_orbits $out/bin/
+            cp orbits.txt $out/results/ 2>/dev/null || true
           '';
         };
 
