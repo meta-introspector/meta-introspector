@@ -33,9 +33,10 @@ Explicitly:
 - **Genus 2 at p = 37** (the break)
 
 ### 71: The Boundary
+- Last genus 0 prime
 - Maximum constant size (Const71)
-- Last prime in foundation
-- Natural cutoff
+- Final complete prime
+- After 71: System spins into incompleteness
 
 ## The Structure
 
