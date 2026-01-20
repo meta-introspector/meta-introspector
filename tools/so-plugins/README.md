@@ -24,6 +24,12 @@ All ZOS infrastructure as SO plugins loaded by zos_server.
 - Proxies to nix-serve
 - Logs: `zos_proxy.log`
 
+### LLM Proxy (`llm-proxy`)
+- Port: 11435
+- Proxies to Ollama (11434)
+- Logs: `zos_llm.log`
+- Audits all LLM requests/responses
+
 ### Block Collector (`block-collector`)
 - Existing: Solana block collection
 
@@ -55,7 +61,8 @@ zos_server
   ├── dns-server (5353)      - DNS + MITM logging
   ├── file-proxy (8080)      - File serving
   ├── github-proxy (9418)    - Git mirror
-  └── nix-proxy (5000)       - Nix binary cache
+  ├── nix-proxy (5000)       - Nix binary cache
+  └── llm-proxy (11435)      - Ollama LLM auditing
 ```
 
 All logged to `zos_*.log` for audit trail.
