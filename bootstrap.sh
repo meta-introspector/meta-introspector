@@ -36,10 +36,16 @@ BUILD_HASH=$(git rev-parse HEAD)
 
 # Build Rust tools only (skip WASM for now)
 echo "  Building Rust tools..."
-if ! cargo build --release 2>&1 | tail -5; then
-    echo "❌ Build failed - stopping"
+BUILD_LOG=$(mktemp)
+if ! cargo build --release 2>&1 | tee "$BUILD_LOG"; then
+    echo ""
+    echo "❌ Build failed - showing errors:"
+    echo "=================================="
+    grep -A10 "^error" "$BUILD_LOG" | head -50
+    rm "$BUILD_LOG"
     exit 1
 fi
+rm "$BUILD_LOG"
 echo "✅ Build phase complete"
 echo ""
 
