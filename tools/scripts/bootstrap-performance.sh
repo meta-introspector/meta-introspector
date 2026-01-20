@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "🎭 ZOS Bootstrap Performance - Recording the entire chain"
-echo "=========================================================="
+echo "🎭 ZOS Bootstrap Performance - Recording MES from seed"
+echo "======================================================="
 
 OUT="zos-results/bootstrap-performance"
 mkdir -p "$OUT"
 
-# Performance: The bootstrap itself
-echo "🎬 Act 1: The Performance (building from seed)"
+# Performance: Build MES from 357 bytes using Guix
+echo "🎬 Act 1: The Performance (Guix building MES from seed)"
 perf record -g -o "$OUT/performance.perf.data" -- \
 strace -f -o "$OUT/performance.strace" -e trace=all -- \
-  ./bootstrap.sh 2>&1 | tee "$OUT/performance.log"
+  guix build --no-substitutes mes 2>&1 | tee "$OUT/performance.log"
 
 echo ""
 echo "🎧 Act 2: The Reception (analyzing the traces)"
