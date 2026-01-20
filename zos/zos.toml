@@ -1,21 +1,21 @@
 [repo]
 remote = "https://github.com/meta-introspector/meta-introspector"
 branch = "singularity-clean"
-commit = "b9d5b4ac2b6994f10a7fdb3e413322e414016ef6"
-commit_count = 470
+commit = "4b9ec5c212d17ec6e5a202567913cb124152f232"
+commit_count = 494
 
 [stats]
-total_files = 19102
-rust_files = 499
-nix_files = 147
-toml_files = 57
+total_files = 19173
+rust_files = 521
+nix_files = 150
+toml_files = 63
 primary_language = "rust"
 contributors = 4
 
 [timeline]
 first_commit = "2026-01-11 17:39:26 -0500
 unknown"
-last_commit = "2026-01-20 10:09:05 -0500"
+last_commit = "2026-01-20 13:32:51 -0500"
 
 [classification]
 # Mathematical description of repo
