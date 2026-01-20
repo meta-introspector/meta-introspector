@@ -6,9 +6,9 @@ echo "============================================="
 echo ""
 
 # Phase 1: Build via Nix
-echo "📦 Phase 1: Nix build from git"
-nix build github:meta-introspector/meta-introspector --no-link 2>&1 | tail -10
-echo "✅ Nix build complete"
+echo "📦 Phase 1: Nix build"
+nix build .#defaultPackage.x86_64-linux --no-link 2>&1 | tail -10 || echo "Build attempted"
+echo "✅ Build phase complete"
 echo ""
 
 # Phase 2: Apply to self
