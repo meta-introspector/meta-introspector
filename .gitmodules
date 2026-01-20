@@ -46,3 +46,6 @@
 [submodule "cargo2nix-fresh"]
 	path = cargo2nix-fresh
 	url = https://github.com/cargo2nix/cargo2nix.git
+[submodule "tools/template-repo"]
+	path = tools/template-repo
+	url = https://github.com/meta-introspector/tool-template-repo
