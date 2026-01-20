@@ -16,7 +16,10 @@ if ls $STORE_PATH 2>/dev/null; then
     echo "  Reusing existing build"
 else
     echo "  Building..."
-    nix build .#defaultPackage.x86_64-linux --no-link 2>&1 | tail -5 || echo "  Build attempted"
+    if ! nix build .#defaultPackage.x86_64-linux --no-link 2>&1 | tail -5; then
+        echo "❌ Build failed - stopping"
+        exit 1
+    fi
 fi
 echo "✅ Build phase complete"
 echo ""
