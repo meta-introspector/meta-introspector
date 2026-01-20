@@ -6,7 +6,7 @@ echo "============================================"
 
 # Generate Cargo.nix with perf recording
 perf record -g -o cargo2nix.perf.data -- \
-  nix run github:cargo2nix/cargo2nix -- -f 2>&1 | tee cargo2nix.log
+  nix run github:cargo2nix/cargo2nix -- -f Cargo.nix 2>&1 | tee cargo2nix.log
 
 # Build a derivation that stores the perf data
 nix build --impure --expr '
