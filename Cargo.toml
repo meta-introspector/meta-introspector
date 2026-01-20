@@ -74,6 +74,14 @@ name = "zos_server"
 path = "zos_server.rs"
 
 [[bin]]
+name = "zos"
+path = "zos.rs"
+
+[[bin]]
+name = "cargo_audit"
+path = "cargo_audit.rs"
+
+[[bin]]
 name = "extract_urls_from_packs"
 path = "extract_urls_from_packs.rs"
 
