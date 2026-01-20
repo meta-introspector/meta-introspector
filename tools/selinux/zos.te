@@ -1,0 +1,45 @@
+policy_module(zos, 1.0.0)
+
+# ZOS domain for audited processes
+type zos_audited_t;
+type zos_audited_exec_t;
+domain_type(zos_audited_t)
+domain_entry_file(zos_audited_t, zos_audited_exec_t)
+
+# ZOS server domain
+type zos_server_t;
+type zos_server_exec_t;
+init_daemon_domain(zos_server_t, zos_server_exec_t)
+
+# ZOS log files
+type zos_log_t;
+logging_log_file(zos_log_t)
+
+# Allow ZOS server to bind to proxy ports
+allow zos_server_t self:tcp_socket { create_stream_socket_perms };
+corenet_tcp_bind_generic_node(zos_server_t)
+allow zos_server_t unreserved_port_t:tcp_socket { name_bind };
+
+# Allow ZOS server to write logs
+allow zos_server_t zos_log_t:file { create_file_perms append_file_perms };
+
+# Audited processes can only access network through ZOS proxies
+allow zos_audited_t self:tcp_socket { create_stream_socket_perms };
+allow zos_audited_t zos_server_t:tcp_socket { connectto };
+
+# Deny direct network access from audited processes
+neverallow zos_audited_t port_type:tcp_socket { name_bind name_connect };
+neverallow zos_audited_t port_type:udp_socket { name_bind };
+
+# Allow audited processes to read from /nix/store (read-only)
+allow zos_audited_t nix_store_t:dir { read getattr search };
+allow zos_audited_t nix_store_t:file { read getattr execute };
+
+# Deny audited processes from writing to /nix/store
+neverallow zos_audited_t nix_store_t:file { write append };
+
+# Allow file access logging
+allow zos_audited_t zos_log_t:file { append };
+
+# Transition to zos_audited_t when running under cgexec
+domain_auto_trans(unconfined_t, zos_audited_exec_t, zos_audited_t)

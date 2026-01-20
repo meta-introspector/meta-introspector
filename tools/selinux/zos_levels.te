@@ -1,0 +1,65 @@
+policy_module(zos_levels, 1.0.0)
+
+# ZOS 7-Level Security Model
+# Each level can only communicate with level below
+
+# Level 0: Hardware/Kernel
+type zos_level0_t;
+domain_type(zos_level0_t)
+
+# Level 1: Hypervisor/SELinux
+type zos_level1_t;
+domain_type(zos_level1_t)
+
+# Level 2: System Services (DNS, proxies)
+type zos_level2_t;
+domain_type(zos_level2_t)
+
+# Level 3: Build System (Nix)
+type zos_level3_t;
+domain_type(zos_level3_t)
+
+# Level 4: Language Runtime (Rust, LLVM)
+type zos_level4_t;
+domain_type(zos_level4_t)
+
+# Level 5: Application Code
+type zos_level5_t;
+domain_type(zos_level5_t)
+
+# Level 6: User Interface (LLM, CLI)
+type zos_level6_t;
+domain_type(zos_level6_t)
+
+# Level 1 can talk to Level 0
+allow zos_level1_t zos_level0_t:process { signal };
+
+# Level 2 can talk to Level 1
+allow zos_level2_t zos_level1_t:unix_stream_socket { connectto };
+
+# Level 3 can talk to Level 2
+allow zos_level3_t zos_level2_t:tcp_socket { connect };
+
+# Level 4 can talk to Level 3
+allow zos_level4_t zos_level3_t:file { read };
+
+# Level 5 can talk to Level 4
+allow zos_level5_t zos_level4_t:process { sigchld };
+
+# Level 6 can talk to Level 5
+allow zos_level6_t zos_level5_t:tcp_socket { connect };
+
+# Deny all upward communication
+neverallow zos_level0_t zos_level1_t:process *;
+neverallow zos_level1_t zos_level2_t:process *;
+neverallow zos_level2_t zos_level3_t:process *;
+neverallow zos_level3_t zos_level4_t:process *;
+neverallow zos_level4_t zos_level5_t:process *;
+neverallow zos_level5_t zos_level6_t:process *;
+
+# Deny cross-level communication (skip levels)
+neverallow zos_level2_t zos_level0_t:process *;
+neverallow zos_level3_t { zos_level0_t zos_level1_t }:process *;
+neverallow zos_level4_t { zos_level0_t zos_level1_t zos_level2_t }:process *;
+neverallow zos_level5_t { zos_level0_t zos_level1_t zos_level2_t zos_level3_t }:process *;
+neverallow zos_level6_t { zos_level0_t zos_level1_t zos_level2_t zos_level3_t zos_level4_t }:process *;
