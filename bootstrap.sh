@@ -5,6 +5,31 @@ echo "🚀 ZOS Bootstrap - Smart iteration"
 echo "==================================="
 echo ""
 
+# Phase 0: Generate Cargo.nix with perf recording
+echo "📋 Phase 0: Cargo.nix generation (with perf)"
+if [ ! -f Cargo.nix ] || [ Cargo.lock -nt Cargo.nix ]; then
+    echo "  Recording cargo2nix with perf+strace..."
+    ./tools/scripts/record-cargo2nix.sh 2>&1 | tail -10 || echo "  Generation attempted"
+    
+    # Store reference to perf data in HF
+    if [ -f cargo2nix.perf.data ]; then
+        mkdir -p hf-build-telemetry-upload/perf-refs
+        cat > hf-build-telemetry-upload/perf-refs/cargo2nix-$(date +%s).json <<EOF
+{
+  "timestamp": "$(date -Iseconds)",
+  "commit": "$(git rev-parse HEAD)",
+  "tool": "cargo2nix",
+  "perf_size": "$(stat -f%z cargo2nix.perf.data 2>/dev/null || stat -c%s cargo2nix.perf.data)",
+  "hf_dataset": "hf://datasets/introspector/build-telemetry/cargo2nix"
+}
+EOF
+        echo "  ✓ Perf data reference stored"
+    fi
+else
+    echo "  ✓ Cargo.nix up to date"
+fi
+echo ""
+
 # Phase 1: Build via Nix (stores perf in /nix/store)
 echo "📦 Phase 1: Nix build"
 BUILD_HASH=$(git rev-parse HEAD)
