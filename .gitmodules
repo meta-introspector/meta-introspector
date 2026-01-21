@@ -76,3 +76,6 @@
 [submodule "const_71_test/brainfuck/brainfuck-nix"]
 	path = const_71_test/brainfuck/brainfuck-nix
 	url = https://github.com/meta-introspector/brainfuck.nix.git
+[submodule "const_71_test/cubecl/oblichey-reference"]
+	path = const_71_test/cubecl/oblichey-reference
+	url = https://github.com/SimonBrandner/oblichey.git

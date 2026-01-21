@@ -13,6 +13,7 @@
       name = "cuda-71";
       src = pkgs.writeText "const71.cu" ''
         #include <stdio.h>
+        #include <cuda_runtime.h>
         
         __global__ void const71_kernel(int* result) {
           *result = 71;
@@ -20,10 +21,11 @@
         
         int main() {
           int* d_result;
-          int h_result;
+          int h_result = 0;
           
           cudaMalloc(&d_result, sizeof(int));
           const71_kernel<<<1,1>>>(d_result);
+          cudaDeviceSynchronize();
           cudaMemcpy(&h_result, d_result, sizeof(int), cudaMemcpyDeviceToHost);
           cudaFree(d_result);
           

@@ -1,0 +1,8 @@
+[package]
+name = "cubecl-71"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cubecl = "0.9"
+cubecl-cpu = "0.9"
