@@ -29,6 +29,26 @@
           nodejs
         ];
         
+        # Record perf data during build
+        build-with-perf = pkgs.stdenv.mkDerivation {
+          name = "zos-build-with-perf";
+          src = ./.;
+          buildInputs = [ pkgs.linuxPackages.perf rustToolchain ];
+          
+          buildPhase = ''
+            # Record perf during cargo build
+            perf record -g -o build.perf.data -- \
+              cargo build --release --bin extract_orbits --bin zos || true
+          '';
+          
+          installPhase = ''
+            mkdir -p $out/perf $out/bin
+            cp build.perf.data $out/perf/ || true
+            cp target/release/extract_orbits $out/bin/ 2>/dev/null || true
+            cp target/release/zos $out/bin/ 2>/dev/null || true
+          '';
+        };
+        
         # Orbit analysis - takes perf data as input
         analyze-orbits = perfData: pkgs.stdenv.mkDerivation {
           name = "orbit-analysis";
