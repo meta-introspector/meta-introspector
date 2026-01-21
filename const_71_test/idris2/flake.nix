@@ -8,6 +8,7 @@
     packages.${system}.default = pkgs.stdenv.mkDerivation {
       name = "const71-idris2";
       buildInputs = [ pkgs.idris2 ];
+      dontUnpack = true;
       src = pkgs.writeText "const71.idr" ''
         module Const71
         x : Nat

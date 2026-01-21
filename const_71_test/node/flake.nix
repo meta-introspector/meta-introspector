@@ -17,6 +17,7 @@
         '';
         
         buildInputs = [ pkgs.nodejs ];
+      dontUnpack = true;
         
         unpackPhase = "true";
         

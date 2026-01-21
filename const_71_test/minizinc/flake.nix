@@ -8,6 +8,7 @@
     packages.${system}.default = pkgs.stdenv.mkDerivation {
       name = "const71-minizinc";
       buildInputs = [ pkgs.minizinc ];
+      dontUnpack = true;
       src = pkgs.writeText "const71.mzn" ''
         var 71..71: x;
         constraint x = 71;

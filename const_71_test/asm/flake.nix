@@ -34,6 +34,7 @@
         '';
         
         buildInputs = [ pkgs.nasm ];
+      dontUnpack = true;
         
         unpackPhase = "true";
         

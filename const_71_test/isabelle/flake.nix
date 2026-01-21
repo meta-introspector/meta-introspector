@@ -8,6 +8,7 @@
     packages.${system}.default = pkgs.stdenv.mkDerivation {
       name = "const71-isabelle";
       buildInputs = [ pkgs.isabelle ];
+      dontUnpack = true;
       src = pkgs.writeText "Const71.thy" ''
         theory Const71
         imports Main

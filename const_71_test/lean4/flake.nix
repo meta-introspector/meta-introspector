@@ -19,6 +19,7 @@
         '';
         
         buildInputs = [ pkgs.lean4 ];
+      dontUnpack = true;
         
         unpackPhase = "true";
         

@@ -8,6 +8,7 @@
     packages.${system}.default = pkgs.stdenv.mkDerivation {
       name = "const71-smt2";
       buildInputs = [ pkgs.cvc5 ];
+      dontUnpack = true;
       src = pkgs.writeText "const71.smt2" ''
         (set-logic QF_LIA)
         (declare-const x Int)

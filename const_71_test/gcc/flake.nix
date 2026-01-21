@@ -24,6 +24,7 @@
         '';
         
         buildInputs = [ pkgs.gcc ];
+      dontUnpack = true;
         
         unpackPhase = "true";
         

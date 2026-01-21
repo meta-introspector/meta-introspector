@@ -23,6 +23,7 @@
         '';
         
         buildInputs = [ pkgs.bf ];
+      dontUnpack = true;
         
         unpackPhase = "true";
         

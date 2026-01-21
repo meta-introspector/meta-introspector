@@ -17,6 +17,7 @@
         '';
         
         buildInputs = [ pkgs.ghc ];
+      dontUnpack = true;
         
         unpackPhase = "true";
         

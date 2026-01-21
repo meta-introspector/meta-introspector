@@ -8,6 +8,7 @@
     packages.${system}.default = pkgs.stdenv.mkDerivation {
       name = "const71-datalog";
       buildInputs = [ pkgs.souffle ];
+      dontUnpack = true;
       src = pkgs.writeText "const71.dl" ''
         .decl x(n:number)
         x(71).

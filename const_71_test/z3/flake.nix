@@ -8,6 +8,7 @@
     packages.${system}.default = pkgs.stdenv.mkDerivation {
       name = "const71-z3";
       buildInputs = [ pkgs.z3 ];
+      dontUnpack = true;
       src = pkgs.writeText "const71.smt2" ''
         (declare-const x Int)
         (assert (= x 71))

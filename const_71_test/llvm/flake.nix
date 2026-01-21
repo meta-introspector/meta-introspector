@@ -24,6 +24,7 @@
         '';
         
         buildInputs = [ pkgs.clang pkgs.llvm ];
+      dontUnpack = true;
         
         unpackPhase = "true";
         

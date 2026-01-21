@@ -17,6 +17,7 @@
         '';
         
         buildInputs = [ pkgs.python3 ];
+      dontUnpack = true;
         
         unpackPhase = "true";
         

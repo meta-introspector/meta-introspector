@@ -17,6 +17,7 @@
         '';
         
         buildInputs = [ pkgs.ocaml ];
+      dontUnpack = true;
         
         unpackPhase = "true";
         

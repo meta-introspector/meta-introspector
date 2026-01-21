@@ -8,6 +8,7 @@
     packages.${system}.default = pkgs.stdenv.mkDerivation {
       name = "const71-coq";
       buildInputs = [ pkgs.coq ];
+      dontUnpack = true;
       src = pkgs.writeText "const71.v" ''
         Definition x : nat := 71.
         Theorem x_is_71 : x = 71.
