@@ -49,3 +49,6 @@
 [submodule "tools/template-repo"]
 	path = tools/template-repo
 	url = https://github.com/meta-introspector/tool-template-repo
+[submodule "mes-transformer/libtorch-nix"]
+	path = mes-transformer/libtorch-nix
+	url = https://github.com/tscholak/libtorch-nix.git
