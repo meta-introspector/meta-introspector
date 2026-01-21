@@ -2,7 +2,7 @@
   description = "Mes-Transformer: Computational Omniscience Architecture";
   
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/master";
     mes-bootstrap.url = "path:../mes-bootstrap-proof";
   };
   
@@ -10,13 +10,35 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      config = {
-        allowUnfree = true;
-        cudaSupport = true;
-      };
+      config.allowUnfree = true;
     };
     
-    libtorch = pkgs.libtorch-bin.override { cudaSupport = true; };
+    # Custom libtorch with everything in one output
+    libtorch = pkgs.stdenv.mkDerivation {
+      pname = "libtorch";
+      version = "2.9.0";
+      src = pkgs.fetchzip {
+        name = "libtorch-shared-with-deps-2.9.0-cu130.zip";
+        url = "https://download.pytorch.org/libtorch/cu130/libtorch-shared-with-deps-2.9.0%2Bcu130.zip";
+        hash = "sha256-u8l7JIy2rdk6nxv6UxNmFcfOVcpjvZnIEr5CczVNRDQ=";
+      };
+      
+      nativeBuildInputs = [ pkgs.patchelf ];
+      
+      installPhase = ''
+        mkdir -p $out
+        cp -r include $out/include
+        cp -r share $out/share
+        install -Dm755 -t $out/lib lib/*${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}*
+        
+        # Fix cmake paths
+        substituteInPlace $out/share/cmake/Torch/TorchConfig.cmake \
+          --replace \''${TORCH_INSTALL_PREFIX}/lib "$out/lib"
+        
+        substituteInPlace $out/share/cmake/Caffe2/Caffe2Targets-release.cmake \
+          --replace \''${_IMPORT_PREFIX}/lib "$out/lib"
+      '';
+    };
     
   in {
     packages.${system} = {
@@ -35,29 +57,10 @@
         ];
         
         LIBTORCH = "${libtorch}";
-        LIBTORCH_LIB = "${libtorch}/lib";
-        LIBTORCH_INCLUDE = "${libtorch.dev}/include";
         LIBTORCH_CXX11_ABI = "1";
         
         buildFeatures = [ "gpu" ];
       };
-    };
-    
-    devShells.${system}.default = pkgs.mkShell {
-      packages = [
-        pkgs.rustc
-        pkgs.cargo
-        libtorch
-      ];
-      
-      shellHook = ''
-        export LIBTORCH="${libtorch}"
-        export LIBTORCH_LIB="${libtorch}/lib"
-        export LIBTORCH_INCLUDE="${libtorch.dev}/include"
-        export LD_LIBRARY_PATH="${libtorch}/lib:$LD_LIBRARY_PATH"
-        echo "🎮 LibTorch with CUDA ready"
-        echo "   LibTorch: ${libtorch}"
-      '';
     };
   };
 }

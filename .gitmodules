@@ -52,3 +52,9 @@
 [submodule "mes-transformer/libtorch-nix"]
 	path = mes-transformer/libtorch-nix
 	url = https://github.com/tscholak/libtorch-nix.git
+[submodule "mes-transformer/cpp-nix-experiment"]
+	path = mes-transformer/cpp-nix-experiment
+	url = https://github.com/devsamuelv/cpp-nix-experiment.git
+[submodule "const_71_test/python/mojo"]
+	path = const_71_test/python/mojo
+	url = https://github.com/franckrasolo/mojo-playground.nix.git
