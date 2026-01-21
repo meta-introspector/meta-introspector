@@ -1,0 +1,15 @@
+🧪 Testing 71 languages (5s timeout each)...
+
+agda                 ❌ Wrong: warning: unknown setting 'git-config'
+asm                  ❌ Wrong: warning: unknown setting 'git-config'
+asm_aarch64          ❌ Wrong: warning: unknown setting 'git-config'
+asm_mips             ❌ Wrong: warning: unknown setting 'git-config'
+asm_riscv            ❌ Wrong: warning: unknown setting 'git-config'
+asm_wasm             ❌ Wrong: warning: unknown setting 'git-config'
+asm_x86_64           ❌ Wrong: warning: unknown setting 'git-config'
+bash                 ❌ Wrong: warning: unknown setting 'git-config'
+bazel                ❌ Wrong: warning: unknown setting 'git-config'
+brainfuck            ❌ Wrong: warning: unknown setting 'git-config'
+chisel               ❌ Wrong: warning: unknown setting 'git-config'
+cirq                 ❌ Wrong: warning: unknown setting 'git-config'
+cmake                

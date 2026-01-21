@@ -1,0 +1,20 @@
+🔍 Analyzing top IPs for: agda_1768990025_build.perf
+
+| IP Address       | Samples | Galois | Coverage |
+|------------------|---------|--------|----------|
+| 7ffff76bdabe     |   21765 | GF(2^13) | 100.0% 🟢 user |
+| ffffffffffffffff |   19121 | GF(2^13) | 100.0% 🔴 kernel |
+| 7ffff76bc7ba     |   16435 | GF(2^12) | 100.0% 🟢 user |
+| 7ffff76bc2b1     |    9739 | GF(2^12) | 100.0% 🟢 user |
+| 7ffff769261b     |    6389 | GF(2^12) | 100.0% 🟢 user |
+| 7ffff76b8914     |    5243 | GF(2^12) | 100.0% 🟢 user |
+| ffffffff95400130 |    5229 | GF(2^12) | 100.0% 🔴 kernel |
+| ffffffff9521cb21 |    5085 | GF(2^12) | 100.0% 🔴 kernel |
+| 7ffff76b6500     |    4756 | GF(2^12) | 100.0% 🟢 user |
+| 7ffff695e0f2     |    4149 | GF(2^12) | 100.0% 🟢 user |
+
+📊 Summary:
+  Top 10 IPs cover 97911/325549 samples (30.1%)
+
+🔐 Instruction Fingerprint:
+  99b8a20c29253366d7dc4880f56da2f8cb3773b3f031fe31864c80f4ed1efa29

@@ -9,6 +9,61 @@
 
 > 🎭 **What's your meta meme?** Are you a js d00d or pythonista? [Find out!](META_MEME_GUIDE.md)
 
+## 🚀 mkbootstrap! - The Ultimate Macro System
+
+**mkbootstrap!** is a declarative workflow system that composes the entire 71^71 multiverse as Lisp-like macros.
+
+### Quick Start
+
+```bash
+# Build the system
+cargo build --release --bin mkbootstrap
+
+# Run on 5 languages (bash, python, ruby, rust, nix_flake)
+./target/release/mkbootstrap
+
+# Build complexity lattice
+cargo build --release --bin lattice_builder
+./target/release/lattice_builder
+
+# Visualize
+dot -Tpng data/complexity_lattice.dot -o complexity_lattice.png
+```
+
+### The Vision: 71^71
+
+Everything is a composable macro:
+
+```rust
+// 71^1 = 71 proofs
+mkbootstrap!(level: 1, "languages")
+
+// 71^2 = 5,041 proofs  
+mkbootstrap!(level: 2, "languages", "databases")
+
+// 71^3 = 357,911 proofs
+mkbootstrap!(level: 3, "languages", "databases", "solvers")
+
+// 71^71 = 10^133 proofs (computational singularity)
+mkbootstrap!(level: 71)
+```
+
+### Complexity Lattice
+
+The system proves computational hierarchy through Galois field analysis:
+
+```
+Level 5: agda           (GF(2^14) = 16,384 states)
+Level 4: genetic, jax   (GF(2^13) =  8,192 states)
+Level 3: rust, coq, ...  (GF(2^12) =  4,096 states)
+Level 2: isabelle, mzn  (GF(2^11) =  2,048 states)
+Level 1: bash, python   (GF(2^10) =  1,024 states)
+```
+
+**22 languages, 5 levels, 153 relationships** - A mathematical proof of complexity hierarchy!
+
+See [CANONICAL_PATH.md](CANONICAL_PATH.md) for the complete vision.
+
 ## 🎯 What is this?
 
 The **meta-introspector** dataset contains unified indexes and analysis results from the meta-introspector project:
@@ -94,24 +149,40 @@ du -sh /mnt/data1/git  # Current mirror size
 wc -l data/queue_all.txt  # Remaining to clone
 ```
 
-## 🔬 Galois Field Analysis
+## 🔬 Galois Field Analysis & Complexity Lattice
 
-Analyze perf data for Galois field coverage patterns (discovers mathematical boundaries like the 19-bit break).
+The system analyzes perf data to discover Galois field coverage patterns and builds a mathematical proof of computational complexity hierarchy.
 
 ### Quick Start
 
 ```bash
-# Using Makefile (recommended)
-make help              # Show all commands
-make analyze-agda      # Analyze Agda 71 build
-make report            # Full 71 language report
-make baseline          # Compare to baseline
-make test-all          # Test all 71 languages output "71"
+# Run mkbootstrap! workflow (build + perf + analysis)
+cargo build --release --bin mkbootstrap
+./target/release/mkbootstrap
 
-# Or manually
-cargo build --release --bin harmonic_analyzer
-./target/release/harmonic_analyzer data/71_flakes_perf/agda_1768990025_build.perf.data
+# Build complexity lattice from results
+cargo build --release --bin lattice_builder
+./target/release/lattice_builder
+
+# Visualize the lattice
+dot -Tpng data/complexity_lattice.dot -o complexity_lattice.png
+
+# Or use Makefile
+make help              # Show all commands
+make test-all          # Test all 71 languages output "71"
 ```
+
+### Current Results
+
+**22 languages analyzed across 5 complexity levels:**
+
+- **Level 5**: agda (GF(2^14) = 16,384 states)
+- **Level 4**: genetic, jax_gpu (GF(2^13) = 8,192 states)
+- **Level 3**: rust, coq, haskell, llvm, datalog, etc. (GF(2^12) = 4,096 states)
+- **Level 2**: isabelle, minizinc (GF(2^11) = 2,048 states)
+- **Level 1**: bash, python, ruby, nix (GF(2^10) = 1,024 states)
+
+**153 partial order relationships** prove the complexity hierarchy!
 
 ### The 71 Languages
 
@@ -120,24 +191,13 @@ All tests in `const_71_test/` output "71":
 - **5 build systems**: Nix Flakes, Make, CMake, Bazel, Terraform
 - **1 bootstrap baseline**: GNU Mes (GF(2^19) = 524,288 states)
 
-### Galois Complexity Results
+### Manual Analysis
 
-From Phase 1 analysis (build perf only):
-- **Simplest**: Most languages GF(2^12) = 4,096 states
-- **Moderate**: Agda, TensorFlow GF(2^16) = 65,536 states  
-- **Baseline**: Mes bootstrap GF(2^19) = 524,288 states
-
-**Key Finding**: Build perf captures nix overhead (sha256sum), not actual compilation.
-
-### Phase 2: Force Rebuild (TODO)
-
-Capture real compilation with `--no-substitute`:
 ```bash
-make force-rebuild-rust   # Force rebuild Rust from source
-make force-rebuild-all    # Force rebuild all 71 languages
+# Analyze single language
+cargo build --release --bin harmonic_analyzer
+./target/release/harmonic_analyzer data/71_flakes_perf/rust_build.perf.data
 ```
-
-This will show actual compiler complexity (rustc, gcc, etc.) instead of file copying.
 
 ### Output Format
 

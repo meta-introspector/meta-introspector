@@ -1,0 +1,20 @@
+🔍 Analyzing top IPs for: ruby_build.perf
+
+| IP Address       | Samples | Galois | Coverage |
+|------------------|---------|--------|----------|
+| 7ffff3969000     |    1133 | GF(2^12) |  27.7% 🟢 user |
+| ffffffff95400130 |     146 | GF(2^ 8) |  57.0% 🔴 kernel |
+| ffffffff9521cb21 |     141 | GF(2^ 8) |  55.1% 🔴 kernel |
+| 55555559322d     |      87 | GF(2^ 5) | 100.0% ⚪ other |
+| 5555555969b7     |      86 | GF(2^ 5) | 100.0% ⚪ other |
+| 7ffff6d0e74f     |      58 | GF(2^ 5) | 100.0% 🟢 user |
+| ffffffff945eaf40 |      58 | GF(2^ 5) | 100.0% 🔴 kernel |
+| ffffffff944f0729 |      58 | GF(2^ 5) | 100.0% 🔴 kernel |
+| ffffffff944f00d5 |      58 | GF(2^ 5) | 100.0% 🔴 kernel |
+| ffffffff944f0673 |      58 | GF(2^ 5) | 100.0% 🔴 kernel |
+
+📊 Summary:
+  Top 10 IPs cover 1883/4507 samples (41.8%)
+
+🔐 Instruction Fingerprint:
+  68690b7d22d18955f54cdfc219a61e6d093249c38b9049649014be49c3d589c4

@@ -1,0 +1,20 @@
+🔍 Analyzing top IPs for: coq_1768414198_build.perf
+
+| IP Address       | Samples | Galois | Coverage |
+|------------------|---------|--------|----------|
+| ffffffff92400130 |     511 | GF(2^ 8) | 100.0% 🔴 kernel |
+| ffffffff9221cb21 |     449 | GF(2^ 8) | 100.0% 🔴 kernel |
+| 7ffff6e2ecee     |     151 | GF(2^ 8) |  59.0% 🟢 user |
+| ffffffff92400bc7 |     138 | GF(2^ 8) |  53.9% 🔴 kernel |
+| ffffffff92222d83 |     136 | GF(2^ 8) |  53.1% 🔴 kernel |
+| ffffffff9100717d |     134 | GF(2^ 8) |  52.3% 🔴 kernel |
+| ffffffff914f8f3c |     134 | GF(2^ 8) |  52.3% 🔴 kernel |
+| ffffffff910d6d19 |     129 | GF(2^ 8) |  50.4% 🔴 kernel |
+| ffffffff9142b2fd |     127 | GF(2^ 8) |  49.6% 🔴 kernel |
+| ffffffff914f8ec4 |     123 | GF(2^ 8) |  48.0% 🔴 kernel |
+
+📊 Summary:
+  Top 10 IPs cover 2032/9956 samples (20.4%)
+
+🔐 Instruction Fingerprint:
+  8a9a60c3d64df8a61b926ea62dc0298e3ac9c8b4794b8a682315b16634758898

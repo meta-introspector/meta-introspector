@@ -12,6 +12,7 @@
         puts "x = #{x}"
       '';
       nativeBuildInputs = [ pkgs.ruby ];
+      dontUnpack = true;
       buildPhase = ''
         ruby $src > output.txt
         grep -q "x = 71" output.txt || exit 1

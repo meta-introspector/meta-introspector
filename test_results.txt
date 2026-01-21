@@ -1,3 +1,10 @@
-🧪 Testing all 71 languages (10s timeout)...
-
-⏱️  agda: Build timeout
+🏗️  Testing all 71 builds...
+agda                 ✅
+asm                  ✅
+asm_aarch64          ✅
+asm_mips             ✅
+asm_riscv            ✅
+asm_wasm             ✅
+asm_x86_64           ✅
+bash                 ✅
+bazel                

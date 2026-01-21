@@ -1,0 +1,17 @@
+#!/bin/bash
+# Start building toolchain bootstrap
+
+echo "🏗️  Starting nix builder for toolchain bootstrap..."
+echo "This will build bash from source with perf recording"
+echo ""
+
+# Start builder in background
+nohup ./nix_builder.sh watch > nix_builder_toolchain.log 2>&1 &
+BUILDER_PID=$!
+
+echo "✅ Builder started (PID: $BUILDER_PID)"
+echo "📊 Monitor with: tail -f nix_builder_toolchain.log"
+echo "🛑 Stop with: kill $BUILDER_PID"
+echo ""
+echo "Queue status:"
+./nix_builder.sh status | grep "Queue size"

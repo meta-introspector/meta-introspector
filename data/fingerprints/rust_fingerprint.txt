@@ -1,0 +1,20 @@
+🔍 Analyzing top IPs for: rust_build.perf
+
+| IP Address       | Samples | Galois | Coverage |
+|------------------|---------|--------|----------|
+| 7ffff3969000     |     629 | GF(2^ 9) | 100.0% 🟢 user |
+| ffffffff95400130 |     130 | GF(2^ 8) |  50.8% 🔴 kernel |
+| ffffffff9521cb21 |     125 | GF(2^ 8) |  48.8% 🔴 kernel |
+| 5555555969b7     |     100 | GF(2^ 8) |  39.1% ⚪ other |
+| 55555559322d     |      93 | GF(2^ 6) | 100.0% ⚪ other |
+| 7ffff6d0e74f     |      51 | GF(2^ 4) | 100.0% 🟢 user |
+| ffffffff940078cf |      50 | GF(2^ 4) | 100.0% 🔴 kernel |
+| ffffffff945eaf40 |      50 | GF(2^ 4) | 100.0% 🔴 kernel |
+| 555555598fd8     |      50 | GF(2^ 5) | 100.0% ⚪ other |
+| ffffffff944f00d5 |      50 | GF(2^ 4) | 100.0% 🔴 kernel |
+
+📊 Summary:
+  Top 10 IPs cover 1328/3750 samples (35.4%)
+
+🔐 Instruction Fingerprint:
+  6ef7e6ea48730b12a4dcfa4f4e7852c80e23e3a2d5b647550cf6b07df23ddea9

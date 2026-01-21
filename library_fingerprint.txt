@@ -1,0 +1,22 @@
+🔬 Library Usage Fingerprints
+==============================
+
+These show which libraries are most active during build:
+
+=== agda ===
+       508  samples in  libc.so.6) 
+       144  samples in  libc.so.6) 
+
+=== coq ===
+       151  samples in  libc.so.6) 
+        94  samples in  libc.so.6) 
+
+=== rust ===
+       145  samples in  libc.so.6) 
+       116  samples in  libc.so.6) 
+
+=== bash ===
+       130  samples in  libc.so.6) 
+        58  samples in  libc.so.6) 
+        54  samples in  libc.so.6) 
+

@@ -1,0 +1,20 @@
+🔍 Analyzing top IPs for: bash_build.perf
+
+| IP Address       | Samples | Galois | Coverage |
+|------------------|---------|--------|----------|
+| 7ffff3969000     |    4019 | GF(2^12) |  98.1% 🟢 user |
+| ffffffff95400130 |     171 | GF(2^ 8) |  66.8% 🔴 kernel |
+| ffffffff9521cb21 |     167 | GF(2^ 8) |  65.2% 🔴 kernel |
+| 5555555969b7     |     114 | GF(2^ 8) |  44.5% ⚪ other |
+| 55555559322d     |     107 | GF(2^ 8) |  41.8% ⚪ other |
+| 555555598fd8     |      63 | GF(2^ 5) | 100.0% ⚪ other |
+| ffffffff940078cf |      58 | GF(2^ 5) | 100.0% 🔴 kernel |
+| ffffffff944f0729 |      58 | GF(2^ 5) | 100.0% 🔴 kernel |
+| 7ffff6d0e74f     |      58 | GF(2^ 5) | 100.0% 🟢 user |
+| 7ffff396dff0     |      58 | GF(2^ 5) | 100.0% 🟢 user |
+
+📊 Summary:
+  Top 10 IPs cover 4873/9138 samples (53.3%)
+
+🔐 Instruction Fingerprint:
+  2ad663130ab4051d74939be490774999342fe6f7b9104ab9f4ee1c58281abfae

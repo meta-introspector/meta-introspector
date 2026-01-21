@@ -50,6 +50,18 @@ name = "ip_galois"
 path = "ip_galois.rs"
 
 [[bin]]
+name = "workflow_executor"
+path = "src/bin/workflow_executor.rs"
+
+[[bin]]
+name = "mkbootstrap"
+path = "src/bin/mkbootstrap.rs"
+
+[[bin]]
+name = "lattice_builder"
+path = "src/bin/lattice_builder.rs"
+
+[[bin]]
 name = "symbol_resolver"
 path = "symbol_resolver.rs"
 
@@ -1181,3 +1193,11 @@ path = "singularity_example.rs"
 
 [dependencies.mksingularity]
 path = "mksingularity"
+
+[[bin]]
+name = "ip_spectrum"
+path = "ip_spectrum.rs"
+
+[[bin]]
+name = "perf2parquet"
+path = "perf2parquet.rs"
