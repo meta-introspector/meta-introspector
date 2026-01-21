@@ -79,3 +79,6 @@
 [submodule "const_71_test/cubecl/oblichey-reference"]
 	path = const_71_test/cubecl/oblichey-reference
 	url = https://github.com/SimonBrandner/oblichey.git
+[submodule "const_71_test/graphdb/indradb-reference"]
+	path = const_71_test/graphdb/indradb-reference
+	url = https://github.com/indradb/indradb.git
