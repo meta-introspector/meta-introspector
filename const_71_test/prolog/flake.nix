@@ -7,7 +7,7 @@
   in {
     packages.${system}.default = pkgs.stdenv.mkDerivation {
       name = "const71-prolog";
-      buildInputs = [ pkgs.swiProlog ];
+      buildInputs = [ pkgs.swi-prolog ];
       dontUnpack = true;
       src = pkgs.writeText "const71.pl" ''
         x(71).

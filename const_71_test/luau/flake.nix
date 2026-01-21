@@ -16,6 +16,7 @@
       '';
       
       nativeBuildInputs = [ pkgs.luau ];
+      dontUnpack = true;
       
       buildPhase = ''
         # Verify it compiles/runs

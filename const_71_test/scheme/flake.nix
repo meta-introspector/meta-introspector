@@ -14,6 +14,7 @@
         (newline)
       '';
       nativeBuildInputs = [ pkgs.guile ];
+      dontUnpack = true;
       buildPhase = ''
         guile $src > output.txt
         grep -q "x = 71" output.txt || exit 1
