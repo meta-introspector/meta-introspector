@@ -14,7 +14,7 @@
         Theorem x_is_71 : x = 71.
         Proof. reflexivity. Qed.
       '';
-      buildPhase = "coqc $src";
+      buildPhase = "cp $src const71.v && coqc const71.v";
       installPhase = "mkdir -p $out && echo '71' > $out/result.txt";
     };
   };
