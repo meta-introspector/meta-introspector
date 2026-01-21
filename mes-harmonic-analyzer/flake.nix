@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    mes-perf.url = "github:meta-introspector/meta-introspector/singularity-clean?dir=mes-perf-recorder";
+    mes-perf.url = "git+https://github.com/meta-introspector/meta-introspector?ref=singularity-clean&dir=mes-perf-recorder";
   };
 
   outputs = { self, nixpkgs, mes-perf }:
