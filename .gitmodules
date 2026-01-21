@@ -70,3 +70,6 @@
 [submodule "const_71_test/amd/shark-studio"]
 	path = const_71_test/amd/shark-studio
 	url = https://github.com/nod-ai/AMD-SHARK-Studio.git
+[submodule "const_71_test/brainfuck/aoc-nix-reference"]
+	path = const_71_test/brainfuck/aoc-nix-reference
+	url = https://github.com/ritzau/aoc-nix.git
