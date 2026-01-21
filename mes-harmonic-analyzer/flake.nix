@@ -3,9 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    mes-perf.url = "github:meta-introspector/meta-introspector?dir=mes-perf-recorder";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, mes-perf }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -24,8 +25,8 @@
         
         nativeBuildInputs = [ pkgs.perf pythonEnv ];
         
-        # Input: the 5.2GB perf data
-        perfData = "/nix/store/h2wrlgxslwigj7clzxckg9ymx4d1mx2m-mes-bootstrap-perf-1768960423/mes-bootstrap.perf.data";
+        # Input: the 5.2GB perf data from mes-perf flake
+        perfDataDrv = mes-perf.packages.${system}.default;
         
         unpackPhase = "true";
         
@@ -37,12 +38,12 @@
           
           # Extract time series from perf data
           echo "📊 Extracting instruction stream..."
-          ${pkgs.perf}/bin/perf script -i $perfData \
+          ${pkgs.perf}/bin/perf script -i $perfDataDrv/mes-bootstrap.perf.data \
             -F time,ip,sym > $out/instruction-stream.txt
           
           # Extract cycle counts over time
           echo "⏱️  Extracting cycle timeline..."
-          ${pkgs.perf}/bin/perf script -i $perfData \
+          ${pkgs.perf}/bin/perf script -i $perfDataDrv/mes-bootstrap.perf.data \
             -F time,period > $out/cycle-timeline.txt
           
           # Create Python analysis script
