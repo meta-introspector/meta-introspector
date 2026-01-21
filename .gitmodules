@@ -61,3 +61,12 @@
 [submodule "const_71_test/llvm/iree"]
 	path = const_71_test/llvm/iree
 	url = https://github.com/meta-introspector/t1.git
+[submodule "const_71_test/neural/axon"]
+	path = const_71_test/neural/axon
+	url = https://github.com/emer/axon.git
+[submodule "const_71_test/sycl/triSYCL"]
+	path = const_71_test/sycl/triSYCL
+	url = https://github.com/triSYCL/triSYCL.git
+[submodule "const_71_test/amd/shark-studio"]
+	path = const_71_test/amd/shark-studio
+	url = https://github.com/nod-ai/AMD-SHARK-Studio.git
