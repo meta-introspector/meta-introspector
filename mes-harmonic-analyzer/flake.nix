@@ -27,6 +27,8 @@
         # Input: the 5.2GB perf data
         perfData = "/nix/store/h2wrlgxslwigj7clzxckg9ymx4d1mx2m-mes-bootstrap-perf-1768960423/mes-bootstrap.perf.data";
         
+        unpackPhase = "true";
+        
         buildPhase = ''
           mkdir -p $out
           
