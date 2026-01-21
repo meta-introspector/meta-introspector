@@ -10,11 +10,23 @@
       buildInputs = [ pkgs.agda ];
       src = pkgs.writeText "Const71.agda" ''
         module Const71 where
-        open import Data.Nat
-        x : ℕ
-        x = 71
+
+        data Nat : Set where
+          zero : Nat
+          suc  : Nat → Nat
+
+        {-# BUILTIN NATURAL Nat #-}
+
+        const71 : Nat
+        const71 = 71
       '';
-      buildPhase = "agda $src || true";
+      dontUnpack = true;
+      buildPhase = ''
+        mkdir -p /build
+        cp $src /build/Const71.agda
+        cd /build
+        agda Const71.agda
+      '';
       installPhase = "mkdir -p $out && echo '71' > $out/result.txt";
     };
   };
