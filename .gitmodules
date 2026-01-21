@@ -82,3 +82,6 @@
 [submodule "const_71_test/graphdb/indradb-reference"]
 	path = const_71_test/graphdb/indradb-reference
 	url = https://github.com/indradb/indradb.git
+[submodule "const_71_test/graphdb/rust-cuda-reference"]
+	path = const_71_test/graphdb/rust-cuda-reference
+	url = https://github.com/Rust-GPU/Rust-CUDA.git
