@@ -30,14 +30,31 @@ fn main() -> Result<()> {
     
     println!("✅ Processed {} samples", samples.len());
     
-    // Galois Field GF(2^8) analysis
-    println!("\n🔐 GALOIS FIELD GF(2^8):");
-    let mut field_coverage = [0u64; 256];
+    // Galois Field analysis at multiple bit widths
+    println!("\n🔐 GALOIS FIELD COVERAGE:");
+    
+    // GF(2^8) - 8 bits
+    let mut field8 = [0u64; 256];
     for &sample in &samples {
-        field_coverage[(sample % 256) as usize] += 1;
+        field8[(sample % 256) as usize] += 1;
     }
-    let unique = field_coverage.iter().filter(|&&x| x > 0).count();
-    println!("  Coverage: {}/256 ({:.1}%)", unique, unique as f64 / 256.0 * 100.0);
+    let unique8 = field8.iter().filter(|&&x| x > 0).count();
+    println!("  GF(2^8):  {}/256 ({:.1}%)", unique8, unique8 as f64 / 256.0 * 100.0);
+    
+    // GF(2^16) - 16 bits
+    let mut field16 = vec![0u64; 65536];
+    for &sample in &samples {
+        field16[(sample % 65536) as usize] += 1;
+    }
+    let unique16 = field16.iter().filter(|&&x| x > 0).count();
+    println!("  GF(2^16): {}/65536 ({:.1}%)", unique16, unique16 as f64 / 65536.0 * 100.0);
+    
+    // GF(2^32) - 32 bits (sample count)
+    let unique32 = samples.len();
+    println!("  GF(2^32): {}/4294967296 ({:.6}%)", unique32, unique32 as f64 / 4294967296.0 * 100.0);
+    
+    // GF(2^64) - 64 bits (theoretical)
+    println!("  GF(2^64): {}/18446744073709551616 ({:.12}%)", unique32, unique32 as f64 / 18446744073709551616.0 * 100.0);
     
     // Top record types
     println!("\n📊 TOP RECORD TYPES:");
