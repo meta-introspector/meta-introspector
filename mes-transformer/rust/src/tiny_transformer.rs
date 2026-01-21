@@ -3,6 +3,8 @@ use parquet::file::reader::{FileReader, SerializedFileReader};
 use parquet::record::RowAccessor;
 use std::fs::File;
 use std::collections::HashMap;
+use std::io::Write;
+use rayon::prelude::*;
 
 const EMBED_DIM: usize = 64;
 const NUM_HEADS: usize = 8;
@@ -51,8 +53,62 @@ impl Attention {
             return vec![];
         }
         
-        // Simplified: just return input (identity attention)
-        x.to_vec()
+        // Q = x @ q_weights, K = x @ k_weights, V = x @ v_weights
+        let q = self.matmul(x, &self.q_weights);
+        let k = self.matmul(x, &self.k_weights);
+        let v = self.matmul(x, &self.v_weights);
+        
+        // Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) V
+        let k_t = self.transpose(&k);
+        let scores = self.matmul(&q, &k_t);
+        let scaled = self.scale(&scores, (EMBED_DIM as f32).sqrt());
+        let attn = self.softmax(&scaled);
+        self.matmul(&attn, &v)
+    }
+    
+    fn matmul(&self, a: &[Vec<f32>], b: &[Vec<f32>]) -> Vec<Vec<f32>> {
+        if a.is_empty() || b.is_empty() {
+            return vec![];
+        }
+        let rows = a.len();
+        let cols = b[0].len();
+        let inner = b.len();
+        
+        (0..rows)
+            .map(|i| {
+                (0..cols)
+                    .map(|j| (0..inner).map(|k| a[i][k] * b[k][j]).sum())
+                    .collect()
+            })
+            .collect()
+    }
+    
+    fn transpose(&self, m: &[Vec<f32>]) -> Vec<Vec<f32>> {
+        if m.is_empty() {
+            return vec![];
+        }
+        let rows = m.len();
+        let cols = m[0].len();
+        (0..cols)
+            .map(|j| (0..rows).map(|i| m[i][j]).collect())
+            .collect()
+    }
+    
+    fn scale(&self, m: &[Vec<f32>], factor: f32) -> Vec<Vec<f32>> {
+        m.iter()
+            .map(|row| row.iter().map(|&x| x / factor).collect())
+            .collect()
+    }
+    
+    fn softmax(&self, m: &[Vec<f32>]) -> Vec<Vec<f32>> {
+        m.iter()
+            .map(|row| {
+                let max = row.iter().cloned().fold(f32::NEG_INFINITY, f32::max);
+                let exp: Vec<f32> = row.iter().map(|&x| (x - max).exp()).collect();
+                let sum: f32 = exp.iter().sum();
+                exp.iter().map(|&x| x / sum).collect()
+            })
+            .collect()
     }
 }
 
@@ -87,6 +143,82 @@ impl TinyTransformer {
         
         self.attention.forward(&embeddings)
     }
+    
+    fn train(&mut self, sequences: &[Vec<u64>], epochs: usize) {
+        println!("📚 Training for {} epochs on {} CPUs...", epochs, rayon::current_num_threads());
+        
+        let mut loss_history = Vec::new();
+        
+        for epoch in 0..epochs {
+            // Parallel training across sequences
+            let losses: Vec<f32> = sequences.par_iter()
+                .filter_map(|seq| {
+                    if seq.len() < 2 {
+                        return None;
+                    }
+                    
+                    let mut seq_loss = 0.0;
+                    
+                    // Predict next IP
+                    for i in 0..seq.len() - 1 {
+                        let input = &seq[..i + 1];
+                        let target = seq[i + 1];
+                        
+                        let output = self.forward(input);
+                        
+                        // Simple loss: distance from target embedding
+                        if let Some(&target_token) = self.vocab.get(&target) {
+                            let target_emb = self.embedding.forward(target_token);
+                            if let Some(last_output) = output.last() {
+                                let loss: f32 = last_output.iter()
+                                    .zip(target_emb.iter())
+                                    .map(|(a, b)| (a - b).powi(2))
+                                    .sum();
+                                seq_loss += loss;
+                            }
+                        }
+                    }
+                    
+                    Some(seq_loss)
+                })
+                .collect();
+            
+            let total_loss: f32 = losses.iter().sum();
+            let avg_loss = total_loss / sequences.len() as f32;
+            loss_history.push(avg_loss);
+            
+            println!("  Epoch {}: loss = {:.4}", epoch, avg_loss);
+        }
+        
+        println!("✅ Training complete!");
+        
+        // Save loss curve to CSV
+        if let Err(e) = self.save_loss_curve(&loss_history) {
+            eprintln!("⚠️  Failed to save loss curve: {}", e);
+        }
+    }
+    
+    fn save_loss_curve(&self, losses: &[f32]) -> Result<(), Box<dyn std::error::Error>> {
+        let mut file = File::create("loss_curve.csv")?;
+        writeln!(file, "epoch,loss")?;
+        for (i, &loss) in losses.iter().enumerate() {
+            writeln!(file, "{},{}", i, loss)?;
+        }
+        println!("📊 Loss curve saved to: loss_curve.csv");
+        Ok(())
+    }
+    
+    fn save(&self, path: &str) -> Result<(), Box<dyn std::error::Error>> {
+        let data = bincode::serialize(&(
+            &self.embedding.weights,
+            &self.attention.q_weights,
+            &self.attention.k_weights,
+            &self.attention.v_weights,
+            &self.vocab,
+        ))?;
+        std::fs::write(path, data)?;
+        Ok(())
+    }
 }
 
 fn load_perf_ips(path: &str) -> Result<Vec<u64>, Box<dyn std::error::Error>> {
@@ -111,6 +243,35 @@ fn load_perf_ips(path: &str) -> Result<Vec<u64>, Box<dyn std::error::Error>> {
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🎯 Tiny Transformer - Training on Real Perf Data");
+    println!();
+    
+    // Set CPU threads
+    rayon::ThreadPoolBuilder::new()
+        .num_threads(24)
+        .build_global()
+        .unwrap();
+    
+    println!("💻 Using {} CPU threads", rayon::current_num_threads());
+    
+    #[cfg(feature = "gpu")]
+    {
+        if tch::Cuda::is_available() {
+            println!("🎮 CUDA available!");
+            println!("   Device count: {}", tch::Cuda::device_count());
+            if let Ok(props) = tch::Cuda::get_device_properties(0) {
+                println!("   GPU 0: {} ({} GB)", 
+                    String::from_utf8_lossy(&props.name),
+                    props.total_memory / (1024 * 1024 * 1024));
+            }
+        } else {
+            println!("⚠️  CUDA not available, using CPU only");
+        }
+    }
+    #[cfg(not(feature = "gpu"))]
+    {
+        println!("ℹ️  GPU support not enabled (build with --features gpu)");
+    }
+    
     println!();
     
     // Load real perf data
@@ -146,6 +307,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("📚 Building vocabulary...");
     transformer.build_vocab(&unique_ips);
     println!("  Vocab size: {}", transformer.vocab.len());
+    println!();
+    
+    // Train on sequences
+    let sequences = vec![rust_ips.clone(), python_ips.clone(), haskell_ips.clone()];
+    transformer.train(&sequences, 100);
+    println!();
+    
+    // Save model
+    println!("💾 Saving model...");
+    transformer.save("tiny_transformer.bin")?;
+    println!("  Saved to: tiny_transformer.bin");
     println!();
     
     // Inference

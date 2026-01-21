@@ -26,3 +26,12 @@ memmap2 = "0.9"
 serde = { version = "1.0", features = ["derive"] }
 parquet = "53"
 rand = "0.8"
+rayon = "1.10"
+
+[dependencies.tch]
+version = "0.16"
+optional = true
+
+[features]
+default = []
+gpu = ["tch"]
