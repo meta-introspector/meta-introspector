@@ -13,6 +13,7 @@
         echo "x = $x\n";
       '';
       nativeBuildInputs = [ pkgs.php ];
+      dontUnpack = true;
       buildPhase = ''
         php $src > output.txt
         grep -q "x = 71" output.txt || exit 1

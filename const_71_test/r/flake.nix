@@ -12,6 +12,7 @@
         cat("x =", x, "\n")
       '';
       nativeBuildInputs = [ pkgs.R ];
+      dontUnpack = true;
       buildPhase = ''
         Rscript $src > output.txt
         grep -q "x = 71" output.txt || exit 1

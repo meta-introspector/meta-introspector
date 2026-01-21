@@ -12,6 +12,7 @@
         puts "x = $x"
       '';
       nativeBuildInputs = [ pkgs.tcl ];
+      dontUnpack = true;
       buildPhase = ''
         tclsh $src > output.txt
         grep -q "x = 71" output.txt || exit 1

@@ -12,6 +12,7 @@
         print("x = " .. x)
       '';
       nativeBuildInputs = [ pkgs.lua ];
+      dontUnpack = true;
       buildPhase = ''
         lua $src > output.txt
         grep -q "x = 71" output.txt || exit 1

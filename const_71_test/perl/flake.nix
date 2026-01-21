@@ -12,6 +12,7 @@
         print "x = $x\n";
       '';
       nativeBuildInputs = [ pkgs.perl ];
+      dontUnpack = true;
       buildPhase = ''
         perl $src > output.txt
         grep -q "x = 71" output.txt || exit 1
