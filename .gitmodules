@@ -58,3 +58,6 @@
 [submodule "const_71_test/python/mojo"]
 	path = const_71_test/python/mojo
 	url = https://github.com/franckrasolo/mojo-playground.nix.git
+[submodule "const_71_test/llvm/iree"]
+	path = const_71_test/llvm/iree
+	url = https://github.com/meta-introspector/t1.git
