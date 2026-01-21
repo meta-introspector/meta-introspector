@@ -11,10 +11,8 @@
       src = pkgs.writeText "const71.zig" ''
         const std = @import("std");
         
-        pub fn main() !void {
-            const x: u32 = 71;
-            const stdout = std.io.getStdOut().writer();
-            try stdout.print("{d}\n", .{x});
+        pub fn main() void {
+            std.debug.print("71\n", .{});
         }
       '';
       
@@ -23,8 +21,8 @@
       dontUnpack = true;
       
       buildPhase = ''
-        ${pkgs.zig}/bin/zig build-exe $src -O ReleaseFast
-        ./const71 > output.txt
+        ${pkgs.zig}/bin/zig build-exe $src -O ReleaseFast -femit-bin=const71
+        ./const71 2>&1 | tee output.txt
         grep -q "71" output.txt || exit 1
       '';
       
