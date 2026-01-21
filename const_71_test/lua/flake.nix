@@ -5,8 +5,26 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    packages.${system}.default = pkgs.writeShellScriptBin "lua-71" ''
-      echo "x = 71"
-    '';
+    packages.${system}.default = pkgs.stdenv.mkDerivation {
+      name = "lua-71";
+      src = pkgs.writeText "const71.lua" ''
+        local x = 71
+        print("x = " .. x)
+      '';
+      nativeBuildInputs = [ pkgs.lua ];
+      buildPhase = ''
+        lua $src > output.txt
+        grep -q "x = 71" output.txt || exit 1
+      '';
+      installPhase = ''
+        mkdir -p $out/bin
+        cp $src $out/bin/const71.lua
+        cat > $out/bin/lua-71 << 'EOF'
+#!/bin/sh
+${pkgs.lua}/bin/lua $(dirname $0)/const71.lua
+EOF
+        chmod +x $out/bin/lua-71
+      '';
+    };
   };
 }

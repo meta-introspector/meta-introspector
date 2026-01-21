@@ -34,6 +34,26 @@ name = "harmonic_filter"
 path = "harmonic_filter.rs"
 
 [[bin]]
+name = "harmonic_analyzer"
+path = "harmonic_analyzer.rs"
+
+[[bin]]
+name = "galois_report"
+path = "galois_report.rs"
+
+[[bin]]
+name = "baseline_comparator"
+path = "baseline_comparator.rs"
+
+[[bin]]
+name = "ip_galois"
+path = "ip_galois.rs"
+
+[[bin]]
+name = "symbol_resolver"
+path = "symbol_resolver.rs"
+
+[[bin]]
 name = "github_mirror_service"
 path = "github_mirror_service.rs"
 

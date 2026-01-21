@@ -6,11 +6,11 @@
       },
       "locked": {
         "dir": "mes-perf-recorder",
-        "lastModified": 1768988277,
-        "narHash": "sha256-gdBzszCu2XbEcBcs1xCyQwUXfcyd73FvdbFA6OPjGxo=",
+        "lastModified": 1768992080,
+        "narHash": "sha256-XSq2kqDNcJPFX2hdY9bRenZmHd1SGGxnmY80ksHJCVI=",
         "ref": "singularity-clean",
-        "rev": "35f242cb693f5877492ac635aa36f593638d42fd",
-        "revCount": 558,
+        "rev": "aa318fe0e090214687472db96d04935a86e4d242",
+        "revCount": 565,
         "type": "git",
         "url": "https://github.com/meta-introspector/meta-introspector"
       },

@@ -94,6 +94,74 @@ du -sh /mnt/data1/git  # Current mirror size
 wc -l data/queue_all.txt  # Remaining to clone
 ```
 
+## 🔬 Galois Field Analysis
+
+Analyze perf data for Galois field coverage patterns (discovers mathematical boundaries like the 19-bit break).
+
+### Quick Start
+
+```bash
+# Using Makefile (recommended)
+make help              # Show all commands
+make analyze-agda      # Analyze Agda 71 build
+make report            # Full 71 language report
+make baseline          # Compare to baseline
+make test-all          # Test all 71 languages output "71"
+
+# Or manually
+cargo build --release --bin harmonic_analyzer
+./target/release/harmonic_analyzer data/71_flakes_perf/agda_1768990025_build.perf.data
+```
+
+### The 71 Languages
+
+All tests in `const_71_test/` output "71":
+- **67 programming languages**: Rust, Python, Haskell, Agda, Coq, etc.
+- **5 build systems**: Nix Flakes, Make, CMake, Bazel, Terraform
+- **1 bootstrap baseline**: GNU Mes (GF(2^19) = 524,288 states)
+
+### Galois Complexity Results
+
+From Phase 1 analysis (build perf only):
+- **Simplest**: Most languages GF(2^12) = 4,096 states
+- **Moderate**: Agda, TensorFlow GF(2^16) = 65,536 states  
+- **Baseline**: Mes bootstrap GF(2^19) = 524,288 states
+
+**Key Finding**: Build perf captures nix overhead (sha256sum), not actual compilation.
+
+### Phase 2: Force Rebuild (TODO)
+
+Capture real compilation with `--no-substitute`:
+```bash
+make force-rebuild-rust   # Force rebuild Rust from source
+make force-rebuild-all    # Force rebuild all 71 languages
+```
+
+This will show actual compiler complexity (rustc, gcc, etc.) instead of file copying.
+
+### Output Format
+
+```
+🔍 Fast Galois Break Point Predictor
+✅ 524288 samples
+
+  GF(2^18): 100.000000% ✅ FULL - adding GF(2^20)
+  GF(2^19): 100.000000% ✅ FULL - adding GF(2^21)
+
+📊 FINAL COVERAGE:
+  GF(2^20): 372841/1048576 (70.992470%)
+  GF(2^21): 372841/2097152 (35.496235%)
+```
+
+The analyzer uses an **adaptive algorithm**:
+- Starts at bits 18/19 (known break point from Mes bootstrap)
+- Single pass through perf data
+- Removes fields when they hit 100% coverage
+- Adds next higher bit size automatically
+- Minimal memory usage (only active fields tracked)
+
+See [OGG_PRIME_19_HARMONIC_BREAK.md](OGG_PRIME_19_HARMONIC_BREAK.md) for mathematical significance.
+
 ## 📊 Telemetry Outputs
 
 All builds create parquet files in the project root:
