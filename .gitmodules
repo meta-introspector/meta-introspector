@@ -73,3 +73,6 @@
 [submodule "const_71_test/brainfuck/aoc-nix-reference"]
 	path = const_71_test/brainfuck/aoc-nix-reference
 	url = https://github.com/ritzau/aoc-nix.git
+[submodule "const_71_test/brainfuck/brainfuck-nix"]
+	path = const_71_test/brainfuck/brainfuck-nix
+	url = https://github.com/meta-introspector/brainfuck.nix.git
