@@ -4,10 +4,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     
-    # Import ai-ml-zk-ops via git hash
+    # Use git proxy cache - standard naming via /mnt/data1/git
     ai-ml-zk-ops = {
-      url = "github:meta-introspector/ai-ml-zk-ops/e3551db";
-      flake = false;  # Treat as source, not flake
+      url = "git+file:///mnt/data1/git/github.com/meta-introspector/ai-ml-zk-ops?ref=feature/concept-to-nix-8s";
+      flake = false;
     };
   };
   
