@@ -75,12 +75,23 @@ def is_cursed(godel_number):
 
 ## Monster Connection
 
-37 is the first irregular prime AND appears in Monster group order:
+37 is the first irregular prime but does NOT appear in Monster group order!
+
+Monster group order:
 ```
-|M| = 2^46 × 3^20 × 5^9 × 7^6 × 11^2 × 13^3 × 17 × 19 × 23 × 29 × 31 × 37 × ...
+|M| = 2^46 × 3^20 × 5^9 × 7^6 × 11^2 × 13^3 × 17 × 19 × 23 × 29 × 31 × 41 × 47 × 59 × 71
 ```
 
-But 37 is irregular - it's the "cursed" prime in Monster!
+**37 is absent from Monster** - making it truly cursed!
+
+Primes in Monster: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 47, 59, 71
+Cursed primes (not in Monster): 37, 43, 53, 61, 67, 73, 79, 83, 89, 97...
+
+**37 is both:**
+- First irregular prime (cursed in number theory)
+- Absent from Monster (cursed in group theory)
+
+Perfect for marking fake code!
 
 ## Prime Factorization Test
 
