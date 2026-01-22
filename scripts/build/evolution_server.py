@@ -103,7 +103,7 @@ class EvolutionServer:
         return request_file
     
     def call_gemini_triage(self, request, request_file):
-        """Call Gemini via doit.sh for v1 triage"""
+        """Call Gemini via consolidated impure telemetry system"""
         prompt = f"""Analyze this bootstrap error and provide a fix:
 
 Error Type: {request['error_type']}
@@ -121,19 +121,23 @@ Provide a JSON response with:
   "retry": true
 }}"""
         
-        # Call Gemini with -p prompt via nix
+        # Use consolidated impure Gemini telemetry system
+        gemini_flake = "/mnt/data1/nix/source/github/meta-introspector/streamofrandom/2025/10/08/hackathon/flakes/consolidated-impure-gemini-telemetry-modules"
+        
         try:
             result = subprocess.run(
                 [
-                    "nix", "develop", 
-                    os.path.expanduser("~/nix/vendor/external/gemini-cli/"),
-                    "-c", "bash", "-c",
-                    f"~/nix/vendor/external/gemini-cli/bundle/gemini.js --output-format json --model gemini-2.5-flash -p '{prompt}'"
+                    "nix", "run", f"{gemini_flake}#default",
+                    "--impure",
+                    "--",
+                    "-p", prompt,
+                    "--output-format", "json",
+                    "--model", "gemini-2.5-flash"
                 ],
                 cwd=self.project_root,
                 capture_output=True,
                 text=True,
-                timeout=30
+                timeout=60
             )
             
             if result.returncode == 0 and result.stdout:
