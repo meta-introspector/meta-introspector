@@ -6,9 +6,19 @@ set -euo pipefail
 
 # Absolute paths for nix commands (works with sudo -E)
 # Use _CMD suffix to avoid conflicts with NIX_STORE env var
-NIX_CMD="${NIX_CMD:-$(command -v nix 2>/dev/null || echo nix)}"
-NIX_STORE_CMD="${NIX_STORE_CMD:-$(command -v nix-store 2>/dev/null || echo nix-store)}"
-NIX_BUILD_CMD="${NIX_BUILD_CMD:-$(command -v nix-build 2>/dev/null || echo nix-build)}"
+# Detect from PATH or use common locations
+if command -v nix &>/dev/null; then
+    NIX_CMD="$(command -v nix)"
+    NIX_STORE_CMD="$(command -v nix-store)"
+    NIX_BUILD_CMD="$(command -v nix-build)"
+elif [ -x "$HOME/.nix-profile/bin/nix" ]; then
+    NIX_CMD="$HOME/.nix-profile/bin/nix"
+    NIX_STORE_CMD="$HOME/.nix-profile/bin/nix-store"
+    NIX_BUILD_CMD="$HOME/.nix-profile/bin/nix-build"
+else
+    echo "❌ nix not found"
+    exit 1
+fi
 
 echo "🚀 Meta-Introspector Bootstrap"
 echo "==============================="
