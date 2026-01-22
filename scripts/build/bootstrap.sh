@@ -1,38 +1,39 @@
 #!/usr/bin/env bash
-# Complete system bootstrap - builds entire meta-introspector from scratch
-# Creates result/ symlink with all build outputs and metadata
+# Complete system bootstrap via central build system
+# All analysis scheduled as nix jobs
 
 set -euo pipefail
 
-echo "🚀 Meta-Introspector Complete Bootstrap"
-echo "========================================"
+echo "🚀 Meta-Introspector Bootstrap"
+echo "==============================="
+echo ""
+echo "Central Build System - 7 Jobs:"
+echo "  1. languages (71 languages)"
+echo "  2. build-graph (first ordering)"
+echo "  3. perf-analysis (perf traces)"
+echo "  4. topological-matrix (function matrix)"
+echo "  5. harmonic-analysis (harmonics)"
+echo "  6. model-training (NN models)"
+echo "  7. complete (all jobs)"
 echo ""
 
-# Build everything as a single derivation
-echo "📦 Building complete system..."
-echo ""
+cd "$(dirname "$0")/../.."
 
-cd nix/flakes/const_71_test
-
-# Build all 71 languages + tools as one derivation
-nix build --print-build-logs
-
-# Result symlink now contains:
-# - All 71 language outputs
-# - All perf data
-# - All metadata
-# - Build logs
+# Build complete system
+nix build ./nix#default --print-build-logs
 
 echo ""
 echo "✅ Bootstrap complete!"
 echo ""
-echo "📊 Results:"
-echo "  Output: ./result/"
-echo "  Metadata: ./result/.meta-introspector/metadata.json"
-echo "  Perf data: ./result/perf/*.perf.data"
-echo "  Build logs: ./result/logs/"
+echo "📊 Results in: result/"
+echo "  languages/   - 71 language outputs"
+echo "  graphs/      - Build graph (first ordering)"
+echo "  analysis/    - Perf analysis"
+echo "  matrix/      - Topological function matrix"
+echo "  harmonics/   - Harmonic analysis"
+echo "  models/      - Trained models"
 echo ""
-echo "Query builds:"
-echo "  ls -la result/"
+echo "Query:"
 echo "  cat result/.meta-introspector/metadata.json"
-echo "  ls result/perf/"
+echo "  cat result/graphs/build-order.txt"
+echo "  ls result/models/"
