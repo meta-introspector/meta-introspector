@@ -10,7 +10,7 @@ All perf recording flakes should follow this pattern:
   
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    perf-lib.url = "github:meta-introspector/meta-introspector?dir=nix";
+    perf-lib.url = "github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix";
   };
   
   outputs = { self, nixpkgs, perf-lib }:
@@ -44,7 +44,7 @@ All perf recording flakes should follow this pattern:
 ### Simple Build Recording
 ```nix
 {
-  inputs.perf-lib.url = "github:meta-introspector/meta-introspector?dir=nix";
+  inputs.perf-lib.url = "github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix";
   
   outputs = { perf-lib, nixpkgs, ... }: {
     packages.x86_64-linux.default = perf-lib.lib.perfBuild {
@@ -59,7 +59,7 @@ All perf recording flakes should follow this pattern:
 ### With Overlay
 ```nix
 {
-  inputs.perf-lib.url = "github:meta-introspector/meta-introspector?dir=nix";
+  inputs.perf-lib.url = "github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix";
   
   outputs = { perf-lib, nixpkgs, ... }: {
     packages.x86_64-linux.default = 
@@ -74,7 +74,7 @@ All perf recording flakes should follow this pattern:
 ### Multiple Builds
 ```nix
 {
-  inputs.perf-lib.url = "github:meta-introspector/meta-introspector?dir=nix";
+  inputs.perf-lib.url = "github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix";
   
   outputs = { perf-lib, nixpkgs, ... }:
     let
@@ -113,7 +113,7 @@ All perf recording flakes should follow this pattern:
 ### After (Template)
 ```nix
 {
-  inputs.perf-lib.url = "github:meta-introspector/meta-introspector?dir=nix";
+  inputs.perf-lib.url = "github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix";
   outputs = { perf-lib, nixpkgs, ... }: {
     packages.x86_64-linux.default = perf-lib.lib.perfBuild {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
@@ -133,7 +133,7 @@ Scripts should use the library functions:
 ```bash
 #!/bin/bash
 # Use standard perf library via github
-nix run github:meta-introspector/meta-introspector?dir=nix#perf-build -- .#target
+nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
 ```
 
 ## See Also
