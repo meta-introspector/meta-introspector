@@ -1,0 +1,15 @@
+{
+  "id": 2,
+  "crq": "CRQ-002",
+  "title": "Lift ticket_manager.py to Rust",
+  "priority": "high",
+  "status": "pending",
+  "created": "2026-01-22T12:30:00Z",
+  "prompt": "Lift /mnt/data1/2023/09/24/ai-ticket/ticket_manager.py to Rust using perf trace analysis.\n\nPipeline:\n1. Run: python3 scripts/build/lift_python.py /mnt/data1/2023/09/24/ai-ticket/ticket_manager.py\n2. This generates: test spec, perf traces, lifting prompt\n3. Generate Rust code with equivalence proof\n\nRequirements:\n- Use octocrab for GitHub API\n- Use serde for JSON\n- Use tokio for async\n- Preserve all ticket operations: create, list, claim, submit\n- Prove syscall equivalence\n\nOutput:\n- zos/ai-ticket/src/ticket.rs\n- Equivalence proof document\n- Test cases\n\nContext: This is the core ticket management module. Must maintain exact GitHub API behavior.",
+  "output_files": [
+    "zos/ai-ticket/src/ticket.rs",
+    "zos/ai-ticket/proofs/ticket_equivalence.md"
+  ],
+  "dependencies": [1],
+  "estimated_tokens": 3000
+}

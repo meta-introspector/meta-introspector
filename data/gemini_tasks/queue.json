@@ -1,0 +1,27 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Nixify ai-ticket",
+      "file": "task_001_nixify_ai_ticket.json",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "title": "Lift ticket_manager.py",
+      "file": "task_002_lift_ticket_manager.json",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "title": "Lift proxy_server.py",
+      "file": "task_003_lift_proxy_server.json",
+      "status": "pending"
+    }
+  ],
+  "crq": "CRQ-002",
+  "total_tasks": 7,
+  "completed": 0,
+  "pending": 3,
+  "in_progress": 0
+}

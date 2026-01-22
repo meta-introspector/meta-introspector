@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "crq": "CRQ-002",
+  "title": "Nixify ai-ticket Python project",
+  "priority": "high",
+  "status": "pending",
+  "created": "2026-01-22T12:30:00Z",
+  "prompt": "Create a Nix flake for the ai-ticket Python project located at /mnt/data1/2023/09/24/ai-ticket.\n\nRequirements:\n1. Package as Python application using buildPythonApplication\n2. Include all dependencies: requests, flask, github, openai\n3. Create development shell with Python 3.11\n4. Add scripts: ai-ticket-server, ai-ticket-cli\n5. Make it runnable with: nix run .#ai-ticket\n\nOutput:\n- zos/ai-ticket/flake.nix\n- zos/ai-ticket/default.nix (if needed)\n- Test with: nix build .#ai-ticket\n\nContext: This is Phase 1 of migrating ai-ticket to ZOS. The Python version will be replaced with Rust in Phase 2.",
+  "output_files": [
+    "zos/ai-ticket/flake.nix",
+    "zos/ai-ticket/default.nix"
+  ],
+  "dependencies": [],
+  "estimated_tokens": 2000
+}

@@ -1,0 +1,15 @@
+{
+  "id": 3,
+  "crq": "CRQ-002",
+  "title": "Lift proxy_server.py to Rust",
+  "priority": "high",
+  "status": "pending",
+  "created": "2026-01-22T12:30:00Z",
+  "prompt": "Lift /mnt/data1/2023/09/24/ai-ticket/proxy_server.py to Rust HTTP server.\n\nRequirements:\n- Use axum for HTTP server\n- Use tower for middleware\n- Use serde_json for JSON\n- Endpoints: /create_ticket, /list_tickets, /health\n- Preserve request/response format\n- Prove HTTP behavior equivalence\n\nOutput:\n- zos/ai-ticket/src/proxy.rs\n- Equivalence proof\n- Integration tests\n\nContext: This is the HTTP API layer. Must maintain exact endpoint behavior for AutoGPT integration.",
+  "output_files": [
+    "zos/ai-ticket/src/proxy.rs",
+    "zos/ai-ticket/proofs/proxy_equivalence.md"
+  ],
+  "dependencies": [2],
+  "estimated_tokens": 2500
+}
