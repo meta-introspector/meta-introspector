@@ -65,8 +65,39 @@
             done
             
             echo ""
-            echo "🎯 Convergence Analysis:"
-            echo "========================"
+            echo "🎯 Functional Analysis of Labeling System:"
+            echo "=========================================="
+            
+            # Extract instruction frequencies from perf analyzing perf
+            # This shows HOW the labeling system works
+            for level in 1 2 3; do
+              echo ""
+              echo "Level $level: Labeling system instruction profile"
+              
+              # Get top instructions used by perf script
+              perf report -i $out/meta-perf/level$level.perf.data \
+                --stdio --no-children -n --percent-limit 1 \
+                | head -30 > $out/convergence/level$level.profile
+              
+              # Extract symbol frequencies (what functions perf uses to label)
+              perf script -i $out/meta-perf/level$level.perf.data -F sym \
+                | grep -v '^#' | sort | uniq -c | sort -rn \
+                > $out/convergence/level$level.symbols
+              
+              TOP_SYMBOL=$(head -1 $out/convergence/level$level.symbols | awk '{print $2}')
+              TOP_COUNT=$(head -1 $out/convergence/level$level.symbols | awk '{print $1}')
+              
+              echo "  Top symbol: $TOP_SYMBOL ($TOP_COUNT samples)"
+              echo "  → This is the core labeling function"
+            done
+            
+            echo ""
+            echo "📊 Labeling System Decomposition:"
+            echo "  Level 1 symbols = how perf labels basic code"
+            echo "  Level 2 symbols = how perf labels perf labeling"
+            echo "  Level 3 symbols = meta-labeling convergence"
+            echo ""
+            echo "  Convergence → universal labeling vocabulary"
             
             # Compare IP sets between levels
             for level in 1 2 3; do
@@ -95,10 +126,16 @@
             # Create convergence metadata
             cat > $out/convergence/meta.json << EOF
             {
-              "concept": "meta-perf",
-              "description": "perf recording perf analyzing perf - self-referential code labeling",
+              "concept": "meta-perf-functional-decomposition",
+              "description": "perf recording perf script reveals the functional vocabulary of code labeling",
+              "insight": "Instruction frequencies in perf script = how the labeling system works",
               "levels": 4,
-              "hypothesis": "Recording perf analyzing perf converges to a labeling model of code patterns",
+              "outputs": {
+                "profiles": "level*.profile - instruction frequencies of labeling",
+                "symbols": "level*.symbols - functional vocabulary of analyzer",
+                "ips": "level*.ips - unique instruction pointers"
+              },
+              "hypothesis": "Converged symbol frequencies = universal code labeling vocabulary",
               "derivation": "$out",
               "timestamp": "$(date -Iseconds)"
             }
