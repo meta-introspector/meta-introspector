@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Convenience wrapper for bootstrap
+exec ./scripts/build/bootstrap.sh "$@"
