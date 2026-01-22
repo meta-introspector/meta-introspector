@@ -7,6 +7,20 @@ edition = "2021"
 burn = { git = "https://github.com/tracel-ai/burn", features = ["cuda"] }
 burn-cuda = { git = "https://github.com/tracel-ai/burn" }
 
-# Force all cudarc dependencies to use 0.19.0 with CUDA 13 support
-[patch.crates-io]
-cudarc = "0.19.0"
+# Use patched cubecl with cudarc 0.19.0
+[patch."https://github.com/tracel-ai/cubecl"]
+cubecl = { path = "cubecl-patched/crates/cubecl" }
+cubecl-common = { path = "cubecl-patched/crates/cubecl-common" }
+cubecl-core = { path = "cubecl-patched/crates/cubecl-core" }
+cubecl-cpp = { path = "cubecl-patched/crates/cubecl-cpp" }
+cubecl-cpu = { path = "cubecl-patched/crates/cubecl-cpu" }
+cubecl-cuda = { path = "cubecl-patched/crates/cubecl-cuda" }
+cubecl-hip = { path = "cubecl-patched/crates/cubecl-hip" }
+cubecl-ir = { path = "cubecl-patched/crates/cubecl-ir" }
+cubecl-macros = { path = "cubecl-patched/crates/cubecl-macros" }
+cubecl-macros-internal = { path = "cubecl-patched/crates/cubecl-macros-internal" }
+cubecl-opt = { path = "cubecl-patched/crates/cubecl-opt" }
+cubecl-runtime = { path = "cubecl-patched/crates/cubecl-runtime" }
+cubecl-std = { path = "cubecl-patched/crates/cubecl-std" }
+cubecl-wgpu = { path = "cubecl-patched/crates/cubecl-wgpu" }
+cubecl-zspace = { path = "cubecl-patched/crates/cubecl-zspace" }
