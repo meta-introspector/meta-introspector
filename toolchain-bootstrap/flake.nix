@@ -12,7 +12,11 @@
       nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.perf ];
       
       preBuild = ''
+    # TODO: Migrate to use perf-lib.lib.perfBuild
+    # See: docs/nix/PERF_FLAKE_TEMPLATE.md
         # Start perf recording
+    # TODO: Migrate to use perf-lib.lib.perfBuild
+    # See: docs/nix/PERF_FLAKE_TEMPLATE.md
         perf record -o $out/bash_toolchain.perf.data -F 99 -g &
         PERF_PID=$!
         echo $PERF_PID > /tmp/perf.pid
