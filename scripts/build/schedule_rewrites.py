@@ -78,7 +78,7 @@ Provide a JSON response with:
     return prompt
 
 def schedule_rewrite(py_file):
-    """Schedule a Python→Rust rewrite with Gemini"""
+    """Schedule a Python→Rust rewrite with full lifting pipeline"""
     
     # Load queue
     with open(REWRITE_QUEUE) as f:
@@ -94,23 +94,38 @@ def schedule_rewrite(py_file):
     
     print(f"🔄 Scheduling rewrite: {py_file}")
     
-    # Create prompt
-    prompt = create_rewrite_prompt(py_file)
+    # Run lifting pipeline: script2test → test2perf → perf2prompt
+    print(f"   Running lifting pipeline...")
+    result = subprocess.run([
+        "python3", "scripts/build/lift_python.py", py_file
+    ], capture_output=True, text=True)
     
-    # Save prompt
-    prompt_file = REWRITE_RESULTS / f"{Path(py_file).stem}_prompt.json"
-    prompt_file.parent.mkdir(parents=True, exist_ok=True)
+    if result.returncode != 0:
+        print(f"   ⚠️  Lifting failed: {result.stderr[:200]}")
     
-    with open(prompt_file, 'w') as f:
-        json.dump({
-            "py_file": py_file,
-            "prompt": prompt,
-            "timestamp": datetime.now().isoformat()
-        }, f, indent=2)
+    # Load the generated prompt
+    prompt_file = PROJECT_ROOT / "data/prompts" / f"{Path(py_file).stem}_lift.json"
     
-    print(f"📝 Prompt saved: {prompt_file}")
-    
-    return prompt_file
+    if prompt_file.exists():
+        with open(prompt_file) as f:
+            prompt_data = json.load(f)
+        
+        print(f"   ✅ Lifting complete: {prompt_data.get('perf_result', {}).get('total_syscalls', 0)} syscalls")
+        return prompt_file
+    else:
+        # Fallback to simple prompt
+        prompt = create_rewrite_prompt(py_file)
+        prompt_file = REWRITE_RESULTS / f"{Path(py_file).stem}_prompt.json"
+        prompt_file.parent.mkdir(parents=True, exist_ok=True)
+        
+        with open(prompt_file, 'w') as f:
+            json.dump({
+                "py_file": py_file,
+                "prompt": prompt,
+                "timestamp": datetime.now().isoformat()
+            }, f, indent=2)
+        
+        return prompt_file
 
 def call_gemini_rewrite(prompt_file):
     """Call Gemini to perform rewrite"""
