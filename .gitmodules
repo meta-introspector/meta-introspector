@@ -56,35 +56,35 @@
 	path = mes-transformer/cpp-nix-experiment
 	url = https://github.com/devsamuelv/cpp-nix-experiment.git
 [submodule "const_71_test/python/mojo"]
-	path = const_71_test/python/mojo
+	path = nix/flakes/const_71_test/python/mojo
 	url = https://github.com/franckrasolo/mojo-playground.nix.git
 [submodule "const_71_test/llvm/iree"]
-	path = const_71_test/llvm/iree
+	path = nix/flakes/const_71_test/llvm/iree
 	url = https://github.com/meta-introspector/t1.git
 [submodule "const_71_test/neural/axon"]
-	path = const_71_test/neural/axon
+	path = nix/flakes/const_71_test/neural/axon
 	url = https://github.com/emer/axon.git
 [submodule "const_71_test/sycl/triSYCL"]
-	path = const_71_test/sycl/triSYCL
+	path = nix/flakes/const_71_test/sycl/triSYCL
 	url = https://github.com/triSYCL/triSYCL.git
 [submodule "const_71_test/amd/shark-studio"]
-	path = const_71_test/amd/shark-studio
+	path = nix/flakes/const_71_test/amd/shark-studio
 	url = https://github.com/nod-ai/AMD-SHARK-Studio.git
 [submodule "const_71_test/brainfuck/aoc-nix-reference"]
-	path = const_71_test/brainfuck/aoc-nix-reference
+	path = nix/flakes/const_71_test/brainfuck/aoc-nix-reference
 	url = https://github.com/ritzau/aoc-nix.git
 [submodule "const_71_test/brainfuck/brainfuck-nix"]
-	path = const_71_test/brainfuck/brainfuck-nix
+	path = nix/flakes/const_71_test/brainfuck/brainfuck-nix
 	url = https://github.com/meta-introspector/brainfuck.nix.git
 [submodule "const_71_test/cubecl/oblichey-reference"]
-	path = const_71_test/cubecl/oblichey-reference
+	path = nix/flakes/const_71_test/cubecl/oblichey-reference
 	url = https://github.com/SimonBrandner/oblichey.git
 [submodule "const_71_test/graphdb/indradb-reference"]
-	path = const_71_test/graphdb/indradb-reference
+	path = nix/flakes/const_71_test/graphdb/indradb-reference
 	url = https://github.com/indradb/indradb.git
 [submodule "const_71_test/graphdb/rust-cuda-reference"]
-	path = const_71_test/graphdb/rust-cuda-reference
+	path = nix/flakes/const_71_test/graphdb/rust-cuda-reference
 	url = https://github.com/Rust-GPU/Rust-CUDA.git
 [submodule "const_71_test/metacoq/metarocq-reference"]
-	path = const_71_test/metacoq/metarocq-reference
+	path = nix/flakes/const_71_test/metacoq/metarocq-reference
 	url = https://github.com/MetaRocq/metarocq.git
