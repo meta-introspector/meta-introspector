@@ -93,9 +93,68 @@ class EvolutionServer:
         print(f"\n🤖 AI Fix Request Created:")
         print(f"   File: {request_file}")
         print(f"   Error Type: {error_data['error_type']}")
+        
+        # Call Gemini for v1 triage
+        print(f"   Calling Gemini for v1 triage...")
+        self.call_gemini_triage(request, request_file)
+        
         print(f"   Waiting for AI response...")
         
         return request_file
+    
+    def call_gemini_triage(self, request, request_file):
+        """Call Gemini via doit.sh for v1 triage"""
+        prompt = f"""Analyze this bootstrap error and provide a fix:
+
+Error Type: {request['error_type']}
+Iteration: {request['iteration']}
+
+Context:
+{request['context']['stderr'][:500]}
+
+Provide a JSON response with:
+{{
+  "fix_type": "string",
+  "description": "string", 
+  "commands": ["array of commands"],
+  "files": [],
+  "retry": true
+}}"""
+        
+        # Write prompt to temp file
+        prompt_file = self.project_root / f"data/ai_requests/iter_{self.iteration}_prompt.txt"
+        with open(prompt_file, 'w') as f:
+            f.write(prompt)
+        
+        # Call doit.sh with Gemini
+        try:
+            result = subprocess.run(
+                ["bash", "-c", f"cat {prompt_file} | ./doit.sh"],
+                cwd=self.project_root,
+                capture_output=True,
+                text=True,
+                timeout=30
+            )
+            
+            if result.returncode == 0 and result.stdout:
+                # Parse Gemini response
+                try:
+                    gemini_response = json.loads(result.stdout)
+                    
+                    # Save as AI response
+                    response_file = request_file.parent / f"{request_file.stem}_response.json"
+                    with open(response_file, 'w') as f:
+                        json.dump(gemini_response, f, indent=2)
+                    
+                    print(f"   ✅ Gemini triage complete: {response_file}")
+                except json.JSONDecodeError:
+                    print(f"   ⚠️  Gemini response not valid JSON")
+            else:
+                print(f"   ⚠️  Gemini call failed: {result.stderr[:200]}")
+        except subprocess.TimeoutExpired:
+            print(f"   ⏱️  Gemini call timeout")
+        except Exception as e:
+            print(f"   ❌ Gemini error: {e}")
     
     def check_for_ai_response(self, request_file):
         """Check if AI has provided a fix"""
