@@ -7,6 +7,14 @@ set -euo pipefail
 echo "🚀 Meta-Introspector Bootstrap"
 echo "==============================="
 echo ""
+
+# Setup zos user if needed
+if ! command -v nix-as-zos &> /dev/null; then
+    echo "⚙️  Setting up zos user..."
+    ./scripts/build/setup-zos-user.sh
+    echo ""
+fi
+
 echo "Analysis Jobs:"
 echo "  1. 001_keywords - Extract terms, emoji labels"
 echo "  2. 002_primes - Prime arithmetization, Gödel numbers"
