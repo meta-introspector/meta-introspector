@@ -1,3 +1,6 @@
+# Use: nix run ./perf-recorder#perf-build -- .#target
+# See: docs/perf/README.md for canonical patterns
+
 #!/bin/bash
 # Use perf probes to instrument ALL functions from LMFDB catalog
 # No compilation needed - kernel does the work!

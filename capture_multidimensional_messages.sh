@@ -1,3 +1,6 @@
+# Use: nix run ./perf-recorder#perf-build -- .#target
+# See: docs/perf/README.md for canonical patterns
+
 #!/bin/bash
 # Multi-dimensional semiotic message capture
 # Each binary is a functional utterance operating on nix store

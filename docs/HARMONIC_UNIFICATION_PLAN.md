@@ -524,7 +524,7 @@ This proves:
 
 ## Tools Needed
 
-- `perf record/script` - Trace collection
+- See `docs/perf/README.md` - Trace collection
 - `analyze_perf_trace.py` - Path extraction
 - `harmonic_analyzer.py` - FFT and frequency analysis
 - `orbit_classifier` - Map to LMFDB orbits

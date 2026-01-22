@@ -1,3 +1,6 @@
+# Use: nix run ./perf-recorder#perf-build -- .#target
+# See: docs/perf/README.md for canonical patterns
+
 #!/usr/bin/env bash
 set -euo pipefail
 

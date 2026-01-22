@@ -6,7 +6,7 @@ We successfully identified how to auto-label grammars by comparing rustc compila
 
 ## Methodology
 
-1. **Compiled test programs** with `rustc --self-profile` + `perf record`
+1. **Compiled test programs** with `rustc --self-profile` + See `docs/perf/README.md`
    - Enum: `enum MyEnum { Variant1, Variant2, Variant3 }`
    - Struct: `struct MyStruct { field1: i32, field2: String }`
 
