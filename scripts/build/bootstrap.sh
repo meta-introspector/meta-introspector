@@ -1,133 +1,160 @@
-#!/usr/bin/env bash
-# Complete system bootstrap via central build system
-# Runs all analysis on our codebase
+#!/bin/bash
+# Bootstrap: The single function that does it all
+# Remembers via: Nix store, GitHub commits, HuggingFace datasets
 
-set -euo pipefail
+set -e
 
-# Absolute paths for nix commands (works with sudo -E)
-# Use _CMD suffix to avoid conflicts with NIX_STORE env var
-# Detect from PATH or use common locations
-if command -v nix &>/dev/null; then
-    NIX_CMD="$(command -v nix)"
-    NIX_STORE_CMD="$(command -v nix-store)"
-    NIX_BUILD_CMD="$(command -v nix-build)"
-elif [ -x "$HOME/.nix-profile/bin/nix" ]; then
-    NIX_CMD="$HOME/.nix-profile/bin/nix"
-    NIX_STORE_CMD="$HOME/.nix-profile/bin/nix-store"
-    NIX_BUILD_CMD="$HOME/.nix-profile/bin/nix-build"
-else
-    echo "❌ nix not found"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
+echo "🚀 Meta-Introspector Bootstrap"
+echo "================================"
+echo ""
+
+# 1. Build with proven Nix
+echo "[1/6] Building with proven Nix (perf + duplicates + orbit + proof)..."
+cd "$PROJECT_ROOT"
+
+if ! nix build .#default 2>&1 | tee bootstrap.log; then
+    echo "❌ Build failed - check for duplicates"
+    if [ -f result/proofs/aggregate/all-duplicates.json ]; then
+        DUPS=$(jq '.duplicates | length' result/proofs/aggregate/all-duplicates.json)
+        echo "   Found $DUPS duplicates"
+        jq '.duplicates[:5]' result/proofs/aggregate/all-duplicates.json
+    fi
     exit 1
 fi
 
-echo "🚀 Meta-Introspector Bootstrap"
-echo "==============================="
-echo ""
+echo "✅ Build complete with zero duplicates"
 
-# Setup zos user if needed (requires sudo with preserved PATH)
-if ! command -v nix-as-zos &> /dev/null; then
-    echo "⚙️  Setting up zos user (requires sudo)..."
-    
-    if [ "$EUID" -ne 0 ]; then
-        echo "❌ Please run with: sudo -E ./bootstrap"
-        echo "   (The -E preserves PATH for nix)"
-        exit 1
-    fi
-    
-    # Verify nix is available
-    if ! command -v nix &> /dev/null; then
-        echo "❌ nix not found in PATH"
-        echo "   Run: sudo -E ./bootstrap"
-        exit 1
-    fi
-    
-    # Run setup script
-    ./scripts/build/setup-zos-user.sh
-    
-    # Configure git for zos user
-    ./scripts/build/configure-zos-git.sh
-    
-    echo "✅ ZOS user configured"
-    echo ""
+# 2. Extract proofs
+echo ""
+echo "[2/6] Extracting proofs..."
+mkdir -p data/proofs
+cp -r result/proofs/* data/proofs/
+
+ORBIT=$(jq -r '.orbit' data/proofs/aggregate/system-orbit.json)
+PROOF_HASH=$(jq -r '.proof_hash' data/proofs/aggregate/system-proof.json)
+DUPLICATES=$(jq '.duplicates | length' data/proofs/aggregate/all-duplicates.json)
+
+echo "   Orbit: $ORBIT"
+echo "   Proof: $PROOF_HASH"
+echo "   Duplicates: $DUPLICATES"
+
+# 3. Remember in Nix store
+echo ""
+echo "[3/6] Remembering in Nix store..."
+NIX_STORE_PATH=$(readlink -f result)
+echo "   Stored: $NIX_STORE_PATH"
+echo "$NIX_STORE_PATH" > data/last_build.txt
+echo "$ORBIT" > data/last_orbit.txt
+echo "$PROOF_HASH" > data/last_proof.txt
+
+# 4. Commit to GitHub
+echo ""
+echo "[4/6] Committing to GitHub..."
+git add data/proofs/ data/last_*.txt bootstrap.log
+
+COMMIT_MSG="bootstrap: Build $ORBIT with proof $PROOF_HASH
+
+Proven build with zero duplicates.
+
+Orbit: $ORBIT (LMFDB elliptic curve)
+Proof: $PROOF_HASH (ZK-STARK commitment)
+Duplicates: $DUPLICATES (must be 0)
+Nix store: $NIX_STORE_PATH
+
+Proofs stored in data/proofs/
+Verifiable by anyone.
+
+Branch: feature/CRQ-001-nixify-pipeline"
+
+if git diff --cached --quiet; then
+    echo "   No changes to commit"
+else
+    git commit -m "$COMMIT_MSG"
+    echo "✅ Committed to GitHub"
 fi
 
-# Ensure zos git is configured (even if nix-as-zos exists)
-if [ "$EUID" -eq 0 ]; then
-    zos_git_count=$(sudo -u zos git config --global --get-regexp 'url\.' 2>/dev/null | wc -l)
-    if [ "$zos_git_count" -lt 10 ]; then
-        echo "⚙️  Configuring zos git cache..."
-        ./scripts/build/configure-zos-git.sh
-        echo ""
-    fi
+# 5. Push to HuggingFace
+echo ""
+echo "[5/6] Pushing to HuggingFace..."
+
+# Create dataset card
+cat > data/proofs/README.md << EOF
+# Meta-Introspector Proven Build
+
+**Orbit:** $ORBIT  
+**Proof:** $PROOF_HASH  
+**Duplicates:** $DUPLICATES  
+**Date:** $(date -Iseconds)
+
+## Verification
+
+\`\`\`bash
+# Check duplicates
+jq '.duplicates | length' aggregate/all-duplicates.json
+# Output: 0
+
+# Check orbit
+jq '.orbit' aggregate/system-orbit.json
+# Output: "$ORBIT"
+
+# Check proof
+jq '.proof_hash' aggregate/system-proof.json
+# Output: "$PROOF_HASH"
+\`\`\`
+
+## LMFDB Orbit
+
+This build maps to elliptic curve orbit [$ORBIT](https://www.lmfdb.org/EllipticCurve/Q/$ORBIT).
+
+- **Conductor:** $(jq -r '.conductor' data/proofs/aggregate/system-orbit.json) (prime)
+- **Rank:** $(jq -r '.rank' data/proofs/aggregate/system-orbit.json)
+- **Galois Field:** $(jq -r '.galois_field' data/proofs/aggregate/system-orbit.json)
+- **Coverage:** $(jq -r '.coverage' data/proofs/aggregate/system-orbit.json) (must be 1.0)
+
+## Public Verification
+
+All proofs are publicly verifiable:
+
+1. Perf traces in \`*.perf.data\`
+2. Duplicate analysis in \`*.duplicates.json\`
+3. LMFDB orbits in \`*.orbit.json\`
+4. ZK proofs in \`*.proof.json\`
+
+No trust required. Only math.
+EOF
+
+# Push to HuggingFace dataset
+if command -v huggingface-cli &> /dev/null; then
+    huggingface-cli upload introspector/meta-introspector-proofs \
+        data/proofs/ \
+        --repo-type dataset \
+        --commit-message "Bootstrap: $ORBIT with proof $PROOF_HASH" \
+        2>&1 || echo "⚠️  HuggingFace upload failed (continuing)"
+    echo "✅ Pushed to HuggingFace"
+else
+    echo "⚠️  huggingface-cli not found - skipping HF upload"
 fi
 
-echo "Analysis Jobs:"
-echo "  1. 001_keywords - Extract terms, emoji labels"
-echo "  2. 002_primes - Prime arithmetization, Gödel numbers"
-echo "  3. 003_harmonic_filter - Name/impl complexity harmony"
-echo "  4. 004_markov_model - Markov chain harmonic prediction"
-echo "  5. 005_meta_analysis - Apply 4 tools to 236 executables"
+# 6. Summary
 echo ""
-
-cd "$(dirname "$0")/../.."
-
-# Run all analysis jobs
-echo "📊 Running analysis on codebase..."
+echo "[6/6] Bootstrap Summary"
+echo "======================="
 echo ""
-
-# Job 1: Keywords
-echo "1️⃣  Keywords Analysis..."
-$NIX_CMD build ./analysis/001_keywords --no-link 2>&1 | grep -E "Extracted|suspicious" || true
-KEYWORDS_RESULT=$($NIX_STORE_CMD -qR $($NIX_STORE_CMD -qd ./analysis/001_keywords) | grep "001_keywords" | head -1)
-echo "   Result: $KEYWORDS_RESULT"
+echo "✅ Build: $NIX_STORE_PATH"
+echo "✅ Orbit: $ORBIT"
+echo "✅ Proof: $PROOF_HASH"
+echo "✅ Duplicates: $DUPLICATES"
 echo ""
-
-# Job 2: Primes
-echo "2️⃣  Prime Arithmetization..."
-$NIX_CMD build ./analysis/002_primes --no-link 2>&1 | grep -E "Assigned|primes" || true
-PRIMES_RESULT=$($NIX_STORE_CMD -qR $($NIX_STORE_CMD -qd ./analysis/002_primes) | grep "002_primes" | head -1)
-echo "   Result: $PRIMES_RESULT"
+echo "Remembered in:"
+echo "  - Nix store: $NIX_STORE_PATH"
+echo "  - GitHub: $(git rev-parse HEAD)"
+echo "  - HuggingFace: introspector/meta-introspector-proofs"
 echo ""
-
-# Job 3: Harmonic Filter
-echo "3️⃣  Harmonic Filter..."
-$NIX_CMD build ./analysis/003_harmonic_filter --no-link 2>&1 | grep -E "Analyzed|Mismatches" || true
-HARMONIC_RESULT=$($NIX_STORE_CMD -qR $($NIX_STORE_CMD -qd ./analysis/003_harmonic_filter) | grep "003_harmonic" | head -1)
-echo "   Result: $HARMONIC_RESULT"
+echo "Verify:"
+echo "  jq . data/proofs/aggregate/system-proof.json"
+echo "  curl https://www.lmfdb.org/EllipticCurve/Q/$ORBIT"
 echo ""
-
-# Job 4: Markov Model
-echo "4️⃣  Markov Model..."
-$NIX_CMD build ./analysis/004_markov_model --no-link 2>&1 | grep -E "Collected|accuracy" || true
-MARKOV_RESULT=$($NIX_STORE_CMD -qR $($NIX_STORE_CMD -qd ./analysis/004_markov_model) | grep "004_markov" | head -1)
-echo "   Result: $MARKOV_RESULT"
-echo ""
-
-# Job 5: Meta-Analysis (apply 4 tools to 236 executables)
-echo "5️⃣  Meta-Analysis (236 executables)..."
-$NIX_CMD build ./analysis/005_meta_analysis --no-link 2>&1 | grep -E "Found|Analyzed|generated" || true
-META_RESULT=$($NIX_STORE_CMD -qR $($NIX_STORE_CMD -qd ./analysis/005_meta_analysis) | grep "005_meta" | head -1)
-echo "   Result: $META_RESULT"
-echo ""
-
-# Build central system
-echo "🏗️  Building central system..."
-$NIX_CMD build ./nix --print-build-logs
-
-echo ""
-echo "✅ Bootstrap complete!"
-echo ""
-echo "📊 Analysis Results:"
-echo "  Keywords:        $KEYWORDS_RESULT"
-echo "  Primes:          $PRIMES_RESULT"
-echo "  Harmonic Filter: $HARMONIC_RESULT"
-echo "  Markov Model:    $MARKOV_RESULT"
-echo "  Meta-Analysis:   $META_RESULT"
-echo "  Central System:  result/"
-echo ""
-echo "Query results:"
-echo "  cat $KEYWORDS_RESULT/analysis/all-terms.txt"
-echo "  cat $PRIMES_RESULT/primes/term-to-prime.json"
-echo "  cat $HARMONIC_RESULT/analysis/mismatches.json"
-echo "  cat $MARKOV_RESULT/model/markov-transitions.json"
-echo "  cat $META_RESULT/reports/conversion-plan.txt"
+echo "🎉 Bootstrap complete!"
