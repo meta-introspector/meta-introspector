@@ -85,3 +85,6 @@
 [submodule "const_71_test/graphdb/rust-cuda-reference"]
 	path = const_71_test/graphdb/rust-cuda-reference
 	url = https://github.com/Rust-GPU/Rust-CUDA.git
+[submodule "const_71_test/metacoq/metarocq-reference"]
+	path = const_71_test/metacoq/metarocq-reference
+	url = https://github.com/MetaRocq/metarocq.git
