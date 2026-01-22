@@ -32,12 +32,26 @@
           
           # Assign primes by frequency (most common = smallest prime)
           prime_assignment = {}
+          cursed_primes = [37, 157, 191, 223, 227, 229, 233, 239, 241, 251]
+          fake_terms = ['fake', 'holder', 'foo', 'example', 'dummy', 'ccc', 'bbb', 'baz', 'bar', 'aaa']
+          
+          cursed_idx = 0
           for rank, (term, freq) in enumerate(terms, start=1):
+              # Assign cursed primes to fake terms
+              if term in fake_terms:
+                  assigned_prime = cursed_primes[cursed_idx]
+                  cursed_idx += 1
+                  prime_type = "CURSED"
+              else:
+                  assigned_prime = int(prime(rank))
+                  prime_type = "harmonic"
+              
               prime_assignment[term] = {
                   "rank": rank,
                   "frequency": freq,
-                  "prime": int(prime(rank)),
-                  "emoji": "🔬" if term == "analysis" else "💻" if term == "code" else ""
+                  "prime": assigned_prime,
+                  "type": prime_type,
+                  "emoji": "🔬" if term == "analysis" else "💻" if term == "code" else "❌" if prime_type == "CURSED" else ""
               }
           
           # Save assignment
