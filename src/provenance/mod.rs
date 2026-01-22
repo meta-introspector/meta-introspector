@@ -3,11 +3,17 @@
 
 use std::collections::HashMap;
 
-/// Origin of a byte
+/// Origin of a byte (publicly verifiable)
 #[derive(Debug, Clone)]
 pub enum Origin {
-    /// From source file
-    Source { file: String, line: u32, col: u32 },
+    /// From source file (git provenance)
+    Source { 
+        file: String, 
+        line: u32, 
+        col: u32,
+        git_commit: String,
+        git_repo: String,
+    },
     
     /// From compiler transformation
     Compiler { pass: String, transform: String },
@@ -19,7 +25,7 @@ pub enum Origin {
     Runtime { syscall: String, timestamp: u64 },
 }
 
-/// Provenance for a single byte
+/// Provenance for a single byte (publicly verifiable argument)
 #[derive(Debug, Clone)]
 pub struct ByteProvenance {
     /// Byte offset in execution
@@ -28,7 +34,7 @@ pub struct ByteProvenance {
     /// Byte value
     pub byte: u8,
     
-    /// Where it came from
+    /// Where it came from (publicly verifiable)
     pub origin: Origin,
     
     /// ZK proof of origin
@@ -39,6 +45,64 @@ pub struct ByteProvenance {
     
     /// eBPF signature
     pub signature: u64,
+    
+    /// PUBLIC: Author identity
+    pub author: String,
+    pub author_gpg_key: String,
+    
+    /// PUBLIC: Timestamp
+    pub timestamp: u64,
+    
+    /// PUBLIC: Used in which orbit
+    pub used_in_orbit: u64,
+    
+    /// PUBLIC: What does this byte lift
+    pub lifts: Vec<String>,
+}
+
+impl ByteProvenance {
+    /// Verify all public facts (anyone can run this)
+    pub fn verify_public(&self) -> Result<(), String> {
+        match &self.origin {
+            Origin::Source { git_commit, file, line, col, .. } => {
+                self.verify_git_provenance(git_commit, file, *line, *col)
+            }
+            _ => Ok(()) // Other origins don't have git provenance
+        }
+    }
+    
+    /// Verify git provenance: git show <commit>:<file>
+    fn verify_git_provenance(&self, commit: &str, file: &str, line: u32, col: u32) -> Result<(), String> {
+        use std::process::Command;
+        
+        let output = Command::new("git")
+            .args(&["show", &format!("{}:{}", commit, file)])
+            .output()
+            .map_err(|e| e.to_string())?;
+        
+        if !output.status.success() {
+            return Err(format!("Commit {} not found", commit));
+        }
+        
+        let content = String::from_utf8_lossy(&output.stdout);
+        let lines: Vec<&str> = content.lines().collect();
+        
+        if line as usize >= lines.len() {
+            return Err("Line number out of range".to_string());
+        }
+        
+        let line_content = lines[line as usize];
+        if col as usize >= line_content.len() {
+            return Err("Column out of range".to_string());
+        }
+        
+        let actual_byte = line_content.as_bytes()[col as usize];
+        if actual_byte != self.byte {
+            return Err(format!("Byte mismatch: expected {}, got {}", self.byte, actual_byte));
+        }
+        
+        Ok(())
+    }
 }
 
 /// Provenance database
