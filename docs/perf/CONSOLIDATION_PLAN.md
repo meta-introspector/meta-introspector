@@ -1,61 +1,65 @@
 # Perf Record Consolidation Plan
 
-## Current State
+## Problem
 
-**368 occurrences** of "perf record" across **99 files**
+**368 occurrences** of "perf record" across **99 files** - but we already have:
+1. ✅ `perf-recorder/` flake
+2. ✅ `scripts/build/build_and_analyze_const71.sh` 
+3. ✅ Pattern: `perf record -o $out/...` in nix derivations
+4. ✅ Policy: Store perf data in /nix/store, not loose files
 
-### Top Offenders
-1. `execute_workflows.sh` - 142 occurrences (generated script, repetitive)
-2. `docs/perf/PERF_USAGE_AUDIT.md` - 14 occurrences
-3. `docs/nix/perf/README.md` - 9 occurrences
-4. Various other docs and scripts - 203 occurrences
+**Yet docs and scripts keep duplicating the pattern instead of referencing these!**
 
-## Consolidation Strategy
+## Correct Patterns (Already Exist)
 
-### 1. Create Canonical Perf Recording Function
-
-**Location:** `scripts/perf/record-build.sh`
-
-```bash
-#!/bin/bash
-# Canonical perf recording wrapper
-
-record_build() {
-    local name="$1"
-    local output_dir="${2:-data/perf}"
-    local command="${3:-nix build}"
-    
-    mkdir -p "$output_dir"
-    perf record \
-        -o "$output_dir/${name}.perf.data" \
-        -F 99 \
-        -g \
-        $command
-}
-
-# Usage:
-#   record_build "rust_build" "data/71_flakes_perf" "nix build"
+### Pattern 1: Nix Derivation (Immutable Storage)
+```nix
+# From mes-bootstrap-proof/flake.nix
+buildPhase = ''
+  mkdir -p $out/traces
+  perf record -g -o $out/traces/mes-bootstrap.perf.data -- \
+    ./build-command
+'';
 ```
 
-### 2. Replace execute_workflows.sh
-
-**Current:** 142 repetitive `perf record` commands
-
-**Replace with:**
+### Pattern 2: Perf-Recorder Flake (Interactive)
 ```bash
-#!/bin/bash
-source scripts/perf/record-build.sh
-
-for lang in agda asm bash bazel brainfuck chisel cirq cmake coq datalog ...; do
-    echo "Building $lang..."
-    cd "const_71_test/$lang"
-    record_build "${lang}_build" "../../data/71_flakes_perf"
-    record_build "${lang}_rebuild" "../../data/71_flakes_perf" "nix build --rebuild --no-substitute"
-    cd ../..
-done
+nix run ./perf-recorder#perf-build -- .#default
+# Creates timestamped perf_build_YYYYMMDD_HHMMSS.data
 ```
 
-**Savings:** 142 → ~10 lines
+### Pattern 3: Script Pattern (From build_and_analyze_const71.sh)
+```bash
+perf record -e cycles,instructions -o "$OUTPUT/build_${compiler}.data" \
+    nix build --no-link
+```
+
+## Consolidation Actions
+
+### 1. Update execute_workflows.sh (142 occurrences)
+
+**Current:** Raw perf record commands with ../../ paths
+
+**Should be:** Nix derivation that outputs to $out
+```nix
+packages.const71-perf = stdenv.mkDerivation {
+  name = "const71-perf-data";
+  buildPhase = ''
+    mkdir -p $out/perf
+    for lang in agda asm bash ...; do
+      cd const_71_test/$lang
+      perf record -o $out/perf/${lang}.perf.data -F 99 -g nix build
+      cd ../..
+    done
+  '';
+};
+```
+
+### 2. Consolidate Docs (31 occurrences in 4 files)
+
+**Merge into:** `docs/perf/README.md` (already exists!)
+
+**Content:** Reference the 3 patterns above, don't duplicate examples
 
 ### 3. Consolidate Documentation
 
