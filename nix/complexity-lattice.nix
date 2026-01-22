@@ -261,6 +261,10 @@
           buildPhase = ''
             mkdir -p $out/datasets
             
+            # Download OEIS database
+            echo "Downloading OEIS database..."
+            wget -q https://oeis.org/stripped.gz -O $out/datasets/oeis-stripped.gz || echo "Download queued"
+            
             # Download Rosetta Code archive
             echo "Downloading Rosetta Code archive..."
             wget -q https://archive.org/download/falconk_archivebot_rosettacode_org_20170324/rosettacode.org-20170324-pages-articles.xml.7z \
@@ -271,7 +275,8 @@
             {
               "name": "OEIS",
               "description": "Integer sequences with known complexity",
-              "source": "https://oeis.org",
+              "source": "https://oeis.org/wiki/Download",
+              "database": "oeis-stripped.gz",
               "examples": [
                 {"id": "A000027", "name": "Natural numbers", "complexity": 0},
                 {"id": "A000045", "name": "Fibonacci", "complexity": 1},
