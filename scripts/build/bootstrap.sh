@@ -8,10 +8,34 @@ echo "🚀 Meta-Introspector Bootstrap"
 echo "==============================="
 echo ""
 
-# Setup zos user if needed
+# Setup zos user if needed (requires sudo)
 if ! command -v nix-as-zos &> /dev/null; then
-    echo "⚙️  Setting up zos user..."
+    echo "⚙️  Setting up zos user (requires sudo)..."
+    
+    if [ "$EUID" -ne 0 ]; then
+        echo "❌ Please run with sudo for first-time setup"
+        echo "   sudo ./bootstrap"
+        exit 1
+    fi
+    
+    # Run setup script
     ./scripts/build/setup-zos-user.sh
+    
+    # Complete the config (setup script may timeout on tee)
+    echo "Finalizing zos nix config..."
+    for host in /mnt/data1/git/*/; do
+        hostname=$(basename "$host")
+        [[ "$hostname" =~ ^(links|data|file|home|git|ssh)$ ]] && continue
+        [[ "$hostname" =~ @ ]] && continue
+        echo "git-config = url.file:///mnt/data1/git/$hostname/.insteadOf=https://$hostname/"
+        echo "git-config = url.file:///mnt/data1/git/$hostname/.insteadOf=git://$hostname/"
+        echo "git-config = url.file:///mnt/data1/git/$hostname/.insteadOf=git@$hostname:"
+    done | tee -a /home/zos/.config/nix/nix.conf > /dev/null
+    
+    echo "" >> /home/zos/.config/nix/nix.conf
+    echo "# ===== End Local Git Mirror =====" >> /home/zos/.config/nix/nix.conf
+    
+    echo "✅ ZOS user configured"
     echo ""
 fi
 
