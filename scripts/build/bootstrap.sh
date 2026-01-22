@@ -4,6 +4,11 @@
 
 set -euo pipefail
 
+# Absolute paths for nix commands (works with sudo -E)
+NIX="${NIX:-$(command -v nix)}"
+NIX_STORE="${NIX_STORE:-$(command -v nix-store)}"
+NIX_BUILD="${NIX_BUILD:-$(command -v nix-build)}"
+
 echo "🚀 Meta-Introspector Bootstrap"
 echo "==============================="
 echo ""
@@ -61,42 +66,42 @@ echo ""
 
 # Job 1: Keywords
 echo "1️⃣  Keywords Analysis..."
-nix build ./analysis/001_keywords --no-link 2>&1 | grep -E "Extracted|suspicious" || true
-KEYWORDS_RESULT=$(nix-store -qR $(nix-store -qd ./analysis/001_keywords) | grep "001_keywords" | head -1)
+$NIX build ./analysis/001_keywords --no-link 2>&1 | grep -E "Extracted|suspicious" || true
+KEYWORDS_RESULT=$($NIX_STORE -qR $($NIX_STORE -qd ./analysis/001_keywords) | grep "001_keywords" | head -1)
 echo "   Result: $KEYWORDS_RESULT"
 echo ""
 
 # Job 2: Primes
 echo "2️⃣  Prime Arithmetization..."
-nix build ./analysis/002_primes --no-link 2>&1 | grep -E "Assigned|primes" || true
-PRIMES_RESULT=$(nix-store -qR $(nix-store -qd ./analysis/002_primes) | grep "002_primes" | head -1)
+$NIX build ./analysis/002_primes --no-link 2>&1 | grep -E "Assigned|primes" || true
+PRIMES_RESULT=$($NIX_STORE -qR $($NIX_STORE -qd ./analysis/002_primes) | grep "002_primes" | head -1)
 echo "   Result: $PRIMES_RESULT"
 echo ""
 
 # Job 3: Harmonic Filter
 echo "3️⃣  Harmonic Filter..."
-nix build ./analysis/003_harmonic_filter --no-link 2>&1 | grep -E "Analyzed|Mismatches" || true
-HARMONIC_RESULT=$(nix-store -qR $(nix-store -qd ./analysis/003_harmonic_filter) | grep "003_harmonic" | head -1)
+$NIX build ./analysis/003_harmonic_filter --no-link 2>&1 | grep -E "Analyzed|Mismatches" || true
+HARMONIC_RESULT=$($NIX_STORE -qR $($NIX_STORE -qd ./analysis/003_harmonic_filter) | grep "003_harmonic" | head -1)
 echo "   Result: $HARMONIC_RESULT"
 echo ""
 
 # Job 4: Markov Model
 echo "4️⃣  Markov Model..."
-nix build ./analysis/004_markov_model --no-link 2>&1 | grep -E "Collected|accuracy" || true
-MARKOV_RESULT=$(nix-store -qR $(nix-store -qd ./analysis/004_markov_model) | grep "004_markov" | head -1)
+$NIX build ./analysis/004_markov_model --no-link 2>&1 | grep -E "Collected|accuracy" || true
+MARKOV_RESULT=$($NIX_STORE -qR $($NIX_STORE -qd ./analysis/004_markov_model) | grep "004_markov" | head -1)
 echo "   Result: $MARKOV_RESULT"
 echo ""
 
 # Job 5: Meta-Analysis (apply 4 tools to 236 executables)
 echo "5️⃣  Meta-Analysis (236 executables)..."
-nix build ./analysis/005_meta_analysis --no-link 2>&1 | grep -E "Found|Analyzed|generated" || true
-META_RESULT=$(nix-store -qR $(nix-store -qd ./analysis/005_meta_analysis) | grep "005_meta" | head -1)
+$NIX build ./analysis/005_meta_analysis --no-link 2>&1 | grep -E "Found|Analyzed|generated" || true
+META_RESULT=$($NIX_STORE -qR $($NIX_STORE -qd ./analysis/005_meta_analysis) | grep "005_meta" | head -1)
 echo "   Result: $META_RESULT"
 echo ""
 
 # Build central system
 echo "🏗️  Building central system..."
-nix build ./nix --print-build-logs
+$NIX build ./nix --print-build-logs
 
 echo ""
 echo "✅ Bootstrap complete!"
