@@ -88,29 +88,13 @@ echo ""
 echo "📊 Phase 3: Extract Perf Data from Nix Store"
 echo "============================================"
 
-PERF_DATA_DIR="data/71_flakes_perf"
-mkdir -p "$PERF_DATA_DIR"
-
 # Find all perf.data files in store
 PERF_FILES=$(find /nix/store -name "*.perf.data" -type f 2>/dev/null || true)
 PERF_COUNT=$(echo "$PERF_FILES" | grep -c "perf.data" || echo "0")
 
 if [ "$PERF_COUNT" -gt 0 ]; then
     echo "  Found $PERF_COUNT perf traces in store"
-    
-    # Create symlinks to store (don't copy)
-    echo "$PERF_FILES" | while read -r perf_file; do
-        [ -z "$perf_file" ] && continue
-        
-        # Extract language/tool name from path
-        name=$(echo "$perf_file" | grep -oP '(?<=/nix/store/[^/]+-)[^/]+' | head -1)
-        [ -z "$name" ] && name="unknown-$(basename $(dirname $perf_file))"
-        
-        # Create symlink
-        ln -sf "$perf_file" "$PERF_DATA_DIR/${name}.perf.data" 2>/dev/null || true
-    done
-    
-    echo "  ✓ Linked $PERF_COUNT perf traces to $PERF_DATA_DIR"
+    echo "  ✓ All perf data in /nix/store (immutable)"
 else
     echo "  No perf data yet (will be generated on next build)"
 fi
@@ -186,7 +170,8 @@ echo "💾 Phase 7: Commit Progress"
 echo "==========================="
 
 git add -A
-git reset HEAD '*.perf.data' 'data/71_flakes_perf/*.perf.data' 2>/dev/null || true
+# Exclude all data directories - everything in nix store or HuggingFace
+git reset HEAD 'data/' '*.perf.data' '*.strace' 2>/dev/null || true
 
 if git diff --cached --quiet; then
     echo "  No changes to commit"
@@ -195,7 +180,7 @@ else
     git commit -m "Bootstrap iteration $TIMESTAMP
 
 Built: $BUILT/$TOTAL languages
-Perf traces: $PERF_COUNT
+Perf traces: $PERF_COUNT (in /nix/store)
 Models trained: $([ $PERF_COUNT -gt 0 ] && echo 'yes' || echo 'no')
 " 2>&1 | grep -E "^\[|files changed" || true
     echo "  ✅ Committed"
@@ -217,5 +202,6 @@ echo "✅ Bootstrap complete!"
 echo ""
 echo "Next steps:"
 echo "  - Run again to rebuild changed components"
-echo "  - Check data/71_flakes_perf/ for perf traces"
+echo "  - Perf data in: /nix/store (immutable derivations)"
+echo "  - Upload to HF: hf://datasets/introspector/build-telemetry"
 echo "  - Train models: cd nix/flakes/const_71_test/mes-transformer-gpu && nix build"
