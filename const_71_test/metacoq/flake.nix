@@ -14,7 +14,10 @@
         Definition x : nat := 71.
         MetaCoq Quote Definition x_quoted := x.
       '';
-      buildPhase = "coqc $src || true";
+      buildPhase = ''
+        cp $src const71_meta.v
+        coqc -Q ${pkgs.coqPackages.metarocq}/lib/coq/${pkgs.coq.coq-version}/user-contrib/MetaCoq MetaCoq const71_meta.v
+      '';
       installPhase = "mkdir -p $out && echo '71' > $out/result.txt";
     };
   };
