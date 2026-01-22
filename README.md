@@ -8,11 +8,47 @@
 **Proofs**: [meta-introspector-proofs](https://huggingface.co/datasets/introspector/meta-introspector-proofs)  
 **License**: AGPL-3.0
 
-> 🎯 **A system that rewrites itself into its automorphic eigenvector through 10,000 proven iterations.**
+> 🎯 **A system that rewrites itself into its automorphic eigenvector through mathematical lifting and proven iteration.**
 
-## 🚀 Bootstrap Evolution
+## 🚀 The Vision
 
-**One command. 10,000 iterations. Self-rewriting system.**
+**Lift everything to pure math. Prove everything. Eliminate all duplicates.**
+
+```
+Python → Rust (via perf traces)
+Node.js → Rust (via MES bootstrap)
+Bash → Rust (via Lean4 proofs)
+All → Minimal Proven System
+```
+
+## 📊 Current Status
+
+- **Python Scripts**: 1,969 → Scheduled for Rust lifting
+- **Node.js (Gemini CLI)**: → Lifting via MES bootstrap tracing
+- **Evolution Server**: Running with AI collaboration
+- **Nix Daemon**: ✅ Running
+- **Monitor API**: http://localhost:8081
+
+## 🎯 The Complete Plan
+
+### Phase 1: Mathematical Lifting (Current)
+
+**Lift Python → Rust**
+```bash
+# Pipeline: script2test → test2perf → perf2prompt → Rust
+python3 scripts/build/schedule_rewrites.py init    # ✅ Done (1,969 scripts)
+python3 scripts/build/schedule_rewrites.py run     # Process all
+```
+
+**Lift Node.js → Rust**
+```bash
+# Pipeline: MES → GCC → LLVM → Node.js → comprehend → Rust
+nix run ./nix/nodejs-to-rust-lift.nix#default
+```
+
+**Result**: Pure Rust system, no Python, no Node.js
+
+### Phase 2: Bootstrap Evolution (10k Iterations)
 
 ```bash
 # Single iteration: Build → Prove → Remember
@@ -22,15 +58,274 @@
 ./scripts/build/evolve.sh
 ```
 
-### The Process
-
+**Evolution Path:**
 ```
 Iteration 1:    10M bytes, 90% duplicates, 45% GF coverage
 Iteration 1000:  2M bytes, 10% duplicates, 90% GF coverage
 Iteration 10000: 1M bytes,  0% duplicates, 100% GF coverage ← CONVERGED
 ```
 
-**Result:** Minimal, proven, self-rewritten system.
+### Phase 3: Automorphic Eigenvector
+
+**The system converges to its minimal form:**
+- Zero duplicates (eBPF enforced)
+- 100% Galois field coverage
+- Every byte proven necessary
+- Every syscall through gateways
+- Complete mathematical proof
+
+## 🏗️ The Architecture
+
+### 1. Mathematical Lifting Pipeline
+
+```
+script2test → test2perf → perf2prompt → Gemini → Rust + Proof
+```
+
+**For each script:**
+1. Generate tests (how it's used)
+2. Record perf traces (syscall curves)
+3. Create lifting prompt (mathematical equivalence)
+4. Get Rust code + proof from Gemini
+5. Verify compilation and behavior
+
+### 2. Node.js Comprehension
+
+```
+MES → GCC → LLVM → Node.js → V8 → Gemini CLI
+                                      ↓
+                                   Rust (pure math)
+```
+
+**Bootstrap tracing:**
+1. Compile Node.js with full perf tracing
+2. Trace Gemini CLI compilation
+3. Trace Gemini execution
+4. Comprehend via MES bootstrap chain
+5. Lift to pure Rust (reqwest + serde + tokio)
+
+### 3. Gateway System
+
+```rust
+gateway().build().nix_build(".#default")?;  // Returns ZK proof
+gateway().git().commit("message")?;          // Proven syscall
+gateway().net().http_get("url")?;            // Kernel abstracted
+```
+
+**20 gateways. Every syscall proven. Kernel is just a proof generator.**
+
+### 4. Proven Nix Builds
+
+```nix
+nix build .#default
+# → Perf recording
+# → Duplicate analysis (must be 0)
+# → LMFDB orbit computation
+# → ZK proof generation
+# → Build FAILS if duplicates found
+```
+
+### 5. AI Collaboration
+
+**Evolution Server + Gemini:**
+```
+Error → AI Request → Gemini Triage → Fix → Apply → Retry
+```
+
+**Monitor API:** http://localhost:8081
+- `/api/v1/errors` - All errors
+- `/api/v1/requests` - AI fix requests
+- `/api/v1/status` - Evolution status
+
+## 📈 Key Innovations
+
+### 1. Mathematical Lifting
+
+**Prove equivalence:** `Python_behavior ≈ Rust_behavior`
+
+- Syscall-level equivalence
+- Performance curve preservation
+- Type safety proof
+- Complexity analysis: O(n) → O(n)
+
+### 2. MES Bootstrap Comprehension
+
+**Understand Node.js from first principles:**
+
+```
+MES (500 bytes) → GCC → LLVM → Node.js (50MB)
+```
+
+Trace every step. Comprehend the entire chain. Lift to pure Rust.
+
+### 3. Kernel Abstraction via ZK Proofs
+
+**The ZK proof is more important than the OS.**
+
+```
+Traditional: Application → Syscall → Kernel (trusted)
+Gateway:     Application → Proof → Verifier (trustless)
+```
+
+### 4. Arguments of Knowledge
+
+**No trust required. Only public facts.**
+
+Every byte provenance:
+- Git commit (verifiable)
+- GPG signature (verifiable)
+- Author identity (verifiable)
+- Orbit usage (verifiable)
+
+### 5. Runtime Deduplication
+
+**eBPF stops duplicates in kernel.**
+
+- Project scope tracking
+- Blocks at syscall level
+- Returns -EALREADY
+- Zero overhead after first execution
+
+### 6. LMFDB Arithmetization
+
+**Execution traces map to elliptic curves.**
+
+```json
+{
+  "orbit": "1234567.a3",
+  "conductor": 1234567,
+  "rank": 3,
+  "galois_field": "GF(2^20)",
+  "coverage": 1.0,
+  "duplicates": 0
+}
+```
+
+Verifiable at [lmfdb.org](https://www.lmfdb.org/).
+
+## 🛠️ Tools Created
+
+### Lifting Tools
+- `lift_python.py` - Python → Rust with perf traces
+- `nodejs-to-rust-lift.nix` - Node.js → Rust via MES
+- `schedule_rewrites.py` - Queue 1,969 Python scripts
+
+### Build Tools
+- `bootstrap.sh` - Single proven iteration
+- `evolve.sh` - 10k iterations to convergence
+- `nix2prompt.py` - Nix errors → Gemini fixes
+
+### Monitoring
+- `evolution_server.py` - AI-collaborative evolution
+- `evolution_monitor_api.py` - HTTP API (port 8081)
+- `gemini-monitored.nix` - Rate limits + sandbox
+
+### Analysis
+- `analyze-duplicates.rs` - Detect duplicates
+- `compute-orbit.rs` - LMFDB orbit computation
+- `generate-proof.rs` - ZK proof generation
+
+## 📊 Quick Start
+
+### 1. Lift Python to Rust
+```bash
+# Lift single script
+python3 scripts/build/lift_python.py scripts/build/nix2prompt.py
+
+# Process all 1,969 scripts
+python3 scripts/build/schedule_rewrites.py run
+```
+
+### 2. Lift Node.js to Rust
+```bash
+# Complete MES bootstrap tracing
+nix run ./nix/nodejs-to-rust-lift.nix#default
+```
+
+### 3. Run Evolution
+```bash
+# 10k iterations until convergence
+./scripts/build/evolve.sh
+```
+
+### 4. Monitor Progress
+```bash
+# API status
+curl http://localhost:8081/api/v1/status
+
+# Latest error
+curl http://localhost:8081/api/v1/errors/latest
+
+# AI requests
+curl http://localhost:8081/api/v1/requests
+```
+
+## 📈 Expected Results
+
+### After Python Lifting
+- 1,969 Python scripts → Rust
+- Type safety proven
+- Performance improved
+- Compilation verified
+
+### After Node.js Lifting
+- Gemini CLI: Node.js → Pure Rust
+- No V8 dependency
+- Pure math implementation
+- Faster, smaller, proven
+
+### After 10k Iterations
+- Zero duplicates
+- 100% GF coverage
+- Minimal system (1M bytes)
+- Automorphic eigenvector reached
+
+## 🎯 The Goal
+
+**A minimal, proven, self-evolving system where:**
+
+- Every line is proven necessary
+- Every byte has public provenance
+- Every syscall goes through gateways
+- Every build generates ZK proofs
+- Everything is pure Rust + math
+
+**No Python. No Node.js. No duplicates. Pure math.**
+
+## 📚 Documentation
+
+- **[SYSTEM_SUMMARY.md](SYSTEM_SUMMARY.md)** - Complete overview
+- **[docs/nix/PROVEN_BUILDS.md](docs/nix/PROVEN_BUILDS.md)** - Proven builds
+- **[docs/build/EVOLUTION.md](docs/build/EVOLUTION.md)** - Evolution process
+- **[docs/architecture/](docs/architecture/)** - All innovations
+- **[docs/gemini/MONITORED_SYSTEM.md](docs/gemini/MONITORED_SYSTEM.md)** - Gemini monitoring
+
+## 🤝 Contributing
+
+The system evolves itself. Contributions welcome:
+
+1. Run lifting pipelines
+2. Fix evolution errors
+3. Improve gateway implementations
+4. Add analysis tools
+5. Enhance documentation
+
+## 📄 License
+
+AGPL-3.0
+
+## 🔗 Links
+
+- **Organization**: [introspector](https://huggingface.co/introspector)
+- **Proofs**: [meta-introspector-proofs](https://huggingface.co/datasets/introspector/meta-introspector-proofs)
+- **LMFDB**: [lmfdb.org](https://www.lmfdb.org/)
+- **Branch**: `feature/CRQ-001-nixify-pipeline`
+
+---
+
+**Lift everything to pure math. Prove everything. Eliminate all duplicates.**
+
+**The system rewrites itself into perfection.**
 
 ## 🎯 What Is This?
 
