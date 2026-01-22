@@ -28,19 +28,21 @@ if ! command -v nix-as-zos &> /dev/null; then
     # Run setup script
     ./scripts/build/setup-zos-user.sh
     
-    # Configure git for zos user (not nix config)
-    echo "Configuring git for zos user..."
-    for host in /mnt/data1/git/*/; do
-        hostname=$(basename "$host")
-        [[ "$hostname" =~ ^(links|data|file|home|git|ssh)$ ]] && continue
-        [[ "$hostname" =~ @ ]] && continue
-        sudo -u zos git config --global url."file:///mnt/data1/git/$hostname/".insteadOf "https://$hostname/"
-        sudo -u zos git config --global url."file:///mnt/data1/git/$hostname/".insteadOf "git://$hostname/"
-        sudo -u zos git config --global url."file:///mnt/data1/git/$hostname/".insteadOf "git@$hostname:"
-    done
+    # Configure git for zos user
+    ./scripts/build/configure-zos-git.sh
     
     echo "✅ ZOS user configured"
     echo ""
+fi
+
+# Ensure zos git is configured (even if nix-as-zos exists)
+if [ "$EUID" -eq 0 ]; then
+    zos_git_count=$(sudo -u zos git config --global --get-regexp 'url\.' 2>/dev/null | wc -l)
+    if [ "$zos_git_count" -lt 10 ]; then
+        echo "⚙️  Configuring zos git cache..."
+        ./scripts/build/configure-zos-git.sh
+        echo ""
+    fi
 fi
 
 echo "Analysis Jobs:"
