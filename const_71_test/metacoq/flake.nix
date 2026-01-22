@@ -7,7 +7,7 @@
   in {
     packages.${system}.default = pkgs.stdenv.mkDerivation {
       name = "const71-metacoq";
-      buildInputs = [ pkgs.coq pkgs.coqPackages.metacoq ];
+      buildInputs = [ pkgs.coq pkgs.coqPackages.metarocq ];
       dontUnpack = true;
       src = pkgs.writeText "const71_meta.v" ''
         From MetaCoq.Template Require Import All.
