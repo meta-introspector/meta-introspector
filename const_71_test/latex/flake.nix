@@ -16,19 +16,19 @@
         \end{document}
       '';
       
-      nativeBuildInputs = [ pkgs.texlive.combined.scheme-basic ];
+      nativeBuildInputs = [ pkgs.texlive.combined.scheme-basic pkgs.poppler-utils ];
       
       dontUnpack = true;
       
       buildPhase = ''
         ${pkgs.texlive.combined.scheme-basic}/bin/pdflatex $src
-        ${pkgs.texlive.combined.scheme-basic}/bin/pdftotext const71.pdf output.txt
+        ${pkgs.poppler-utils}/bin/pdftotext *.pdf output.txt
         grep -q "71" output.txt || exit 1
       '';
       
       installPhase = ''
         mkdir -p $out
-        cp const71.pdf $out/
+        cp *.pdf $out/ 2>/dev/null || true
         echo "71" > $out/result.txt
       '';
     };

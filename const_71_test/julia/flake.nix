@@ -12,6 +12,7 @@
         println("x = $x")
       '';
       nativeBuildInputs = [ pkgs.julia-bin ];
+      dontUnpack = true;
       buildPhase = ''
         julia $src > output.txt
         grep -q "x = 71" output.txt || exit 1
