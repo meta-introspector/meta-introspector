@@ -121,15 +121,15 @@ Provide a JSON response with:
   "retry": true
 }}"""
         
-        # Write prompt to temp file
-        prompt_file = self.project_root / f"data/ai_requests/iter_{self.iteration}_prompt.txt"
-        with open(prompt_file, 'w') as f:
-            f.write(prompt)
-        
-        # Call doit.sh with Gemini
+        # Call Gemini with -p prompt via nix
         try:
             result = subprocess.run(
-                ["bash", "-c", f"cat {prompt_file} | ./doit.sh"],
+                [
+                    "nix", "develop", 
+                    os.path.expanduser("~/nix/vendor/external/gemini-cli/"),
+                    "-c", "bash", "-c",
+                    f"~/nix/vendor/external/gemini-cli/bundle/gemini.js --output-format json --model gemini-2.5-flash -p '{prompt}'"
+                ],
                 cwd=self.project_root,
                 capture_output=True,
                 text=True,
