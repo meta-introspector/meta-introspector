@@ -46,3 +46,13 @@ FILE_GIT_MAPPING.csv
 *.strace
 zos-results/*/performance.*
 zos-results/*/reception.*
+
+# Generated graphs
+build-graph.dot
+build-graph.png
+build-graph-simple.dot
+build-graph-simple.png
+build-order.txt
+build-levels.txt
+build-graph.json
+analyze-levels.py
