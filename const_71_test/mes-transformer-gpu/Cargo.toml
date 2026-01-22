@@ -1,0 +1,27 @@
+[package]
+name = "mes-transformer-gpu"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+burn = { git = "https://github.com/tracel-ai/burn", features = ["cuda", "train"] }
+burn-cuda = { git = "https://github.com/tracel-ai/burn" }
+parquet = "53.3.0"
+
+# Use patched cubecl with cudarc 0.19.0
+[patch."https://github.com/tracel-ai/cubecl"]
+cubecl = { path = "../burn-cuda/cubecl-patched/crates/cubecl" }
+cubecl-common = { path = "../burn-cuda/cubecl-patched/crates/cubecl-common" }
+cubecl-core = { path = "../burn-cuda/cubecl-patched/crates/cubecl-core" }
+cubecl-cpp = { path = "../burn-cuda/cubecl-patched/crates/cubecl-cpp" }
+cubecl-cpu = { path = "../burn-cuda/cubecl-patched/crates/cubecl-cpu" }
+cubecl-cuda = { path = "../burn-cuda/cubecl-patched/crates/cubecl-cuda" }
+cubecl-hip = { path = "../burn-cuda/cubecl-patched/crates/cubecl-hip" }
+cubecl-ir = { path = "../burn-cuda/cubecl-patched/crates/cubecl-ir" }
+cubecl-macros = { path = "../burn-cuda/cubecl-patched/crates/cubecl-macros" }
+cubecl-macros-internal = { path = "../burn-cuda/cubecl-patched/crates/cubecl-macros-internal" }
+cubecl-opt = { path = "../burn-cuda/cubecl-patched/crates/cubecl-opt" }
+cubecl-runtime = { path = "../burn-cuda/cubecl-patched/crates/cubecl-runtime" }
+cubecl-std = { path = "../burn-cuda/cubecl-patched/crates/cubecl-std" }
+cubecl-wgpu = { path = "../burn-cuda/cubecl-patched/crates/cubecl-wgpu" }
+cubecl-zspace = { path = "../burn-cuda/cubecl-patched/crates/cubecl-zspace" }
