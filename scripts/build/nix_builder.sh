@@ -51,11 +51,12 @@ build_flake() {
     {
         echo "=== Build started: $(date) ==="
         echo "Repo: $repo_path"
+        echo "Builder: nix_builder.sh (with metadata)"
         echo ""
         
-        # Build all flake outputs
-        echo "Building default package..."
-        nix build .#default --print-build-logs --keep-going || true
+        # Build with metadata wrapper
+        echo "Building default package with metadata..."
+        "$(dirname "$0")/nix-build-with-metadata.sh" . --print-build-logs --keep-going || true
         
         echo ""
         echo "Running flake checks..."
