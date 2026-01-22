@@ -11,6 +11,7 @@
         # Job 1: Placeholder for now (will build 71 languages later)
         languages = pkgs.stdenv.mkDerivation {
           name = "languages";
+          dontUnpack = true;
           buildPhase = ''
             mkdir -p $out
             echo "71 languages placeholder" > $out/README
@@ -20,6 +21,7 @@
         # Job 2: Extract build graph
         build-graph = pkgs.stdenv.mkDerivation {
           name = "build-graph";
+          dontUnpack = true;
           buildInputs = [ pkgs.graphviz pkgs.python3 self.packages.${system}.languages ];
           
           buildPhase = ''
@@ -31,6 +33,7 @@
         # Job 3: Perf analysis
         perf-analysis = pkgs.stdenv.mkDerivation {
           name = "perf-analysis";
+          dontUnpack = true;
           buildInputs = [ self.packages.${system}.languages ];
           
           buildPhase = ''
@@ -42,6 +45,7 @@
         # Job 4: Topological matrix
         topological-matrix = pkgs.stdenv.mkDerivation {
           name = "topological-matrix";
+          dontUnpack = true;
           buildInputs = [ 
             self.packages.${system}.build-graph
             self.packages.${system}.perf-analysis
@@ -56,6 +60,7 @@
         # Job 5: Harmonic analysis
         harmonic-analysis = pkgs.stdenv.mkDerivation {
           name = "harmonic-analysis";
+          dontUnpack = true;
           buildInputs = [ self.packages.${system}.perf-analysis ];
           
           buildPhase = ''
@@ -67,6 +72,7 @@
         # Job 6: Model training
         model-training = pkgs.stdenv.mkDerivation {
           name = "model-training";
+          dontUnpack = true;
           buildInputs = [ 
             self.packages.${system}.perf-analysis
             self.packages.${system}.topological-matrix
@@ -82,6 +88,7 @@
         # Job 7: Complete system
         default = pkgs.stdenv.mkDerivation {
           name = "meta-introspector-complete";
+          dontUnpack = true;
           
           buildInputs = [
             self.packages.${system}.languages
