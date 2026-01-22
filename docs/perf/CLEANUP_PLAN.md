@@ -16,13 +16,30 @@ Remove 368 duplicate "perf record" occurrences by using existing canonical patte
 
 ## Cleanup Actions
 
-### 1. execute_workflows.sh (142 occurrences) - DELETE & REPLACE
+### 1. execute_workflows.sh (142 occurrences) - SIMPLIFY
 
 **Current:** 142 lines of repetitive `perf record` commands
 
-**Action:** Delete file, create nix derivation instead
+**Action:** Keep as interface, call nix derivations
 
-**New:** `nix/flakes/const_71_test/flake.nix` add:
+**New execute_workflows.sh:**
+```bash
+#!/bin/bash
+# Interface to const71 perf recording
+
+echo "Building all 71 languages with perf recording..."
+
+# Build the derivation that records perf for all languages
+nix build ./nix/flakes/const_71_test#perf-all
+
+# Link results
+ln -sf result perf-data
+
+echo "✅ Perf data in: perf-data/perf/"
+echo "Analyze: perf report -i perf-data/perf/rust.perf.data"
+```
+
+**Backend:** `nix/flakes/const_71_test/flake.nix` add:
 ```nix
 packages.perf-all = stdenv.mkDerivation {
   name = "const71-perf-data";
@@ -37,7 +54,7 @@ packages.perf-all = stdenv.mkDerivation {
 };
 ```
 
-**Result:** 142 lines → 0 (use nix derivation)
+**Result:** 142 lines → 10 lines (interface) + nix derivation (backend)
 
 ### 2. Duplicate Docs (31 occurrences in 4 files) - MERGE
 
