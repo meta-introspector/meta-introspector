@@ -256,7 +256,7 @@
         labeled-datasets = pkgs.stdenv.mkDerivation {
           name = "labeled-datasets";
           
-          buildInputs = [ pkgs.python3 pkgs.wget ];
+          buildInputs = [ pkgs.python3 pkgs.wget pkgs.git ];
           
           buildPhase = ''
             mkdir -p $out/datasets
@@ -264,6 +264,10 @@
             # Download OEIS database
             echo "Downloading OEIS database..."
             wget -q https://oeis.org/stripped.gz -O $out/datasets/oeis-stripped.gz || echo "Download queued"
+            
+            # Clone OEIS data repository
+            echo "Cloning OEIS data repository..."
+            git clone --depth 1 https://github.com/oeis/oeisdata.git $out/datasets/oeisdata || echo "Clone queued"
             
             # Download Rosetta Code archive
             echo "Downloading Rosetta Code archive..."
@@ -275,8 +279,14 @@
             {
               "name": "OEIS",
               "description": "Integer sequences with known complexity",
-              "source": "https://oeis.org/wiki/Download",
-              "database": "oeis-stripped.gz",
+              "sources": [
+                "https://oeis.org/wiki/Download",
+                "https://github.com/oeis/oeisdata"
+              ],
+              "files": {
+                "database": "oeis-stripped.gz",
+                "repository": "oeisdata/"
+              },
               "examples": [
                 {"id": "A000027", "name": "Natural numbers", "complexity": 0},
                 {"id": "A000045", "name": "Fibonacci", "complexity": 1},
