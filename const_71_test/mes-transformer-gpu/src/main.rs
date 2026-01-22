@@ -170,14 +170,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let device = CudaDevice::default();
     println!("🎮 Using CUDA device: {:?}\n", device);
     
-    // Load perf data
-    println!("📊 Loading perf data...");
-    let rust_ips = load_perf_ips("../../mes-transformer/rust_perf.parquet")
-        .or_else(|_| load_perf_ips("rust_perf.parquet"))
-        .unwrap_or_else(|_| {
-            println!("⚠️  No perf data found, using synthetic data");
-            (0..1000).map(|i| 0x400000 + i * 8).collect()
-        });
+    // Load perf data from 71 flakes builds
+    println!("📊 Loading perf data from nix store builds...");
+    
+    let perf_dir = "../../data/71_flakes_perf";
+    let rust_perf = format!("{}/rust_*_build.perf.data", perf_dir);
+    let python_perf = format!("{}/python_*_build.perf.data", perf_dir);
+    let haskell_perf = format!("{}/haskell_*_build.perf.data", perf_dir);
+    
+    // For now, we need to extract IPs from perf.data files
+    // This requires parsing the binary perf format
+    println!("⚠️  Perf data extraction not yet implemented");
+    println!("    Need to parse perf.data binary format to extract instruction pointers");
+    println!("    Available: {} of real nix build perf data", "4GB");
+    
+    return Err("Perf data extraction not implemented - need to parse perf.data format".into());
     
     println!("  Loaded {} IPs", rust_ips.len());
     
