@@ -5,7 +5,7 @@ set -e
 
 echo "🔧 Configuring git for zos user..."
 
-count=0
+# Generate gitconfig as regular user (fast)
 for host in /mnt/data1/git/*/; do
     hostname=$(basename "$host")
     
@@ -13,14 +13,17 @@ for host in /mnt/data1/git/*/; do
     [[ "$hostname" =~ ^(links|data|file|home|git|ssh)$ ]] && continue
     [[ "$hostname" =~ @ ]] && continue
     
-    # Configure git URL rewrites
-    sudo -u zos git config --global url."file:///mnt/data1/git/$hostname/".insteadOf "https://$hostname/"
-    sudo -u zos git config --global url."file:///mnt/data1/git/$hostname/".insteadOf "git://$hostname/"
-    sudo -u zos git config --global url."file:///mnt/data1/git/$hostname/".insteadOf "git@$hostname:"
-    
-    ((count++))
-done
+    echo "[url \"file:///mnt/data1/git/$hostname/\"]"
+    echo "	insteadOf = https://$hostname/"
+    echo "	insteadOf = git://$hostname/"
+    echo "	insteadOf = git@$hostname:"
+done > /tmp/zos-gitconfig
 
+# Copy to zos home
+sudo cp /tmp/zos-gitconfig /home/zos/.gitconfig
+sudo chown zos:zos /home/zos/.gitconfig
+
+count=$(grep -c '^\[url' /tmp/zos-gitconfig)
 echo "✅ Configured $count hosts for zos user"
 echo ""
 echo "Verify:"
