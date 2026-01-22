@@ -256,16 +256,22 @@
         labeled-datasets = pkgs.stdenv.mkDerivation {
           name = "labeled-datasets";
           
-          buildInputs = [ pkgs.python3 ];
+          buildInputs = [ pkgs.python3 pkgs.wget ];
           
           buildPhase = ''
             mkdir -p $out/datasets
+            
+            # Download Rosetta Code archive
+            echo "Downloading Rosetta Code archive..."
+            wget -q https://archive.org/download/falconk_archivebot_rosettacode_org_20170324/rosettacode.org-20170324-pages-articles.xml.7z \
+              -O $out/datasets/rosettacode-archive.7z || echo "Download queued"
             
             # OEIS sequences as labeled complexity examples
             cat > $out/datasets/oeis-manifest.json <<EOF
             {
               "name": "OEIS",
               "description": "Integer sequences with known complexity",
+              "source": "https://oeis.org",
               "examples": [
                 {"id": "A000027", "name": "Natural numbers", "complexity": 0},
                 {"id": "A000045", "name": "Fibonacci", "complexity": 1},
@@ -281,6 +287,8 @@
             {
               "name": "Rosetta Code",
               "description": "Same task in multiple languages",
+              "source": "https://archive.org/details/falconk_archivebot_rosettacode_org_20170324",
+              "archive": "rosettacode.org-20170324-pages-articles.xml.7z",
               "tasks": [
                 {"name": "Hello World", "complexity": 0, "features": ["output"]},
                 {"name": "FizzBuzz", "complexity": 1, "features": ["loop", "conditional", "output"]},
