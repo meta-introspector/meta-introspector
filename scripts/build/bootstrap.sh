@@ -12,6 +12,7 @@ echo "  1. 001_keywords - Extract terms, emoji labels"
 echo "  2. 002_primes - Prime arithmetization, Gödel numbers"
 echo "  3. 003_harmonic_filter - Name/impl complexity harmony"
 echo "  4. 004_markov_model - Markov chain harmonic prediction"
+echo "  5. 005_meta_analysis - Apply 4 tools to 236 executables"
 echo ""
 
 cd "$(dirname "$0")/../.."
@@ -48,6 +49,13 @@ MARKOV_RESULT=$(nix-store -qR $(nix-store -qd ./analysis/004_markov_model) | gre
 echo "   Result: $MARKOV_RESULT"
 echo ""
 
+# Job 5: Meta-Analysis (apply 4 tools to 236 executables)
+echo "5️⃣  Meta-Analysis (236 executables)..."
+nix build ./analysis/005_meta_analysis --no-link 2>&1 | grep -E "Found|Analyzed|generated" || true
+META_RESULT=$(nix-store -qR $(nix-store -qd ./analysis/005_meta_analysis) | grep "005_meta" | head -1)
+echo "   Result: $META_RESULT"
+echo ""
+
 # Build central system
 echo "🏗️  Building central system..."
 nix build ./nix --print-build-logs
@@ -60,6 +68,7 @@ echo "  Keywords:        $KEYWORDS_RESULT"
 echo "  Primes:          $PRIMES_RESULT"
 echo "  Harmonic Filter: $HARMONIC_RESULT"
 echo "  Markov Model:    $MARKOV_RESULT"
+echo "  Meta-Analysis:   $META_RESULT"
 echo "  Central System:  result/"
 echo ""
 echo "Query results:"
@@ -67,3 +76,4 @@ echo "  cat $KEYWORDS_RESULT/analysis/all-terms.txt"
 echo "  cat $PRIMES_RESULT/primes/term-to-prime.json"
 echo "  cat $HARMONIC_RESULT/analysis/mismatches.json"
 echo "  cat $MARKOV_RESULT/model/markov-transitions.json"
+echo "  cat $META_RESULT/reports/conversion-plan.txt"
