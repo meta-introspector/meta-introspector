@@ -1,0 +1,621 @@
+{
+  "total": 537,
+  "by_category": {
+    "build": 59,
+    "unknown": 333,
+    "git": 37,
+    "telemetry": 25,
+    "analysis": 27,
+    "test": 53,
+    "query": 3
+  },
+  "categories": {
+    "analysis": [
+      {
+        "name": "analyze_cargo_deps",
+        "path": "src/bin/analyze_cargo_deps.rs",
+        "inputs": [
+          "git_repo"
+        ],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "analyze_char_transitions",
+        "path": "lmfdb-self-analyzer/src/bin/analyze_char_transitions.rs",
+        "inputs": [
+          "files",
+          "parquet"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "analyze_transitions",
+        "path": "lmfdb-self-analyzer/src/bin/analyze_transitions.rs",
+        "inputs": [
+          "files",
+          "parquet"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "analyze_workspaces",
+        "path": "src/bin/analyze_workspaces.rs",
+        "inputs": [
+          "git_repo"
+        ],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "cascading-repo-analyzer",
+        "path": "cascading-repo-analyzer.rs",
+        "inputs": [
+          "git_repo"
+        ],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "code_duplication_scanner",
+        "path": "research/experimental/code_duplication_scanner.rs",
+        "inputs": [
+          "files"
+        ],
+        "outputs": [
+          "files",
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "conformal_structure_analyzer",
+        "path": "research/experimental/conformal_structure_analyzer.rs",
+        "inputs": [
+          "files"
+        ],
+        "outputs": [
+          "files",
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "conformal_structure_analyzer_fixed",
+        "path": "conformal_structure_analyzer_fixed.rs",
+        "inputs": [
+          "files"
+        ],
+        "outputs": [
+          "files",
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "crossbeam_rustc_analyzer",
+        "path": "src/analysis/crossbeam_rustc_analyzer.rs",
+        "inputs": [
+          "cli_args"
+        ],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "crossbeam_rustc_analyzer_complete",
+        "path": "crossbeam_rustc_analyzer_complete.rs",
+        "inputs": [
+          "cli_args"
+        ],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      }
+    ],
+    "build": [
+      {
+        "name": "build",
+        "path": "build.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "build",
+        "path": "cargo2nix-fresh/examples/3-cross-compiling/build.rs",
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "name": "build",
+        "path": "rust-libc-interceptor/build.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "build",
+        "path": "nix/flakes/const_71_test/cubecl/oblichey-reference/crates/oblichey-cli/src/build.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "build",
+        "path": "nix/flakes/const_71_test/burn-cuda/cubecl-patched/crates/cubecl-macros/build.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "build",
+        "path": "nix/flakes/const_71_test/burn-cuda/cubecl-patched/crates/cubecl/build.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "build",
+        "path": "nix/flakes/const_71_test/burn-cuda/cubecl-patched/crates/cubecl-runtime/build.rs",
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "name": "build",
+        "path": "nix/flakes/const_71_test/burn-cuda/cubecl-patched/crates/cubecl-common/build.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "build",
+        "path": "nix/flakes/const_71_test/burn-cuda/cubecl-patched/crates/cubecl-cuda/build.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "build",
+        "path": "nix/flakes/const_71_test/burn-cuda/cubecl-patched/crates/cubecl-cpu/build.rs",
+        "inputs": [],
+        "outputs": []
+      }
+    ],
+    "git": [
+      {
+        "name": "apt2git",
+        "path": "src/bin/apt2git.rs",
+        "inputs": [
+          "cli_args",
+          "git_repo"
+        ],
+        "outputs": [
+          "files",
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "auto_label_repos",
+        "path": "auto_label_repos.rs",
+        "inputs": [
+          "files",
+          "parquet",
+          "git_repo"
+        ],
+        "outputs": [
+          "files",
+          "stdout",
+          "parquet",
+          "json"
+        ]
+      },
+      {
+        "name": "canonicalize_repos",
+        "path": "canonicalize_repos.rs",
+        "inputs": [
+          "files",
+          "git_repo"
+        ],
+        "outputs": [
+          "files",
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "compression_report",
+        "path": "compression_report.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "crossbeam_repo_compressor",
+        "path": "crossbeam_repo_compressor.rs",
+        "inputs": [
+          "git_repo"
+        ],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "demo_git_pack_market",
+        "path": "research/experimental/demo_git_pack_market.rs",
+        "inputs": [
+          "parquet",
+          "git_repo"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "demo_scan_git_packs",
+        "path": "research/experimental/demo_scan_git_packs.rs",
+        "inputs": [
+          "parquet",
+          "git_repo"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "galois_report",
+        "path": "galois_report.rs",
+        "inputs": [
+          "files",
+          "perf_data"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "generate-monthly-reports",
+        "path": "generate-monthly-reports.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "git-metrics-report",
+        "path": "git-metrics-report.rs",
+        "inputs": [
+          "git_repo"
+        ],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      }
+    ],
+    "query": [
+      {
+        "name": "binary_similarity_search",
+        "path": "binary_similarity_search.rs",
+        "inputs": [
+          "parquet",
+          "git_repo"
+        ],
+        "outputs": [
+          "files",
+          "stdout",
+          "parquet"
+        ]
+      },
+      {
+        "name": "query_ast_types",
+        "path": "src/analysis/query_ast_types.rs",
+        "inputs": [
+          "files",
+          "parquet"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "search_utils",
+        "path": "src/search_utils.rs",
+        "inputs": [
+          "files"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      }
+    ],
+    "telemetry": [
+      {
+        "name": "bootstrap_telemetry_system",
+        "path": "bootstrap_telemetry_system.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "build_telemetry_lib",
+        "path": "build_telemetry_lib.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "demo_perf_scanner",
+        "path": "research/experimental/demo_perf_scanner.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "hello_telemetry_wrappers",
+        "path": "hello_telemetry_wrappers.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "monolithic_telemetry_runner",
+        "path": "monolithic_telemetry_runner.rs",
+        "inputs": [],
+        "outputs": [
+          "files",
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "nix_build_telemetry",
+        "path": "nix_build_telemetry.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "nix_build_telemetry_old",
+        "path": "nix_build_telemetry_old.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "nix_telemetry_integration",
+        "path": "nix_telemetry_integration.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "nix_telemetry_integration_old",
+        "path": "nix_telemetry_integration_old.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "nix_telemetry_preload",
+        "path": "nix_telemetry_preload.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      }
+    ],
+    "test": [
+      {
+        "name": "archived_demos_stub",
+        "path": "research/experimental/archived_demos_stub.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "bootstrap_test",
+        "path": "bootstrap_test.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "conformity_test",
+        "path": "conformity_test.rs",
+        "inputs": [
+          "perf_data"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "demo_backend_equivalence",
+        "path": "research/experimental/demo_backend_equivalence.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "demo_block_market",
+        "path": "research/experimental/demo_block_market.rs",
+        "inputs": [
+          "files"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "demo_branch_mining",
+        "path": "research/experimental/demo_branch_mining.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "demo_compression_evolution",
+        "path": "research/experimental/demo_compression_evolution.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "demo_compression_study",
+        "path": "research/experimental/demo_compression_study.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "demo_content_store",
+        "path": "research/experimental/demo_content_store.rs",
+        "inputs": [
+          "files",
+          "parquet"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "demo_embeddings",
+        "path": "research/experimental/demo_embeddings.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      }
+    ],
+    "unknown": [
+      {
+        "name": "activation_descriptor",
+        "path": "nix/flakes/const_71_test/graphdb/rust-cuda-reference/crates/cudnn/src/activation/activation_descriptor.rs",
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "name": "all_commits_collector",
+        "path": "src/core/all_commits_collector.rs",
+        "inputs": [
+          "git_repo"
+        ],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "archive_declarations",
+        "path": "archive_declarations.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "array",
+        "path": "nix/flakes/const_71_test/graphdb/rust-cuda-reference/crates/cust/src/memory/array.rs",
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "name": "array_variable",
+        "path": "nix/flakes/const_71_test/burn-cuda/cubecl-patched/crates/cubecl-core/tests/error/array_variable.rs",
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "name": "automorphic_orbit_71",
+        "path": "research/mathematical/automorphic_orbit_71.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout",
+          "json"
+        ]
+      },
+      {
+        "name": "automorphic_orbit_lmfdb",
+        "path": "automorphic_orbit_lmfdb.rs",
+        "inputs": [
+          "files",
+          "parquet",
+          "git_repo"
+        ],
+        "outputs": [
+          "stdout",
+          "parquet"
+        ]
+      },
+      {
+        "name": "automorphic_proof",
+        "path": "nixso2probe/src/automorphic_proof.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "bach",
+        "path": "src/core/bach.rs",
+        "inputs": [],
+        "outputs": [
+          "stdout"
+        ]
+      },
+      {
+        "name": "baseline_comparator",
+        "path": "baseline_comparator.rs",
+        "inputs": [
+          "files",
+          "perf_data"
+        ],
+        "outputs": [
+          "stdout"
+        ]
+      }
+    ]
+  }
+}
