@@ -18,9 +18,9 @@
           buildPhase = ''
             mkdir -p $out/analysis
             
-            # Extract all words from sh/rs/nix files (exclude submodules)
+            # Extract all words from sh/rs/nix/md files (include docs for weight)
             find . -maxdepth 3 -type f \
-              \( -name "*.sh" -o -name "*.rs" -o -name "*.nix" \) \
+              \( -name "*.sh" -o -name "*.rs" -o -name "*.nix" -o -name "*.md" \) \
               ! -path "./nix/flakes/*" \
               ! -path "./.git/*" \
               ! -path "./submodules/*" \
