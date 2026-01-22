@@ -1,127 +1,221 @@
 #!/usr/bin/env bash
+# Complete system bootstrap - builds entire meta-introspector from scratch
+# Uses nix store to cache previous work and avoid rebuilds
+
 set -euo pipefail
 
-echo "🚀 ZOS Bootstrap - Smart iteration"
-echo "==================================="
+echo "🚀 Meta-Introspector Complete Bootstrap"
+echo "========================================"
 echo ""
 
-# Phase 0: Generate Cargo.nix with perf recording
-echo "📋 Phase 0: Cargo.nix generation (with perf)"
-if [ ! -f Cargo.nix ] || [ Cargo.lock -nt Cargo.nix ]; then
-    echo "  Recording cargo2nix with perf+strace..."
-    ./tools/scripts/record-cargo2nix.sh 2>&1 | tail -10 || echo "  Generation attempted"
+# Check for previous work in nix store
+PREV_BUILDS=$(nix-store -q --references /nix/var/nix/profiles/default 2>/dev/null | grep -c "meta-introspector" || echo "0")
+if [ "$PREV_BUILDS" -gt 0 ]; then
+    echo "📦 Found $PREV_BUILDS previous builds in nix store"
+    echo "   Reusing cached artifacts..."
+else
+    echo "🆕 Starting from scratch"
+fi
+echo ""
+
+# Phase 1: Build 71 Language Tests
+echo "🔢 Phase 1: Build 71 Language Tests (const_71_test)"
+echo "=================================================="
+
+cd nix/flakes/const_71_test
+
+# Check which languages already built
+BUILT=0
+TOTAL=71
+
+for lang_dir in */; do
+    lang=$(basename "$lang_dir")
+    [ ! -f "$lang_dir/flake.nix" ] && continue
     
-    # Store reference to perf data in HF
-    if [ -f cargo2nix.perf.data ]; then
-        mkdir -p hf-build-telemetry-upload/perf-refs
-        cat > hf-build-telemetry-upload/perf-refs/cargo2nix-$(date +%s).json <<EOF
-{
-  "timestamp": "$(date -Iseconds)",
-  "commit": "$(git rev-parse HEAD)",
-  "tool": "cargo2nix",
-  "perf_size": "$(stat -f%z cargo2nix.perf.data 2>/dev/null || stat -c%s cargo2nix.perf.data)",
-  "hf_dataset": "hf://datasets/introspector/build-telemetry/cargo2nix"
-}
-EOF
-        echo "  ✓ Perf data reference stored"
+    # Check if already in store
+    if nix-store -q --references /nix/var/nix/profiles/default 2>/dev/null | grep -q "$lang"; then
+        echo "  ✓ $lang (cached)"
+        ((BUILT++))
+    else
+        echo "  🔨 Building $lang..."
+        if nix build "./$lang" --no-link 2>&1 | tail -1; then
+            echo "  ✅ $lang"
+            ((BUILT++))
+        else
+            echo "  ⚠️  $lang (failed, continuing)"
+        fi
+    fi
+done
+
+echo ""
+echo "  Built: $BUILT/$TOTAL languages"
+echo "✅ Phase 1 complete"
+echo ""
+
+cd ../../..
+
+# Phase 2: Build Perf Analysis Tools
+echo "🔬 Phase 2: Build Perf Analysis Tools"
+echo "====================================="
+
+TOOLS=(
+    "nix/flakes/const_71_test/perf-complexity"
+    "nix/flakes/const_71_test/topological-function-matrix"
+    "nix/flakes/const_71_test/mes-transformer-gpu"
+)
+
+for tool in "${TOOLS[@]}"; do
+    tool_name=$(basename "$tool")
+    echo "  🔨 Building $tool_name..."
+    
+    if [ -d "$tool" ]; then
+        cd "$tool"
+        if nix build --no-link 2>&1 | tail -1; then
+            echo "  ✅ $tool_name"
+        else
+            echo "  ⚠️  $tool_name (failed, continuing)"
+        fi
+        cd - >/dev/null
+    else
+        echo "  ⚠️  $tool_name (not found)"
+    fi
+done
+
+echo "✅ Phase 2 complete"
+echo ""
+
+# Phase 3: Extract Perf Data from Store
+echo "📊 Phase 3: Extract Perf Data from Nix Store"
+echo "============================================"
+
+PERF_DATA_DIR="data/71_flakes_perf"
+mkdir -p "$PERF_DATA_DIR"
+
+# Find all perf.data files in store
+PERF_FILES=$(find /nix/store -name "*.perf.data" -type f 2>/dev/null || true)
+PERF_COUNT=$(echo "$PERF_FILES" | grep -c "perf.data" || echo "0")
+
+if [ "$PERF_COUNT" -gt 0 ]; then
+    echo "  Found $PERF_COUNT perf traces in store"
+    
+    # Create symlinks to store (don't copy)
+    echo "$PERF_FILES" | while read -r perf_file; do
+        [ -z "$perf_file" ] && continue
+        
+        # Extract language/tool name from path
+        name=$(echo "$perf_file" | grep -oP '(?<=/nix/store/[^/]+-)[^/]+' | head -1)
+        [ -z "$name" ] && name="unknown-$(basename $(dirname $perf_file))"
+        
+        # Create symlink
+        ln -sf "$perf_file" "$PERF_DATA_DIR/${name}.perf.data" 2>/dev/null || true
+    done
+    
+    echo "  ✓ Linked $PERF_COUNT perf traces to $PERF_DATA_DIR"
+else
+    echo "  No perf data yet (will be generated on next build)"
+fi
+
+echo "✅ Phase 3 complete"
+echo ""
+
+# Phase 4: Train Models on Perf Data
+echo "🧠 Phase 4: Train Models on Perf Data"
+echo "====================================="
+
+if [ "$PERF_COUNT" -gt 0 ]; then
+    echo "  Training meta-model on $PERF_COUNT traces..."
+    
+    # Build mes-transformer-gpu with real data
+    cd nix/flakes/const_71_test/mes-transformer-gpu
+    
+    if nix build --no-link 2>&1 | tail -3; then
+        MODEL_PATH=$(nix-store -q --outputs $(nix-store -qd .))
+        echo "  ✅ Model trained: $MODEL_PATH"
+    else
+        echo "  ⚠️  Training failed (need more perf data)"
+    fi
+    
+    cd ../../../..
+else
+    echo "  Skipping (no perf data yet)"
+fi
+
+echo "✅ Phase 4 complete"
+echo ""
+
+# Phase 5: Build Analysis Tools
+echo "🔧 Phase 5: Build Analysis Tools"
+echo "================================"
+
+# Build Rust analysis tools
+if [ -f "Cargo.toml" ]; then
+    echo "  Building Rust workspace..."
+    
+    if cargo build --release 2>&1 | tail -5; then
+        BINS=$(ls target/release/ 2>/dev/null | grep -v "\.d$" | grep -v "deps" | wc -l)
+        echo "  ✅ Built $BINS binaries"
+    else
+        echo "  ⚠️  Some builds failed"
     fi
 else
-    echo "  ✓ Cargo.nix up to date"
+    echo "  No Cargo.toml found"
 fi
+
+echo "✅ Phase 5 complete"
 echo ""
 
-# Phase 1: Build via Nix (stores perf in /nix/store)
-echo "📦 Phase 1: Nix build"
-BUILD_HASH=$(git rev-parse HEAD)
+# Phase 6: Generate Documentation
+echo "📚 Phase 6: Generate Documentation"
+echo "=================================="
 
-# Build Rust tools only (skip WASM for now)
-echo "  Building Rust tools..."
-BUILD_LOG=$(mktemp)
-if ! cargo build --release 2>&1 | tee "$BUILD_LOG"; then
-    echo ""
-    echo "❌ Build failed - showing errors:"
-    echo "=================================="
-    grep -A10 "^error" "$BUILD_LOG" | head -50
-    rm "$BUILD_LOG"
-    exit 1
-fi
-rm "$BUILD_LOG"
-echo "✅ Build phase complete"
-echo ""
-
-# Phase 2: Analyze perf data (if exists in store)
-echo "🔬 Phase 2: Analyze perf data"
-
-# First, record cargo2nix if Cargo.lock changed
-if [ ! -f Cargo.nix ] || [ Cargo.lock -nt Cargo.nix ]; then
-    echo "  Recording cargo2nix generation..."
-    ./tools/scripts/record-cargo2nix.sh 2>&1 | tail -5 || true
-fi
-
-PERF_FILES=$(find /nix/store -name "build.perf.data" -type f 2>/dev/null | wc -l)
-if [ "$PERF_FILES" -gt 0 ]; then
-    echo "  Found $PERF_FILES perf traces in store"
-    
-    # Run orbit extraction (output goes to store)
-    nix build .#extract-orbits --no-link 2>&1 | tail -3 || true
-    
-    echo "  ✓ Analysis complete (results in /nix/store)"
+# Ensure docs are up to date
+if [ -f "docs/files.tsv" ]; then
+    DOC_COUNT=$(wc -l < docs/files.tsv)
+    echo "  ✓ $DOC_COUNT documentation files indexed"
 else
-    echo "  No perf data yet"
+    echo "  Generating documentation index..."
+    find docs -name "*.md" -type f | sort > docs/files.tsv
+    echo "  ✅ Documentation indexed"
 fi
-echo "✅ Analysis phase complete"
+
+echo "✅ Phase 6 complete"
 echo ""
 
-# Phase 3: Self-metadata (minimal, no perf data)
-echo "🪞 Phase 3: Self-metadata"
-./tools/scripts/collect-repo-metadata.sh . >/dev/null 2>&1 || true
-mkdir -p zos && mv zos.toml zos/ 2>/dev/null || true
-echo "✅ Metadata generated"
-echo ""
+# Phase 7: Commit Progress
+echo "💾 Phase 7: Commit Progress"
+echo "==========================="
 
-# Phase 4: Commit (exclude all data files)
-echo "💾 Phase 4: Commit"
 git add -A
-git reset HEAD '*.perf.data' '*.strace' 'data/' 'zos-results/' 2>/dev/null || true
+git reset HEAD '*.perf.data' 'data/71_flakes_perf/*.perf.data' 2>/dev/null || true
+
 if git diff --cached --quiet; then
-    echo "  No code changes"
+    echo "  No changes to commit"
 else
-    git commit -m "chore: bootstrap iteration $(date +%s)" 2>&1 | grep -E "^\[|files changed" || true
+    TIMESTAMP=$(date +%s)
+    git commit -m "Bootstrap iteration $TIMESTAMP
+
+Built: $BUILT/$TOTAL languages
+Perf traces: $PERF_COUNT
+Models trained: $([ $PERF_COUNT -gt 0 ] && echo 'yes' || echo 'no')
+" 2>&1 | grep -E "^\[|files changed" || true
+    echo "  ✅ Committed"
 fi
-echo "✅ Committed (data in Nix store only)"
+
+echo "✅ Phase 7 complete"
 echo ""
 
-# Phase 5: Push data to HuggingFace (not git)
-echo "📤 Phase 5: Push to HuggingFace"
-if [ -d "hf-build-telemetry-upload" ]; then
-    # Store perf data references (not the data itself)
-    mkdir -p hf-build-telemetry-upload/perf-refs
-    
-    # Create reference file with IPFS/HF URLs
-    cat > hf-build-telemetry-upload/perf-refs/latest.json <<EOF
-{
-  "timestamp": "$(date -Iseconds)",
-  "commit": "$(git rev-parse HEAD)",
-  "perf_data": {
-    "hf_dataset": "hf://datasets/introspector/build-telemetry",
-    "ipfs_cid": "TODO: upload to IPFS",
-    "description": "Bootstrap perf data"
-  }
-}
-EOF
-    
-    echo "  ✓ Reference stored (data in HF/IPFS, not git)"
-else
-    echo "  HF dataset not initialized"
-fi
-echo "✅ Data pushed"
+# Final Status
+echo "📊 Final Status"
+echo "==============="
+echo "  Languages built: $BUILT/$TOTAL"
+echo "  Perf traces: $PERF_COUNT"
+echo "  Nix store builds: $(nix-store -q --references /nix/var/nix/profiles/default 2>/dev/null | wc -l)"
+echo "  Store size: $(du -sh /nix/store 2>/dev/null | cut -f1)"
+echo "  Documentation: $(wc -l < docs/files.tsv 2>/dev/null || echo 0) files"
 echo ""
-
-# Phase 6: Status
-echo "📊 Status"
-echo "  Commits: $(git rev-list --count HEAD)"
-echo "  Tools: $(ls *.rs 2>/dev/null | wc -l)"
-echo "  Perf traces in store: $PERF_FILES"
-echo "  Store usage: $(du -sh /nix/store 2>/dev/null | cut -f1)"
+echo "✅ Bootstrap complete!"
 echo ""
-echo "✅ Bootstrap complete - run again to iterate"
+echo "Next steps:"
+echo "  - Run again to rebuild changed components"
+echo "  - Check data/71_flakes_perf/ for perf traces"
+echo "  - Train models: cd nix/flakes/const_71_test/mes-transformer-gpu && nix build"
