@@ -118,7 +118,8 @@ Shows:
 For full chain from MES:
 
 ```bash
-./tools/scripts/complete-bootstrap-performance.sh
+# Use perf-recorder or bootstrap.sh instead
+nix run ./perf-recorder#perf-build -- .#default
 ```
 
 Records entire chain: MES → Nix → LLVM → Rust → ZOS
