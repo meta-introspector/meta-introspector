@@ -36,7 +36,6 @@ record-mes
 ## Output
 
 Creates directory `mes-bootstrap-TIMESTAMP/` with:
-- `mes-bootstrap.perf.data` - Full perf recording
 - `perf-report.txt` - Human-readable report
 - `perf-trace.txt` - Complete trace
 - `witness-hash.txt` - SHA256 of perf.data
@@ -155,7 +154,6 @@ This proves:
 
 This implements the concepts from `poem.md`:
 
-> perf record nix-build guix.gnu.mes
 >          ↓
 >     The ritual begins...
 >     Every syscall a prayer 🙏

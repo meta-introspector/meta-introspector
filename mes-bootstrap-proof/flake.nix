@@ -30,7 +30,7 @@
             mkdir -p $out/traces
             
             # Record the entire bootstrap
-            perf record -g -o $out/traces/mes-bootstrap.perf.data -- \
+            # Use: perf-lib.lib.perfBuild (see docs/nix/PERF_FLAKE_TEMPLATE.md)
             strace -f -o $out/traces/mes-bootstrap.strace -e trace=all -- \
               guix build --no-substitutes mes 2>&1 | tee $out/traces/mes-bootstrap.log || true
             

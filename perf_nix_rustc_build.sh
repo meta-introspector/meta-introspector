@@ -15,9 +15,9 @@ mkdir -p "$OUTPUT_DIR"
 echo "🔬 Perf capture for Nix Rust build"
 echo "Session: $SESSION"
 
-# Start perf recording in background
-echo "📊 Starting perf record..."
-sudo perf record -F 99 -g --call-graph dwarf -a -o "${OUTPUT_DIR}/${SESSION}.perf.data" &
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 PERF_PID=$!
 
 echo "Perf PID: $PERF_PID"

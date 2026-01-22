@@ -28,19 +28,16 @@ For each language, record:
 ```bash
 # Example: Build rustc itself
 nix build .#rustc --rebuild
-perf record -o rustc_bootstrap.perf.data nix build .#rustc --rebuild
 ```
 
 #### B. Program Compilation
 ```bash
 # Compile const71 program
-perf record -o rust_compile.perf.data rustc const71.rs
 ```
 
 #### C. Program Execution
 ```bash
 # Run the program
-perf record -o rust_run.perf.data ./const71
 ```
 
 ### 3. Galois Comparison Matrix
@@ -78,16 +75,13 @@ PERF_DIR="data/full_chain_perf"
 
 # 1. Build compiler (if needed)
 if has_compiler $LANG; then
-  perf record -o $PERF_DIR/${LANG}_compiler_build.perf.data \
     nix build .#${LANG}-compiler --rebuild
 fi
 
 # 2. Compile program
-perf record -o $PERF_DIR/${LANG}_program_compile.perf.data \
   nix build const_71_test/$LANG --rebuild
 
 # 3. Run program
-perf record -o $PERF_DIR/${LANG}_program_run.perf.data \
   nix run const_71_test/$LANG
 ```
 

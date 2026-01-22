@@ -17,9 +17,9 @@ echo "Session: $SESSION"
 
 cd /mnt/data1/meta-introspector/rust-overlay-test
 
-# Start perf recording in background
-echo "📊 Starting perf record..."
-sudo perf record -F 99 -g --call-graph dwarf -a -o "${OUTPUT_DIR}/${SESSION}.perf.data" &
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 PERF_PID=$!
 
 echo "Perf PID: $PERF_PID"

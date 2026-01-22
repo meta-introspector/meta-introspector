@@ -97,8 +97,8 @@ EOF
           # Create output directory for traces
           mkdir -p $out/traces
           
-          # Start perf recording
-          perf record -g -o $out/traces/build.perf.data -p $$ &
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
           PERF_PID=$!
           
           # Trap to stop perf on exit
@@ -184,7 +184,7 @@ EOF
           
           preBuild = ''
             # Record everything
-            perf record -g -o $out/perf.data -p $$ &
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
             PERF_PID=$!
             trap "kill $PERF_PID" EXIT
           '';

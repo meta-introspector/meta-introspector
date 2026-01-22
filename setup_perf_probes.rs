@@ -63,7 +63,7 @@ fn main() -> Result<()> {
         .status()?;
     
     println!("\n🚀 Ready to record!");
-    println!("Run: sudo perf record -e 'probe_*' -a -- <your-command>");
+    // Use: crate::perf::record() - see src/perf/mod.rs
     println!("Then: sudo perf script > trace.txt");
     
     Ok(())

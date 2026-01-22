@@ -256,11 +256,9 @@ This document provides an index of all relevant documentation files within the p
 
 ## Perf Recording Centralization Plan
 - [View File](PERF_CENTRALIZATION_PLAN.md)
-  > ## 🎯 Goal All perf recording goes through **one canonical tool** that produces **standardized JSON output**. ## 📊 Current Perf Record Usage ### Shell Scripts (Found 11) 1. `perf_nix_rust_beta.sh` - Ni...
 
 ## Perf Proc Macro - Wrap Any Code in Perf Recording
 - [View File](PERF_PROC_MACRO_DESIGN.md)
-  > ## 🎯 Goal Create a **proc macro** that wraps any Rust code in perf recording, delivering results: 1. **Inline** - Return perf data directly in the code 2. **Centralized** - Send to telemetry server au...
 
 ## Perf Data Reading Code Audit
 - [View File](PERF_READER_AUDIT.md)
@@ -632,7 +630,6 @@ See canonical patterns: `docs/perf/README.md`
 
 ## Perf Proc Macros
 - [View File](perf-macros/README.md)
-  > Wrap any Rust code in perf recording with zero boilerplate. Capture any value to Parquet. ## 🚀 Quick Start ```rust use perf_macros::{perf_auto, perf_probe, probe}; #[perf_auto] fn my_function(x: i32) ...
 
 ## Investor Summary
 - [View File](reports/investor-summary.txt)

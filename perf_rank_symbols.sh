@@ -37,7 +37,7 @@ fi
 
 # Record perf data
 echo "📊 Recording perf data for ${DURATION}s..."
-perf record -F 99 -g --call-graph dwarf -o perf.data -- "$BINARY" &
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 PID=$!
 
 sleep "$DURATION"

@@ -22,7 +22,6 @@ Prove that `const x = 71` creates the same automorphic orbit signature across Ru
 
 ### 1. Build with Perf Tracing
 ```bash
-perf record -e cycles,instructions nix build
 ```
 - Captures build-time execution traces
 - Records instruction patterns during compilation

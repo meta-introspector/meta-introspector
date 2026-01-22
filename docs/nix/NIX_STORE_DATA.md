@@ -14,7 +14,6 @@
     src = ./const_71_test/rust;
     nativeBuildInputs = [ pkgs.perf ];
     buildPhase = ''
-      perf record -o perf.data -F 99 -g nix build
     '';
     installPhase = ''
       mkdir -p $out

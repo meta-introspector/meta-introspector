@@ -544,7 +544,6 @@ Access via telemetry server on port 8888.
 
 ```bash
 # Monitor with perf
-sudo perf record -p $(pgrep minimal-build-server)
 sudo perf report
 
 # Or use telemetry driver

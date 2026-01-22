@@ -11,7 +11,6 @@
 ```
 
 Run repeatedly to iterate. Each run:
-1. Builds via Nix (with perf recording)
 2. Generates self-metadata
 3. Commits changes
 4. Reports status

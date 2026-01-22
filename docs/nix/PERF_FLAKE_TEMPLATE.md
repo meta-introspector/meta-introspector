@@ -1,6 +1,5 @@
 # Standard Flake Template
 
-All perf recording flakes should follow this pattern:
 
 ## Template
 
@@ -35,7 +34,6 @@ All perf recording flakes should follow this pattern:
 - Custom output processing
 
 **DO NOT include:**
-- `perf record` command (use `perf-lib`)
 - Boilerplate setup
 - Standard flags (-F 99, -g, etc)
 
@@ -66,7 +64,6 @@ All perf recording flakes should follow this pattern:
       let pkgs = import nixpkgs { 
         overlays = [ perf-lib.overlays.perf ];
       };
-      in pkgs.withPerf pkgs.hello;  # Adds perf recording to hello
   };
 }
 ```
@@ -103,7 +100,6 @@ All perf recording flakes should follow this pattern:
       name = "my-build";
       buildPhase = ''
         mkdir -p $out/perf
-        perf record -o $out/perf/build.perf.data -F 99 -g -- cargo build
       '';
     };
   };

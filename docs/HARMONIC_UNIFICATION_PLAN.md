@@ -142,7 +142,6 @@ All map to the same orbit class (within energy bounds).
 ```bash
 # Trace all 10
 for lang in rust gcc llvm python node ocaml haskell lean4 asm bf; do
-    perf record -e instructions ./binary_${lang}
     perf stat ./binary_${lang} 2>&1 | grep instructions
 done
 
@@ -306,7 +305,6 @@ Therefore: Same semantic orbit
 ### Step 1: Capture Perf Traces
 ```bash
 # For each language
-perf record -e cycles,instructions,branches ./binary_${lang}
 
 # Extract trace
 perf script > trace_${lang}.txt

@@ -51,7 +51,7 @@ capture_binary_message() {
     
     # 3. Perf Recording
     echo "  📊 Perf recording..."
-    perf record -o "$msg_dir/perf/perf.data" -g -- timeout 1s "$bin_path" 2>/dev/null || true
+    # Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
     perf script -i "$msg_dir/perf/perf.data" > "$msg_dir/perf/perf.script" 2>/dev/null || true
     
     # 4. Nix Store Effects

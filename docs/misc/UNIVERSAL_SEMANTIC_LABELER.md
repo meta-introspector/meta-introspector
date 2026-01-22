@@ -20,13 +20,11 @@ Semantic meaning emerges from the correlation
 Nix Store XZ Archive
     ↓
 Incremental decompression (layer by layer)
-    ↓ (perf record)
 Instruction pointer trace
     ↓
     ↔ (correlation)
     ↓
 Compiler instruction pointer trace
-    ↓ (perf record)
 Compilation stages
     ↓
 Semantic labels
@@ -160,7 +158,6 @@ struct Layer {
 
 impl LayeredDecompression {
     fn decompress_layer(&mut self, size: usize) -> Layer {
-        // Start perf recording
         let perf_start = start_perf_recording();
         
         // Decompress next chunk
@@ -418,7 +415,6 @@ The correlation strength tells us how strongly certain decompression operations 
 
 ## Next Steps
 
-1. [ ] Dual perf recording (decompress + compile)
 2. [ ] Time-align traces
 3. [ ] Correlate instruction pointers
 4. [ ] Build IP → semantic mapping

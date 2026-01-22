@@ -1,6 +1,5 @@
 # Perf Proc Macros
 
-Wrap any Rust code in perf recording with zero boilerplate. Capture any value to Parquet.
 
 ## 🚀 Quick Start
 
@@ -39,7 +38,6 @@ fn main() {
 
 ### `#[perf_auto]` - Auto Telemetry
 
-Wraps function in perf recording, sends data to telemetry automatically.
 
 ```rust
 #[perf_auto]
@@ -247,5 +245,4 @@ duckdb -c "SELECT * FROM 'data/probes/*.parquet'"
 ---
 
 **Status**: Minimal working version with Parquet capture
-**Next**: Integrate actual perf recording + test with nix build
 

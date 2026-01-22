@@ -38,7 +38,7 @@ cat > mes-perf-recorder/flake.nix <<EOF
           mkdir -p \$out
           
           # Record ACTUAL compilation through the chain
-          \${pkgs.perf}/bin/perf record \\
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
             -g -F 999 --call-graph dwarf \\
             -e cycles,instructions,cache-misses,branch-misses \\
             -o \$out/mes-bootstrap.perf.data \\

@@ -1,12 +1,12 @@
 {
-  description = "Perf Wrapper - Adds perf recording to any flake";
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs = { self, nixpkgs }: {
-    # Function that wraps any derivation with perf recording
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
     lib.wrapWithPerf = { pkgs, drv, name ? "${drv.name}-with-perf" }:
       pkgs.stdenv.mkDerivation {
         inherit name;
@@ -16,7 +16,7 @@
         
         buildPhase = ''
           # Record perf during original build
-          perf record -g -o build.perf.data -- ${drv.buildPhase or "make"}
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
         '';
         
         installPhase = ''

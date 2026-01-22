@@ -76,8 +76,6 @@ THEN label = "struct" → maps to s→t→r→u→c→t character sequence
 
 - `/tmp/enum_profile/*.mm_profdata` - Enum self-profile (120K)
 - `/tmp/struct_profile/*.mm_profdata` - Struct self-profile (120K)
-- `/tmp/enum_perf.data` - Enum perf record (153K)
-- `/tmp/struct_perf.data` - Struct perf record (175K)
 
 ## Connection to Grammar Extraction
 

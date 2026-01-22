@@ -1,6 +1,5 @@
 # Instrumentation Overlay
 
-Full transparency for any build: GCC dumps, LLVM traces, perf recording, QEMU memory tracing.
 
 ## The Cryptographic View
 

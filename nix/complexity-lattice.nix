@@ -33,7 +33,7 @@
               
               # Record perf of building this baseline
               if [ -f "$lang_dir/flake.nix" ]; then
-                perf record -o "$out/perf/$lang-baseline.perf.data" \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                   -F 997 -g \
                   nix build "$lang_dir" --no-link 2>/dev/null || true
               fi

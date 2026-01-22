@@ -1,11 +1,9 @@
 # Perf Record Cleanup Plan
 
 ## Goal
-Remove 368 duplicate "perf record" occurrences by using existing canonical patterns.
 
 ## Existing Canonical Patterns (DO NOT RECREATE)
 
-1. **Nix Derivation Pattern** - `perf record -o $out/...`
    - Examples: `mes-bootstrap-proof/flake.nix`, `nix/script-complexity.nix`
    
 2. **Interactive Tool** - `perf-recorder/flake.nix`
@@ -18,16 +16,13 @@ Remove 368 duplicate "perf record" occurrences by using existing canonical patte
 
 ### 1. execute_workflows.sh (142 occurrences) - SIMPLIFY
 
-**Current:** 142 lines of repetitive `perf record` commands
 
 **Action:** Keep as interface, call nix derivations
 
 **New execute_workflows.sh:**
 ```bash
 #!/bin/bash
-# Interface to const71 perf recording
 
-echo "Building all 71 languages with perf recording..."
 
 # Build the derivation that records perf for all languages
 nix build ./nix/flakes/const_71_test#perf-all
@@ -47,7 +42,6 @@ packages.perf-all = stdenv.mkDerivation {
     mkdir -p $out/perf
     ${lib.concatMapStringsSep "\n" (lang: ''
       cd const_71_test/${lang}
-      perf record -o $out/perf/${lang}.perf.data -F 99 -g nix build
       cd ../..
     '') languages}
   '';
@@ -78,7 +72,6 @@ packages.perf-all = stdenv.mkDerivation {
 
 ### 1. Nix Derivation (Immutable)
 See: mes-bootstrap-proof/flake.nix
-Pattern: perf record -o $out/traces/...
 
 ### 2. Interactive
 See: perf-recorder/
@@ -111,7 +104,6 @@ See: scripts/build/build_and_analyze_const71.sh
 **Action:** Update comments to reference canonical patterns:
 ```rust
 // Record perf data in nix derivation:
-//   perf record -o $out/traces/build.perf.data -- command
 // 
 // Or use perf-recorder interactively:
 //   nix run ./perf-recorder#perf-build -- .#target
@@ -140,7 +132,6 @@ See: scripts/build/build_and_analyze_const71.sh
 ### 6. Misc Docs (remaining ~163 occurrences) - UPDATE REFERENCES
 
 **Action:** Search and replace in all remaining files:
-- Find examples of `perf record`
 - Replace with: "See canonical patterns in docs/perf/README.md"
 - Keep only 1-2 line references, not full examples
 
@@ -184,7 +175,6 @@ ls -la /nix/store/*-const71-perf-data/perf/
 nix run ./perf-recorder#perf-build -- .#default
 
 # Verify docs reference canonical patterns
-grep -r "perf record" docs/ | wc -l  # Should be ~10
 ```
 
 ## Rollback

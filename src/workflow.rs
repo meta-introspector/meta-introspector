@@ -47,7 +47,7 @@ macro_rules! nix_build {
     };
 }
 
-// Macro for perf record step
+    // Use: crate::perf::record() - see src/perf/mod.rs
 #[macro_export]
 macro_rules! perf_record {
     ($path:expr => $output:expr, cmd: $($cmd:expr),+) => {
@@ -147,7 +147,7 @@ impl WorkflowStep {
             }
             WorkflowStep::PerfRecord { path, output, command } => {
                 let cmd = format!(
-                    "cd {} && perf record -o {} -F 99 -g {}",
+    // Use: crate::perf::record() - see src/perf/mod.rs
                     path, output, command.join(" ")
                 );
                 vec![ToolCall::ExecuteBash { command: cmd }]
@@ -159,7 +159,7 @@ impl WorkflowStep {
                     },
                     ToolCall::ExecuteBash {
                         command: format!(
-                            "cd {} && perf record -o {} -F 99 -g nix build --rebuild --no-substitute",
+    // Use: crate::perf::record() - see src/perf/mod.rs
                             path, output
                         )
                     }

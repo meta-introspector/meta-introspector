@@ -24,7 +24,7 @@ fn main() {
     println!("  Result: {}", result);
     println!("  (Perf data sent to telemetry)\n");
     
-    // Example 2: Inline perf recording
+    // Use: crate::perf::record() - see src/perf/mod.rs
     println!("Example 2: perf!()");
     let (result, perf_data) = perf!({
         let mut sum = 0;

@@ -29,7 +29,7 @@
           mkdir -p $out
           
           # Record ACTUAL compilation through the chain
-          ${pkgs.perf}/bin/perf record \
+          ${pkgs.perf}/bin/# Use: perf-lib.lib.perfBuild (see docs/nix/PERF_FLAKE_TEMPLATE.md)
             -g -F 999 --call-graph dwarf \
             -e cycles,instructions,cache-misses,branch-misses \
             -o $out/mes-bootstrap.perf.data \

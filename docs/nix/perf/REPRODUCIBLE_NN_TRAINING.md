@@ -6,7 +6,6 @@ Complete pipeline: Nix builds → perf samples → training data → NN models a
 
 ```
 Nix Build (Level N)
-  ↓ perf record
 Perf Samples → /nix/store/xxx-build/perf/build.perf.data
   ↓ extract IPs
 Training Data → /nix/store/xxx-build/training/ips.txt
@@ -20,7 +19,6 @@ Same Build = Same Model
 
 ### Method 1: perf-wrapper (Automatic)
 
-Wrap any derivation to add perf recording:
 
 ```nix
 {
@@ -56,7 +54,6 @@ pkgs.stdenv.mkDerivation {
   
   preBuild = ''
     mkdir -p $out/perf
-    perf record -o $out/perf/build.perf.data \
       -F 997 -g --call-graph dwarf &
     PERF_PID=$!
   '';
@@ -245,7 +242,6 @@ packages.mes-level0 = pkgs.stdenv.mkDerivation {
   };
   
   buildPhase = ''
-    perf record -o $out/perf/mes.perf.data \
       -F 997 -g -- make
   '';
 };
@@ -338,14 +334,11 @@ packages.merged-model = pkgs.stdenv.mkDerivation {
 packages.meta-perf-model = pkgs.stdenv.mkDerivation {
   buildPhase = ''
     # Level 0: Record program
-    perf record -o level0.perf.data program
     
     # Level 1: Record perf analyzing level 0
-    perf record -o level1.perf.data \
       perf script -i level0.perf.data
     
     # Level 2: Record perf analyzing level 1
-    perf record -o level2.perf.data \
       perf script -i level1.perf.data
     
     # Train on convergence

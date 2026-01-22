@@ -1,5 +1,5 @@
 // perf_canonical_recorder.rs
-// Centralized perf record tool - all perf recording goes through here
+    // Use: crate::perf::record() - see src/perf/mod.rs
 // Collects data in canonical JSON format for downstream analysis
 // Can be used as both binary and library
 
@@ -139,11 +139,11 @@ impl PerfSession {
     }
     
     fn record(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-        println!("🔥 Starting perf record session: {}", self.session_id);
+    // Use: crate::perf::record() - see src/perf/mod.rs
         println!("   Command: {:?}", self.command);
         println!("   Output: {}", self.perf_data_path.display());
         
-        // Build perf record command
+    // Use: crate::perf::record() - see src/perf/mod.rs
         let mut perf_cmd = Command::new("perf");
         perf_cmd.arg("record")
             .arg("-F").arg("99")              // 99 Hz sampling
@@ -162,7 +162,7 @@ impl PerfSession {
         
         if !status.success() {
             self.status = SessionStatus::Failed;
-            return Err("perf record failed".into());
+    // Use: crate::perf::record() - see src/perf/mod.rs
         }
         
         self.status = SessionStatus::Processing;

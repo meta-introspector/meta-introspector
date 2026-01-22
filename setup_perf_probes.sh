@@ -63,5 +63,5 @@ sudo perf probe -l | head -20
 
 echo ""
 echo "🚀 Ready to record! Run:"
-echo "  sudo perf record -e 'probe_*' -a -- nix-build ..."
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 echo "  sudo perf script > nix_build_trace.txt"

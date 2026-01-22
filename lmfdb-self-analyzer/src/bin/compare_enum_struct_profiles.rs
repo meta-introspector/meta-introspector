@@ -49,7 +49,7 @@ fn main() {}
         .output()?;
     
     // Compile with perf
-    println!("🔥 Compiling enum with perf record...");
+    // Use: crate::perf::record() - see src/perf/mod.rs
     Command::new("perf")
         .args(&[
             "record",
@@ -59,7 +59,7 @@ fn main() {}
         ])
         .output()?;
     
-    println!("🔥 Compiling struct with perf record...");
+    // Use: crate::perf::record() - see src/perf/mod.rs
     Command::new("perf")
         .args(&[
             "record",

@@ -5,7 +5,7 @@
 # Start building toolchain bootstrap
 
 echo "🏗️  Starting nix builder for toolchain bootstrap..."
-echo "This will build bash from source with perf recording"
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 echo ""
 
 # Start builder in background

@@ -7,8 +7,8 @@ set -euo pipefail
 echo "🔬 Recording cargo2nix generation with perf"
 echo "============================================"
 
-# Generate Cargo.nix with perf recording
-perf record -g -o cargo2nix.perf.data -- \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
   nix run github:cargo2nix/cargo2nix -- -f Cargo.nix 2>&1 | tee cargo2nix.log
 
 echo ""

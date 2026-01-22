@@ -14,8 +14,8 @@ echo "Started: $(date)"
 # Get nix path
 NIX=$(which nix)
 
-# Start system-wide perf recording
-sudo perf record -a -F 99 -g -o "$OUTPUT_DIR/${LANG}_bootstrap.perf.data" &
+# Start system-wide # Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
+sudo # Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
 PERF_PID=$!
 
 echo "📊 Perf recording started (PID: $PERF_PID)"

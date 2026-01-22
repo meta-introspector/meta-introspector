@@ -60,7 +60,6 @@ Each build = training batch:
 ```nix
 packages.default = pkgs.stdenv.mkDerivation {
   preBuild = ''
-    perf record -o $out/perf/build.perf.data ...
   '';
   
   postBuild = ''
@@ -127,7 +126,6 @@ Queue and build projects with telemetry:
 ./bootstrap.sh
 ```
 
-Builds via Nix with perf recording, generates metadata, commits changes.
 
 ## References
 

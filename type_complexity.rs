@@ -170,7 +170,7 @@ where
     // Execute function
     let _ = func();
     
-    // Return trace (would be populated by actual perf recording)
+    // Use: crate::perf::record() - see src/perf/mod.rs
     PerfTrace {
         instruction_pointers: ips,
         cycles,

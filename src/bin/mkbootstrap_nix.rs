@@ -69,7 +69,7 @@ pub fn mkbootstrap_nix(lang: &str) -> Result<String, String> {
         inputs: vec![],
         build_script: format!(r#"
 cd {}
-perf record -o perf.data -F 99 -g nix build
+    // Use: crate::perf::record() - see src/perf/mod.rs
 "#, format!("const_71_test/{}", lang)),
     };
     

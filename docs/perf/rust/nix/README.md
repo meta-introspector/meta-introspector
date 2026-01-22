@@ -111,7 +111,6 @@ pkgs.rustPlatform.buildRustPackage {
   nativeBuildInputs = [ pkgs.linuxPackages.perf ];
   
   preBuild = ''
-    perf record -o $out/perf/build.perf.data cargo build --release
   '';
   
   postBuild = ''

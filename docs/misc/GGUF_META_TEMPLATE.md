@@ -258,7 +258,6 @@ struct ModelDiscovery {
 ```cpp
 // Sample GGUF execution with perf
 void sample_gguf_execution(const GGUFModel& model) {
-    // Start perf recording
     perf_start();
     
     // Run model

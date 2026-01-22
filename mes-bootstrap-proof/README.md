@@ -27,7 +27,6 @@ nix run .#upload-to-hf
 ```
 /nix/store/abc-mes-bootstrap-proof/
 └── traces/
-    ├── mes-bootstrap.perf.data    # Full perf recording
     ├── mes-bootstrap.strace       # All syscalls
     ├── mes-bootstrap.log          # Build log
     └── metadata.json              # Metrics

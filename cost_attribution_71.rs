@@ -79,7 +79,7 @@ impl CostAttribution {
     
     /// Attribute cost to source lines using perf annotate
     fn attribute_to_source(&mut self, binary: &str) {
-        // Run perf record + perf annotate to map instructions to source
+    // Use: crate::perf::record() - see src/perf/mod.rs
         let _ = Command::new("perf")
             .args(["record", "-o", "/tmp/perf.data", binary])
             .output();

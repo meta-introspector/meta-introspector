@@ -30,10 +30,10 @@ fn main() {
     
     let start = Instant::now();
     
-    // Start perf recording if requested
+    // Use: crate::perf::record() - see src/perf/mod.rs
     let perf_file = format!("/tmp/build_{}_{}.perf", target, std::process::id());
     let perf_child = if use_perf {
-        println!("🔍 Starting perf record...");
+    // Use: crate::perf::record() - see src/perf/mod.rs
         Some(Command::new("perf")
             .args(["record", "-o", &perf_file, "-a", "-g"])
             .spawn()

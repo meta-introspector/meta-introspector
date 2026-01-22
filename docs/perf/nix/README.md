@@ -16,7 +16,6 @@ Use Nix builds as reproducible perf data sources.
 ## Workflow
 
 ```
-perf record → Nix build → /nix/store/xxx/perf/
                               ↓
                          Reproducible training data
 ```
@@ -24,7 +23,6 @@ perf record → Nix build → /nix/store/xxx/perf/
 ## Tools
 
 ### perf-wrapper
-Wrap any Nix package with perf recording.
 
 See: `perf-wrapper/README.md`
 

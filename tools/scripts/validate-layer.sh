@@ -19,7 +19,7 @@ qemu-x86_64 -d exec,cpu,in_asm "$BINARY" > "$VALIDATION_DIR/qemu_trace.log" 2>&1
 
 # 2. Perf analysis
 echo "⚡ Running perf analysis..."
-perf record -o "$VALIDATION_DIR/perf.data" "$BINARY" 2>/dev/null || true
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 perf report -i "$VALIDATION_DIR/perf.data" > "$VALIDATION_DIR/perf_report.txt" 2>/dev/null || true
 
 # 3. Strace

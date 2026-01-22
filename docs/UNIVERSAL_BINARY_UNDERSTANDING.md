@@ -132,7 +132,6 @@ Sets up kernel-level instrumentation using perf probes:
 **Usage**:
 ```bash
 ./target/debug/setup_perf_probes memory 100  # Top 100 memory functions
-sudo perf record -e 'probe_*' -a -- <command>
 sudo perf script > trace.txt
 ```
 
@@ -217,7 +216,6 @@ This creates a **mathematical framework** for understanding binaries, not just a
 ### 3. Setup Probes and Record
 ```bash
 ./target/debug/setup_perf_probes memory 50
-sudo perf record -e 'probe_*' -a -- nix-build ...
 ```
 
 ### 4. Build Rustc with Telemetry

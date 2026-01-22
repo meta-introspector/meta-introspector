@@ -19,7 +19,7 @@ analyze_language() {
   
   echo "Analyzing $lang..."
   
-  # Build with perf record
+  # Build with # Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
   local binary=$(nix build "./$flake_dir#" --print-out-paths 2>/dev/null)
   
   if [ -z "$binary" ]; then
@@ -27,8 +27,8 @@ analyze_language() {
     return
   fi
   
-  # Run perf record
-  perf record -o "$RESULTS_DIR/${lang}_perf.data" "$binary" 2>/dev/null || true
+  # Run # Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
+  # Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
   
   # Get perf report with source annotation
   perf report -i "$RESULTS_DIR/${lang}_perf.data" --stdio > "$RESULTS_DIR/${lang}_report.txt" 2>/dev/null || true

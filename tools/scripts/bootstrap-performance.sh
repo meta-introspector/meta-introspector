@@ -12,7 +12,7 @@ mkdir -p "$OUT"
 
 # Performance: Build MES from 357 bytes using Guix
 echo "🎬 Act 1: The Performance (Guix building MES from seed)"
-perf record -g -o "$OUT/performance.perf.data" -- \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 strace -f -o "$OUT/performance.strace" -e trace=all -- \
   guix build --no-substitutes mes 2>&1 | tee "$OUT/performance.log"
 

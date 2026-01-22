@@ -47,7 +47,6 @@ Server runs on http://127.0.0.1:3000
 - **WASM**: Eval WASM with traces
 - **P2P**: libp2p gossipsub + Kademlia
 - **ZK**: Proof of execution
-- **Perf**: Linux perf recording
 - **Consensus**: Peer agreement on mappings
 - **IDE**: sed/grep/hot-build built-in
 

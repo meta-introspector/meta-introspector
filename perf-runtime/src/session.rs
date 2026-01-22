@@ -25,8 +25,8 @@ impl PerfSession {
     pub fn stop(&mut self) -> PerfData {
         let duration = self.start_time.elapsed();
         
-        // For now, return mock data
-        // TODO: Integrate with actual perf recording
+        // Use: crate::perf::record() - see src/perf/mod.rs
+    // Use: crate::perf::record() - see src/perf/mod.rs
         PerfData {
             name: self.name.clone(),
             timestamp: self.timestamp,

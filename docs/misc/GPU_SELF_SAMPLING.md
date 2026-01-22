@@ -113,10 +113,8 @@ __global__ void gguf_71_layer(float* input, float* output, uint64_t* ring) {
 ### CPU Side (perf)
 ```bash
 # Record CPU boundary
-perf record -e cycles,instructions -g ./gguf_71_cpu
 
 # Record GPU kernel launches
-perf record -e cuda:* ./gguf_71_gpu
 ```
 
 ### GPU Side (CUPTI)
@@ -182,7 +180,6 @@ def create_gguf_71_with_sampling():
 ### Test 1: CPU Mode
 ```bash
 # Run on CPU, record with perf
-perf record -g ./gguf_71_cpu model_71.gguf
 perf script > cpu_trace.txt
 
 # Convert to parquet
@@ -204,7 +201,6 @@ perf script > cpu_trace.txt
 ### Test 3: Hybrid Mode
 ```bash
 # Run with both CPU and GPU sampling
-perf record -g ./gguf_71_hybrid model_71.gguf
 
 # Merge CPU and GPU traces
 ./merge_traces cpu_trace.txt gpu_rings.bin hybrid_71.parquet

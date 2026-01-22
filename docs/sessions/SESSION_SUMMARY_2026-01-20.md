@@ -10,7 +10,6 @@
 
 ### 2. Bootstrap System
 - `bootstrap.sh`: Smart iteration script
-- Cargo2nix integration with perf recording
 - Perf data references (not data) stored in git
 - HuggingFace dataset integration
 

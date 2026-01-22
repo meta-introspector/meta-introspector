@@ -15,7 +15,7 @@ mkdir -p "$OUT"
 
 # Record the entire bootstrap chain
 echo "📋 Phase 1: Recording bootstrap chain"
-perf record -g -o "$OUT/mes-bootstrap.perf.data" -- \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 strace -f -o "$OUT/mes-bootstrap.strace" -e trace=all -- \
   guix build --no-substitutes mes 2>&1 | tee "$OUT/mes-bootstrap.log"
 

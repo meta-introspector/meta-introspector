@@ -46,7 +46,7 @@ pub fn perf_probe(_attr: TokenStream, item: TokenStream) -> TokenStream {
     let output = quote! {
         #(#fn_attrs)*
         #fn_vis #fn_sig {
-            // Probe marker for perf record
+    // Use: crate::perf::record() - see src/perf/mod.rs
             eprintln!("[PROBE] Entering {}", stringify!(#fn_name));
             
             let result = (|| #fn_block)();

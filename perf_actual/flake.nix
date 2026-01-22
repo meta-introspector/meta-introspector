@@ -9,7 +9,7 @@
     
     perf_wrapper = pkgs.writeShellScriptBin "perf_wrapper" ''
       PERF_OUTPUT="''${PERF_OUTPUT:-/tmp/perf_$$.data}"
-      exec ${pkgs.perf}/bin/perf record -o "$PERF_OUTPUT" -F 99 -g "$@"
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
     '';
     
     # Template for recording language execution

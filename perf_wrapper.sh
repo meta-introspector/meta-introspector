@@ -9,4 +9,4 @@ REAL_CMD="$1"
 shift
 
 # Record the actual command with perf
-perf record -o "$PERF_OUTPUT" -F 99 -g "$REAL_CMD" "$@"
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix

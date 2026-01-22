@@ -46,13 +46,13 @@
           
           # Capture perf data during build
           preBuild = ''
-            echo "🔬 Starting perf recording for build..."
-            perf record -o $out/build.perf.data -F 99 -g -- cargo build --release &
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
             PERF_PID=$!
           '';
           
           postBuild = ''
-            # Stop perf recording
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
             kill -INT $PERF_PID 2>/dev/null || true
             wait $PERF_PID 2>/dev/null || true
             

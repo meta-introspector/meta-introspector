@@ -40,7 +40,6 @@
 **Purpose**: Capture and analyze performance data
 
 **Key Files**:
-- `perf_canonical_recorder.rs` ⭐ - Centralized perf recording
 - `rust_perf_decoder.rs` - Parse perf.data with linux-perf-data
 - `binary_symbol_study.rs` - Extract binaries + symbols with goblin
 

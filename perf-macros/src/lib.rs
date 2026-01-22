@@ -1,11 +1,11 @@
 // perf-macros/src/lib.rs
-// Proc macros for wrapping any code in perf recording + parquet capture
+    // Use: crate::perf::record() - see src/perf/mod.rs
 
 use proc_macro::TokenStream;
 use quote::quote;
 use syn::{parse_macro_input, ItemFn, Expr};
 
-/// Wrap a function in perf recording (auto telemetry, no return change)
+    // Use: crate::perf::record() - see src/perf/mod.rs
 /// 
 /// # Example
 /// ```
@@ -41,7 +41,7 @@ pub fn perf_auto(_attr: TokenStream, item: TokenStream) -> TokenStream {
     TokenStream::from(expanded)
 }
 
-/// Wrap a code block in perf recording (returns tuple with perf data)
+    // Use: crate::perf::record() - see src/perf/mod.rs
 /// 
 /// # Example
 /// ```
@@ -69,7 +69,7 @@ pub fn perf(input: TokenStream) -> TokenStream {
     TokenStream::from(expanded)
 }
 
-/// Wrap a function in perf recording (returns perf data alongside result)
+    // Use: crate::perf::record() - see src/perf/mod.rs
 /// 
 /// # Example
 /// ```

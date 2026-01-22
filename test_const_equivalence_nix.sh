@@ -84,7 +84,7 @@ for lang in c cpp; do
     echo "  Building $lang..."
     
     # Use perf to trace the build
-    perf record -e cycles,instructions -o "$OUTPUT_DIR/build_${lang}.data" \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
         nix-build "$OUTPUT_DIR/${lang}-const.nix" -o "$OUTPUT_DIR/result-${lang}" 2>&1 | tail -3
     
     if [ -f "$OUTPUT_DIR/result-${lang}/bin/test" ]; then

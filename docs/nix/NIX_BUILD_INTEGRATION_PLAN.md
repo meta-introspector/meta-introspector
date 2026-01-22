@@ -51,7 +51,6 @@ nix_canonical_builder
 ### Features
 
 1. **Perf Integration**
-   - Automatic perf recording during build
    - Canonical perf JSON output
 
 2. **Telemetry Integration**
@@ -140,7 +139,6 @@ impl NixCanonicalBuilder {
     }
     
     pub fn build(&mut self, args: Vec<String>) -> Result<NixBuildReport, Box<dyn std::error::Error>> {
-        // 1. Start perf recording
         let perf_session = if self.perf_enabled {
             Some(self.start_perf_recording(&args)?)
         } else {

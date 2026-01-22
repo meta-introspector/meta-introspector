@@ -23,8 +23,6 @@ packages.model-with-training-perf = pkgs.rustPlatform.buildRustPackage {
   pname = "model-trained-with-perf";
   
   buildPhase = ''
-    # Start perf recording of training process
-    perf record -o $out/training-perf/train.perf.data \
       -F 997 -g --call-graph dwarf &
     PERF_PID=$!
     
@@ -314,7 +312,6 @@ Meta-Meta-Model (learns to learn)
 
 ### Next Steps
 
-1. Add training perf recording to `mes-transformer-gpu`
 2. Collect 100+ training runs with perf
 3. Build meta-model derivation
 4. Verify meta-model convergence

@@ -1,7 +1,6 @@
 # Perf Recording Centralization Plan
 
 ## 🎯 Goal
-All perf recording goes through **one canonical tool** that produces **standardized JSON output**.
 
 ## 📊 Current Perf Record Usage
 
@@ -28,7 +27,6 @@ All perf recording goes through **one canonical tool** that produces **standardi
 ### `perf_canonical_recorder.rs`
 
 **Features**:
-- ✅ Single entry point for all perf recording
 - ✅ Standardized JSON output format
 - ✅ Session types: nix, rustc, cargo, binary, custom
 - ✅ Automatic report generation
@@ -77,7 +75,6 @@ Replace each shell script with canonical tool:
 
 **Before**:
 ```bash
-sudo perf record -F 99 -g --call-graph dwarf -a -o output.perf.data nix build
 sudo perf report -i output.perf.data --stdio > report.txt
 # Manual parsing...
 ```

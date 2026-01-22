@@ -300,7 +300,6 @@ for lang in const_71_test/*/; do
     nix build $lang --arg instrument true
     
     # Record execution
-    perf record -g ./result/bin/*-71
     
     # Extract model
     python extract_model.py perf.data $lang.gguf

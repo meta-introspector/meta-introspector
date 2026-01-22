@@ -18,7 +18,7 @@ pub struct BootstrapTelemetryConfig {
 #[derive(Debug, Serialize, Deserialize)]
 pub enum TelemetryLayer {
     Syscalls,      // strace -f -e trace=all
-    Performance,   // perf stat + perf record
+    // Use: crate::perf::record() - see src/perf/mod.rs
     RustcProfile,  // rustc --self-profile
     CargoVerbose,  // cargo -vv
     NixTrace,      // nix build --trace

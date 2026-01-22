@@ -146,12 +146,10 @@ Pack file structure:
 
 ```bash
 # Record git pack operation
-perf record -e cycles,instructions,cache-misses \
     -g --call-graph dwarf \
     git pack-objects --all --stdout > /dev/null
 
 # Record git unpack operation  
-perf record -e cycles,instructions,cache-misses \
     -g --call-graph dwarf \
     git unpack-objects < pack_file
 

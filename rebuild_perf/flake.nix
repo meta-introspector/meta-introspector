@@ -45,7 +45,7 @@ RUST
         # Record rustc with optimizations
     # TODO: Migrate to use perf-lib.lib.perfBuild
     # See: docs/nix/PERF_FLAKE_TEMPLATE.md
-        ${pkgs.perf}/bin/perf record -o rustc_full.perf.data -F 99 -g \
+        ${pkgs.perf}/bin/# Use: perf-lib.lib.perfBuild (see docs/nix/PERF_FLAKE_TEMPLATE.md)
           ${pkgs.rustc}/bin/rustc large.rs -C opt-level=3 -o const71 2>&1 || true
         
         echo "Recorded $(wc -c < rustc_full.perf.data) bytes"

@@ -54,7 +54,7 @@ echo "📊 Running perf traces..."
 
 for lang in rust cpp c; do
     echo "  Tracing $lang..."
-    perf record -e cycles,instructions -o "$OUTPUT_DIR/perf_${lang}.data" \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
         "$OUTPUT_DIR/test_${lang}" > /dev/null 2>&1
     
     perf script -i "$OUTPUT_DIR/perf_${lang}.data" > "$OUTPUT_DIR/perf_${lang}.trace" 2>/dev/null

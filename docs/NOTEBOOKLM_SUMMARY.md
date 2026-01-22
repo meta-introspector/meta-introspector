@@ -142,7 +142,6 @@ ORDER BY conductor DESC
 Record any Nix build with perf probes:
 ```bash
 ./setup_perf_probes memory 100
-sudo perf record -e 'probe_*' -a -- nix-build ...
 ```
 
 ### 3. Pattern Discovery

@@ -31,12 +31,12 @@
               echo "Analyzing: $nix_file"
               
               # Record nix parse
-              perf record -o "$out/perf/parse-$name.perf.data" \
+    # Use: perf-lib from github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                 -F 997 -g \
                 nix-instantiate --parse "$nix_file" 2>/dev/null || true
               
               # Record nix eval
-              perf record -o "$out/perf/eval-$name.perf.data" \
+    # Use: perf-lib from github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                 -F 997 -g \
                 nix-instantiate --eval "$nix_file" 2>/dev/null || true
               
@@ -85,12 +85,12 @@
               echo "Analyzing: $bash_file"
               
               # Record bash parse (syntax check)
-              perf record -o "$out/perf/parse-$name.perf.data" \
+    # Use: perf-lib from github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                 -F 997 -g \
                 bash -n "$bash_file" 2>/dev/null || true
               
               # Record shellcheck
-              perf record -o "$out/perf/shellcheck-$name.perf.data" \
+    # Use: perf-lib from github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                 -F 997 -g \
                 shellcheck "$bash_file" 2>/dev/null || true
               

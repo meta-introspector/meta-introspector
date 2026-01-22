@@ -1,5 +1,5 @@
 {
-  description = "Meta-Perf: perf recording perf analyzing perf - convergent labeling model";
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -29,24 +29,24 @@
             
             # Level 0: Record some initial code
             echo "📊 Level 0: Recording initial program..."
-            perf record -o $out/meta-perf/level0.perf.data \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
               -F 997 -g -- sleep 0.1
             
             # Level 1: Record perf analyzing level 0
             echo "📊 Level 1: Recording perf script analyzing level 0..."
-            perf record -o $out/meta-perf/level1.perf.data \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
               -F 997 -g -- \
               perf script -i $out/meta-perf/level0.perf.data > /dev/null
             
             # Level 2: Record perf analyzing level 1 (analyzing level 0)
             echo "📊 Level 2: Recording perf script analyzing level 1..."
-            perf record -o $out/meta-perf/level2.perf.data \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
               -F 997 -g -- \
               perf script -i $out/meta-perf/level1.perf.data > /dev/null
             
             # Level 3: Record perf analyzing level 2 (analyzing level 1 analyzing level 0)
             echo "📊 Level 3: Recording perf script analyzing level 2..."
-            perf record -o $out/meta-perf/level3.perf.data \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
               -F 997 -g -- \
               perf script -i $out/meta-perf/level2.perf.data > /dev/null
             
@@ -127,7 +127,7 @@
             cat > $out/convergence/meta.json << EOF
             {
               "concept": "meta-perf-functional-decomposition",
-              "description": "perf recording perf script reveals the functional vocabulary of code labeling",
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
               "insight": "Instruction frequencies in perf script = how the labeling system works",
               "levels": 4,
               "outputs": {

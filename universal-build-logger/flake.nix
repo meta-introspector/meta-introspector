@@ -91,14 +91,14 @@
             echo "Project is a directory: ${project}" > build.log
             if [ -f ${project}/bin/* ]; then
               # Collect perf data
-              perf record -o $out/perf-data/perf.data -e cycles,instructions,cache-misses,branch-misses \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                 ${project}/bin/* --version 2>&1 | tee -a build.log
               
               # Collect strace
               strace -o $out/perf-data/strace.log -c ${project}/bin/* --version 2>&1 | tee -a build.log
             fi
           elif [ -f ${project} ]; then
-            perf record -o $out/perf-data/perf.data -e cycles,instructions,cache-misses,branch-misses \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
               ${project} --version 2>&1 | tee build.log
             strace -o $out/perf-data/strace.log -c ${project} --version 2>&1 | tee -a build.log
           else

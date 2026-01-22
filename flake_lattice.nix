@@ -34,8 +34,8 @@
       nativeBuildInputs = [ pkgs.perf harmonic_analyzer ];
       
       buildPhase = ''
-        # Build with perf recording
-        perf record -o perf.data -F 99 -g nix build || true
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
         
         # Analyze
         ${harmonic_analyzer}/bin/harmonic_analyzer perf.data > analysis.txt || echo "Analysis failed" > analysis.txt

@@ -250,7 +250,6 @@ mes-in-languages/
       nativeBuildInputs = [ pkgs.lean4 pkgs.perf ];
       
       buildPhase = ''
-        perf record -o mes_lean4.perf.data -F 99 -g \
           lean $src
       '';
       
@@ -268,7 +267,6 @@ mes-in-languages/
       nativeBuildInputs = [ pkgs.rustc pkgs.perf ];
       
       buildPhase = ''
-        perf record -o mes_rust.perf.data -F 99 -g \
           rustc $src
       '';
       

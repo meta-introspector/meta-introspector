@@ -35,7 +35,7 @@
             
             # Record perf data during mes bootstrap
             echo "📊 Recording perf data for mes bootstrap..."
-            perf record -o $out/perf/mes-bootstrap.perf.data \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
               -F 997 -g --call-graph dwarf \
               -- sh -c '
                 ./configure --prefix=$out

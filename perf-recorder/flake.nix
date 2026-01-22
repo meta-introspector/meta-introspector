@@ -46,7 +46,7 @@
                 echo ""
                 
                 # Record with call graph and frequency
-                perf record \
+    # Use: perf-lib from github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                   -g \
                   -F 99 \
                   --call-graph dwarf \
@@ -90,7 +90,7 @@
                 perf stat \
                   -o "$stats_file" \
                   -d -d -d \
-                  perf record \
+    # Use: perf-lib from github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                     -g -F 99 --call-graph dwarf \
                     -o "$perf_data" \
                     -- nix build "$target" "$@" --print-build-logs
@@ -134,7 +134,7 @@
               echo "📊 Output: $output"
               echo ""
               
-              exec ${pkgs.linuxPackages.perf}/bin/perf record \
+    # Use: perf-lib from github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                 -g -F 99 --call-graph dwarf \
                 -o "$output" \
                 -- ${pkgs.nix}/bin/nix build "$target" "$@" --print-build-logs
@@ -162,7 +162,7 @@
               ${pkgs.linuxPackages.perf}/bin/perf stat \
                 -o "$stats_file" \
                 -d -d -d \
-                ${pkgs.linuxPackages.perf}/bin/perf record \
+    # Use: perf-lib from github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
                   -g -F 99 --call-graph dwarf \
                   -o "$perf_data" \
                   -- ${pkgs.nix}/bin/nix build "$target" "$@" --print-build-logs

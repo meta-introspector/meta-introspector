@@ -12,8 +12,8 @@ mkdir -p "$OUTPUT_DIR"
 cd /mnt/data1/meta-introspector/rustc-from-source
 rm -f result
 
-echo "=== Starting perf record (system-wide) ==="
-sudo perf record -e cpu-clock -F 99 -g -a -o "$OUTPUT_DIR/${SESSION}.perf.data" &
+echo "=== Starting # Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
+sudo # Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
 PERF_PID=$!
 echo "Perf PID: $PERF_PID"
 sleep 2

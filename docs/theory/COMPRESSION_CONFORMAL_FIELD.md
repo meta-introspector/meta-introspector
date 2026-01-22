@@ -242,7 +242,6 @@ struct CompressionTrace {
 }
 
 fn trace_compression(tool: &CompressionTool, data: &[u8]) -> CompressionTrace {
-    // Start perf recording
     let perf_file = format!("/tmp/compress_{}_{}.perf", tool.name, std::process::id());
     start_perf_recording(&perf_file);
     

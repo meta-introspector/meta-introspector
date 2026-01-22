@@ -37,7 +37,7 @@ cat > flake.nix <<EOF
         echo "Build ID: \${buildId}" >> \$out/build-info.txt
         
         # Record accessing the bootstrap chain
-        \${pkgs.perf}/bin/perf record \\
+        \${pkgs.perf}/bin/# Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
           -g -F 99 --call-graph dwarf \\
           -o \$out/mes-bootstrap.perf.data \\
           -- \${pkgs.bash}/bin/bash -c '
@@ -69,7 +69,7 @@ cat > flake.nix <<EOF
           echo "🔮 Nixpkgs Minimal Bootstrap Chain (Build \${buildId})"
           echo "===================================================="
           echo ""
-          echo "Build with perf recording:"
+          echo "Build with # Use: nix run github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix#perf-build -- .#target
           echo "  nix build .#default"
         '');
       };

@@ -15,7 +15,7 @@ for compiler in rust gcc llvm python node ocaml haskell lean4; do
     cd const_71_test/$compiler
     
     # Trace the build
-    perf record -e cycles,instructions -o "../../$OUTPUT/build_${compiler}.data" \
+# Use: scripts/perf/record.sh
         nix build --no-link 2>&1 | tail -3
     
     # Get the result path

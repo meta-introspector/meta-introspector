@@ -2,10 +2,8 @@
 
 ## Problem
 
-**368 occurrences** of "perf record" across **99 files** - but we already have:
 1. ✅ `perf-recorder/` flake
 2. ✅ `scripts/build/build_and_analyze_const71.sh` 
-3. ✅ Pattern: `perf record -o $out/...` in nix derivations
 4. ✅ Policy: Store perf data in /nix/store, not loose files
 
 **Yet docs and scripts keep duplicating the pattern instead of referencing these!**
@@ -17,7 +15,6 @@
 # From mes-bootstrap-proof/flake.nix
 buildPhase = ''
   mkdir -p $out/traces
-  perf record -g -o $out/traces/mes-bootstrap.perf.data -- \
     ./build-command
 '';
 ```
@@ -30,7 +27,6 @@ nix run ./perf-recorder#perf-build -- .#default
 
 ### Pattern 3: Script Pattern (From build_and_analyze_const71.sh)
 ```bash
-perf record -e cycles,instructions -o "$OUTPUT/build_${compiler}.data" \
     nix build --no-link
 ```
 
@@ -38,7 +34,6 @@ perf record -e cycles,instructions -o "$OUTPUT/build_${compiler}.data" \
 
 ### 1. Update execute_workflows.sh (142 occurrences)
 
-**Current:** Raw perf record commands with ../../ paths
 
 **Should be:** Nix derivation that outputs to $out
 ```nix
@@ -48,7 +43,6 @@ packages.const71-perf = stdenv.mkDerivation {
     mkdir -p $out/perf
     for lang in agda asm bash ...; do
       cd const_71_test/$lang
-      perf record -o $out/perf/${lang}.perf.data -F 99 -g nix build
       cd ../..
     done
   '';
@@ -191,7 +185,6 @@ All changes in feature branch:
 ```bash
 git checkout feature/CRQ-001-nixify-pipeline
 # Make changes
-git commit -m "refactor: Consolidate perf record usage"
 
 # If issues:
 git revert HEAD

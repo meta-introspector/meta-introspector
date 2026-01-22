@@ -99,7 +99,7 @@
           
           def reception_complexity(filepath):
               """Complexity from parsing cost"""
-              # Would use actual perf recording of parser
+              # Would use actual # Use: perf-lib.lib.perfBuild (see docs/nix/PERF_FLAKE_TEMPLATE.md)
               # For now, estimate from file size
               try:
                   size = Path(filepath).stat().st_size

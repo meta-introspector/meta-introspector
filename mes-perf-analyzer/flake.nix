@@ -61,7 +61,7 @@ EOF
 
 ## Files
 
-- `mes-bootstrap.perf.data` - Raw perf recording (45KB)
+- `mes-bootstrap.perf.data` - Raw # Use: perf-lib.lib.perfBuild (see docs/nix/PERF_FLAKE_TEMPLATE.md)
 - `witness-hash.txt` - SHA256 hash of perf data
 - `perf-report-full.txt` - Full perf report
 - `perf-trace.txt` - Execution trace

@@ -2,7 +2,6 @@
 
 ## Canonical Patterns
 
-We have **3 canonical patterns** for perf recording. Use these, don't duplicate!
 
 ### 1. Nix Derivation (Immutable Storage)
 
@@ -12,7 +11,6 @@ We have **3 canonical patterns** for perf recording. Use these, don't duplicate!
 ```nix
 buildPhase = ''
   mkdir -p $out/perf
-  perf record -o $out/perf/build.perf.data -F 99 -g nix build
 '';
 ```
 
@@ -45,7 +43,6 @@ nix run ./perf-recorder#perf-build -- .#target
 ```bash
 OUTPUT="data/analysis"
 mkdir -p "$OUTPUT"
-perf record -e cycles,instructions -o "$OUTPUT/build.data" nix build
 ```
 
 **Example:** `scripts/build/build_and_analyze_const71.sh`
@@ -92,7 +89,6 @@ perf script -i perf.data | stackcollapse-perf.pl | flamegraph.pl > flame.svg
 **MUST NOT:**
 - Create loose files in data/ or zos-results/
 - Use ../../ relative paths
-- Duplicate perf record commands
 
 ## See Also
 

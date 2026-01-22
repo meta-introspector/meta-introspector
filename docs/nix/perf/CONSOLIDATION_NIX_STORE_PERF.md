@@ -50,7 +50,6 @@ packages.perf-data = stdenv.mkDerivation {
   name = "bootstrap-perf-data";
   src = ./.;
   buildPhase = ''
-    perf record -o $out/perf/bootstrap.perf.data -- cargo build
   '';
 };
 ```

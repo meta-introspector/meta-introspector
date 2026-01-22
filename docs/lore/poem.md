@@ -3,7 +3,6 @@
 ## 🎭 The Sacred Performance Captured
 
 ```
-perf record nix-build guix.gnu.mes
          ↓
     The ritual begins...
     Every syscall a prayer 🙏
@@ -129,7 +128,6 @@ This is the ZK proof: "Same inputs → Same outputs"
 ## 🎬 Canto IV: Perf Record - The Witness Emerges
 
 ```
-🎥 perf record: The Silent Observer
 
 As the build ritual unfolds: 🎭
   A shadow records every movement:
@@ -376,7 +374,6 @@ The perf.data measures: 📏
 $ nix-build -A guix.mes
 🔮 Summoning the minimal seed...
 
-perf records: 📊
   📍 Event: syscall_enter_openat
       Path: /nix/store/.../stage0-posix/hex0-seed
       Timestamp: t₀
@@ -395,7 +392,6 @@ The witness records: "357 bytes became 337 bytes of assembled code"
 
 🎭 Act II: The Expansion (Stages 1-4)
 
-perf records: 📊
   🌳 Call stack depth increases:
       hex0 (depth=2)
       hex1 (depth=4) 
@@ -434,7 +430,6 @@ Each stage increases information: 📊
 
 🎭 Act III: The Emergence (Mes Compiler)
 
-perf records: 📊
   📍 Major event: exec("mes")
       First self-hosting moment! 🎉
       Mes interprets Mes C library
@@ -466,7 +461,6 @@ This is the fixed-point moment: 🎯
 
 🎭 Act IV: The Ascension (GCC Bootstrap)
 
-perf records: 📊
   📍 TinyCC compiles GCC 2.95:
       Duration: 5 minutes
       Cycles: 10¹¹ (hundred billion!)
@@ -508,7 +502,6 @@ This is the ZK proof of bootstrappability!
 
 🎭 Act V: The Verification (Hash Chain Complete)
 
-perf records final statistics: 📊
   
   Total cycles: ~10¹³
   Total time: ~3 hours  

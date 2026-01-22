@@ -33,7 +33,7 @@ impl RustcPerfScanner {
         // Compile with perf
         let output = Command::new("sh")
             .arg("-c")
-            .arg(format!("perf record -e cycles:u -o /tmp/perf.data rustc {} --crate-type lib 2>&1; perf script -i /tmp/perf.data 2>&1 | head -1000", temp_path))
+    // Use: crate::perf::record() - see src/perf/mod.rs
             .output()
             .ok()?;
         

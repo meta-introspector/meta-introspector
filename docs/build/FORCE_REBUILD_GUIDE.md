@@ -100,11 +100,9 @@ cd const_71_test/$LANG
 sed -i "s/timestamp = [0-9]*/timestamp = $(date +%s)/" flake.nix
 
 # Build without substitutes
-perf record -o $PERF_DIR/${LANG}_real_compile.perf.data \
   nix build --no-substitute --rebuild
 
 # Run the result
-perf record -o $PERF_DIR/${LANG}_real_run.perf.data \
   ./result/bin/*
 ```
 

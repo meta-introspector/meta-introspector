@@ -16,7 +16,7 @@ cd const_71_test/$LANG
 
 # Build without cache
 echo "📊 Recording compilation..."
-perf record -F 99 -g -o ../../$PERF_DIR/${LANG}_forced.perf.data \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
   nix build --no-substitute --rebuild 2>&1 | tee ../../$PERF_DIR/${LANG}_build.log
 
 echo "✅ Done! Check perf data:"

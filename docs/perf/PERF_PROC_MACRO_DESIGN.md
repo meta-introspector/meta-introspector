@@ -1,7 +1,6 @@
 # Perf Proc Macro - Wrap Any Code in Perf Recording
 
 ## 🎯 Goal
-Create a **proc macro** that wraps any Rust code in perf recording, delivering results:
 1. **Inline** - Return perf data directly in the code
 2. **Centralized** - Send to telemetry server automatically
 3. **Zero overhead** - Compile-time code generation
@@ -92,7 +91,6 @@ use proc_macro::TokenStream;
 use quote::quote;
 use syn::{parse_macro_input, ItemFn, Expr};
 
-/// Wrap a function in perf recording
 #[proc_macro_attribute]
 pub fn perf_record(_attr: TokenStream, item: TokenStream) -> TokenStream {
     let input = parse_macro_input!(item as ItemFn);
@@ -120,7 +118,6 @@ pub fn perf_record(_attr: TokenStream, item: TokenStream) -> TokenStream {
     TokenStream::from(expanded)
 }
 
-/// Wrap a code block in perf recording (returns tuple)
 #[proc_macro]
 pub fn perf(input: TokenStream) -> TokenStream {
     let expr = parse_macro_input!(input as Expr);
@@ -143,7 +140,6 @@ pub fn perf(input: TokenStream) -> TokenStream {
     TokenStream::from(expanded)
 }
 
-/// Wrap a function in perf recording (auto telemetry, no return change)
 #[proc_macro_attribute]
 pub fn perf_auto(_attr: TokenStream, item: TokenStream) -> TokenStream {
     let input = parse_macro_input!(item as ItemFn);
@@ -212,7 +208,6 @@ impl PerfSession {
         
         let temp_file = format!("/tmp/perf_{}_{}.data", name, timestamp);
         
-        // Start perf record in background
         let perf_pid = Self::start_perf_record(&temp_file);
         
         Self {
@@ -227,7 +222,6 @@ impl PerfSession {
     pub fn stop(&mut self) -> PerfData {
         let duration = self.start_time.elapsed();
         
-        // Stop perf recording
         if let Some(pid) = self.perf_pid {
             unsafe {
                 libc::kill(pid as i32, libc::SIGINT);

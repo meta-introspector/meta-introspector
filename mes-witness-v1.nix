@@ -19,8 +19,8 @@ let
       mkdir -p $out/telemetry
       export TELEMETRY_DIR=$out/telemetry
       
-      # Start perf recording
-      perf record -o $TELEMETRY_DIR/mes_bootstrap.perf.data \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
         -e cycles,instructions,cache-misses,branch-misses \
         -g --call-graph dwarf &
       PERF_PID=$!

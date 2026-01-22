@@ -84,7 +84,6 @@ The **meta-introspector** dataset contains unified indexes and analysis results 
 ```
 
 Run repeatedly to iterate. Each run:
-1. Builds via Nix (with perf recording)
 2. Generates self-metadata
 3. Commits changes
 4. Stores perf data in `/nix/store/`

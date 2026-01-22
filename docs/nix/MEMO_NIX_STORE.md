@@ -45,10 +45,8 @@ This violates:
 ## Pattern: Data Flow Through Derivations
 
 ```nix
-# Step 1: Build with perf recording
 build-with-perf = stdenv.mkDerivation {
   buildPhase = ''
-    perf record -o $out/perf/build.perf.data -- make
   '';
 };
 

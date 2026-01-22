@@ -37,12 +37,12 @@ echo "📋 Active probes:"
 sudo perf probe -l
 
 echo ""
-echo "🚀 Starting perf record on rustc build..."
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
 
 cd /mnt/data1/meta-introspector/rustc-from-source
 
 # Record with probes
-sudo perf record \
+        # Use perf-lib: github:meta-introspector/meta-introspector/feature/CRQ-001-nixify-pipeline?dir=nix
     -e 'probe_libc:malloc' \
     -e 'probe_libc:free' \
     -e 'probe_libc:open' \
