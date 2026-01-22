@@ -32,6 +32,7 @@
           nativeBuildInputs = with pkgs; [ 
             pkg-config 
             cudaPackages.cuda_nvcc
+            makeWrapper
           ];
           
           buildInputs = with pkgs; [
@@ -42,25 +43,18 @@
           
           CUDA_PATH = "${pkgs.cudaPackages.cuda_cudart}";
           CUDA_INCLUDE_PATH = "${pkgs.cudaPackages.cuda_cudart}/include";
-          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [ pkgs.linuxPackages.nvidia_x11 ]}";
           
           doCheck = false;
           
           installPhase = ''
             runHook preInstall
             mkdir -p $out/bin
-            install -Dm755 target/*/release/burn-cuda-71 $out/bin/.burn-cuda-71-unwrapped
+            install -Dm755 target/*/release/burn-cuda-71 $out/bin/burn-cuda-71
             
-            # Create wrapper with LD_LIBRARY_PATH for nvidia
-            cat > $out/bin/burn-cuda-71 << EOF
-#!/bin/sh
-export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath [ pkgs.linuxPackages.nvidia_x11 ]}:\$LD_LIBRARY_PATH"
-exec "\$(dirname "\$0")/.burn-cuda-71-unwrapped" "\$@"
-EOF
-            chmod +x $out/bin/burn-cuda-71
+            # Wrap with nvidia driver in LD_LIBRARY_PATH
+            wrapProgram $out/bin/burn-cuda-71 \
+              --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath [ pkgs.linuxPackages.nvidia_x11 ]}"
             
-            # Test requires GPU, just verify binary exists
-            echo "71" > $out/output.txt
             runHook postInstall
           '';
         };
