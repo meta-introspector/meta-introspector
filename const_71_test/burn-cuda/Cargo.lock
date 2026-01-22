@@ -7509,3 +7509,8 @@ checksum = "2959ca473aae96a14ecedf501d20b3608d2825ba280d5adb57d651721885b0c2"
 dependencies = [
  "zune-core 0.5.1",
 ]
+
+[[patch.unused]]
+name = "cudarc"
+version = "0.19.0"
+source = "git+https://github.com/coreylowman/cudarc#003498c180495f78152241ac893931529e13d1a5"
