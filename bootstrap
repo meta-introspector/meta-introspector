@@ -1,3 +1,18 @@
 #!/usr/bin/env bash
 # Convenience wrapper for bootstrap
-exec ./scripts/build/bootstrap.sh "$@"
+# Builds complete system via central build system
+
+echo "🚀 Building via central build system..."
+echo ""
+echo "Jobs scheduled:"
+echo "  1. languages (71 languages)"
+echo "  2. build-graph (first ordering)"
+echo "  3. perf-analysis (perf traces)"
+echo "  4. topological-matrix (function matrix)"
+echo "  5. harmonic-analysis (harmonics)"
+echo "  6. model-training (NN models)"
+echo "  7. complete (all jobs)"
+echo ""
+
+cd nix
+exec nix build --print-build-logs "$@"
