@@ -8,13 +8,20 @@ echo "🚀 Meta-Introspector Bootstrap"
 echo "==============================="
 echo ""
 
-# Setup zos user if needed (requires sudo)
+# Setup zos user if needed (requires sudo with preserved PATH)
 if ! command -v nix-as-zos &> /dev/null; then
     echo "⚙️  Setting up zos user (requires sudo)..."
     
     if [ "$EUID" -ne 0 ]; then
-        echo "❌ Please run with sudo for first-time setup"
-        echo "   sudo ./bootstrap"
+        echo "❌ Please run with: sudo -E ./bootstrap"
+        echo "   (The -E preserves PATH for nix)"
+        exit 1
+    fi
+    
+    # Verify nix is available
+    if ! command -v nix &> /dev/null; then
+        echo "❌ nix not found in PATH"
+        echo "   Run: sudo -E ./bootstrap"
         exit 1
     fi
     
