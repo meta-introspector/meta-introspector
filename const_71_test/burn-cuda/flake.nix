@@ -9,7 +9,10 @@
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
       in
       {
         packages.default = pkgs.rustPlatform.buildRustPackage {
@@ -34,17 +37,27 @@
           buildInputs = with pkgs; [
             cudaPackages.cuda_cudart
             cudaPackages.libcublas
+            linuxPackages.nvidia_x11
           ];
           
           CUDA_PATH = "${pkgs.cudaPackages.cuda_cudart}";
           CUDA_INCLUDE_PATH = "${pkgs.cudaPackages.cuda_cudart}/include";
+          LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [ pkgs.linuxPackages.nvidia_x11 ]}";
           
           doCheck = false;
           
           installPhase = ''
             runHook preInstall
             mkdir -p $out/bin
-            install -Dm755 target/*/release/burn-cuda-71 $out/bin/burn-cuda-71
+            install -Dm755 target/*/release/burn-cuda-71 $out/bin/.burn-cuda-71-unwrapped
+            
+            # Create wrapper with LD_LIBRARY_PATH for nvidia
+            cat > $out/bin/burn-cuda-71 << EOF
+#!/bin/sh
+export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath [ pkgs.linuxPackages.nvidia_x11 ]}:\$LD_LIBRARY_PATH"
+exec "\$(dirname "\$0")/.burn-cuda-71-unwrapped" "\$@"
+EOF
+            chmod +x $out/bin/burn-cuda-71
             
             # Test requires GPU, just verify binary exists
             echo "71" > $out/output.txt
