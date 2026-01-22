@@ -28,19 +28,16 @@ if ! command -v nix-as-zos &> /dev/null; then
     # Run setup script
     ./scripts/build/setup-zos-user.sh
     
-    # Complete the config (setup script may timeout on tee)
-    echo "Finalizing zos nix config..."
+    # Configure git for zos user (not nix config)
+    echo "Configuring git for zos user..."
     for host in /mnt/data1/git/*/; do
         hostname=$(basename "$host")
         [[ "$hostname" =~ ^(links|data|file|home|git|ssh)$ ]] && continue
         [[ "$hostname" =~ @ ]] && continue
-        echo "git-config = url.file:///mnt/data1/git/$hostname/.insteadOf=https://$hostname/"
-        echo "git-config = url.file:///mnt/data1/git/$hostname/.insteadOf=git://$hostname/"
-        echo "git-config = url.file:///mnt/data1/git/$hostname/.insteadOf=git@$hostname:"
-    done | tee -a /home/zos/.config/nix/nix.conf > /dev/null
-    
-    echo "" >> /home/zos/.config/nix/nix.conf
-    echo "# ===== End Local Git Mirror =====" >> /home/zos/.config/nix/nix.conf
+        sudo -u zos git config --global url."file:///mnt/data1/git/$hostname/".insteadOf "https://$hostname/"
+        sudo -u zos git config --global url."file:///mnt/data1/git/$hostname/".insteadOf "git://$hostname/"
+        sudo -u zos git config --global url."file:///mnt/data1/git/$hostname/".insteadOf "git@$hostname:"
+    done
     
     echo "✅ ZOS user configured"
     echo ""
