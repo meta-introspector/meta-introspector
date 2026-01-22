@@ -7,7 +7,7 @@ use petgraph::algo::toposort;
 /// A function's unique position in the topological matrix
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FunctionPosition {
-    /// Topological layer (build depth from Mes)
+    /// Topological layer (build depth from base)
     pub layer: usize,
     
     /// Index within layer
@@ -21,6 +21,16 @@ pub struct FunctionPosition {
     
     /// Orthogonal projection from previous layer
     pub projection: f64,
+    
+    /// Harmonic resonance with base layer (fundamental frequency)
+    /// Base = 1.0, higher layers = integer multiples (harmonics)
+    pub harmonic: f64,
+    
+    /// Harmonic number: 1 = fundamental, 2 = first overtone, 3 = second overtone, etc.
+    /// Layer 0 (base) = harmonic 1
+    /// Layer 1 = harmonic 2
+    /// Layer 2 = harmonic 3
+    pub harmonic_number: usize,
 }
 
 /// Build node in topological graph
@@ -104,6 +114,8 @@ impl FunctionMatrix {
                     ip,
                     gf_size: node.gf_size,
                     projection,
+                    harmonic: (layer + 1) as f64,  // Harmonic = layer + 1
+                    harmonic_number: layer + 1,
                 });
             }
         }
