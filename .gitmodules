@@ -88,3 +88,6 @@
 [submodule "const_71_test/metacoq/metarocq-reference"]
 	path = nix/flakes/const_71_test/metacoq/metarocq-reference
 	url = https://github.com/MetaRocq/metarocq.git
+[submodule "vendor/lmstudio"]
+	path = vendor/lmstudio
+	url = https://github.com/lmstudio-ai/lmstudio.js.git
