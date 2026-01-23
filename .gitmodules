@@ -91,3 +91,6 @@
 [submodule "vendor/lmstudio"]
 	path = vendor/lmstudio
 	url = https://github.com/lmstudio-ai/lmstudio.js.git
+[submodule "vendor/lms"]
+	path = vendor/lms
+	url = https://github.com/lmstudio-ai/lms.git
