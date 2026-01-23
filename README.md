@@ -25,6 +25,7 @@ All → Minimal Proven System
 
 - **Python Scripts**: 1,969 → Scheduled for Rust lifting
 - **Node.js (Gemini CLI)**: → Lifting via MES bootstrap tracing
+- **Impure Gemini Builds**: ✅ Documented (AI-driven builds with `__impure = true`)
 - **Evolution Server**: Running with AI collaboration
 - **Nix Daemon**: ✅ Running
 - **Monitor API**: http://localhost:8081
