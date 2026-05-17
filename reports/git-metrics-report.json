@@ -3,6 +3,31 @@
   "total_commits": 211,
   "total_authors": 5,
   "authors": {
+    "Mike DuPont": {
+      "total_commits": 161,
+      "total_files": 284,
+      "total_insertions": 111728,
+      "total_deletions": 1407,
+      "repos": {
+        "ragit": 6,
+        "solfunmeme-dioxus": 11,
+        "meta-meme": 39,
+        "cache": 1,
+        "solfunmeme": 8,
+        "agave-solana-validator": 19,
+        "lattice-introspector": 2,
+        "zos-server": 1,
+        "bootstrap": 4,
+        "quasi-meta-meme": 52,
+        "ai-agent-terraform": 18
+      },
+      "platforms": {
+        "github": 161
+      },
+      "emails": [
+        "jmikedupont2@gmail.com"
+      ]
+    },
     "James Michael DuPont": {
       "total_commits": 1,
       "total_files": 0,
@@ -13,22 +38,6 @@
       },
       "platforms": {
         "github": 1
-      },
-      "emails": [
-        "jmikedupont2@gmail.com"
-      ]
-    },
-    "jmikedupont2": {
-      "total_commits": 42,
-      "total_files": 41,
-      "total_insertions": 1257,
-      "total_deletions": 182,
-      "repos": {
-        "meta-meme": 36,
-        "namespace": 6
-      },
-      "platforms": {
-        "github": 42
       },
       "emails": [
         "jmikedupont2@gmail.com"
@@ -64,26 +73,17 @@
         "jmikedupont2@gmail.com"
       ]
     },
-    "Mike DuPont": {
-      "total_commits": 161,
-      "total_files": 284,
-      "total_insertions": 111728,
-      "total_deletions": 1407,
+    "jmikedupont2": {
+      "total_commits": 42,
+      "total_files": 41,
+      "total_insertions": 1257,
+      "total_deletions": 182,
       "repos": {
-        "quasi-meta-meme": 52,
-        "solfunmeme": 8,
-        "bootstrap": 4,
-        "ai-agent-terraform": 18,
-        "lattice-introspector": 2,
-        "solfunmeme-dioxus": 11,
-        "zos-server": 1,
-        "agave-solana-validator": 19,
-        "cache": 1,
-        "ragit": 6,
-        "meta-meme": 39
+        "meta-meme": 36,
+        "namespace": 6
       },
       "platforms": {
-        "github": 161
+        "github": 42
       },
       "emails": [
         "jmikedupont2@gmail.com"
