@@ -18,6 +18,22 @@
         "jmikedupont2@gmail.com"
       ]
     },
+    "jmikedupont2": {
+      "total_commits": 42,
+      "total_files": 41,
+      "total_insertions": 1257,
+      "total_deletions": 182,
+      "repos": {
+        "namespace": 6,
+        "meta-meme": 36
+      },
+      "platforms": {
+        "github": 42
+      },
+      "emails": [
+        "jmikedupont2@gmail.com"
+      ]
+    },
     "mike dupont": {
       "total_commits": 5,
       "total_files": 9,
@@ -39,36 +55,20 @@
       "total_insertions": 111728,
       "total_deletions": 1407,
       "repos": {
+        "meta-meme": 39,
         "agave-solana-validator": 19,
         "bootstrap": 4,
+        "ragit": 6,
         "solfunmeme-dioxus": 11,
-        "solfunmeme": 8,
-        "ai-agent-terraform": 18,
-        "meta-meme": 39,
         "quasi-meta-meme": 52,
-        "lattice-introspector": 2,
-        "cache": 1,
+        "solfunmeme": 8,
         "zos-server": 1,
-        "ragit": 6
+        "lattice-introspector": 2,
+        "ai-agent-terraform": 18,
+        "cache": 1
       },
       "platforms": {
         "github": 161
-      },
-      "emails": [
-        "jmikedupont2@gmail.com"
-      ]
-    },
-    "jmikedupont2": {
-      "total_commits": 42,
-      "total_files": 41,
-      "total_insertions": 1257,
-      "total_deletions": 182,
-      "repos": {
-        "meta-meme": 36,
-        "namespace": 6
-      },
-      "platforms": {
-        "github": 42
       },
       "emails": [
         "jmikedupont2@gmail.com"
