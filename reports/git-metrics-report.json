@@ -3,32 +3,42 @@
   "total_commits": 211,
   "total_authors": 5,
   "authors": {
-    "mike dupont": {
-      "total_commits": 5,
-      "total_files": 9,
-      "total_insertions": 481,
-      "total_deletions": 12,
-      "repos": {
-        "pick-up-nix": 5
-      },
-      "platforms": {
-        "github": 5
-      },
-      "emails": [
-        "jmikedupont2@gmail.com"
-      ]
-    },
     "jmikedupont2": {
       "total_commits": 42,
       "total_files": 41,
       "total_insertions": 1257,
       "total_deletions": 182,
       "repos": {
-        "meta-meme": 36,
-        "namespace": 6
+        "namespace": 6,
+        "meta-meme": 36
       },
       "platforms": {
         "github": 42
+      },
+      "emails": [
+        "jmikedupont2@gmail.com"
+      ]
+    },
+    "Mike DuPont": {
+      "total_commits": 161,
+      "total_files": 284,
+      "total_insertions": 111728,
+      "total_deletions": 1407,
+      "repos": {
+        "agave-solana-validator": 19,
+        "meta-meme": 39,
+        "ai-agent-terraform": 18,
+        "cache": 1,
+        "solfunmeme-dioxus": 11,
+        "lattice-introspector": 2,
+        "ragit": 6,
+        "bootstrap": 4,
+        "zos-server": 1,
+        "quasi-meta-meme": 52,
+        "solfunmeme": 8
+      },
+      "platforms": {
+        "github": 161
       },
       "emails": [
         "jmikedupont2@gmail.com"
@@ -49,31 +59,6 @@
         "jmikedupont2@gmail.com"
       ]
     },
-    "Mike DuPont": {
-      "total_commits": 161,
-      "total_files": 284,
-      "total_insertions": 111728,
-      "total_deletions": 1407,
-      "repos": {
-        "ragit": 6,
-        "zos-server": 1,
-        "lattice-introspector": 2,
-        "meta-meme": 39,
-        "cache": 1,
-        "solfunmeme-dioxus": 11,
-        "solfunmeme": 8,
-        "agave-solana-validator": 19,
-        "bootstrap": 4,
-        "quasi-meta-meme": 52,
-        "ai-agent-terraform": 18
-      },
-      "platforms": {
-        "github": 161
-      },
-      "emails": [
-        "jmikedupont2@gmail.com"
-      ]
-    },
     "James Michael DuPont": {
       "total_commits": 1,
       "total_files": 0,
@@ -84,6 +69,21 @@
       },
       "platforms": {
         "github": 1
+      },
+      "emails": [
+        "jmikedupont2@gmail.com"
+      ]
+    },
+    "mike dupont": {
+      "total_commits": 5,
+      "total_files": 9,
+      "total_insertions": 481,
+      "total_deletions": 12,
+      "repos": {
+        "pick-up-nix": 5
+      },
+      "platforms": {
+        "github": 5
       },
       "emails": [
         "jmikedupont2@gmail.com"
